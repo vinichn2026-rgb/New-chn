@@ -6,55 +6,55 @@
 
 @layer base {
   :root {
-    /* CHN Blue Brand Palette */
-    --background: 214 60% 97%;
-    --foreground: 215 50% 15%;
+    /* Clean White + Blue Theme */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 50% 15%;
+    --card-foreground: 220 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 50% 15%;
+    --popover-foreground: 220 20% 20%;
 
-    --primary: 210 100% 36%;
+    --primary: 213 94% 44%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 214 60% 95%;
-    --secondary-foreground: 215 50% 15%;
+    --secondary: 214 32% 96%;
+    --secondary-foreground: 220 20% 20%;
 
-    --muted: 214 30% 93%;
-    --muted-foreground: 215 15% 46%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
 
-    --accent: 190 90% 50%;
-    --accent-foreground: 215 50% 15%;
+    --accent: 213 94% 44%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 30% 88%;
-    --input: 214 30% 88%;
-    --ring: 210 100% 36%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 213 94% 44%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     /* Extended tokens */
-    --navy: 220 60% 10%;
+    --navy: 220 50% 14%;
     --navy-foreground: 0 0% 100%;
-    --blue-light: 217 90% 61%;
-    --blue-pale: 214 60% 97%;
-    --cyan: 185 85% 68%;
+    --blue-light: 213 80% 56%;
+    --blue-pale: 214 40% 97%;
+    --cyan: 199 89% 48%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 60% 10%) 0%, hsl(210 100% 25%) 50%, hsl(210 100% 36%) 100%);
-    --gradient-blue: linear-gradient(135deg, hsl(210 100% 36%) 0%, hsl(217 90% 61%) 100%);
-    --gradient-subtle: linear-gradient(135deg, hsl(214 60% 97%) 0%, hsl(0 0% 100%) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(220 60% 10%) 0%, hsl(220 50% 18%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 50% 14%) 0%, hsl(213 94% 30%) 50%, hsl(213 94% 44%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(213 94% 44%) 0%, hsl(213 80% 56%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(214 40% 97%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-dark: linear-gradient(135deg, hsl(220 50% 14%) 0%, hsl(220 40% 22%) 100%);
 
     /* Shadows */
-    --shadow-sm: 0 2px 8px hsl(210 100% 36% / 0.06);
-    --shadow-md: 0 8px 30px hsl(210 100% 36% / 0.1);
-    --shadow-lg: 0 20px 60px hsl(210 100% 36% / 0.15);
-    --shadow-glow: 0 0 40px hsl(210 100% 36% / 0.2);
+    --shadow-sm: 0 1px 3px hsl(220 20% 20% / 0.06);
+    --shadow-md: 0 4px 16px hsl(220 20% 20% / 0.08);
+    --shadow-lg: 0 12px 40px hsl(220 20% 20% / 0.1);
+    --shadow-glow: 0 0 30px hsl(213 94% 44% / 0.15);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
