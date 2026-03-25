@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Building, MapPin, BarChart3, Handshake, ChevronRight } from "lucide-react";
+import { ArrowRight, Shield, ChevronRight } from "lucide-react";
 import { FaBuilding, FaShieldAlt, FaChartLine, FaSitemap } from "react-icons/fa";
-import heroBg from "@/assets/hero-bg.jpg";
+import { NetworkAnimation, ShieldAnimation, ChartAnimation, GearAnimation, FloatingParticles } from "@/components/AnimatedIllustrations";
 
 const steps = [
   { num: "01", title: "GROWTH & SCALE", icon: "🎯" },
@@ -63,75 +63,64 @@ const Index = () => {
   return (
     <div className="overflow-x-hidden">
       {/* ═══════ HERO ═══════ */}
-      <section
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
-        style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-navy/70" />
+      <section className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
+        {/* Animated particle background */}
+        <FloatingParticles className="absolute inset-0 w-full h-full opacity-40" />
 
-        {/* Floating orbs */}
-        <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-primary/20 blur-[100px] animate-float" />
-        <div className="absolute bottom-32 left-16 w-56 h-56 rounded-full bg-cyan/15 blur-[80px] animate-float" style={{ animationDelay: "3s" }} />
+        <div className="relative z-10 container mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Text */}
+          <div>
+            <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
+              <span className="inline-block px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan bg-cyan/10 border border-cyan/20 rounded-full mb-6">
+                Innovation in Action
+              </span>
+            </motion.div>
 
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-            <span className="inline-block px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan bg-cyan/10 border border-cyan/20 rounded-full mb-6">
-              Innovation in Action
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial="hidden" animate="visible" variants={fadeUp} custom={1}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight max-w-4xl mx-auto"
-          >
-            Run Technology Like{" "}
-            <span className="bg-gradient-to-r from-blue-light to-cyan bg-clip-text text-transparent">
-              A Business System
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial="hidden" animate="visible" variants={fadeUp} custom={2}
-            className="mt-6 text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto"
-          >
-            Integrated technology and consulting services built for stability,
-            security, and scalable growth. We help you reduce risk and maintain control.
-          </motion.p>
-
-          <motion.div
-            initial="hidden" animate="visible" variants={fadeUp} custom={3}
-            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"
+            <motion.h1
+              initial="hidden" animate="visible" variants={fadeUp} custom={1}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight"
             >
-              Get Started <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              to="/about"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-semibold rounded-lg hover:bg-primary-foreground/10 transition-all"
-            >
-              Learn More
-            </Link>
-          </motion.div>
+              Run Technology Like{" "}
+              <span className="bg-gradient-to-r from-blue-light to-cyan bg-clip-text text-transparent">
+                A Business System
+              </span>
+            </motion.h1>
 
-          {/* Hero stats */}
+            <motion.p
+              initial="hidden" animate="visible" variants={fadeUp} custom={2}
+              className="mt-6 text-lg text-primary-foreground/70 max-w-lg"
+            >
+              Integrated technology and consulting services built for stability,
+              security, and scalable growth.
+            </motion.p>
+
+            <motion.div
+              initial="hidden" animate="visible" variants={fadeUp} custom={3}
+              className="mt-10 flex flex-col sm:flex-row gap-4"
+            >
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-all shadow-lg"
+              >
+                Get Started <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/about"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-semibold rounded-md hover:bg-primary-foreground/10 transition-all"
+              >
+                Learn More
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Right: Animated Network Illustration */}
           <motion.div
-            initial="hidden" animate="visible" variants={fadeUp} custom={4}
-            className="mt-16 grid grid-cols-3 gap-8 max-w-lg mx-auto"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="hidden lg:flex items-center justify-center"
           >
-            {[
-              { label: "Clear Scope", num: "01" },
-              { label: "Measurable Outcomes", num: "02" },
-              { label: "24/7 Support", num: "03" },
-            ].map((s) => (
-              <div key={s.num} className="text-center">
-                <div className="text-2xl font-bold text-cyan">{s.num}</div>
-                <div className="text-xs text-primary-foreground/60 mt-1">{s.label}</div>
-              </div>
-            ))}
+            <NetworkAnimation className="w-full max-w-md" />
           </motion.div>
         </div>
       </section>
@@ -155,7 +144,7 @@ const Index = () => {
                 key={step.num}
                 initial="hidden" whileInView="visible" viewport={{ once: true }}
                 variants={fadeUp} custom={i}
-                className="group bg-card rounded-xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 text-center"
+                className="group bg-card rounded-xl p-6 border border-border hover:border-primary/30 hover:shadow-md transition-all duration-300 text-center"
               >
                 <div className="text-4xl mb-3">{step.icon}</div>
                 <div className="text-xs font-bold text-primary mb-2">{step.num}</div>
@@ -172,50 +161,75 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══════ OUTCOMES ═══════ */}
-      <section className="py-24" style={{ background: "var(--gradient-subtle)" }}>
+      {/* ═══════ OUTCOMES with Chart Animation ═══════ */}
+      <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Integrated Ecosystem</span>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">
-              Outcomes <span className="text-primary">That Matter to Your Business</span>
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              Partnering with CHN Technologies focuses on delivering measurable outcomes that improve stability, reliability, and long-term operational performance.
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Chart Animation */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex justify-center"
+            >
+              <ChartAnimation className="w-full max-w-sm" />
+            </motion.div>
 
-          {/* Scrolling cards */}
-          <div className="overflow-hidden">
-            <div className="flex gap-6 animate-marquee" style={{ width: "fit-content" }}>
-              {[...outcomes, ...outcomes, ...outcomes, ...outcomes].map((item, idx) => (
-                <div key={idx} className="flex-shrink-0 w-80 bg-card rounded-xl p-6 border border-border shadow-sm">
-                  <div className="mb-4">{item.icon}</div>
-                  <h3 className="text-lg font-bold text-foreground mb-3">{item.title}</h3>
-                  <ul className="space-y-2">
-                    {item.points.map((p, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                        <ChevronRight className="w-3.5 h-3.5 text-primary mt-0.5 flex-shrink-0" />
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            {/* Right: Content */}
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-primary">Integrated Ecosystem</span>
+              <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground">
+                Outcomes <span className="text-primary">That Matter</span>
+              </h2>
+              <p className="mt-4 text-muted-foreground max-w-lg">
+                Delivering measurable outcomes that improve stability, reliability, and long-term operational performance.
+              </p>
+
+              <div className="mt-8 space-y-6">
+                {outcomes.map((item, i) => (
+                  <motion.div
+                    key={item.title}
+                    initial="hidden" whileInView="visible" viewport={{ once: true }}
+                    variants={fadeUp} custom={i}
+                    className="flex gap-4"
+                  >
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-foreground">{item.title}</h3>
+                      <ul className="mt-1 space-y-1">
+                        {item.points.map((p, j) => (
+                          <li key={j} className="text-sm text-muted-foreground flex items-center gap-1.5">
+                            <ChevronRight className="w-3 h-3 text-primary flex-shrink-0" />
+                            {p}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════ CAPABILITIES ═══════ */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
+      {/* ═══════ CAPABILITIES with Gear Animation ═══════ */}
+      <section className="py-24 bg-background relative">
+        {/* Background gear animation */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.04] pointer-events-none">
+          <GearAnimation className="w-[500px] h-[500px]" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">
               Capabilities <span className="text-primary">That Work Together</span>
             </h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              CHN Technologies delivers integrated capabilities across technology, software, digital, and consulting services.
+              Integrated capabilities across technology, software, digital, and consulting services.
             </p>
           </div>
 
@@ -225,7 +239,7 @@ const Index = () => {
                 key={cap.title}
                 initial="hidden" whileInView="visible" viewport={{ once: true }}
                 variants={fadeUp} custom={i}
-                className="group bg-card rounded-xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-500"
+                className="group bg-card rounded-xl p-6 border border-border hover:border-primary/30 hover:shadow-md transition-all duration-500"
               >
                 <div className="text-3xl text-primary mb-4 group-hover:scale-110 transition-transform">{cap.icon}</div>
                 <div className="text-xs font-bold text-primary/60 mb-2">0{i + 1}</div>
@@ -244,37 +258,53 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ═══════ DELIVERY MODEL ═══════ */}
+      {/* ═══════ DELIVERY MODEL with Shield Animation ═══════ */}
       <section className="py-24" style={{ background: "var(--gradient-dark)" }}>
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">
-              A Clear and Structured Delivery Model
-            </h2>
-            <p className="mt-4 text-primary-foreground/60 max-w-2xl mx-auto">
-              A streamlined approach ensuring clarity, accountability, and seamless execution.
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-5 gap-12 items-start">
+            {/* Shield illustration */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="hidden lg:flex lg:col-span-1 items-center justify-center pt-8"
+            >
+              <ShieldAnimation className="w-40" />
+            </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {deliverySteps.map((s, i) => (
-              <motion.div
-                key={i}
-                initial="hidden" whileInView="visible" viewport={{ once: true }}
-                variants={fadeUp} custom={i}
-                className="bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-6 border border-primary-foreground/10 hover:border-primary/40 transition-all"
-              >
-                <div className="text-xs font-bold text-cyan uppercase tracking-wider mb-3">{s.step}</div>
-                <h3 className="text-lg font-bold text-primary-foreground mb-3">{s.title}</h3>
-                <p className="text-sm text-primary-foreground/60 leading-relaxed">{s.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+            {/* Steps */}
+            <div className="lg:col-span-4">
+              <div className="mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">
+                  A Clear and Structured Delivery Model
+                </h2>
+                <p className="mt-4 text-primary-foreground/60 max-w-2xl">
+                  A streamlined approach ensuring clarity, accountability, and seamless execution.
+                </p>
+              </div>
 
-          <div className="text-center mt-12">
-            <Link to="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-cyan hover:underline">
-              Understand Our Approach <ChevronRight className="w-4 h-4" />
-            </Link>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {deliverySteps.map((s, i) => (
+                  <motion.div
+                    key={i}
+                    initial="hidden" whileInView="visible" viewport={{ once: true }}
+                    variants={fadeUp} custom={i}
+                    className="bg-primary-foreground/5 backdrop-blur-sm rounded-xl p-6 border border-primary-foreground/10 hover:border-primary/40 transition-all"
+                  >
+                    <div className="text-xs font-bold text-cyan uppercase tracking-wider mb-3">{s.step}</div>
+                    <h3 className="text-lg font-bold text-primary-foreground mb-3">{s.title}</h3>
+                    <p className="text-sm text-primary-foreground/60 leading-relaxed">{s.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-10">
+                <Link to="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-cyan hover:underline">
+                  Understand Our Approach <ChevronRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -287,7 +317,7 @@ const Index = () => {
               A Long-Term Technology and Consulting Partner
             </h2>
             <p className="mt-4 text-muted-foreground">
-              CHN Technologies works with organisations that value consistency, accountability, and structured execution. Our approach is built around long-term partnerships rather than short-term engagements.
+              We value consistency, accountability, and structured execution — built around long-term partnerships.
             </p>
           </div>
 
@@ -297,7 +327,7 @@ const Index = () => {
                 key={card.title}
                 initial="hidden" whileInView="visible" viewport={{ once: true }}
                 variants={fadeUp} custom={i}
-                className="bg-card rounded-xl p-6 border border-border text-center hover:shadow-lg hover:border-primary/20 transition-all"
+                className="bg-card rounded-xl p-6 border border-border text-center hover:shadow-md hover:border-primary/20 transition-all"
               >
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-5 h-5 text-primary" />
@@ -319,7 +349,7 @@ const Index = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary-foreground text-primary font-bold rounded-lg hover:bg-primary-foreground/90 transition-all shadow-lg"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary-foreground text-primary font-bold rounded-md hover:bg-primary-foreground/90 transition-all shadow-lg"
           >
             Talk to CHN <ArrowRight className="w-4 h-4" />
           </Link>
