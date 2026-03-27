@@ -1,182 +1,247 @@
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, Server, Code, BarChart3, Users, Phone, Mail, MapPin } from "lucide-react";
-import heroTeam from "@/assets/hero-team.jpg";
-import workspace from "@/assets/workspace.jpg";
-import servers from "@/assets/servers.jpg";
+import { motion, useInView } from "framer-motion";
+import {
+  ArrowRight, ChevronLeft, ChevronRight, Server, Code,
+  BarChart3, Users, Shield, Network, Monitor, Settings,
+  Target,
+} from "lucide-react";
+import heroBg1 from "@/assets/hero-bg-1.jpg";
+import heroBg2 from "@/assets/hero-bg-2.jpg";
+import aboutOffice from "@/assets/about-office.jpg";
 
+/* ── Animation Variants ── */
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { delay: i * 0.12, duration: 0.5, ease: "easeOut" as const },
+    transition: { delay: i * 0.12, duration: 0.6, ease: "easeOut" as const },
   }),
 };
 
-const services = [
+/* ── Counter Hook ── */
+const useCounter = (end: number, duration = 2000) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!inView) return;
+    let start = 0;
+    const step = end / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= end) { setCount(end); clearInterval(timer); }
+      else setCount(Math.floor(start));
+    }, 16);
+    return () => clearInterval(timer);
+  }, [inView, end, duration]);
+
+  return { count, ref };
+};
+
+const CounterCard = ({ value, suffix = "", label }: { value: number; suffix?: string; label: string }) => {
+  const { count, ref } = useCounter(value);
+  return (
+    <motion.div ref={ref} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+      className="text-center py-8"
+    >
+      <div className="text-5xl md:text-6xl font-bold text-foreground">
+        +{count}{suffix}
+      </div>
+      <div className="text-muted-foreground mt-2 text-sm">{label}</div>
+    </motion.div>
+  );
+};
+
+/* ── Hero Slides (CHN content) ── */
+const slides = [
   {
-    icon: <Server className="w-6 h-6" />,
-    title: "IT Infrastructure",
-    desc: "Network management, cybersecurity, server administration, and end-user computing — all managed under one roof.",
-    link: "/network",
+    bg: heroBg1,
+    subtitle: "Integrated Technology & Consulting",
+    title: <>Run Technology Like<br /><strong>A Business System.</strong></>,
+    desc: "Integrated technology and consulting services built for stability, security, and scalable growth. We help you reduce risk and maintain control.",
   },
   {
-    icon: <Code className="w-6 h-6" />,
-    title: "Software Solutions",
-    desc: "Custom web and application development tailored to your workflows and business requirements.",
-    link: "/webdesign",
-  },
-  {
-    icon: <BarChart3 className="w-6 h-6" />,
-    title: "Digital Solutions",
-    desc: "Data analytics and process automation to improve visibility and operational efficiency.",
-    link: "/dataanalytics",
-  },
-  {
-    icon: <Users className="w-6 h-6" />,
-    title: "Consulting",
-    desc: "Workforce management, payroll compliance, and training programs aligned with your goals.",
-    link: "/workforce",
+    bg: heroBg2,
+    subtitle: "We Are Dedicated",
+    title: <>Inspired And Passionate<br /><strong>About Innovation.</strong></>,
+    desc: "End-to-end management of IT infrastructure, software solutions, digital analytics, and workforce consulting — all under one roof.",
   },
 ];
 
-const stats = [
-  { value: "50+", label: "Clients Served" },
-  { value: "99.9%", label: "System Uptime" },
-  { value: "24/7", label: "Support Available" },
-  { value: "10+", label: "Years Experience" },
+/* ── Services Data ── */
+const services = [
+  { icon: <Network className="w-8 h-8" />, title: "Network Management", desc: "End-to-end network design, deployment, and management ensuring reliable connectivity.", link: "/network" },
+  { icon: <Monitor className="w-8 h-8" />, title: "End User Computing", desc: "Desktop provisioning, VDI, device lifecycle management, and help desk services.", link: "/enduser" },
+  { icon: <Shield className="w-8 h-8" />, title: "Cyber Security", desc: "Proactive cybersecurity services to protect against evolving threats.", link: "/cybersecurity" },
+  { icon: <Server className="w-8 h-8" />, title: "Server Administration", desc: "Expert server administration ensuring reliable, secure, and peak performance.", link: "/server" },
+  { icon: <Code className="w-8 h-8" />, title: "Web Design & Development", desc: "Custom web solutions designed to represent your brand and drive engagement.", link: "/webdesign" },
+  { icon: <BarChart3 className="w-8 h-8" />, title: "Data Analytics", desc: "Data-driven insights and analytics capabilities for operational efficiency.", link: "/dataanalytics" },
+  { icon: <Settings className="w-8 h-8" />, title: "Automation", desc: "Process automation to improve efficiency, reduce errors, and free resources.", link: "/automation" },
+  { icon: <Users className="w-8 h-8" />, title: "Workforce Management", desc: "Build high-performing teams and reduce hiring overhead.", link: "/workforce" },
+  { icon: <Target className="w-8 h-8" />, title: "Payroll & Compliance", desc: "Error-free payroll processing with expert support and compliance.", link: "/payroll" },
+];
+
+/* ── Why Choose Cards ── */
+const whyCards = [
+  { title: "Structured Delivery", desc: "Clear ownership and phased execution for minimal disruption." },
+  { title: "Business Alignment", desc: "Solutions aligned with your business constraints and goals." },
+  { title: "Ongoing Support", desc: "Continuous monitoring, optimisation, and strategic advisory." },
+  { title: "Security First", desc: "Focus on stability, security, and scalability at every step." },
+  { title: "Measurable Outcomes", desc: "Track performance indicators and drive continuous improvement." },
+  { title: "Expert Teams", desc: "Certified professionals with deep domain expertise." },
 ];
 
 const Index = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slideDirection, setSlideDirection] = useState(1);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideDirection(1);
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToSlide = (dir: number) => {
+    setSlideDirection(dir);
+    setCurrentSlide((prev) => (prev + dir + slides.length) % slides.length);
+  };
+
+  const slide = slides[currentSlide];
+
   return (
     <div>
-      {/* ── HERO ── */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <motion.p
-                initial="hidden" animate="visible" variants={fadeUp} custom={0}
-                className="text-sm font-semibold text-primary tracking-wide uppercase mb-4"
-              >
-                Technology & Consulting Services
-              </motion.p>
+      {/* ═══════════ HERO SLIDER ═══════════ */}
+      <section className="relative h-[85vh] min-h-[600px] overflow-hidden">
+        {/* Background */}
+        <motion.div
+          key={currentSlide}
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="absolute inset-0"
+        >
+          <img src={slide.bg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-navy/70" />
+        </motion.div>
 
-              <motion.h1
-                initial="hidden" animate="visible" variants={fadeUp} custom={1}
-                className="text-4xl md:text-5xl font-bold text-foreground leading-[1.15] tracking-tight"
-              >
-                We help businesses{" "}
-                <span className="text-primary">run technology</span>{" "}
-                with structure and clarity.
-              </motion.h1>
+        {/* Large watermark text */}
+        <div className="absolute bottom-10 right-10 text-[10vw] font-black text-white/[0.03] leading-none select-none pointer-events-none hidden lg:block">
+          CHN
+        </div>
 
-              <motion.p
-                initial="hidden" animate="visible" variants={fadeUp} custom={2}
-                className="mt-5 text-lg text-muted-foreground leading-relaxed max-w-lg"
-              >
-                CHN Technologies delivers integrated IT, software, and consulting
-                services — so you can focus on growing your business, not managing systems.
-              </motion.p>
+        {/* Content */}
+        <div className="relative z-10 h-full flex items-center">
+          <div className="container mx-auto px-4">
+            <motion.p
+              key={`sub-${currentSlide}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-sm md:text-base uppercase tracking-[0.3em] text-white/80 mb-4"
+            >
+              {slide.subtitle}
+            </motion.p>
 
-              <motion.div
-                initial="hidden" animate="visible" variants={fadeUp} custom={3}
-                className="mt-8 flex flex-wrap gap-3"
-              >
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 px-7 py-3 bg-primary text-primary-foreground font-semibold rounded-md hover:bg-primary/90 transition-colors"
-                >
-                  Get in Touch <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-2 px-7 py-3 border border-border text-foreground font-semibold rounded-md hover:bg-muted transition-colors"
-                >
-                  About Us
-                </Link>
-              </motion.div>
-            </div>
+            <motion.h1
+              key={`title-${currentSlide}`}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="text-4xl md:text-5xl lg:text-6xl text-white leading-[1.15] max-w-3xl font-light"
+            >
+              {slide.title}
+            </motion.h1>
+
+            <motion.p
+              key={`desc-${currentSlide}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="mt-6 text-white/70 text-base md:text-lg max-w-2xl leading-relaxed"
+            >
+              {slide.desc}
+            </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="relative"
+              key={`btn-${currentSlide}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+              className="mt-8 flex items-center gap-5"
             >
-              <img
-                src={heroTeam}
-                alt="CHN Technologies team collaborating in office"
-                className="w-full rounded-2xl shadow-lg object-cover aspect-[16/10]"
-                width={1920} height={1080}
-              />
-              {/* Floating stat card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.5 }}
-                className="absolute -bottom-6 -left-4 md:-left-8 bg-card rounded-xl shadow-md border border-border px-5 py-4"
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-primary-foreground font-semibold rounded-sm hover:bg-primary/90 transition-all duration-300 group"
               >
-                <div className="text-2xl font-bold text-primary">99.9%</div>
-                <div className="text-xs text-muted-foreground mt-0.5">System Uptime</div>
-              </motion.div>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                Get Started
+              </Link>
             </motion.div>
           </div>
         </div>
-      </section>
 
-      {/* ── TRUSTED BY (stats bar) ── */}
-      <section className="py-12 border-y border-border bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial="hidden" whileInView="visible" viewport={{ once: true }}
-                variants={fadeUp} custom={i}
-                className="text-center"
-              >
-                <div className="text-3xl font-bold text-primary">{stat.value}</div>
-                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
+        {/* Arrows */}
+        <button
+          onClick={() => goToSlide(-1)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:bg-primary/80 transition-all"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={() => goToSlide(1)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:bg-primary/80 transition-all"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
+
+        {/* Dots */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => { setSlideDirection(i > currentSlide ? 1 : -1); setCurrentSlide(i); }}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                i === currentSlide ? "bg-primary w-8" : "bg-white/40"
+              }`}
+            />
+          ))}
         </div>
       </section>
 
-      {/* ── SERVICES ── */}
+      {/* ═══════════ SERVICES ═══════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mb-14">
-            <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-3">What We Do</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-              End-to-end services that keep your business running.
-            </h2>
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+              className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Our Services</motion.p>
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
+              className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+              Comprehensive Solutions For Your Business Growth
+            </motion.h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((svc, i) => (
               <motion.div
                 key={svc.title}
                 initial="hidden" whileInView="visible" viewport={{ once: true }}
-                variants={fadeUp} custom={i}
+                variants={fadeUp} custom={i % 3}
               >
                 <Link
                   to={svc.link}
-                  className="group flex gap-5 p-6 rounded-xl border border-border bg-card hover:border-primary/30 hover:shadow-sm transition-all"
+                  className="group block p-7 rounded-sm border border-border bg-card hover:shadow-lg hover:border-primary/30 transition-all duration-300 h-full"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                  <div className="w-16 h-16 rounded-sm bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                     {svc.icon}
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {svc.title}
-                    </h3>
-                    <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{svc.desc}</p>
-                    <span className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                      Learn more <ChevronRight className="w-3.5 h-3.5" />
-                    </span>
-                  </div>
+                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors mb-2">
+                    {svc.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{svc.desc}</p>
                 </Link>
               </motion.div>
             ))}
@@ -184,147 +249,217 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── WHY CHN (image + text) ── */}
+      {/* ═══════════ ABOUT SECTION ═══════════ */}
       <section className="py-20 md:py-28 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
+            {/* Image Side */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.7 }}
+              className="relative"
             >
-              <img
-                src={servers}
-                alt="Modern server infrastructure"
-                className="w-full rounded-2xl object-cover aspect-[4/3]"
-                loading="lazy" width={800} height={600}
-              />
+              <div className="relative">
+                <img
+                  src={aboutOffice}
+                  alt="CHN Technologies office"
+                  className="w-full rounded-sm object-cover aspect-[4/3]"
+                  loading="lazy" width={800} height={600}
+                />
+                {/* Dotted decoration */}
+                <div className="absolute -top-4 -left-4 w-24 h-24 opacity-20" style={{
+                  backgroundImage: "radial-gradient(circle, hsl(var(--primary)) 1px, transparent 1px)",
+                  backgroundSize: "8px 8px",
+                }} />
+              </div>
             </motion.div>
 
+            {/* Text Side */}
             <div>
-              <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Why CHN Technologies</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-                A partner that understands your operations.
-              </h2>
-              <p className="mt-5 text-muted-foreground leading-relaxed">
-                We don't just deploy solutions and walk away. Our approach is structured
-                around long-term partnership — continuous support, clear accountability,
-                and outcomes tied to your business goals.
-              </p>
+              <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+                className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                That's Why We're Your Trusted Technology Partner.
+              </motion.h2>
 
-              <div className="mt-8 space-y-4">
+              <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
+                className="mt-5 text-muted-foreground leading-relaxed">
+                CHN Technologies does not approach challenges as isolated technology or people issues.
+                We focus on how systems, processes, and teams interact in real operational environments.
+              </motion.p>
+
+              {/* Progress Bar */}
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}
+                className="mt-8">
+                <div className="flex justify-between mb-2">
+                  <span className="text-sm font-semibold text-foreground">Work Success</span>
+                  <span className="text-sm font-semibold text-primary">95%</span>
+                </div>
+                <div className="w-full bg-border rounded-full h-2.5">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "95%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, delay: 0.5 }}
+                    className="bg-primary h-2.5 rounded-full"
+                  />
+                </div>
+              </motion.div>
+
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}
+                className="mt-6 space-y-3">
                 {[
                   "Structured delivery with clear ownership",
                   "Solutions aligned with your business constraints",
-                  "Ongoing support beyond implementation",
-                  "Focus on stability, security, and scalability",
                 ].map((point, i) => (
-                  <motion.div
-                    key={i}
-                    initial="hidden" whileInView="visible" viewport={{ once: true }}
-                    variants={fadeUp} custom={i}
-                    className="flex items-start gap-3"
-                  >
-                    <div className="mt-1 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <ChevronRight className="w-3 h-3 text-primary" />
                     </div>
-                    <span className="text-foreground">{point}</span>
-                  </motion.div>
+                    <span className="text-sm text-foreground">{point}</span>
+                  </div>
                 ))}
-              </div>
+              </motion.div>
 
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-primary hover:underline"
-              >
-                More about our approach <ArrowRight className="w-4 h-4" />
-              </Link>
+              {/* Mini stat cards */}
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4}
+                className="mt-8 flex gap-6">
+                <div className="flex items-center gap-3 bg-card rounded-sm border border-border px-4 py-3">
+                  <Server className="w-10 h-10 text-primary/30" />
+                  <div>
+                    <div className="text-sm font-bold text-foreground">IT Solutions</div>
+                    <div className="text-xs text-muted-foreground uppercase">12+ Services</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-card rounded-sm border border-border px-4 py-3">
+                  <Users className="w-10 h-10 text-primary/30" />
+                  <div>
+                    <div className="text-sm font-bold text-foreground">Consulting</div>
+                    <div className="text-xs text-muted-foreground uppercase">3+ Domains</div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── HOW WE WORK ── */}
+      {/* ═══════════ STATS COUNTER ═══════════ */}
+      <section className="py-16 border-y border-border bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 divide-x divide-border">
+            <CounterCard value={50} suffix="+" label="Clients Served" />
+            <CounterCard value={100} suffix="+" label="Projects Completed" />
+            <CounterCard value={12} suffix="+" label="Services Offered" />
+            <CounterCard value={10} suffix="+" label="Years Experience" />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ WHY CHOOSE US ═══════════ */}
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-3">Our Process</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-                A clear path from assessment to results.
-              </h2>
-              <p className="mt-5 text-muted-foreground leading-relaxed max-w-lg">
-                Every engagement follows a structured approach — so there are no surprises,
-                just measurable progress.
-              </p>
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+              className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Why Choose Us</motion.p>
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
+              className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+              Our Delivery Approach
+            </motion.h2>
+          </div>
 
-              <div className="mt-10 space-y-6">
-                {[
-                  { step: "01", title: "Assess", desc: "Understand your current systems, challenges, and priorities." },
-                  { step: "02", title: "Design", desc: "Build a realistic roadmap aligned with your business goals." },
-                  { step: "03", title: "Implement", desc: "Execute with control — phased delivery, minimal disruption." },
-                  { step: "04", title: "Support", desc: "Ongoing monitoring, optimisation, and improvement." },
-                ].map((item, i) => (
-                  <motion.div
-                    key={item.step}
-                    initial="hidden" whileInView="visible" viewport={{ once: true }}
-                    variants={fadeUp} custom={i}
-                    className="flex gap-4"
-                  >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-primary/20 flex items-center justify-center text-sm font-bold text-primary">
-                      {item.step}
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground mt-0.5">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyCards.map((card, i) => (
+              <motion.div
+                key={card.title}
+                initial="hidden" whileInView="visible" viewport={{ once: true }}
+                variants={fadeUp} custom={i % 3}
+                className="group p-7 border border-border rounded-sm bg-card hover:bg-primary hover:border-primary transition-all duration-300 cursor-default"
+              >
+                <div className="w-14 h-14 rounded-sm bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-white/20 group-hover:text-white transition-all duration-300">
+                  <span className="text-2xl font-bold">{String(i + 1).padStart(2, "0")}</span>
+                </div>
+                <h3 className="text-lg font-bold text-foreground group-hover:text-white transition-colors mb-2">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-white/70 transition-colors">
+                  {card.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <img
-                src={workspace}
-                alt="Clean workspace with analytics dashboard"
-                className="w-full rounded-2xl object-cover aspect-square"
-                loading="lazy" width={800} height={800}
-              />
+      {/* ═══════════ CTA BANNER ═══════════ */}
+      <section className="relative py-24 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+              className="text-3xl md:text-5xl font-bold text-white">
+              Ready to Transform Your Business?
+            </motion.h2>
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
+              className="mt-5 text-lg text-white/70">
+              Let's discuss how CHN Technologies can support your operational goals with integrated technology and consulting services.
+            </motion.p>
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}
+              className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-navy font-bold rounded-sm hover:bg-white/90 transition-all group"
+              >
+                Contact Us <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                to="/about"
+                className="inline-flex items-center gap-2 px-8 py-3.5 border border-white/30 text-white font-semibold rounded-sm hover:bg-white/10 transition-all"
+              >
+                Learn More
+              </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="py-20 bg-primary">
+      {/* ═══════════ PROCESS / DELIVERY MODEL ═══════════ */}
+      <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground">
-              Ready to get started?
-            </h2>
-            <p className="mt-4 text-lg text-primary-foreground/80">
-              Let's discuss how CHN Technologies can support your business.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary-foreground text-primary font-bold rounded-md hover:bg-primary-foreground/90 transition-colors"
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+              className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Our Process</motion.p>
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
+              className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+              A Clear Path From Assessment To Results
+            </motion.h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { step: "01", title: "Assess", desc: "Understand existing systems, processes, risks, and operational challenges." },
+              { step: "02", title: "Design", desc: "Create a structured roadmap aligned with business objectives and scalability." },
+              { step: "03", title: "Implement", desc: "Execute solutions using a phased approach to minimise disruption." },
+              { step: "04", title: "Support", desc: "Ongoing monitoring, support, and optimisation as business needs evolve." },
+            ].map((item, i) => (
+              <motion.div
+                key={item.step}
+                initial="hidden" whileInView="visible" viewport={{ once: true }}
+                variants={fadeUp} custom={i}
+                className="relative text-center p-7 bg-card border border-border rounded-sm group hover:border-primary/30 transition-all"
               >
-                Contact Us <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href="tel:+911234567890"
-                className="inline-flex items-center gap-2 px-8 py-3.5 border border-primary-foreground/30 text-primary-foreground font-semibold rounded-md hover:bg-primary-foreground/10 transition-colors"
-              >
-                <Phone className="w-4 h-4" /> Call Now
-              </a>
-            </div>
+                <div className="text-5xl font-black text-primary/10 group-hover:text-primary/20 transition-colors mb-3">
+                  {item.step}
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                {i < 3 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 text-border">
+                    <ArrowRight className="w-6 h-6" />
+                  </div>
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

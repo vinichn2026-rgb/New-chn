@@ -1,61 +1,106 @@
 import { Link } from "react-router-dom";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaLinkedinIn, FaInstagram, FaYoutube, FaFacebookF } from "react-icons/fa";
 import chnLogo from "@/assets/chn-logo.png";
 
 const SiteFooter = () => {
   return (
-    <footer className="w-full bg-secondary/50 py-6 px-5">
-      <div className="container mx-auto">
-        <div className="bg-card rounded-xl border border-border shadow-sm overflow-hidden flex flex-col md:flex-row items-center">
-          {/* Logo Section */}
-          <div className="bg-primary/5 px-8 py-6 flex items-center justify-center md:min-w-[180px]">
-            <img src={chnLogo} alt="CHN Technologies" className="w-28" />
+    <footer className="w-full" style={{ background: "var(--gradient-dark)" }}>
+      {/* Main Footer */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Brand */}
+          <div>
+            <img src={chnLogo} alt="CHN Technologies" className="h-12 mb-5 brightness-0 invert" />
+            <p className="text-sm text-white/60 leading-relaxed">
+              Integrated technology and consulting services built for stability,
+              security, and scalable growth.
+            </p>
+            <div className="mt-6">
+              <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Contact Us 24/7</p>
+              <a href="tel:+911234567890" className="text-lg font-semibold text-white hover:text-primary transition-colors">
+                +91 XXXXXXXXXX
+              </a>
+            </div>
           </div>
 
-          {/* Content */}
-          <div className="flex-1 px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
-            <div className="text-center md:text-left">
-              <h4 className="text-base font-semibold text-foreground tracking-tight">CHN Technologies</h4>
-              <p className="text-sm text-muted-foreground mt-1">
-                Integrated technology and consulting services built for stability, security, and scalable growth.
-              </p>
-            </div>
+          {/* Explore Links */}
+          <div>
+            <h4 className="text-white font-semibold text-lg mb-5">Explore Links</h4>
+            <ul className="space-y-3">
+              {[
+                { label: "Home", to: "/" },
+                { label: "About Us", to: "/about" },
+                { label: "Blogs", to: "/blogs" },
+                { label: "Careers", to: "/careers" },
+                { label: "Contact", to: "/contact" },
+              ].map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} className="text-sm text-white/60 hover:text-primary transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            <div className="flex flex-col items-center md:items-end gap-3">
-              <div className="flex flex-wrap gap-5 text-sm text-foreground/80">
-                <span className="flex items-center gap-2">
-                  <FaPhoneAlt className="text-primary text-xs" /> +91 XXXXXXXXXX
-                </span>
-                <span className="flex items-center gap-2">
-                  <FaEnvelope className="text-primary text-xs" /> info@chntechnologies.com
-                </span>
-              </div>
-              <div className="flex gap-3">
-                {[
-                  { icon: FaLinkedinIn, href: "#" },
-                  { icon: FaInstagram, href: "#" },
-                  { icon: FaYoutube, href: "#" },
-                ].map(({ icon: Icon, href }, i) => (
-                  <a
-                    key={i}
-                    href={href}
-                    className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:-translate-y-0.5"
-                  >
-                    <Icon className="text-sm" />
-                  </a>
-                ))}
-              </div>
-            </div>
+          {/* Services */}
+          <div>
+            <h4 className="text-white font-semibold text-lg mb-5">Our Services</h4>
+            <ul className="space-y-3">
+              {[
+                { label: "Network Management", to: "/network" },
+                { label: "Cyber Security", to: "/cybersecurity" },
+                { label: "Web Design", to: "/webdesign" },
+                { label: "Data Analytics", to: "/dataanalytics" },
+                { label: "Workforce Management", to: "/workforce" },
+              ].map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} className="text-sm text-white/60 hover:text-primary transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-white font-semibold text-lg mb-5">Get In Touch</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <FaPhoneAlt className="text-primary mt-1 flex-shrink-0" />
+                <span className="text-sm text-white/60">+91 XXXXXXXXXX</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaEnvelope className="text-primary mt-1 flex-shrink-0" />
+                <span className="text-sm text-white/60">info@chntechnologies.com</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaMapMarkerAlt className="text-primary mt-1 flex-shrink-0" />
+                <span className="text-sm text-white/60">Hyderabad, India</span>
+              </li>
+            </ul>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Links */}
-        <div className="mt-4 flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
-          <Link to="/about" className="hover:text-primary transition-colors">About</Link>
-          <Link to="/contact" className="hover:text-primary transition-colors">Contact</Link>
-          <Link to="/careers" className="hover:text-primary transition-colors">Careers</Link>
-          <Link to="/blogs" className="hover:text-primary transition-colors">Blogs</Link>
-          <span>© {new Date().getFullYear()} CHN Technologies. All rights reserved.</span>
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10">
+        <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex gap-3">
+            {[FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube].map((Icon, i) => (
+              <a
+                key={i}
+                href="#"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:bg-primary hover:border-primary hover:text-white transition-all duration-300"
+              >
+                <Icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
+          <p className="text-sm text-white/40">
+            © {new Date().getFullYear()} <span className="text-primary font-medium">CHN Technologies.</span> All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
