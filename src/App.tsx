@@ -12,6 +12,7 @@ import Blogs from "./pages/Blogs";
 import Careers from "./pages/Careers";
 import WhatWeThink from "./pages/WhatWeThink";
 import ServicePage from "./pages/ServicePage";
+import SubmenuPage from "./pages/SubmenuPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,18 +40,21 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <SiteNavbar />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/whatwethink" element={<WhatWeThink />} />
-          {Object.entries(services).map(([key, config]) => (
-            <Route key={key} path={`/${key}`} element={<ServicePage {...config} />} />
-          ))}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <main className="pt-[130px] md:pt-[130px] sm:pt-[90px] pt-[90px]">
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/whatwethink" element={<WhatWeThink />} />
+            {Object.entries(services).map(([key, config]) => (
+              <Route key={key} path={`/${key}`} element={<ServicePage {...config} />} />
+            ))}
+            <Route path="/:slug" element={<SubmenuPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
         <SiteFooter />
       </BrowserRouter>
     </TooltipProvider>

@@ -18,4 +18,23 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1200,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes('node_modules')) return;
+
+          const modulePath = id.toString().split('node_modules/')[1];
+          if (!modulePath) return 'vendor';
+
+          const pkg = modulePath.split('/')[0].startsWith('@')
+            ? modulePath.split('/').slice(0, 2).join('/')
+            : modulePath.split('/')[0];
+
+          return `vendor-${pkg.replace('@', '').replace('/', '-')}`;
+        },
+      },
+    },
+  },
 }));

@@ -28,7 +28,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
               { icon: <Phone className="w-6 h-6" />, title: "Business Enquiries", desc: "Technology, digital, and infrastructure discussions.", info: "+91 XXXXXXXXXX" },
-              { icon: <Mail className="w-6 h-6" />, title: "Consulting & Advisory", desc: "Workforce, payroll & compliance, and training.", info: "info@chntechnologies.com" },
+              { icon: <Mail className="w-6 h-6" />, title: "Consulting & Advisory", desc: "Workforce, payroll & compliance, and training.", info: "kali.me@gmail.com" },
               { icon: <MapPin className="w-6 h-6" />, title: "Office Location", desc: "Visit us for in-person discussions.", info: "Hyderabad, India" },
             ].map((item, i) => (
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}

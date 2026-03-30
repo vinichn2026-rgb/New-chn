@@ -18,7 +18,7 @@ const SiteFooter = () => {
             <div className="mt-6">
               <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Contact Us 24/7</p>
               <a href="tel:+911234567890" className="text-lg font-semibold text-white hover:text-primary transition-colors">
-                +91 XXXXXXXXXX
+               +91-9384817323 <br/>+91-7010203031
               </a>
             </div>
           </div>
@@ -69,7 +69,7 @@ const SiteFooter = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <FaPhoneAlt className="text-primary mt-1 flex-shrink-0" />
-                <span className="text-sm text-white/60">+91 XXXXXXXXXX</span>
+                <span className="text-sm text-white/60">+91-9384817323 <br/> +91-7010203031</span>
               </li>
               <li className="flex items-start gap-3">
                 <FaEnvelope className="text-primary mt-1 flex-shrink-0" />
@@ -77,7 +77,7 @@ const SiteFooter = () => {
               </li>
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt className="text-primary mt-1 flex-shrink-0" />
-                <span className="text-sm text-white/60">Hyderabad, India</span>
+                <span className="text-sm text-white/60">Chennai, India</span>
               </li>
             </ul>
           </div>
@@ -101,6 +101,20 @@ const SiteFooter = () => {
           <p className="text-sm text-white/40">
             © {new Date().getFullYear()} <span className="text-primary font-medium">CHN Technologies.</span> All rights reserved.
           </p>
+        </div>
+      </div>
+      <div className="border-t border-white/10 bg-slate-900">
+        <div className="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-white/70">
+          <div className="flex items-center gap-4">
+            <span>info@chntechnologies.com</span>
+            <span>|</span>
+            <span>+91-9384817323 <br/> +91-7010203031</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <Link to="/terms" className="hover:text-primary">Terms & Condition</Link>
+            <Link to="/privacy" className="hover:text-primary">Privacy Policy</Link>
+            <Link to="/contact" className="hover:text-primary">Contact Us</Link>
+          </div>
         </div>
       </div>
     </footer>
