@@ -547,7 +547,7 @@ const Index = () => {
       </section>
 
       {/* ----------- FOOTER ----------- */}
-      <section className="min-h-screen snap-start flex flex-col justify-center bg-[#0d1117]">
+      <section className="snap-end">
         <SiteFooter />
       </section>
 
