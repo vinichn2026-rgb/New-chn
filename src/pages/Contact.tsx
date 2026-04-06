@@ -64,7 +64,7 @@ const ContactPage = () => {
 
                 /* --- SECTION 1: HERO (EXACT SAMPLE DESIGN) --- */
                 .CN_Hero {
-                  padding: 140px 5% 100px;
+                  padding: 78px 6% 38px;
                   background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
                   display: flex;
                   align-items: center;
@@ -222,11 +222,11 @@ const ContactPage = () => {
                     <span className="text-[#0060ff] font-bold tracking-[0.3em] uppercase mb-6 block">Strategic Engagement</span>
                     <h1 className="CN_Hero_Title">CONTACT US</h1>
                     <p className="CN_Hero_Subtitle">Conversations lead to clarity. Let’s start with yours.</p>
-                    <p className="CN_Hero_Desc">
+                    {/* <p className="CN_Hero_Desc">
                         Whether you are exploring technology services, digital solutions, consulting support, or career opportunities,
                         CHN Technologies is here to understand your requirements and guide you in the right direction.
                         Reach out to us to discuss challenges, ask questions, or begin a structured engagement.
-                    </p>
+                    </p> */}
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }} className="CN_Hero_Img">
