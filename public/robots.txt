@@ -1,14 +1,6 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
+# CHN Technologies | Digital Flagship Robots.txt
 User-agent: *
 Allow: /
+
+# Sitemap Location
+Sitemap: https://chnindia.com/sitemap.xml

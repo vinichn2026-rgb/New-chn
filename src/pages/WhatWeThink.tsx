@@ -1,70 +1,353 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowRight, Cpu, Users, Scale, TrendingUp } from "lucide-react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import {
+  Lightbulb,
+  Target,
+  Users,
+  Shield,
+  TrendingUp,
+  Handshake,
+  ArrowRight,
+  Zap,
+  Globe,
+  CheckCircle2
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const } }),
-};
+const WhatWeThink = () => {
+  const coreValues = [
+    {
+      title: "Integrity",
+      desc: "Acting with complete transparency, ensuring clients' interests are always protected through structured accountability.",
+      icon: <Shield size={28} />
+    },
+    {
+      title: "Innovation",
+      desc: "Embracing change and thinking ahead to deliver future-ready solutions that solve complex business challenges.",
+      icon: <Lightbulb size={28} />
+    },
+    {
+      title: "Client-Centricity",
+      desc: "Your goals are our mission. We build every solution with your unique business constraints and objectives in mind.",
+      icon: <Target size={28} />
+    },
+    {
+      title: "Accountability",
+      desc: "Owning our outcomes and promises, delivering consistency that builds long-term institutional trust.",
+      icon: <TrendingUp size={28} />
+    },
+    {
+      title: "Collaboration",
+      desc: "Working as a unified force with clients and partners to ensure shared success and operational harmony.",
+      icon: <Handshake size={28} />
+    },
+    {
+      title: "People-First",
+      desc: "Prioritising workforce empowerment and human-centric design in every technology-driven solution we deploy.",
+      icon: <Users size={28} />
+    }
+  ];
 
-const WhatWeThink = () => (
-  <div>
-    <section className="relative py-28 md:py-36 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "30px 30px" }} />
-      <div className="container mx-auto px-4 relative z-10 text-center">
-        <motion.h1 initial="hidden" animate="visible" variants={fadeUp} custom={0} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">What We Think</motion.h1>
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={1} className="mt-4 flex items-center justify-center gap-2 text-sm text-white/60">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link><span>/</span><span className="text-white">What We Think</span>
+  return (
+    <div className="WT_WRAPPER">
+      <style>{`
+        .WT_WRAPPER {
+          font-family: 'Figtree', 'Inter', sans-serif;
+          color: #1a2b4b;
+          background: #ffffff;
+        }
+
+        /* --- SECTION 1: HERO --- */
+        .WT_Hero {
+          position: relative;
+          height: 75vh;
+          min-height: 550px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          background: #002e5b;
+        }
+
+        .WT_Hero_Bg {
+          position: absolute;
+          inset: 0;
+          background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
+          background-size: cover;
+          background-position: center;
+          opacity: 0.3;
+          transform: scale(1.1);
+        }
+
+        .WT_Hero_Overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, rgba(0,46,91,0.9) 0%, rgba(0,46,91,0.7) 100%);
+        }
+
+        .WT_Hero_Content {
+          position: relative;
+          z-index: 10;
+          text-align: center;
+          max-width: 900px;
+          padding: 0 5%;
+        }
+
+        .WT_Badge {
+          display: inline-block;
+          color: #3b82f6;
+          font-weight: 800;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          font-size: 0.85rem;
+          margin-bottom: 25px;
+        }
+
+        .WT_Hero_H1 {
+          font-size: clamp(3rem, 6vw, 5rem);
+          font-weight: 900;
+          color: #ffffff;
+          line-height: 1.1;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+        }
+
+        .WT_Hero_P {
+          font-size: clamp(1.1rem, 2vw, 1.4rem);
+          color: rgba(255,255,255,0.8);
+          line-height: 1.8;
+          font-weight: 500;
+        }
+
+        /* --- SECTION 2: CONTEXT --- */
+        .WT_Context {
+          padding: 120px 5%;
+          background: #22314f;
+          color: #fff;
+          text-align: center;
+        }
+
+        .WT_Context_H1 {
+          font-size: clamp(1.8rem, 3vw, 2.5rem);
+          font-weight: 900;
+          margin-bottom: 30px;
+          color: #fff;
+          text-transform: uppercase;
+        }
+
+        .WT_Context_P {
+          max-width: 950px;
+          margin: 0 auto;
+          color: rgba(255,255,255,0.7);
+          font-size: 1.2rem;
+          line-height: 1.8;
+          font-weight: 400;
+        }
+
+        /* --- SECTION 3: VALUES GRID --- */
+        .WT_Values {
+          padding: 120px 5%;
+          background: #f8fafc;
+          text-align: center;
+        }
+
+        .WT_Values_Grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+          margin-top: 80px;
+          max-width: 1300px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (max-width: 1024px) {
+          .WT_Values_Grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+          .WT_Values_Grid { grid-template-columns: 1fr; }
+        }
+
+        .WT_Value_Card {
+          background: white;
+          padding: 60px 40px;
+          border-radius: 40px;
+          text-align: left;
+          position: relative;
+          overflow: hidden;
+          transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 1px solid #e2e8f0;
+          z-index: 1;
+        }
+
+        .WT_Value_Card::before {
+          content: "";
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 0;
+          background: linear-gradient(180deg, #1e3a8a 0%, #22314f 100%);
+          z-index: -1;
+          transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .WT_Value_Card:hover::before { height: 100%; }
+        .WT_Value_Card:hover h3, 
+        .WT_Value_Card:hover p,
+        .WT_Value_Card:hover .WT_Icon { color: #ffffff !important; }
+
+        .WT_Icon {
+          width: 70px;
+          height: 70px;
+          background: #eff6ff;
+          color: #3b82f6;
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 30px;
+          transition: 0.3s;
+        }
+
+        .WT_Value_Card:hover .WT_Icon { background: rgba(255,255,255,0.1); }
+        .WT_Value_Card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; color: #1a2b4b; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .WT_Value_Card p { color: #64748b; line-height: 1.7; font-size: 1.05rem; transition: 0.3s; }
+
+        /* --- SECTION 4: STRATEGIC FRAMEWORK --- */
+        .WT_Framework {
+          padding: 120px 5%;
+          display: flex;
+          align-items: center;
+          gap: 100px;
+          background: #ffffff;
+        }
+
+        .WT_Framework_Content { flex: 1; }
+        .WT_Framework_Img { flex: 1; position: relative; }
+        .WT_Framework_Img img { 
+          width: 100%; border-radius: 50px; 
+          box-shadow: 0 40px 100px rgba(0,0,0,0.1); 
+          border: 15px solid #fff;
+        }
+
+        .WT_Block { margin-bottom: 60px; }
+        .WT_Block_Title { font-size: 2rem; font-weight: 900; color: #1a2b4b; margin-bottom: 20px; text-transform: uppercase; display: flex; align-items: center; gap: 15px; }
+        .WT_Block_Circle { width: 45px; height: 45px; background: #3b82f6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .WT_Block_P { color: #64748b; font-size: 1.1rem; line-height: 1.8; margin-left: 60px; }
+
+        @media (max-width: 1024px) {
+          .WT_Framework { flex-direction: column; text-align: center; }
+          .WT_Block_Title { justify-content: center; }
+          .WT_Block_P { margin-left: 0; }
+        }
+      `}</style>
+
+      {/* SECTION 1: HERO */}
+      <section className="WT_Hero">
+        <motion.div 
+          initial={{ scale: 1.1, opacity: 0 }} 
+          animate={{ scale: 1, opacity: 0.3 }} 
+          transition={{ duration: 1.5 }}
+          className="WT_Hero_Bg" 
+        />
+        <div className="WT_Hero_Overlay" />
+        <div className="WT_Hero_Content">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+            className="WT_Badge"
+          >
+            OUR PHILOSOPHY
+          </motion.span>
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
+            className="WT_Hero_H1"
+          >
+            Empowering Enterprises with <span className="text-blue-500">Smart Tech</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}
+            className="WT_Hero_P"
+          >
+            A consistent, accountability-driven approach to solving complex business challenges 
+            through structured technology and strategy.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* SECTION 2: CONTEXT */}
+      <section className="WT_Context">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <h2 className="WT_Context_H1">SIMPLIFYING OPERATIONS, DRIVING MEASURABLE GROWTH</h2>
+          <p className="WT_Context_P">
+            At CHN Technologies, we believe that clear thinking leads to better results. 
+            We combine innovation, strategy, and execution to bridge the gap between technical potential 
+            and real-world business success. We focus on long-term stability and people-first solutions.
+          </p>
         </motion.div>
-      </div>
-    </section>
+      </section>
 
-    <section className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-          className="p-10 bg-card border border-border rounded-sm relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-bl-full" />
-          <span className="text-xs font-bold uppercase tracking-widest text-primary">Executive Insight</span>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight mt-3">The Paradox of Choice in Digital Infrastructure</h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">Complexity is a silent tax on innovation. We dismantle the myth that "more is better," proving that high-fidelity, minimalist architectures are the ultimate competitive advantage for the modern enterprise.</p>
-          <Link to="/contact" className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-primary hover:underline group">
-            Read Full Analysis <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </motion.div>
-      </div>
-    </section>
+      {/* SECTION 3: CORE VALUES */}
+      <section className="WT_Values">
+        <span className="WT_Badge" style={{ marginBottom: '15px' }}>Foundational Pillars</span>
+        <h2 className="WT_Hero_H1" style={{ color: '#1a2b4b', fontSize: '2.8rem', margin: 0 }}>Values That Drive Us</h2>
 
-    <section className="py-20 bg-muted/20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-foreground text-center mb-12">Core Domains</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { icon: <Cpu className="w-7 h-7" />, title: "Systems", desc: "Security-first infrastructure DNA." },
-            { icon: <Users className="w-7 h-7" />, title: "Workforce", desc: "Human-technology interface optimisation." },
-            { icon: <Scale className="w-7 h-7" />, title: "Governance", desc: "Structural integrity and compliance." },
-            { icon: <TrendingUp className="w-7 h-7" />, title: "Maturity", desc: "Process-driven business scaling." },
-          ].map((item, i) => (
-            <motion.div key={item.title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
-              className="p-7 border border-border rounded-sm bg-card hover:border-primary/30 hover:shadow-sm transition-all text-center group">
-              <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-white transition-all">{item.icon}</div>
-              <h3 className="font-bold text-foreground mb-1">{item.title}</h3>
-              <p className="text-sm text-muted-foreground">{item.desc}</p>
+        <div className="WT_Values_Grid">
+          {coreValues.map((value, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="WT_Value_Card"
+            >
+              <div className="WT_Icon">{value.icon}</div>
+              <h3>{value.title}</h3>
+              <p>{value.desc}</p>
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="py-20" style={{ background: "var(--gradient-hero)" }}>
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">Ready for a Strategic Session?</h2>
-        <p className="mt-4 text-white/70 max-w-xl mx-auto">Our thinking is the blueprint. Let's align your next operational milestone with a strategy designed for performance.</p>
-        <Link to="/contact" className="inline-flex items-center gap-2 mt-8 px-8 py-3.5 bg-white text-navy font-bold rounded-sm hover:bg-white/90 transition-all group">
-          Book Strategy Session <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-        </Link>
-      </div>
-    </section>
-  </div>
-);
+      {/* SECTION 4: STRATEGIC FRAMEWORK */}
+      <section className="WT_Framework">
+        <div className="WT_Framework_Img">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Strategic Collaboration" />
+        </div>
+        <div className="WT_Framework_Content">
+          <span className="WT_Badge">OUR VISION & MISSION</span>
+          <h2 className="WT_Hero_H1" style={{ color: '#1a2b4b', fontSize: '2.8rem' }}>Strategic Long-Term <br /> Objectives</h2>
 
-export default WhatWeThink;
+          <div className="WT_Block">
+            <h3 className="WT_Block_Title">
+              <div className="WT_Block_Circle"><Target size={22} /></div>
+              Our Mission
+            </h3>
+            <p className="WT_Block_P">
+              To simplify operations, enrich workforce capabilities, and drive organisational growth 
+              by offering tailored consulting and tech solutions that deliver real-world impact 
+              and measurable financial clarity.
+            </p>
+          </div>
+
+          <div className="WT_Block">
+            <h3 className="WT_Block_Title">
+              <div className="WT_Block_Circle"><Lightbulb size={22} /></div>
+              Our Vision
+            </h3>
+            <p className="WT_Block_P">
+              To become a leading force in empowering businesses through people-first consulting 
+              and technology-driven solutions that allow organisations to focus on expansion 
+              rather than technical friction.
+            </p>
+          </div>
+
+          <Link to="/contact">
+            <button className="bg-[#3b82f6] text-white px-10 py-5 rounded-full font-bold shadow-xl hover:bg-[#1a2b4b] transition-all flex items-center gap-3">
+              Explore Our Services <ArrowRight size={20} />
+            </button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default WhatWeThink;

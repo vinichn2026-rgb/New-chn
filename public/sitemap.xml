@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://chnindia.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://chnindia.com/about</loc><priority>0.8</priority></url>
+  <url><loc>https://chnindia.com/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://chnindia.com/whatwethink</loc><priority>0.8</priority></url>
+  
+  <!-- Technology Services -->
+  <url><loc>https://chnindia.com/technology</loc><priority>0.7</priority></url>
+  <url><loc>https://chnindia.com/network</loc><priority>0.9</priority></url>
+  <url><loc>https://chnindia.com/enduser</loc><priority>0.9</priority></url>
+  <url><loc>https://chnindia.com/cybersecurity</loc><priority>0.9</priority></url>
+  <url><loc>https://chnindia.com/server</loc><priority>0.9</priority></url>
+  <url><loc>https://chnindia.com/lancabling</loc><priority>0.9</priority></url>
+  
+  <!-- Software Solutions -->
+  <url><loc>https://chnindia.com/software-solutions</loc><priority>0.7</priority></url>
+  <url><loc>https://chnindia.com/webdesign</loc><priority>0.9</priority></url>
+  <url><loc>https://chnindia.com/application</loc><priority>0.9</priority></url>
+  
+  <!-- Digital Solutions -->
+  <url><loc>https://chnindia.com/digital-solutions</loc><priority>0.7</priority></url>
+  <url><loc>https://chnindia.com/dataanalytics</loc><priority>0.9</priority></url>
+  <url><loc>https://chnindia.com/automation</loc><priority>0.9</priority></url>
+  
+  <!-- Consulting -->
+  <url><loc>https://chnindia.com/consulting</loc><priority>0.7</priority></url>
+  <url><loc>https://chnindia.com/workforce</loc><priority>0.9</priority></url>
+  <url><loc>https://chnindia.com/payroll</loc><priority>0.9</priority></url>
+  <url><loc>https://chnindia.com/training</loc><priority>0.9</priority></url>
+  
+  <!-- Resources -->
+  <url><loc>https://chnindia.com/careers</loc><priority>0.6</priority></url>
+  <url><loc>https://chnindia.com/blogs</loc><priority>0.6</priority></url>
+</urlset>

@@ -16,7 +16,7 @@ const fadeUp = {
 
 const ServicePage = ({ title, subtitle, description, features }: ServicePageProps) => (
   <div>
-    <section className="relative py-28 md:py-36 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
+    <section className="relative pt-[160px] pb-24 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "30px 30px" }} />
       <div className="container mx-auto px-4 relative z-10 text-center">
         <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}

@@ -1,10 +1,11 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import SiteNavbar from "@/components/SiteNavbar";
 import SiteFooter from "@/components/SiteFooter";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
@@ -13,6 +14,21 @@ import Careers from "./pages/Careers";
 import WhatWeThink from "./pages/WhatWeThink";
 import ServicePage from "./pages/ServicePage";
 import SubmenuPage from "./pages/SubmenuPage";
+import NetworkManagement from "./pages/NetworkManagement";
+import CyberSecurity from "./pages/CyberSecurity";
+import EndUserComputing from "./pages/EndUser";
+import ServerAdministration from "./pages/ServerAdministration";
+import LANcabling from "./pages/LANcabling";
+import WebDesign from "./pages/WebDesign";
+import ApplicationDevelopment from "./pages/ApplicationDevelopment";
+import DataAnalytics from "./pages/DataAnalytics";
+import Automation from "./pages/Automation";
+import WorkforceManagement from "./pages/WorkforceManagement";
+import PayrollAndCompliance from "./pages/PayrollAndCompliance";
+import TrainingAndDevelopment from "./pages/TrainingAndDevelopment";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import TechnologyPage from "./pages/Technology";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,14 +49,18 @@ const services = {
   training: { title: "Training & Development", subtitle: "Consulting", description: "Custom learning programs aligned with your business goals and workforce development needs.", features: ["Corporate training programs", "Skill development workshops", "Leadership development", "Technical certifications", "Learning management systems"] },
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+const AppContent = () => {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
+  return (
+    <>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
         <SiteNavbar />
-        <main className="pt-[130px] md:pt-[130px] sm:pt-[90px] pt-[90px]">
+        <ScrollToTop />
+        <main>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/contact" element={<Contact />} />
@@ -48,6 +68,21 @@ const App = () => (
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/whatwethink" element={<WhatWeThink />} />
+            <Route path="/network" element={<NetworkManagement />} />
+            <Route path="/cybersecurity" element={<CyberSecurity />} />
+            <Route path="/enduser" element={<EndUserComputing />} />
+            <Route path="/server" element={<ServerAdministration />} />
+            <Route path="/lancabling" element={<LANcabling />} />
+            <Route path="/webdesign" element={<WebDesign />} />
+            <Route path="/application" element={<ApplicationDevelopment />} />
+            <Route path="/dataanalytics" element={<DataAnalytics />} />
+            <Route path="/automation" element={<Automation />} />
+            <Route path="/workforce" element={<WorkforceManagement />} />
+            <Route path="/payroll" element={<PayrollAndCompliance />} />
+            <Route path="/training" element={<TrainingAndDevelopment />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/technology" element={<TechnologyPage />} />
             {Object.entries(services).map(([key, config]) => (
               <Route key={key} path={`/${key}`} element={<ServicePage {...config} />} />
             ))}
@@ -55,9 +90,18 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
-        <SiteFooter />
-      </BrowserRouter>
-    </TooltipProvider>
+        {/* Only show global footer if NOT on Home (Home has its own snap-integrated footer) */}
+        {!isHome && <SiteFooter />}
+      </TooltipProvider>
+    </>
+  );
+};
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   </QueryClientProvider>
 );
 

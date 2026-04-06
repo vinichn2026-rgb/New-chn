@@ -1,76 +1,466 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { Server, Code, Shield, Gavel, Lightbulb, CheckCircle } from "lucide-react";
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { BookOpen, Monitor, Code, Users, ShieldCheck, ArrowRight, User, Search, Filter, Calendar, Tag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const } }),
-};
+interface Insight {
+  id: number;
+  image?: string;
+  tag: string;
+  title: string;
+  desc: string;
+  author: string;
+  date: string;
+  iconCard?: boolean;
+}
 
-const Blogs = () => (
-  <div>
-    <section className="relative py-28 md:py-36 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "30px 30px" }} />
-      <div className="container mx-auto px-4 relative z-10 text-center">
-        <motion.h1 initial="hidden" animate="visible" variants={fadeUp} custom={0} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">Blog & Insights</motion.h1>
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={1} className="mt-4 flex items-center justify-center gap-2 text-sm text-white/60">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link><span>/</span><span className="text-white">Blogs</span>
-        </motion.div>
-      </div>
-    </section>
+const CHNInsights = () => {
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
-    <section className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">What Our Blog Covers</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Real operational questions faced by businesses.</h2>
+  const insightsRef = useRef<HTMLElement>(null);
+
+  const categories = ['All', 'Operations', 'Software', 'Governance', 'Workforce', 'Strategy', 'Quality'];
+
+  const allInsights: Insight[] = [
+    {
+      id: 1,
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      tag: "Operations",
+      title: "Technology Operations & Management",
+      desc: "Deep-dives into managing enterprise networks, systems, security, and infrastructure effectively for long-term scalability and operational stability.",
+      author: "IT Strategy Lead",
+      date: "Oct 24, 2026"
+    },
+    {
+      id: 2,
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+      tag: "Software",
+      title: "Digital & software practices in enterprise",
+      desc: "Perspectives on modern web platforms, applications, analytics, and automation systems tailored for real-world business environments and high performance.",
+      author: "Digital Architect",
+      date: "Oct 15, 2026"
+    },
+    {
+      id: 3,
+      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+      tag: "Governance",
+      title: "Execution & governance for modern firm",
+      desc: "Detailed articles focused on operational control, process maturity, and establishing reliable system structures to ensure corporate governance and asset protection.",
+      author: "Compliance Director",
+      date: "Sep 28, 2026"
+    },
+    {
+      id: 4,
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+      tag: "Workforce",
+      title: "Workforce & global compliance standards",
+      desc: "Understanding workforce structures, payroll practices, and statutory compliance for HR leaders managing complex multinational operations and regulatory shifts.",
+      author: "HR Advisory Lead",
+      date: "Sep 12, 2026"
+    },
+    {
+      id: 5,
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+      tag: "Strategy",
+      title: "Sustainable strategy and future-fit growth",
+      desc: "Analysing how business owners, IT decision-makers, and professionals can leverage practical technology strategies to drive sustainable organisational expansion.",
+      author: "Operations Lead",
+      date: "Aug 30, 2026"
+    },
+    {
+      id: 6,
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80",
+      tag: "Quality",
+      title: "Knowledge over frequency: An editorial",
+      desc: "Why we prioritise relevance and clarity over volume, ensuring every piece of content remains useful and actionable over long-term strategic horizons.",
+      author: "Editorial Board",
+      date: "Aug 22, 2026"
+    }
+  ];
+
+  const filteredInsights = allInsights.filter(item => {
+    const matchesCategory = activeCategory === 'All' || item.tag === activeCategory;
+    const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.desc.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <div className="BLOG_WRAPPER">
+      <style>{`
+        .BLOG_WRAPPER {
+          font-family: 'Figtree', 'Inter', sans-serif;
+          color: #1a2b4b;
+          background: #ffffff;
+        }
+
+        /* --- SECTION 1: HERO --- */
+        .BLOG_Hero {
+          position: relative;
+          height: 60vh;
+          min-height: 500px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #002e5b;
+          overflow: hidden;
+          padding-top: 80px;
+        }
+
+        .BLOG_Hero_Bg {
+          position: absolute;
+          inset: 0;
+          background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
+          background-size: cover;
+          background-position: center;
+          opacity: 0.15;
+          transform: scale(1.1);
+        }
+
+        .BLOG_Hero_Overlay {
+          position: absolute;
+          inset: 0;
+          // background: radial-gradient(circle at center, rgba(0,46,91,0.8) 0%, rgba(0,46,91,1) 100%);
+        }
+
+        .BLOG_Hero_Content {
+          position: relative;
+          z-index: 10;
+          text-align: center;
+          max-width: 900px;
+          padding: 0 5%;
+        }
+
+        .BLOG_Badge {
+          display: inline-block;
+          color: #3b82f6;
+          font-weight: 800;
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          font-size: 0.85rem;
+          margin-bottom: 25px;
+        }
+
+        .BLOG_Hero_H1 {
+          font-size: clamp(3rem, 6vw, 4.5rem);
+          font-weight: 900;
+          color: #ffffff;
+          line-height: 1.1;
+          margin-bottom: 35px;
+          text-transform: uppercase;
+        }
+
+        .BLOG_Search_Box {
+          background: rgba(255,255,255,0.05);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255,255,255,0.1);
+          border-radius: 100px;
+          padding: 8px 10px;
+          display: flex;
+          align-items: center;
+          max-width: 650px;
+          margin: 0 auto;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .BLOG_Search_Box input {
+          flex: 1;
+          background: transparent;
+          border: none;
+          outline: none;
+          color: #fff;
+          font-size: 1.1rem;
+          padding: 10px 20px;
+          font-weight: 500;
+        }
+        .BLOG_Search_Box input::placeholder { color: rgba(255,255,255,0.4); }
+
+        .BLOG_Search_Btn {
+           width: 50px; height: 50px; background: #3b82f6; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer;
+        }
+
+        /* --- SECTION 2: FILTER --- */
+        .BLOG_Filter_Bar {
+          position: sticky;
+          top: 80px;
+          z-index: 50;
+          background: rgba(255,255,255,0.95);
+          backdrop-filter: blur(20px);
+          border-bottom: 1px solid #f1f5f9;
+          padding: 25px 5%;
+        }
+
+        .BLOG_Filter_Flex {
+          max-width: 1300px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+        .BLOG_Filter_Flex::-webkit-scrollbar { display: none; }
+
+        .BLOG_Filter_Btn {
+          white-space: nowrap;
+          padding: 12px 30px;
+          border-radius: 100px;
+          font-weight: 800;
+          font-size: 0.9rem;
+          transition: 0.4s;
+          border: 1px solid #f1f5f9;
+          background: #fff;
+          color: #1a2b4b;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          cursor: pointer;
+        }
+        .BLOG_Filter_Btn:hover { border-color: #3b82f6; color: #3b82f6; }
+        .BLOG_Filter_Btn.active { 
+          background: #3b82f6; color: white; border-color: #3b82f6; 
+          box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        /* --- SECTION 3: INSIGHTS GRID --- */
+        .BLOG_Grid_Section {
+          padding: 100px 5%;
+          background: #fdfdfd;
+        }
+
+        .BLOG_Grid_Container { max-width: 1300px; margin: 0 auto; }
+
+        /* FEATURED SECTION */
+        .BLOG_Featured_Card {
+          background: #fff;
+          border-radius: 50px;
+          border: 1px solid #f1f5f9;
+          padding: 20px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          align-items: center;
+          margin-bottom: 100px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.03);
+          overflow: hidden;
+        }
+
+        @media (max-width: 1024px) {
+          .BLOG_Featured_Card { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        .BLOG_Featured_Img { border-radius: 40px; overflow: hidden; height: 500px; }
+        .BLOG_Featured_Img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .BLOG_Featured_Content { padding: 40px; text-align: left; }
+        .BLOG_Featured_H { font-size: 3rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; color: #1a2b4b; }
+
+        /* GRID */
+        .BLOG_Grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 30px;
+        }
+
+        @media (max-width: 1024px) {
+          .BLOG_Grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+          .BLOG_Grid { grid-template-columns: 1fr; }
+        }
+
+        .BLOG_Card {
+          background: #ffffff;
+          padding: 15px;
+          border-radius: 40px;
+          border: 1px solid #f1f5f9;
+          transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          text-align: left;
+          position: relative;
+          z-index: 10;
+          overflow: hidden;
+        }
+
+        .BLOG_Card_Img_Box { 
+          height: 250px; border-radius: 30px; overflow: hidden; margin-bottom: 30px; 
+          position: relative; 
+        }
+        .BLOG_Card_Img_Box img { width: 100%; height: 100%; object-fit: cover; transition: 0.7s; }
+        .BLOG_Card:hover .BLOG_Card_Img_Box img { transform: scale(1.1); }
+
+        .BLOG_Card_Overlay {
+          position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, #1e3a8a 100%);
+          opacity: 0; transition: 0.5s;
+        }
+        .BLOG_Card:hover .BLOG_Card_Overlay { opacity: 0.7; }
+
+        .BLOG_Card_Content { padding: 0 20px 25px; }
+        .BLOG_Card_Tag { 
+          color: #3b82f6; font-weight: 800; font-size: 0.75rem; 
+          text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; 
+        }
+        .BLOG_Card_H { font-size: 1.5rem; font-weight: 900; color: #1a2b4b; margin-bottom: 15px; line-height: 1.3; }
+        .BLOG_Card_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; font-weight: 500; margin-bottom: 25px; }
+
+        .BLOG_Card_Footer { border-top: 1px solid #f8fafc; padding-top: 20px; display: flex; align-items: center; justify-content: space-between; }
+        .BLOG_Author { display: flex; align-items: center; gap: 10px; }
+        .BLOG_Author_Dot { width: 8px; height: 8px; background: #3b82f6; border-radius: 50%; }
+
+        /* EMPTY STATE */
+        .BLOG_Empty { padding: 120px 0; text-align: center; }
+        .BLOG_Empty_Icon { width: 100px; height: 100px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; color: #cbd5e1; }
+      `}</style>
+
+      {/* SECTION 1: HERO */}
+      <section className="BLOG_Hero">
+        <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="BLOG_Hero_Bg" />
+        <div className="BLOG_Hero_Overlay" />
+        <div className="BLOG_Hero_Content text-center">
+          <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="BLOG_Badge">Corporate Insights</motion.span>
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1">Knowledge Led <br /> <span className="text-blue-500">Perspectives</span></motion.h1>
+
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.4 }} className="BLOG_Search_Box">
+            <Search size={22} className="text-blue-500 ml-4" />
+            <input
+              type="text" placeholder="Search insights, practices, or topics..."
+              value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button className="BLOG_Search_Btn" onClick={() => scrollToSection(insightsRef)}>
+              <ArrowRight size={22} />
+            </button>
+          </motion.div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { icon: <Server className="w-7 h-7" />, title: "Technology Operations", desc: "Managing networks, systems, security, and infrastructure effectively." },
-            { icon: <Code className="w-7 h-7" />, title: "Digital & Software", desc: "Web platforms, applications, analytics, and automation in business." },
-            { icon: <Shield className="w-7 h-7" />, title: "Workforce & Compliance", desc: "Workforce structures, payroll, statutory compliance, and training." },
-            { icon: <Gavel className="w-7 h-7" />, title: "Execution & Governance", desc: "Operational control, process maturity, and long-term stability." },
-          ].map((item, i) => (
-            <motion.div key={item.title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
-              className="p-7 border border-border rounded-sm bg-card hover:border-primary/30 hover:shadow-sm transition-all group">
-              <div className="w-14 h-14 rounded-sm bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-all">{item.icon}</div>
-              <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-            </motion.div>
+      </section>
+
+      {/* SECTION 2: FILTER BAR */}
+      <section className="BLOG_Filter_Bar">
+        <div className="BLOG_Filter_Flex">
+          <div className="flex items-center gap-4 mr-10">
+            <Filter size={18} className="text-slate-400" />
+            <span className="text-slate-400 font-bold uppercase text-xs tracking-widest hidden md:block">Refine Area:</span>
+          </div>
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`BLOG_Filter_Btn ${activeCategory === cat ? 'active' : ''}`}
+            >
+              {cat}
+            </button>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="py-20 bg-muted/20">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
-          <div>
-            <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Content Structure</p>
-            <h2 className="text-3xl font-bold text-foreground leading-tight mb-5">How Content Is Structured</h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">Each article is grounded in real operational scenarios, focused on understanding rather than short-lived trends.</p>
-            <div className="space-y-3">
-              {["Practical explanations", "Framework-based thinking", "Common mistakes and how to avoid them", "Contextual guidance for businesses"].map((item, i) => (
-                <div key={i} className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-primary flex-shrink-0" /><span className="text-sm text-foreground">{item}</span></div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Audience</p>
-            <h2 className="text-3xl font-bold text-foreground leading-tight mb-5">Who Benefits</h2>
-            <div className="space-y-3">
-              {["Business owners and founders", "Operations and HR leaders", "IT and digital decision-makers", "Professionals seeking practical understanding"].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 p-3 bg-card border border-border rounded-sm">
-                  <Lightbulb className="w-5 h-5 text-primary flex-shrink-0" /><span className="text-sm text-foreground">{item}</span>
+      {/* SECTION 3: GRID */}
+      <section ref={insightsRef} className="BLOG_Grid_Section">
+        <div className="BLOG_Grid_Container">
+
+          {/* FEATURED: Only show if no search/filter active */}
+          {!searchQuery && activeCategory === 'All' && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              className="BLOG_Featured_Card"
+            >
+              <div className="BLOG_Featured_Img">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Featured Article" />
+              </div>
+              <div className="BLOG_Featured_Content">
+                <span className="BLOG_Badge">EDITORIAL FOCUS</span>
+                <h2 className="BLOG_Featured_H">INSIGHTS FROM OUR STRATEGIC ADVISORS</h2>
+                <p className="text-slate-500 font-medium text-lg leading-relaxed mb-10">
+                  Comprehensive perspectives on technology, people, and unified corporate processes
+                  drawn from real-world digital flagship engagements.
+                </p>
+                <div className="flex items-center gap-6 pt-10 border-t border-slate-100">
+                  <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                    <User size={30} />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-[#1a2b4b]">CHN Strategic Board</h4>
+                    <p className="text-xs uppercase font-bold text-slate-400 tracking-widest">Industry Knowledge Directors</p>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-);
+              </div>
+            </motion.div>
+          )}
 
-export default Blogs;
+          <div className="flex items-center justify-between mb-12">
+            <h3 className="text-2xl font-black text-[#1a2b4b] uppercase tracking-tight">
+              {activeCategory} Insights
+            </h3>
+            <p className="text-slate-400 font-bold uppercase text-xs tracking-widest">Showing {filteredInsights.length} results</p>
+          </div>
+
+          <motion.div layout className="BLOG_Grid">
+            <AnimatePresence mode="popLayout">
+              {filteredInsights.map((insight) => (
+                <motion.div
+                  key={insight.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <div className="BLOG_Card">
+                    <div className="BLOG_Card_Img_Box">
+                      <img src={insight.image} alt={insight.title} />
+                      <div className="BLOG_Card_Overlay" />
+                    </div>
+                    <div className="BLOG_Card_Content text-left">
+                      <span className="BLOG_Card_Tag">{insight.tag}</span>
+                      <h3 className="BLOG_Card_H">{insight.title}</h3>
+                      <p className="BLOG_Card_P line-clamp-3">{insight.desc}</p>
+
+                      <div className="BLOG_Card_Footer">
+                        <div className="BLOG_Author">
+                          <div className="BLOG_Author_Dot" />
+                          <span className="text-[11px] font-black uppercase text-slate-400 tracking-widest">{insight.author}</span>
+                        </div>
+                        {/* <div className="text-blue-500"><ArrowRight size={18} /></div> */}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+
+          {filteredInsights.length === 0 && (
+            <div className="BLOG_Empty">
+              <div className="BLOG_Empty_Icon"><Search size={40} /></div>
+              <h4 className="text-2xl font-black text-[#1a2b4b] mb-4 uppercase">No Results Found</h4>
+              <p className="text-slate-400 font-medium mb-8">Refine your search term or select a different category.</p>
+              <button
+                className="text-blue-500 font-black uppercase text-sm tracking-widest"
+                onClick={() => { setActiveCategory('All'); setSearchQuery(''); }}
+              >
+                Reset All Filters
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* SECTION 4: CTA */}
+      <section style={{ padding: '81px 5%', textAlign: 'center', background: '#f8fafc' }}>
+        <h2 className="BLOG_Hero_H1" style={{ color: '#1a2b4b', fontSize: '3rem' }}>Stay Informed With <span className="text-blue-500">Expert Clarity</span></h2>
+        <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto mb-12">
+          Gain access to refined perspectives that matter to business owners,
+          IT decision-makers, and industry professionals.
+        </p>
+        <Link to="/contact">
+          <button className="bg-[#1a2b4b] text-white px-10 py-5 rounded-full font-black text-sm uppercase tracking-widest shadow-2xl hover:bg-blue-600 hover:scale-105 transition-all">
+            Inquire For Insights
+          </button>
+        </Link>
+      </section>
+    </div>
+  );
+};
+
+export default CHNInsights;

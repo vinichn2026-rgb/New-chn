@@ -1,79 +1,317 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowRight, Sprout, UserCheck, GraduationCap, TrendingUp, Briefcase } from "lucide-react";
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import {
+  Search, MapPin, Code, BarChart,
+  ArrowRight, Server, CheckCircle2, Award, Zap, Users,
+  Mail, Phone, Send, Target, Rocket, PenTool, Layout, LineChart
+} from 'lucide-react';
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const } }),
+const Careers = () => {
+  const [jobTitle, setJobTitle] = useState("");
+  const [location, setLocation] = useState("All Locations");
+
+  const categoriesRef = useRef<HTMLElement>(null);
+  const applyRef = useRef<HTMLElement>(null);
+
+  const handleSearch = () => {
+    if (!jobTitle && location === "All Locations") {
+      alert("Please enter a job title or select a location to search.");
+      return;
+    }
+    console.log("Searching for:", { jobTitle, location });
+    alert(`Searching for ${jobTitle || 'any position'} in ${location}...`);
+  };
+
+  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <div className="CR_WRAPPER">
+      <style>{`
+        .CR_WRAPPER {
+          font-family: 'Figtree', 'Inter', sans-serif;
+          color: #1a2b4b;
+          background: #ffffff;
+        }
+
+        /* --- SECTION 1: HERO (REFINED BANNER) --- */
+        .CR_Hero {
+          position: relative;
+          background: #f1f6ff;
+          min-height: 80vh;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          padding-top: 65px;
+        }
+
+        .CR_Hero_Navy_Shape {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 40%;
+          background: #002e5b;
+          z-index: 0;
+          clip-path: polygon(16% 0%, 100% 0%, 100% 100%, -6% 100%);
+        }
+
+        .CR_Hero_Content {
+          position: relative;
+          z-index: 10;
+          max-width: 1300px;
+          margin: 0 auto;
+          width: 100%;
+          padding: 0 5%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+          .CR_Hero_Content { grid-template-columns: 1fr; text-align: center; }
+          .CR_Hero_Navy_Shape { display: none; }
+          .CR_Hero_Right { display: none; }
+        }
+
+        .CR_Hero_H1 {
+          font-size: clamp(3rem, 5vw, 4.5rem);
+          font-weight: 900;
+          color: #1a1a1a;
+          line-height: 1.1;
+          margin-bottom: 20px;
+        }
+
+        .CR_Hero_P {
+          font-size: 1.1rem;
+          color: #64748b;
+          font-weight: 500;
+          margin-bottom: 40px;
+        }
+
+        .CR_Search_Bar {
+          background: white;
+          padding: 8px;
+          border-radius: 100px;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          max-width: 600px;
+          border: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 640px) {
+          .CR_Search_Bar { flex-direction: column; border-radius: 30px; padding: 20px; }
+        }
+
+        .CR_Input_Group {
+          flex: 1;
+          padding-left: 20px;
+          display: flex;
+          align-items: center;
+          border-right: 1px solid #f1f5f9;
+        }
+
+        .CR_Search_Btn {
+          background: #3b82f6;
+          color: white;
+          width: 55px;
+          height: 55px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: 0.3s;
+          border: none;
+          cursor: pointer;
+          box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+        .CR_Search_Btn:hover { background: #1e3a8a; transform: scale(1.05); }
+
+        /* --- SECTION 2: STREAMS --- */
+        .CR_Streams { padding: 120px 5%; background: #ffffff; text-align: center; }
+        .CR_Streams_Grid { 
+          display: grid; grid-template-columns: repeat(3, 1fr); 
+          gap: 30px; margin-top: 80px; max-width: 1300px; margin-left: auto; margin-right: auto;
+        }
+
+        @media (max-width: 1024px) {
+          .CR_Streams_Grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 640px) {
+          .CR_Streams_Grid { grid-template-columns: 1fr; }
+        }
+
+        .CR_Stream_Card {
+          background: #f8fafc; padding: 60px 40px; border-radius: 40px; text-align: left;
+          position: relative; overflow: hidden; transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 1px solid #f1f5f9; z-index: 1;
+        }
+
+        .CR_Stream_Card::before {
+          content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 0;
+          background: linear-gradient(180deg, #1e3a8a 0%, #22314f 100%); z-index: -1;
+          transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .CR_Stream_Card:hover::before { height: 100%; }
+        .CR_Stream_Card:hover h3, .CR_Stream_Card:hover p, .CR_Stream_Icon { color: #3b82f6; transition: 0.3s; }
+        .CR_Stream_Card:hover h3, .CR_Stream_Card:hover p { color: #fff !important; }
+        .CR_Stream_Card:hover .CR_Icon_Box { background: rgba(255,255,255,0.1); }
+
+        .CR_Icon_Box { 
+          width: 70px; height: 70px; background: #fff; color: #3b82f6; border-radius: 20px; 
+          display: flex; align-items: center; justify-content: center; margin-bottom: 30px; 
+          box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: 0.3s;
+        }
+
+        .CR_Stream_H { font-size: 1.6rem; font-weight: 800; color: #1a2b4b; margin-bottom: 15px; }
+
+        /* --- SECTION 3: ENVIRONMENT --- */
+        .CR_Env { padding: 120px 5%; background: #22314f; color: #fff; }
+        .CR_Env_Container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 100px; align-items: center; }
+
+        @media (max-width: 1024px) {
+          .CR_Env_Container { grid-template-columns: 1fr; text-align: center; }
+        }
+
+        .CR_Env_Img { position: relative; }
+        .CR_Env_Img img { width: 100%; border-radius: 50px; border: 15px solid #2a3a5a; box-shadow: 0 40px 100px rgba(0,0,0,0.4); }
+
+        .CR_Badge { color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 0.85rem; margin-bottom: 20px; display: block; }
+        .CR_Env_H { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; line-height: 1.2; margin-bottom: 40px; color:white;}
+        
+        .CR_Pros_Grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 640px) { .CR_Pros_Grid { grid-template-columns: 1fr; } }
+        .CR_Pro_Item { display: flex; align-items: center; gap: 15px; }
+        .CR_Pro_Check { color: #3b82f6; display: flex; }
+
+        /* --- SECTION 4: FINAL CTA --- */
+        .CR_Final { padding: 140px 5%; text-align: center; background: #fff; }
+        .CR_Final_Max { max-width: 800px; margin: 0 auto; }
+        .CR_Final_H { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; color: #1a2b4b; line-height: 1.1; margin-bottom: 30px; }
+        .CR_Final_P { font-size: 1.2rem; color: #64748b; margin-bottom: 50px; font-weight: 500; }
+        .CR_Btn { 
+          background: #3b82f6; color: white; padding: 22px 50px; border-radius: 100px; 
+          font-weight: 800; font-size: 1.1rem; border: none; cursor: pointer; transition: 0.3s;
+          box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); display: flex; align-items: center; gap: 15px; margin: 0 auto;
+        }
+        .CR_Btn:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5); }
+      `}</style>
+
+      {/* SECTION 1: HERO */}
+      <section className="CR_Hero">
+        <div className="CR_Hero_Navy_Shape" />
+        <div className="CR_Hero_Content">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
+            className="CR_Hero_Left"
+          >
+            <span className="CR_Badge">Join Our Professional Team</span>
+            <h1 className="CR_Hero_H1">Find the perfect <br /> <span className="text-blue-500">job for you</span></h1>
+            <p className="CR_Hero_P">Explore core career opportunities across technology and consulting domains with CHN Technologies.</p>
+
+            <div className="CR_Search_Bar">
+              <div className="CR_Input_Group">
+                <Search size={18} className="text-blue-400 mr-3" />
+                <input
+                  type="text" placeholder="Job Title / Domain..."
+                  className="w-full bg-transparent border-none outline-none font-bold text-slate-800"
+                  value={jobTitle} onChange={(e) => setJobTitle(e.target.value)}
+                />
+              </div>
+              <div className="flex items-center px-6 text-slate-400 font-bold border-r border-slate-100 hidden md:flex">
+                <MapPin size={16} className="mr-2" /> Remote / India
+              </div>
+              <button className="CR_Search_Btn" onClick={handleSearch}><ArrowRight size={22} /></button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
+            className="CR_Hero_Right flex justify-center lg:justify-end"
+          >
+            <div className="relative w-[340px] h-[460px]">
+              <div className="absolute top-[8%] -right-7 w-full h-full bg-blue-100 rounded-[3rem] rotate-6 opacity-60" />
+              <div className="absolute top-[5%] -right-3 w-full h-full bg-[#3b82f6] rounded-[3rem] rotate-3 opacity-90 shadow-lg" />
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Career Excellence" className="relative z-10 w-full h-full object-cover rounded-[3rem] shadow-2xl border-4 border-white/20" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 2: CAREER STREAMS */}
+      <section className="CR_Streams">
+        <span className="CR_Badge">Career Domains</span>
+        <h2 className="CR_Hero_H1" style={{ fontSize: '2.8rem', color: '#1a2b4b' }}>Areas You Can Work In</h2>
+        <div className="CR_Streams_Grid">
+          {[
+            { title: "Technology Services", icon: <Server size={30} />, desc: "Structured management of networks, cloud infrastructure, and enterprise security ecosystems." },
+            { title: "Software & Digital", icon: <Code size={30} />, desc: "Advanced web application development, data analytics, and operational automation solutions." },
+            { title: "Consulting & Advisory", icon: <Users size={30} />, desc: "Expert workforce management, statutory compliance, and corporate developmental training." }
+          ].map((stream, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}
+              className="CR_Stream_Card"
+            >
+              <div className="CR_Icon_Box">{stream.icon}</div>
+              <h3 className="CR_Stream_H">{stream.title}</h3>
+              <p className="text-slate-500 font-medium leading-relaxed">{stream.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 3: ENVIRONMENT */}
+      <section className="CR_Env">
+        <div className="CR_Env_Container">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+            className="CR_Env_Content"
+          >
+            <span className="CR_Badge">Professional Ecosystem</span>
+            <h2 className="CR_Env_H">A Professional <br /> Environment Built <br /> <span className="text-blue-500">For Growth</span></h2>
+            <div className="CR_Pros_Grid">
+              {[
+                { title: "Clear Expectations", icon: <CheckCircle2 size={24} /> },
+                { title: "Supportive Mentorship", icon: <Users size={24} /> },
+                { title: "Real World Impact", icon: <Zap size={24} /> },
+                { title: "Career Stability", icon: <Award size={24} /> }
+              ].map((pro, i) => (
+                <div key={i} className="CR_Pro_Item">
+                  <div className="CR_Pro_Check">{pro.icon}</div>
+                  <span className="font-bold text-lg">{pro.title}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+            className="CR_Env_Img"
+          >
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Professional Environment" />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 4: FINAL CTA */}
+      <section className="CR_Final">
+        <div className="CR_Final_Max">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="CR_Final_H">START YOUR CAREER <br /> <span className="text-blue-500">WITH PURPOSE</span></h2>
+            <p className="CR_Final_P">Apply now to explore current and upcoming structured career opportunities at CHN Technologies.</p>
+            <button className="CR_Btn" onClick={() => alert("Redirecting to Application Portal...")}>
+              Apply Now <Send size={24} />
+            </button>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
 };
-
-const Careers = () => (
-  <div>
-    <section className="relative py-28 md:py-36 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "30px 30px" }} />
-      <div className="container mx-auto px-4 relative z-10 text-center">
-        <motion.h1 initial="hidden" animate="visible" variants={fadeUp} custom={0} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">Careers</motion.h1>
-        <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={1} className="mt-4 flex items-center justify-center gap-2 text-sm text-white/60">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link><span>/</span><span className="text-white">Careers</span>
-        </motion.div>
-      </div>
-    </section>
-
-    <section className="py-20 md:py-28 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">A Professional Environment Built For <em className="text-primary not-italic">Growth</em>.</h2>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { id: "01", title: "Defined Roles", desc: "Clear roles and expectations.", icon: <Briefcase className="w-6 h-6" /> },
-            { id: "02", title: "Live Projects", desc: "Hands-on learning through real projects.", icon: <Sprout className="w-6 h-6" /> },
-            { id: "03", title: "Direct Mentorship", desc: "Supportive mentorship and guidance.", icon: <GraduationCap className="w-6 h-6" /> },
-            { id: "04", title: "Maturity Path", desc: "Structured long-term career growth.", icon: <TrendingUp className="w-6 h-6" /> },
-          ].map((p, i) => (
-            <motion.div key={p.id} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
-              className="p-7 border border-border rounded-sm bg-card hover:border-primary/30 hover:shadow-sm transition-all group">
-              <div className="text-3xl font-black text-primary/20 mb-3">{p.id}</div>
-              <div className="w-12 h-12 rounded-sm bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all">{p.icon}</div>
-              <h3 className="font-bold text-foreground mb-1">{p.title}</h3>
-              <p className="text-sm text-muted-foreground">{p.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="py-20 bg-muted/20">
-      <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="text-3xl font-bold text-foreground text-center mb-4">Who Thrives at CHN Technologies</h2>
-        <p className="text-muted-foreground text-center mb-10">We look for individuals who are curious, responsible, and willing to learn.</p>
-        <div className="grid md:grid-cols-2 gap-5">
-          {[
-            { title: "Willingness to Learn", desc: "Adaptability to evolving technologies." },
-            { title: "Ownership", desc: "Responsibility for quality outcomes." },
-            { title: "Structured Thinking", desc: "Approaching problems with clarity." },
-            { title: "Collaboration", desc: "Working effectively across teams." },
-          ].map((attr, i) => (
-            <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
-              className="flex items-start gap-4 p-5 bg-card border border-border rounded-sm">
-              <UserCheck className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-              <div><h4 className="font-semibold text-foreground">{attr.title}</h4><p className="text-sm text-muted-foreground">{attr.desc}</p></div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="py-20" style={{ background: "var(--gradient-hero)" }}>
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white">Interested in Joining Us?</h2>
-        <p className="mt-4 text-white/70 max-w-xl mx-auto">We're always looking for people who share our commitment to quality and continuous improvement.</p>
-        <Link to="/contact" className="inline-flex items-center gap-2 mt-8 px-8 py-3.5 bg-white text-navy font-bold rounded-sm hover:bg-white/90 transition-all group">
-          Get In Touch <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-        </Link>
-      </div>
-    </section>
-  </div>
-);
 
 export default Careers;
