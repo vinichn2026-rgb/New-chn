@@ -168,7 +168,7 @@ const AutomationPage = () => {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
             className="AU_Hero_Img"
         >
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Process Automation Cog" />
+          <img src="/images/automation-process.jpg" alt="Process Automation Cog" />
         </motion.div>
       </section>
 
@@ -228,7 +228,7 @@ const AutomationPage = () => {
       {/* LAYOUT 4 – BUSINESS OUTCOMES */}
       <section className="AU_Outcome">
         <div className="AU_Outcome_Img">
-          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" alt="Robotic Precision" />
+          <img src="/images/automation-robotic.jpg" alt="Robotic Precision" />
         </div>
         <div className="AU_Outcome_Content">
           <span className="AU_Badge">Strategic Outcomes</span>

@@ -168,7 +168,7 @@ const DataAnalyticsPage = () => {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
             className="DA_Hero_Img"
         >
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Visualization Dashboard" />
+          <img src="/images/analytics-viz.jpg" alt="Data Visualization Dashboard" />
         </motion.div>
       </section>
 
@@ -228,7 +228,7 @@ const DataAnalyticsPage = () => {
       {/* LAYOUT 4 – BUSINESS OUTCOMES */}
       <section className="DA_Outcome">
         <div className="DA_Outcome_Img">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Strategic Insight" />
+          <img src="/images/casestudy-cloud.jpg" alt="Strategic Insight" />
         </div>
         <div className="DA_Outcome_Content">
           <span className="DA_Badge">Strategic Benefits</span>

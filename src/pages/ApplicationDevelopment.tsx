@@ -176,7 +176,7 @@ const ApplicationDevelopmentPage = () => {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
             className="AD_Hero_Img"
         >
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Code Development Architecture" />
+          <img src="/images/appdev-code.jpg" alt="Code Development Architecture" />
         </motion.div>
       </section>
 
@@ -240,7 +240,7 @@ const ApplicationDevelopmentPage = () => {
       {/* LAYOUT 4 – BUSINESS OUTCOMES */}
       <section className="AD_Outcome">
         <div className="AD_Outcome_Img">
-          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80" alt="Software Development Team" />
+          <img src="/images/appdev-team.jpg" alt="Software Development Team" />
         </div>
         <div className="AD_Outcome_Content">
           <span className="AD_Badge">Business Benefits</span>

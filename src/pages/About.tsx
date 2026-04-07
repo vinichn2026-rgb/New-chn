@@ -27,7 +27,7 @@ const AboutPage = () => {
         .ABOUT_Hero_Bg {
           position: absolute;
           inset: 0;
-          background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
+          background-image: url('/images/corporate-flagship.jpg');
           background-size: cover;
           background-position: center;
           opacity: 0.15;
@@ -258,7 +258,7 @@ const AboutPage = () => {
       <section className="ABOUT_Identity">
         <div className="ABOUT_Identity_Grid">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="ABOUT_Identity_Img">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000" alt="Corporate Flagship" />
+            <img src="/images/corporate-flagship.jpg" alt="Corporate Flagship" />
             <div className="ABOUT_Identity_Badge">
               <h4 className="text-3xl font-black">10+</h4>
               <p className="text-[10px] font-bold uppercase tracking-widest text-blue-100">Years of Discipline</p>
@@ -288,9 +288,9 @@ const AboutPage = () => {
         </div>
         <div className="ABOUT_Focus_Grid">
           {[
-            { title: "Technology Services", icon: <Cpu />, img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80", tag: "Enterprise IT", desc: "Network management, cyber security, and physical infrastructure for stable IT environments." },
-            { title: "Software & Digital", icon: <Code />, img: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80", tag: "Digital Dev", desc: "Developing scalable web platforms, applications, and automated business process solutions." },
-            { title: "Consulting & Advisory", icon: <Users />, img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80", tag: "Advisory", desc: "Workforce management, payroll compliance, and structured operational governance." }
+            { title: "Technology Services", icon: <Cpu />, img: "/images/service-consulting.jpg", tag: "Enterprise IT", desc: "Network management, cyber security, and physical infrastructure for stable IT environments." },
+            { title: "Software & Digital", icon: <Code />, img: "/images/service-software.jpg", tag: "Digital Dev", desc: "Developing scalable web platforms, applications, and automated business process solutions." },
+            { title: "Consulting & Advisory", icon: <Users />, img: "/images/service-consulting.jpg", tag: "Advisory", desc: "Workforce management, payroll compliance, and structured operational governance." }
           ].map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="ABOUT_Card group">
               <div className="ABOUT_Card_Img">
@@ -320,7 +320,7 @@ const AboutPage = () => {
             <h2 className="ABOUT_Approach_H">How CHN <br /> Approaches <br /> <span className="text-white">Business Problems</span></h2>
             <p className="text-blue-100/50 text-lg font-medium leading-relaxed mb-10 max-w-lg">We focus on how systems, processes, and teams interact in real operational environments rather than isolated issues.</p>
             <div className="relative w-fit">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500" alt="Consultant" className="w-48 h-48 rounded-[40px] grayscale hover:grayscale-0 transition-all duration-700 border-4 border-white/10" />
+              <img src="/images/partner-delivery.jpg" alt="Consultant" className="w-48 h-48 rounded-[40px] grayscale hover:grayscale-0 transition-all duration-700 border-4 border-white/10" />
               <div className="absolute -bottom-4 -right-4 bg-blue-500 p-4 rounded-2xl shadow-xl"><Activity className="text-white" /></div>
             </div>
           </motion.div>

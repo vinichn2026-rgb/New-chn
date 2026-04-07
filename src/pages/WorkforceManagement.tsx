@@ -168,7 +168,7 @@ const WorkforceManagementPage = () => {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
             className="WM_Hero_Img"
         >
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Workforce Team Strategy" />
+          <img src="/images/blog-featured.jpg" alt="Workforce Team Strategy" />
         </motion.div>
       </section>
 
@@ -228,7 +228,7 @@ const WorkforceManagementPage = () => {
       {/* LAYOUT 4 – BUSINESS OUTCOMES */}
       <section className="WM_Outcome">
         <div className="WM_Outcome_Img">
-          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="Business Growth" />
+          <img src="/images/about-main.jpg" alt="Business Growth" />
         </div>
         <div className="WM_Outcome_Content">
           <span className="WM_Badge">Business Benefits</span>

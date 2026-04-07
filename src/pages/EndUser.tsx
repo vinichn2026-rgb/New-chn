@@ -43,7 +43,7 @@ const EndUserComputingPage = () => {
         .EUC_Tagline { font-size: 1.5rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
         .EUC_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 45px; font-weight: 450; }
 
-        .EUC_Btn_Group { display: flex; gap: 20px; align-items: center; }
+        .EUC_Btn_Group { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
         .EUC_Primary_Btn { 
           background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); 
           color: white; padding: 20px 40px; border-radius: 100px; 

@@ -25,7 +25,7 @@ const CHNInsights = () => {
   const allInsights: Insight[] = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+      image: "/images/casestudy-cloud.jpg",
       tag: "Operations",
       title: "Technology Operations & Management",
       desc: "Deep-dives into managing enterprise networks, systems, security, and infrastructure effectively for long-term scalability and operational stability.",
@@ -34,7 +34,7 @@ const CHNInsights = () => {
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+      image: "/images/blog-office.jpg",
       tag: "Software",
       title: "Digital & software practices in enterprise",
       desc: "Perspectives on modern web platforms, applications, analytics, and automation systems tailored for real-world business environments and high performance.",
@@ -43,7 +43,7 @@ const CHNInsights = () => {
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+      image: "/images/casestudy-security.jpg",
       tag: "Governance",
       title: "Execution & governance for modern firm",
       desc: "Detailed articles focused on operational control, process maturity, and establishing reliable system structures to ensure corporate governance and asset protection.",
@@ -52,7 +52,7 @@ const CHNInsights = () => {
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+      image: "/images/blog-collaboration.jpg",
       tag: "Workforce",
       title: "Workforce & global compliance standards",
       desc: "Understanding workforce structures, payroll practices, and statutory compliance for HR leaders managing complex multinational operations and regulatory shifts.",
@@ -61,7 +61,7 @@ const CHNInsights = () => {
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+      image: "/images/service-consulting.jpg",
       tag: "Strategy",
       title: "Sustainable strategy and future-fit growth",
       desc: "Analysing how business owners, IT decision-makers, and professionals can leverage practical technology strategies to drive sustainable organisational expansion.",
@@ -70,7 +70,7 @@ const CHNInsights = () => {
     },
     {
       id: 6,
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80",
+      image: "/images/blog-featured.jpg",
       tag: "Quality",
       title: "Knowledge over frequency: An editorial",
       desc: "Why we prioritise relevance and clarity over volume, ensuring every piece of content remains useful and actionable over long-term strategic horizons.",
@@ -115,7 +115,7 @@ const CHNInsights = () => {
         .BLOG_Hero_Bg {
           position: absolute;
           inset: 0;
-          background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
+          background-image: url('/images/corporate-flagship.jpg');
           background-size: cover;
           background-position: center;
           opacity: 0.15;
@@ -366,7 +366,7 @@ const CHNInsights = () => {
               className="BLOG_Featured_Card"
             >
               <div className="BLOG_Featured_Img">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Featured Article" />
+                <img src="/images/blog-featured.jpg" alt="Featured Article" />
               </div>
               <div className="BLOG_Featured_Content">
                 <span className="BLOG_Badge">EDITORIAL FOCUS</span>

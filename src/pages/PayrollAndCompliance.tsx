@@ -182,7 +182,7 @@ const PayrollAndCompliancePage = () => {
 
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} className="PC_Hero_Right">
             <div className="PC_Hero_Img_Box">
-              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="Financial Compliance" />
+              <img src="/images/payroll-compliance.jpg" alt="Financial Compliance" />
             </div>
           </motion.div>
         </div>
@@ -201,7 +201,7 @@ const PayrollAndCompliancePage = () => {
           </motion.div>
           
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="PC_Context_Img">
-            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Governance" />
+            <img src="/images/payroll-governance.jpg" alt="Governance" />
           </motion.div>
         </div>
       </section>
@@ -234,7 +234,7 @@ const PayrollAndCompliancePage = () => {
       <section className="PC_Outcome">
         <div className="PC_Outcome_Grid">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <img src="https://images.unsplash.com/photo-1454165833767-027ffb201272?auto=format&fit=crop&w=800&q=80" alt="Outcomes" style={{ borderRadius: '40px', boxShadow: '0 40px 80px rgba(0,0,0,0.1)' }} />
+            <img src="/images/analytics-viz.jpg" alt="Outcomes" style={{ borderRadius: '40px', boxShadow: '0 40px 80px rgba(0,0,0,0.1)' }} />
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
             <span className="PC_Badge">Business Impact</span>

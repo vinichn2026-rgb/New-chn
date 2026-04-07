@@ -91,13 +91,21 @@ const SiteFooter = () => {
   <div className="border-t border-white/10">
     <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <div className="flex gap-3">
-        {[FaFacebookF, FaLinkedinIn, FaXTwitter, FaInstagram, FaYoutube].map((Icon, i) => (
+        {[
+          { Icon: FaFacebookF, href: "#" },
+          { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/chn-technologies/" },
+          { Icon: FaXTwitter, href: "https://x.com/chn_india70840" },
+          { Icon: FaInstagram, href: "#" },
+          { Icon: FaYoutube, href: "#" }
+        ].map((item, i) => (
           <a
             key={i}
-            href="#"
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:bg-primary hover:border-primary hover:text-white transition-all duration-300"
           >
-            <Icon className="w-4 h-4" />
+            <item.Icon className="w-4 h-4" />
           </a>
         ))}
       </div>

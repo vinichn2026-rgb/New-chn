@@ -171,7 +171,7 @@ const TrainingAndDevelopmentPage = () => {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
             className="TD_Hero_Img"
         >
-          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Corporate Training Session" />
+          <img src="/images/training-session.jpg" alt="Corporate Training Session" />
         </motion.div>
       </section>
 
@@ -231,7 +231,7 @@ const TrainingAndDevelopmentPage = () => {
       {/* LAYOUT 4 – BUSINESS OUTCOMES */}
       <section className="TD_Outcome">
         <div className="TD_Outcome_Img">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Workforce Collaboration" />
+          <img src="/images/blog-collaboration.jpg" alt="Workforce Collaboration" />
         </div>
         <div className="TD_Outcome_Content">
           <span className="TD_Badge">Business Benefits</span>

@@ -159,8 +159,8 @@ const SiteNavbar = () => {
           <div className="flex-1 flex items-center justify-end gap-6 text-slate-600 h-full">
             <div className="hidden lg:flex items-center gap-4">
               <a href="https://www.facebook.com/people/CHN-Technologies/100068692698660/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all hover:-translate-y-0.5"><FaFacebookF size={14} /></a>
-              <a href="https://www.linkedin.com/company/chntechnologies/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all hover:-translate-y-0.5"><FaLinkedinIn size={14} /></a>
-              <a href="#" className="hover:text-blue-600 transition-all hover:-translate-y-0.5"><FaXTwitter size={14} /></a>
+              <a href="https://www.linkedin.com/company/chn-technologies/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all hover:-translate-y-0.5"><FaLinkedinIn size={14} /></a>
+              <a href="https://x.com/chn_india70840" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all hover:-translate-y-0.5"><FaXTwitter size={14} /></a>
               <a href="https://www.instagram.com/chntech_india/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all hover:-translate-y-0.5"><FaInstagram size={14} /></a>
               <a href="https://www.youtube.com/channel/UCX3GW4PtNMIOogEMdyhB_mw" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all hover:-translate-y-0.5"><FaYoutube size={14} /></a>
             </div>
@@ -231,11 +231,11 @@ const SiteNavbar = () => {
                 {/* Mobile Socials */}
                 <li className="mt-4 pt-6 border-t border-slate-100 h-full">
                   <div className="flex items-center gap-6 text-slate-600 h-full">
-                    <a href="#" className="hover:text-blue-600 transition-all"><FaFacebookF size={18} /></a>
-                    <a href="#" className="hover:text-blue-600 transition-all"><FaLinkedinIn size={18} /></a>
-                    <a href="#" className="hover:text-blue-600 transition-all"><FaXTwitter size={18} /></a>
-                    <a href="#" className="hover:text-blue-600 transition-all"><FaInstagram size={18} /></a>
-                    <a href="#" className="hover:text-blue-600 transition-all"><FaYoutube size={18} /></a>
+                    <a href="https://www.facebook.com/people/CHN-Technologies/100068692698660/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all"><FaFacebookF size={18} /></a>
+                    <a href="https://www.linkedin.com/company/chn-technologies/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all"><FaLinkedinIn size={18} /></a>
+                    <a href="https://x.com/chn_india70840" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all"><FaXTwitter size={18} /></a>
+                    <a href="https://www.instagram.com/chntech_india/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all"><FaInstagram size={18} /></a>
+                    <a href="https://www.youtube.com/channel/UCX3GW4PtNMIOogEMdyhB_mw" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-all"><FaYoutube size={18} /></a>
                   </div>
                 </li>
               </ul>

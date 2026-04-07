@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     MapPin,
@@ -28,6 +29,7 @@ const XIcon = ({ size = 20 }) => (
 );
 
 const ContactPage = () => {
+    const [searchParams] = useSearchParams();
     const [formData, setFormData] = useState({
         name: '',
         org: '',
@@ -38,6 +40,20 @@ const ContactPage = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+
+    // Handle pre-filling from URL parameters (e.g., from Careers search)
+    useEffect(() => {
+        const interestParam = searchParams.get('interest');
+        const jobParam = searchParams.get('job');
+
+        if (interestParam || jobParam) {
+            setFormData(prev => ({
+                ...prev,
+                interest: interestParam ? interestParam : prev.interest,
+                message: jobParam ? `Interested in position: ${decodeURIComponent(jobParam)}` : prev.message
+            }));
+        }
+    }, [searchParams]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -145,7 +161,7 @@ const ContactPage = () => {
                 /* FORM (DARK COLOR FROM SAMPLE) */
                 .CN_Form_Box { background: #0d1117; color: white; padding: 60px; border-radius: 50px; box-shadow: 0 40px 100px rgba(0,0,0,0.15); }
                 @media (max-width: 640px) { .CN_Form_Box { padding: 30px; border-radius: 30px; } }
-                .CN_Form_H { font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; text-transform: uppercase; letter-spacing: -0.02em; }
+                .CN_Form_H { font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; text-transform: uppercase; letter-spacing: -0.02em; color:white; }
                 .CN_Form_P { color: #94a3b8; margin-bottom: 45px; line-height: 1.6; font-size: 1rem; }
 
                 .CN_Input { 
@@ -232,7 +248,7 @@ const ContactPage = () => {
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }} className="CN_Hero_Img">
                     <div className="CN_Circle_Img">
                         {/* High-quality professional on phone image */}
-                        <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="Contact CHN Technologies" />
+                        <img src="/images/contact-main.jpg" alt="Contact CHN Technologies" />
                     </div>
                     <div className="CN_Triangle_Bg"></div>
                 </motion.div>

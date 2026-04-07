@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Search, MapPin, Code, BarChart,
@@ -7,6 +8,7 @@ import {
 } from 'lucide-react';
 
 const Careers = () => {
+  const navigate = useNavigate();
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("All Locations");
 
@@ -18,8 +20,8 @@ const Careers = () => {
       alert("Please enter a job title or select a location to search.");
       return;
     }
-    console.log("Searching for:", { jobTitle, location });
-    alert(`Searching for ${jobTitle || 'any position'} in ${location}...`);
+    // Redirect to contact page with job details
+    navigate(`/contact?interest=Careers&job=${encodeURIComponent(jobTitle)}`);
   };
 
   const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
@@ -100,6 +102,8 @@ const Careers = () => {
           align-items: center;
           gap: 5px;
           max-width: 600px;
+          width: 100%;
+          margin: 0 auto;
           border: 1px solid #e2e8f0;
         }
 
@@ -237,7 +241,7 @@ const Careers = () => {
             <div className="relative w-[340px] h-[460px]">
               <div className="absolute top-[8%] -right-7 w-full h-full bg-blue-100 rounded-[3rem] rotate-6 opacity-60" />
               <div className="absolute top-[5%] -right-3 w-full h-full bg-[#3b82f6] rounded-[3rem] rotate-3 opacity-90 shadow-lg" />
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Career Excellence" className="relative z-10 w-full h-full object-cover rounded-[3rem] shadow-2xl border-4 border-white/20" />
+              <img src="/images/careers-excellence.jpg" alt="Career Excellence" className="relative z-10 w-full h-full object-cover rounded-[3rem] shadow-2xl border-4 border-white/20" />
             </div>
           </motion.div>
         </div>
@@ -293,7 +297,7 @@ const Careers = () => {
             initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="CR_Env_Img"
           >
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Professional Environment" />
+            <img src="/images/service-consulting.jpg" alt="Professional Environment" />
           </motion.div>
         </div>
       </section>
@@ -304,7 +308,7 @@ const Careers = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="CR_Final_H">START YOUR CAREER <br /> <span className="text-blue-500">WITH PURPOSE</span></h2>
             <p className="CR_Final_P">Apply now to explore current and upcoming structured career opportunities at CHN Technologies.</p>
-            <button className="CR_Btn" onClick={() => alert("Redirecting to Application Portal...")}>
+            <button className="CR_Btn" onClick={() => navigate('/contact?interest=Careers')}>
               Apply Now <Send size={24} />
             </button>
           </motion.div>

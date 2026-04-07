@@ -22,25 +22,25 @@ const Index = () => {
       id: 1,
       title: "Structured Delivery",
       desc: "CHN Technologies works with organisations that value consistency, accountability, and structured execution.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      image: "/images/partner-delivery.jpg",
     },
     {
       id: 2,
       title: "Business Alignment",
       desc: "Our solutions are aligned with real business constraints, ensuring practical and sustainable digital growth.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      image: "/images/partner-alignment.jpg",
     },
     {
       id: 3,
       title: "Ongoing Support",
       desc: "Our approach is built around long-term partnerships rather than short-term engagements, offering support beyond implementation.",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+      image: "/images/partner-support.jpg",
     },
     {
       id: 4,
       title: "Stability & Security",
       desc: "We focus on stability, security, and scalability to deliver solutions that are compliant and future-proof.",
-      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop",
+      image: "/images/partner-security.jpg",
     },
   ];
 
@@ -117,7 +117,7 @@ const Index = () => {
     {
       bg: heroBg1,
       subtitle: "Integrated Technology & Consulting",
-      title: <>RUN TECHNOLOGY LIKE<br /><strong>A BUSINESS SYSTEM.</strong></>,
+      title: <>RUN TECHNOLOGY LIKE <br /><strong>A BUSINESS SYSTEM.</strong></>,
       desc: "Integrated technology and consulting services built for stability, security, and scalable growth. We help you reduce risk and maintain control.",
     },
     {
@@ -127,7 +127,7 @@ const Index = () => {
       desc: "End-to-end management of IT infrastructure, software solutions, digital analytics, and workforce consulting — all under one roof.",
     },
     {
-      bg: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80",
+      bg: "/images/hero-excellence.jpg",
       subtitle: "OPERATIONAL EXCELLENCE",
       title: <>RELIABILITY BUILT ON<br /><strong>STRUCTURED EXCELLENCE.</strong></>,
       desc: "We align systems, people, and processes to ensure your business remains resilient in a changing digital landscape. Experience long-term stability.",
@@ -195,14 +195,14 @@ const Index = () => {
       id: 1,
       category: "ENTERPRISE SOLUTION",
       title: "CHN Technologies Cloud Migration",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/casestudy-cloud.jpg",
       link: "#",
     },
     {
       id: 2,
       category: "CYBER SECURITY",
       title: "Secure Data Infrastructure Build",
-      image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      image: "/images/casestudy-security.jpg",
       link: "#",
     },
   ];
@@ -336,7 +336,7 @@ const Index = () => {
       <section className="min-h-screen snap-start flex flex-col justify-center bg-white scroll-mt-[90px] py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80" alt="About CHN" className="rounded-2xl shadow-2xl" />
+            <img src="/images/about-main.jpg" alt="About CHN" className="rounded-2xl shadow-2xl" />
             {/* <div className="absolute top-10 left-10">
               <button onClick={() => setIsVideoOpen(true)} className="w-20 h-20 bg-[#1a1a1a] rounded-full flex items-center justify-center text-white shadow-2xl animate-pulse">
                 <Play className="w-8 h-8 ml-1" />

@@ -72,7 +72,7 @@ const WhatWeThink = () => {
         .WT_Hero_Bg {
           position: absolute;
           inset: 0;
-          background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80');
+          background-image: url('/images/corporate-flagship.jpg');
           background-size: cover;
           background-position: center;
           opacity: 0.3;
@@ -309,7 +309,7 @@ const WhatWeThink = () => {
       {/* SECTION 4: STRATEGIC FRAMEWORK */}
       <section className="WT_Framework">
         <div className="WT_Framework_Img">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Strategic Collaboration" />
+          <img src="/images/blog-collaboration.jpg" alt="Strategic Collaboration" />
         </div>
         <div className="WT_Framework_Content">
           <span className="WT_Badge">OUR VISION & MISSION</span>

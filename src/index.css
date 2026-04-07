@@ -80,6 +80,13 @@
   }
 
 
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-sans;
     /* font-family: 'Figtree', Helvetica, sans-serif; */
@@ -239,17 +246,30 @@ html {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 7rem;
-  padding-right: 7rem;
+  padding-left: 24px;
+  padding-right: 24px;
+}
 
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 
 .service-section {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 7rem;
-  padding-right: 7rem;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 1024px) {
+  .service-section {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 
 .hero {
@@ -257,8 +277,15 @@ html {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 7rem;
-  padding-right: 7rem;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 
 .about {
@@ -280,7 +307,13 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 100px;
+  padding: 0 24px;
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 0 100px;
+  }
 }
 
 .navbar.sticky {
