@@ -258,7 +258,7 @@ const ContactPage = () => {
 
                 /* --- FINAL CTA --- */
                 .CN_Final { 
-                  padding: 140px 5%; background: #002e5b; text-align: center; color: white; position: relative; overflow: hidden;
+                  padding: 83px 5%; background: #002e5b; text-align: center; color: white; position: relative; overflow: hidden;
                 }
                 .CN_Final_H { font-size: 4rem; font-weight: 900; margin-bottom: 30px; letter-spacing: -0.03em; text-transform: uppercase; color:#ffffff; }
                 .CN_Final_P { font-size: 1.4rem; color: #94a3b8; max-width: 800px; margin: 0 auto 50px; line-height: 1.6; font-weight: 500; }
@@ -303,7 +303,7 @@ const ContactPage = () => {
             </section> */}
 
             {/* LAYOUT 3, 4 – CONNECTION METHODS & FORM (SPLIT) */}
-            <section className="CN_Main_Grid">
+            <section className="CN_Main_Grid" id="contact-form">
                 <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="CN_Form_Box">
                     <AnimatePresence mode="wait">
                         {!isSubmitted ? (
@@ -467,9 +467,9 @@ const ContactPage = () => {
                 <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                     <h2 className="CN_Final_H italic">START THE CONVERSATION</h2>
                     <p className="CN_Final_P">Contact CHN Technologies to discuss how we can support your organisation or career goals.</p>
-                    <Link to="/contact">
+                    <a href="#contact-form">
                         <button className="CN_Primary_Btn" style={{ width: 'fit-content', margin: '0 auto', padding: '25px 80px' }}>Get In Touch <ArrowRight size={20} /></button>
-                    </Link>
+                    </a>
                 </motion.div>
             </section>
         </div>

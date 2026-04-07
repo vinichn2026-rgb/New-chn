@@ -168,8 +168,8 @@ const TrainingAndDevelopmentPage = () => {
         </motion.div>
 
         <motion.div
-            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
-            className="TD_Hero_Img"
+          initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
+          className="TD_Hero_Img"
         >
           <img src="/images/training-session.jpg" alt="Corporate Training Session" />
         </motion.div>
@@ -180,8 +180,8 @@ const TrainingAndDevelopmentPage = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <h2 className="TD_Context_H1">REDUCED INSTITUTIONAL KNOWLEDGE IS A SILENT TAX ON ENTERPRISE GROWTH</h2>
           <p className="TD_Context_P">
-            Business performance and innovation depend on how predictably you can manage and expand your institutional workforce knowledge. 
-            Poorly trained teams lead to technical debt, high turnover, and reduced organizational speed. 
+            Business performance and innovation depend on how predictably you can manage and expand your institutional workforce knowledge.
+            Poorly trained teams lead to technical debt, high turnover, and reduced organizational speed.
             CHN Technologies helps organisations maintain structured, secure, and highly skilled business environments.
           </p>
         </motion.div>

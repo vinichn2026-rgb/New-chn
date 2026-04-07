@@ -79,7 +79,7 @@ const PayrollAndCompliancePage = () => {
         .PC_Hero_Img_Box img { width: 100%; height: 100%; object-fit: cover; border-radius: 40px; box-shadow: 0 50px 100px rgba(0,0,0,0.2); border: 4px solid #fff; }
 
         /* --- SECTION 2: CONTEXT --- */
-        .PC_Context { padding: 120px 5%; background: #22314f; color: #fff; }
+        .PC_Context { padding: 80px 3%; background: #22314f; color: #fff; }
         .PC_Context_Grid { 
           max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; align-items: center; 
         }
@@ -88,7 +88,7 @@ const PayrollAndCompliancePage = () => {
           .PC_Context_Grid { grid-template-columns: 1fr; text-align: center; }
         }
 
-        .PC_Context_H { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 40px; text-transform: uppercase; }
+        .PC_Context_H { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 40px; text-transform: uppercase; color:#ffffff;}
         .PC_Context_P { font-size: 1.15rem; color: #b9d1ff; line-height: 1.8; margin-bottom: 0; }
         .PC_Context_Img img { width: 100%; border-radius: 40px; box-shadow: 0 40px 100px rgba(0,0,0,0.3); border: 12px solid #2a3a5a; }
 
@@ -163,8 +163,11 @@ const PayrollAndCompliancePage = () => {
         }
 
         /* --- FINAL --- */
-        .PC_Final { padding: 140px 5%; background: #002e5b; color: #fff; text-align: center; }
-        .PC_Final_H { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 50px; text-transform: uppercase; }
+        .PC_Final { 
+        padding: 80px 5%; 
+        background: #002e5b; color: #ffffff; text-align: center; }
+        .PC_Final_H
+         { font-weight: 900; line-height: 1.1; margin-bottom: 50px; text-transform: uppercase; color:#ffffff; }
       `}</style>
 
       {/* SECTION 1: HERO */}
@@ -195,11 +198,11 @@ const PayrollAndCompliancePage = () => {
             <span className="PC_Badge">Strategic Foundation</span>
             <h2 className="PC_Context_H">FINANCIAL ACCURACY PROTECTS <br /> CORPORATE ASSETS</h2>
             <p className="PC_Context_P text-left">
-              Business security and credibility depend on predictable management of regional labor laws and financial processing. 
+              Business security and credibility depend on predictable management of regional labor laws and financial processing.
               Poorly managed systems lead to legal debt, financial penalty, and loss of trust. CHN helps maintain structured, secure, and highly accurate business environments.
             </p>
           </motion.div>
-          
+
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="PC_Context_Img">
             <img src="/images/payroll-governance.jpg" alt="Governance" />
           </motion.div>
@@ -210,7 +213,7 @@ const PayrollAndCompliancePage = () => {
       <section className="PC_Domains">
         <span className="PC_Badge">Core Domains</span>
         <h2 className="PC_Hero_H1" style={{ fontSize: '3rem', color: '#1a2b4b' }}>Consolidated <br /> Management</h2>
-        
+
         <div className="PC_Domains_Grid">
           {[
             { title: "End-to-End Payroll", icon: <Calculator size={30} />, desc: "Structured management of payroll processes that ensure financial integrity and timely execution." },
@@ -218,7 +221,7 @@ const PayrollAndCompliancePage = () => {
             { title: "Secure Data Governance", icon: <ShieldCheck size={30} />, desc: "High-integrity management of sensitive financial data with state-of-the-art encryption protocols." },
             { title: "Audit Readiness", icon: <FileText size={30} />, desc: "Continuous internal monitoring to ensure your ecosystem is always audit-ready and legally secure." }
           ].map((item, i) => (
-            <motion.div 
+            <motion.div
               key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}
               className="PC_Card group"
             >
@@ -270,15 +273,15 @@ const PayrollAndCompliancePage = () => {
             { num: "03", h: "Execution", icon: <Calculator size={30} />, p: "Implementation of recurring payroll processing and filing protocols." },
             { num: "04", h: "Governance", icon: <Shield size={30} />, p: "Continuous monitoring, internal audits, and regulatory updates." }
           ].map((step, i) => (
-             <motion.div 
-               key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}
-               className="PC_Step_Card"
-             >
-               <span className="PC_Step_Stage">STAGE {step.num}</span>
-               <div className="text-blue-500 mb-6 flex justify-center">{step.icon}</div>
-               <h3 className="text-xl font-black text-[#1a2b4b] mb-4">{step.h}</h3>
-               <p className="text-slate-500 font-medium text-sm leading-relaxed">{step.p}</p>
-             </motion.div>
+            <motion.div
+              key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}
+              className="PC_Step_Card"
+            >
+              <span className="PC_Step_Stage">STAGE {step.num}</span>
+              <div className="text-blue-500 mb-6 flex justify-center">{step.icon}</div>
+              <h3 className="text-xl font-black text-[#1a2b4b] mb-4">{step.h}</h3>
+              <p className="text-slate-500 font-medium text-sm leading-relaxed">{step.p}</p>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -293,6 +296,7 @@ const PayrollAndCompliancePage = () => {
           </Link>
         </motion.div>
       </section>
+
     </div>
   );
 };
