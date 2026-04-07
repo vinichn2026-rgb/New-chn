@@ -21,6 +21,7 @@ import {
     Search
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { toast } from 'sonner';
 
 const XIcon = ({ size = 20 }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -41,6 +42,9 @@ const ContactPage = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    // Web3Forms Configuration
+    const WEB3FORMS_ACCESS_KEY = "c4dd4198-389c-4a2c-9664-941876c93e0d";
+
     // Handle pre-filling from URL parameters (e.g., from Careers search)
     useEffect(() => {
         const interestParam = searchParams.get('interest');
@@ -55,13 +59,41 @@ const ContactPage = () => {
         }
     }, [searchParams]);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setTimeout(() => {
+
+        try {
+            const formDataToSend = new FormData();
+            formDataToSend.append("access_key", WEB3FORMS_ACCESS_KEY);
+            formDataToSend.append("name", formData.name);
+            formDataToSend.append("email", formData.email);
+            formDataToSend.append("organisation", formData.org);
+            formDataToSend.append("phone", formData.phone);
+            formDataToSend.append("interest", formData.interest);
+            formDataToSend.append("message", formData.message);
+            formDataToSend.append("from_name", "CHN Website Contact Form");
+            formDataToSend.append("subject", `New Requirement: ${formData.interest}`);
+
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formDataToSend
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setIsSubmitting(false);
+                setIsSubmitted(true);
+                toast.success("Message sent successfully!");
+            } else {
+                throw new Error(data.message || "Failed to submit form");
+            }
+        } catch (error) {
+            console.error("Web3Forms submission error:", error);
             setIsSubmitting(false);
-            setIsSubmitted(true);
-        }, 1500);
+            toast.error("Failed to send message. Please try again or contact us directly at info@chnindia.com");
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -238,16 +270,10 @@ const ContactPage = () => {
                     <span className="text-[#0060ff] font-bold tracking-[0.3em] uppercase mb-6 block">Strategic Engagement</span>
                     <h1 className="CN_Hero_Title">CONTACT US</h1>
                     <p className="CN_Hero_Subtitle">Conversations lead to clarity. Let’s start with yours.</p>
-                    {/* <p className="CN_Hero_Desc">
-                        Whether you are exploring technology services, digital solutions, consulting support, or career opportunities,
-                        CHN Technologies is here to understand your requirements and guide you in the right direction.
-                        Reach out to us to discuss challenges, ask questions, or begin a structured engagement.
-                    </p> */}
                 </motion.div>
 
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }} className="CN_Hero_Img">
                     <div className="CN_Circle_Img">
-                        {/* High-quality professional on phone image */}
                         <img src="/images/contact-main.jpg" alt="Contact CHN Technologies" />
                     </div>
                     <div className="CN_Triangle_Bg"></div>
@@ -255,7 +281,7 @@ const ContactPage = () => {
             </section>
 
             {/* LAYOUT 2 – WHY REACH OUT */}
-            <section className="CN_WhyReach">
+            {/* <section className="CN_WhyReach">
                 <span className="text-[#0060ff] font-bold tracking-[0.3em] uppercase mb-6 block">Integration Matrix</span>
                 <h2 className="CN_Section_Title">WHEN SHOULD YOU CONTACT <span className="text-blue-500">CHN</span></h2>
                 <p className="CN_Section_Desc">We provide a structured communication layer for organizations seeking stability, growth, and specialized expertise.</p>
@@ -274,7 +300,7 @@ const ContactPage = () => {
                         </motion.div>
                     ))}
                 </div>
-            </section>
+            </section> */}
 
             {/* LAYOUT 3, 4 – CONNECTION METHODS & FORM (SPLIT) */}
             <section className="CN_Main_Grid">
