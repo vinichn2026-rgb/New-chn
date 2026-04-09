@@ -32,7 +32,9 @@ const TrainingAndDevelopmentPage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .TD_Hero_H1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
+        .TD_Hero_H1 { 
+        
+        line-height: 1.1; color: #22314f; margin-bottom: 25px; }
         .TD_Tagline { font-size: 1.4rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .TD_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
@@ -144,6 +146,17 @@ const TrainingAndDevelopmentPage = () => {
           .TD_Hero, .TD_Outcome { flex-direction: column; text-align: center; }
           .TD_Btn_Group { justify-content: center; }
         }
+
+        /* --- SECTION 6: FINAL --- */
+        .TD_Final { 
+          padding: 80px 5%; 
+          background: #002e5b; color: #ffffff; text-align: center; 
+        }
+        .TD_Final_H { 
+
+         
+          font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; color:#ffffff; 
+        }
       `}</style>
 
       {/* LAYOUT 1 – PAGE HERO */}
@@ -155,11 +168,11 @@ const TrainingAndDevelopmentPage = () => {
           <span className="TD_Badge">Consulting Excellence</span>
           <h1 className="TD_Hero_H1">TRAINING & DEVELOPMENT consulting</h1>
           <p className="TD_Tagline">Building a high-performance workforce through structured enterprise learning systems.</p>
-          <p className="TD_Hero_P">
-            CHN Technologies provides structured training and development consulting that ensures
-            workforce growth, technical proficiency, and long-term skill stability. Our approach
-            focuses on learner-centric systems, process integrity, and measurable business impact.
-          </p>
+          {/* <p className="TD_Hero_P">
+              CHN Technologies provides structured training and development consulting that ensures
+              workforce growth, technical proficiency, and long-term skill stability. Our approach
+              focuses on learner-centric systems, process integrity, and measurable business impact.
+            </p> */}
           <div className="TD_Btn_Group">
             <Link to="/contact">
               <button className="TD_Primary_Btn">Customize Your Learning Plan</button>
@@ -282,17 +295,20 @@ const TrainingAndDevelopmentPage = () => {
         </div>
       </section>
 
-      {/* LAYOUT 6 – TRUST & FINAL CTA */}
-      <section style={{ padding: '100px 5%', textAlign: 'center', background: '#22314f', color: '#fff' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 className="TD_Hero_H1" style={{ fontSize: '2.5rem', color: '#fff' }}>BUILD A HIGH-PERFORMANCE WORKFORCE</h2>
-          <p className="TD_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
-            Connect with CHN Technologies to understand how structured training and development consulting can support workforce growth and operational reliability.
+      {/* LAYOUT 6 – FINAL CTA */}
+      <section className="TD_Final">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="max-w-4xl mx-auto">
+          <h2 className="TD_Final_H">BUILD A HIGH-PERFORMANCE <br /> WORKFORCE</h2>
+          <p className="text-blue-100/70 text-xl font-medium mb-12">
+            Connect with CHN Technologies to understand how structured training and development consulting <br />
+            can support workforce growth and operational reliability.
           </p>
           <Link to="/contact">
-            <button className="TD_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Contact a Training Specialist</button>
+            <button className="TD_Primary_Btn" style={{ margin: '0 auto', display: 'flex', alignItems: 'center', gap: '15px' }}>
+              Contact a Training Specialist <ArrowRight size={24} />
+            </button>
           </Link>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

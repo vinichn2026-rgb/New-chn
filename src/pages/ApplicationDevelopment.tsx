@@ -32,7 +32,8 @@ const ApplicationDevelopmentPage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .AD_Hero_H1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
+        .AD_Hero_H1 {
+         font-weight: 800; line-height: 1.1; color: #22314f; margin-bottom: 5px; }
         .AD_Tagline { font-size: 1.4rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .AD_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
@@ -63,29 +64,22 @@ const ApplicationDevelopmentPage = () => {
         .AD_Context_P { max-width: 900px; margin: 0 auto; color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.8; }
 
         /* --- SECTION 3: CAPABILITIES --- */
-        .AD_Cap_Section { padding: 100px 5%; background: #f8fafc; text-align: center; }
+        .AD_Cap_Section { 
+          padding: 100px 5%; background: #f8fafc; text-align: center; }
         .AD_Cap_Grid { 
           display: grid; 
-          grid-template-columns: repeat(5, 1fr); 
+          grid-template-columns: 1fr; 
           gap: 20px; 
           margin-top: 60px; 
-          max-width: 1400px; 
+          max-width: 1500px; 
           margin-left: auto; 
           margin-right: auto;
         }
 
-        @media (max-width: 1280px) {
-          .AD_Cap_Grid { grid-template-columns: repeat(3, 1fr); }
-        }
-
-        @media (max-width: 900px) {
-          .AD_Cap_Grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
         .AD_Cap_Card {
           background: white;
-          padding: 45px 35px;
-          border-radius: 30px;
+          padding: 30px 20px;
+          border-radius: 20px;
           text-align: left;
           position: relative;
           overflow: hidden;
@@ -108,10 +102,41 @@ const ApplicationDevelopmentPage = () => {
         .AD_Cap_Card:hover p,
         .AD_Cap_Card:hover .AD_Cap_Icon { color: #ffffff !important; }
         
-        .AD_Cap_Icon { width: 60px; height: 60px; background: #eff6ff; color: #3b82f6; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; transition: 0.3s; }
+        .AD_Cap_Icon { width: 50px; height: 50px; background: #eff6ff; color: #3b82f6; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: 0.3s; }
         .AD_Cap_Card:hover .AD_Cap_Icon { background: rgba(255,255,255,0.1); }
-        .AD_Cap_Card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; color: #22314f; transition: 0.3s; }
+        .AD_Cap_Card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 15px; color: #22314f; transition: 0.3s; }
         .AD_Cap_Card p { color: #64748b; line-height: 1.6; font-size: 0.95rem; transition: 0.3s; }
+
+        @media (min-width: 640px) {
+          .AD_Cap_Grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        }
+
+        @media (min-width: 768px) {
+          .AD_Cap_Grid { grid-template-columns: repeat(5, 1fr); gap: 10px; }
+          .AD_Cap_Card { padding: 12px 10px; border-radius: 12px; }
+          .AD_Cap_Icon { width: 32px; height: 32px; border-radius: 8px; margin-bottom: 10px; }
+          .AD_Cap_Icon svg { width: 16px; height: 16px; }
+          .AD_Cap_Card h3 { font-size: 0.8rem; margin-bottom: 6px; }
+          .AD_Cap_Card p { font-size: 0.65rem; line-height: 1.35; }
+        }
+
+        @media (min-width: 1024px) {
+          .AD_Cap_Grid { gap: 20px; }
+          .AD_Cap_Card { padding: 30px 20px; border-radius: 20px; }
+          .AD_Cap_Icon { width: 45px; height: 45px; border-radius: 12px; margin-bottom: 15px; }
+          .AD_Cap_Icon svg { width: 22px; height: 22px; }
+          .AD_Cap_Card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+          .AD_Cap_Card p { font-size: 0.85rem; line-height: 1.5; }
+        }
+
+        @media (min-width: 1280px) {
+          .AD_Cap_Grid { gap: 30px; }
+          .AD_Cap_Card { padding: 45px 35px; border-radius: 30px; }
+          .AD_Cap_Icon { width: 60px; height: 60px; border-radius: 16px; margin-bottom: 25px; }
+          .AD_Cap_Icon svg { width: 28px; height: 28px; }
+          .AD_Cap_Card h3 { font-size: 1.4rem; margin-bottom: 15px; }
+          .AD_Cap_Card p { font-size: 0.95rem; line-height: 1.6; }
+        }
 
         /* --- SECTION 4: OUTCOMES --- */
         .AD_Outcome { padding: 100px 5%; display: flex; align-items: center; gap: 80px; }
@@ -128,21 +153,50 @@ const ApplicationDevelopmentPage = () => {
         /* --- SECTION 5: APPROACH --- */
         .AD_Flow { padding: 100px 5%; background: #fdfdfd; text-align: center; }
         .AD_Flow_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-          gap: 30px; margin-top: 60px; max-width: 1300px; margin: 60px auto 0;
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 20px; 
+          margin-top: 60px; 
+          max-width: 1300px; 
+          margin-left: auto;
+          margin-right: auto;
         }
         .AD_Step_Card {
-          background: white; border-radius: 20px; padding: 50px 30px; position: relative;
+          background: white; border-radius: 20px; padding: 40px 20px; position: relative;
           box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; transition: 0.4s;
         }
         .AD_Step_Card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
         .AD_Step_Num { 
           position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
-          background: #22314f; color: white; padding: 5px 20px; border-radius: 50px; font-weight: 900; font-size: 0.8rem;
+          background: #22314f; color: white; padding: 5px 20px; border-radius: 50px; font-weight: 900; font-size: 0.8rem; white-space: nowrap;
         }
-        .AD_Step_Icon { color: #3b82f6; margin-bottom: 20px; }
+        .AD_Step_Icon { color: #3b82f6; margin-bottom: 20px; display: flex; justify-content: center; }
         .AD_Step_H { font-size: 1.3rem; font-weight: 800; color: #22314f; margin-bottom: 12px; }
         .AD_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
+
+        @media (min-width: 640px) {
+          .AD_Flow_Grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        }
+
+        @media (min-width: 768px) {
+          .AD_Flow_Grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+          .AD_Step_Card { padding: 35px 12px 20px; border-radius: 12px; }
+          .AD_Step_Num { font-size: 0.65rem; padding: 4px 12px; top: -12px; }
+          .AD_Step_Icon { margin-bottom: 15px; }
+          .AD_Step_Icon svg { width: 22px; height: 22px; }
+          .AD_Step_H { font-size: 0.95rem; margin-bottom: 8px; }
+          .AD_Step_P { font-size: 0.75rem; line-height: 1.4; }
+        }
+
+        @media (min-width: 1024px) {
+          .AD_Flow_Grid { gap: 30px; }
+          .AD_Step_Card { padding: 50px 30px; border-radius: 20px; }
+          .AD_Step_Num { font-size: 0.8rem; padding: 5px 20px; top: -15px; }
+          .AD_Step_Icon { margin-bottom: 20px; }
+          .AD_Step_Icon svg { width: 30px; height: 30px; }
+          .AD_Step_H { font-size: 1.3rem; margin-bottom: 12px; }
+          .AD_Step_P { font-size: 0.95rem; line-height: 1.6; }
+        }
 
         @media (max-width: 1024px) {
           .AD_Hero, .AD_Outcome { flex-direction: column; text-align: center; }
@@ -157,11 +211,11 @@ const ApplicationDevelopmentPage = () => {
           className="AD_Hero_Content"
         >
           <span className="AD_Badge">Software Solutions</span>
-          <h1 className="AD_Hero_H1">APPLICATION DEVELOPMENT SERVICES</h1>
+          <h2 className="AD_Hero_H1">APPLICATION DEVELOPMENT SERVICES</h2>
           <p className="AD_Tagline">Custom-built applications designed to support business workflows, performance, and scalability.</p>
-          <p className="AD_Hero_P">
+          {/* <p className="AD_Hero_P">
             CHN Technologies delivers application development services focused on building secure, scalable, and maintainable software solutions aligned with business objectives. Our applications are designed to support operational workflows and adapt to evolving requirements.
-          </p>
+          </p> */}
           <div className="AD_Btn_Group">
             <Link to="/contact">
               <button className="AD_Primary_Btn">Talk to an Application Specialist</button>
@@ -173,8 +227,8 @@ const ApplicationDevelopmentPage = () => {
         </motion.div>
 
         <motion.div
-            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
-            className="AD_Hero_Img"
+          initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
+          className="AD_Hero_Img"
         >
           <img src="/images/appdev-code.jpg" alt="Code Development Architecture" />
         </motion.div>
@@ -185,7 +239,7 @@ const ApplicationDevelopmentPage = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <h2 className="AD_Context_H1">APPLICATIONS ARE CORE TO BUSINESS OPERATIONS</h2>
           <p className="AD_Context_P">
-            Modern organisations rely on applications to manage processes, data, and customer interactions. Off-the-shelf tools often fail to align fully with unique workflows, leading to inefficiencies and limitations. 
+            Modern organisations rely on applications to manage processes, data, and customer interactions. Off-the-shelf tools often fail to align fully with unique workflows, leading to inefficiencies and limitations.
             CHN Technologies helps organisations design and develop custom applications that fit operational needs, improve productivity, and support digital transformation initiatives with clarity and control.
           </p>
         </motion.div>
@@ -296,7 +350,7 @@ const ApplicationDevelopmentPage = () => {
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h2 className="AD_Hero_H1" style={{ fontSize: '2.5rem', color: '#fff' }}>BUILD APPLICATIONS THAT SUPPORT YOUR BUSINESS</h2>
           <p className="AD_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
-            Connect with CHN Technologies to understand how structured application development solutions 
+            Connect with CHN Technologies to understand how structured application development solutions
             can support operational efficiency and digital growth.
           </p>
           <Link to="/contact">

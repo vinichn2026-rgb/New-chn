@@ -147,7 +147,7 @@ const CHNInsights = () => {
         }
 
         .BLOG_Hero_H1 {
-          font-size: clamp(3rem, 6vw, 4.5rem);
+          // font-size: clamp(3rem, 6vw, 4.5rem);
           font-weight: 900;
           color: #ffffff;
           line-height: 1.1;
@@ -447,7 +447,7 @@ const CHNInsights = () => {
       </section>
 
       {/* SECTION 4: CTA */}
-      <section style={{ padding: '81px 5%', textAlign: 'center', background: '#f8fafc' }}>
+      <section style={{ padding: '50px 20px', textAlign: 'center', background: '#f8fafc' }}>
         <h2 className="BLOG_Hero_H1" style={{ color: '#1a2b4b', fontSize: '3rem' }}>Stay Informed With <span className="text-blue-500">Expert Clarity</span></h2>
         <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto mb-12">
           Gain access to refined perspectives that matter to business owners,

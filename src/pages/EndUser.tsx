@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 
 // Import specialized computing assets
 import workspaceLaptop from '../assets/workspace_laptop.png';
-import heroTeam from '../assets/hero_team.png';
 
 const EndUserComputingPage = () => {
     return (
@@ -39,7 +38,10 @@ const EndUserComputingPage = () => {
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
-        .EUC_Hero_H1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; line-height: 1.05; color: #0f172a; margin-bottom: 30px; letter-spacing: -0.02em; }
+        .EUC_Hero_H1 
+        { 
+        // font-size: clamp(3rem, 6vw, 5rem); 
+        font-weight: 900; line-height: 1.05; color: #0f172a; margin-bottom: 30px; letter-spacing: -0.02em; }
         .EUC_Tagline { font-size: 1.5rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
         .EUC_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 45px; font-weight: 450; }
 
@@ -78,7 +80,7 @@ const EndUserComputingPage = () => {
         }
 
         /* --- SECTION 2: CAPABILITIES --- */
-        .EUC_Cap_Section { padding: 140px 5%; background: #f8fafc; text-align: left; }
+        .EUC_Cap_Section { padding: 50px 20px; background: #f8fafc; text-align: left; }
         .EUC_Cap_Grid { 
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -178,16 +180,16 @@ const EndUserComputingPage = () => {
                     <h1 className="EUC_Hero_H1">SEAMLESS USER <br /> COMPUTING</h1>
                     <p className="EUC_Tagline">Frictionless productivity through elite endpoint orchestration.</p>
                     <p className="EUC_Hero_P">
-                        CHN Technologies delivers structured end-user computing services that ensure your workforce 
+                        CHN Technologies delivers structured end-user computing services that ensure your workforce
                         stays agile, secure, and consistently productive across any device, anywhere in the world.
                     </p>
                     <div className="EUC_Btn_Group">
                         <Link to="/contact">
                             <button className="EUC_Primary_Btn">Talk to an EUC Expert <ArrowRight size={20} /></button>
                         </Link>
-                        <Link to="/services" className="EUC_Secondary_Btn">
+                        {/* <Link to="/services" className="EUC_Secondary_Btn">
                             All Technology Services <Activity size={18} />
-                        </Link>
+                        </Link> */}
                     </div>
                 </motion.div>
 
@@ -195,8 +197,8 @@ const EndUserComputingPage = () => {
                     initial={{ opacity: 0, scale: 0.95, y: 30 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 1.2, ease: "easeOut" }}
                     className="EUC_Hero_Img"
                 >
-                    <img src={heroTeam} alt="Modern Workspace" />
-                    <motion.div 
+                    <img src="/images/enduser-hero.png" alt="Modern End-User Workspace" />
+                    <motion.div
                         initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }}
                         className="EUC_Hero_Floating_Card"
                     >
@@ -215,8 +217,8 @@ const EndUserComputingPage = () => {
                     <span className="EUC_Badge">Operational Freedom</span>
                     <h2 className="EUC_Hero_H1" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>Modernizing the Human-System Interface</h2>
                     <p className="EUC_Hero_P" style={{ fontSize: '1.25rem' }}>
-                        The bottleneck of enterprise growth is often the endpoint. CHN Technologies 
-                        standardizes the user experience, eliminating technical debt and support 
+                        The bottleneck of enterprise growth is often the endpoint. CHN Technologies
+                        standardizes the user experience, eliminating technical debt and support
                         firefighting with automated lifecycle management.
                     </p>
                 </div>
@@ -259,7 +261,7 @@ const EndUserComputingPage = () => {
 
             {/* LAYOUT 4 – BUSINESS OUTCOMES */}
             <section className="EUC_Outcome">
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}
                     className="EUC_Outcome_Img"
                 >
@@ -276,17 +278,17 @@ const EndUserComputingPage = () => {
                             { title: "Aggressive Cost Reduction", desc: "Consolidate hardware spend and automate L1 support tasks, redirecting IT budget toward innovation." },
                             { title: "Absolute Compliance", desc: "Automated auditing and remote-wipe capabilities ensure corporate data never leaves your control plane." }
                         ].map((item, i) => (
-                          <motion.div 
-                            key={i} 
-                            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}
-                            className="Outcome_Item"
-                          >
-                            <div className="Outcome_Check"><CheckCircle size={22} /></div>
-                            <div>
-                                <span className="Outcome_Title">{item.title}</span>
-                                <p className="Outcome_Desc">{item.desc}</p>
-                            </div>
-                          </motion.div>
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}
+                                className="Outcome_Item"
+                            >
+                                <div className="Outcome_Check"><CheckCircle size={22} /></div>
+                                <div>
+                                    <span className="Outcome_Title">{item.title}</span>
+                                    <p className="Outcome_Desc">{item.desc}</p>
+                                </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
@@ -325,17 +327,17 @@ const EndUserComputingPage = () => {
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
                         <h2 className="EUC_Hero_H1" style={{ color: '#fff' }}>READY TO LIBERATE <br /> YOUR WORKFORCE?</h2>
                         <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
-                            Stop managing devices. Start empowering people. Join the enterprises 
+                            Stop managing devices. Start empowering people. Join the enterprises
                             shifting to elite end-user computing with CHN Technologies.
                         </p>
                         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
                             <Link to="/contact">
                                 <button className="EUC_Primary_Btn">Launch Workforce Audit</button>
                             </Link>
-                            <a href="tel:+91444555666" className="text-white font-bold hover:text-blue-400 transition-colors flex items-center gap-3">
+                            {/* <a href="tel:+91444555666" className="text-white font-bold hover:text-blue-400 transition-colors flex items-center gap-3">
                                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center"><HardDrive size={20} /></div>
                                 Support Architecture
-                            </a>
+                            </a> */}
                         </div>
                     </motion.div>
                 </div>

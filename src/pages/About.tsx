@@ -46,7 +46,7 @@ const AboutPage = () => {
           max-width: 1300px;
           margin: 0 auto;
           width: 100%;
-          padding: 0 5%;
+          padding: 30px 5%;
         }
 
         .ABOUT_Badge {
@@ -60,7 +60,6 @@ const AboutPage = () => {
         }
 
         .ABOUT_Hero_H1 {
-          font-size: clamp(3rem, 6vw, 5rem);
           font-weight: 900;
           color: #ffffff;
           line-height: 1.1;
@@ -69,7 +68,6 @@ const AboutPage = () => {
         }
 
         .ABOUT_Hero_P {
-          font-size: 1.4rem;
           color: #b9d1ff;
           max-width: 700px;
           font-weight: 500;
@@ -112,14 +110,11 @@ const AboutPage = () => {
           }
 
         .ABOUT_Identity_H2 { 
-        // font-size: clamp(2rem, 4vw, 3.5rem); 
         font-weight: 900; 
         line-height: 1.2; 
-        // margin-bottom: 30px; 
         color: #1a2b4b;
-        
          }
-        .ABOUT_Identity_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
+        .ABOUT_Identity_P { color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
         .ABOUT_Feature_Box { 
           display: flex; align-items: center; gap: 25px; background: #f8fafc; 
@@ -157,7 +152,7 @@ const AboutPage = () => {
         }
         .ABOUT_Card:hover .ABOUT_Card_Hover_Overlay { opacity: 0.7; }
         
-        .ABOUT_Card_H { font-size: 1.6rem; font-weight: 900; color: #1a2b4b; margin-bottom: 20px; transition: 0.3s; }
+        .ABOUT_Card_H { font-weight: 900; color: #1a2b4b; margin-bottom: 20px; transition: 0.3s; }
         .ABOUT_Card:hover .ABOUT_Card_H { color: #3b82f6; }
 
         /* --- SECTION 4: APPROACH --- */
@@ -168,7 +163,7 @@ const AboutPage = () => {
           .ABOUT_Approach_Container { grid-template-columns: 1fr; text-align: center; }
         }
 
-        .ABOUT_Approach_H { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 40px; color: #fff;}
+        .ABOUT_Approach_H { font-weight: 900; line-height: 1.1; margin-bottom: 40px; color: #fff;}
         .ABOUT_Philosophy_Grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         @media (max-width: 640px) { .ABOUT_Philosophy_Grid { grid-template-columns: 1fr; } }
 
@@ -192,9 +187,9 @@ const AboutPage = () => {
         <div className="ABOUT_Hero_Overlay" />
         <div className="ABOUT_Hero_Shape" />
         <div className="ABOUT_Hero_Content text-left">
-          <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="ABOUT_Badge">STRUCTURED EXCELLENCE</motion.span>
+          {/* <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="ABOUT_Badge">STRUCTURED EXCELLENCE</motion.span> */}
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="ABOUT_Hero_H1">ABOUT CHN <br /> <span className="text-blue-500">TECHNOLOGIES</span></motion.h1>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="ABOUT_Hero_P">Technology, consulting, and digital execution work best when built on structure, clarity, and accountability.</motion.p>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="ABOUT_Hero_P subtitle">Technology, consulting, and digital execution work best when built on structure, clarity, and accountability.</motion.p>
 
           {/* CTA Buttons */}
           <motion.div
@@ -267,7 +262,7 @@ const AboutPage = () => {
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="ABOUT_Identity_Content text-left">
             <span className="ABOUT_Badge">OVERVIEW</span>
             <h2 className="ABOUT_Identity_H2">Strengthening Operations Through Structured Solutions</h2>
-            <p className="ABOUT_Identity_P">CHN Technologies helps businesses strengthen operations through structured technology services, digital solutions, and workforce-focused consulting. Our work is centred on creating stable systems and long-term operational confidence.</p>
+            <p className="ABOUT_Identity_P subtitle">CHN Technologies helps businesses strengthen operations through structured technology services, digital solutions, and workforce-focused consulting. Our work is centred on creating stable systems and long-term operational confidence.</p>
 
             <div className="ABOUT_Feature_Box">
               <div className="ABOUT_Feature_Icon"><Shield size={30} /></div>

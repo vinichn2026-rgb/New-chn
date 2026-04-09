@@ -7,7 +7,7 @@ import {
 import { Link } from 'react-router-dom';
 
 // Replace with your local assets if needed
-import heroTeam from '../assets/hero_team.png';
+import heroTeam from '../assets/network_management_hero.png';
 import networkDashboard from '../assets/network_dashboard.png';
 
 const NetworkManagementPage = () => {
@@ -17,6 +17,9 @@ const NetworkManagementPage = () => {
         .NET_WRAPPER {
           font-family: 'Outfit', 'Inter', sans-serif;
           color: #1e293b;
+
+
+          
           background: #ffffff;
         }
 
@@ -35,7 +38,9 @@ const NetworkManagementPage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .NET_Hero_H1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
+        .NET_Hero_H1 { 
+        // font-size: clamp(2.5rem, 5vw, 4rem); 
+        font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
         .NET_Tagline { font-size: 1.4rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .NET_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
@@ -50,19 +55,33 @@ const NetworkManagementPage = () => {
         .NET_Secondary_Btn:hover { color: #3b82f6; gap: 12px; }
 
         .NET_Hero_Img { flex: 1; position: relative; }
-        .NET_Hero_Img img { width: 100%; max-width: 550px; border-radius: 40px; border: 15px solid #fff; box-shadow: 0 40px 100px rgba(0,0,0,0.08); }
+        .NET_Hero_Img img { 
+          width: 100%; 
+          max-width: 500px; 
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          border-radius: 500px; 
+          border: 15px solid #fff; 
+          box-shadow: 0 40px 100px rgba(0,0,0,0.1); 
+        }
 
         /* --- SECTION 2: CAPABILITIES (The Blue Shade Hover Section) --- */
         .NET_Cap_Section { padding: 100px 5%; background: #f8fafc; text-align: center; }
+        
         .NET_Cap_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-          gap: 30px; margin-top: 60px; max-width: 1300px; margin-left: auto; margin-right: auto;
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 20px; 
+          margin-top: 60px; 
+          max-width: 1300px; 
+          margin-left: auto; 
+          margin-right: auto;
         }
 
         .NET_Cap_Card {
           background: white;
-          padding: 45px 35px;
-          border-radius: 30px;
+          padding: 30px 20px;
+          border-radius: 20px;
           text-align: left;
           position: relative;
           overflow: hidden;
@@ -88,10 +107,32 @@ const NetworkManagementPage = () => {
         .NET_Cap_Card:hover p,
         .NET_Cap_Card:hover .NET_Cap_Icon { color: #ffffff !important; }
         
-        .NET_Cap_Icon { width: 60px; height: 60px; background: #eff6ff; color: #3b82f6; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; transition: 0.3s; }
+        .NET_Cap_Icon { width: 50px; height: 50px; background: #eff6ff; color: #3b82f6; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: 0.3s; }
         .NET_Cap_Card:hover .NET_Cap_Icon { background: rgba(255,255,255,0.15); }
-        .NET_Cap_Card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; color: #22314f; transition: 0.3s; }
+        .NET_Cap_Card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 15px; color: #22314f; transition: 0.3s; }
         .NET_Cap_Card p { color: #64748b; line-height: 1.6; font-size: 0.95rem; transition: 0.3s; }
+
+        @media (min-width: 640px) {
+          .NET_Cap_Grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 768px) {
+          .NET_Cap_Grid { grid-template-columns: repeat(4, 1fr); gap: 15px; }
+          .NET_Cap_Card { padding: 15px 12px; border-radius: 15px; }
+          .NET_Cap_Icon { width: 35px; height: 35px; border-radius: 8px; margin-bottom: 12px; }
+          .NET_Cap_Icon svg { width: 18px; height: 18px; }
+          .NET_Cap_Card h3 { font-size: 0.95rem; margin-bottom: 8px; }
+          .NET_Cap_Card p { font-size: 0.75rem; line-height: 1.4; }
+        }
+
+        @media (min-width: 1024px) {
+          .NET_Cap_Grid { gap: 30px; }
+          .NET_Cap_Card { padding: 45px 35px; border-radius: 30px; }
+          .NET_Cap_Icon { width: 60px; height: 60px; border-radius: 16px; margin-bottom: 25px; }
+          .NET_Cap_Icon svg { width: 28px; height: 28px; }
+          .NET_Cap_Card h3 { font-size: 1.4rem; margin-bottom: 15px; }
+          .NET_Cap_Card p { font-size: 0.95rem; line-height: 1.6; }
+        }
 
         /* --- SECTION 3: OUTCOMES --- */
         .NET_Outcome { padding: 100px 5%; display: flex; align-items: center; gap: 80px; }
@@ -107,7 +148,7 @@ const NetworkManagementPage = () => {
 
         /* --- SECTION 4: FLOW (STEPS) --- */
         .NET_Flow { 
-          padding: 100px 5%; 
+          padding: 5px 5%; 
           background: #fdfdfd; 
           color: #1e293b; 
           text-align: center; 
@@ -116,8 +157,8 @@ const NetworkManagementPage = () => {
         
         .NET_Flow_Grid { 
           display: grid; 
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-          gap: 25px; 
+          grid-template-columns: 1fr; 
+          gap: 20px; 
           margin-top: 60px; 
           max-width: 1300px;
           margin-left: auto;
@@ -140,6 +181,30 @@ const NetworkManagementPage = () => {
         .NET_Step_Card:hover {
           transform: translateY(-10px);
           box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+        }
+
+        @media (min-width: 640px) {
+          .NET_Flow_Grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        }
+
+        @media (min-width: 768px) {
+          .NET_Flow_Grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+          .NET_Step_Card { padding: 35px 12px 25px; border-radius: 8px; }
+          .NET_Step_Header { font-size: 0.65rem; padding: 5px 15px; min-width: 90px; top: -12px; }
+          .NET_Step_Icon { margin-bottom: 12px; margin-top: 5px; }
+          .NET_Step_Icon svg { width: 22px; height: 22px; }
+          .NET_Step_H { font-size: 0.95rem; margin-bottom: 8px; }
+          .NET_Step_P { font-size: 0.75rem; line-height: 1.4; }
+        }
+
+        @media (min-width: 1024px) {
+          .NET_Flow_Grid { gap: 25px; }
+          .NET_Step_Card { padding: 50px 30px 40px; border-radius: 12px; }
+          .NET_Step_Header { font-size: 0.85rem; padding: 8px 30px; min-width: 140px; top: -15px; }
+          .NET_Step_Icon { margin-bottom: 25px; margin-top: 10px; }
+          .NET_Step_Icon svg { width: 32px; height: 32px; }
+          .NET_Step_H { font-size: 1.25rem; margin-bottom: 15px; }
+          .NET_Step_P { font-size: 0.95rem; line-height: 1.6; }
         }
 
         /* Top Ribbon/Tab */
@@ -170,14 +235,14 @@ const NetworkManagementPage = () => {
         .NET_Step_Header::before { left: -10px; border-radius: 0 0 10px 0; }
         .NET_Step_Header::after { right: -10px; border-radius: 0 0 0 10px; }
 
-        .Step_01 { background: #60a5fa; }
-        .Step_01::before, .Step_01::after { background: #3b82f6; }
-        .Step_02 { background: #3b82f6; }
-        .Step_02::before, .Step_02::after { background: #2563eb; }
-        .Step_03 { background: #2563eb; }
+        .Step_01 {background: #1d4ed8;}
+        .Step_01::before, .Step_01::after { background: #1d4ed8; }
+        .Step_02 {background: #1d4ed8; }
+        .Step_02::before, .Step_02::after { background: #1d4ed8; }
+        .Step_03 { background: #1d4ed8; }
         .Step_03::before, .Step_03::after { background: #1d4ed8; }
-        .Step_04 { background: #1e3a8a; }
-        .Step_04::before, .Step_04::after { background: #172554; }
+        .Step_04 { background: #1d4ed8; }
+        .Step_04::before, .Step_04::after {  background: #1d4ed8;}
 
         .NET_Step_Icon {
           color: #3b82f6;

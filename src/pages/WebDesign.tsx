@@ -87,15 +87,15 @@ const WebDesignDevelopment = () => {
                 Software Solutions
               </span>
             </div>
-            <h1 className="text-5xl lg:text-7xl font-black mb-8 leading-[1.1] text-slate-900 tracking-tight">
+            <h1 className="font-black mb-8 leading-[1.1] text-slate-900 tracking-tight">
               WEB DESIGN & <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">DEVELOPMENT</span>
             </h1>
-            <p className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+            <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle">
               <Zap size={24} className="text-blue-600" />
               Built for performance, scale, and results.
             </p>
-            <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl">
+            <p className="text-slate-600 mb-10 leading-relaxed max-w-xl">
               CHN Technologies delivers professional web design and development services focused on usability, performance, and long-term maintainability. Our solutions support business objectives and digital growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
@@ -104,7 +104,7 @@ const WebDesignDevelopment = () => {
                   Start Your Project
                 </button>
               </Link>
-            
+
             </div>
           </motion.div>
 
@@ -149,15 +149,15 @@ const WebDesignDevelopment = () => {
         <div className="container mx-auto px-6 relative z-10">
           <motion.div className="max-w-4xl mx-auto text-center" {...fadeIn}>
             <span className="text-blue-400 font-black uppercase tracking-[0.3em] text-sm mb-6 block">Strategic Impact</span>
-            <h2 className="text-3xl md:text-5xl font-black mb-10 leading-tight">
+            <h2 className="mb-10 leading-tight text-slate-200">
               YOUR WEBSITE IS A BUSINESS ASSET, <br />
-              <span className="text-slate-400 italic">NOT JUST A DIGITAL PRESENCE</span>
+              <span className="text-slate-200">NOT JUST A DIGITAL PRESENCE</span>
             </h2>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-10"></div>
-            <p className="text-slate-400 text-xl leading-relaxed mb-8">
+            <p className="text-slate-400 leading-relaxed mb-8 subtitle">
               A website often forms the first point of interaction between a business and its customers. Poorly designed or unstructured websites can affect credibility, user experience, and conversion potential.
             </p>
-            <p className="text-slate-200 text-lg font-medium border-t border-slate-800 pt-10 max-w-2xl mx-auto">
+            <p className="text-slate-200 font-medium border-t border-slate-800 pt-10 max-w-2xl mx-auto">
               CHN Technologies helps organisations develop web platforms that align with business goals, support user journeys, and adapt to evolving digital requirements.
             </p>
           </motion.div>
@@ -165,25 +165,27 @@ const WebDesignDevelopment = () => {
       </section>
 
       {/* LAYOUT 3 – CORE CAPABILITIES */}
-      <section className="py-32 bg-slate-50">
+      <section className="py-12 bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl font-black tracking-tight text-slate-900 uppercase">WHAT OUR WEB SERVICES COVER</h2>
+            <h2 className="font-black tracking-tight text-slate-900 uppercase">WHAT OUR WEB SERVICES COVER</h2>
             <div className="h-2 w-24 bg-blue-600 mx-auto mt-6 rounded-full" />
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-[1600px] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 md:gap-3 xl:gap-6 max-w-[1600px] mx-auto">
             {capabilities.map((item, i) => (
               <motion.div
                 key={i}
-                className="p-8 border border-slate-200 rounded-[2rem] bg-white card-hover-effect group flex flex-col"
+                className="p-6 md:p-3 lg:p-5 xl:p-8 border border-slate-200 rounded-[1.5rem] md:rounded-xl lg:rounded-[2rem] bg-white card-hover-effect group flex flex-col h-full"
                 {...fadeIn}
                 transition={{ delay: i * 0.1 }}
               >
-                <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6 shadow-sm shrink-0">
-                  {item.icon}
+                <div className="w-12 h-12 md:w-10 md:h-10 lg:w-14 lg:h-14 bg-blue-50 text-blue-600 rounded-xl md:rounded-lg lg:rounded-2xl flex items-center justify-center mb-4 md:mb-3 xl:mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6 shadow-sm shrink-0">
+                  <div className="transform md:scale-75 lg:scale-100 flex items-center justify-center">
+                    {item.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-black mb-4 text-slate-900 leading-tight">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-[1.15rem] md:text-[11px] lg:text-base xl:text-xl font-black mb-3 md:mb-2 xl:mb-4 text-slate-900 leading-tight tracking-tight">{item.title}</h3>
+                <p className="text-slate-600 text-sm md:text-[9.5px] md:leading-tight lg:text-xs xl:text-sm lg:leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -196,7 +198,7 @@ const WebDesignDevelopment = () => {
           <div className="flex flex-col lg:flex-row gap-20 items-center max-w-7xl mx-auto">
             <motion.div className="lg:w-1/2" {...fadeIn}>
               <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4 block">Measurable Results</span>
-              <h2 className="text-4xl font-black mb-10 text-slate-900 leading-tight">BUSINESS BENEFITS OF <br />STRUCTURED WEB SOLUTIONS</h2>
+              <h2 className="font-black mb-10 text-slate-900 leading-tight">BUSINESS BENEFITS OF <br />STRUCTURED WEB SOLUTIONS</h2>
               <div className="grid gap-8">
                 {[
                   { label: "Stronger Brand Credibility", text: "Well-designed websites reinforce professionalism and trust.", icon: <Globe size={20} /> },
@@ -237,7 +239,7 @@ const WebDesignDevelopment = () => {
       <section className="py-32 bg-slate-900 text-white overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center mb-24">
-            <h2 className="text-4xl text-white uppercase tracking-tight">OUR DESIGN & DEVELOPMENT APPROACH</h2>
+            <h2 className="text-white uppercase tracking-tight">OUR DESIGN & DEVELOPMENT APPROACH</h2>
             <div className="h-2 w-24 bg-blue-600 mx-auto mt-6 rounded-full" />
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 relative max-w-7xl mx-auto">
@@ -271,26 +273,20 @@ const WebDesignDevelopment = () => {
       </section>
 
       {/* FINAL CTA SECTION */}
-      <section className="py-32 relative overflow-hidden" style={{ color: '#22314f' }}>
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
-        </div>
-
-        <div className="container mx-auto px-6 text-center text-white relative z-10">
-          <motion.div {...fadeIn}>
-            <h2 className="text-4xl lg:text-6xl font-black mb-8 leading-tight uppercase">
-              BUILD A WEBSITE THAT <br /> WORKS FOR YOUR BUSINESS
-            </h2>
-            <p className="text-blue text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
-              Connect with CHN Technologies to understand how structured web design and development solutions can support brand growth, user engagement, and business objectives.
-            </p>
-            <Link to="/contact">
-              <button className="bg-blue-600 text-white hover:bg-blue-700 px-12 py-6 rounded-full font-black shadow-2xl transition-all transform hover:scale-105 active:scale-95 text-lg border border-blue-500/50">
-                Get Your Free Consultation
-              </button>
-            </Link>
-          </motion.div>
+      <section style={{ padding: '100px 5%', textAlign: 'center', background: '#22314f', color: '#fff' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{ fontWeight: 900, color: '#fff', lineHeight: 1.1, marginBottom: '20px' }}>BUILD A WEBSITE THAT WORKS FOR YOUR BUSINESS</h2>
+          <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, margin: '20px auto 40px', fontWeight: 450 }} className="subtitle">
+            Connect with CHN Technologies to understand how structured web design and development solutions can support brand growth, user engagement, and business objectives.
+          </p>
+          <Link to="/contact">
+            <button style={{
+              background: '#3b82f6', color: '#fff', padding: '20px 40px', borderRadius: '100px',
+              fontWeight: 800, fontSize: '1.05rem', border: 'none', cursor: 'pointer',
+              boxShadow: '0 20px 40px rgba(37, 99, 235, 0.25)', transition: 'all 0.4s',
+              display: 'inline-flex', alignItems: 'center', gap: '10px'
+            }}>Get Your Free Consultation</button>
+          </Link>
         </div>
       </section>
     </div>

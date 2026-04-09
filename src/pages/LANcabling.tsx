@@ -37,7 +37,10 @@ const LanCablingSurveillancePage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .LCS_Hero_H1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
+        .LCS_Hero_H1 
+        { 
+        // font-size: clamp(2.5rem, 5vw, 4rem);
+          font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
         .LCS_Tagline { font-size: 1.4rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .LCS_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 

@@ -24,8 +24,8 @@ const PrivacyPolicy = () => {
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
 
-        .PP_Title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; color: #0f172a; margin-bottom: 20px; letter-spacing: -0.02em; }
-        .PP_Subtitle { font-size: 1.1rem; color: #64748b; font-weight: 500; }
+        .PP_Title { font-weight: 900; color: #0f172a; margin-bottom: 20px; letter-spacing: -0.02em; }
+        .PP_Subtitle { color: #64748b; font-weight: 500; }
 
         .PP_Content {
           max-width: 900px;
@@ -35,12 +35,12 @@ const PrivacyPolicy = () => {
 
         .PP_Section { margin-bottom: 60px; }
         .PP_Section_H { 
-          font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 25px; 
+          font-weight: 800; color: #0f172a; margin-bottom: 25px; 
           display: flex; align-items: center; gap: 15px; letter-spacing: -0.01em;
         }
         .PP_Section_Icon { color: #2563eb; background: rgba(37, 99, 235, 0.08); padding: 10px; border-radius: 12px; }
         
-        .PP_P { font-size: 1.1rem; color: #475569; line-height: 1.8; margin-bottom: 20px; }
+        .PP_P { color: #475569; line-height: 1.8; margin-bottom: 20px; }
         .PP_List { list-style: none; padding: 0; }
         .PP_Item { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; }
         .PP_Check { color: #2563eb; margin-top: 4px; flex-shrink: 0; }
@@ -64,7 +64,7 @@ const PrivacyPolicy = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <span className="PP_Badge">Trust & Transparency</span>
           <h1 className="PP_Title">PRIVACY POLICY</h1>
-          <p className="PP_Subtitle">Last Updated: July 5, 2025</p>
+          <p className="PP_Subtitle subtitle">Last Updated: July 5, 2025</p>
         </motion.div>
       </section>
 

@@ -40,7 +40,9 @@ const ServerAdministrationPage = () => {
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
-        .SA_Hero_H1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; line-height: 1.05; color: #0f172a; margin-bottom: 30px; letter-spacing: -0.02em; }
+        .SA_Hero_H1 {
+        //  font-size: clamp(3rem, 6vw, 5rem); 
+         font-weight: 900; line-height: 1.05; color: #0f172a; margin-bottom: 30px; letter-spacing: -0.02em; }
         .SA_Tagline { font-size: 1.5rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
         .SA_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 45px; font-weight: 450; }
 
@@ -168,7 +170,7 @@ const ServerAdministrationPage = () => {
           <h1 className="SA_Hero_H1">ELITE SERVER <br /> MANAGEMENT</h1>
           <p className="SA_Tagline">Stabilizing mission-critical environments with precision administration.</p>
           <p className="SA_Hero_P">
-            CHN Technologies engineers resilient server frameworks designed for 99.9% availability, 
+            CHN Technologies engineers resilient server frameworks designed for 99.9% availability,
             absolute security, and elastic global scalability. We manage the backbone so you can lead the business.
           </p>
           <div className="SA_Btn_Group">
@@ -186,7 +188,7 @@ const ServerAdministrationPage = () => {
           className="SA_Hero_Img"
         >
           <img src={serversImg} alt="Server Infrastructure" />
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }}
             className="SA_Hero_Floating_Card"
           >
@@ -205,8 +207,8 @@ const ServerAdministrationPage = () => {
           <span className="SA_Badge">Technical Authority</span>
           <h2 className="SA_Hero_H1" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>Engineered for Reliability</h2>
           <p className="SA_Hero_P" style={{ fontSize: '1.25rem' }}>
-            A single minute of downtime costs an enterprise an average of $5,600. CHN Technologies 
-            eliminates fragility by implementing standardized, automated, and audited server 
+            A single minute of downtime costs an enterprise an average of $5,600. CHN Technologies
+            eliminates fragility by implementing standardized, automated, and audited server
             governance models across hybrid-cloud ecosystems.
           </p>
         </div>
@@ -249,7 +251,7 @@ const ServerAdministrationPage = () => {
 
       {/* LAYOUT 4 – BUSINESS OUTCOMES */}
       <section className="SA_Outcome">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}
           className="SA_Outcome_Img"
         >
@@ -266,8 +268,8 @@ const ServerAdministrationPage = () => {
               { title: "Predictable Cost Scaling", desc: "Optimized resource utilization reduces cloud sprawl and hardware waste, aligning IT spend with literal business value." },
               { title: "Future-Proof Stability", desc: "Infrastructures designed with modularity, allowing for rapid adoption of new technologies without technical debt." }
             ].map((item, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}
                 className="Outcome_Item"
               >
@@ -315,7 +317,7 @@ const ServerAdministrationPage = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
             <h2 className="SA_Hero_H1" style={{ color: '#fff' }}>READY FOR A MORE RELIABLE <br /> SERVER FOUNDATION?</h2>
             <p className="SA_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
-              Stop reacting to server fires. Start driving enterprise growth with a managed 
+              Stop reacting to server fires. Start driving enterprise growth with a managed
               infrastructure built for absolute predictability and performance.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">

@@ -63,7 +63,7 @@ const PayrollAndCompliancePage = () => {
           font-size: 0.85rem; margin-bottom: 25px; display: block;
         }
 
-        .PC_Hero_H1 { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.1; color: #1a1a1a; margin-bottom: 30px; text-transform: uppercase; }
+        .PC_Hero_H1 {  line-height: 1.1; color: #1a1a1a; margin-bottom: 30px; text-transform: uppercase; }
         .PC_Hero_P { font-size: 1.2rem; color: #64748b; font-weight: 500; line-height: 1.6; margin-bottom: 50px; }
 
         .PC_Btn { 

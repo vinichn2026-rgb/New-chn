@@ -79,7 +79,7 @@ const Careers = () => {
         }
 
         .CR_Hero_H1 {
-          font-size: clamp(3rem, 5vw, 4.5rem);
+          // font-size: clamp(3rem, 5vw, 4.5rem);
           font-weight: 900;
           color: #1a1a1a;
           line-height: 1.1;
@@ -194,14 +194,15 @@ const Careers = () => {
         .CR_Pro_Check { color: #3b82f6; display: flex; }
 
         /* --- SECTION 4: FINAL CTA --- */
-        .CR_Final { padding: 140px 5%; text-align: center; background: #fff; }
+        .CR_Final { padding: 50px 20px; text-align: center; background: #fff; }
         .CR_Final_Max { max-width: 800px; margin: 0 auto; }
-        .CR_Final_H { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; color: #1a2b4b; line-height: 1.1; margin-bottom: 30px; }
+        .CR_Final_H { 
+         font-weight: 900; color: #1a2b4b; line-height: 1.1; margin-bottom: 30px; }
         .CR_Final_P { font-size: 1.2rem; color: #64748b; margin-bottom: 50px; font-weight: 500; }
         .CR_Btn { 
-          background: #3b82f6; color: white; padding: 22px 50px; border-radius: 100px; 
+          background: #3b82f6; color: white; padding: 15px 30px; border-radius: 100px; 
           font-weight: 800; font-size: 1.1rem; border: none; cursor: pointer; transition: 0.3s;
-          box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); display: flex; align-items: center; gap: 15px; margin: 0 auto;
+          box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); display: inline-flex; align-items: center; justify-content: center; gap: 15px; margin: 0 auto;
         }
         .CR_Btn:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5); }
       `}</style>

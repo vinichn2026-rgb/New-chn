@@ -16,58 +16,63 @@ import { ScanSearch, Workflow, Cpu, Activity } from "lucide-react";
 import SiteFooter from "@/components/SiteFooter";
 
 const Index = () => {
-  // Data for the 'Long-Term Partner' section
-  const contentData = [
-    {
-      id: 1,
-      title: "Structured Delivery",
-      desc: "CHN Technologies works with organisations that value consistency, accountability, and structured execution.",
-      image: "/images/partner-delivery.jpg",
-    },
-    {
-      id: 2,
-      title: "Business Alignment",
-      desc: "Our solutions are aligned with real business constraints, ensuring practical and sustainable digital growth.",
-      image: "/images/partner-alignment.jpg",
-    },
-    {
-      id: 3,
-      title: "Ongoing Support",
-      desc: "Our approach is built around long-term partnerships rather than short-term engagements, offering support beyond implementation.",
-      image: "/images/partner-support.jpg",
-    },
-    {
-      id: 4,
-      title: "Stability & Security",
-      desc: "We focus on stability, security, and scalability to deliver solutions that are compliant and future-proof.",
-      image: "/images/partner-security.jpg",
-    },
+  const PARTNER_LOGOS = [
+    { id: 1, name: "Microsoft", image: "/images/partner-delivery.jpg" },
+    { id: 2, name: "Amazon", image: "/images/partner-alignment.jpg" },
+    { id: 3, name: "Google", image: "/images/partner-security.jpg" },
+    { id: 4, name: "Cisco", image: "/images/partner-support.jpg" },
+    { id: 5, name: "Oracle", image: "/images/partner-delivery.jpg" },
+    { id: 6, name: "SAP", image: "/images/partner-alignment.jpg" },
+    { id: 7, name: "IBM", image: "/images/partner-security.jpg" },
+    { id: 8, name: "Salesforce", image: "/images/partner-support.jpg" },
   ];
 
   /* ── State & Refs ── */
-  const [index, setIndex] = useState(0); // For Long-Term Partner section
   const [currentSlide, setCurrentSlide] = useState(0); // For Hero Slider
   const [rotationY, setRotationY] = useState(0); // For 3D Carousel
   const [activeCardIndex, setActiveCardIndex] = useState(0); // For Capabilities manual nav
   const [trackOffset, setTrackOffset] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const [slideDirection, setSlideDirection] = useState(1);
 
   const constraintsRef = useRef(null);
   const cardStepSize = 344; // 320px width + 24px gap
   const extendedFeed = [...CAPABILITIES_DATA, ...CAPABILITIES_DATA, ...CAPABILITIES_DATA];
 
+  /* ── Hero Slides ── */
+  const slides = [
+    {
+      bg: heroBg1,
+      subtitle: "Integrated Technology & Consulting",
+      title: <>RUN TECHNOLOGY LIKE <br />A BUSINESS SYSTEM.</>,
+      desc: "Integrated technology and consulting services built for stability, security, and scalable growth. We help you reduce risk and maintain control.",
+    },
+    {
+      bg: heroBg2,
+      subtitle: "WE ARE DEDICATED",
+      title: <>INSPIRED AND PASSIONATE<br />ABOUT INNOVATION.</>,
+      desc: "End-to-end management of IT infrastructure, software solutions, digital analytics, and workforce consulting — all under one roof.",
+    },
+    {
+      bg: "/images/hero-excellence.jpg",
+      subtitle: "OPERATIONAL EXCELLENCE",
+      title: <>RELIABILITY BUILT ON<br />STRUCTURED EXCELLENCE.</>,
+      desc: "We align systems, people, and processes to ensure your business remains resilient in a changing digital landscape. Experience long-term stability.",
+    },
+  ];
+
   /* ── Timers & Animations ── */
 
-  // Auto-slide for Long-Term Partner
+
+  // Auto-slide for Hero Slider
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % contentData.length);
+      setSlideDirection(1);
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, [contentData.length]);
+  }, [slides.length]);
 
   const goToSlide = (dir: number) => {
     setSlideDirection(dir);
@@ -112,28 +117,6 @@ const Index = () => {
     }),
   } as any;
 
-  /* ── Hero Slides ── */
-  const slides = [
-    {
-      bg: heroBg1,
-      subtitle: "Integrated Technology & Consulting",
-      title: <>RUN TECHNOLOGY LIKE <br /><strong>A BUSINESS SYSTEM.</strong></>,
-      desc: "Integrated technology and consulting services built for stability, security, and scalable growth. We help you reduce risk and maintain control.",
-    },
-    {
-      bg: heroBg2,
-      subtitle: "WE ARE DEDICATED",
-      title: <>INSPIRED AND PASSIONATE<br /><strong>ABOUT INNOVATION.</strong></>,
-      desc: "End-to-end management of IT infrastructure, software solutions, digital analytics, and workforce consulting — all under one roof.",
-    },
-    {
-      bg: "/images/hero-excellence.jpg",
-      subtitle: "OPERATIONAL EXCELLENCE",
-      title: <>RELIABILITY BUILT ON<br /><strong>STRUCTURED EXCELLENCE.</strong></>,
-      desc: "We align systems, people, and processes to ensure your business remains resilient in a changing digital landscape. Experience long-term stability.",
-    },
-  ];
-
   /* ── Data ── */
   const deliveryPhases = [
     {
@@ -162,33 +145,33 @@ const Index = () => {
     },
   ];
 
-    const services = [
-     {
-       title: "GROWTH & SCALE",
-       desc: "Businesses expanding operations while handling disconnected IT, software, and operational tools that require structure and consolidation.",
-       icon: <TrendingUp strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
-     },
-     {
-       title: "SECURITY & COMPLIANCE",
-       desc: "Organisations operating in regulated or risk-sensitive environments that need stronger controls, visibility, and policy alignment.",
-       icon: <ShieldCheck strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
-     },
-     {
-       title: "MULTI-LOCATION OPERATIONS",
-       desc: "Companies managing infrastructure, people, and processes across multiple offices or sites with a need for standardisation.",
-       icon: <Network strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
-     },
-     {
-       title: "LEADERSHIP VISIBILITY",
-       desc: "Decision-makers seek clear insights into system performance, operational efficiency, and workforce effectiveness.",
-       icon: <BarChart3 strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
-     },
-     {
-       title: "TECHNOLOGY INTEGRATION",
-       desc: "Seamless integration of legacy systems with modern technologies to create unified, future-ready IT ecosystems.",
-       icon: <Settings strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
-     },
-   ];
+  const services = [
+    {
+      title: "GROWTH & SCALE",
+      desc: "Businesses expanding operations while handling disconnected IT, software, and operational tools that require structure and consolidation.",
+      icon: <TrendingUp strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
+    },
+    {
+      title: "SECURITY & COMPLIANCE",
+      desc: "Organisations operating in regulated or risk-sensitive environments that need stronger controls, visibility, and policy alignment.",
+      icon: <ShieldCheck strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
+    },
+    {
+      title: "MULTI-LOCATION OPERATIONS",
+      desc: "Companies managing infrastructure, people, and processes across multiple offices or sites with a need for standardisation.",
+      icon: <Network strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
+    },
+    {
+      title: "LEADERSHIP VISIBILITY",
+      desc: "Decision-makers seek clear insights into system performance, operational efficiency, and workforce effectiveness.",
+      icon: <BarChart3 strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
+    },
+    {
+      title: "TECHNOLOGY INTEGRATION",
+      desc: "Seamless integration of legacy systems with modern technologies to create unified, future-ready IT ecosystems.",
+      icon: <Settings strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
+    },
+  ];
 
   const caseStudies = [
     {
@@ -256,7 +239,7 @@ const Index = () => {
   return (
     <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth overflow-x-hidden">
       {/* ----------- HERO SLIDER ----------- */}
-      <section className="relative h-screen snap-start pt-[65px]">
+      <section className="relative h-screen snap-start pt-[65px] overflow-hidden">
         <motion.div
           key={currentSlide}
           initial={{ scale: 1.15, opacity: 0 }}
@@ -264,22 +247,22 @@ const Index = () => {
           transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0 z-0"
         >
-          <img src={slides[currentSlide].bg} alt="" className="w-full h-full object-cover scale-105" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#002e5b]/90 via-[#002e5b]/70 to-transparent" />
+          <img src={slides[currentSlide].bg} alt="" className="w-full h-full object-cover scale-105" />          {/* <div className="absolute inset-0 bg-gradient-to-r from-[#002e5b]/90 via-[#002e5b]/70 to-transparent" /> */}
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-[3px]" />
         </motion.div>
 
         <div className="relative z-10 h-full flex items-center">
           <div className="hero mx-auto px-4">
             <motion.p key={`sub-${currentSlide}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-sm md:text-base uppercase tracking-[0.3em] text-white/80 mb-4">
+              className="text-sm md:text-base uppercase text-white/80 mb-4">
               {slides[currentSlide].subtitle}
             </motion.p>
             <motion.h1 key={`title-${currentSlide}`} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
-              className="text-4xl md:text-5xl lg:text-6xl text-white leading-[1.15] max-w-3xl font-light">
+              className="text-white leading-[1.15] max-w-3xl font-light">
               {slides[currentSlide].title}
             </motion.h1>
             <motion.p key={`desc-${currentSlide}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
-              className="mt-6 text-white/70 text-base md:text-lg max-w-2xl leading-relaxed">
+              className="mt-6 text-white/70 max-w-2xl leading-relaxed subtitle">
               {slides[currentSlide].desc}
             </motion.p>
             <motion.div key={`btn-${currentSlide}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.9 }}
@@ -305,11 +288,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">OPERATIONAL CAPACITY</span>
-            <h2 className="text-3xl md:text-5xl font-black text-[#002e5b] uppercase tracking-tight">DESIGNED TO SUPPORT SYSTEMS</h2>
+            <h2 className="font-black text-[#002e5b] uppercase tracking-tight">DESIGNED TO SUPPORT SYSTEMS</h2>
           </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
-      {services.map((service, i) => (
-        <div key={i} className="group relative bg-white border border-gray-100 p-8 text-center transition-all hover:-translate-y-3 hover:shadow-2xl rounded-xl overflow-hidden cursor-pointer">
+          <div className="grid grid-cols-1 md:grid-cols-5 xl:grid-cols-5 gap-6">
+            {services.map((service, i) => (
+              <div key={i} className="group relative bg-white border border-gray-100 p-8 text-center transition-all hover:-translate-y-3 hover:shadow-2xl rounded-xl overflow-hidden cursor-pointer">
                 {/* SLIDING BACKGROUND SHADE */}
                 <div className="absolute top-0 left-0 h-full w-0 bg-[#f4f5f7] group-hover:w-full transition-all duration-500 ease-in-out z-0 pointer-events-none"></div>
 
@@ -322,9 +305,9 @@ const Index = () => {
                   <h3 className="text-xl font-bold mb-4">{service.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-8">{service.desc}</p>
 
-                  <button className="w-12 h-12 mt-auto rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.06)] flex items-center justify-center text-gray-400 group-hover:bg-[#0060ff] group-hover:text-white transition-all duration-300">
+                  {/* <button className="w-12 h-12 mt-auto rounded-full bg-white shadow-[0_4px_15px_rgba(0,0,0,0.06)] flex items-center justify-center text-gray-400 group-hover:bg-[#0060ff] group-hover:text-white transition-all duration-300">
                     <ArrowRight className="w-5 h-5 transition-colors duration-300" />
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}
@@ -345,7 +328,7 @@ const Index = () => {
           </div>
           <div>
             <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">MEASURABLE OUTCOMES</span>
-            <h2 className="text-3xl md:text-5xl font-black text-[#002e5b] mb-6 uppercase tracking-tight">OUTCOMES THAT MATTER</h2>
+            <h2 className="font-black text-[#002e5b] mb-6 uppercase tracking-tight">OUTCOMES THAT MATTER</h2>
             <p className="text-lg text-blue-600 italic mb-6">Delivering measurable outcomes that improve stability and reliability.</p>
             <p className="text-gray-500 leading-relaxed mb-8">We engineer resilient environments that evolve alongside your business, ensuring sustainable impact.</p>
             <div className="bg-gray-100 h-12 rounded-lg overflow-hidden">
@@ -373,7 +356,7 @@ const Index = () => {
           .CHN_Marquee_Track {
             display: flex;
             gap: 24px;
-            animation: CHN_Marquee_Scroll 60s linear infinite;
+            animation: CHN_Marquee_Scroll 80s linear infinite;
             width: fit-content;
           }
           .CHN_Marquee_Track:hover { animation-play-state: paused; }
@@ -384,16 +367,35 @@ const Index = () => {
         `}</style>
         <div className="text-center mb-16 px-4">
           <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">INNOVATION STREAM</span>
-          <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">CAPABILITIES <span className="text-[#0060ff]">OVERVIEW</span></h2>
+          <h2 className="font-black text-white uppercase tracking-tight">CAPABILITIES <span className="text-[#0060ff]">OVERVIEW</span></h2>
         </div>
         <div className="flex overflow-hidden">
           <div className="CHN_Marquee_Track">
             {extendedFeed.map((item, i) => (
-              <div key={i} className="flex-shrink-0 w-[300px] bg-white rounded-2xl overflow-hidden shadow-xl transition-transform hover:-translate-y-2">
-                <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-navy mb-2">{item.title}</h3>
-                  <p className="text-gray-500 text-sm line-clamp-3">{item.desc}</p>
+              <div
+                key={i}
+                className="flex-shrink-0 w-[300px] bg-white rounded-2xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer flex flex-col"
+              >
+                {/* Ken Burns Container */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform [transition-duration:3000ms] ease-out group-hover:scale-125 group-hover:translate-x-2 group-hover:translate-y-1"
+                  />
+                  {/* Subtle overlay for contrast */}
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                </div>
+
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-lg font-bold text-[#22314f] mb-2 group-hover:text-[#0060ff] transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm line-clamp-3 leading-relaxed mb-6">
+                    {item.desc}
+                  </p>
+                  {/* Animated accent line pinned to absolute bottom baseline */}
+                  <div className="mt-auto h-[2px] w-0 bg-[#0060ff]/60 group-hover:w-16 transition-all duration-700 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)]" />
                 </div>
               </div>
             ))}
@@ -406,7 +408,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">OPERATIONAL EXCELLENCE</span>
-            <h2 className="text-3xl md:text-5xl font-black text-[#002e5b] uppercase tracking-tight">A STRUCTURED DELIVERY MODEL</h2>
+            <h2 className="font-black text-[#002e5b] uppercase tracking-tight">A STRUCTURED DELIVERY MODEL</h2>
           </div>
           <div className="grid md:grid-cols-4 gap-8">
             {deliveryPhases.map((phase, i) => {
@@ -443,86 +445,69 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ----------- LONG-TERM PARTNER (Auto-Animate) ----------- */}
+      {/* ----------- TECHNOLOGY & CONSULTING PARTNER (Marquee) ----------- */}
       <section className="min-h-screen snap-start flex flex-col justify-center bg-white py-20 relative overflow-hidden">
+        <style>{`
+          .CHNP_Logo_Marquee_Track {
+            display: flex;
+            gap: 60px;
+            animation: CHNP_Logo_Scroll 40s linear infinite;
+            width: fit-content;
+          }
+          @keyframes CHNP_Logo_Scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .CHNP_Logo_Marquee_Track:hover { animation-play-state: paused; }
+        `}</style>
+        
         {/* Header Section */}
-        <div className="w-full px-6 mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-[#22314f] mb-6 uppercase tracking-tighter">
+        <div className="w-full px-6 mb-20 text-center">
+          <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">GLOBAL NETWORK</span>
+          <h2 className="font-black text-[#22314f] mb-6 uppercase tracking-tighter">
             Technology & Consulting Partner
           </h2>
-          <p className="max-w-3xl mx-auto text-xl text-gray-500 leading-relaxed">
-            Consistency, accountability, and structured execution delivered at scale.
+          <p className="max-w-3xl mx-auto text-xl text-gray-500 leading-relaxed font-light">
+            We collaborate with industry leaders to deliver integrated technology solutions at scale.
           </p>
         </div>
 
-        {/* Expanded Carousel Area */}
-        <div className="relative w-full overflow-visible h-[450px] flex items-center justify-center">
-          <div className="flex gap-6 px-[5%]">
-            <AnimatePresence mode="popLayout" initial={false}>
-              {[-2, -1, 0, 1, 2].map((offset) => {
-                const itemIndex = (index + offset + contentData.length) % contentData.length;
-                const item = contentData[itemIndex];
-                const isActive = offset === 0;
+        <div className="relative w-full overflow-hidden flex flex-col gap-12">
+          {/* First Row: Forward Scroll */}
+          <div className="flex overflow-hidden">
+            <div className="CHNP_Logo_Marquee_Track px-4">
+              {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].map((logo, i) => (
+                <div key={i} className="flex-shrink-0 flex flex-col items-center justify-center w-[220px] filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer group">
+                  <div className="h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <img src={logo.image} alt={logo.name} className="h-full w-auto object-contain" />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#22314f]/40 group-hover:text-[#0060ff] transition-colors duration-300">
+                    {logo.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-                return (
-                  <motion.div
-                    key={`${item.id}-${offset}`}
-                    layout
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{
-                      opacity: Math.abs(offset) > 1 ? 0.1 : (isActive ? 1 : 0.5),
-                      scale: isActive ? 1.05 : 0.85,
-                      zIndex: isActive ? 30 : 10 - Math.abs(offset),
-                      filter: isActive ? "blur(0px)" : "blur(2px)"
-                    }}
-                    exit={{ opacity: 0, scale: 0.5 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 200,
-                      damping: 25
-                    }}
-                    // Reduced width from 450px to 380px for a more compact look
-                    className={`relative flex-shrink-0 w-[260px] md:w-[380px] aspect-[4/5] rounded-[32px] overflow-hidden shadow-xl border border-gray-100`}
-                  >
-                    {/* Image */}
-                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
-
-                    {/* Content Overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}>
-
-                      {/* Title with Brand Color #22314f and clean white background tag style */}
-                      <motion.div
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        className="bg-white self-start px-4 py-1 rounded-lg mb-3 shadow-lg"
-                      >
-                        <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-[#22314f]">
-                          {item.title}
-                        </h3>
-                      </motion.div>
-
-                      {/* Description in Pure White */}
-                      <motion.p
-                        initial={{ y: 15, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-sm md:text-base text-white font-medium leading-snug"
-                      >
-                        {item.desc}
-                      </motion.p>
-                    </div>
-
-                    {/* Reflection Shine */}
-                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-white/10 to-transparent opacity-20" />
-                  </motion.div>
-                );
-              })}
-            </AnimatePresence>
+          {/* Second Row: Reverse Scroll */}
+          <div className="flex overflow-hidden">
+            <div className="CHNP_Logo_Marquee_Track px-4" style={{ animationDirection: 'reverse', animationDuration: '60s' }}>
+              {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].reverse().map((logo, i) => (
+                <div key={i} className="flex-shrink-0 flex flex-col items-center justify-center w-[220px] filter grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer group">
+                  <div className="h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
+                    <img src={logo.image} alt={logo.name} className="h-full w-auto object-contain" />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#22314f]/40 group-hover:text-[#0060ff] transition-colors duration-300">
+                    {logo.name}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Background Decoration */}
-        <div className="absolute top-1/2 left-0 w-full h-[250px] -translate-y-1/2 bg-[#22314f]/5 -skew-y-2 pointer-events-none" />
+        <div className="absolute top-1/2 left-0 w-full h-[350px] -translate-y-1/2 bg-[#22314f]/[0.02] -skew-y-1 pointer-events-none" />
       </section>
 
       {/* ----------- TESTIMONIALS ----------- */}
