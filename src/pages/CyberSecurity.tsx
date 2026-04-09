@@ -23,7 +23,7 @@ const CyberSecurityPage = () => {
 
         /* --- SECTION 1: HERO --- */
         .CS_Hero {
-          padding: 120px 5% 80px;
+          padding: 100px 5% 60px;
           display: flex;
           align-items: center;
           gap: 60px;
@@ -31,6 +31,15 @@ const CyberSecurityPage = () => {
           min-height: 90vh;
           position: relative;
           overflow: hidden;
+        }
+        @media (max-width: 1024px) {
+          .CS_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .CS_Hero_Content { max-width: 100%; order: 1; }
+          .CS_Hero_Img { order: -1; width: 100%; margin-bottom: 40px; }
+          .CS_Hero_Img img { max-width: 380px; border-width: 10px; border-radius: 30px; }
+          .CS_Hero_Floating_Card { display: none; }
+          .CS_Badge { margin-bottom: 30px; }
+          .CS_Btn_Group { justify-content: center; }
         }
 
         .CS_Hero_Content { flex: 1.2; max-width: 700px; z-index: 10; }
@@ -85,9 +94,16 @@ const CyberSecurityPage = () => {
         padding: 15px 10px; 
         background: #f8fafc; text-align: left; }
         .CS_Cap_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-          gap: 35px; margin-top: 80px; max-width: 1400px; margin-left: auto; margin-right: auto;
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 30px; 
+          margin-top: 60px; 
+          max-width: 1400px; 
+          margin-left: auto; 
+          margin-right: auto;
         }
+        @media (min-width: 768px) { .CS_Cap_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .CS_Cap_Grid { grid-template-columns: repeat(4, 1fr); gap: 35px; } }
 
         .CS_Cap_Card {
           background: white;
@@ -131,35 +147,21 @@ const CyberSecurityPage = () => {
         .Outcome_Title { font-weight: 800; color: #0f172a; display: block; font-size: 1.25rem; margin-bottom: 5px; letter-spacing: -0.01em; }
         .Outcome_Desc { color: #64748b; font-size: 1.05rem; line-height: 1.6; font-weight: 450; }
 
-        /* --- SECTION 4: APPROACH --- */
-        .CS_Flow { padding: 15px 30px; background: #fdfdfd; text-align: center; }
-        .CS_Flow_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-          gap: 30px; margin-top: 80px; max-width: 1400px; margin: 80px auto 0;
-        }
-        .CS_Step_Card {
-          background: white; border-radius: 30px; padding: 60px 40px; position: relative;
-          box-shadow: 0 20px 50px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.03); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-          text-align: left;
-        }
-        .CS_Step_Card:hover { transform: translateY(-15px); box-shadow: 0 40px 80px rgba(0,0,0,0.08); border-color: #0060ff; }
-        .CS_Step_Num { 
-          position: absolute; top: -20px; left: 40px;
-          background: #0f172a; color: white; padding: 6px 25px; border-radius: 100px; font-weight: 900; font-size: 0.85rem; letter-spacing: 1px;
-        }
-        .CS_Step_Icon { color: #0060ff; margin-bottom: 30px; }
-        .CS_Step_H { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.01em; }
-        .CS_Step_P { color: #64748b; font-size: 1rem; line-height: 1.7; font-weight: 450; }
-
         @media (max-width: 1024px) {
-          .CS_Hero, .CS_Outcome { flex-direction: column; text-align: center; padding-top: 140px; }
-          .CS_Hero_Content { text-align: center; }
-          .CS_Badge { margin-bottom: 30px; }
-          .CS_Btn_Group { justify-content: center; }
+          .CS_Outcome { flex-direction: column; text-align: center; gap: 60px; }
+          .CS_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
           .Outcome_Item { text-align: left; }
-          .CS_Hero_Img img { max-width: 100%; border-radius: 40px; }
-          .CS_Hero_Floating_Card { left: 50%; transform: translateX(-50%); top: -20px; }
         }
+        
+        .CS_Flow_Grid { 
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 30px; 
+          max-width: 1400px; 
+          margin: 80px auto 0;
+        }
+        @media (min-width: 768px) { .CS_Flow_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .CS_Flow_Grid { grid-template-columns: repeat(4, 1fr); } }
       `}</style>
 
       {/* LAYOUT 1 – PAGE HERO */}

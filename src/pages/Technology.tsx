@@ -44,8 +44,14 @@ const categories = [
 
 const TechnologyPage = () => {
     return (
-        <div style={{ fontFamily: "'Outfit', 'Inter', sans-serif", background: '#fff', color: '#1a2b4b' }}>
+        <div className="TECH_WRAPPER">
             <style>{`
+                .TECH_WRAPPER {
+                  font-family: 'Outfit', 'Inter', sans-serif;
+                  background: #fff;
+                  color: #1a2b4b;
+                  overflow-x: hidden;
+                }
                 .TECH_Hero {
                     background: linear-gradient(135deg, #001a3a 0%, #002e5b 60%, #003f80 100%);
                     padding: 160px 5% 100px;
@@ -76,14 +82,20 @@ const TechnologyPage = () => {
                     text-transform: uppercase; margin-bottom: 28px;
                 }
                 .TECH_Hero_Title {
-                    font-size: clamp(3rem, 6vw, 5.5rem);
+                    font-size: clamp(2.5rem, 6vw, 5.5rem);
                     font-weight: 900; color: #fff;
                     line-height: 1.05; letter-spacing: -0.03em;
                     text-transform: uppercase; margin-bottom: 20px;
                 }
                 .TECH_Hero_desc {
-                    color: rgba(255,255,255,0.6);
-                    font-size: 1.15rem; max-width: 650px; line-height: 1.8;
+                    font-size: 1.1rem; color: rgba(255,255,255,0.7);
+                    max-width: 700px; line-height: 1.6;
+                }
+
+                @media (max-width: 1024px) {
+                    .TECH_Hero { padding: 140px 5% 80px; text-align: center; }
+                    .TECH_Hero_desc { margin: 0 auto; }
+                    .TECH_Breadcrumb { justify-content: center; }
                 }
 
                 /* Body */
@@ -91,30 +103,36 @@ const TechnologyPage = () => {
 
                 .TECH_Category { margin-bottom: 80px; }
                 .TECH_Category_Header {
-                    display: flex; align-items: center; gap: 20px;
+                    display: flex; align-items: flex-start; gap: 40px;
                     margin-bottom: 40px; padding-bottom: 24px;
                     border-bottom: 1px solid #f1f5f9;
                 }
+                @media (max-width: 1024px) {
+                    .TECH_Category_Header { flex-direction: column; gap: 30px; text-align: center; align-items: center; }
+                    .TECH_Category_Desc { margin: 0 auto; }
+                }
                 .TECH_Category_Label {
-                    font-size: 1.5rem; font-weight: 900;
-                    color: #002e5b; letter-spacing: -0.01em;
+                    font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900;
+                    color: #002e5b; letter-spacing: -0.01em; margin-bottom: 10px;
                 }
                 .TECH_Category_Desc {
-                    font-size: 0.95rem; color: #64748b;
-                    margin-top: 4px; max-width: 600px; line-height: 1.6;
+                    font-size: 1rem; color: #64748b;
+                    max-width: 700px; line-height: 1.6;
                 }
                 .TECH_Category_Badge {
                     padding: 6px 16px; border-radius: 100px;
-                    font-size: 0.7rem; font-weight: 800;
+                    font-size: 0.72rem; font-weight: 800;
                     text-transform: uppercase; letter-spacing: 0.1em;
                     white-space: nowrap; flex-shrink: 0;
                 }
 
                 .TECH_Grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                    grid-template-columns: 1fr;
                     gap: 20px;
                 }
+                @media (min-width: 768px) { .TECH_Grid { grid-template-columns: repeat(2, 1fr); } }
+                @media (min-width: 1024px) { .TECH_Grid { grid-template-columns: repeat(3, 1fr); } }
 
                 .TECH_Card {
                     background: #fafafa;
@@ -126,19 +144,13 @@ const TechnologyPage = () => {
                     display: flex; flex-direction: column;
                     transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
                     position: relative; overflow: hidden;
-                }
-                .TECH_Card::before {
-                    content: '';
-                    position: absolute; inset: 0;
-                    opacity: 0;
-                    transition: opacity 0.35s;
+                    height: 100%;
                 }
                 .TECH_Card:hover {
                     transform: translateY(-6px);
                     box-shadow: 0 24px 60px rgba(0,0,0,0.08);
                     border-color: transparent;
                 }
-                .TECH_Card:hover::before { opacity: 1; }
 
                 .TECH_Card_Icon {
                     width: 50px; height: 50px; border-radius: 16px;
@@ -149,11 +161,11 @@ const TechnologyPage = () => {
                 .TECH_Card:hover .TECH_Card_Icon { transform: scale(1.1); }
 
                 .TECH_Card_Name {
-                    font-size: 1.1rem; font-weight: 800; margin-bottom: 8px;
+                    font-size: 1.2rem; font-weight: 800; margin-bottom: 10px;
                     color: #1a2b4b;
                 }
                 .TECH_Card_Desc {
-                    font-size: 0.88rem; color: #64748b; line-height: 1.6;
+                    font-size: 0.95rem; color: #64748b; line-height: 1.6;
                     flex: 1;
                 }
                 .TECH_Card_Arrow {
@@ -169,9 +181,23 @@ const TechnologyPage = () => {
                     display: flex; align-items: center; gap: 10px;
                     font-size: 0.8rem; color: rgba(255,255,255,0.45);
                     margin-bottom: 24px;
+                    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
                 }
                 .TECH_Breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; }
                 .TECH_Breadcrumb a:hover { color: #fff; }
+
+                /* Bottom CTA */
+                .TECH_CTA {
+                    background: linear-gradient(135deg, #002e5b, #0060ff);
+                    border-radius: 40px; padding: 60px;
+                    display: flex; align-items: center; justify-content: space-between;
+                    gap: 40px; margin-top: 40px;
+                }
+                @media (max-width: 1024px) {
+                    .TECH_CTA { flex-direction: column; text-align: center; padding: 50px 30px; }
+                    .TECH_CTA_Content { width: 100%; }
+                    .TECH_CTA_Btn { margin: 0 auto; width: 100%; justify-content: center; }
+                }
             `}</style>
 
             {/* HERO */}
@@ -214,7 +240,7 @@ const TechnologyPage = () => {
                         {/* Category header */}
                         <div className="TECH_Category_Header">
                             <div style={{ flex: 1 }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 6 }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 12 }} className="header_top">
                                     <span
                                         className="TECH_Category_Badge"
                                         style={{ background: cat.bg, color: cat.color }}
@@ -227,11 +253,12 @@ const TechnologyPage = () => {
                             </div>
                             <Link
                                 to={`/${cat.id}`}
+                                className="category_link"
                                 style={{
                                     display: 'inline-flex', alignItems: 'center', gap: 8,
                                     color: cat.color, fontWeight: 700, fontSize: '0.85rem',
                                     textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0,
-                                    padding: '10px 20px',
+                                    padding: '12px 24px',
                                     border: `1px solid ${cat.color}30`,
                                     borderRadius: 100,
                                     background: cat.bg,
@@ -254,7 +281,7 @@ const TechnologyPage = () => {
                                         transition={{ duration: 0.4, delay: si * 0.07 }}
                                         viewport={{ once: true }}
                                     >
-                                        <Link to={svc.link} className="TECH_Card" style={{ '--hover-color': cat.color } as React.CSSProperties}>
+                                        <Link to={svc.link} className="TECH_Card">
                                             <div
                                                 className="TECH_Card_Icon"
                                                 style={{ background: cat.bg, color: cat.color }}
@@ -282,14 +309,9 @@ const TechnologyPage = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    style={{
-                        background: 'linear-gradient(135deg, #002e5b, #0060ff)',
-                        borderRadius: 30, padding: '60px 50px',
-                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                        gap: 40, flexWrap: 'wrap',
-                    }}
+                    className="TECH_CTA"
                 >
-                    <div>
+                    <div className="TECH_CTA_Content">
                         <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 12 }}>
                             Not sure where to start?
                         </p>
@@ -297,7 +319,7 @@ const TechnologyPage = () => {
                             Let's find the right solution for your business
                         </h3>
                     </div>
-                    <Link to="/contact" style={{
+                    <Link to="/contact" className="TECH_CTA_Btn" style={{
                         display: 'inline-flex', alignItems: 'center', gap: 10,
                         background: '#fff', color: '#002e5b',
                         padding: '16px 36px', borderRadius: 100,

@@ -67,6 +67,7 @@ const WhatWeThink = () => {
           justify-content: center;
           overflow: hidden;
           background: #002e5b;
+          padding: 100px 5% 60px;
         }
 
         .WT_Hero_Bg {
@@ -90,7 +91,6 @@ const WhatWeThink = () => {
           z-index: 10;
           text-align: center;
           max-width: 900px;
-          padding: 0 5%;
         }
 
         .WT_Badge {
@@ -104,12 +104,12 @@ const WhatWeThink = () => {
         }
 
         .WT_Hero_H1 {
-          font-size: clamp(3rem, 6vw, 5rem);
           font-weight: 900;
           color: #ffffff;
           line-height: 1.1;
           margin-bottom: 30px;
           text-transform: uppercase;
+          font-size: clamp(2.5rem, 6vw, 5rem);
         }
 
         .WT_Hero_P {
@@ -121,7 +121,7 @@ const WhatWeThink = () => {
 
         /* --- SECTION 2: CONTEXT --- */
         .WT_Context {
-          padding: 120px 5%;
+          padding: 100px 5%;
           background: #22314f;
           color: #fff;
           text-align: center;
@@ -146,28 +146,22 @@ const WhatWeThink = () => {
 
         /* --- SECTION 3: VALUES GRID --- */
         .WT_Values {
-          padding: 120px 5%;
+          padding: 100px 5%;
           background: #f8fafc;
           text-align: center;
         }
 
         .WT_Values_Grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template_columns: 1fr;
           gap: 30px;
           margin-top: 80px;
           max-width: 1300px;
           margin-left: auto;
           margin-right: auto;
         }
-
-        @media (max-width: 1024px) {
-          .WT_Values_Grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 640px) {
-          .WT_Values_Grid { grid-template-columns: 1fr; }
-        }
+        @media (min-width: 768px) { .WT_Values_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .WT_Values_Grid { grid-template-columns: repeat(3, 1fr); } }
 
         .WT_Value_Card {
           background: white;
@@ -214,10 +208,10 @@ const WhatWeThink = () => {
 
         /* --- SECTION 4: STRATEGIC FRAMEWORK --- */
         .WT_Framework {
-          padding: 120px 5%;
+          padding: 100px 5%;
           display: flex;
           align-items: center;
-          gap: 100px;
+          gap: 60px;
           background: #ffffff;
         }
 
@@ -229,15 +223,21 @@ const WhatWeThink = () => {
           border: 15px solid #fff;
         }
 
+        @media (max-width: 1024px) {
+          .WT_Framework { flex-direction: column; text-align: center; gap: 40px; }
+          .WT_Framework_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .WT_Block_Title { justify-content: center; }
+          .WT_Block_P { margin-left: 0; }
+          .WT_Framework_Content button { margin: 0 auto; }
+        }
+
         .WT_Block { margin-bottom: 60px; }
         .WT_Block_Title { font-size: 2rem; font-weight: 900; color: #1a2b4b; margin-bottom: 20px; text-transform: uppercase; display: flex; align-items: center; gap: 15px; }
-        .WT_Block_Circle { width: 45px; height: 45px; background: #3b82f6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .WT_Block_Circle { width: 45px; height: 45px; background: #3b82f6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; min-width: 45px; }
         .WT_Block_P { color: #64748b; font-size: 1.1rem; line-height: 1.8; margin-left: 60px; }
 
         @media (max-width: 1024px) {
-          .WT_Framework { flex-direction: column; text-align: center; }
-          .WT_Block_Title { justify-content: center; }
-          .WT_Block_P { margin-left: 0; }
+           .WT_Hero { height: auto; min-height: 400px; }
         }
       `}</style>
 
@@ -350,4 +350,4 @@ const WhatWeThink = () => {
   );
 };
 
-export default WhatWeThink;
+export default WhatWeThink;

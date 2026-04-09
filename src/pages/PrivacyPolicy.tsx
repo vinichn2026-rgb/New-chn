@@ -18,13 +18,17 @@ const PrivacyPolicy = () => {
           text-align: center;
         }
 
+        @media (max-width: 768px) {
+          .PP_Hero { padding-top: 140px; }
+        }
+
         .PP_Badge { 
           color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; 
           font-size: 0.8rem; margin-bottom: 20px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
 
-        .PP_Title { font-weight: 900; color: #0f172a; margin-bottom: 20px; letter-spacing: -0.02em; }
+        .PP_Title { font-weight: 900; color: #0f172a; margin-bottom: 20px; letter-spacing: -0.02em; font-size: clamp(2.5rem, 5vw, 4rem); }
         .PP_Subtitle { color: #64748b; font-weight: 500; }
 
         .PP_Content {
@@ -37,12 +41,13 @@ const PrivacyPolicy = () => {
         .PP_Section_H { 
           font-weight: 800; color: #0f172a; margin-bottom: 25px; 
           display: flex; align-items: center; gap: 15px; letter-spacing: -0.01em;
+          font-size: 1.5rem;
         }
-        .PP_Section_Icon { color: #2563eb; background: rgba(37, 99, 235, 0.08); padding: 10px; border-radius: 12px; }
+        .PP_Section_Icon { color: #2563eb; background: rgba(37, 99, 235, 0.08); padding: 10px; border-radius: 12px; min-width: 44px; display: flex; justify-content: center; }
         
-        .PP_P { color: #475569; line-height: 1.8; margin-bottom: 20px; }
+        .PP_P { color: #475569; line-height: 1.8; margin-bottom: 20px; font-size: 1.1rem; }
         .PP_List { list-style: none; padding: 0; }
-        .PP_Item { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; }
+        .PP_Item { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; text-align: left; }
         .PP_Check { color: #2563eb; margin-top: 4px; flex-shrink: 0; }
 
         .PP_Contact_Box {
@@ -51,12 +56,19 @@ const PrivacyPolicy = () => {
           border-radius: 30px;
           border: 1px solid rgba(0,0,0,0.04);
           margin-top: 40px;
+          text-align: left;
         }
         .PP_Contact_Item { display: flex; gap: 15px; margin-bottom: 20px; align-items: center; color: #475569; font-weight: 500; }
-        .PP_Contact_Icon { color: #2563eb; }
+        .PP_Contact_Icon { color: #2563eb; min-width: 20px; }
 
         .PP_Footer_Note {
            text-align: center; color: #94a3b8; font-size: 0.9rem; padding: 40px; border-top: 1px solid #f1f5f9;
+        }
+
+        @media (max-width: 640px) {
+          .PP_Contact_Box { padding: 30px 20px; }
+          .PP_Section_H { flex-direction: column; text-align: center; }
+          .PP_Item { font-size: 0.95rem; }
         }
       `}</style>
 
@@ -64,7 +76,7 @@ const PrivacyPolicy = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <span className="PP_Badge">Trust & Transparency</span>
           <h1 className="PP_Title">PRIVACY POLICY</h1>
-          <p className="PP_Subtitle subtitle">Last Updated: July 5, 2025</p>
+          <p className="PP_Subtitle">Last Updated: July 5, 2025</p>
         </motion.div>
       </section>
 

@@ -109,7 +109,7 @@ const CHNInsights = () => {
           justify-content: center;
           background: #002e5b;
           overflow: hidden;
-          padding-top: 80px;
+          padding: 100px 5% 60px;
         }
 
         .BLOG_Hero_Bg {
@@ -122,18 +122,12 @@ const CHNInsights = () => {
           transform: scale(1.1);
         }
 
-        .BLOG_Hero_Overlay {
-          position: absolute;
-          inset: 0;
-          // background: radial-gradient(circle at center, rgba(0,46,91,0.8) 0%, rgba(0,46,91,1) 100%);
-        }
-
         .BLOG_Hero_Content {
           position: relative;
           z-index: 10;
           text-align: center;
           max-width: 900px;
-          padding: 0 5%;
+          width: 100%;
         }
 
         .BLOG_Badge {
@@ -147,12 +141,12 @@ const CHNInsights = () => {
         }
 
         .BLOG_Hero_H1 {
-          // font-size: clamp(3rem, 6vw, 4.5rem);
           font-weight: 900;
           color: #ffffff;
           line-height: 1.1;
           margin-bottom: 35px;
           text-transform: uppercase;
+          font-size: clamp(2.5rem, 5vw, 4.5rem);
         }
 
         .BLOG_Search_Box {
@@ -166,6 +160,12 @@ const CHNInsights = () => {
           max-width: 650px;
           margin: 0 auto;
           box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 640px) {
+          .BLOG_Search_Box { border-radius: 30px; flex-direction: column; padding: 15px; }
+          .BLOG_Search_Box input { width: 100%; text-align: center; margin-bottom: 10px; }
+          .BLOG_Search_Btn { width: 100%; border-radius: 15px; }
         }
 
         .BLOG_Search_Box input {
@@ -250,7 +250,11 @@ const CHNInsights = () => {
         }
 
         @media (max-width: 1024px) {
-          .BLOG_Featured_Card { grid-template-columns: 1fr; gap: 40px; }
+          .BLOG_Featured_Card { grid-template-columns: 1fr; gap: 40px; padding: 40px; }
+          .BLOG_Featured_Img { height: 350px; }
+          .BLOG_Featured_H { font-size: 2.2rem; }
+          .BLOG_Featured_Content { padding: 0; text-align: center; }
+          .BLOG_Featured_Content .flex { justify-content: center; }
         }
 
         .BLOG_Featured_Img { border-radius: 40px; overflow: hidden; height: 500px; }
@@ -262,16 +266,11 @@ const CHNInsights = () => {
         /* GRID */
         .BLOG_Grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template_columns: 1fr;
           gap: 30px;
         }
-
-        @media (max-width: 1024px) {
-          .BLOG_Grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 640px) {
-          .BLOG_Grid { grid-template-columns: 1fr; }
-        }
+        @media (min-width: 768px) { .BLOG_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .BLOG_Grid { grid-template-columns: repeat(3, 1fr); } }
 
         .BLOG_Card {
           background: #ffffff;
@@ -291,12 +290,6 @@ const CHNInsights = () => {
         }
         .BLOG_Card_Img_Box img { width: 100%; height: 100%; object-fit: cover; transition: 0.7s; }
         .BLOG_Card:hover .BLOG_Card_Img_Box img { transform: scale(1.1); }
-
-        .BLOG_Card_Overlay {
-          position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, #1e3a8a 100%);
-          opacity: 0; transition: 0.5s;
-        }
-        .BLOG_Card:hover .BLOG_Card_Overlay { opacity: 0.7; }
 
         .BLOG_Card_Content { padding: 0 20px 25px; }
         .BLOG_Card_Tag { 
@@ -318,15 +311,14 @@ const CHNInsights = () => {
       {/* SECTION 1: HERO */}
       <section className="BLOG_Hero">
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="BLOG_Hero_Bg" />
-        <div className="BLOG_Hero_Overlay" />
-        <div className="BLOG_Hero_Content text-center">
+        <div className="BLOG_Hero_Content">
           <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="BLOG_Badge">Corporate Insights</motion.span>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1">Knowledge Led <br /> <span className="text-blue-500">Perspectives</span></motion.h1>
 
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.4 }} className="BLOG_Search_Box">
             <Search size={22} className="text-blue-500 ml-4" />
             <input
-              type="text" placeholder="Search insights, practices, or topics..."
+              type="text" placeholder="Search insights..."
               value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button className="BLOG_Search_Btn" onClick={() => scrollToSection(insightsRef)}>
@@ -409,7 +401,6 @@ const CHNInsights = () => {
                   <div className="BLOG_Card">
                     <div className="BLOG_Card_Img_Box">
                       <img src={insight.image} alt={insight.title} />
-                      <div className="BLOG_Card_Overlay" />
                     </div>
                     <div className="BLOG_Card_Content text-left">
                       <span className="BLOG_Card_Tag">{insight.tag}</span>
@@ -421,7 +412,6 @@ const CHNInsights = () => {
                           <div className="BLOG_Author_Dot" />
                           <span className="text-[11px] font-black uppercase text-slate-400 tracking-widest">{insight.author}</span>
                         </div>
-                        {/* <div className="text-blue-500"><ArrowRight size={18} /></div> */}
                       </div>
                     </div>
                   </div>
@@ -447,8 +437,8 @@ const CHNInsights = () => {
       </section>
 
       {/* SECTION 4: CTA */}
-      <section style={{ padding: '50px 20px', textAlign: 'center', background: '#f8fafc' }}>
-        <h2 className="BLOG_Hero_H1" style={{ color: '#1a2b4b', fontSize: '3rem' }}>Stay Informed With <span className="text-blue-500">Expert Clarity</span></h2>
+      <section style={{ padding: '100px 5%', textAlign: 'center', background: '#f8fafc' }}>
+        <h2 className="BLOG_Hero_H1" style={{ color: '#1a2b4b', font_size: 'clamp(2rem, 5vw, 3rem)' }}>Stay Informed With <span className="text-blue-500">Expert Clarity</span></h2>
         <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto mb-12">
           Gain access to refined perspectives that matter to business owners,
           IT decision-makers, and industry professionals.

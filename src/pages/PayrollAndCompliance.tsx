@@ -25,7 +25,7 @@ const PayrollAndCompliancePage = () => {
           overflow: hidden;
           display: flex;
           align-items: center;
-          padding-top: 80px;
+          padding: 100px 5% 60px;
         }
 
         .PC_Hero_Shape {
@@ -45,7 +45,6 @@ const PayrollAndCompliancePage = () => {
           max-width: 1300px;
           margin: 0 auto;
           width: 100%;
-          padding: 0 5%;
           display: grid;
           grid-template-columns: 1.1fr 1fr;
           gap: 60px;
@@ -53,9 +52,13 @@ const PayrollAndCompliancePage = () => {
         }
 
         @media (max-width: 1024px) {
-          .PC_Hero_Content { grid-template-columns: 1fr; text-align: center; }
+          .PC_Hero { padding-top: 140px; }
+          .PC_Hero_Content { grid-template-columns: 1fr; text-align: center; gap: 40px; }
           .PC_Hero_Shape { display: none; }
-          .PC_Hero_Right { display: none; }
+          .PC_Hero_Right { order: -1; width: 100%; display: flex; justify-content: center; }
+          .PC_Hero_Img_Box { width: 100%; max-width: 400px; height: auto; margin: 0 auto; }
+          .PC_Hero_Img_Box img { aspect-ratio: 4/5; }
+          .PC_Btn { margin: 0 auto; }
         }
 
         .PC_Badge { 
@@ -63,13 +66,14 @@ const PayrollAndCompliancePage = () => {
           font-size: 0.85rem; margin-bottom: 25px; display: block;
         }
 
-        .PC_Hero_H1 {  line-height: 1.1; color: #1a1a1a; margin-bottom: 30px; text-transform: uppercase; }
+        .PC_Hero_H1 { font-weight: 900; line-height: 1.1; color: #1a1a1a; margin-bottom: 30px; text-transform: uppercase; font-size: clamp(2.5rem, 5vw, 4rem); }
         .PC_Hero_P { font-size: 1.2rem; color: #64748b; font-weight: 500; line-height: 1.6; margin-bottom: 50px; }
 
         .PC_Btn { 
           background: #3b82f6; color: white; padding: 22px 50px; border-radius: 100px; 
           font-weight: 800; font-size: 1.1rem; border: none; cursor: pointer; transition: 0.3s;
           box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); display: flex; align-items: center; gap: 15px;
+          width: fit-content;
         }
         .PC_Btn:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5); background: #1e3a8a; }
 
@@ -79,13 +83,14 @@ const PayrollAndCompliancePage = () => {
         .PC_Hero_Img_Box img { width: 100%; height: 100%; object-fit: cover; border-radius: 40px; box-shadow: 0 50px 100px rgba(0,0,0,0.2); border: 4px solid #fff; }
 
         /* --- SECTION 2: CONTEXT --- */
-        .PC_Context { padding: 80px 3%; background: #22314f; color: #fff; }
+        .PC_Context { padding: 100px 5%; background: #22314f; color: #fff; }
         .PC_Context_Grid { 
-          max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 100px; align-items: center; 
+          max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; 
         }
 
         @media (max-width: 1024px) {
           .PC_Context_Grid { grid-template-columns: 1fr; text-align: center; }
+          .PC_Context_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
         }
 
         .PC_Context_H { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 40px; text-transform: uppercase; color:#ffffff;}
@@ -93,17 +98,16 @@ const PayrollAndCompliancePage = () => {
         .PC_Context_Img img { width: 100%; border-radius: 40px; box-shadow: 0 40px 100px rgba(0,0,0,0.3); border: 12px solid #2a3a5a; }
 
         /* --- SECTION 3: DOMAINS --- */
-        .PC_Domains { padding: 120px 5%; background: #ffffff; text-align: center; }
+        .PC_Domains { padding: 100px 5%; background: #ffffff; text-align: center; }
         .PC_Domains_Grid { 
-          display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; max-width: 1300px; margin: 80px auto 0;
+          display: grid; 
+          grid-template_columns: 1fr;
+          gap: 25px; 
+          max-width: 1300px; 
+          margin: 80px auto 0;
         }
-
-        @media (max-width: 1024px) {
-          .PC_Domains_Grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 640px) {
-          .PC_Domains_Grid { grid-template-columns: 1fr; }
-        }
+        @media (min-width: 768px) { .PC_Domains_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .PC_Domains_Grid { grid-template-columns: repeat(4, 1fr); } }
 
         .PC_Card {
           background: #f8fafc; padding: 60px 35px; border-radius: 40px; text-align: left;
@@ -130,11 +134,13 @@ const PayrollAndCompliancePage = () => {
         .PC_Card_H { font-size: 1.5rem; font-weight: 800; color: #1a2b4b; margin-bottom: 15px; }
 
         /* --- SECTION 4: OUTCOMES --- */
-        .PC_Outcome { padding: 120px 5%; background: #fdfdfd; }
-        .PC_Outcome_Grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 100px; align-items: center; }
+        .PC_Outcome { padding: 100px 5%; background: #fdfdfd; }
+        .PC_Outcome_Grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
 
         @media (max-width: 1024px) {
           .PC_Outcome_Grid { grid-template-columns: 1fr; text-align: center; }
+          .PC_Outcome_Img_Container { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .PC_Check_Item { text-align: left; }
         }
 
         .PC_Check_Item { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 30px; }
@@ -143,15 +149,16 @@ const PayrollAndCompliancePage = () => {
         .PC_Check_P { color: #64748b; font-size: 1rem; line-height: 1.6; }
 
         /* --- SECTION 5: FRAMEWORK --- */
-        .PC_Framework { padding: 120px 5%; background: #ffffff; text-align: center; }
-        .PC_Framework_Grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1300px; margin: 80px auto 0; }
-
-        @media (max-width: 1024px) {
-          .PC_Framework_Grid { grid-template-columns: repeat(2, 1fr); }
+        .PC_Framework { padding: 100px 5%; background: #ffffff; text-align: center; }
+        .PC_Framework_Grid { 
+          display: grid; 
+          grid-template_columns: 1fr;
+          gap: 30px; 
+          max-width: 1300px; 
+          margin: 80px auto 0; 
         }
-        @media (max-width: 640px) {
-          .PC_Framework_Grid { grid-template-columns: 1fr; }
-        }
+        @media (min-width: 768px) { .PC_Framework_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .PC_Framework_Grid { grid-template-columns: repeat(4, 1fr); } }
 
         .PC_Step_Card {
           background: #f8fafc; padding: 60px 40px; border-radius: 40px; position: relative; border: 1px solid #f1f5f9; transition: 0.4s;
@@ -164,16 +171,16 @@ const PayrollAndCompliancePage = () => {
 
         /* --- FINAL --- */
         .PC_Final { 
-        padding: 80px 5%; 
-        background: #002e5b; color: #ffffff; text-align: center; }
-        .PC_Final_H
-         { font-weight: 900; line-height: 1.1; margin-bottom: 50px; text-transform: uppercase; color:#ffffff; }
+          padding: 100px 5%; 
+          background: #002e5b; color: #ffffff; text-align: center; 
+        }
+        .PC_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 50px; text-transform: uppercase; color:#ffffff; font-size: clamp(2rem, 5vw, 3.5rem); }
       `}</style>
 
       {/* SECTION 1: HERO */}
       <section className="PC_Hero">
         <div className="PC_Hero_Shape" />
-        <div className="PC_Hero_Content text-left">
+        <div className="PC_Hero_Content">
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
             <span className="PC_Badge">Compliance Excellence</span>
             <h1 className="PC_Hero_H1">PAYROLL & COMPLIANCE <br /> <span className="text-blue-500">SERVICES</span></h1>
@@ -197,7 +204,7 @@ const PayrollAndCompliancePage = () => {
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <span className="PC_Badge">Strategic Foundation</span>
             <h2 className="PC_Context_H">FINANCIAL ACCURACY PROTECTS <br /> CORPORATE ASSETS</h2>
-            <p className="PC_Context_P text-left">
+            <p className="PC_Context_P">
               Business security and credibility depend on predictable management of regional labor laws and financial processing.
               Poorly managed systems lead to legal debt, financial penalty, and loss of trust. CHN helps maintain structured, secure, and highly accurate business environments.
             </p>
@@ -236,8 +243,8 @@ const PayrollAndCompliancePage = () => {
       {/* SECTION 4: OUTCOMES */}
       <section className="PC_Outcome">
         <div className="PC_Outcome_Grid">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <img src="/images/analytics-viz.jpg" alt="Outcomes" style={{ borderRadius: '40px', boxShadow: '0 40px 80px rgba(0,0,0,0.1)' }} />
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="PC_Outcome_Img_Container">
+            <img src="/images/analytics-viz.jpg" alt="Outcomes" style={{ borderRadius: '40px', boxShadow: '0 40px 80px rgba(0,0,0,0.1)', width: '100%' }} />
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
             <span className="PC_Badge">Business Impact</span>
@@ -296,7 +303,6 @@ const PayrollAndCompliancePage = () => {
           </Link>
         </motion.div>
       </section>
-
     </div>
   );
 };

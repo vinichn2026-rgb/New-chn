@@ -45,7 +45,7 @@ const Careers = () => {
           overflow: hidden;
           display: flex;
           align-items: center;
-          padding-top: 65px;
+          padding: 100px 5% 60px;
         }
 
         .CR_Hero_Navy_Shape {
@@ -65,7 +65,6 @@ const Careers = () => {
           max-width: 1300px;
           margin: 0 auto;
           width: 100%;
-          padding: 0 5%;
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 60px;
@@ -73,17 +72,20 @@ const Careers = () => {
         }
 
         @media (max-width: 1024px) {
-          .CR_Hero_Content { grid-template-columns: 1fr; text-align: center; }
+          .CR_Hero { padding-top: 140px; }
+          .CR_Hero_Content { grid-template-columns: 1fr; text-align: center; gap: 40px; }
           .CR_Hero_Navy_Shape { display: none; }
-          .CR_Hero_Right { display: none; }
+          .CR_Hero_Right { order: -1; width: 100%; display: flex; justify-content: center; }
+          .CR_Hero_Right .relative { width: 100%; max-width: 400px; height: 500px; margin: 0 auto; }
+          .CR_Hero_P { margin-bottom: 30px; }
         }
 
         .CR_Hero_H1 {
-          // font-size: clamp(3rem, 5vw, 4.5rem);
           font-weight: 900;
           color: #1a1a1a;
           line-height: 1.1;
           margin-bottom: 20px;
+          font-size: clamp(2.5rem, 5vw, 4.2rem);
         }
 
         .CR_Hero_P {
@@ -109,6 +111,8 @@ const Careers = () => {
 
         @media (max-width: 640px) {
           .CR_Search_Bar { flex-direction: column; border-radius: 30px; padding: 20px; }
+          .CR_Input_Group { border-right: none !important; margin-bottom: 10px; width: 100%; }
+          .CR_Location_Group { display: none; }
         }
 
         .CR_Input_Group {
@@ -136,18 +140,18 @@ const Careers = () => {
         .CR_Search_Btn:hover { background: #1e3a8a; transform: scale(1.05); }
 
         /* --- SECTION 2: STREAMS --- */
-        .CR_Streams { padding: 120px 5%; background: #ffffff; text-align: center; }
+        .CR_Streams { padding: 100px 5%; background: #ffffff; text-align: center; }
         .CR_Streams_Grid { 
-          display: grid; grid-template-columns: repeat(3, 1fr); 
-          gap: 30px; margin-top: 80px; max-width: 1300px; margin-left: auto; margin-right: auto;
+          display: grid; 
+          grid-template_columns: 1fr;
+          gap: 30px; 
+          margin-top: 80px; 
+          max-width: 1300px; 
+          margin-left: auto; 
+          margin-right: auto;
         }
-
-        @media (max-width: 1024px) {
-          .CR_Streams_Grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 640px) {
-          .CR_Streams_Grid { grid-template-columns: 1fr; }
-        }
+        @media (min-width: 768px) { .CR_Streams_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .CR_Streams_Grid { grid-template-columns: repeat(3, 1fr); } }
 
         .CR_Stream_Card {
           background: #f8fafc; padding: 60px 40px; border-radius: 40px; text-align: left;
@@ -175,11 +179,13 @@ const Careers = () => {
         .CR_Stream_H { font-size: 1.6rem; font-weight: 800; color: #1a2b4b; margin-bottom: 15px; }
 
         /* --- SECTION 3: ENVIRONMENT --- */
-        .CR_Env { padding: 120px 5%; background: #22314f; color: #fff; }
-        .CR_Env_Container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 100px; align-items: center; }
+        .CR_Env { padding: 100px 5%; background: #22314f; color: #fff; }
+        .CR_Env_Container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
 
         @media (max-width: 1024px) {
           .CR_Env_Container { grid-template-columns: 1fr; text-align: center; }
+          .CR_Env_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .CR_Pros_Grid { justify-content: center; }
         }
 
         .CR_Env_Img { position: relative; }
@@ -189,15 +195,14 @@ const Careers = () => {
         .CR_Env_H { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; line-height: 1.2; margin-bottom: 40px; color:white;}
         
         .CR_Pros_Grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        @media (max-width: 640px) { .CR_Pros_Grid { grid-template-columns: 1fr; } }
+        @media (max-width: 640px) { .CR_Pros_Grid { grid-template-columns: 1fr; text-align: left; } }
         .CR_Pro_Item { display: flex; align-items: center; gap: 15px; }
         .CR_Pro_Check { color: #3b82f6; display: flex; }
 
         /* --- SECTION 4: FINAL CTA --- */
-        .CR_Final { padding: 50px 20px; text-align: center; background: #fff; }
+        .CR_Final { padding: 100px 5%; text-align: center; background: #fff; }
         .CR_Final_Max { max-width: 800px; margin: 0 auto; }
-        .CR_Final_H { 
-         font-weight: 900; color: #1a2b4b; line-height: 1.1; margin-bottom: 30px; }
+        .CR_Final_H { font-weight: 900; color: #1a2b4b; line-height: 1.1; margin-bottom: 30px; font-size: clamp(2rem, 5vw, 3.5rem); }
         .CR_Final_P { font-size: 1.2rem; color: #64748b; margin-bottom: 50px; font-weight: 500; }
         .CR_Btn { 
           background: #3b82f6; color: white; padding: 15px 30px; border-radius: 100px; 
@@ -228,7 +233,7 @@ const Careers = () => {
                   value={jobTitle} onChange={(e) => setJobTitle(e.target.value)}
                 />
               </div>
-              <div className="flex items-center px-6 text-slate-400 font-bold border-r border-slate-100 hidden md:flex">
+              <div className="flex items-center px-6 text-slate-400 font-bold border-r border-slate-100 hidden md:flex CR_Location_Group">
                 <MapPin size={16} className="mr-2" /> Remote / India
               </div>
               <button className="CR_Search_Btn" onClick={handleSearch}><ArrowRight size={22} /></button>

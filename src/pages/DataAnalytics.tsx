@@ -19,12 +19,18 @@ const DataAnalyticsPage = () => {
 
         /* --- SECTION 1: HERO --- */
         .DA_Hero {
-          padding: 100px 5%;
+          padding: 100px 5% 60px;
           display: flex;
           align-items: center;
           gap: 50px;
           background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
           min-height: 85vh;
+        }
+        @media (max-width: 1024px) {
+          .DA_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .DA_Hero_Content { max-width: 100%; }
+          .DA_Hero_Img { width: 100%; order: -1; margin-bottom: 40px; display: flex; justify-content: center; }
+          .DA_Hero_Img img { max-width: 400px; border-width: 10px; }
         }
 
         .DA_Hero_Content { flex: 1; max-width: 650px; }
@@ -63,17 +69,15 @@ const DataAnalyticsPage = () => {
         .DA_Cap_Section { padding: 100px 5%; background: #f8fafc; text-align: center; }
         .DA_Cap_Grid { 
           display: grid; 
-          grid-template-columns: repeat(4, 1fr); 
+          grid-template-columns: 1fr; 
           gap: 25px; 
           margin-top: 60px; 
           max-width: 1400px; 
           margin-left: auto; 
           margin-right: auto;
         }
-
-        @media (max-width: 1200px) {
-          .DA_Cap_Grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        @media (min-width: 768px) { .DA_Cap_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .DA_Cap_Grid { grid-template-columns: repeat(4, 1fr); } }
 
         .DA_Cap_Card {
           background: white;
@@ -107,10 +111,20 @@ const DataAnalyticsPage = () => {
         .DA_Cap_Card p { color: #64748b; line-height: 1.6; font-size: 0.95rem; transition: 0.3s; }
 
         /* --- SECTION 4: OUTCOMES --- */
-        .DA_Outcome { padding: 100px 5%; display: flex; align-items: center; gap: 80px; }
+        .DA_Outcome { 
+          padding: 100px 5%; 
+          display: flex; 
+          align-items: center; 
+          gap: 60px; 
+        }
         .DA_Outcome_Content { flex: 1; }
         .DA_Outcome_Img { flex: 1; }
         .DA_Outcome_Img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+        @media (max-width: 1024px) {
+          .DA_Outcome { flex-direction: column; text-align: center; gap: 40px; }
+          .DA_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .Outcome_Item { text-align: left; }
+        }
         
         .Outcome_List { margin-top: 40px; }
         .Outcome_Item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
@@ -121,9 +135,16 @@ const DataAnalyticsPage = () => {
         /* --- SECTION 5: APPROACH --- */
         .DA_Flow { padding: 100px 5%; background: #fdfdfd; text-align: center; }
         .DA_Flow_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-          gap: 30px; margin-top: 60px; max-width: 1300px; margin: 60px auto 0;
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 30px; 
+          margin-top: 60px; 
+          max-width: 1300px; 
+          margin: 60px auto 0;
         }
+        @media (min-width: 768px) { .DA_Flow_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .DA_Flow_Grid { grid-template-columns: repeat(4, 1fr); } }
+
         .DA_Step_Card {
           background: white; border-radius: 20px; padding: 50px 30px; position: relative;
           box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; transition: 0.4s;
@@ -133,7 +154,7 @@ const DataAnalyticsPage = () => {
           position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
           background: #22314f; color: white; padding: 5px 20px; border-radius: 50px; font-weight: 900; font-size: 0.8rem;
         }
-        .DA_Step_Icon { color: #3b82f6; margin-bottom: 20px; }
+        .DA_Step_Icon { color: #3b82f6; margin-bottom: 20px; display: flex; justify-content: center; }
         .DA_Step_H { font-size: 1.3rem; font-weight: 800; color: #22314f; margin-bottom: 12px; }
         .DA_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
 
@@ -177,8 +198,8 @@ const DataAnalyticsPage = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
           <h2 className="DA_Context_H1">DATA IS THE PRIMARY DRIVER OF STRATEGIC COMPETITIVE ADVANTAGE</h2>
           <p className="DA_Context_P">
-            Business growth depends on how predictably you can model your operational environment.
-            Poorly analyzed or siloed data leads to strategic debt, misaligned investment, and reduced efficiency.
+            Business productivity depends on how much of your resource capacity is focused on high-value strategy versus low-value manual processing.
+            Poorly automated or manual workflows lead to operational debt, human error, and reduced organizational speed.
             CHN Technologies helps organisations maintain structured, secure, and highly visible data ecosystems.
           </p>
         </motion.div>

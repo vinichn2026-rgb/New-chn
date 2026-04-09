@@ -19,12 +19,18 @@ const ApplicationDevelopmentPage = () => {
 
         /* --- SECTION 1: HERO --- */
         .AD_Hero {
-          padding: 100px 5%;
+          padding: 100px 5% 60px;
           display: flex;
           align-items: center;
           gap: 50px;
           background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
           min-height: 85vh;
+        }
+        @media (max-width: 1024px) {
+          .AD_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .AD_Hero_Content { max-width: 100%; }
+          .AD_Hero_Img { width: 100%; order: -1; margin-bottom: 40px; display: flex; justify-content: center; }
+          .AD_Hero_Img img { max-width: 400px; border-width: 10px; }
         }
 
         .AD_Hero_Content { flex: 1; max-width: 650px; }
@@ -110,27 +116,8 @@ const ApplicationDevelopmentPage = () => {
         @media (min-width: 640px) {
           .AD_Cap_Grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
         }
-
-        @media (min-width: 768px) {
-          .AD_Cap_Grid { grid-template-columns: repeat(5, 1fr); gap: 10px; }
-          .AD_Cap_Card { padding: 12px 10px; border-radius: 12px; }
-          .AD_Cap_Icon { width: 32px; height: 32px; border-radius: 8px; margin-bottom: 10px; }
-          .AD_Cap_Icon svg { width: 16px; height: 16px; }
-          .AD_Cap_Card h3 { font-size: 0.8rem; margin-bottom: 6px; }
-          .AD_Cap_Card p { font-size: 0.65rem; line-height: 1.35; }
-        }
-
         @media (min-width: 1024px) {
-          .AD_Cap_Grid { gap: 20px; }
-          .AD_Cap_Card { padding: 30px 20px; border-radius: 20px; }
-          .AD_Cap_Icon { width: 45px; height: 45px; border-radius: 12px; margin-bottom: 15px; }
-          .AD_Cap_Icon svg { width: 22px; height: 22px; }
-          .AD_Cap_Card h3 { font-size: 1.1rem; margin-bottom: 10px; }
-          .AD_Cap_Card p { font-size: 0.85rem; line-height: 1.5; }
-        }
-
-        @media (min-width: 1280px) {
-          .AD_Cap_Grid { gap: 30px; }
+          .AD_Cap_Grid { grid-template-columns: repeat(5, 1fr); gap: 30px; }
           .AD_Cap_Card { padding: 45px 35px; border-radius: 30px; }
           .AD_Cap_Icon { width: 60px; height: 60px; border-radius: 16px; margin-bottom: 25px; }
           .AD_Cap_Icon svg { width: 28px; height: 28px; }
@@ -139,10 +126,20 @@ const ApplicationDevelopmentPage = () => {
         }
 
         /* --- SECTION 4: OUTCOMES --- */
-        .AD_Outcome { padding: 100px 5%; display: flex; align-items: center; gap: 80px; }
+        .AD_Outcome { 
+          padding: 100px 5%; 
+          display: flex; 
+          align-items: center; 
+          gap: 60px; 
+        }
         .AD_Outcome_Content { flex: 1; }
         .AD_Outcome_Img { flex: 1; }
         .AD_Outcome_Img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+        @media (max-width: 1024px) {
+          .AD_Outcome { flex-direction: column; text-align: center; gap: 40px; }
+          .AD_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .Outcome_Item { text-align: left; }
+        }
         
         .Outcome_List { margin-top: 40px; }
         .Outcome_Item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
@@ -177,19 +174,8 @@ const ApplicationDevelopmentPage = () => {
         @media (min-width: 640px) {
           .AD_Flow_Grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
         }
-
-        @media (min-width: 768px) {
-          .AD_Flow_Grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
-          .AD_Step_Card { padding: 35px 12px 20px; border-radius: 12px; }
-          .AD_Step_Num { font-size: 0.65rem; padding: 4px 12px; top: -12px; }
-          .AD_Step_Icon { margin-bottom: 15px; }
-          .AD_Step_Icon svg { width: 22px; height: 22px; }
-          .AD_Step_H { font-size: 0.95rem; margin-bottom: 8px; }
-          .AD_Step_P { font-size: 0.75rem; line-height: 1.4; }
-        }
-
         @media (min-width: 1024px) {
-          .AD_Flow_Grid { gap: 30px; }
+          .AD_Flow_Grid { grid-template-columns: repeat(4, 1fr); gap: 30px; }
           .AD_Step_Card { padding: 50px 30px; border-radius: 20px; }
           .AD_Step_Num { font-size: 0.8rem; padding: 5px 20px; top: -15px; }
           .AD_Step_Icon { margin-bottom: 20px; }

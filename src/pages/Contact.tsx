@@ -112,7 +112,7 @@ const ContactPage = () => {
 
                 /* --- SECTION 1: HERO (EXACT SAMPLE DESIGN) --- */
                 .CN_Hero {
-                  padding: 78px 6% 38px;
+                  padding: 100px 5% 60px;
                   background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
                   display: flex;
                   align-items: center;
@@ -120,6 +120,13 @@ const ContactPage = () => {
                   gap: 60px;
                   position: relative;
                   overflow: hidden;
+                }
+                @media (max-width: 1024px) {
+                  .CN_Hero { flex-direction: column; text-align: center; padding-top: 140px; gap: 40px; }
+                  .CN_Hero_Content { max-width: 100%; order: 1; }
+                  .CN_Hero_Img { order: 2; width: 100%; }
+                  .CN_Circle_Img { width: 300px; height: 300px; border-width: 10px; }
+                  .CN_Hero::after { display: none; }
                 }
 
                 .CN_Hero::after {
@@ -229,7 +236,15 @@ const ContactPage = () => {
 
                 /* --- SECTION 4: RESPONSE EXPECTATION --- */
                 .CN_Expectation { padding: 100px 5%; background: #fdfdfd; border-top: 1px solid #f1f5f9; text-align: center; }
-                .CN_Flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 1200px; margin: 80px auto 0; }
+                .CN_Flow { 
+                  display: grid; 
+                  grid-template-columns: 1fr; 
+                  gap: 40px; 
+                  max-width: 1200px; 
+                  margin: 80px auto 0; 
+                }
+                @media (min-width: 768px) { .CN_Flow { grid-template-columns: repeat(2, 1fr); } }
+                @media (min-width: 1024px) { .CN_Flow { grid-template-columns: repeat(3, 1fr); } }
                 .CN_Step { position: relative; }
                 .CN_Step_Icon { 
                   width: 80px; height: 80px; background: white; color: #0060ff; border-radius: 25px; 

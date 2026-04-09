@@ -10,7 +10,7 @@ const SiteFooter = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
-          <div>
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <img src={chnLogo} alt="CHN Technologies" className="h-12 mb-5 brightness-0 invert" />
             <p className="text-sm text-white/60 leading-relaxed">
               Integrated technology and consulting services built for stability,
@@ -25,7 +25,7 @@ const SiteFooter = () => {
           </div>
 
           {/* Explore Links */}
-          <div>
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h4 className="text-white font-semibold text-lg mb-5">Explore Links</h4>
             <ul className="space-y-3">
               {[
@@ -45,7 +45,7 @@ const SiteFooter = () => {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h4 className="text-white font-semibold text-lg mb-5">Our Services</h4>
             <ul className="space-y-3">
               {[
@@ -67,18 +67,18 @@ const SiteFooter = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <h4 className="text-white font-semibold text-lg mb-5 uppercase tracking-tighter">Get In Touch</h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
+              <li className="flex flex-col items-center md:flex-row md:items-start gap-3">
                 <FaPhoneAlt className="text-primary mt-1 flex-shrink-0" />
                 <span className="text-sm text-white/60">+91-9384817323 <br /> +91-7010203031</span>
             </li>
-            <li className="flex items-start gap-3">
+            <li className="flex flex-col items-center md:flex-row md:items-start gap-3">
               <FaEnvelope className="text-primary mt-1 flex-shrink-0" />
               <span className="text-sm text-white/60">info@chnindia.com</span>
             </li>
-            <li className="flex items-start gap-3">
+            <li className="flex flex-col items-center md:flex-row md:items-start gap-3">
               <FaMapMarkerAlt className="text-primary mt-1 flex-shrink-0" />
               <span className="text-sm text-white/60">Chennai, Tamil Nadu, India</span>
             </li>

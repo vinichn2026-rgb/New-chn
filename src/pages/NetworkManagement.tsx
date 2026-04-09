@@ -25,12 +25,18 @@ const NetworkManagementPage = () => {
 
         /* --- SECTION 1: HERO --- */
         .NET_Hero {
-          padding: 100px 5%;
+          padding: 100px 5% 60px;
           display: flex;
           align-items: center;
           gap: 50px;
           background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
           min-height: 85vh;
+        }
+        @media (max-width: 1024px) {
+          .NET_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .NET_Hero_Content { max-width: 100%; }
+          .NET_Hero_Img { width: 100%; order: -1; margin-bottom: 40px; }
+          .NET_Hero_Img img { max-width: 320px; border-width: 10px; }
         }
 
         .NET_Hero_Content { flex: 1; max-width: 650px; }
@@ -115,18 +121,8 @@ const NetworkManagementPage = () => {
         @media (min-width: 640px) {
           .NET_Cap_Grid { grid-template-columns: repeat(2, 1fr); }
         }
-
-        @media (min-width: 768px) {
-          .NET_Cap_Grid { grid-template-columns: repeat(4, 1fr); gap: 15px; }
-          .NET_Cap_Card { padding: 15px 12px; border-radius: 15px; }
-          .NET_Cap_Icon { width: 35px; height: 35px; border-radius: 8px; margin-bottom: 12px; }
-          .NET_Cap_Icon svg { width: 18px; height: 18px; }
-          .NET_Cap_Card h3 { font-size: 0.95rem; margin-bottom: 8px; }
-          .NET_Cap_Card p { font-size: 0.75rem; line-height: 1.4; }
-        }
-
         @media (min-width: 1024px) {
-          .NET_Cap_Grid { gap: 30px; }
+          .NET_Cap_Grid { grid-template-columns: repeat(4, 1fr); gap: 30px; }
           .NET_Cap_Card { padding: 45px 35px; border-radius: 30px; }
           .NET_Cap_Icon { width: 60px; height: 60px; border-radius: 16px; margin-bottom: 25px; }
           .NET_Cap_Icon svg { width: 28px; height: 28px; }
@@ -135,10 +131,20 @@ const NetworkManagementPage = () => {
         }
 
         /* --- SECTION 3: OUTCOMES --- */
-        .NET_Outcome { padding: 100px 5%; display: flex; align-items: center; gap: 80px; }
+        .NET_Outcome { 
+          padding: 100px 5%; 
+          display: flex; 
+          align-items: center; 
+          gap: 40px; 
+        }
         .NET_Outcome_Content { flex: 1; }
         .NET_Outcome_Img { flex: 1; }
         .NET_Outcome_Img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        @media (max-width: 1024px) {
+          .NET_Outcome { flex-direction: column; text-align: center; gap: 60px; }
+          .NET_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .Outcome_Item { text-align: left; }
+        }
         
         .Outcome_List { margin-top: 40px; space-y: 20px; }
         .Outcome_Item { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
@@ -186,19 +192,8 @@ const NetworkManagementPage = () => {
         @media (min-width: 640px) {
           .NET_Flow_Grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
         }
-
-        @media (min-width: 768px) {
-          .NET_Flow_Grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
-          .NET_Step_Card { padding: 35px 12px 25px; border-radius: 8px; }
-          .NET_Step_Header { font-size: 0.65rem; padding: 5px 15px; min-width: 90px; top: -12px; }
-          .NET_Step_Icon { margin-bottom: 12px; margin-top: 5px; }
-          .NET_Step_Icon svg { width: 22px; height: 22px; }
-          .NET_Step_H { font-size: 0.95rem; margin-bottom: 8px; }
-          .NET_Step_P { font-size: 0.75rem; line-height: 1.4; }
-        }
-
         @media (min-width: 1024px) {
-          .NET_Flow_Grid { gap: 25px; }
+          .NET_Flow_Grid { grid-template-columns: repeat(4, 1fr); gap: 25px; }
           .NET_Step_Card { padding: 50px 30px 40px; border-radius: 12px; }
           .NET_Step_Header { font-size: 0.85rem; padding: 8px 30px; min-width: 140px; top: -15px; }
           .NET_Step_Icon { margin-bottom: 25px; margin-top: 10px; }

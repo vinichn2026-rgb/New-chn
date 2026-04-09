@@ -17,14 +17,42 @@ import SiteFooter from "@/components/SiteFooter";
 
 const Index = () => {
   const PARTNER_LOGOS = [
-    { id: 1, name: "Microsoft", image: "/images/partner-delivery.jpg" },
-    { id: 2, name: "Amazon", image: "/images/partner-alignment.jpg" },
-    { id: 3, name: "Google", image: "/images/partner-security.jpg" },
-    { id: 4, name: "Cisco", image: "/images/partner-support.jpg" },
-    { id: 5, name: "Oracle", image: "/images/partner-delivery.jpg" },
-    { id: 6, name: "SAP", image: "/images/partner-alignment.jpg" },
-    { id: 7, name: "IBM", image: "/images/partner-security.jpg" },
-    { id: 8, name: "Salesforce", image: "/images/partner-support.jpg" },
+    { image: "/images/logo/noqu.png" },
+    { image: "/images/logo/ardent.png" },
+    { image: "/images/logo/adissia.png" },
+    { image: "/images/logo/justdial.png" },
+    { image: "/images/logo/newwave.png" },
+    { image: "/images/logo/nrm.png" },
+    { image: "/images/logo/velan.png" },
+    { image: "/images/logo/ennoble.png" },
+    { image: "/images/logo/vvdn.png" },
+    { image: "/images/logo/IIFL.png" },
+    { image: "/images/logo/mastero.png" },
+    { image: "/images/logo/market.png" },
+    { image: "/images/logo/squadi.png" },
+    { image: "/images/logo/mybank.png" },
+    { image: "/images/logo/bonfiglioli.png" },
+    { image: "/images/logo/casagrand.png" },
+    { image: "/images/logo/timesys.png" },
+    { image: "/images/logo/phonepe.png" },
+    { image: "/images/logo/cumi.png" },
+    { image: "/images/logo/san.png" },
+    { image: "/images/logo/kd.png" },
+    { image: "/images/logo/paytm.png" },
+    { image: "/images/logo/srf.png" },
+    { image: "/images/logo/jsauto.png" },
+    { image: "/images/logo/MF.png" },
+    { image: "/images/logo/ad.png" },
+    { image: "/images/logo/ar.png" },
+    { image: "/images/logo/data.png" },
+    { image: "/images/logo/friend.png" },
+    { image: "/images/logo/olg.png" },
+    { image: "/images/logo/spr.png" },
+    { image: "/images/logo/sri.png" },
+    { image: "/images/logo/svam.png" },
+    { image: "/images/logo/vcare.png" },
+    { image: "/images/logo/vrmenergy.png" },
+    { image: "/images/logo/wheels.png" }
   ];
 
   /* ── State & Refs ── */
@@ -205,41 +233,12 @@ const Index = () => {
     }
   ];
 
-  /* ── Counter Hook ── */
-  // const CounterCard = ({ value, suffix = "", label }: { value: number; suffix?: string; label: string }) => {
-  //   const [count, setCount] = useState(0);
-  //   const ref = useRef<HTMLDivElement>(null);
-  //   const inView = useInView(ref, { once: true });
 
-  //   useEffect(() => {
-  //     if (!inView) return;
-  //     let start = 0;
-  //     const duration = 2000;
-  //     const step = value / (duration / 16);
-  //     const timer = setInterval(() => {
-  //       start += step;
-  //       if (start >= value) { setCount(value); clearInterval(timer); }
-  //       else setCount(Math.floor(start));
-  //     }, 16);
-  //     return () => clearInterval(timer);
-  //   }, [inView, value]);
-
-  //   return (
-  //     <motion.div ref={ref} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-  //       className="text-center py-8"
-  //     >
-  //       <div className="text-5xl md:text-6xl font-bold text-foreground">
-  //         +{count}{suffix}
-  //       </div>
-  //       <div className="text-muted-foreground mt-2 text-sm">{label}</div>
-  //     </motion.div>
-  //   );
-  // };
 
   return (
-    <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth overflow-x-hidden">
+    <div className="min-h-screen overflow-y-auto scroll-smooth overflow-x-hidden">
       {/* ----------- HERO SLIDER ----------- */}
-      <section className="relative h-screen snap-start pt-[65px] overflow-hidden">
+      <section className="relative h-screen pt-[65px] overflow-hidden">
         <motion.div
           key={currentSlide}
           initial={{ scale: 1.15, opacity: 0 }}
@@ -284,13 +283,13 @@ const Index = () => {
       </section>
 
       {/* ----------- SERVICES ----------- */}
-      <section className="min-h-screen snap-start flex flex-col justify-center bg-[#fafafa] scroll-mt-[90px] py-12 md:py-16">
+      <section className="flex flex-col justify-center bg-[#fafafa] scroll-mt-[90px] py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">OPERATIONAL CAPACITY</span>
             <h2 className="font-black text-[#002e5b] uppercase tracking-tight">DESIGNED TO SUPPORT SYSTEMS</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
             {services.map((service, i) => (
               <div key={i} className="group relative bg-white border border-gray-100 p-8 text-center transition-all hover:-translate-y-3 hover:shadow-2xl rounded-xl overflow-hidden cursor-pointer">
                 {/* SLIDING BACKGROUND SHADE */}
@@ -316,8 +315,8 @@ const Index = () => {
       </section>
 
       {/* ----------- ABOUT ----------- */}
-      <section className="min-h-screen snap-start flex flex-col justify-center bg-white scroll-mt-[90px] py-12 md:py-16">
-        <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+      <section className="flex flex-col justify-center bg-white scroll-mt-[90px] py-12 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
           <div className="relative">
             <img src="/images/about-main.jpg" alt="About CHN" className="rounded-2xl shadow-2xl" />
             {/* <div className="absolute top-10 left-10">
@@ -351,7 +350,7 @@ const Index = () => {
       </section> */}
 
       {/* ----------- CAPABILITIES (Auto-Scroll) ----------- */}
-      <section className="min-h-screen snap-start flex flex-col justify-center bg-[#22314f] py-20 overflow-hidden">
+      <section className="flex flex-col justify-center bg-[#22314f] py-20 overflow-hidden">
         <style>{`
           .CHN_Marquee_Track {
             display: flex;
@@ -404,13 +403,13 @@ const Index = () => {
       </section>
 
       {/* ----------- DELIVERY MODEL ----------- */}
-      <section className="min-h-screen snap-start flex flex-col justify-center bg-white py-20">
+      <section className="flex flex-col justify-center bg-white py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">OPERATIONAL EXCELLENCE</span>
             <h2 className="font-black text-[#002e5b] uppercase tracking-tight">A STRUCTURED DELIVERY MODEL</h2>
           </div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {deliveryPhases.map((phase, i) => {
               const Icon = phase.icon;
               return (
@@ -445,73 +444,77 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ----------- TECHNOLOGY & CONSULTING PARTNER (Marquee) ----------- */}
-      <section className="min-h-screen snap-start flex flex-col justify-center bg-white py-20 relative overflow-hidden">
+      {/* ----------- PARTNER ECOSYSTEM (Lean Marquee) ----------- */}
+      <section className="flex flex-col justify-center py-4 relative overflow-hidden bg-white">
         <style>{`
           .CHNP_Logo_Marquee_Track {
             display: flex;
-            gap: 60px;
-            animation: CHNP_Logo_Scroll 40s linear infinite;
+            gap: 60px; 
+            animation: CHNP_Logo_Scroll 120s linear infinite; 
             width: fit-content;
+            align-items: center;
           }
           @keyframes CHNP_Logo_Scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
           }
           .CHNP_Logo_Marquee_Track:hover { animation-play-state: paused; }
+          
+          .partner-logo-img {
+            filter: none;
+            opacity: 1;
+            height: 160px; 
+            width: auto;
+            max-width: 400px; 
+            object-fit: contain;
+            transition: all 0.3s ease;
+          }
+          .partner-logo-img:hover {
+            transform: scale(1.1);
+          }
         `}</style>
-        
+
         {/* Header Section */}
-        <div className="w-full px-6 mb-20 text-center">
-          <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">GLOBAL NETWORK</span>
-          <h2 className="font-black text-[#22314f] mb-6 uppercase tracking-tighter">
-            Technology & Consulting Partner
+        <div className="w-full px-6 mb-4 text-center">
+          <span className="text-[#0060ff] text-[10px] font-bold tracking-[0.4em] uppercase mb-1 block">
+            Global Network
+          </span>
+          <h2 className="font-black text-[#002e5b] uppercase tracking-tight">
+            Partner Ecosystem
           </h2>
-          <p className="max-w-3xl mx-auto text-xl text-gray-500 leading-relaxed font-light">
-            We collaborate with industry leaders to deliver integrated technology solutions at scale.
-          </p>
         </div>
 
-        <div className="relative w-full overflow-hidden flex flex-col gap-12">
-          {/* First Row: Forward Scroll */}
+        <div className="relative w-full overflow-hidden flex flex-col gap-0">
+          {/* Row 1 */}
           <div className="flex overflow-hidden">
-            <div className="CHNP_Logo_Marquee_Track px-4">
-              {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].map((logo, i) => (
-                <div key={i} className="flex-shrink-0 flex flex-col items-center justify-center w-[220px] filter grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer group">
-                  <div className="h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <img src={logo.image} alt={logo.name} className="h-full w-auto object-contain" />
-                  </div>
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#22314f]/40 group-hover:text-[#0060ff] transition-colors duration-300">
-                    {logo.name}
-                  </span>
+            <div className="CHNP_Logo_Marquee_Track">
+              {[...PARTNER_LOGOS.slice(0, 12), ...PARTNER_LOGOS.slice(0, 12)].map((logo, i) => (
+                <div key={`fwd1-${i}`} className="flex-shrink-0">
+                  <img src={logo.image} alt="Partner" className="partner-logo-img" />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Second Row: Reverse Scroll */}
+          {/* Row 2 - Reverse */}
           <div className="flex overflow-hidden">
-            <div className="CHNP_Logo_Marquee_Track px-4" style={{ animationDirection: 'reverse', animationDuration: '60s' }}>
-              {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].reverse().map((logo, i) => (
-                <div key={i} className="flex-shrink-0 flex flex-col items-center justify-center w-[220px] filter grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer group">
-                  <div className="h-16 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110">
-                    <img src={logo.image} alt={logo.name} className="h-full w-auto object-contain" />
-                  </div>
-                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#22314f]/40 group-hover:text-[#0060ff] transition-colors duration-300">
-                    {logo.name}
-                  </span>
+            <div className="CHNP_Logo_Marquee_Track" style={{ animationDirection: 'reverse', animationDuration: '140s' }}>
+              {[...PARTNER_LOGOS.slice(12, 24), ...PARTNER_LOGOS.slice(12, 24)].map((logo, i) => (
+                <div key={`rev1-${i}`} className="flex-shrink-0">
+                  <img src={logo.image} alt="Partner" className="partner-logo-img" />
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Background Decoration */}
-        <div className="absolute top-1/2 left-0 w-full h-[350px] -translate-y-1/2 bg-[#22314f]/[0.02] -skew-y-1 pointer-events-none" />
+        {/* Soft Edge Fades */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
       </section>
 
       {/* ----------- TESTIMONIALS ----------- */}
-      <section className="min-h-screen snap-start flex flex-col justify-center bg-[#fafafa] py-20">
+      <section className="py-20 flex flex-col justify-center bg-[#fafafa]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <Quote className="w-16 h-16 text-[#0060ff] mx-auto mb-8 opacity-20" />
           <AnimatePresence mode="wait">

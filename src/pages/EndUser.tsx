@@ -22,7 +22,7 @@ const EndUserComputingPage = () => {
 
         /* --- SECTION 1: HERO --- */
         .EUC_Hero {
-          padding: 120px 5% 80px;
+          padding: 100px 5% 60px;
           display: flex;
           align-items: center;
           gap: 60px;
@@ -30,6 +30,15 @@ const EndUserComputingPage = () => {
           min-height: 90vh;
           position: relative;
           overflow: hidden;
+        }
+        @media (max-width: 1024px) {
+          .EUC_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .EUC_Hero_Content { max-width: 100%; order: 1; }
+          .EUC_Hero_Img { order: -1; width: 100%; margin-bottom: 40px; }
+          .EUC_Hero_Img img { max-width: 380px; border-width: 10px; border-radius: 30px; }
+          .EUC_Hero_Floating_Card { display: none; }
+          .EUC_Badge { margin-bottom: 30px; }
+          .EUC_Btn_Group { justify-content: center; }
         }
 
         .EUC_Hero_Content { flex: 1.2; max-width: 700px; z-index: 10; }
@@ -83,16 +92,15 @@ const EndUserComputingPage = () => {
         .EUC_Cap_Section { padding: 50px 20px; background: #f8fafc; text-align: left; }
         .EUC_Cap_Grid { 
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: 1fr;
           gap: 25px;
           margin-top: 80px;
           max-width: 1400px;
           margin-left: auto;
           margin-right: auto;
         }
-        @media (max-width: 1200px) {
-          .EUC_Cap_Grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        @media (min-width: 768px) { .EUC_Cap_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .EUC_Cap_Grid { grid-template-columns: repeat(4, 1fr); } }
         @media (max-width: 640px) {
           .EUC_Cap_Grid { grid-template-columns: 1fr; }
         }
@@ -128,13 +136,32 @@ const EndUserComputingPage = () => {
         .EUC_Cap_Card p { color: #64748b; line-height: 1.7; font-size: 1rem; transition: 0.3s; font-weight: 450; }
 
         /* --- SECTION 3: OUTCOMES --- */
-        .EUC_Outcome { padding: 140px 5%; display: flex; align-items: center; gap: 100px; background: white; }
+        .EUC_Outcome { 
+          padding: 100px 5%; 
+          display: flex; 
+          align-items: center; 
+          gap: 60px; 
+          background: white; 
+        }
         .EUC_Outcome_Content { flex: 1; text-align: left; }
         .EUC_Outcome_Img { flex: 1; position: relative; }
         .EUC_Outcome_Img img { width: 100%; border-radius: 50px; box-shadow: 0 40px 100px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.05); }
+        @media (max-width: 1024px) {
+          .EUC_Outcome { flex-direction: column; text-align: center; gap: 60px; }
+          .EUC_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .Outcome_Item { text-align: left; }
+        }
         
-        .Outcome_List { margin-top: 50px; }
-        .Outcome_Item { display: flex; gap: 20px; margin-bottom: 35px; align-items: flex-start; }
+        .EUC_Flow_Grid { 
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 30px; 
+          margin-top: 80px; 
+          max-width: 1400px; 
+          margin: 80px auto 0;
+        }
+        @media (min-width: 768px) { .EUC_Flow_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .EUC_Flow_Grid { grid-template-columns: repeat(4, 1fr); } }
         .Outcome_Check { background: #2563eb; color: white; border-radius: 12px; padding: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); }
         .Outcome_Title { font-weight: 800; color: #0f172a; display: block; font-size: 1.25rem; margin-bottom: 5px; letter-spacing: -0.01em; }
         .Outcome_Desc { color: #64748b; font-size: 1.05rem; line-height: 1.6; font-weight: 450; }

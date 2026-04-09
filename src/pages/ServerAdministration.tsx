@@ -24,7 +24,7 @@ const ServerAdministrationPage = () => {
 
         /* --- SECTION 1: HERO --- */
         .SA_Hero {
-          padding: 120px 5% 80px;
+          padding: 100px 5% 60px;
           display: flex;
           align-items: center;
           gap: 60px;
@@ -33,6 +33,15 @@ const ServerAdministrationPage = () => {
           position: relative;
           overflow: hidden;
         }
+        @media (max-width: 1024px) {
+          .SA_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .SA_Hero_Content { max-width: 100%; order: 1; }
+          .SA_Hero_Img { order: -1; width: 100%; margin-bottom: 40px; display: flex; justify-content: center; }
+          .SA_Hero_Img img { max-width: 400px; border-width: 10px; border-radius: 30px; }
+          .SA_Hero_Floating_Card { display: none; }
+          .SA_Badge { margin-bottom: 30px; }
+          .SA_Btn_Group { justify-content: center; flex-wrap: wrap; }
+        }
 
         .SA_Hero_Content { flex: 1.2; max-width: 700px; z-index: 10; }
         .SA_Badge { 
@@ -40,9 +49,7 @@ const ServerAdministrationPage = () => {
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
-        .SA_Hero_H1 {
-        //  font-size: clamp(3rem, 6vw, 5rem); 
-         font-weight: 900; line-height: 1.05; color: #0f172a; margin-bottom: 30px; letter-spacing: -0.02em; }
+        .SA_Hero_H1 { font-weight: 900; line-height: 1.05; color: #0f172a; margin-bottom: 30px; letter-spacing: -0.02em; font-size: clamp(2.5rem, 5vw, 4.2rem); }
         .SA_Tagline { font-size: 1.5rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
         .SA_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 45px; font-weight: 450; }
 
@@ -81,11 +88,18 @@ const ServerAdministrationPage = () => {
         }
 
         /* --- SECTION 2: CAPABILITIES --- */
-        .SA_Cap_Section { padding: 140px 5%; background: #f8fafc; text-align: left; }
+        .SA_Cap_Section { padding: 100px 5%; background: #f8fafc; text-align: left; }
         .SA_Cap_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-          gap: 35px; margin-top: 80px; max-width: 1400px; margin-left: auto; margin-right: auto;
+          display: grid; 
+          grid-template_columns: 1fr;
+          gap: 35px; 
+          margin-top: 80px; 
+          max-width: 1400px; 
+          margin-left: auto; 
+          margin-right: auto;
         }
+        @media (min-width: 768px) { .SA_Cap_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .SA_Cap_Grid { grid-template-columns: repeat(4, 1fr); } }
 
         .SA_Cap_Card {
           background: white;
@@ -118,10 +132,21 @@ const ServerAdministrationPage = () => {
         .SA_Cap_Card p { color: #64748b; line-height: 1.7; font-size: 1rem; transition: 0.3s; font-weight: 450; }
 
         /* --- SECTION 3: OUTCOMES --- */
-        .SA_Outcome { padding: 140px 5%; display: flex; align-items: center; gap: 100px; background: white; }
+        .SA_Outcome { 
+          padding: 100px 5%; 
+          display: flex; 
+          align-items: center; 
+          gap: 60px; 
+          background: white; 
+        }
         .SA_Outcome_Content { flex: 1; text-align: left; }
         .SA_Outcome_Img { flex: 1; position: relative; }
         .SA_Outcome_Img img { width: 100%; border-radius: 50px; box-shadow: 0 40px 100px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.05); }
+        @media (max-width: 1024px) {
+          .SA_Outcome { flex-direction: column; text-align: center; gap: 60px; }
+          .SA_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .Outcome_Item { text-align: left; }
+        }
         
         .Outcome_List { margin-top: 50px; }
         .Outcome_Item { display: flex; gap: 20px; margin-bottom: 35px; align-items: flex-start; }
@@ -130,11 +155,18 @@ const ServerAdministrationPage = () => {
         .Outcome_Desc { color: #64748b; font-size: 1.05rem; line-height: 1.6; font-weight: 450; }
 
         /* --- SECTION 4: APPROACH --- */
-        .SA_Flow { padding: 140px 5%; background: #fdfdfd; text-align: center; }
+        .SA_Flow { padding: 100px 5%; background: #fdfdfd; text-align: center; }
         .SA_Flow_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-          gap: 30px; margin-top: 80px; max-width: 1400px; margin: 80px auto 0;
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 30px; 
+          margin-top: 80px; 
+          max-width: 1400px; 
+          margin: 80px auto 0;
         }
+        @media (min-width: 768px) { .SA_Flow_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .SA_Flow_Grid { grid-template-columns: repeat(4, 1fr); } }
+
         .SA_Step_Card {
           background: white; border-radius: 30px; padding: 60px 40px; position: relative;
           box-shadow: 0 20px 50px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.03); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -145,18 +177,13 @@ const ServerAdministrationPage = () => {
           position: absolute; top: -20px; left: 40px;
           background: #0f172a; color: white; padding: 6px 25px; border-radius: 100px; font-weight: 900; font-size: 0.85rem; letter-spacing: 1px;
         }
-        .SA_Step_Icon { color: #2563eb; margin-bottom: 30px; }
+        .SA_Step_Icon { color: #2563eb; margin-bottom: 30px; display: flex; justify-content: center; }
         .SA_Step_H { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.01em; }
         .SA_Step_P { color: #64748b; font-size: 1rem; line-height: 1.7; font-weight: 450; }
 
         @media (max-width: 1024px) {
-          .SA_Hero, .SA_Outcome { flex-direction: column; text-align: center; padding-top: 140px; }
-          .SA_Hero_Content { text-align: center; }
-          .SA_Badge { margin-bottom: 30px; }
+          .SA_Hero, .SA_Outcome { flex-direction: column; text-align: center; }
           .SA_Btn_Group { justify-content: center; }
-          .Outcome_Item { text-align: left; }
-          .SA_Hero_Img img { max-width: 100%; border-radius: 40px; }
-          .SA_Hero_Floating_Card { left: 50%; transform: translateX(-50%); bottom: -20px; }
         }
       `}</style>
 
@@ -176,9 +203,6 @@ const ServerAdministrationPage = () => {
           <div className="SA_Btn_Group">
             <Link to="/contact">
               <button className="SA_Primary_Btn">Consult an Architect <ArrowRight size={20} /></button>
-            </Link>
-            <Link to="/network" className="SA_Secondary_Btn">
-              Network Services <Activity size={18} />
             </Link>
           </div>
         </motion.div>
@@ -311,7 +335,7 @@ const ServerAdministrationPage = () => {
       </section>
 
       {/* LAYOUT 6 – TRUST & FINAL CTA */}
-      <section style={{ padding: '140px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '100px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
@@ -324,10 +348,6 @@ const ServerAdministrationPage = () => {
               <Link to="/contact">
                 <button className="SA_Primary_Btn">Launch Your Consultation</button>
               </Link>
-              <a href="tel:+91444555666" className="text-white font-bold hover:text-blue-400 transition-colors flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center"><Activity size={20} /></div>
-                Speak to Support
-              </a>
             </div>
           </motion.div>
         </div>

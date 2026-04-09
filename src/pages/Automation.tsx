@@ -19,12 +19,18 @@ const AutomationPage = () => {
 
         /* --- SECTION 1: HERO --- */
         .AU_Hero {
-          padding: 100px 5%;
+          padding: 100px 5% 60px;
           display: flex;
           align-items: center;
           gap: 50px;
           background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
           min-height: 85vh;
+        }
+        @media (max-width: 1024px) {
+          .AU_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .AU_Hero_Content { max-width: 100%; }
+          .AU_Hero_Img { width: 100%; order: -1; margin-bottom: 40px; display: flex; justify-content: center; }
+          .AU_Hero_Img img { max-width: 400px; border-width: 10px; }
         }
 
         .AU_Hero_Content { flex: 1; max-width: 650px; }
@@ -63,17 +69,15 @@ const AutomationPage = () => {
         .AU_Cap_Section { padding: 100px 5%; background: #f8fafc; text-align: center; }
         .AU_Cap_Grid { 
           display: grid; 
-          grid-template-columns: repeat(4, 1fr); 
+          grid-template-columns: 1fr; 
           gap: 25px; 
           margin-top: 60px; 
           max-width: 1400px; 
           margin-left: auto; 
           margin-right: auto;
         }
-
-        @media (max-width: 1200px) {
-          .AU_Cap_Grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        @media (min-width: 768px) { .AU_Cap_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .AU_Cap_Grid { grid-template-columns: repeat(4, 1fr); } }
 
         .AU_Cap_Card {
           background: white;
@@ -107,10 +111,20 @@ const AutomationPage = () => {
         .AU_Cap_Card p { color: #64748b; line-height: 1.6; font-size: 0.95rem; transition: 0.3s; }
 
         /* --- SECTION 4: OUTCOMES --- */
-        .AU_Outcome { padding: 100px 5%; display: flex; align-items: center; gap: 80px; }
+        .AU_Outcome { 
+          padding: 100px 5%; 
+          display: flex; 
+          align-items: center; 
+          gap: 60px; 
+        }
         .AU_Outcome_Content { flex: 1; }
         .AU_Outcome_Img { flex: 1; }
         .AU_Outcome_Img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+        @media (max-width: 1024px) {
+          .AU_Outcome { flex-direction: column; text-align: center; gap: 40px; }
+          .AU_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .Outcome_Item { text-align: left; }
+        }
         
         .Outcome_List { margin-top: 40px; }
         .Outcome_Item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
@@ -121,9 +135,16 @@ const AutomationPage = () => {
         /* --- SECTION 5: APPROACH --- */
         .AU_Flow { padding: 100px 5%; background: #fdfdfd; text-align: center; }
         .AU_Flow_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-          gap: 30px; margin-top: 60px; max-width: 1300px; margin: 60px auto 0;
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 30px; 
+          margin-top: 60px; 
+          max-width: 1300px; 
+          margin: 60px auto 0;
         }
+        @media (min-width: 768px) { .AU_Flow_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .AU_Flow_Grid { grid-template-columns: repeat(4, 1fr); } }
+
         .AU_Step_Card {
           background: white; border-radius: 20px; padding: 50px 30px; position: relative;
           box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; transition: 0.4s;
@@ -133,7 +154,7 @@ const AutomationPage = () => {
           position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
           background: #22314f; color: white; padding: 5px 20px; border-radius: 50px; font-weight: 900; font-size: 0.8rem;
         }
-        .AU_Step_Icon { color: #3b82f6; margin-bottom: 20px; }
+        .AU_Step_Icon { color: #3b82f6; margin-bottom: 20px; display: flex; justify-content: center; }
         .AU_Step_H { font-size: 1.3rem; font-weight: 800; color: #22314f; margin-bottom: 12px; }
         .AU_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
 

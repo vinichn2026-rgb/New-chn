@@ -24,12 +24,18 @@ const LanCablingSurveillancePage = () => {
 
         /* --- SECTION 1: HERO --- */
         .LCS_Hero {
-          padding: 100px 5%;
+          padding: 100px 5% 60px;
           display: flex;
           align-items: center;
           gap: 50px;
           background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
           min-height: 85vh;
+        }
+        @media (max-width: 1024px) {
+          .LCS_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .LCS_Hero_Content { max-width: 100%; order: 1; }
+          .LCS_Hero_Img { width: 100%; order: -1; margin-bottom: 40px; display: flex; justify-content: center; }
+          .LCS_Hero_Img img { max-width: 400px; border-width: 10px; }
         }
 
         .LCS_Hero_Content { flex: 1; max-width: 650px; }
@@ -37,10 +43,7 @@ const LanCablingSurveillancePage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .LCS_Hero_H1 
-        { 
-        // font-size: clamp(2.5rem, 5vw, 4rem);
-          font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
+        .LCS_Hero_H1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
         .LCS_Tagline { font-size: 1.4rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .LCS_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
@@ -51,9 +54,6 @@ const LanCablingSurveillancePage = () => {
           border: none; cursor: pointer;
         }
         .LCS_Primary_Btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4); }
-
-        .LCS_Secondary_Btn { font-weight: 700; color: #22314f; display: flex; align-items: center; gap: 8px; transition: 0.3s; text-decoration: none;}
-        .LCS_Secondary_Btn:hover { color: #3b82f6; gap: 12px; }
 
         .LCS_Hero_Img { flex: 1; position: relative; }
         .LCS_Hero_Img img { 
@@ -68,9 +68,16 @@ const LanCablingSurveillancePage = () => {
         /* --- SECTION 2: CAPABILITIES --- */
         .LCS_Cap_Section { padding: 100px 5%; background: #f8fafc; text-align: center; }
         .LCS_Cap_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-          gap: 30px; margin-top: 60px; max-width: 1300px; margin-left: auto; margin-right: auto;
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 30px; 
+          margin-top: 60px; 
+          max-width: 1300px; 
+          margin-left: auto; 
+          margin-right: auto;
         }
+        @media (min-width: 768px) { .LCS_Cap_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .LCS_Cap_Grid { grid-template-columns: repeat(4, 1fr); } }
 
         .LCS_Cap_Card {
           background: white;
@@ -104,10 +111,20 @@ const LanCablingSurveillancePage = () => {
         .LCS_Cap_Card p { color: #64748b; line-height: 1.6; font-size: 0.95rem; transition: 0.3s; }
 
         /* --- SECTION 3: OUTCOMES --- */
-        .LCS_Outcome { padding: 100px 5%; display: flex; align-items: center; gap: 80px; }
+        .LCS_Outcome { 
+          padding: 100px 5%; 
+          display: flex; 
+          align-items: center; 
+          gap: 60px; 
+        }
         .LCS_Outcome_Content { flex: 1; }
         .LCS_Outcome_Img { flex: 1; }
         .LCS_Outcome_Img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+        @media (max-width: 1024px) {
+          .LCS_Outcome { flex-direction: column; text-align: center; gap: 40px; }
+          .LCS_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .Outcome_Item { text-align: left; }
+        }
         
         .Outcome_List { margin-top: 40px; }
         .Outcome_Item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
@@ -118,9 +135,16 @@ const LanCablingSurveillancePage = () => {
         /* --- SECTION 4: APPROACH --- */
         .LCS_Flow { padding: 100px 5%; background: #fdfdfd; text-align: center; }
         .LCS_Flow_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-          gap: 30px; margin-top: 60px; max-width: 1300px; margin: 60px auto 0;
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 30px; 
+          margin-top: 60px; 
+          max-width: 1300px; 
+          margin: 60px auto 0;
         }
+        @media (min-width: 768px) { .LCS_Flow_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .LCS_Flow_Grid { grid-template-columns: repeat(4, 1fr); } }
+
         .LCS_Step_Card {
           background: white; border-radius: 20px; padding: 50px 30px; position: relative;
           box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; transition: 0.4s;
@@ -130,14 +154,13 @@ const LanCablingSurveillancePage = () => {
           position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
           background: #22314f; color: white; padding: 5px 20px; border-radius: 50px; font-weight: 900; font-size: 0.8rem;
         }
-        .LCS_Step_Icon { color: #3b82f6; margin-bottom: 20px; }
+        .LCS_Step_Icon { color: #3b82f6; margin-bottom: 20px; display: flex; justify-content: center; }
         .LCS_Step_H { font-size: 1.3rem; font-weight: 800; color: #22314f; margin-bottom: 12px; }
         .LCS_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
 
         @media (max-width: 1024px) {
           .LCS_Hero, .LCS_Outcome { flex-direction: column; text-align: center; }
           .LCS_Btn_Group { justify-content: center; }
-          .Outcome_Item { text-align: left; }
         }
       `}</style>
 

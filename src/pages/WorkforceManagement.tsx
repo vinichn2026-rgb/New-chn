@@ -19,12 +19,19 @@ const WorkforceManagementPage = () => {
 
         /* --- SECTION 1: HERO --- */
         .WM_Hero {
-          padding: 100px 5%;
+          padding: 100px 5% 60px;
           display: flex;
           align-items: center;
           gap: 50px;
           background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
           min-height: 85vh;
+        }
+        @media (max-width: 1024px) {
+          .WM_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .WM_Hero_Content { max-width: 100%; order: 1; }
+          .WM_Hero_Img { width: 100%; order: -1; margin-bottom: 40px; display: flex; justify-content: center; }
+          .WM_Hero_Img img { max-width: 400px; border-width: 10px; }
+          .WM_Btn_Group { justify-content: center; }
         }
 
         .WM_Hero_Content { flex: 1; max-width: 650px; }
@@ -32,8 +39,7 @@ const WorkforceManagementPage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .WM_Hero_H1 { 
-          line-height: 1.1; color: #22314f; margin-bottom: 25px; }
+        .WM_Hero_H1 { font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; font-size: clamp(2.5rem, 5vw, 4rem); }
         .WM_Tagline { font-size: clamp(1.1rem, 2vw, 1.4rem); color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .WM_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
@@ -64,17 +70,15 @@ const WorkforceManagementPage = () => {
         .WM_Cap_Section { padding: 100px 5%; background: #f8fafc; text-align: center; }
         .WM_Cap_Grid { 
           display: grid; 
-          grid-template-columns: repeat(4, 1fr); 
+          grid-template_columns: 1fr;
           gap: 25px; 
           margin-top: 60px; 
           max-width: 1400px; 
           margin-left: auto; 
           margin-right: auto;
         }
-
-        @media (max-width: 1200px) {
-          .WM_Cap_Grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        @media (min-width: 768px) { .WM_Cap_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .WM_Cap_Grid { grid-template-columns: repeat(4, 1fr); } }
 
         .WM_Cap_Card {
           background: white;
@@ -108,10 +112,20 @@ const WorkforceManagementPage = () => {
         .WM_Cap_Card p { color: #64748b; line-height: 1.6; font-size: 0.95rem; transition: 0.3s; }
 
         /* --- SECTION 4: OUTCOMES --- */
-        .WM_Outcome { padding: 100px 5%; display: flex; align-items: center; gap: 80px; }
+        .WM_Outcome { 
+          padding: 100px 5%; 
+          display: flex; 
+          align-items: center; 
+          gap: 60px; 
+        }
         .WM_Outcome_Content { flex: 1; }
         .WM_Outcome_Img { flex: 1; }
         .WM_Outcome_Img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+        @media (max-width: 1024px) {
+          .WM_Outcome { flex-direction: column; text-align: center; gap: 40px; }
+          .WM_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .Outcome_Item { text-align: left; }
+        }
         
         .Outcome_List { margin-top: 40px; }
         .Outcome_Item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
@@ -124,14 +138,16 @@ const WorkforceManagementPage = () => {
         .WM_Flow_Grid { 
           display: grid; 
           grid-template-columns: 1fr; 
-          gap: 20px; 
+          gap: 30px; 
           margin-top: 60px; 
           max-width: 1300px; 
-          margin-left: auto;
-          margin-right: auto;
+          margin: 60px auto 0;
         }
+        @media (min-width: 768px) { .WM_Flow_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .WM_Flow_Grid { grid-template-columns: repeat(4, 1fr); } }
+
         .WM_Step_Card {
-          background: white; border-radius: 20px; padding: 40px 20px; position: relative;
+          background: white; border-radius: 20px; padding: 50px 30px; position: relative;
           box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; transition: 0.4s;
         }
         .WM_Step_Card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
@@ -143,43 +159,16 @@ const WorkforceManagementPage = () => {
         .WM_Step_H { font-size: 1.3rem; font-weight: 800; color: #22314f; margin-bottom: 12px; }
         .WM_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
 
-        @media (min-width: 640px) {
-          .WM_Flow_Grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        }
-
-        @media (min-width: 768px) {
-          .WM_Flow_Grid { grid-template-columns: repeat(4, 1fr); gap: 10px; }
-          .WM_Step_Card { padding: 35px 12px 20px; border-radius: 12px; }
-          .WM_Step_Num { font-size: 0.65rem; padding: 4px 12px; top: -12px; }
-          .WM_Step_Icon { margin-bottom: 15px; }
-          .WM_Step_Icon svg { width: 22px; height: 22px; }
-          .WM_Step_H { font-size: 0.95rem; margin-bottom: 8px; }
-          .WM_Step_P { font-size: 0.75rem; line-height: 1.4; }
-        }
-
-        @media (min-width: 1024px) {
-          .WM_Flow_Grid { gap: 30px; }
-          .WM_Step_Card { padding: 50px 30px; border-radius: 20px; }
-          .WM_Step_Num { font-size: 0.8rem; padding: 5px 20px; top: -15px; }
-          .WM_Step_Icon { margin-bottom: 20px; }
-          .WM_Step_Icon svg { width: 30px; height: 30px; }
-          .WM_Step_H { font-size: 1.3rem; margin-bottom: 12px; }
-          .WM_Step_P { font-size: 0.95rem; line-height: 1.6; }
-        }
-
         @media (max-width: 1024px) {
           .WM_Hero, .WM_Outcome { flex-direction: column; text-align: center; }
-          .WM_Btn_Group { justify-content: center; }
         }
 
         /* --- SECTION 6: FINAL --- */
         .WM_Final { 
-          padding: 80px 5%; 
+          padding: 100px 5%; 
           background: #002e5b; color: #ffffff; text-align: center; 
         }
-        .WM_Final_H { 
-           font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; color:#ffffff; 
-        }
+        .WM_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; color:#ffffff; font-size: clamp(2rem, 5vw, 3.5rem); }
       `}</style>
 
       {/* LAYOUT 1 – PAGE HERO */}
@@ -191,11 +180,6 @@ const WorkforceManagementPage = () => {
           <span className="WM_Badge">Consulting Excellence</span>
           <h1 className="WM_Hero_H1">WORKFORCE MANAGEMENT SERVICES</h1>
           <p className="WM_Tagline">Building high-fidelity workforces through strategic acquisition and structural oversight.</p>
-          {/* <p className="WM_Hero_P">
-            CHN Technologies provides structured workforce management consulting that ensures
-            talent stability, operational alignment, and long-term workforce growth. Our approach
-            focuses on people-first strategy, process integrity, and measurable business impact.
-          </p> */}
           <div className="WM_Btn_Group">
             <Link to="/contact">
               <button className="WM_Primary_Btn">Consult on Workforce Strategy</button>
@@ -226,7 +210,7 @@ const WorkforceManagementPage = () => {
       {/* LAYOUT 3 – CORE CAPABILITIES */}
       <section className="WM_Cap_Section">
         <span className="WM_Badge">Core Domains</span>
-        <h2 className="WM_Hero_H1" style={{ fontSize: '' }}>Workforce Consulting <br /> Capabilities</h2>
+        <h2 className="WM_Hero_H1" style={{ fontSize: '2.5rem' }}>Workforce Consulting <br /> Capabilities</h2>
 
         <div className="WM_Cap_Grid">
           {[
@@ -271,7 +255,7 @@ const WorkforceManagementPage = () => {
         </div>
         <div className="WM_Outcome_Content">
           <span className="WM_Badge">Business Benefits</span>
-          <h2 className="WM_Hero_H1" style={{}}>Benefits of Structured <br /> Workforce Management</h2>
+          <h2 className="WM_Hero_H1" style={{ fontSize: '2.5rem' }}>Benefits of Structured <br /> Workforce Management</h2>
 
           <div className="Outcome_List">
             {[
@@ -333,10 +317,6 @@ const WorkforceManagementPage = () => {
           </Link>
         </motion.div>
       </section>
-
-
-
-
     </div>
   );
 };

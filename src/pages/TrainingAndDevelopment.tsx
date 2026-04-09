@@ -19,12 +19,19 @@ const TrainingAndDevelopmentPage = () => {
 
         /* --- SECTION 1: HERO --- */
         .TD_Hero {
-          padding: 100px 5%;
+          padding: 100px 5% 60px;
           display: flex;
           align-items: center;
           gap: 50px;
           background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
           min-height: 85vh;
+        }
+        @media (max-width: 1024px) {
+          .TD_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .TD_Hero_Content { max-width: 100%; order: 1; }
+          .TD_Hero_Img { width: 100%; order: -1; margin-bottom: 40px; display: flex; justify-content: center; }
+          .TD_Hero_Img img { max-width: 400px; border-width: 10px; }
+          .TD_Btn_Group { justify-content: center; }
         }
 
         .TD_Hero_Content { flex: 1; max-width: 650px; }
@@ -32,9 +39,7 @@ const TrainingAndDevelopmentPage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .TD_Hero_H1 { 
-        
-        line-height: 1.1; color: #22314f; margin-bottom: 25px; }
+        .TD_Hero_H1 { font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; font-size: clamp(2.5rem, 5vw, 4rem); }
         .TD_Tagline { font-size: 1.4rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .TD_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
@@ -45,9 +50,6 @@ const TrainingAndDevelopmentPage = () => {
           border: none; cursor: pointer;
         }
         .TD_Primary_Btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4); }
-
-        .TD_Secondary_Btn { font-weight: 700; color: #22314f; display: flex; align-items: center; gap: 8px; transition: 0.3s; text-decoration: none;}
-        .TD_Secondary_Btn:hover { color: #3b82f6; gap: 12px; }
 
         .TD_Hero_Img { flex: 1; position: relative; }
         .TD_Hero_Img img { 
@@ -68,17 +70,15 @@ const TrainingAndDevelopmentPage = () => {
         .TD_Cap_Section { padding: 100px 5%; background: #f8fafc; text-align: center; }
         .TD_Cap_Grid { 
           display: grid; 
-          grid-template-columns: repeat(4, 1fr); 
+          grid-template-columns: 1fr; 
           gap: 25px; 
           margin-top: 60px; 
           max-width: 1400px; 
           margin-left: auto; 
           margin-right: auto;
         }
-
-        @media (max-width: 1200px) {
-          .TD_Cap_Grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        @media (min-width: 768px) { .TD_Cap_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .TD_Cap_Grid { grid-template-columns: repeat(4, 1fr); } }
 
         .TD_Cap_Card {
           background: white;
@@ -112,10 +112,20 @@ const TrainingAndDevelopmentPage = () => {
         .TD_Cap_Card p { color: #64748b; line-height: 1.6; font-size: 0.95rem; transition: 0.3s; }
 
         /* --- SECTION 4: OUTCOMES --- */
-        .TD_Outcome { padding: 100px 5%; display: flex; align-items: center; gap: 80px; }
+        .TD_Outcome { 
+          padding: 100px 5%; 
+          display: flex; 
+          align-items: center; 
+          gap: 60px; 
+        }
         .TD_Outcome_Content { flex: 1; }
         .TD_Outcome_Img { flex: 1; }
         .TD_Outcome_Img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+        @media (max-width: 1024px) {
+          .TD_Outcome { flex-direction: column; text-align: center; gap: 40px; }
+          .TD_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .Outcome_Item { text-align: left; }
+        }
         
         .Outcome_List { margin-top: 40px; }
         .Outcome_Item { display: flex; gap: 15px; margin-bottom: 25px; align-items: flex-start; }
@@ -126,9 +136,16 @@ const TrainingAndDevelopmentPage = () => {
         /* --- SECTION 5: APPROACH --- */
         .TD_Flow { padding: 100px 5%; background: #fdfdfd; text-align: center; }
         .TD_Flow_Grid { 
-          display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-          gap: 30px; margin-top: 60px; max-width: 1300px; margin: 60px auto 0;
+          display: grid; 
+          grid-template-columns: 1fr; 
+          gap: 30px; 
+          margin-top: 60px; 
+          max-width: 1300px; 
+          margin: 60px auto 0;
         }
+        @media (min-width: 768px) { .TD_Flow_Grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .TD_Flow_Grid { grid-template-columns: repeat(4, 1fr); } }
+
         .TD_Step_Card {
           background: white; border-radius: 20px; padding: 50px 30px; position: relative;
           box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; transition: 0.4s;
@@ -138,25 +155,20 @@ const TrainingAndDevelopmentPage = () => {
           position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
           background: #22314f; color: white; padding: 5px 20px; border-radius: 50px; font-weight: 900; font-size: 0.8rem;
         }
-        .TD_Step_Icon { color: #3b82f6; margin-bottom: 20px; }
+        .TD_Step_Icon { color: #3b82f6; margin-bottom: 20px; display: flex; justify-content: center; }
         .TD_Step_H { font-size: 1.3rem; font-weight: 800; color: #22314f; margin-bottom: 12px; }
         .TD_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
 
         @media (max-width: 1024px) {
           .TD_Hero, .TD_Outcome { flex-direction: column; text-align: center; }
-          .TD_Btn_Group { justify-content: center; }
         }
 
-        /* --- SECTION 6: FINAL --- */
+        /* --- FINAL --- */
         .TD_Final { 
-          padding: 80px 5%; 
+          padding: 100px 5%; 
           background: #002e5b; color: #ffffff; text-align: center; 
         }
-        .TD_Final_H { 
-
-         
-          font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; color:#ffffff; 
-        }
+        .TD_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; color:#ffffff; font-size: clamp(2rem, 5vw, 3.5rem); }
       `}</style>
 
       {/* LAYOUT 1 – PAGE HERO */}
@@ -168,11 +180,6 @@ const TrainingAndDevelopmentPage = () => {
           <span className="TD_Badge">Consulting Excellence</span>
           <h1 className="TD_Hero_H1">TRAINING & DEVELOPMENT consulting</h1>
           <p className="TD_Tagline">Building a high-performance workforce through structured enterprise learning systems.</p>
-          {/* <p className="TD_Hero_P">
-              CHN Technologies provides structured training and development consulting that ensures
-              workforce growth, technical proficiency, and long-term skill stability. Our approach
-              focuses on learner-centric systems, process integrity, and measurable business impact.
-            </p> */}
           <div className="TD_Btn_Group">
             <Link to="/contact">
               <button className="TD_Primary_Btn">Customize Your Learning Plan</button>
@@ -253,7 +260,7 @@ const TrainingAndDevelopmentPage = () => {
           <div className="Outcome_List">
             {[
               { title: "Optimal Strategic Scaling", desc: "Training systems that ensure institutional knowledge grows with organisational goals." },
-              { title: "Reduced Hiring Overhead", desc: "Elevating internal workforce capacity reduces the need for expensive external hiring." },
+              { title: "Reduced Hiring Overhead", desc: "Elevating internal workforce capacity reduces the need for external hiring." },
               { title: "Predictable Performance Growth", desc: "Structured learning outcomes ensure measurable improvement in workforce productivity." },
               { title: "High-Stability Workforce", desc: "Investing in employees increases retention and reduces institutional knowledge debt." }
             ].map((item, i) => (

@@ -117,8 +117,14 @@ const sections = [
 
 const TermsAndConditions = () => {
     return (
-        <div style={{ fontFamily: "'Outfit', 'Inter', sans-serif", background: '#ffffff', color: '#1a2b4b' }}>
+        <div className="TC_WRAPPER">
             <style>{`
+                .TC_WRAPPER {
+                  font-family: 'Outfit', 'Inter', sans-serif;
+                  background: #ffffff;
+                  color: #1a2b4b;
+                  overflow-x: hidden;
+                }
                 .TC_Hero {
                     background: linear-gradient(135deg, #001a3a 0%, #002e5b 50%, #0050a0 100%);
                     padding: 160px 5% 100px;
@@ -131,14 +137,6 @@ const TermsAndConditions = () => {
                     top: -50%; left: -20%;
                     width: 700px; height: 700px;
                     background: radial-gradient(circle, rgba(0,96,255,0.15) 0%, transparent 70%);
-                    pointer-events: none;
-                }
-                .TC_Hero::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0; right: 0;
-                    width: 50%; height: 100%;
-                    background: linear-gradient(135deg, transparent, rgba(0,96,255,0.06));
                     pointer-events: none;
                 }
                 .TC_Hero_Grid {
@@ -165,7 +163,7 @@ const TermsAndConditions = () => {
                     margin-bottom: 30px;
                 }
                 .TC_Title {
-                    font-size: clamp(2.8rem, 6vw, 5rem);
+                    font-size: clamp(2.5rem, 6vw, 5rem);
                     font-weight: 900;
                     color: #ffffff;
                     line-height: 1.05;
@@ -173,10 +171,9 @@ const TermsAndConditions = () => {
                     text-transform: uppercase;
                     margin-bottom: 20px;
                 }
-                .TC_Title span { color: #60a5fa; }
                 .TC_Meta {
                     color: rgba(255,255,255,0.5);
-                    font-size: 0.9rem;
+                    font-size: 0.95rem;
                     font-weight: 500;
                 }
                 .TC_Intro_Text {
@@ -186,6 +183,11 @@ const TermsAndConditions = () => {
                     max-width: 750px;
                     margin-top: 30px;
                     font-weight: 400;
+                }
+
+                @media (max-width: 1024px) {
+                  .TC_Hero { padding: 140px 5% 80px; text-align: center; }
+                  .TC_Intro_Text { margin: 30px auto 0; }
                 }
 
                 /* TOC sidebar */
@@ -199,8 +201,12 @@ const TermsAndConditions = () => {
                     align-items: start;
                 }
                 @media (max-width: 1024px) {
-                    .TC_Layout { grid-template-columns: 1fr; }
+                    .TC_Layout { grid-template-columns: 1fr; gap: 40px; }
                     .TC_TOC { display: none; }
+                    .TC_Section { text-align: center; }
+                    .TC_Section_Header { flex-direction: column; text-align: center; align-items: center; }
+                    .TC_Section_Text, .TC_Highlight_Box, .TC_Bullet_List, .TC_Footer_Note { margin-left: 0 !important; }
+                    .TC_Bullet_Item { justify-content: center; text-align: center; }
                 }
                 .TC_TOC {
                     position: sticky;
@@ -211,7 +217,7 @@ const TermsAndConditions = () => {
                     border: 1px solid #e2e8f0;
                 }
                 .TC_TOC_Title {
-                    font-size: 0.7rem;
+                    font-size: 0.72rem;
                     font-weight: 800;
                     color: #0060ff;
                     text-transform: uppercase;
@@ -226,17 +232,17 @@ const TermsAndConditions = () => {
                     border-bottom: 1px solid #f1f5f9;
                     text-decoration: none;
                     color: #475569;
-                    font-size: 0.82rem;
+                    font-size: 0.85rem;
                     font-weight: 500;
                     transition: color 0.2s;
                 }
                 .TC_TOC_Item:hover { color: #0060ff; }
                 .TC_TOC_Num {
-                    font-size: 0.7rem;
+                    font-size: 0.72rem;
                     font-weight: 800;
                     color: #0060ff;
                     background: #eff6ff;
-                    width: 22px; height: 22px;
+                    width: 24px; height: 24px;
                     border-radius: 6px;
                     display: flex; align-items: center; justify-content: center;
                     flex-shrink: 0;
@@ -256,17 +262,17 @@ const TermsAndConditions = () => {
                     margin-bottom: 24px;
                 }
                 .TC_Section_Num {
-                    font-size: 0.7rem;
+                    font-size: 0.72rem;
                     font-weight: 900;
                     color: #0060ff;
                     background: #eff6ff;
-                    padding: 6px 10px;
+                    padding: 6px 12px;
                     border-radius: 10px;
                     letter-spacing: 0.05em;
                     flex-shrink: 0;
                 }
                 .TC_Section_Icon {
-                    width: 44px; height: 44px;
+                    width: 48px; height: 48px;
                     background: linear-gradient(135deg, #eff6ff, #dbeafe);
                     color: #0060ff;
                     border-radius: 14px;
@@ -274,46 +280,46 @@ const TermsAndConditions = () => {
                     flex-shrink: 0;
                 }
                 .TC_Section_Title {
-                    font-size: 1.4rem;
+                    font-size: 1.5rem;
                     font-weight: 800;
                     color: #002e5b;
                     letter-spacing: -0.01em;
                 }
                 .TC_Section_Text {
                     color: #475569;
-                    font-size: 1rem;
+                    font-size: 1.05rem;
                     line-height: 1.8;
-                    margin-left: 62px;
+                    margin-left: 66px;
                 }
                 .TC_Highlight_Box {
                     background: linear-gradient(135deg, #fff7ed, #fef3c7);
                     border: 1px solid #fbbf24;
-                    border-radius: 16px;
-                    padding: 20px 24px;
-                    margin-left: 62px;
-                    margin-top: 6px;
+                    border-radius: 20px;
+                    padding: 24px 30px;
+                    margin-left: 66px;
+                    margin-top: 10px;
                 }
                 .TC_Highlight_Box p {
                     color: #92400e;
-                    font-size: 0.95rem;
+                    font-size: 1rem;
                     line-height: 1.7;
                     font-weight: 500;
                     margin: 0;
                 }
                 .TC_Bullet_List {
-                    margin-left: 62px;
+                    margin-left: 66px;
                     list-style: none;
                     padding: 0;
                     display: flex;
                     flex-direction: column;
-                    gap: 10px;
+                    gap: 12px;
                 }
                 .TC_Bullet_Item {
                     display: flex;
                     align-items: flex-start;
                     gap: 12px;
                     color: #475569;
-                    font-size: 1rem;
+                    font-size: 1.05rem;
                     line-height: 1.6;
                 }
                 .TC_Bullet_Dot {
@@ -321,68 +327,76 @@ const TermsAndConditions = () => {
                     background: #0060ff;
                     border-radius: 50%;
                     flex-shrink: 0;
-                    margin-top: 8px;
+                    margin-top: 10px;
                 }
                 .TC_Footer_Note {
-                    margin-left: 62px;
-                    margin-top: 14px;
+                    margin-left: 66px;
+                    margin-top: 16px;
                     color: #64748b;
-                    font-size: 0.9rem;
+                    font-size: 0.95rem;
                     font-style: italic;
                 }
 
                 /* Contact card */
                 .TC_Contact_Card {
                     background: linear-gradient(135deg, #002e5b 0%, #0050a0 100%);
-                    border-radius: 30px;
+                    border-radius: 40px;
                     padding: 50px;
                     color: white;
                     margin-top: 60px;
                 }
                 .TC_Contact_Title {
-                    font-size: 1.6rem;
+                    font-size: clamp(1.5rem, 4vw, 2rem);
                     font-weight: 900;
-                    margin-bottom: 8px;
+                    margin-bottom: 12px;
                     text-transform: uppercase;
                     letter-spacing: -0.01em;
                 }
                 .TC_Contact_Subtitle {
                     color: rgba(255,255,255,0.6);
-                    margin-bottom: 32px;
-                    font-size: 0.95rem;
+                    margin-bottom: 40px;
+                    font-size: 1rem;
                 }
                 .TC_Contact_Grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                    gap: 20px;
+                    grid-template_columns: 1fr;
+                    gap: 24px;
                 }
+                @media (min-width: 640px) { .TC_Contact_Grid { grid-template-columns: repeat(2, 1fr); } }
+
                 .TC_Contact_Item {
                     background: rgba(255,255,255,0.08);
                     border: 1px solid rgba(255,255,255,0.12);
-                    border-radius: 16px;
-                    padding: 20px;
+                    border-radius: 20px;
+                    padding: 24px;
                     display: flex;
-                    gap: 14px;
+                    gap: 16px;
                     align-items: flex-start;
+                    text-align: left;
                 }
                 .TC_Contact_Icon {
                     color: #60a5fa;
                     flex-shrink: 0;
-                    margin-top: 2px;
+                    margin-top: 4px;
                 }
                 .TC_Contact_Label {
-                    font-size: 0.7rem;
+                    font-size: 0.72rem;
                     color: rgba(255,255,255,0.5);
                     font-weight: 700;
                     text-transform: uppercase;
                     letter-spacing: 0.1em;
-                    margin-bottom: 4px;
+                    margin-bottom: 6px;
                 }
                 .TC_Contact_Value {
-                    font-size: 0.9rem;
+                    font-size: 1rem;
                     color: #fff;
                     font-weight: 500;
                     line-height: 1.5;
+                }
+
+                @media (max-width: 640px) {
+                  .TC_Contact_Card { padding: 40px 20px; }
+                  .TC_Contact_Item { padding: 20px; }
                 }
             `}</style>
 
@@ -399,7 +413,7 @@ const TermsAndConditions = () => {
                         <Shield size={12} />
                         Legal Document
                     </div>
-                    <h1 className="TC_Title">Terms &amp; <span>Conditions</span></h1>
+                    <h1 className="TC_Title">Terms &amp; <span style={{ color: '#60a5fa' }}>Conditions</span></h1>
                     <p className="TC_Meta">Last updated: July 5, 2025</p>
                     <p className="TC_Intro_Text">
                         Welcome to CHN Technologies. By using our website (www.chntechs.com) and services, you agree
@@ -420,7 +434,7 @@ const TermsAndConditions = () => {
                             {s.title}
                         </a>
                     ))}
-                    <a href="#section-14" className="TC_TOC_Item">
+                    <a href="#section-contact" className="TC_TOC_Item">
                         <span className="TC_TOC_Num">14</span>
                         Contact Us
                     </a>
@@ -479,7 +493,7 @@ const TermsAndConditions = () => {
 
                     {/* Section 14 – Contact */}
                     <motion.div
-                        id="section-14"
+                        id="section-contact"
                         className="TC_Section"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -531,7 +545,7 @@ const TermsAndConditions = () => {
                     </motion.div>
 
                     {/* Related links */}
-                    <div style={{ marginTop: '50px', display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                    <div style={{ marginTop: '50px', display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }} className="related_links">
                         <Link to="/privacy-policy" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#eff6ff', color: '#0060ff', padding: '12px 24px', borderRadius: 100, fontWeight: 700, fontSize: '0.85rem', textDecoration: 'none', border: '1px solid #bfdbfe', transition: 'all 0.3s' }}>
                             <Shield size={15} /> Privacy Policy
                         </Link>
