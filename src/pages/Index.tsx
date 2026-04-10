@@ -463,9 +463,9 @@ const Index = () => {
           .partner-logo-img {
             filter: none;
             opacity: 1;
-            height: 160px; 
+            height: 200px; 
             width: auto;
-            max-width: 400px; 
+            max-width: 600px; 
             object-fit: contain;
             transition: all 0.3s ease;
           }
