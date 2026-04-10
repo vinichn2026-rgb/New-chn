@@ -17,42 +17,20 @@ import SiteFooter from "@/components/SiteFooter";
 
 const Index = () => {
   const PARTNER_LOGOS = [
-    { image: "/images/logo/noqu.png" },
-    { image: "/images/logo/ardent.png" },
-    { image: "/images/logo/adissia.png" },
-    { image: "/images/logo/justdial.png" },
-    { image: "/images/logo/newwave.png" },
-    { image: "/images/logo/nrm.png" },
-    { image: "/images/logo/velan.png" },
-    { image: "/images/logo/ennoble.png" },
-    { image: "/images/logo/vvdn.png" },
-    { image: "/images/logo/IIFL.png" },
-    { image: "/images/logo/mastero.png" },
-    { image: "/images/logo/market.png" },
-    { image: "/images/logo/squadi.png" },
-    { image: "/images/logo/mybank.png" },
-    { image: "/images/logo/bonfiglioli.png" },
-    { image: "/images/logo/casagrand.png" },
-    { image: "/images/logo/timesys.png" },
-    { image: "/images/logo/phonepe.png" },
-    { image: "/images/logo/cumi.png" },
-    { image: "/images/logo/san.png" },
-    { image: "/images/logo/kd.png" },
-    { image: "/images/logo/paytm.png" },
-    { image: "/images/logo/srf.png" },
-    { image: "/images/logo/jsauto.png" },
-    { image: "/images/logo/MF.png" },
-    { image: "/images/logo/ad.png" },
-    { image: "/images/logo/ar.png" },
-    { image: "/images/logo/data.png" },
-    { image: "/images/logo/friend.png" },
-    { image: "/images/logo/olg.png" },
-    { image: "/images/logo/spr.png" },
-    { image: "/images/logo/sri.png" },
-    { image: "/images/logo/svam.png" },
-    { image: "/images/logo/vcare.png" },
-    { image: "/images/logo/vrmenergy.png" },
-    { image: "/images/logo/wheels.png" }
+
+    { image: "/images/logo/logo1.png" }, { image: "/images/logo/logo2.png" }, { image: "/images/logo/logo3.png" },
+    { image: "/images/logo/logo4.png" }, { image: "/images/logo/logo5.png" }, { image: "/images/logo/logo6.png" },
+    { image: "/images/logo/logo7.png" }, { image: "/images/logo/logo8.png" }, { image: "/images/logo/logo9.png" },
+    { image: "/images/logo/logo10.png" }, { image: "/images/logo/logo11.png" }, { image: "/images/logo/logo12.png" },
+    { image: "/images/logo/logo13.png" }, { image: "/images/logo/logo14.png" }, { image: "/images/logo/logo15.png" },
+    { image: "/images/logo/logo15_2.png" }, { image: "/images/logo/logo16.png" }, { image: "/images/logo/logo18.png" },
+    { image: "/images/logo/logo19.png" }, { image: "/images/logo/logo20.png" }, { image: "/images/logo/logo21.png" },
+    { image: "/images/logo/logo22.png" }, { image: "/images/logo/logo23.png" }, { image: "/images/logo/logo24.png" },
+    { image: "/images/logo/logo25.png" }, { image: "/images/logo/logo26.png" }, { image: "/images/logo/logo27.png" },
+    { image: "/images/logo/logo28.png" }, { image: "/images/logo/logo29.png" }, { image: "/images/logo/logo30.png" },
+    { image: "/images/logo/logo31.png" }, { image: "/images/logo/logo32.png" }, { image: "/images/logo/logo33.png" },
+    { image: "/images/logo/logo34.png" }, { image: "/images/logo/logo35.png" }, { image: "/images/logo/logo36.png" },
+    { image: "/images/logo/logo37.png" }
   ];
 
   /* ── State & Refs ── */
@@ -449,8 +427,8 @@ const Index = () => {
         <style>{`
           .CHNP_Logo_Marquee_Track {
             display: flex;
-            gap: 60px; 
-            animation: CHNP_Logo_Scroll 120s linear infinite; 
+            gap: 100px; 
+            animation: CHNP_Logo_Scroll 160s linear infinite; 
             width: fit-content;
             align-items: center;
           }
@@ -463,54 +441,53 @@ const Index = () => {
           .partner-logo-img {
             filter: none;
             opacity: 1;
-            height: 200px; 
+            height: 60px; 
             width: auto;
-            max-width: 600px; 
+            max-width: 300px; 
             object-fit: contain;
             transition: all 0.3s ease;
           }
           .partner-logo-img:hover {
             transform: scale(1.1);
           }
+
+          .Logo_Row_1 { animation-duration: 180s; }
+          .Logo_Row_2 { animation-duration: 140s; animation-direction: reverse; }
         `}</style>
 
         {/* Header Section */}
-        <div className="w-full px-6 mb-4 text-center">
-          <span className="text-[#0060ff] text-[10px] font-bold tracking-[0.4em] uppercase mb-1 block">
-            Global Network
+        <div className="w-full px-6 mb-16 text-center">
+          <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">
+            GLOBAL PARTNER NETWORK
           </span>
-          <h2 className="font-black text-[#002e5b] uppercase tracking-tight">
-            Partner Ecosystem
+          <h2 className="font-black text-[#002e5b] uppercase tracking-tight text-3xl md:text-4xl">
+            OUR PARTNERS
           </h2>
         </div>
 
-        <div className="relative w-full overflow-hidden flex flex-col gap-0">
-          {/* Row 1 */}
+        <div className="relative w-full overflow-hidden flex flex-col gap-8 pb-20">
+          {/* Row 1: Forward */}
           <div className="flex overflow-hidden">
-            <div className="CHNP_Logo_Marquee_Track">
-              {[...PARTNER_LOGOS.slice(0, 12), ...PARTNER_LOGOS.slice(0, 12)].map((logo, i) => (
-                <div key={`fwd1-${i}`} className="flex-shrink-0">
+            <div className="CHNP_Logo_Marquee_Track Logo_Row_1">
+              {[...PARTNER_LOGOS.slice(0, 19), ...PARTNER_LOGOS.slice(0, 19)].map((logo, i) => (
+                <div key={`logo-r1-${i}`} className="flex-shrink-0">
                   <img src={logo.image} alt="Partner" className="partner-logo-img" />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Row 2 - Reverse */}
+          {/* Row 2: Reverse */}
           <div className="flex overflow-hidden">
-            <div className="CHNP_Logo_Marquee_Track" style={{ animationDirection: 'reverse', animationDuration: '140s' }}>
-              {[...PARTNER_LOGOS.slice(12, 24), ...PARTNER_LOGOS.slice(12, 24)].map((logo, i) => (
-                <div key={`rev1-${i}`} className="flex-shrink-0">
+            <div className="CHNP_Logo_Marquee_Track Logo_Row_2">
+              {[...PARTNER_LOGOS.slice(19), ...PARTNER_LOGOS.slice(19)].map((logo, i) => (
+                <div key={`logo-r2-${i}`} className="flex-shrink-0">
                   <img src={logo.image} alt="Partner" className="partner-logo-img" />
                 </div>
               ))}
             </div>
           </div>
         </div>
-
-        {/* Soft Edge Fades */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
       </section>
 
       {/* ----------- TESTIMONIALS ----------- */}

@@ -114,19 +114,30 @@ const ContactPage = () => {
                 .CN_Hero {
                   padding: 100px 5% 60px;
                   background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+                  position: relative;
+                  overflow: hidden;
+                  display: flex;
+                  justify-content: center;
+                }
+                @media (max-width: 1024px) {
+                  .CN_Hero { padding-top: 140px; }
+                }
+
+                .CN_Hero_Inner {
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
                   gap: 60px;
+                  width: 100%;
+                  max-width: 1300px;
                   position: relative;
-                  overflow: hidden;
+                  z-index: 10;
                 }
                 @media (max-width: 1024px) {
-                  .CN_Hero { flex-direction: column; text-align: center; padding-top: 140px; gap: 40px; }
+                  .CN_Hero_Inner { flex-direction: column; text-align: center; gap: 40px; }
                   .CN_Hero_Content { max-width: 100%; order: 1; }
                   .CN_Hero_Img { order: 2; width: 100%; }
                   .CN_Circle_Img { width: 300px; height: 300px; border-width: 10px; }
-                  .CN_Hero::after { display: none; }
                 }
 
                 .CN_Hero::after {
@@ -291,22 +302,22 @@ const ContactPage = () => {
 
             {/* LAYOUT 1 – CONTACT INTENT (HERO) */}
             <section className="CN_Hero">
-                <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="CN_Hero_Content">
-                    <span className="text-[#0060ff] font-bold tracking-[0.1em] uppercase mb-6 block">Strategic Engagement</span>
-                    <h1 className="CN_Hero_Title">CONTACT US</h1>
-                    <p className="CN_Hero_Subtitle subtitle">Conversations lead to clarity. Let’s start with yours.</p>
-                    <p className="CN_Hero_P">               Whether you need digital solutions, expert consulting, or a new career path, CHN Technologies is ready to help. Reach out today to solve your challenges and start a structured engagement.
-                    </p>
+                <div className="CN_Hero_Inner">
+                    <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="CN_Hero_Content">
+                        <span className="text-[#0060ff] font-bold tracking-[0.1em] uppercase mb-6 block">Strategic Engagement</span>
+                        <h1 className="CN_Hero_Title">CONTACT US</h1>
+                        <p className="CN_Hero_Subtitle subtitle">Conversations lead to clarity. Let’s start with yours.</p>
+                        <p className="CN_Hero_P">               Whether you need digital solutions, expert consulting, or a new career path, CHN Technologies is ready to help. Reach out today to solve your challenges and start a structured engagement.
+                        </p>
+                    </motion.div>
 
-
-                </motion.div>
-
-                <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }} className="CN_Hero_Img">
-                    <div className="CN_Circle_Img">
-                        <img src="/images/contact-main.jpg" alt="Contact CHN Technologies" />
-                    </div>
-                    <div className="CN_Triangle_Bg"></div>
-                </motion.div>
+                    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }} className="CN_Hero_Img">
+                        <div className="CN_Circle_Img">
+                            <img src="/images/contact-main.jpg" alt="Contact CHN Technologies" />
+                        </div>
+                    </motion.div>
+                </div>
+                <div className="CN_Triangle_Bg"></div>
             </section>
 
             {/* LAYOUT 2 – WHY REACH OUT */}

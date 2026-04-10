@@ -24,21 +24,30 @@ const LanCablingSurveillancePage = () => {
 
         /* --- SECTION 1: HERO --- */
         .LCS_Hero {
-          padding: 100px 5% 60px;
+          padding: 120px 5% 80px;
           display: flex;
-          align-items: center;
-          gap: 50px;
+          justify-content: center;
           background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
           min-height: 85vh;
         }
+
+        .LCS_Hero_Inner {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 50px;
+          width: 100%;
+          max-width: 1300px;
+        }
         @media (max-width: 1024px) {
-          .LCS_Hero { flex-direction: column; text-align: center; padding-top: 140px; }
+          .LCS_Hero { padding-top: 140px; }
+          .LCS_Hero_Inner { flex-direction: column; text-align: center; gap: 40px; }
           .LCS_Hero_Content { max-width: 100%; order: 1; }
           .LCS_Hero_Img { width: 100%; order: -1; margin-bottom: 40px; display: flex; justify-content: center; }
           .LCS_Hero_Img img { max-width: 400px; border-width: 10px; }
         }
 
-        .LCS_Hero_Content { flex: 1; max-width: 650px; }
+        .LCS_Hero_Content { flex: 1.2; max-width: 650px; }
         .LCS_Badge { 
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
@@ -48,6 +57,8 @@ const LanCablingSurveillancePage = () => {
         .LCS_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
         .LCS_Btn_Group { display: flex; gap: 20px; }
+        @media (max-width: 1024px) { .LCS_Btn_Group { justify-content: center; } }
+
         .LCS_Primary_Btn { 
           background: #3b82f6; color: white; padding: 18px 35px; border-radius: 100px; 
           font-weight: 700; box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3); transition: 0.3s;
@@ -55,7 +66,7 @@ const LanCablingSurveillancePage = () => {
         }
         .LCS_Primary_Btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4); }
 
-        .LCS_Hero_Img { flex: 1; position: relative; }
+        .LCS_Hero_Img { flex: 1; position: relative; display: flex; justify-content: center; }
         .LCS_Hero_Img img { 
             width: 100%; 
             max-width: 550px; 
@@ -66,15 +77,24 @@ const LanCablingSurveillancePage = () => {
         }
 
         /* --- SECTION 2: CAPABILITIES --- */
-        .LCS_Cap_Section { padding: 100px 5%; background: #f8fafc; text-align: center; }
+        .LCS_Cap_Section { 
+          padding: 100px 5%; 
+          background: #f8fafc; 
+          text-align: center;
+          display: flex;
+          justify-content: center;
+        }
+        .LCS_Cap_Inner {
+          width: 100%;
+          max-width: 1300px;
+        }
+        
         .LCS_Cap_Grid { 
           display: grid; 
           grid-template-columns: 1fr; 
           gap: 30px; 
           margin-top: 60px; 
-          max-width: 1300px; 
-          margin-left: auto; 
-          margin-right: auto;
+          width: 100%;
         }
         @media (min-width: 768px) { .LCS_Cap_Grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .LCS_Cap_Grid { grid-template-columns: repeat(4, 1fr); } }
@@ -114,15 +134,23 @@ const LanCablingSurveillancePage = () => {
         .LCS_Outcome { 
           padding: 100px 5%; 
           display: flex; 
-          align-items: center; 
-          gap: 60px; 
+          justify-content: center;
+          background: white;
         }
-        .LCS_Outcome_Content { flex: 1; }
-        .LCS_Outcome_Img { flex: 1; }
-        .LCS_Outcome_Img img { width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+        .LCS_Outcome_Inner {
+          display: flex;
+          align-items: center;
+          gap: 60px;
+          width: 100%;
+          max-width: 1300px;
+        }
+        
+        .LCS_Outcome_Content { flex: 1.2; text-align: left; }
+        .LCS_Outcome_Img { flex: 1; display: flex; justify-content: center; }
+        .LCS_Outcome_Img img { width: 100%; max-width: 600px; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
         @media (max-width: 1024px) {
-          .LCS_Outcome { flex-direction: column; text-align: center; gap: 40px; }
-          .LCS_Outcome_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
+          .LCS_Outcome_Inner { flex-direction: column; text-align: center; gap: 40px; }
+          .LCS_Outcome_Img { order: -1; width: 100%; }
           .Outcome_Item { text-align: left; }
         }
         
@@ -133,14 +161,24 @@ const LanCablingSurveillancePage = () => {
         .Outcome_Desc { color: #64748b; font-size: 0.95rem; line-height: 1.5; }
 
         /* --- SECTION 4: APPROACH --- */
-        .LCS_Flow { padding: 100px 5%; background: #fdfdfd; text-align: center; }
+        .LCS_Flow { 
+          padding: 140px 5%; 
+          background: #fdfdfd; 
+          text-align: center;
+          display: flex;
+          justify-content: center;
+        }
+        .LCS_Flow_Inner {
+          width: 100%;
+          max-width: 1300px;
+        }
+        
         .LCS_Flow_Grid { 
           display: grid; 
           grid-template-columns: 1fr; 
           gap: 30px; 
           margin-top: 60px; 
-          max-width: 1300px; 
-          margin: 60px auto 0;
+          width: 100%;
         }
         @media (min-width: 768px) { .LCS_Flow_Grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .LCS_Flow_Grid { grid-template-columns: repeat(4, 1fr); } }
@@ -148,15 +186,24 @@ const LanCablingSurveillancePage = () => {
         .LCS_Step_Card {
           background: white; border-radius: 20px; padding: 50px 30px; position: relative;
           box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; transition: 0.4s;
+          text-align: left;
         }
         .LCS_Step_Card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
         .LCS_Step_Num { 
-          position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+          position: absolute; top: -15px; left: 30px;
           background: #22314f; color: white; padding: 5px 20px; border-radius: 50px; font-weight: 900; font-size: 0.8rem;
         }
-        .LCS_Step_Icon { color: #3b82f6; margin-bottom: 20px; display: flex; justify-content: center; }
+        .LCS_Step_Icon { color: #3b82f6; margin-bottom: 20px; }
         .LCS_Step_H { font-size: 1.3rem; font-weight: 800; color: #22314f; margin-bottom: 12px; }
         .LCS_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
+
+        .LCS_Trust {
+          padding: 140px 5%; text-align: center; background: #22314f; color: #fff;
+          display: flex; justify-content: center;
+        }
+        .LCS_Trust_Inner {
+          max-width: 900px; width: 100%;
+        }
 
         @media (max-width: 1024px) {
           .LCS_Hero, .LCS_Outcome { flex-direction: column; text-align: center; }
@@ -166,140 +213,148 @@ const LanCablingSurveillancePage = () => {
 
       {/* LAYOUT 1 – PAGE HERO */}
       <section className="LCS_Hero">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
-          className="LCS_Hero_Content"
-        >
-          <span className="LCS_Badge">Physical Infrastructure</span>
-          <h1 className="LCS_Hero_H1">LAN CABLING & SURVEILLANCE</h1>
-          <p className="LCS_Tagline">Structured cabling and intelligent surveillance systems built for secure and reliable operations.</p>
-          <p className="LCS_Hero_P">
-            CHN Technologies delivers professional LAN cabling and surveillance solutions that support stable
-            connectivity, visibility, and physical security across business environments. Our services ensure
-            organised infrastructure and long-term reliability.
-          </p>
-          <div className="LCS_Btn_Group">
-            <Link to="/contact">
-              <button className="LCS_Primary_Btn">Talk to an Infrastructure Specialist</button>
-            </Link>
-          </div>
-        </motion.div>
+        <div className="LCS_Hero_Inner">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
+            className="LCS_Hero_Content"
+          >
+            <span className="LCS_Badge">Physical Infrastructure</span>
+            <h1 className="LCS_Hero_H1">LAN CABLING & SURVEILLANCE</h1>
+            <p className="LCS_Tagline">Structured cabling and intelligent surveillance systems built for secure and reliable operations.</p>
+            <p className="LCS_Hero_P">
+              CHN Technologies delivers professional LAN cabling and surveillance solutions that support stable
+              connectivity, visibility, and physical security across business environments. Our services ensure
+              organised infrastructure and long-term reliability.
+            </p>
+            <div className="LCS_Btn_Group">
+              <Link to="/contact">
+                <button className="LCS_Primary_Btn">Talk to an Infrastructure Specialist</button>
+              </Link>
+            </div>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
-          className="LCS_Hero_Img"
-        >
-          <img src={serversImg} alt="Structured LAN Cabling" />
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
+            className="LCS_Hero_Img"
+          >
+            <img src={serversImg} alt="Structured LAN Cabling" />
+          </motion.div>
+        </div>
       </section>
 
       {/* LAYOUT 2 & 3 – SERVICE CONTEXT & CORE CAPABILITIES */}
       <section className="LCS_Cap_Section">
-        <div style={{ maxWidth: '800px', margin: '0 auto 60px' }}>
-          <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>Physical Infrastructure Plays a Critical Role</h2>
-          <p className="LCS_Hero_P">
-            Network performance and security depend heavily on physical infrastructure quality.
-            Poor cabling and unstructured surveillance lead to connectivity issues and security blind spots.
-            We help implement systems that support dependable operations and scalability.
-          </p>
-        </div>
+        <div className="LCS_Cap_Inner">
+          <div style={{ maxWidth: '800px', margin: '0 auto 60px' }}>
+            <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>Physical Infrastructure Plays a Critical Role</h2>
+            <p className="LCS_Hero_P">
+              Network performance and security depend heavily on physical infrastructure quality.
+              Poor cabling and unstructured surveillance lead to connectivity issues and security blind spots.
+              We help implement systems that support dependable operations and scalability.
+            </p>
+          </div>
 
-        <span className="LCS_Badge">Core Capabilities</span>
-        <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>What Our Services Cover</h2>
+          <span className="LCS_Badge">Core Capabilities</span>
+          <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>What Our Services Cover</h2>
 
-        <div className="LCS_Cap_Grid">
-          {[
-            {
-              title: "Structured LAN Cabling",
-              icon: <Network size={28} />,
-              desc: "Design and implementation of organised cabling frameworks for high-speed data and network connectivity."
-            },
-            {
-              title: "Rack & Patch Management",
-              icon: <Layers size={28} />,
-              desc: "Clean and standardised rack layouts that simplify ongoing maintenance and future hardware expansion."
-            },
-            {
-              title: "CCTV & Surveillance",
-              icon: <Video size={28} />,
-              desc: "Deployment of intelligent surveillance systems to monitor facilities and enhance physical premises security."
-            },
-            {
-              title: "Monitoring & Support",
-              icon: <Activity size={28} />,
-              desc: "Ongoing support to ensure cabling integrity and the continuous reliability of surveillance hardware."
-            }
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
-              className="LCS_Cap_Card"
-            >
-              <div className="LCS_Cap_Icon">{item.icon}</div>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-            </motion.div>
-          ))}
+          <div className="LCS_Cap_Grid">
+            {[
+              {
+                title: "Structured LAN Cabling",
+                icon: <Network size={28} />,
+                desc: "Design and implementation of organised cabling frameworks for high-speed data and network connectivity."
+              },
+              {
+                title: "Rack & Patch Management",
+                icon: <Layers size={28} />,
+                desc: "Clean and standardised rack layouts that simplify ongoing maintenance and future hardware expansion."
+              },
+              {
+                title: "CCTV & Surveillance",
+                icon: <Video size={28} />,
+                desc: "Deployment of intelligent surveillance systems to monitor facilities and enhance physical premises security."
+              },
+              {
+                title: "Monitoring & Support",
+                icon: <Activity size={28} />,
+                desc: "Ongoing support to ensure cabling integrity and the continuous reliability of surveillance hardware."
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
+                className="LCS_Cap_Card"
+              >
+                <div className="LCS_Cap_Icon">{item.icon}</div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* LAYOUT 4 – BUSINESS OUTCOMES */}
       <section className="LCS_Outcome">
-        <div className="LCS_Outcome_Img">
-          <img src={networkDashboardImg} alt="Surveillance Monitoring Center" />
-        </div>
-        <div className="LCS_Outcome_Content">
-          <span className="LCS_Badge">Operational Outcomes</span>
-          <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>Benefits of Structured Physical Infrastructure</h2>
+        <div className="LCS_Outcome_Inner">
+          <div className="LCS_Outcome_Img">
+            <img src={networkDashboardImg} alt="Surveillance Monitoring Center" />
+          </div>
+          <div className="LCS_Outcome_Content">
+            <span className="LCS_Badge">Operational Outcomes</span>
+            <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>Benefits of Structured Physical Infrastructure</h2>
 
-          <div className="Outcome_List">
-            {[
-              { title: "Improved Connectivity Stability", desc: "Reliable physical infrastructure significantly reduces network interruptions and drops." },
-              { title: "Enhanced Facility Security", desc: "Clear visibility across your premises improves safety and enables rapid incident response." },
-              { title: "Simplified Maintenance", desc: "Structured layouts reduce troubleshooting time and prevent operational disruptions." },
-              { title: "Infrastructure Scalability", desc: "Cabling and surveillance systems designed to grow seamlessly with your business needs." }
-            ].map((item, i) => (
-              <div key={i} className="Outcome_Item">
-                <div className="Outcome_Check"><CheckCircle size={16} /></div>
-                <div>
-                  <span className="Outcome_Title">{item.title}</span>
-                  <p className="Outcome_Desc">{item.desc}</p>
+            <div className="Outcome_List">
+              {[
+                { title: "Improved Connectivity Stability", desc: "Reliable physical infrastructure significantly reduces network interruptions and drops." },
+                { title: "Enhanced Facility Security", desc: "Clear visibility across your premises improves safety and enables rapid incident response." },
+                { title: "Simplified Maintenance", desc: "Structured layouts reduce troubleshooting time and prevent operational disruptions." },
+                { title: "Infrastructure Scalability", desc: "Cabling and surveillance systems designed to grow seamlessly with your business needs." }
+              ].map((item, i) => (
+                <div key={i} className="Outcome_Item">
+                  <div className="Outcome_Check"><CheckCircle size={16} /></div>
+                  <div>
+                    <span className="Outcome_Title">{item.title}</span>
+                    <p className="Outcome_Desc">{item.desc}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* LAYOUT 5 – HOW WE DELIVER (INFOGRAPHIC STYLE) */}
       <section className="LCS_Flow">
-        <span className="LCS_Badge">Delivery Model</span>
-        <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>Our Delivery Approach</h2>
+        <div className="LCS_Flow_Inner">
+          <span className="LCS_Badge">Delivery Model</span>
+          <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>Our Delivery Approach</h2>
 
-        <div className="LCS_Flow_Grid">
-          {[
-            { num: "01", h: "Assess", icon: <Search size={30} />, p: "Review site layout, physical infrastructure requirements, and security objectives." },
-            { num: "02", h: "Design", icon: <PenTool size={30} />, p: "Create structured cabling plans and surveillance layouts aligned with needs." },
-            { num: "03", h: "Implement", icon: <Settings size={30} />, p: "Install cabling and surveillance systems with minimal business disruption." },
-            { num: "04", h: "Test & Support", icon: <Wrench size={30} />, p: "Validate performance and provide ongoing professional maintenance support." }
-          ].map((step, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
-              className="LCS_Step_Card"
-            >
-              <div className="LCS_Step_Num">STAGE {step.num}</div>
-              <div className="LCS_Step_Icon">{step.icon}</div>
-              <h3 className="LCS_Step_H">{step.h}</h3>
-              <p className="LCS_Step_P">{step.p}</p>
-            </motion.div>
-          ))}
+          <div className="LCS_Flow_Grid">
+            {[
+              { num: "01", h: "Assess", icon: <Search size={30} />, p: "Review site layout, physical infrastructure requirements, and security objectives." },
+              { num: "02", h: "Design", icon: <PenTool size={30} />, p: "Create structured cabling plans and surveillance layouts aligned with needs." },
+              { num: "03", h: "Implement", icon: <Settings size={30} />, p: "Install cabling and surveillance systems with minimal business disruption." },
+              { num: "04", h: "Test & Support", icon: <Wrench size={30} />, p: "Validate performance and provide ongoing professional maintenance support." }
+            ].map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
+                className="LCS_Step_Card"
+              >
+                <div className="LCS_Step_Num">STAGE {step.num}</div>
+                <div className="LCS_Step_Icon">{step.icon}</div>
+                <h3 className="LCS_Step_H">{step.h}</h3>
+                <p className="LCS_Step_P">{step.p}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* LAYOUT 6 – TRUST & FINAL CTA */}
-      <section style={{ padding: '100px 5%', textAlign: 'center', background: '#22314f', color: '#fff' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+      <section className="LCS_Trust">
+        <div className="LCS_Trust_Inner">
           <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem', color: '#fff' }}>BUILD A STRONG PHYSICAL FOUNDATION</h2>
           <p className="LCS_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
             Connect with CHN Technologies to understand how structured cabling and surveillance solutions
