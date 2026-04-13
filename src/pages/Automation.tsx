@@ -47,7 +47,7 @@ const AutomationPage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .AU_Hero_H1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
+        .AU_Hero_H1 {  margin-bottom: 25px; }
         .AU_Tagline { font-size: clamp(1.1rem, 2vw, 1.4rem); color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .AU_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
@@ -218,14 +218,18 @@ const AutomationPage = () => {
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
             className="AU_Hero_Content"
           >
-            <span className="AU_Badge">Digital Transformation</span>
+
+            <div className="flex items-center gap-3 mb-6">
+              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
+                Digital Transformation             </span>
+            </div>
             <h1 className="AU_Hero_H1">PROCESS AUTOMATION SERVICES</h1>
             <p className="AU_Tagline">Eliminating operational friction through intelligent, high-fidelity automation.</p>
-            <p className="AU_Hero_P">
+            {/* <p className="AU_Hero_P">
               CHN Technologies provides structured automation services that ensure speed,
               reliability, and resource optimization across business environments. Our approach
               focuses on process integrity, scalable logic, and measurable impact.
-            </p>
+            </p> */}
             <div className="AU_Btn_Group">
               <Link to="/contact">
                 <button className="AU_Primary_Btn">Consult an Automation Specialist</button>
@@ -234,8 +238,8 @@ const AutomationPage = () => {
           </motion.div>
 
           <motion.div
-              initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
-              className="AU_Hero_Img"
+            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
+            className="AU_Hero_Img"
           >
             <img src="/images/automation-process.jpg" alt="Process Automation Cog" />
           </motion.div>
@@ -362,7 +366,7 @@ const AutomationPage = () => {
         <div className="AU_Trust_Inner">
           <h2 className="AU_Hero_H1" style={{ fontSize: '2.5rem', color: '#fff' }}>ELIMINATE OPERATIONAL FRICTION TODAY</h2>
           <p className="AU_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
-            Connect with CHN Technologies to understand how intelligent automation solutions 
+            Connect with CHN Technologies to understand how intelligent automation solutions
             can optimize your enterprise resource allocation and operational speed.
           </p>
           <Link to="/contact">

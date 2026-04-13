@@ -89,7 +89,7 @@ const WebDesignDevelopment = () => {
             </div>
             <h1 className="font-black mb-8 leading-[1.1] text-slate-900 tracking-tight">
               WEB DESIGN & <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">DEVELOPMENT</span>
+              <span className="">DEVELOPMENT</span>
             </h1>
             <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle">
               <Zap size={24} className="text-blue-600" />

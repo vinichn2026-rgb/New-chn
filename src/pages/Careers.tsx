@@ -221,7 +221,7 @@ const Careers = () => {
             className="CR_Hero_Left"
           >
             <span className="CR_Badge">Join Our Professional Team</span>
-            <h1 className="CR_Hero_H1">Find the perfect <br /> <span className="text-blue-500">job for you</span></h1>
+            <h1 className="CR_Hero_H1">Find the Perfect <br /> <span className="text-blue-500">Job for You</span></h1>
             <p className="CR_Hero_P">Explore core career opportunities across technology and consulting domains with CHN Technologies.</p>
 
             <div className="CR_Search_Bar">

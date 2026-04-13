@@ -47,7 +47,8 @@ const DataAnalyticsPage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .DA_Hero_H1 { font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
+        .DA_Hero_H1 { 
+         margin-bottom: 25px; }
         .DA_Tagline { font-size: clamp(1.1rem, 2vw, 1.4rem); color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .DA_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
@@ -223,7 +224,12 @@ const DataAnalyticsPage = () => {
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
             className="DA_Hero_Content"
           >
-            <span className="DA_Badge">Digital Intelligence</span>
+
+
+            <div className="flex items-center gap-3 mb-6">
+              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
+                Digital Intelligence              </span>
+            </div>
             <h1 className="DA_Hero_H1">DATA ANALYTICS SERVICES</h1>
             <p className="DA_Tagline">Mission-critical insights driven by high-fidelity data and predictable modeling.</p>
             <p className="DA_Hero_P">
@@ -239,8 +245,8 @@ const DataAnalyticsPage = () => {
           </motion.div>
 
           <motion.div
-              initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
-              className="DA_Hero_Img"
+            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
+            className="DA_Hero_Img"
           >
             <img src="/images/analytics-viz.jpg" alt="Data Visualization Dashboard" />
           </motion.div>
@@ -367,7 +373,7 @@ const DataAnalyticsPage = () => {
         <div className="DA_Trust_Inner">
           <h2 className="DA_Hero_H1" style={{ fontSize: '2.5rem', color: '#fff' }}>CONVERT YOUR DATA INTO STRATEGIC REVENUE</h2>
           <p className="DA_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
-            Connect with CHN Technologies to understand how high-fidelity analytical models 
+            Connect with CHN Technologies to understand how high-fidelity analytical models
             can optimize your enterprise decision-making and operational growth.
           </p>
           <Link to="/contact">

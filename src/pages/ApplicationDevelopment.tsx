@@ -47,7 +47,8 @@ const ApplicationDevelopmentPage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .AD_Hero_H1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 5px; }
+        .AD_Hero_H1 {
+         margin-bottom: 5px; }
         .AD_Tagline { font-size: 1.4rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .AD_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
@@ -239,8 +240,12 @@ const ApplicationDevelopmentPage = () => {
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
             className="AD_Hero_Content"
           >
-            <span className="AD_Badge">Software Solutions</span>
-            <h2 className="AD_Hero_H1">APPLICATION DEVELOPMENT SERVICES</h2>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
+                Software Solutions
+              </span>
+            </div>
+            <h1 className="AD_Hero_H1">APPLICATION DEVELOPMENT SERVICES</h1>
             <p className="AD_Tagline">Custom-built applications designed to support business workflows, performance, and scalability.</p>
             <div className="AD_Btn_Group">
               <Link to="/contact">

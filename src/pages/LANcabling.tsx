@@ -52,7 +52,10 @@ const LanCablingSurveillancePage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .LCS_Hero_H1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; }
+        .LCS_Hero_H1 { 
+      
+        margin-bottom: 25px;
+         }
         .LCS_Tagline { font-size: 1.4rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .LCS_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
@@ -218,7 +221,11 @@ const LanCablingSurveillancePage = () => {
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
             className="LCS_Hero_Content"
           >
-            <span className="LCS_Badge">Physical Infrastructure</span>
+
+            <div className="flex items-center gap-3 mb-6">
+              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
+                Physical Infrastructure         </span>
+            </div>
             <h1 className="LCS_Hero_H1">LAN CABLING & SURVEILLANCE</h1>
             <p className="LCS_Tagline">Structured cabling and intelligent surveillance systems built for secure and reliable operations.</p>
             <p className="LCS_Hero_P">

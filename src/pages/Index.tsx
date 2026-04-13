@@ -133,19 +133,19 @@ const Index = () => {
     },
     {
       phaseNumber: "02",
-      heading: "Design the Roadmap",
+      heading: "Design The Roadmap",
       description: "Develop a strategic roadmap aligned with business goals, compliance, and long-term scalability",
       icon: Workflow,
     },
     {
       phaseNumber: "03",
-      heading: "Implement with Control",
+      heading: "Implement With Control",
       description: "Deploy secure, high-performing solutions using a phased approach to minimize business disruption.",
       icon: Cpu,
     },
     {
       phaseNumber: "04",
-      heading: "Run, Monitor, and Improve",
+      heading: "Run, Monitor And Improve",
       description: "Deliver continuous monitoring, support, and optimisation to keep systems aligned with evolving business needs.",
       icon: Activity,
     },

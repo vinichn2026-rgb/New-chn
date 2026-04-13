@@ -47,8 +47,14 @@ const WorkforceManagementPage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .WM_Hero_H1 { font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; font-size: clamp(2.5rem, 5vw, 4rem); }
-        .WM_Tagline { font-size: clamp(1.1rem, 2vw, 1.4rem); color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
+        .WM_Hero_H1 { margin-bottom: 25px; }
+        .WM_Tagline { 
+        
+       font-size: 1.2rem; color: #64748b; font-weight: 500; line-height: 1.6; margin-bottom: 50px;
+          }
+       
+       
+       
         .WM_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
         .WM_Btn_Group { display: flex; gap: 20px; }
@@ -222,9 +228,16 @@ const WorkforceManagementPage = () => {
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
             className="WM_Hero_Content"
           >
-            <span className="WM_Badge">Consulting Excellence</span>
+
+            <div className="flex items-center gap-3 mb-6">
+              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
+                Consulting Excellence</span>
+            </div>
             <h1 className="WM_Hero_H1">WORKFORCE MANAGEMENT SERVICES</h1>
             <p className="WM_Tagline">Building high-fidelity workforces through strategic acquisition and structural oversight.</p>
+
+
+
             <div className="WM_Btn_Group">
               <Link to="/contact">
                 <button className="WM_Primary_Btn">Consult on Workforce Strategy</button>

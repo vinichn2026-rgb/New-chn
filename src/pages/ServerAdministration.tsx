@@ -60,7 +60,10 @@ const ServerAdministrationPage = () => {
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
-        .SA_Hero_H1 { font-weight: 900; line-height: 1.05; color: #0f172a; margin-bottom: 30px; letter-spacing: -0.02em; font-size: clamp(2.5rem, 5vw, 4.2rem); }
+        .SA_Hero_H1 
+        { 
+         margin-bottom: 30px; 
+          }
         .SA_Tagline { font-size: 1.5rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
         .SA_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 45px; font-weight: 450; }
 

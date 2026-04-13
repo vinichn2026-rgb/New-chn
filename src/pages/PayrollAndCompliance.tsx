@@ -66,7 +66,7 @@ const PayrollAndCompliancePage = () => {
           font-size: 0.85rem; margin-bottom: 25px; display: block;
         }
 
-        .PC_Hero_H1 { font-weight: 900; line-height: 1.1; color: #1a1a1a; margin-bottom: 30px; text-transform: uppercase; font-size: clamp(2.5rem, 5vw, 4rem); }
+        .PC_Hero_H1 { margin-bottom: 30px; }
         .PC_Hero_P { font-size: 1.2rem; color: #64748b; font-weight: 500; line-height: 1.6; margin-bottom: 50px; }
 
         .PC_Btn { 
@@ -182,9 +182,14 @@ const PayrollAndCompliancePage = () => {
         <div className="PC_Hero_Shape" />
         <div className="PC_Hero_Content">
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-            <span className="PC_Badge">Compliance Excellence</span>
-            <h1 className="PC_Hero_H1">PAYROLL & COMPLIANCE <br /> <span className="text-blue-500">SERVICES</span></h1>
-            <p className="PC_Hero_P">FINANCIAL INTEGRITY AND CORPORATE CONTROL <br /> BUILT ON SECURE, ZERO-ERROR PROCESSING ECOSYSTEMS.</p>
+
+            <div className="flex items-center gap-3 mb-6">
+              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
+                Compliance Excellence              </span>
+            </div>
+
+            <h1 className="PC_Hero_H1">PAYROLL & COMPLIANCE SERVICES</h1>
+            <p className="PC_Hero_P">Financial integrity and corporate control  built on secure, zero-error processing ecosystems.</p>
             <Link to="/contact">
               <button className="PC_Btn">Request A Consultation <ArrowRight size={24} /></button>
             </Link>

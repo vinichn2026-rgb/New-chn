@@ -60,7 +60,7 @@ const NetworkManagementPage = () => {
           background: rgba(59, 130, 246, 0.06); padding: 6px 16px; border-radius: 100px;
         }
         .NET_Hero_H1 { 
-          font-weight: 900; line-height: 1.1; color: #22314f; margin-bottom: 25px; 
+          margin-bottom: 25px; 
         }
         .NET_Tagline { font-size: 1.4rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .NET_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
