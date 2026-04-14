@@ -128,8 +128,6 @@ const WhatWeThink = () => {
         }
 
         .WT_Context_H1 {
-          font-size: clamp(1.8rem, 3vw, 2.5rem);
-          font-weight: 900;
           margin-bottom: 30px;
           color: #fff;
           text-transform: uppercase;
@@ -203,7 +201,7 @@ const WhatWeThink = () => {
         }
 
         .WT_Value_Card:hover .WT_Icon { background: rgba(255,255,255,0.1); }
-        .WT_Value_Card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; color: #1a2b4b; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .WT_Value_Card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; color: #1a2b4b; transition: 0.3s; letter-spacing: 0.5px; }
         .WT_Value_Card p { color: #64748b; line-height: 1.7; font-size: 1.05rem; transition: 0.3s; }
 
         /* --- SECTION 4: STRATEGIC FRAMEWORK --- */
@@ -257,12 +255,12 @@ const WhatWeThink = () => {
           >
             OUR PHILOSOPHY
           </motion.span>
-          <motion.h1 
+          <motion.h2 
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-            className="WT_Hero_H1"
+            className="WT_Hero_H1 NET_Hero_H1"
           >
             Empowering Enterprises with <span className="text-blue-500">Smart Tech</span>
-          </motion.h1>
+          </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}
             className="WT_Hero_P"
@@ -276,7 +274,7 @@ const WhatWeThink = () => {
       {/* SECTION 2: CONTEXT */}
       <section className="WT_Context">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="WT_Context_H1">SIMPLIFYING OPERATIONS, DRIVING MEASURABLE GROWTH</h2>
+          <h2 className="NET_Hero_H1 WT_Context_H1">SIMPLIFYING OPERATIONS, DRIVING MEASURABLE GROWTH</h2>
           <p className="WT_Context_P">
             At CHN Technologies, we believe that clear thinking leads to better results. 
             We combine innovation, strategy, and execution to bridge the gap between technical potential 
@@ -288,7 +286,7 @@ const WhatWeThink = () => {
       {/* SECTION 3: CORE VALUES */}
       <section className="WT_Values">
         <span className="WT_Badge" style={{ marginBottom: '15px' }}>Foundational Pillars</span>
-        <h2 className="WT_Hero_H1" style={{ color: '#1a2b4b', fontSize: '2.8rem', margin: 0 }}>Values That Drive Us</h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b', margin: 0 }}>Values That Drive Us</h2>
 
         <div className="WT_Values_Grid">
           {coreValues.map((value, i) => (
@@ -313,7 +311,7 @@ const WhatWeThink = () => {
         </div>
         <div className="WT_Framework_Content">
           <span className="WT_Badge">OUR VISION & MISSION</span>
-          <h2 className="WT_Hero_H1" style={{ color: '#1a2b4b', fontSize: '2.8rem' }}>Strategic Long-Term <br /> Objectives</h2>
+          <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Strategic Long-Term <br /> Objectives</h2>
 
           <div className="WT_Block">
             <h3 className="WT_Block_Title">

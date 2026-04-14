@@ -153,8 +153,7 @@ const ContactPage = () => {
 
                 .CN_Hero_Content { flex: 1.2; max-width: 650px; z-index: 10; }
                 .CN_Hero_Title
-                 { 
-                font-weight: 900; color: #002e5b; line-height: 1.1; margin-bottom: 25px; letter-spacing: -0.03em; text-transform: uppercase;}
+                 { color: #002e5b; line-height: 1.1; margin-bottom: 25px; letter-spacing: -0.03em; text-transform: uppercase;}
                 .CN_Hero_Subtitle { color: #0060ff; font-weight: 700; margin-bottom: 30px; line-height: 1.3; }
                 .CN_Hero_Desc { color: #475569; line-height: 1.8; margin-bottom: 40px; font-weight: 450; }
 .CN_Hero_P{ont-size: 2.1rem;
@@ -192,7 +191,7 @@ const ContactPage = () => {
 
                 /* --- SECTION 2: WHY CONTACT --- */
                 .CN_WhyReach { padding: 100px 5%; background: #ffffff; text-align: center; }
-                .CN_Section_Title { font-weight: 900; color: #002e5b; margin-bottom: 25px; letter-spacing: -0.02em; text-transform: uppercase; }
+                .CN_Section_Title { color: #002e5b; margin-bottom: 25px; letter-spacing: -0.02em; text-transform: uppercase; }
                 .CN_Section_Desc { max-width: 800px; margin: 0 auto 60px; color: #64748b; line-height: 1.7; font-weight: 450; }
                 
                 .CN_Bullet_Grid { 
@@ -242,7 +241,7 @@ const ContactPage = () => {
                 @media (max-width: 640px) { .CN_Info_Box { padding: 30px; border-radius: 30px; } }
                 .CN_Info_Item { display: flex; gap: 20px; margin-bottom: 40px; align-items: flex-start; }
                 .CN_Info_Icon { color: #0060ff; background: #eff6ff; padding: 15px; border-radius: 20px; flex-shrink: 0; }
-                .CN_Info_H {font-size: 1.05rem;  color: #002e5b; margin-bottom: 10px; text-transform: uppercase; letter-spacing: -0.01em; }
+                .CN_Info_H { color: #002e5b; margin-bottom: 10px; text-transform: uppercase; letter-spacing: -0.01em; }
                 .CN_Info_Text { color: #64748b; font-size: 1.05rem; line-height: 1.6; font-weight: 450; }
 
                 /* --- SECTION 4: RESPONSE EXPECTATION --- */
@@ -262,7 +261,7 @@ const ContactPage = () => {
                   display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;
                   box-shadow: 0 15px 30px rgba(0,96,255,0.1); border: 1px solid #eff6ff; 
                 }
-                .CN_Step_H { font-weight: 800; color: #002e5b; margin-bottom: 15px; }
+                .CN_Step_H { color: #002e5b; margin-bottom: 15px; }
                 .CN_Step_P { color: #64748b; line-height: 1.6; font-weight: 450; }
                 
                 /* --- SECTION 5: MAPS (WIDE) --- */
@@ -290,7 +289,7 @@ const ContactPage = () => {
                 /* --- FINAL CTA --- */
                 .CN_Final { padding:50px 20px; text-align: center; background: #fff; }
                 .CN_Final_Max { max-width: 800px; margin: 0 auto; }
-                .CN_Final_H { font-weight: 900; color: #1a2b4b; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
+                .CN_Final_H { color: #1a2b4b; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
                 .CN_Final_P { color: #64748b; margin-bottom: 50px; font-weight: 500; }
                 .CN_Btn { 
                   background: #3b82f6; color: white; padding: 15px 30px; border-radius: 100px; 
@@ -305,7 +304,7 @@ const ContactPage = () => {
                 <div className="CN_Hero_Inner">
                     <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="CN_Hero_Content">
                         <span className="text-[#0060ff] font-bold tracking-[0.1em] uppercase mb-6 block">Strategic Engagement</span>
-                        <h1 className="CN_Hero_Title">CONTACT US</h1>
+                        <h2 className="NET_Hero_H1 CN_Hero_Title">CONTACT US</h2>
                         <p className="CN_Hero_Subtitle subtitle">Conversations lead to clarity. Let’s start with yours.</p>
                         <p className="CN_Hero_P">               Whether you need digital solutions, expert consulting, or a new career path, CHN Technologies is ready to help. Reach out today to solve your challenges and start a structured engagement.
                         </p>
@@ -348,7 +347,7 @@ const ContactPage = () => {
                     <AnimatePresence mode="wait">
                         {!isSubmitted ? (
                             <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                                <h2 className="CN_Form_H">SHARE YOUR <span className="text-blue-500">REQUIREMENT</span></h2>
+                                <h2 className="NET_Hero_H1 CN_Form_H">SHARE YOUR <span className="text-blue-500">REQUIREMENT</span></h2>
                                 <p className="CN_Form_P subtitle">
                                     Provide a brief overview of your requirement, and our team will connect with you to understand next steps.
                                     Clear information helps us respond faster and more effectively.
@@ -376,7 +375,7 @@ const ContactPage = () => {
                                 <div className="w-24 h-24 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400">
                                     <CheckCircle2 size={60} />
                                 </div>
-                                <h3 className="text-3xl font-black uppercase">Intake Confirmed</h3>
+                                <h3 className="text-3xl font-black">Intake Confirmed</h3>
                                 <p className="text-slate-400 font-medium">Requirement logged. Our strategic response team will review and contact you shortly.</p>
                                 <button onClick={() => setIsSubmitted(false)} className="text-blue-500 font-bold uppercase text-sm underline underline-offset-8">Send New Intake</button>
                             </motion.div>
@@ -385,7 +384,7 @@ const ContactPage = () => {
                 </motion.div>
 
                 <div className="CN_Info_Box">
-                    <h2 className="CN_Hero_Subtitle subtitle" style={{ marginBottom: '50px' }}>HOW TO CONNECT WITH US</h2>
+                    <h2 className="NET_Hero_H1 CN_Hero_Subtitle subtitle" style={{ marginBottom: '50px' }}>HOW TO CONNECT WITH US</h2>
 
                     <div className="space-y-4">
                         {[
@@ -410,7 +409,7 @@ const ContactPage = () => {
             {/* LAYOUT 5 – RESPONSE & ENGAGEMENT EXPECTATION */}
             <section className="CN_Expectation">
                 <span className="text-[#0060ff] font-bold tracking-[0.3em] uppercase mb-6 block">Structured Response</span>
-                <h2 className="CN_Section_Title">WHAT HAPPENS AFTER YOU CONTACT US</h2>
+                <h2 className="NET_Hero_H1 CN_Section_Title">WHAT HAPPENS AFTER YOU CONTACT US</h2>
 
                 <div className="CN_Flow">
                     {[
@@ -432,7 +431,7 @@ const ContactPage = () => {
             {/* LAYOUT 6 – CLOSING & MAPS */}
             <section className="CN_Map_Section">
                 <div style={{ padding: '80px 0', textAlign: 'center' }}>
-                    <h2 className="CN_Section_Title">OUR <span className="text-blue-500">PRESENCE</span></h2>
+                    <h2 className="NET_Hero_H1 CN_Section_Title">OUR <span className="text-blue-500">PRESENCE</span></h2>
                     <p className="CN_Section_Desc" style={{ marginBottom: 0 }}>Discover stability and expertise at our key operational hubs.</p>
                 </div>
 
@@ -505,7 +504,7 @@ const ContactPage = () => {
             <section className="CN_Final">
                 <div className="CN_Final_Max">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                        <h2 className="CN_Final_H">START THE <br /><span className="text-blue-500">CONVERSATION</span></h2>
+                        <h2 className="NET_Hero_H1 CN_Final_H">START THE <span className="text-blue-500">CONVERSATION</span></h2>
                         <p className="CN_Final_P">Contact CHN Technologies to discuss how we can support your organisation or career goals.</p>
                         <a href="#contact-form" style={{ textDecoration: 'none' }}>
                             <button className="CN_Btn">Get In Touch <ArrowRight size={24} /></button>

@@ -84,7 +84,7 @@ const DataAnalyticsPage = () => {
           width: 100%;
           max-width: 1000px;
         }
-        .DA_Context_H1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 30px; color: #fff; text-transform: uppercase; }
+        .DA_Context_H1 { color: #fff; text-transform: uppercase; }
         .DA_Context_P { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.8; }
 
         /* --- SECTION 3: CAPABILITIES --- */
@@ -171,7 +171,7 @@ const DataAnalyticsPage = () => {
 
         /* --- SECTION 5: APPROACH --- */
         .DA_Flow { 
-          padding: 140px 5%; 
+          padding: 50px 5%; 
           background: #fdfdfd; 
           text-align: center;
           display: flex;
@@ -230,7 +230,7 @@ const DataAnalyticsPage = () => {
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
                 Digital Intelligence              </span>
             </div>
-            <h1 className="DA_Hero_H1">DATA ANALYTICS SERVICES</h1>
+            <h2 className="DA_Hero_H1 NET_Hero_H1">DATA ANALYTICS SERVICES</h2>
             <p className="DA_Tagline">Mission-critical insights driven by high-fidelity data and predictable modeling.</p>
             <p className="DA_Hero_P">
               CHN Technologies provides structured data analytics services that ensure visibility,
@@ -257,7 +257,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Context">
         <div className="DA_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="DA_Context_H1">DATA IS THE PRIMARY DRIVER OF STRATEGIC COMPETITIVE ADVANTAGE</h2>
+            <h2 className="NET_Hero_H1 DA_Context_H1">DATA IS THE PRIMARY DRIVER OF STRATEGIC COMPETITIVE ADVANTAGE</h2>
             <p className="DA_Context_P">
               Business productivity depends on how much of your resource capacity is focused on high-value strategy versus low-value manual processing.
               Poorly automated or manual workflows lead to operational debt, human error, and reduced organizational speed.
@@ -271,7 +271,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Cap_Section">
         <div className="DA_Cap_Inner">
           <span className="DA_Badge">Analytical Domains</span>
-          <h2 className="DA_Hero_H1" style={{ fontSize: '2.5rem' }}>Full-Cycle Analytical <br /> Capabilities</h2>
+          <h2 className="NET_Hero_H1">Full-Cycle Analytical <br /> Capabilities</h2>
 
           <div className="DA_Cap_Grid">
             {[
@@ -318,7 +318,7 @@ const DataAnalyticsPage = () => {
           </div>
           <div className="DA_Outcome_Content">
             <span className="DA_Badge">Strategic Benefits</span>
-            <h2 className="DA_Hero_H1" style={{ fontSize: '2.5rem' }}>Improved Decision <br /> Precision and Velocity</h2>
+            <h2 className="NET_Hero_H1">Improved Decision <br /> Precision and Velocity</h2>
 
             <div className="Outcome_List">
               {[
@@ -344,7 +344,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Flow">
         <div className="DA_Flow_Inner">
           <span className="DA_Badge">Insight Framework</span>
-          <h2 className="DA_Hero_H1" style={{ fontSize: '2.5rem' }}>Data-to-Insight Journey</h2>
+          <h2 className="NET_Hero_H1">Data-to-Insight Journey</h2>
 
           <div className="DA_Flow_Grid">
             {[
@@ -369,18 +369,24 @@ const DataAnalyticsPage = () => {
       </section>
 
       {/* LAYOUT 6 – TRUST & FINAL CTA */}
-      <section className="DA_Trust">
-        <div className="DA_Trust_Inner">
-          <h2 className="DA_Hero_H1" style={{ fontSize: '2.5rem', color: '#fff' }}>CONVERT YOUR DATA INTO STRATEGIC REVENUE</h2>
-          <p className="DA_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
-            Connect with CHN Technologies to understand how high-fidelity analytical models
-            can optimize your enterprise decision-making and operational growth.
-          </p>
-          <Link to="/contact">
-            <button className="DA_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Contact a Data Strategist</button>
-          </Link>
+      <section style={{ padding: '50px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+            <h2 className="NET_Hero_H1 text-white">CONVERT YOUR DATA INTO STRATEGIC REVENUE</h2>
+            <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
+              Connect with CHN Technologies to understand how high-fidelity analytical models
+              can optimize your enterprise decision-making and operational growth.
+            </p>
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+              <Link to="/contact">
+                <button className="DA_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Contact a Data Strategist</button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

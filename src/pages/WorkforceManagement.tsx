@@ -89,7 +89,7 @@ const WorkforceManagementPage = () => {
           width: 100%;
           max-width: 1000px;
         }
-        .WM_Context_H1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 30px; color: #fff; text-transform: uppercase; }
+        .WM_Context_H1 { color: #fff; text-transform: uppercase; }
         .WM_Context_P { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.8; }
 
         /* --- SECTION 3: CAPABILITIES --- */
@@ -176,7 +176,7 @@ const WorkforceManagementPage = () => {
 
         /* --- SECTION 5: APPROACH --- */
         .WM_Flow { 
-          padding: 140px 5%; 
+          padding: 50px 5%; 
           background: #fdfdfd; 
           text-align: center;
           display: flex;
@@ -218,7 +218,7 @@ const WorkforceManagementPage = () => {
           justify-content: center;
         }
         .WM_Final_Inner { max-width: 900px; width: 100%; }
-        .WM_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; color:#ffffff; font-size: clamp(2rem, 5vw, 3.5rem); }
+        .WM_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; color:#ffffff; }
       `}</style>
 
       {/* LAYOUT 1 – PAGE HERO */}
@@ -233,7 +233,7 @@ const WorkforceManagementPage = () => {
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
                 Consulting Excellence</span>
             </div>
-            <h1 className="WM_Hero_H1">WORKFORCE MANAGEMENT SERVICES</h1>
+            <h2 className="WM_Hero_H1 NET_Hero_H1">WORKFORCE MANAGEMENT SERVICES</h2>
             <p className="WM_Tagline">Building high-fidelity workforces through strategic acquisition and structural oversight.</p>
 
 
@@ -258,7 +258,7 @@ const WorkforceManagementPage = () => {
       <section className="WM_Context">
         <div className="WM_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="WM_Context_H1">YOUR WORKFORCE IS THE PRIMARY ARCHITECTURE OF OPERATIONAL SUCCESS</h2>
+            <h2 className="NET_Hero_H1 WM_Context_H1">YOUR WORKFORCE IS THE PRIMARY ARCHITECTURE OF OPERATIONAL SUCCESS</h2>
             <p className="WM_Context_P">
               Business performance depends on how consistently and predictably you can manage and expand your human capital.
               Poorly managed workforce environments lead to internal debt, high hiring overhead, and reduced organizational speed.
@@ -272,7 +272,7 @@ const WorkforceManagementPage = () => {
       <section className="WM_Cap_Section">
         <div className="WM_Cap_Inner">
           <span className="WM_Badge">Core Domains</span>
-          <h2 className="WM_Hero_H1" style={{ fontSize: '2.5rem' }}>Workforce Consulting <br /> Capabilities</h2>
+          <h2 className="NET_Hero_H1">Workforce Consulting  Capabilities</h2>
 
           <div className="WM_Cap_Grid">
             {[
@@ -319,7 +319,7 @@ const WorkforceManagementPage = () => {
           </div>
           <div className="WM_Outcome_Content">
             <span className="WM_Badge">Business Benefits</span>
-            <h2 className="WM_Hero_H1" style={{ fontSize: '2.5rem' }}>Benefits of Structured <br /> Workforce Management</h2>
+            <h2 className="NET_Hero_H1">Benefits of Structured  Workforce Management</h2>
 
             <div className="Outcome_List">
               {[
@@ -345,7 +345,7 @@ const WorkforceManagementPage = () => {
       <section className="WM_Flow">
         <div className="WM_Flow_Inner">
           <span className="WM_Badge">Consulting Framework</span>
-          <h2 className="WM_Hero_H1" style={{ fontSize: '2.5rem' }}>Workforce Lifecycle Approach</h2>
+          <h2 className="NET_Hero_H1">Workforce Lifecycle Approach</h2>
 
           <div className="WM_Flow_Grid">
             {[
@@ -370,22 +370,27 @@ const WorkforceManagementPage = () => {
       </section>
 
       {/* LAYOUT 6 – FINAL CTA */}
-      <section className="WM_Final">
-        <div className="WM_Final_Inner">
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
-            <h2 className="WM_Final_H">OPTIMISE YOUR REVENUE THROUGH <br /> WORKFORCE STABILITY</h2>
-            <p className="text-blue-100/70 text-xl font-medium mb-12">
+
+      <section style={{ padding: '50px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+            <h2 className="NET_Hero_H1 text-white">OPTIMISE YOUR REVENUE THROUGH  WORKFORCE STABILITY</h2>
+            <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured workforce management solutions <br />
               can support operational efficiency and organizational scalability.
             </p>
-            <Link to="/contact">
-              <button className="WM_Primary_Btn" style={{ margin: '0 auto', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                Contact a Workforce Specialist <ArrowRight size={24} />
-              </button>
-            </Link>
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+              <Link to="/contact">
+                <button className="WM_Primary_Btn" style={{ margin: '0 auto', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                  Contact a Workforce Specialist <ArrowRight size={24} />
+                </button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

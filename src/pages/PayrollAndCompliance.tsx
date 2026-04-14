@@ -93,7 +93,7 @@ const PayrollAndCompliancePage = () => {
           .PC_Context_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
         }
 
-        .PC_Context_H { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 40px; text-transform: uppercase; color:#ffffff;}
+        .PC_Context_H { font-weight: 900; line-height: 1.2; margin-bottom: 40px; text-transform: uppercase; color:#ffffff;}
         .PC_Context_P { font-size: 1.15rem; color: #b9d1ff; line-height: 1.8; margin-bottom: 0; }
         .PC_Context_Img img { width: 100%; border-radius: 40px; box-shadow: 0 40px 100px rgba(0,0,0,0.3); border: 12px solid #2a3a5a; }
 
@@ -134,7 +134,7 @@ const PayrollAndCompliancePage = () => {
         .PC_Card_H { font-size: 1.5rem; font-weight: 800; color: #1a2b4b; margin-bottom: 15px; }
 
         /* --- SECTION 4: OUTCOMES --- */
-        .PC_Outcome { padding: 100px 5%; background: #fdfdfd; }
+        .PC_Outcome { padding: 50px 5%; background: #fdfdfd; }
         .PC_Outcome_Grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; }
 
         @media (max-width: 1024px) {
@@ -149,7 +149,7 @@ const PayrollAndCompliancePage = () => {
         .PC_Check_P { color: #64748b; font-size: 1rem; line-height: 1.6; }
 
         /* --- SECTION 5: FRAMEWORK --- */
-        .PC_Framework { padding: 100px 5%; background: #ffffff; text-align: center; }
+        .PC_Framework { padding: 50px 5%; background: #ffffff; text-align: center; }
         .PC_Framework_Grid { 
           display: grid; 
           grid-template_columns: 1fr;
@@ -174,7 +174,7 @@ const PayrollAndCompliancePage = () => {
           padding: 100px 5%; 
           background: #002e5b; color: #ffffff; text-align: center; 
         }
-        .PC_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 50px; text-transform: uppercase; color:#ffffff; font-size: clamp(2rem, 5vw, 3.5rem); }
+        .PC_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 50px; text-transform: uppercase; color:#ffffff; }
       `}</style>
 
       {/* SECTION 1: HERO */}
@@ -188,7 +188,7 @@ const PayrollAndCompliancePage = () => {
                 Compliance Excellence              </span>
             </div>
 
-            <h1 className="PC_Hero_H1">PAYROLL & COMPLIANCE SERVICES</h1>
+            <h2 className="PC_Hero_H1 NET_Hero_H1">PAYROLL & COMPLIANCE SERVICES</h2>
             <p className="PC_Hero_P">Financial integrity and corporate control  built on secure, zero-error processing ecosystems.</p>
             <Link to="/contact">
               <button className="PC_Btn">Request A Consultation <ArrowRight size={24} /></button>
@@ -208,7 +208,7 @@ const PayrollAndCompliancePage = () => {
         <div className="PC_Context_Grid">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <span className="PC_Badge">Strategic Foundation</span>
-            <h2 className="PC_Context_H">FINANCIAL ACCURACY PROTECTS <br /> CORPORATE ASSETS</h2>
+            <h2 className="NET_Hero_H1 PC_Context_H">FINANCIAL ACCURACY PROTECTS <br /> CORPORATE ASSETS</h2>
             <p className="PC_Context_P">
               Business security and credibility depend on predictable management of regional labor laws and financial processing.
               Poorly managed systems lead to legal debt, financial penalty, and loss of trust. CHN helps maintain structured, secure, and highly accurate business environments.
@@ -224,7 +224,7 @@ const PayrollAndCompliancePage = () => {
       {/* SECTION 3: DOMAINS */}
       <section className="PC_Domains">
         <span className="PC_Badge">Core Domains</span>
-        <h2 className="PC_Hero_H1" style={{ fontSize: '3rem', color: '#1a2b4b' }}>Consolidated <br /> Management</h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Consolidated  Management</h2>
 
         <div className="PC_Domains_Grid">
           {[
@@ -253,7 +253,7 @@ const PayrollAndCompliancePage = () => {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
             <span className="PC_Badge">Business Impact</span>
-            <h2 className="PC_Hero_H1" style={{ fontSize: '3rem', color: '#1a2b4b' }}>Benefits of <br /> Structured Control</h2>
+            <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Benefits of Structured Control</h2>
             <div className="mt-12">
               {[
                 { title: "Predictable Tax Management", desc: "Error-free tax processing and institutional institutional health." },
@@ -277,7 +277,7 @@ const PayrollAndCompliancePage = () => {
       {/* SECTION 5: FRAMEWORK */}
       <section className="PC_Framework">
         <span className="PC_Badge">Compliance Framework</span>
-        <h2 className="PC_Hero_H1" style={{ fontSize: '3rem', color: '#1a2b4b' }}>Strategic Stages</h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Strategic Stages</h2>
         <div className="PC_Framework_Grid">
           {[
             { num: "01", h: "Audit & Scoping", icon: <Search size={30} />, p: "Review existing payroll logs, compliance status, and obligations." },
@@ -299,15 +299,22 @@ const PayrollAndCompliancePage = () => {
       </section>
 
       {/* SECTION 6: FINAL */}
-      <section className="PC_Final">
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="max-w-4xl mx-auto">
-          <h2 className="PC_Final_H">ENSURE FINANCIAL INTEGRITY <br /> AND CORPORATE CONTROL</h2>
-          <p className="text-blue-100/70 text-xl font-medium mb-12">Connect with us to understand how structured systems <br /> support long-term financial scalability.</p>
-          <Link to="/contact">
-            <button className="PC_Btn" style={{ margin: '0 auto' }}>Contact For Strategy <ArrowRight size={24} /></button>
-          </Link>
-        </motion.div>
+      <section style={{ padding: '50px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+            <h2 className="NET_Hero_H1 text-white">ENSURE FINANCIAL INTEGRITY <br /> AND CORPORATE CONTROL</h2>
+            <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
+              Connect with us to understand how structured systems <br /> support long-term financial scalability.            </p>
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+              <Link to="/contact">
+                <button className="PC_Btn" style={{ margin: '0 auto' }}>Contact For Strategy <ArrowRight size={24} /></button>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </section>
+
     </div>
   );
 };

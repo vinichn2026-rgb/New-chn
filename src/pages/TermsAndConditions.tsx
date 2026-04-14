@@ -280,8 +280,6 @@ const TermsAndConditions = () => {
                     flex-shrink: 0;
                 }
                 .TC_Section_Title {
-                    font-size: 1.5rem;
-                    font-weight: 800;
                     color: #002e5b;
                     letter-spacing: -0.01em;
                 }
@@ -413,7 +411,7 @@ const TermsAndConditions = () => {
                         <Shield size={12} />
                         Legal Document
                     </div>
-                    <h1 className="TC_Title">Terms &amp; <span style={{ color: '#60a5fa' }}>Conditions</span></h1>
+                    <h2 className="TC_Title NET_Hero_H1">Terms &amp; <span style={{ color: '#60a5fa' }}>Conditions</span></h2>
                     <p className="TC_Meta">Last updated: July 5, 2025</p>
                     <p className="TC_Intro_Text">
                         Welcome to CHN Technologies. By using our website (www.chntechs.com) and services, you agree
@@ -459,7 +457,7 @@ const TermsAndConditions = () => {
                                     <div className="TC_Section_Icon">
                                         <Icon size={20} />
                                     </div>
-                                    <h2 className="TC_Section_Title">{section.title}</h2>
+                                    <h2 className="NET_Hero_H1 TC_Section_Title">{section.title}</h2>
                                 </div>
 
                                 {section.type === 'text' && (
@@ -505,7 +503,7 @@ const TermsAndConditions = () => {
                             <div className="TC_Section_Icon">
                                 <Mail size={20} />
                             </div>
-                            <h2 className="TC_Section_Title">Contact Us</h2>
+                            <h2 className="NET_Hero_H1 TC_Section_Title">Contact Us</h2>
                         </div>
 
                         <div className="TC_Contact_Card">

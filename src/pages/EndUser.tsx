@@ -8,7 +8,6 @@ import {
 import { Link } from 'react-router-dom';
 
 // Import specialized computing assets
-import workspaceLaptop from '../assets/workspace_laptop.png';
 
 const EndUserComputingPage = () => {
     return (
@@ -62,22 +61,22 @@ const EndUserComputingPage = () => {
         { 
          margin-bottom: 30px;
         }
-        .EUC_Tagline { font-size: 1.5rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
-        .EUC_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 45px; font-weight: 450; }
+        .EUC_Tagline { font-size: 1.2rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.0; }
+        .EUC_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.7; margin-bottom: 45px; font-weight: 450; }
 
         .EUC_Btn_Group { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
         @media (max-width: 1024px) { .EUC_Btn_Group { justify-content: center; } }
         
         .EUC_Primary_Btn { 
           background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); 
-          color: white; padding: 20px 40px; border-radius: 100px; 
+          color: white; padding: 10px 20px; border-radius: 100px; 
           font-weight: 800; font-size: 1.05rem;
           box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           border: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
         }
         .EUC_Primary_Btn:hover { transform: translateY(-3px); box-shadow: 0 25px 50px rgba(37, 99, 235, 0.35); }
 
-        .EUC_Hero_Img { flex: 1; position: relative; display: flex; justify-content: center; }
+        .EUC_Hero_Img { height:450px; flex: 1; position: relative; display: flex; justify-content: center; }
         .EUC_Hero_Img img { 
             width: 100%; 
             max-width: 500px;
@@ -145,7 +144,7 @@ const EndUserComputingPage = () => {
         
         .EUC_Cap_Icon { width: 70px; height: 70px; background: #eff6ff; color: #2563eb; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; transition: 0.4s; }
         .EUC_Cap_Card:hover .EUC_Cap_Icon { background: rgba(255,255,255,0.1); }
-        .EUC_Cap_Card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; color: #0f172a; transition: 0.3s; letter-spacing: -0.01em; }
+        .EUC_Cap_Card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 20px; color: #0f172a; transition: 0.3s; letter-spacing: -0.01em; }
         .EUC_Cap_Card p { color: #64748b; line-height: 1.7; font-size: 1rem; transition: 0.3s; font-weight: 450; }
 
         /* --- SECTION 3: OUTCOMES --- */
@@ -165,7 +164,7 @@ const EndUserComputingPage = () => {
         
         .EUC_Outcome_Content { flex: 1.2; text-align: left; }
         .EUC_Outcome_Img { flex: 1; position: relative; display: flex; justify-content: center; }
-        .EUC_Outcome_Img img { width: 100%; max-width: 600px; border-radius: 50px; box-shadow: 0 40px 100px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.05); }
+        .EUC_Outcome_Img img { width: 100%; max-width: 600px; border-radius: 10px; box-shadow: 0 40px 100px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.05); }
         
         @media (max-width: 1024px) {
           .EUC_Outcome_Inner { flex-direction: column; text-align: center; gap: 60px; }
@@ -184,7 +183,7 @@ const EndUserComputingPage = () => {
 
         /* --- SECTION 4: APPROACH --- */
         .EUC_Flow { 
-          padding: 140px 5%; 
+          padding: 50px 5%; 
           background: #fdfdfd; 
           text-align: center;
           display: flex;
@@ -204,7 +203,8 @@ const EndUserComputingPage = () => {
         }
         
         .EUC_Step_Card {
-          background: white; border-radius: 30px; padding: 60px 40px; position: relative;
+          background: white; border-radius: 30px;           padding: 60px 30px 40px;
+ position: relative;
           box-shadow: 0 20px 50px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.03); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           text-align: left;
         }
@@ -214,8 +214,10 @@ const EndUserComputingPage = () => {
           background: #0f172a; color: white; padding: 6px 25px; border-radius: 100px; font-weight: 900; font-size: 0.85rem; letter-spacing: 1px;
         }
         .EUC_Step_Icon { color: #2563eb; margin-bottom: 30px; }
-        .EUC_Step_H { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.01em; }
-        .EUC_Step_P { color: #64748b; font-size: 1rem; line-height: 1.7; font-weight: 450; }
+        .EUC_Step_H { font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.01em; 
+        // text-transform:uppercase;
+        }
+        .EUC_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.7; font-weight: 450; }
 
         @media (max-width: 1024px) {
           .EUC_Hero, .EUC_Outcome { flex-direction: column; text-align: center; padding-top: 140px; }
@@ -236,7 +238,7 @@ const EndUserComputingPage = () => {
                         className="EUC_Hero_Content"
                     >
                         <span className="EUC_Badge">Cognitive Workspace</span>
-                        <h1 className="EUC_Hero_H1">SEAMLESS USER <br /> COMPUTING</h1>
+                        <h2 className="EUC_Hero_H1 NET_Hero_H1">SEAMLESS USER COMPUTING</h2>
                         <p className="EUC_Tagline">Frictionless productivity through elite endpoint orchestration.</p>
                         <p className="EUC_Hero_P">
                             CHN Technologies delivers structured end-user computing services that ensure your workforce
@@ -271,9 +273,9 @@ const EndUserComputingPage = () => {
             {/* LAYOUT 2 & 3 – SERVICE CONTEXT & CORE CAPABILITIES */}
             <section className="EUC_Cap_Section">
                 <div className="EUC_Cap_Inner">
-                    <div style={{ maxWidth: '900px', marginBottom: '100px' }}>
+                    <div style={{ marginBottom: '100px' }}>
                         <span className="EUC_Badge">Operational Freedom</span>
-                        <h2 className="EUC_Hero_H1" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>Modernizing the Human-System Interface</h2>
+                        <h2 className="NET_Hero_H1">Modernizing the Human-System Interface</h2>
                         <p className="EUC_Hero_P" style={{ fontSize: '1.25rem' }}>
                             The bottleneck of enterprise growth is often the endpoint. CHN Technologies
                             standardizes the user experience, eliminating technical debt and support
@@ -325,11 +327,11 @@ const EndUserComputingPage = () => {
                         initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}
                         className="EUC_Outcome_Img"
                     >
-                        <img src={workspaceLaptop} alt="Productivity Operations" />
+                        <img src="/images/elite_endpoint_outcomes.png" alt="Productivity Operations" />
                     </motion.div>
                     <div className="EUC_Outcome_Content">
                         <span className="EUC_Badge">Workforce Impact</span>
-                        <h2 className="EUC_Hero_H1" style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)' }}>Strategic Outcomes of Elite Endpoint Management</h2>
+                        <h2 className="NET_Hero_H1">Strategic Outcomes of Elite Endpoint Management</h2>
 
                         <div className="Outcome_List">
                             {[
@@ -359,7 +361,7 @@ const EndUserComputingPage = () => {
             <section className="EUC_Flow">
                 <div className="EUC_Flow_Inner">
                     <span className="EUC_Badge">Transformation Lifecycle</span>
-                    <h2 className="EUC_Hero_H1" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)' }}>The CHN Productivity Framework</h2>
+                    <h2 className="NET_Hero_H1">The CHN Productivity Framework</h2>
 
                     <div className="EUC_Flow_Grid">
                         {[
@@ -384,11 +386,11 @@ const EndUserComputingPage = () => {
             </section>
 
             {/* LAYOUT 6 – TRUST & FINAL CTA */}
-            <section style={{ padding: '140px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+            <section style={{ padding: '50px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
                 <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-                        <h2 className="EUC_Hero_H1" style={{ color: '#fff' }}>READY TO LIBERATE <br /> YOUR WORKFORCE?</h2>
+                        <h2 className="NET_Hero_H1 text-white">READY TO LIBERATE <br /> YOUR WORKFORCE?</h2>
                         <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
                             Stop managing devices. Start empowering people. Join the enterprises
                             shifting to elite end-user computing with CHN Technologies.

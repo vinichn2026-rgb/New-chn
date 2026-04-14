@@ -148,7 +148,7 @@ const SubmenuPage = () => {
   if (!page) {
     return (
       <div className="container mx-auto px-4 py-24 text-center">
-        <h2 className="text-3xl font-bold">Page not found</h2>
+        <h2 className="NET_Hero_H1">Page not found</h2>
         <p className="mt-4 text-slate-600">The requested section does not exist. Please choose a valid service.</p>
         <Link to="/" className="mt-8 inline-block text-blue-600 hover:text-blue-800">Return to homepage</Link>
       </div>
@@ -179,7 +179,7 @@ const SubmenuPage = () => {
             <div className="lg:col-span-2">
               {isThoughtLeadership && (
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} animate="visible" variants={animateFade} custom={0} className="mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4">CHN's Point of View</h2>
+                  <h2 className="NET_Hero_H1 text-center">CHN's Point of View</h2>
                   <p className="text-center text-slate-600 max-w-3xl mx-auto mb-10">A unified outlook across Technology, Consulting and Resources to build resilient, secure, and growth-ready enterprises.</p>
                 </motion.div>
               )}

@@ -261,7 +261,7 @@ const CHNInsights = () => {
         .BLOG_Featured_Img img { width: 100%; height: 100%; object-fit: cover; }
 
         .BLOG_Featured_Content { padding: 40px; text-align: left; }
-        .BLOG_Featured_H { font-size: 3rem; font-weight: 900; line-height: 1.1; margin-bottom: 25px; color: #1a2b4b; }
+        .BLOG_Featured_H { line-height: 1.1; margin-bottom: 25px; color: #1a2b4b; }
 
         /* GRID */
         .BLOG_Grid {
@@ -313,7 +313,7 @@ const CHNInsights = () => {
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="BLOG_Hero_Bg" />
         <div className="BLOG_Hero_Content">
           <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="BLOG_Badge">Corporate Insights</motion.span>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1">Knowledge Led <br /> <span className="text-blue-500">Perspectives</span></motion.h1>
+          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1 NET_Hero_H1">Knowledge Led <br /> <span className="text-blue-500">Perspectives</span></motion.h2>
 
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.4 }} className="BLOG_Search_Box">
             <Search size={22} className="text-blue-500 ml-4" />
@@ -362,7 +362,7 @@ const CHNInsights = () => {
               </div>
               <div className="BLOG_Featured_Content">
                 <span className="BLOG_Badge">EDITORIAL FOCUS</span>
-                <h2 className="BLOG_Featured_H">INSIGHTS FROM OUR STRATEGIC ADVISORS</h2>
+                <h2 className="NET_Hero_H1 BLOG_Featured_H">INSIGHTS FROM OUR STRATEGIC ADVISORS</h2>
                 <p className="text-slate-500 font-medium text-lg leading-relaxed mb-10">
                   Comprehensive perspectives on technology, people, and unified corporate processes
                   drawn from real-world digital flagship engagements.
@@ -381,7 +381,7 @@ const CHNInsights = () => {
           )}
 
           <div className="flex items-center justify-between mb-12">
-            <h3 className="text-2xl font-black text-[#1a2b4b] uppercase tracking-tight">
+            <h3 className="text-2xl font-black text-[#1a2b4b] tracking-tight">
               {activeCategory} Insights
             </h3>
             <p className="text-slate-400 font-bold uppercase text-xs tracking-widest">Showing {filteredInsights.length} results</p>
@@ -438,7 +438,7 @@ const CHNInsights = () => {
 
       {/* SECTION 4: CTA */}
       <section style={{ padding: '100px 5%', textAlign: 'center', background: '#f8fafc' }}>
-        <h2 className="BLOG_Hero_H1" style={{ color: '#1a2b4b', font_size: 'clamp(2rem, 5vw, 3rem)' }}>Stay Informed With <span className="text-blue-500">Expert Clarity</span></h2>
+        <h2 className="NET_Hero_H1 uppercase" style={{ color: '#1a2b4b' }}>Stay Informed With <span className="text-blue-500">Expert Clarity</span></h2>
         <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto mb-12">
           Gain access to refined perspectives that matter to business owners,
           IT decision-makers, and industry professionals.

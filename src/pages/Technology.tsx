@@ -112,7 +112,6 @@ const TechnologyPage = () => {
                     .TECH_Category_Desc { margin: 0 auto; }
                 }
                 .TECH_Category_Label {
-                    font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900;
                     color: #002e5b; letter-spacing: -0.01em; margin-bottom: 10px;
                 }
                 .TECH_Category_Desc {
@@ -215,10 +214,10 @@ const TechnologyPage = () => {
                         <span style={{ color: '#60a5fa' }}>Technology</span>
                     </div>
                     <div className="TECH_Badge">What We Do</div>
-                    <h1 className="TECH_Hero_Title">
+                    <h2 className="TECH_Hero_Title NET_Hero_H1">
                         Technology<br />
                         <span style={{ color: '#60a5fa' }}>Services</span>
-                    </h1>
+                    </h2>
                     <p className="TECH_Hero_desc">
                         Integrated technology capabilities across infrastructure, software, and digital solutions —
                         built to strengthen operations and drive long-term performance.
@@ -248,7 +247,7 @@ const TechnologyPage = () => {
                                         {cat.label}
                                     </span>
                                 </div>
-                                <h2 className="TECH_Category_Label">{cat.label}</h2>
+                                <h2 className="NET_Hero_H1 TECH_Category_Label">{cat.label}</h2>
                                 <p className="TECH_Category_Desc">{cat.description}</p>
                             </div>
                             <Link

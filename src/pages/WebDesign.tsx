@@ -9,6 +9,7 @@ import {
   PenTool,
   Rocket,
   ShieldCheck,
+  Activity,
   ArrowRight,
   Globe,
   Zap,
@@ -71,6 +72,45 @@ const WebDesignDevelopment = () => {
           transform: translateY(-10px);
           box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
         }
+
+        .WD_Step_H{
+        font-size: 1.3rem;
+    font-weight: 800;
+    color: #22314f;
+    color: #22314f;
+    margin-bottom: 12px;
+        }
+
+        .WD_Marquee_Container {
+          width: 100%;
+          overflow: hidden;
+          padding: 20px 0 60px;
+        }
+        .WD_Marquee_Track {
+          display: flex;
+          gap: 30px;
+          width: fit-content;
+          animation: WD_Scroll 50s linear infinite;
+        }
+        .WD_Marquee_Track:hover {
+          animation-play-state: paused;
+        }
+        @keyframes WD_Scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-50% - 15px)); }
+        }
+        .WD_Card {
+          min-width: 320px;
+          max-width: 320px;
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: column;
+        }
+        .WD_Card_Title {
+          height: 4.5rem;
+          display: flex;
+          align-items: flex-start;
+        }
       `}</style>
 
       {/* LAYOUT 1 – PAGE HERO */}
@@ -87,10 +127,9 @@ const WebDesignDevelopment = () => {
                 Software Solutions
               </span>
             </div>
-            <h1 className="font-black mb-8 leading-[1.1] text-slate-900 tracking-tight">
-              WEB DESIGN & <br />
-              <span className="">DEVELOPMENT</span>
-            </h1>
+            <h2 className="font-black mb-8 leading-[1.1] text-slate-900 tracking-tight NET_Hero_H1">
+              WEB DESIGN & DEVELOPMENT
+            </h2>
             <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle">
               <Zap size={24} className="text-blue-600" />
               Built for performance, scale, and results.
@@ -149,7 +188,7 @@ const WebDesignDevelopment = () => {
         <div className="container mx-auto px-6 relative z-10">
           <motion.div className="max-w-4xl mx-auto text-center" {...fadeIn}>
             <span className="text-blue-400 font-black uppercase tracking-[0.3em] text-sm mb-6 block">Strategic Impact</span>
-            <h2 className="mb-10 leading-tight text-slate-200">
+            <h2 className="NET_Hero_H1 mb-10 text-slate-200">
               YOUR WEBSITE IS A BUSINESS ASSET, <br />
               <span className="text-slate-200">NOT JUST A DIGITAL PRESENCE</span>
             </h2>
@@ -165,27 +204,31 @@ const WebDesignDevelopment = () => {
       </section>
 
       {/* LAYOUT 3 – CORE CAPABILITIES */}
-      <section className="py-12 bg-slate-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
-            <h2 className="font-black tracking-tight text-slate-900 uppercase">WHAT OUR WEB SERVICES COVER</h2>
+      <section className="py-20 bg-slate-50 overflow-hidden">
+        <div className="container mx-auto px-6 mb-16">
+          <div className="text-center">
+            <h2 className="NET_Hero_H1 text-slate-900 uppercase">WHAT OUR WEB SERVICES COVER</h2>
             <div className="h-2 w-24 bg-blue-600 mx-auto mt-6 rounded-full" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 md:gap-3 xl:gap-6 max-w-[1600px] mx-auto">
-            {capabilities.map((item, i) => (
+        </div>
+
+        <div className="WD_Marquee_Container">
+          <div className="WD_Marquee_Track">
+            {/* Double the capabilities to create a seamless loop */}
+            {[...capabilities, ...capabilities].map((item, i) => (
               <motion.div
                 key={i}
-                className="p-6 md:p-3 lg:p-5 xl:p-8 border border-slate-200 rounded-[1.5rem] md:rounded-xl lg:rounded-[2rem] bg-white card-hover-effect group flex flex-col h-full"
+                className="WD_Card p-10 border border-slate-200 rounded-[2.5rem] bg-white card-hover-effect group flex flex-col"
                 {...fadeIn}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: (i % capabilities.length) * 0.1 }}
               >
-                <div className="w-12 h-12 md:w-10 md:h-10 lg:w-14 lg:h-14 bg-blue-50 text-blue-600 rounded-xl md:rounded-lg lg:rounded-2xl flex items-center justify-center mb-4 md:mb-3 xl:mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6 shadow-sm shrink-0">
-                  <div className="transform md:scale-75 lg:scale-100 flex items-center justify-center">
-                    {item.icon}
-                  </div>
+                <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all transform group-hover:rotate-6 shadow-sm shrink-0">
+                  {item.icon}
                 </div>
-                <h3 className="text-[1.15rem] md:text-[11px] lg:text-base xl:text-xl font-black mb-3 md:mb-2 xl:mb-4 text-slate-900 leading-tight tracking-tight">{item.title}</h3>
-                <p className="text-slate-600 text-sm md:text-[9.5px] md:leading-tight lg:text-xs xl:text-sm lg:leading-relaxed">{item.desc}</p>
+                <div className="WD_Card_Title mb-2">
+                  <h3 className="text-xl font-black text-slate-900 leading-tight tracking-tight">{item.title}</h3>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed min-h-[4.5rem]">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -193,12 +236,12 @@ const WebDesignDevelopment = () => {
       </section>
 
       {/* LAYOUT 4 – BUSINESS OUTCOMES */}
-      <section className="py-32 bg-white relative">
+      <section className="py-12 bg-white relative">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center max-w-7xl mx-auto">
             <motion.div className="lg:w-1/2" {...fadeIn}>
               <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4 block">Measurable Results</span>
-              <h2 className="font-black mb-10 text-slate-900 leading-tight">BUSINESS BENEFITS OF <br />STRUCTURED WEB SOLUTIONS</h2>
+              <h2 className="NET_Hero_H1 mb-10 text-slate-900">BUSINESS BENEFITS OF <br />STRUCTURED WEB SOLUTIONS</h2>
               <div className="grid gap-8">
                 {[
                   { label: "Stronger Brand Credibility", text: "Well-designed websites reinforce professionalism and trust.", icon: <Globe size={20} /> },
@@ -236,36 +279,35 @@ const WebDesignDevelopment = () => {
       </section>
 
       {/* LAYOUT 5 – OUR APPROACH */}
-      <section className="py-32 bg-slate-900 text-white overflow-hidden">
+      <section className="py-24 bg-[#fafafc] overflow-hidden relative">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-24">
-            <h2 className="text-white uppercase tracking-tight">OUR DESIGN & DEVELOPMENT APPROACH</h2>
-            <div className="h-2 w-24 bg-blue-600 mx-auto mt-6 rounded-full" />
+          <div className="text-center mb-24 relative z-10">
+            <span className="text-blue-600 font-bold tracking-[0.2em] uppercase mb-4 block text-sm">HOW WE DESIGN & DEVELOP WEB PLATFORMS</span>
+            <h2 className="NET_Hero_H1 text-slate-900">OUR WEB DESIGN & DEVELOPMENT APPROACH</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 relative max-w-7xl mx-auto">
-            {/* Connector Line (Desktop) */}
-            <div className="hidden lg:block text-white absolute top-12 left-0 w-full h-0.5 bg-slate-800 z-0"></div>
-
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative max-w-7xl mx-auto text-left">
             {[
-              { step: "01", label: "Discover & Assess", icon: <Search size={32} />, desc: "Understand business objectives and audience expectations." },
-              { step: "02", label: "Design & Structure", icon: <PenTool size={32} />, desc: "Create user-focused designs and information architecture." },
-              { step: "03", label: "Develop & Integrate", icon: <Code2 size={32} />, desc: "Build secure platforms and integrate functionalities." },
-              { step: "04", label: "Test & Launch", icon: <Rocket size={32} />, desc: "Thorough testing, deployment, and ongoing support." }
+              { step: "01", label: "Discover & Assess", icon: <Search size={36} strokeWidth={1.5} />, desc: "Understand business objectives, audience expectations, and existing digital assets." },
+              { step: "02", label: "Design & Structure", icon: <PenTool size={36} strokeWidth={1.5} />, desc: "Create user-focused designs, information architecture, and visual systems." },
+              { step: "03", label: "Develop & Integrate", icon: <Settings size={36} strokeWidth={1.5} />, desc: "Build secure, scalable web platforms and integrate required functionalities." },
+              { step: "04", label: "Test, Launch & Support", icon: <Activity size={36} strokeWidth={1.5} />, desc: "Thorough testing, deployment, and ongoing optimisation support." }
             ].map((item, i) => (
               <motion.div
                 key={i}
-                className="relative text-center group z-10"
+                className="relative bg-white p-10 rounded-3xl border border-slate-100 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group z-10 flex flex-col h-full"
                 {...fadeIn}
                 transition={{ delay: i * 0.1 }}
               >
-                <div className="w-24 h-24 bg-slate-800 text-blue-400 rounded-3xl flex items-center justify-center mx-auto mb-8 border border-slate-700 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-500 transition-all transform group-hover:-translate-y-2 duration-500">
-                  {item.icon}
-                </div>
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-[0.2em] shadow-lg shadow-blue-900">
+                <div className="absolute -top-3 left-8 bg-[#1e293b] text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
                   Stage {item.step}
                 </div>
-                <h4 className="text-xl font-black mt-2 mb-4 tracking-tight text-white">{item.label}</h4>
-                <p className="text-white/70 text-sm leading-relaxed px-4">{item.desc}</p>
+                <div className="text-blue-600 mb-8 transition-transform duration-500 group-hover:scale-110">
+                  {item.icon}
+                </div>
+                <div className="h-[3.5rem] flex items-start mb-2">
+                  <h3 className="WD_Step_H" style={{ marginBottom: 0 }}>{item.label}</h3>
+                </div>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -273,22 +315,28 @@ const WebDesignDevelopment = () => {
       </section>
 
       {/* FINAL CTA SECTION */}
-      <section style={{ padding: '100px 5%', textAlign: 'center', background: '#22314f', color: '#fff' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-          <h2 style={{ fontWeight: 900, color: '#fff', lineHeight: 1.1, marginBottom: '20px' }}>BUILD A WEBSITE THAT WORKS FOR YOUR BUSINESS</h2>
-          <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, margin: '20px auto 40px', fontWeight: 450 }} className="subtitle">
-            Connect with CHN Technologies to understand how structured web design and development solutions can support brand growth, user engagement, and business objectives.
-          </p>
-          <Link to="/contact">
-            <button style={{
-              background: '#3b82f6', color: '#fff', padding: '20px 40px', borderRadius: '100px',
-              fontWeight: 800, fontSize: '1.05rem', border: 'none', cursor: 'pointer',
-              boxShadow: '0 20px 40px rgba(37, 99, 235, 0.25)', transition: 'all 0.4s',
-              display: 'inline-flex', alignItems: 'center', gap: '10px'
-            }}>Get Your Free Consultation</button>
-          </Link>
+      <section style={{ padding: '50px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+            <h2 className="NET_Hero_H1 text-white">BUILD A WEBSITE THAT WORKS FOR YOUR BUSINESS</h2>
+            <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
+              Connect with CHN Technologies to understand how structured web design and development solutions can support brand growth, user engagement, and business objectives.
+            </p>
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+              <Link to="/contact">
+                <button style={{
+                  background: '#3b82f6', color: '#fff', padding: '20px 40px', borderRadius: '100px',
+                  fontWeight: 800, fontSize: '1.05rem', border: 'none', cursor: 'pointer',
+                  boxShadow: '0 20px 40px rgba(37, 99, 235, 0.25)', transition: 'all 0.4s',
+                  display: 'inline-flex', alignItems: 'center', gap: '10px'
+                }}>Get Your Free Consultation</button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

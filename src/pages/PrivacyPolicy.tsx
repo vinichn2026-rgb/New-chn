@@ -39,9 +39,8 @@ const PrivacyPolicy = () => {
 
         .PP_Section { margin-bottom: 60px; }
         .PP_Section_H { 
-          font-weight: 800; color: #0f172a; margin-bottom: 25px; 
+          color: #0f172a; margin-bottom: 25px; 
           display: flex; align-items: center; gap: 15px; letter-spacing: -0.01em;
-          font-size: 1.5rem;
         }
         .PP_Section_Icon { color: #2563eb; background: rgba(37, 99, 235, 0.08); padding: 10px; border-radius: 12px; min-width: 44px; display: flex; justify-content: center; }
         
@@ -75,14 +74,14 @@ const PrivacyPolicy = () => {
       <section className="PP_Hero">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <span className="PP_Badge">Trust & Transparency</span>
-          <h1 className="PP_Title">PRIVACY POLICY</h1>
+          <h2 className="PP_Title NET_Hero_H1">PRIVACY POLICY</h2>
           <p className="PP_Subtitle">Last Updated: July 5, 2025</p>
         </motion.div>
       </section>
 
       <section className="PP_Content">
         <div className="PP_Section">
-          <h2 className="PP_Section_H">
+          <h2 className="NET_Hero_H1 PP_Section_H">
             <span className="PP_Section_Icon"><Shield size={24} /></span>
             1. Information Collection
           </h2>
@@ -97,7 +96,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="PP_Section_H">
+          <h2 className="NET_Hero_H1 PP_Section_H">
             <span className="PP_Section_Icon"><Eye size={24} /></span>
             2. How We Use Information
           </h2>
@@ -113,7 +112,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="PP_Section_H">
+          <h2 className="NET_Hero_H1 PP_Section_H">
             <span className="PP_Section_Icon"><Lock size={24} /></span>
             3. Data Security & Protection
           </h2>
@@ -126,7 +125,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="PP_Section_H">
+          <h2 className="NET_Hero_H1 PP_Section_H">
             <span className="PP_Section_Icon"><FileText size={24} /></span>
             4. Your Rights
           </h2>
@@ -136,7 +135,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="PP_Section_H">
+          <h2 className="NET_Hero_H1 PP_Section_H">
             <span className="PP_Section_Icon"><Mail size={24} /></span>
             7. Contact Information
           </h2>

@@ -64,7 +64,7 @@ const ServerAdministrationPage = () => {
         { 
          margin-bottom: 30px; 
           }
-        .SA_Tagline { font-size: 1.5rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
+        .SA_Tagline { font-size: 1.2rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
         .SA_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 45px; font-weight: 450; }
 
         .SA_Btn_Group { display: flex; gap: 20px; align-items: center; }
@@ -72,14 +72,14 @@ const ServerAdministrationPage = () => {
 
         .SA_Primary_Btn { 
           background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); 
-          color: white; padding: 20px 40px; border-radius: 100px; 
+          color: white; padding: 10px 20px; border-radius: 100px; 
           font-weight: 800; font-size: 1.05rem;
           box-shadow: 0 20px 40px rgba(37, 99, 235, 0.25); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           border: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
         }
         .SA_Primary_Btn:hover { transform: translateY(-3px); box-shadow: 0 25px 50px rgba(37, 99, 235, 0.35); }
 
-        .SA_Hero_Img { flex: 1; position: relative; display: flex; justify-content: center; }
+        .SA_Hero_Img { height:450px; flex: 1; position: relative; display: flex; justify-content: center; }
         .SA_Hero_Img img { 
             width: 100%; 
             max-width: 500px;
@@ -147,12 +147,12 @@ const ServerAdministrationPage = () => {
         
         .SA_Cap_Icon { width: 70px; height: 70px; background: #eff6ff; color: #2563eb; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; transition: 0.4s; }
         .SA_Cap_Card:hover .SA_Cap_Icon { background: rgba(255,255,255,0.1); }
-        .SA_Cap_Card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; color: #0f172a; transition: 0.3s; letter-spacing: -0.01em; }
+        .SA_Cap_Card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 20px; color: #0f172a; transition: 0.3s; letter-spacing: -0.01em;}
         .SA_Cap_Card p { color: #64748b; line-height: 1.7; font-size: 1rem; transition: 0.3s; font-weight: 450; }
 
         /* --- SECTION 3: OUTCOMES --- */
         .SA_Outcome { 
-          padding: 100px 5%; 
+          padding: 50px 5%; 
           display: flex; 
           justify-content: center;
           background: white; 
@@ -182,7 +182,7 @@ const ServerAdministrationPage = () => {
 
         /* --- SECTION 4: APPROACH --- */
         .SA_Flow { 
-          padding: 140px 5%; 
+          padding: 50px 5%; 
           background: #fdfdfd; 
           text-align: center;
           display: flex;
@@ -214,11 +214,11 @@ const ServerAdministrationPage = () => {
           background: #0f172a; color: white; padding: 6px 25px; border-radius: 100px; font-weight: 900; font-size: 0.85rem; letter-spacing: 1px;
         }
         .SA_Step_Icon { color: #2563eb; margin-bottom: 30px; }
-        .SA_Step_H { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.01em; }
+        .SA_Step_H { font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.01em;}
         .SA_Step_P { color: #64748b; font-size: 1rem; line-height: 1.7; font-weight: 450; }
 
         .SA_Trust {
-          padding: 140px 5%; text-align: center; background: #0f172a; color: #fff; position: relative; overflow: hidden;
+          padding: 50px 5%; text-align: center; background: #0f172a; color: #fff; position: relative; overflow: hidden;
           display: flex; justify-content: center;
         }
         .SA_Trust_Inner {
@@ -239,7 +239,7 @@ const ServerAdministrationPage = () => {
             className="SA_Hero_Content"
           >
             <span className="SA_Badge">Infrastructure Lifecycle</span>
-            <h1 className="SA_Hero_H1">ELITE SERVER <br /> MANAGEMENT</h1>
+            <h2 className="SA_Hero_H1 NET_Hero_H1">ELITE SERVER  MANAGEMENT</h2>
             <p className="SA_Tagline">Stabilizing mission-critical environments with precision administration.</p>
             <p className="SA_Hero_P">
               CHN Technologies engineers resilient server frameworks designed for 99.9% availability,
@@ -274,9 +274,9 @@ const ServerAdministrationPage = () => {
       {/* LAYOUT 2 & 3 – SERVICE CONTEXT & CORE CAPABILITIES */}
       <section className="SA_Cap_Section">
         <div className="SA_Cap_Inner">
-          <div style={{ maxWidth: '900px', marginBottom: '100px' }}>
+          <div style={{ marginBottom: '100px' }}>
             <span className="SA_Badge">Technical Authority</span>
-            <h2 className="SA_Hero_H1" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>Engineered for Reliability</h2>
+            <h2 className="NET_Hero_H1">Engineered for Reliability</h2>
             <p className="SA_Hero_P" style={{ fontSize: '1.25rem' }}>
               A single minute of downtime costs an enterprise an average of $5,600. CHN Technologies
               eliminates fragility by implementing standardized, automated, and audited server
@@ -332,7 +332,7 @@ const ServerAdministrationPage = () => {
           </motion.div>
           <div className="SA_Outcome_Content">
             <span className="SA_Badge">Value Delivery</span>
-            <h2 className="SA_Hero_H1" style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)' }}>Strategic Outcomes of Elite Management</h2>
+            <h2 className="NET_Hero_H1">Strategic Outcomes of Elite Management</h2>
 
             <div className="Outcome_List">
               {[
@@ -362,7 +362,7 @@ const ServerAdministrationPage = () => {
       <section className="SA_Flow">
         <div className="SA_Flow_Inner">
           <span className="SA_Badge">Operational Lifecycle</span>
-          <h2 className="SA_Hero_H1" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)' }}>The CHN Execution Framework</h2>
+          <h2 className="NET_Hero_H1">The CHN Execution Framework</h2>
 
           <div className="SA_Flow_Grid">
             {[
@@ -387,22 +387,23 @@ const ServerAdministrationPage = () => {
       </section>
 
       {/* LAYOUT 6 – TRUST & FINAL CTA */}
-      <section className="SA_Trust">
-        <div className="SA_Trust_Inner">
+      <section style={{ padding: '50px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="SA_Hero_H1" style={{ color: '#fff' }}>READY FOR A MORE RELIABLE <br /> SERVER FOUNDATION?</h2>
-            <p className="SA_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
-              Stop reacting to server fires. Start driving enterprise growth with a managed
-              infrastructure built for absolute predictability and performance.
+            <h2 className="NET_Hero_H1 text-white">READY FOR A MORE RELIABLE<br /> SERVER INFRASTRUCTURE?</h2>
+            <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
+              Stop managing servers. Start scaling your business with infrastructure that thinks ahead.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="SA_Primary_Btn">Launch Your Consultation</button>
+                <button className="SA_Primary_Btn">Launch Security Audit</button>
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

@@ -84,7 +84,7 @@ const ApplicationDevelopmentPage = () => {
           width: 100%;
           max-width: 1000px;
         }
-        .AD_Context_H1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 30px; color: #fff; text-transform: uppercase; }
+        .AD_Context_H1 { font-weight: 900; margin-bottom: 30px; color: #fff; text-transform: uppercase; }
         .AD_Context_P { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.8; }
 
         /* --- SECTION 3: CAPABILITIES --- */
@@ -245,7 +245,7 @@ const ApplicationDevelopmentPage = () => {
                 Software Solutions
               </span>
             </div>
-            <h1 className="AD_Hero_H1">APPLICATION DEVELOPMENT SERVICES</h1>
+            <h2 className="AD_Hero_H1 NET_Hero_H1">APPLICATION DEVELOPMENT SERVICES</h2>
             <p className="AD_Tagline">Custom-built applications designed to support business workflows, performance, and scalability.</p>
             <div className="AD_Btn_Group">
               <Link to="/contact">
@@ -267,7 +267,7 @@ const ApplicationDevelopmentPage = () => {
       <section className="AD_Context">
         <div className="AD_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="AD_Context_H1">APPLICATIONS ARE CORE TO BUSINESS OPERATIONS</h2>
+            <h2 className="NET_Hero_H1 AD_Context_H1">APPLICATIONS ARE CORE TO BUSINESS OPERATIONS</h2>
             <p className="AD_Context_P">
               Modern organisations rely on applications to manage processes, data, and customer interactions. Off-the-shelf tools often fail to align fully with unique workflows, leading to inefficiencies and limitations.
               CHN Technologies helps organisations design and develop custom applications that fit operational needs, improve productivity, and support digital transformation initiatives with clarity and control.
@@ -280,7 +280,7 @@ const ApplicationDevelopmentPage = () => {
       <section className="AD_Cap_Section">
         <div className="AD_Cap_Inner">
           <span className="AD_Badge">Core Capabilities</span>
-          <h2 className="AD_Hero_H1" style={{ fontSize: '2.5rem' }}>What Our Application <br /> Development Services Cover</h2>
+          <h2 className="NET_Hero_H1">What Our Application <br /> Development Services Cover</h2>
 
           <div className="AD_Cap_Grid">
             {[
@@ -332,7 +332,7 @@ const ApplicationDevelopmentPage = () => {
           </div>
           <div className="AD_Outcome_Content">
             <span className="AD_Badge">Business Benefits</span>
-            <h2 className="AD_Hero_H1" style={{ fontSize: '2.5rem' }}>Benefits of Structured <br /> Application Development</h2>
+            <h2 className="NET_Hero_H1">Benefits of Structured <br /> Application Development</h2>
 
             <div className="Outcome_List">
               {[
@@ -358,7 +358,7 @@ const ApplicationDevelopmentPage = () => {
       <section className="AD_Flow">
         <div className="AD_Flow_Inner">
           <span className="AD_Badge">Strategic Approach</span>
-          <h2 className="AD_Hero_H1" style={{ fontSize: '2.5rem' }}>How We Build Applications</h2>
+          <h2 className="NET_Hero_H1">How We Build Applications</h2>
 
           <div className="AD_Flow_Grid">
             {[
@@ -385,7 +385,7 @@ const ApplicationDevelopmentPage = () => {
       {/* LAYOUT 6 – TRUST & FINAL CTA */}
       <section className="AD_Trust">
         <div className="AD_Trust_Inner">
-          <h2 className="AD_Hero_H1" style={{ fontSize: '2.5rem', color: '#fff' }}>BUILD APPLICATIONS THAT SUPPORT YOUR BUSINESS</h2>
+          <h2 className="NET_Hero_H1 text-white">BUILD APPLICATIONS THAT SUPPORT YOUR BUSINESS</h2>
           <p className="AD_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
             Connect with CHN Technologies to understand how structured application development solutions
             can support operational efficiency and digital growth.

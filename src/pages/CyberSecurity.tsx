@@ -48,7 +48,7 @@ const CyberSecurityPage = () => {
         @media (max-width: 1024px) {
           .CS_Hero_Inner { flex-direction: column; text-align: center; gap: 40px; }
           .CS_Hero_Content { max-width: 100%; order: 1; }
-          .CS_Hero_Img { order: -1; width: 100%; margin-bottom: 40px; }
+          .CS_Hero_Img { height:450px; order: -1; width: 100%; margin-bottom: 40px; }
           .CS_Hero_Img img { max-width: 380px; border-width: 10px; border-radius: 30px; }
           .CS_Hero_Floating_Card { display: none; }
         }
@@ -59,8 +59,8 @@ const CyberSecurityPage = () => {
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(0, 96, 255, 0.08); padding: 8px 16px; border-radius: 100px;
         }
-        .CS_Hero_H1 { font-weight: 900; line-height: 1.05; color: #0f172a; margin-bottom: 30px; letter-spacing: -0.02em; }
-        .CS_Tagline { font-size: 1.5rem; color: #0060ff; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
+        .CS_Hero_H1 { line-height: 1.05; color: #0f172a; margin-bottom: 30px; letter-spacing: -0.02em; }
+        .CS_Tagline { font-size: 1.2rem; color: #0060ff; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
         .CS_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 45px; font-weight: 450; }
 
         .CS_Btn_Group { display: flex; gap: 20px; align-items: center; }
@@ -68,16 +68,34 @@ const CyberSecurityPage = () => {
         
         .CS_Primary_Btn { 
           background: linear-gradient(135deg, #0060ff 0%, #0044cc 100%); 
-          color: white; padding: 20px 40px; border-radius: 100px; 
+          color: white; padding: 10px 20px; border-radius: 100px; 
           font-weight: 800; font-size: 1.05rem;
           box-shadow: 0 20px 40px rgba(0, 96, 255, 0.25); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           border: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
         }
         .CS_Primary_Btn:hover { transform: translateY(-3px); box-shadow: 0 25px 50px rgba(0, 96, 255, 0.35); }
+.CS_Secondary_Btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+padding: 10px 30px;  border-radius: 9999px; /* Rounded pill shape */
+  border: 2px solid #e2e8f0; /* Light border */
+  background-color: #ffffff;
+  color: #1a2840; /* Deep slate/blue */
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
 
-        .CS_Hero_Img { flex: 1; position: relative; display: flex; justify-content: center; }
+.CS_Secondary_Btn:hover {
+  border-color: #0060ff;
+  color: #0060ff;
+  box-shadow: 0 10px 15px -3px rgba(0, 96, 255, 0.1);
+}
+        .CS_Hero_Img { flex: 1; position: relative; display: flex; justify-content: center; height:450px;}
         .CS_Hero_Img img { 
-            width: 100%; 
+            width: 500px; 
             max-width: 500px;
             border-radius: 60px; 
             border: 20px solid #fff; 
@@ -143,7 +161,7 @@ const CyberSecurityPage = () => {
         
         .CS_Cap_Icon { width: 70px; height: 70px; background: #f0f7ff; color: #0060ff; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; transition: 0.4s; }
         .CS_Cap_Card:hover .CS_Cap_Icon { background: rgba(255,255,255,0.1); }
-        .CS_Cap_Card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; color: #0f172a; transition: 0.3s; letter-spacing: -0.01em; }
+        .CS_Cap_Card h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 20px; color: #0f172a; transition: 0.3s; letter-spacing: -0.01em; }
         .CS_Cap_Card p { color: #64748b; line-height: 1.7; font-size: 1rem; transition: 0.3s; font-weight: 450; }
 
         /* --- SECTION 3: OUTCOMES --- */
@@ -200,7 +218,8 @@ const CyberSecurityPage = () => {
         @media (min-width: 1024px) { .CS_Flow_Grid { grid-template-columns: repeat(4, 1fr); } }
         
         .CS_Step_Card {
-          background: white; border-radius: 30px; padding: 60px 40px; position: relative;
+           background: white; border-radius: 30px;           padding: 60px 30px 40px;
+ position: relative;
           box-shadow: 0 20px 50px rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.03); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
           text-align: left;
         }
@@ -210,11 +229,11 @@ const CyberSecurityPage = () => {
           background: #0f172a; color: white; padding: 6px 25px; border-radius: 100px; font-weight: 900; font-size: 0.85rem; letter-spacing: 1px;
         }
         .CS_Step_Icon { color: #0060ff; margin-bottom: 30px; }
-        .CS_Step_H { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.01em; }
+        .CS_Step_H {  font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.01em; }
         .CS_Step_P { color: #64748b; font-size: 1rem; line-height: 1.7; font-weight: 450; }
 
         .CS_Trust {
-          padding: 140px 5%; text-align: center; background: #002e5b; color: #fff; position: relative; overflow: hidden;
+          padding: 50px 5%; text-align: center; background: #002e5b; color: #fff; position: relative; overflow: hidden;
           display: flex; justify-content: center;
         }
         .CS_Trust_Inner {
@@ -226,36 +245,61 @@ const CyberSecurityPage = () => {
       <section className="CS_Hero">
         <div className="CS_Hero_Inner">
           <motion.div
-            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: "easeOut" }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
             className="CS_Hero_Content"
           >
             <span className="CS_Badge">Digital Fortress</span>
-            <h1 className="CS_Hero_H1">ELITE CYBER <br /> RESILIENCE</h1>
+            <h2 className="CS_Hero_H1 NET_Hero_H1">ELITE CYBER  RESILIENCE</h2>
             <p className="CS_Tagline">Safeguarding enterprise intelligence with proactive defense ecosystems.</p>
             <p className="CS_Hero_P">
               CHN Technologies engineers structured security frameworks that neutralize threats before they materialize.
               Our Zero-Trust architecture ensures your operations remain immutable, compliant, and consistently secure.
             </p>
+
             <div className="CS_Btn_Group">
+              {/* Fixed: Both buttons now share the same motion logic for consistency */}
               <Link to="/contact">
-                <button className="CS_Primary_Btn">Consult a Defender <ShieldCheck size={20} /></button>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="CS_Primary_Btn flex items-center gap-2"
+                >
+                  Consult a Defender <ShieldCheck size={20} />
+                </motion.button>
               </Link>
-              <Link to="/network" className="CS_Secondary_Btn">
-                Network Hardening <Activity size={18} />
+
+              <Link to="/network">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="CS_Secondary_Btn flex items-center gap-2"
+                >
+                  Network Hardening <Activity size={18} className="text-[#0060ff]" />
+                </motion.button>
               </Link>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 30 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 1.2, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="CS_Hero_Img"
           >
-            <img src={heroCyber} alt="Cyber Security Experts" />
+            {/* Ensure heroCyber is imported: import heroCyber from '../assets/...' */}
+            <img src={heroCyber} alt="Cyber Security Infrastructure" />
+
             <motion.div
-              initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.8 }}
               className="CS_Hero_Floating_Card"
             >
-              <div className="bg-blue-50 p-3 rounded-xl"><Lock className="text-[#0060ff]" /></div>
+              <div className="bg-blue-50 p-3 rounded-xl">
+                <Lock className="text-[#0060ff]" />
+              </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Threat Level</p>
                 <p className="text-xl font-black text-slate-800">MITIGATED</p>
@@ -268,9 +312,9 @@ const CyberSecurityPage = () => {
       {/* LAYOUT 2 & 3 – SERVICE CONTEXT & CORE CAPABILITIES */}
       <section className="CS_Cap_Section">
         <div className="CS_Cap_Inner">
-          <div style={{ maxWidth: '900px', marginBottom: '100px' }}>
+          <div style={{ marginBottom: '100px' }}>
             <span className="CS_Badge">Defensive Authority</span>
-            <h2 className="CS_Hero_H1" style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>Built for Absolute Immunity</h2>
+            <h2 className="NET_Hero_H1">Built for Absolute Immunity</h2>
             <p className="CS_Hero_P" style={{ fontSize: '1.25rem' }}>
               In a digital-first economy, proximity to risk is constant. CHN Technologies
               eliminates vulnerability by implementing multi-layered security protocols,
@@ -326,7 +370,7 @@ const CyberSecurityPage = () => {
           </motion.div>
           <div className="CS_Outcome_Content">
             <span className="CS_Badge">Digital Impact</span>
-            <h2 className="CS_Hero_H1" style={{ fontSize: 'clamp(2.2rem, 4vw, 3rem)' }}>Strategic Outcomes of Secure Governance</h2>
+            <h2 className="NET_Hero_H1">Strategic Outcomes of Secure Governance</h2>
 
             <div className="Outcome_List">
               {[
@@ -356,7 +400,7 @@ const CyberSecurityPage = () => {
       <section className="CS_Flow">
         <div className="CS_Flow_Inner">
           <span className="CS_Badge">Security Lifecycle</span>
-          <h2 className="CS_Hero_H1" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.2rem)' }}>The CHN Guardian Framework</h2>
+          <h2 className="NET_Hero_H1">The CHN Guardian Framework</h2>
 
           <div className="CS_Flow_Grid">
             {[
@@ -381,11 +425,14 @@ const CyberSecurityPage = () => {
       </section>
 
       {/* LAYOUT 6 – TRUST & FINAL CTA */}
-      <section className="CS_Trust">
-        <div className="CS_Trust_Inner">
+
+
+      <section style={{ padding: '50px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="CS_Hero_H1" style={{ color: '#fff' }}>IS YOUR ENTERPRISE <br /> TRULY SECURE?</h2>
-            <p className="CS_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
+            <h2 className="NET_Hero_H1 text-white">IS YOUR ENTERPRISE<br /> TRULY SECURE?</h2>
+            <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Don't wait for a breach to discover your weaknesses. Secure your future
               with a structured defense ecosystem built by experts.
             </p>

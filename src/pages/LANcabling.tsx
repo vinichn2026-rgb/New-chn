@@ -56,7 +56,7 @@ const LanCablingSurveillancePage = () => {
       
         margin-bottom: 25px;
          }
-        .LCS_Tagline { font-size: 1.4rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
+        .LCS_Tagline { font-size: 1.2rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .LCS_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
         .LCS_Btn_Group { display: flex; gap: 20px; }
@@ -130,7 +130,7 @@ const LanCablingSurveillancePage = () => {
         
         .LCS_Cap_Icon { width: 60px; height: 60px; background: #eff6ff; color: #3b82f6; border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; transition: 0.3s; }
         .LCS_Cap_Card:hover .LCS_Cap_Icon { background: rgba(255,255,255,0.1); }
-        .LCS_Cap_Card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; color: #22314f; transition: 0.3s; }
+        .LCS_Cap_Card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 15px; color: #22314f; transition: 0.3s; }
         .LCS_Cap_Card p { color: #64748b; line-height: 1.6; font-size: 0.95rem; transition: 0.3s; }
 
         /* --- SECTION 3: OUTCOMES --- */
@@ -165,7 +165,7 @@ const LanCablingSurveillancePage = () => {
 
         /* --- SECTION 4: APPROACH --- */
         .LCS_Flow { 
-          padding: 140px 5%; 
+          padding: 50px 5%; 
           background: #fdfdfd; 
           text-align: center;
           display: flex;
@@ -189,16 +189,33 @@ const LanCablingSurveillancePage = () => {
         .LCS_Step_Card {
           background: white; border-radius: 20px; padding: 50px 30px; position: relative;
           box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; transition: 0.4s;
-          text-align: left;
+          display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items horizontally */
+  text-align: center;    /* Centers text */
         }
+          
+
+.LCS_Step_Icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #0060ff; /* Matches your brand blue */
+}
         .LCS_Step_Card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
         .LCS_Step_Num { 
           position: absolute; top: -15px; left: 30px;
           background: #22314f; color: white; padding: 5px 20px; border-radius: 50px; font-weight: 900; font-size: 0.8rem;
         }
-        .LCS_Step_Icon { color: #3b82f6; margin-bottom: 20px; }
-        .LCS_Step_H { font-size: 1.3rem; font-weight: 800; color: #22314f; margin-bottom: 12px; }
-        .LCS_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
+        // .LCS_Step_Icon { color: #3b82f6; margin-bottom: 20px;}
+        .LCS_Step_H {
+         font-size: 1.25rem; font-weight: 800; 
+         color: #22314f;
+        //  text-transform:uppercase;
+         text-align:center;
+          margin-bottom: 12px; }
+        .LCS_Step_P { color: #64748b; text-align:center; font-size: 0.95rem; line-height: 1.6; }
 
         .LCS_Trust {
           padding: 140px 5%; text-align: center; background: #22314f; color: #fff;
@@ -212,6 +229,12 @@ const LanCablingSurveillancePage = () => {
           .LCS_Hero, .LCS_Outcome { flex-direction: column; text-align: center; }
           .LCS_Btn_Group { justify-content: center; }
         }
+
+        .LAN_Badge{
+         color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
+          font-size: 0.85rem; margin-bottom: 20px; display: inline-block;
+          background: rgba(59, 130, 246, 0.06); padding: 6px 16px; border-radius: 100px;
+        }
       `}</style>
 
       {/* LAYOUT 1 – PAGE HERO */}
@@ -222,11 +245,10 @@ const LanCablingSurveillancePage = () => {
             className="LCS_Hero_Content"
           >
 
-            <div className="flex items-center gap-3 mb-6">
-              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
-                Physical Infrastructure         </span>
+            <div className="LAN_Badge">
+              Physical Infrastructure
             </div>
-            <h1 className="LCS_Hero_H1">LAN CABLING & SURVEILLANCE</h1>
+            <h2 className="LCS_Hero_H1 ">LAN CABLING & SURVEILLANCE</h2>
             <p className="LCS_Tagline">Structured cabling and intelligent surveillance systems built for secure and reliable operations.</p>
             <p className="LCS_Hero_P">
               CHN Technologies delivers professional LAN cabling and surveillance solutions that support stable
@@ -253,7 +275,7 @@ const LanCablingSurveillancePage = () => {
       <section className="LCS_Cap_Section">
         <div className="LCS_Cap_Inner">
           <div style={{ maxWidth: '800px', margin: '0 auto 60px' }}>
-            <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>Physical Infrastructure Plays a Critical Role</h2>
+            <h2 className="NET_Hero_H1">Physical Infrastructure Plays a Critical Role</h2>
             <p className="LCS_Hero_P">
               Network performance and security depend heavily on physical infrastructure quality.
               Poor cabling and unstructured surveillance lead to connectivity issues and security blind spots.
@@ -262,7 +284,7 @@ const LanCablingSurveillancePage = () => {
           </div>
 
           <span className="LCS_Badge">Core Capabilities</span>
-          <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>What Our Services Cover</h2>
+          <h2 className="NET_Hero_H1">What Our Services Cover</h2>
 
           <div className="LCS_Cap_Grid">
             {[
@@ -309,7 +331,7 @@ const LanCablingSurveillancePage = () => {
           </div>
           <div className="LCS_Outcome_Content">
             <span className="LCS_Badge">Operational Outcomes</span>
-            <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>Benefits of Structured Physical Infrastructure</h2>
+            <h2 className="NET_Hero_H1">Benefits of Structured Physical Infrastructure</h2>
 
             <div className="Outcome_List">
               {[
@@ -335,7 +357,7 @@ const LanCablingSurveillancePage = () => {
       <section className="LCS_Flow">
         <div className="LCS_Flow_Inner">
           <span className="LCS_Badge">Delivery Model</span>
-          <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem' }}>Our Delivery Approach</h2>
+          <h2 className="NET_Hero_H1">Our Delivery Approach</h2>
 
           <div className="LCS_Flow_Grid">
             {[
@@ -346,12 +368,20 @@ const LanCablingSurveillancePage = () => {
             ].map((step, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
-                className="LCS_Step_Card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                // Added: flex flex-col items-center text-center
+                className="LCS_Step_Card flex flex-col items-center text-center"
               >
                 <div className="LCS_Step_Num">STAGE {step.num}</div>
-                <div className="LCS_Step_Icon">{step.icon}</div>
-                <h3 className="LCS_Step_H">{step.h}</h3>
+
+                {/* Added: flex justify-center items-center to the icon wrapper */}
+                <div className="LCS_Step_Icon flex justify-center items-center w-full mb-4">
+                  {step.icon}
+                </div>
+
+                <h3 className="LCS_Step_H font-bold text-[#1a2840]">{step.h}</h3>
                 <p className="LCS_Step_P">{step.p}</p>
               </motion.div>
             ))}
@@ -360,18 +390,24 @@ const LanCablingSurveillancePage = () => {
       </section>
 
       {/* LAYOUT 6 – TRUST & FINAL CTA */}
-      <section className="LCS_Trust">
-        <div className="LCS_Trust_Inner">
-          <h2 className="LCS_Hero_H1" style={{ fontSize: '2.5rem', color: '#fff' }}>BUILD A STRONG PHYSICAL FOUNDATION</h2>
-          <p className="LCS_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
-            Connect with CHN Technologies to understand how structured cabling and surveillance solutions
-            can support secure, reliable, and scalable business environments. Built for order, visibility, and control.
-          </p>
-          <Link to="/contact">
-            <button className="LCS_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Request a Consultation</button>
-          </Link>
+      <section style={{ padding: '50px 5%', textAlign: 'center', background: '#0f172a', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
+            <h2 className="NET_Hero_H1 text-white">BUILD A STRONG PHYSICAL FOUNDATION</h2>
+            <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
+              Connect with CHN Technologies to understand how structured cabling and surveillance solutions
+              can support secure, reliable, and scalable business environments. Built for order, visibility, and control.
+            </p>
+            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+              <Link to="/contact">
+                <button className="LCS_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Request a Consultation</button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
+
     </div>
   );
 };

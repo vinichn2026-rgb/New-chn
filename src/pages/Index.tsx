@@ -231,7 +231,7 @@ const Index = () => {
         <div className="relative z-10 h-full flex items-center">
           <div className="hero mx-auto px-4">
             <motion.p key={`sub-${currentSlide}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-sm md:text-base uppercase text-white/80 mb-4">
+              className="text-sm md:text-base uppercase font-bold text-white/80 mb-4">
               {slides[currentSlide].subtitle}
             </motion.p>
             <motion.h1 key={`title-${currentSlide}`} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
@@ -264,8 +264,8 @@ const Index = () => {
       <section className="flex flex-col justify-center bg-[#fafafa] scroll-mt-[90px] py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
-            <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">OPERATIONAL CAPACITY</span>
-            <h2 className="font-black text-[#002e5b] uppercase tracking-tight">DESIGNED TO SUPPORT SYSTEMS</h2>
+            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block ">OPERATIONAL CAPACITY</span>
+            <h2 className="NET_Hero_H1 text-[#002e5b] uppercase">DESIGNED TO SUPPORT SYSTEMS</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
             {services.map((service, i) => (
@@ -304,8 +304,8 @@ const Index = () => {
             </div> */}
           </div>
           <div>
-            <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">MEASURABLE OUTCOMES</span>
-            <h2 className="font-black text-[#002e5b] mb-6 uppercase tracking-tight">OUTCOMES THAT MATTER</h2>
+            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">MEASURABLE OUTCOMES</span>
+            <h2 className="NET_Hero_H1 text-[#002e5b] mb-6 uppercase">OUTCOMES THAT MATTER</h2>
             <p className="text-lg text-blue-600 italic mb-6">Delivering measurable outcomes that improve stability and reliability.</p>
             <p className="text-gray-500 leading-relaxed mb-8">We engineer resilient environments that evolve alongside your business, ensuring sustainable impact.</p>
             <div className="bg-gray-100 h-12 rounded-lg overflow-hidden">
@@ -317,24 +317,17 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ----------- STATS ----------- */}
-      {/* <section className="min-h-screen snap-start flex flex-col justify-center bg-[#fafafa]">
-        <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
-          <CounterCard value={50} suffix="+" label="Clients Served" />
-          <CounterCard value={100} suffix="+" label="Projects Completed" />
-          <CounterCard value={12} suffix="+" label="Services Offered" />
-          <CounterCard value={5} suffix="+" label="Global Locations" />
-        </div>
-      </section> */}
 
-      {/* ----------- CAPABILITIES (Auto-Scroll) ----------- */}
+
+      {/* ----------- CAPABILITIES (Stabilized Marquee) ----------- */}
       <section className="flex flex-col justify-center bg-[#22314f] py-20 overflow-hidden">
         <style>{`
           .CHN_Marquee_Track {
             display: flex;
             gap: 24px;
-            animation: CHN_Marquee_Scroll 80s linear infinite;
+            animation: CHN_Marquee_Scroll 50s linear infinite;
             width: fit-content;
+            will-change: transform;
           }
           .CHN_Marquee_Track:hover { animation-play-state: paused; }
           @keyframes CHN_Marquee_Scroll {
@@ -343,36 +336,37 @@ const Index = () => {
           }
         `}</style>
         <div className="text-center mb-16 px-4">
-          <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">INNOVATION STREAM</span>
-          <h2 className="font-black text-white uppercase tracking-tight">CAPABILITIES <span className="text-[#0060ff]">OVERVIEW</span></h2>
+          <span className="text-[#ffffff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">INNOVATION STREAM</span>
+          <h2 className="NET_Hero_H1 text-white uppercase">
+            CAPABILITIES <span className="text-[#0060ff]">OVERVIEW</span>
+          </h2>
         </div>
         <div className="flex overflow-hidden">
           <div className="CHN_Marquee_Track">
             {extendedFeed.map((item, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 w-[300px] bg-white rounded-2xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer flex flex-col"
+                className="flex-shrink-0 w-[300px] bg-white rounded-2xl overflow-hidden shadow-lg border border-white/10 group cursor-pointer flex flex-col transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
               >
-                {/* Ken Burns Container */}
-                <div className="relative h-48 overflow-hidden">
+                {/* Image Container */}
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform [transition-duration:3000ms] ease-out group-hover:scale-125 group-hover:translate-x-2 group-hover:translate-y-1"
+                    className="w-full h-full object-cover transition-transform [transition-duration:3000ms] ease-out group-hover:scale-110"
                   />
-                  {/* Subtle overlay for contrast */}
                   <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 </div>
 
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-[#22314f] mb-2 group-hover:text-[#0060ff] transition-colors duration-300">
+                  <h3 className="text-lg font-bold text-[#22314f] mb-2 group-hover:text-[#0060ff] transition-colors duration-300 tracking-tight">
                     {item.title}
                   </h3>
                   <p className="text-gray-500 text-sm line-clamp-3 leading-relaxed mb-6">
                     {item.desc}
                   </p>
-                  {/* Animated accent line pinned to absolute bottom baseline */}
-                  <div className="mt-auto h-[2px] w-0 bg-[#0060ff]/60 group-hover:w-16 transition-all duration-700 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)]" />
+                  {/* Decorative accent line */}
+                  <div className="mt-auto h-[2.5px] w-0 bg-[#0060ff] group-hover:w-16 transition-all duration-700 [transition-timing-function:cubic-bezier(0.25,1,0.5,1)]" />
                 </div>
               </div>
             ))}
@@ -384,8 +378,8 @@ const Index = () => {
       <section className="flex flex-col justify-center bg-white py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">OPERATIONAL EXCELLENCE</span>
-            <h2 className="font-black text-[#002e5b] uppercase tracking-tight">A STRUCTURED DELIVERY MODEL</h2>
+            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">OPERATIONAL EXCELLENCE</span>
+            <h2 className="NET_Hero_H1 text-[#002e5b] uppercase">A STRUCTURED DELIVERY MODEL</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {deliveryPhases.map((phase, i) => {
@@ -411,7 +405,7 @@ const Index = () => {
                     <h3 className="text-2xl font-bold text-gray-900 group-hover:text-white transition-colors duration-300 mb-4">
                       {phase.heading}
                     </h3>
-                    <p className="text-base text-gray-600 leading-relaxed group-hover:text-blue-50/80 transition-colors duration-300 uppercase text-xs font-bold tracking-widest">
+                    <p className="text-base text-gray-600 leading-relaxed group-hover:text-blue-50/80 transition-colors duration-300  text-xs font-medium tracking-widest">
                       {phase.description}
                     </p>
                   </div>
@@ -457,10 +451,10 @@ const Index = () => {
 
         {/* Header Section */}
         <div className="w-full px-6 mb-16 text-center">
-          <span className="text-[#0060ff] text-xs font-bold tracking-[0.25em] uppercase mb-4 block">
+          <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">
             GLOBAL PARTNER NETWORK
           </span>
-          <h2 className="font-black text-[#002e5b] uppercase tracking-tight text-3xl md:text-4xl">
+          <h2 className="NET_Hero_H1 text-[#002e5b] uppercase">
             OUR PARTNERS
           </h2>
         </div>
@@ -488,15 +482,12 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* ----------- TESTIMONIALS ----------- */}
-      <section className="py-20 flex flex-col justify-center bg-[#fafafa]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        {/* testimonials */}
+        <div className="max-w-4xl mx-auto px-4 py-8 text-center">
           <Quote className="w-16 h-16 text-[#0060ff] mx-auto mb-8 opacity-20" />
           <AnimatePresence mode="wait">
             <motion.p key={activeTestimonial} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
-              className="text-2xl md:text-3xl text-navy font-medium italic leading-relaxed mb-10">
+              className="md:text-2xl text-2xl text-navy font-medium  leading-relaxed mb-10">
               "{testimonials[activeTestimonial].quote}"
             </motion.p>
           </AnimatePresence>
@@ -510,6 +501,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+
 
       {/* ----------- FOOTER ----------- */}
       <section className="snap-end">

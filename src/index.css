@@ -109,12 +109,17 @@ font-family: Figtree, Helvetica, sans-serif;
     letter-spacing: -0.02em;
   }
 
-  h2 {
-    @apply text-navy;
-    font-size: clamp(1.875rem, 4vw, 2.75rem);
-    font-weight: 700;
+  h2, .NET_Hero_H1 {
+    @apply font-extrabold tracking-tight text-3xl md:text-4xl;
     line-height: 1.2;
-    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply text-navy mb-6;
+  }
+
+  .NET_Hero_H1 {
+    @apply mb-[25px];
   }
 
   h3 {
