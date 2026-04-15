@@ -164,7 +164,7 @@ const SiteNavbar = () => {
             </Link>
           </div>
 
-          <ul 
+          <ul
             ref={navRef}
             className="hidden lg:flex flex-none items-center justify-center lg:gap-4 xl:gap-8 m-0 p-0 list-none font-sans h-full relative"
           >
@@ -211,7 +211,7 @@ const SiteNavbar = () => {
                       >
                         {item.name === "What We Do" ? (
                           /* VERTICAL DOWNWARD ACCORDION DROPDOWN */
-                          <div 
+                          <div
                             className="bg-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.35)] border-t-[4px] border-blue-600 rounded-2xl border border-slate-200 flex flex-col transition-all duration-300 overflow-hidden"
                             style={{ width: "320px" }}
                             onMouseLeave={() => setActiveCluster(null)}
@@ -220,9 +220,9 @@ const SiteNavbar = () => {
                               {[...item.children[0].children, item.children[1]].map((cluster: any) => {
                                 const isExpanded = activeCluster === cluster.name;
                                 const clusterChildren = cluster.name === "Consulting" ? cluster.children : (cluster.children || []);
-                                
+
                                 return (
-                                  <div 
+                                  <div
                                     key={cluster.name}
                                     onMouseEnter={() => setActiveCluster(cluster.name)}
                                     className="flex flex-col"
@@ -249,7 +249,7 @@ const SiteNavbar = () => {
                                               const isActive = location.pathname === link.link;
                                               return (
                                                 <li key={link.name}>
-                                                  <Link 
+                                                  <Link
                                                     to={link.link}
                                                     onClick={() => setIsMobileOpen(false)}
                                                     className={`group/link flex items-center justify-between px-4 py-2.5 rounded-lg transition-all duration-200 no-underline ${isActive ? "bg-white shadow-sm text-blue-600" : "text-slate-500 hover:text-blue-600 hover:bg-white hover:shadow-sm"}`}
@@ -268,10 +268,10 @@ const SiteNavbar = () => {
                                 );
                               })}
                             </div>
-                            
-                            <div className="bg-blue-50/50 p-4 border-t border-slate-100">
-                               <p className="text-[11px] text-slate-400 font-medium text-center m-0 italic">"Premium tech solutions for your business"</p>
-                            </div>
+
+                            {/* <div className="bg-blue-50/50 p-4 border-t border-slate-100">
+                              <p className="text-[11px] text-slate-400 font-medium text-center m-0 italic">"Premium tech solutions for your business"</p>
+                            </div> */}
                           </div>
                         ) : (
                           /* STANDARD DROPDOWN */
@@ -360,7 +360,7 @@ const SiteNavbar = () => {
                               </button>
                             )}
                           </div>
-                          
+
                           <AnimatePresence>
                             {hasDropdown && isExpanded && (
                               <motion.div
@@ -392,7 +392,7 @@ const SiteNavbar = () => {
                                             </button>
                                           )}
                                         </div>
-                                        
+
                                         {drop.children && dropExpanded && (
                                           <ul className="flex flex-col gap-3 pl-4 mt-4 list-none border-l border-slate-200">
                                             {drop.children.map((subitem: any) => {
@@ -410,9 +410,9 @@ const SiteNavbar = () => {
                                                     <ul className="flex flex-col gap-2 pl-4 mt-2 list-none border-l border-slate-100">
                                                       {subitem.children.map((leaf: any) => (
                                                         <li key={leaf.name}>
-                                                          <Link 
-                                                            to={leaf.link} 
-                                                            className={`text-[14px] font-medium no-underline block py-1 ${location.pathname === leaf.link ? "text-blue-600 font-bold" : "text-slate-400"}`} 
+                                                          <Link
+                                                            to={leaf.link}
+                                                            className={`text-[14px] font-medium no-underline block py-1 ${location.pathname === leaf.link ? "text-blue-600 font-bold" : "text-slate-400"}`}
                                                             onClick={() => closeMobileMenu()}
                                                           >
                                                             {leaf.name}
@@ -438,7 +438,7 @@ const SiteNavbar = () => {
                     })}
                   </ul>
                 </div>
-                
+
                 <div className="pt-8 mt-10 border-t border-slate-100">
                   <span className="text-[12px] font-extrabold text-blue-600 uppercase tracking-widest block mb-6">Connect With Us</span>
                   <div className="flex gap-4">
@@ -449,11 +449,11 @@ const SiteNavbar = () => {
                       { icon: <FaInstagram size={20} />, link: "https://www.instagram.com/chntech_india/" },
                       { icon: <FaYoutube size={20} />, link: "https://www.youtube.com/channel/UCX3GW4PtNMIOogEMdyhB_mw" }
                     ].map((social, idx) => (
-                      <a 
-                        key={idx} 
-                        href={social.link} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                      <a
+                        key={idx}
+                        href={social.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-[#1a2b4b] hover:bg-blue-600 hover:text-white transition-all"
                       >
                         {social.icon}
