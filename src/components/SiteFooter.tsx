@@ -92,11 +92,11 @@ const SiteFooter = () => {
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex gap-3">
             {[
-              { Icon: FaFacebookF, href: "#" },
+              { Icon: FaFacebookF, href: "https://www.facebook.com/people/CHN-Technologies/100068692698660/" },
               { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/chn-technologies/" },
               { Icon: FaXTwitter, href: "https://x.com/chn_india70840" },
-              { Icon: FaInstagram, href: "#" },
-              { Icon: FaYoutube, href: "#" }
+              { Icon: FaInstagram, href: "https://www.instagram.com/chntech_india/" },
+              { Icon: FaYoutube, href: "https://www.youtube.com/channel/UCX3GW4PtNMIOogEMdyhB_mw" }
             ].map((item, i) => (
               <a
                 key={i}
