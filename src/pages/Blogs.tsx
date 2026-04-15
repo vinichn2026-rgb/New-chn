@@ -54,7 +54,7 @@ const CHNInsights = () => {
       id: 4,
       image: "/images/blog-collaboration.jpg",
       tag: "Workforce",
-      title: "Workforce & global compliance standards",
+      title: "Workforce & Global Compliance Standards",
       desc: "Understanding workforce structures, payroll practices, and statutory compliance for HR leaders managing complex multinational operations and regulatory shifts.",
       author: "HR Advisory Lead",
       date: "Sep 12, 2026"
@@ -63,7 +63,7 @@ const CHNInsights = () => {
       id: 5,
       image: "/images/service-consulting.jpg",
       tag: "Strategy",
-      title: "Sustainable strategy and future-fit growth",
+      title: "Sustainable Strategy and Future-Fit Growth",
       desc: "Analysing how business owners, IT decision-makers, and professionals can leverage practical technology strategies to drive sustainable organisational expansion.",
       author: "Operations Lead",
       date: "Aug 30, 2026"
@@ -72,7 +72,7 @@ const CHNInsights = () => {
       id: 6,
       image: "/images/blog-featured.jpg",
       tag: "Quality",
-      title: "Knowledge over frequency: An editorial",
+      title: "Knowledge Over Frequency: An Editorial",
       desc: "Why we prioritise relevance and clarity over volume, ensuring every piece of content remains useful and actionable over long-term strategic horizons.",
       author: "Editorial Board",
       date: "Aug 22, 2026"
@@ -135,7 +135,7 @@ const CHNInsights = () => {
           color: #3b82f6;
           font-weight: 800;
           letter-spacing: 3px;
-          text-transform: uppercase;
+          text-transform: capitalize;
           font-size: 0.85rem;
           margin-bottom: 25px;
         }
@@ -145,7 +145,7 @@ const CHNInsights = () => {
           color: #ffffff;
           line-height: 1.1;
           margin-bottom: 35px;
-          text-transform: uppercase;
+          text-transform: capitalize;
           font-size: clamp(2.5rem, 5vw, 4.5rem);
         }
 
@@ -216,7 +216,7 @@ const CHNInsights = () => {
           border: 1px solid #f1f5f9;
           background: #fff;
           color: #1a2b4b;
-          text-transform: uppercase;
+          text-transform: capitalize;
           letter-spacing: 1px;
           cursor: pointer;
         }
@@ -294,7 +294,7 @@ const CHNInsights = () => {
         .BLOG_Card_Content { padding: 0 20px 25px; }
         .BLOG_Card_Tag { 
           color: #3b82f6; font-weight: 800; font-size: 0.75rem; 
-          text-transform: uppercase; margin-bottom: 12px; display: block; letter-spacing: 1px; 
+          text-transform: capitalize; margin-bottom: 12px; display: block; letter-spacing: 1px; 
         }
         .BLOG_Card_H { font-size: 1.5rem; font-weight: 900; color: #1a2b4b; margin-bottom: 15px; line-height: 1.3; }
         .BLOG_Card_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; font-weight: 500; margin-bottom: 25px; }
@@ -313,7 +313,7 @@ const CHNInsights = () => {
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="BLOG_Hero_Bg" />
         <div className="BLOG_Hero_Content">
           <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="BLOG_Badge">Corporate Insights</motion.span>
-          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1 NET_Hero_H1">Knowledge Led <br /> <span className="text-blue-500">Perspectives</span></motion.h2>
+          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1 NET_Hero_H1">knowledge led <br /> <span className="text-blue-500">perspectives</span></motion.h2>
 
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.4 }} className="BLOG_Search_Box">
             <Search size={22} className="text-blue-500 ml-4" />
@@ -362,7 +362,7 @@ const CHNInsights = () => {
               </div>
               <div className="BLOG_Featured_Content">
                 <span className="BLOG_Badge">EDITORIAL FOCUS</span>
-                <h2 className="NET_Hero_H1 BLOG_Featured_H">INSIGHTS FROM OUR STRATEGIC ADVISORS</h2>
+                <h2 className="NET_Hero_H1 BLOG_Featured_H capitalize">insights from our strategic advisors</h2>
                 <p className="text-slate-500 font-medium text-lg leading-relaxed mb-10">
                   Comprehensive perspectives on technology, people, and unified corporate processes
                   drawn from real-world digital flagship engagements.
@@ -437,8 +437,8 @@ const CHNInsights = () => {
       </section>
 
       {/* SECTION 4: CTA */}
-      <section style={{ padding: '100px 5%', textAlign: 'center', background: '#f8fafc' }}>
-        <h2 className="NET_Hero_H1 uppercase" style={{ color: '#1a2b4b' }}>Stay Informed With <span className="text-blue-500">Expert Clarity</span></h2>
+      <section style={{ padding: '50px 5%', textAlign: 'center', background: '#f8fafc' }}>
+        <h2 className="NET_Hero_H1 capitalize" style={{ color: '#1a2b4b' }}>stay informed with <span className="text-blue-500">expert clarity</span></h2>
         <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto mb-12">
           Gain access to refined perspectives that matter to business owners,
           IT decision-makers, and industry professionals.

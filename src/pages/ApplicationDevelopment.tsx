@@ -44,7 +44,7 @@ const ApplicationDevelopmentPage = () => {
 
         .AD_Hero_Content { flex: 1.2; max-width: 650px; }
         .AD_Badge { 
-          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
+          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: capitalize; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
         .AD_Hero_H1 {
@@ -55,7 +55,7 @@ const ApplicationDevelopmentPage = () => {
         .AD_Btn_Group { display: flex; gap: 20px; }
         @media (max-width: 1024px) { .AD_Btn_Group { justify-content: center; } }
         .AD_Primary_Btn { 
-          background: #3b82f6; color: white; padding: 18px 35px; border-radius: 100px; 
+          background: #3b82f6; color: white; padding: 10px 20px; border-radius: 100px; 
           font-weight: 700; box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3); transition: 0.3s;
           border: none; cursor: pointer;
         }
@@ -84,7 +84,7 @@ const ApplicationDevelopmentPage = () => {
           width: 100%;
           max-width: 1000px;
         }
-        .AD_Context_H1 { font-weight: 900; margin-bottom: 30px; color: #fff; text-transform: uppercase; }
+        .AD_Context_H1 { font-weight: 900; margin-bottom: 30px; color: #fff; text-transform: capitalize; }
         .AD_Context_P { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.8; }
 
         /* --- SECTION 3: CAPABILITIES --- */
@@ -221,8 +221,10 @@ const ApplicationDevelopmentPage = () => {
           .AD_Step_Icon svg { width: 30px; height: 30px; }
         }
 
+
+        
         .AD_Trust {
-          padding: 120px 5%; text-align: center; background: #22314f; color: #fff;
+          padding: 50px 5%; text-align: center; background: #22314f; color: #fff;
           display: flex; justify-content: center;
         }
         .AD_Trust_Inner { max-width: 900px; width: 100%; }
@@ -245,7 +247,7 @@ const ApplicationDevelopmentPage = () => {
                 Software Solutions
               </span>
             </div>
-            <h2 className="AD_Hero_H1 NET_Hero_H1">APPLICATION DEVELOPMENT SERVICES</h2>
+            <h2 className="AD_Hero_H1 NET_Hero_H1 capitalize">application development services</h2>
             <p className="AD_Tagline">Custom-built applications designed to support business workflows, performance, and scalability.</p>
             <div className="AD_Btn_Group">
               <Link to="/contact">
@@ -267,7 +269,7 @@ const ApplicationDevelopmentPage = () => {
       <section className="AD_Context">
         <div className="AD_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 AD_Context_H1">APPLICATIONS ARE CORE TO BUSINESS OPERATIONS</h2>
+            <h2 className="NET_Hero_H1 AD_Context_H1 capitalize">applications are core to business operations</h2>
             <p className="AD_Context_P">
               Modern organisations rely on applications to manage processes, data, and customer interactions. Off-the-shelf tools often fail to align fully with unique workflows, leading to inefficiencies and limitations.
               CHN Technologies helps organisations design and develop custom applications that fit operational needs, improve productivity, and support digital transformation initiatives with clarity and control.
@@ -280,7 +282,7 @@ const ApplicationDevelopmentPage = () => {
       <section className="AD_Cap_Section">
         <div className="AD_Cap_Inner">
           <span className="AD_Badge">Core Capabilities</span>
-          <h2 className="NET_Hero_H1">What Our Application <br /> Development Services Cover</h2>
+          <h2 className="NET_Hero_H1 capitalize">what our application <br /> development services cover</h2>
 
           <div className="AD_Cap_Grid">
             {[
@@ -332,7 +334,7 @@ const ApplicationDevelopmentPage = () => {
           </div>
           <div className="AD_Outcome_Content">
             <span className="AD_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1">Benefits of Structured <br /> Application Development</h2>
+            <h2 className="NET_Hero_H1 capitalize">benefits of structured <br /> application development</h2>
 
             <div className="Outcome_List">
               {[
@@ -358,7 +360,7 @@ const ApplicationDevelopmentPage = () => {
       <section className="AD_Flow">
         <div className="AD_Flow_Inner">
           <span className="AD_Badge">Strategic Approach</span>
-          <h2 className="NET_Hero_H1">How We Build Applications</h2>
+          <h2 className="NET_Hero_H1 capitalize">how we build applications</h2>
 
           <div className="AD_Flow_Grid">
             {[
@@ -385,7 +387,7 @@ const ApplicationDevelopmentPage = () => {
       {/* LAYOUT 6 – TRUST & FINAL CTA */}
       <section className="AD_Trust">
         <div className="AD_Trust_Inner">
-          <h2 className="NET_Hero_H1 text-white">BUILD APPLICATIONS THAT SUPPORT YOUR BUSINESS</h2>
+          <h2 className="NET_Hero_H1 text-white capitalize">build applications that support your business</h2>
           <p className="AD_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
             Connect with CHN Technologies to understand how structured application development solutions
             can support operational efficiency and digital growth.

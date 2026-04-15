@@ -53,7 +53,7 @@ const EndUserComputingPage = () => {
 
         .EUC_Hero_Content { flex: 1.2; max-width: 700px; }
         .EUC_Badge { 
-          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; 
+          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: capitalize; 
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
@@ -178,7 +178,7 @@ const EndUserComputingPage = () => {
             display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); 
             margin-top: 4px;
          }
-         .Outcome_Title { font-weight: 800; color: #0f172a; display: block; font-size: 1.35rem; margin-bottom: 8px; letter-spacing: -0.01em; }
+         .Outcome_Title { font-weight: 800; color: #0f172a; display: block; font-size: 1.3rem; margin-bottom: 8px; letter-spacing: -0.01em; }
          .Outcome_Desc { color: #64748b; font-size: 1.1rem; line-height: 1.7; font-weight: 450; margin: 0; }
 
         /* --- SECTION 4: APPROACH --- */
@@ -215,7 +215,7 @@ const EndUserComputingPage = () => {
         }
         .EUC_Step_Icon { color: #2563eb; margin-bottom: 30px; }
         .EUC_Step_H { font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.01em; 
-        // text-transform:uppercase;
+        // text-transform: capitalize;
         }
         .EUC_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.7; font-weight: 450; }
 
@@ -238,7 +238,7 @@ const EndUserComputingPage = () => {
                         className="EUC_Hero_Content"
                     >
                         <span className="EUC_Badge">Cognitive Workspace</span>
-                        <h2 className="EUC_Hero_H1 NET_Hero_H1">SEAMLESS USER COMPUTING</h2>
+                        <h2 className="EUC_Hero_H1 NET_Hero_H1 capitalize">seamless user computing</h2>
                         <p className="EUC_Tagline">Frictionless productivity through elite endpoint orchestration.</p>
                         <p className="EUC_Hero_P">
                             CHN Technologies delivers structured end-user computing services that ensure your workforce
@@ -275,7 +275,7 @@ const EndUserComputingPage = () => {
                 <div className="EUC_Cap_Inner">
                     <div style={{ marginBottom: '100px' }}>
                         <span className="EUC_Badge">Operational Freedom</span>
-                        <h2 className="NET_Hero_H1">Modernizing the Human-System Interface</h2>
+                        <h2 className="NET_Hero_H1 capitalize">modernizing the human-system interface</h2>
                         <p className="EUC_Hero_P" style={{ fontSize: '1.25rem' }}>
                             The bottleneck of enterprise growth is often the endpoint. CHN Technologies
                             standardizes the user experience, eliminating technical debt and support
@@ -331,7 +331,7 @@ const EndUserComputingPage = () => {
                     </motion.div>
                     <div className="EUC_Outcome_Content">
                         <span className="EUC_Badge">Workforce Impact</span>
-                        <h2 className="NET_Hero_H1">Strategic Outcomes of Elite Endpoint Management</h2>
+                        <h2 className="NET_Hero_H1 capitalize">strategic outcomes of elite endpoint management</h2>
 
                         <div className="Outcome_List">
                             {[
@@ -361,7 +361,7 @@ const EndUserComputingPage = () => {
             <section className="EUC_Flow">
                 <div className="EUC_Flow_Inner">
                     <span className="EUC_Badge">Transformation Lifecycle</span>
-                    <h2 className="NET_Hero_H1">The CHN Productivity Framework</h2>
+                    <h2 className="NET_Hero_H1 capitalize">the chn productivity framework</h2>
 
                     <div className="EUC_Flow_Grid">
                         {[
@@ -390,7 +390,7 @@ const EndUserComputingPage = () => {
                 <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
                 <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-                        <h2 className="NET_Hero_H1 text-white">READY TO LIBERATE <br /> YOUR WORKFORCE?</h2>
+                        <h2 className="NET_Hero_H1 text-white capitalize">ready to liberate  your workforce?</h2>
                         <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
                             Stop managing devices. Start empowering people. Join the enterprises
                             shifting to elite end-user computing with CHN Technologies.

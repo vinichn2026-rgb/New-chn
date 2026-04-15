@@ -148,7 +148,7 @@ const SubmenuPage = () => {
   if (!page) {
     return (
       <div className="container mx-auto px-4 py-24 text-center">
-        <h2 className="NET_Hero_H1">Page not found</h2>
+        <h2 className="NET_Hero_H1 capitalize">page not found</h2>
         <p className="mt-4 text-slate-600">The requested section does not exist. Please choose a valid service.</p>
         <Link to="/" className="mt-8 inline-block text-blue-600 hover:text-blue-800">Return to homepage</Link>
       </div>
@@ -179,7 +179,7 @@ const SubmenuPage = () => {
             <div className="lg:col-span-2">
               {isThoughtLeadership && (
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} animate="visible" variants={animateFade} custom={0} className="mb-12">
-                  <h2 className="NET_Hero_H1 text-center">CHN's Point of View</h2>
+                  <h2 className="NET_Hero_H1 text-center capitalize">chn's point of view</h2>
                   <p className="text-center text-slate-600 max-w-3xl mx-auto mb-10">A unified outlook across Technology, Consulting and Resources to build resilient, secure, and growth-ready enterprises.</p>
                 </motion.div>
               )}
@@ -234,7 +234,7 @@ const SubmenuPage = () => {
                     {(mdContent || page.content).split("\n\n").map((block, idx) => {
                       const trimmed = block.trim();
                       if (trimmed.startsWith("# ")) {
-                        return <h2 key={idx} className="text-2xl font-bold text-foreground">{trimmed.replace(/^#\s+/, "")}</h2>;
+                        return <h2 key={idx} className="text-2xl font-bold text-foreground capitalize">{trimmed.replace(/^#\s+/, "")}</h2>;
                       }
                       if (trimmed.startsWith("## ")) {
                         return <h3 key={idx} className="text-xl font-semibold text-foreground">{trimmed.replace(/^##\s+/, "")}</h3>;

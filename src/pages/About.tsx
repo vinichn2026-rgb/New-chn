@@ -46,7 +46,7 @@ const AboutPage = () => {
           color: #3b82f6;
           font-weight: 800;
           letter-spacing: 3px;
-          text-transform: uppercase;
+          text-transform: capitalize;
           font-size: 0.85rem;
           margin-bottom: 25px;
           display: block;
@@ -57,8 +57,8 @@ const AboutPage = () => {
           color: #ffffff;
           line-height: 1.1;
           margin-bottom: 25px;
-          text-transform: uppercase;
           font-size: clamp(2.5rem, 5vw, 4.5rem);
+         text-transform: capitalize;
         }
 
         .ABOUT_Hero_P {
@@ -111,7 +111,7 @@ const AboutPage = () => {
         .ABOUT_Feature_Icon { width: 60px; height: 60px; background: #fff; color: #3b82f6; border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.05); min-width: 60px; }
 
         /* --- SECTION 3: FOCUS GRID --- */
-        .ABOUT_Focus { background: #fdfdfd; padding: 100px 5%; }
+        .ABOUT_Focus { background: #fdfdfd; padding: 50px 5%; text-transform: capitalize; }
         .ABOUT_Focus_Grid { 
           display: grid; 
           grid-template_columns: 1fr;
@@ -150,7 +150,7 @@ const AboutPage = () => {
           .ABOUT_Philosophy_Grid { justify-content: center; }
         }
 
-        .ABOUT_Approach_H { line-height: 1.1; margin-bottom: 40px; color: #fff; }
+        .ABOUT_Approach_H { line-height: 1.1; margin-bottom: 40px; color: #fff; text-transform:capitalize;}
         .ABOUT_Philosophy_Grid { display: grid; grid-template_columns: 1fr; gap: 20px; }
         @media (min-width: 640px) { .ABOUT_Philosophy_Grid { grid-template-columns: repeat(2, 1fr); } }
 
@@ -163,7 +163,7 @@ const AboutPage = () => {
 
         /* --- FINAL --- */
         .ABOUT_Final { padding: 100px 5%; text-align: center; background: #fff; }
-        .ABOUT_Final_H { line-height: 1.1; color: #1a2b4b; margin-bottom: 25px; }
+        .ABOUT_Final_H { line-height: 1.1; color: #1a2b4b; margin-bottom: 25px; text-transform:capitalize;}
         .ABOUT_Btn { 
           background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 100px; font-weight: 800; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 15px; transition: 0.3s; box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4); border: none; cursor: pointer;
         }
@@ -174,7 +174,7 @@ const AboutPage = () => {
       <section className="ABOUT_Hero">
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="ABOUT_Hero_Bg" />
         <div className="ABOUT_Hero_Content">
-          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="ABOUT_Hero_H1 NET_Hero_H1">ABOUT CHN <br /> <span className="text-blue-500">TECHNOLOGIES</span></motion.h2>
+          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="ABOUT_Hero_H1 NET_Hero_H1">about chn <br /> <span className="text-blue-500">technologies</span></motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="ABOUT_Hero_P">Technology, consulting, and digital execution work best when built on structure, clarity, and accountability.</motion.p>
 
           <motion.div
@@ -215,7 +215,7 @@ const AboutPage = () => {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="ABOUT_Identity_Content text-left">
             <span className="ABOUT_Badge">OVERVIEW</span>
-            <h2 className="NET_Hero_H1 ABOUT_Identity_H2">Strengthening Operations Through Structured Solutions</h2>
+            <h2 className="NET_Hero_H1 ABOUT_Identity_H2 capitalize">strengthening operations through structured solutions</h2>
             <p className="ABOUT_Identity_P">CHN Technologies helps businesses strengthen operations through structured technology services, digital solutions, and workforce-focused consulting. Our work is centred on creating stable systems and long-term operational confidence.</p>
 
             <div className="ABOUT_Feature_Box">
@@ -233,7 +233,7 @@ const AboutPage = () => {
       <section className="ABOUT_Focus">
         <div className="max-w-7xl mx-auto text-center lg:text-left">
           <span className="ABOUT_Badge">CORE ECOSYSTEM</span>
-          <h2 className="NET_Hero_H1 ABOUT_Identity_H2" style={{ marginBottom: 0 }}>WHAT WE WORK ON</h2>
+          <h2 className="NET_Hero_H1 ABOUT_Identity_H2 capitalize" style={{ marginBottom: 0 }}>what we work on</h2>
         </div>
         <div className="ABOUT_Focus_Grid">
           {[
@@ -267,8 +267,8 @@ const AboutPage = () => {
             className="text-left ABOUT_Approach_Left"
           >
             <span className="ABOUT_Badge">OUR APPROACH</span>
-            <h2 className="NET_Hero_H1 ABOUT_Approach_H">
-              How CHN Approaches <span className="text-white">Business Problems</span>
+            <h2 className="NET_Hero_H1 ABOUT_Approach_H capitalize">
+              how chn approaches <span className="text-white">business problems</span>
             </h2>
             <p className="text-blue-100/50 text-lg font-medium leading-relaxed mb-10 max-w-lg">
               We focus on how systems, processes, and teams interact in real operational environments rather than isolated issues.
@@ -356,7 +356,7 @@ const AboutPage = () => {
       <section className="ABOUT_Final">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 ABOUT_Final_H uppercase">Work with a Partner that Values <br /> Structure and Stability</h2>
+            <h2 className="NET_Hero_H1 ABOUT_Final_H capitalize">work with a partner that values <br /> structure and stability</h2>
             <p className="ABOUT_Identity_P text-center mb-12">Connect with CHN Technologies to learn how our capabilities <br /> can support your organisation's long-term objectives.</p>
             <Link to="/contact">
               <button className="ABOUT_Btn">Contact Our Team <ArrowRight size={24} /></button>

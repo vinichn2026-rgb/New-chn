@@ -127,8 +127,8 @@ const WebDesignDevelopment = () => {
                 Software Solutions
               </span>
             </div>
-            <h2 className="font-black mb-8 leading-[1.1] text-slate-900 tracking-tight NET_Hero_H1">
-              WEB DESIGN & DEVELOPMENT
+            <h2 className="font-black mb-8 leading-[1.1] text-slate-900 tracking-tight NET_Hero_H1 capitalize">
+              web design & development
             </h2>
             <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle">
               <Zap size={24} className="text-blue-600" />
@@ -188,9 +188,9 @@ const WebDesignDevelopment = () => {
         <div className="container mx-auto px-6 relative z-10">
           <motion.div className="max-w-4xl mx-auto text-center" {...fadeIn}>
             <span className="text-blue-400 font-black uppercase tracking-[0.3em] text-sm mb-6 block">Strategic Impact</span>
-            <h2 className="NET_Hero_H1 mb-10 text-slate-200">
-              YOUR WEBSITE IS A BUSINESS ASSET, <br />
-              <span className="text-slate-200">NOT JUST A DIGITAL PRESENCE</span>
+            <h2 className="NET_Hero_H1 mb-10 text-slate-200 capitalize">
+              your website is a business asset, <br />
+              <span className="text-slate-200">not just a digital presence</span>
             </h2>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-10"></div>
             <p className="text-slate-400 leading-relaxed mb-8 subtitle">
@@ -207,7 +207,7 @@ const WebDesignDevelopment = () => {
       <section className="py-20 bg-slate-50 overflow-hidden">
         <div className="container mx-auto px-6 mb-16">
           <div className="text-center">
-            <h2 className="NET_Hero_H1 text-slate-900 uppercase">WHAT OUR WEB SERVICES COVER</h2>
+            <h2 className="NET_Hero_H1 text-slate-900 capitalize">what our web services cover</h2>
             <div className="h-2 w-24 bg-blue-600 mx-auto mt-6 rounded-full" />
           </div>
         </div>
@@ -241,7 +241,7 @@ const WebDesignDevelopment = () => {
           <div className="flex flex-col lg:flex-row gap-20 items-center max-w-7xl mx-auto">
             <motion.div className="lg:w-1/2" {...fadeIn}>
               <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4 block">Measurable Results</span>
-              <h2 className="NET_Hero_H1 mb-10 text-slate-900">BUSINESS BENEFITS OF <br />STRUCTURED WEB SOLUTIONS</h2>
+              <h2 className="NET_Hero_H1 mb-10 text-slate-900 capitalize">business benefits of <br />structured web solutions</h2>
               <div className="grid gap-8">
                 {[
                   { label: "Stronger Brand Credibility", text: "Well-designed websites reinforce professionalism and trust.", icon: <Globe size={20} /> },
@@ -283,7 +283,7 @@ const WebDesignDevelopment = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-24 relative z-10">
             <span className="text-blue-600 font-bold tracking-[0.2em] uppercase mb-4 block text-sm">HOW WE DESIGN & DEVELOP WEB PLATFORMS</span>
-            <h2 className="NET_Hero_H1 text-slate-900">OUR WEB DESIGN & DEVELOPMENT APPROACH</h2>
+            <h2 className="NET_Hero_H1 text-slate-900 capitalize">our web design & development approach</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative max-w-7xl mx-auto text-left">
             {[
@@ -319,14 +319,14 @@ const WebDesignDevelopment = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">BUILD A WEBSITE THAT WORKS FOR YOUR BUSINESS</h2>
+            <h2 className="NET_Hero_H1 text-white capitalize">build a website that works for your business</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured web design and development solutions can support brand growth, user engagement, and business objectives.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
                 <button style={{
-                  background: '#3b82f6', color: '#fff', padding: '20px 40px', borderRadius: '100px',
+                  background: '#3b82f6', color: '#fff', padding: '10px 20px', borderRadius: '100px',
                   fontWeight: 800, fontSize: '1.05rem', border: 'none', cursor: 'pointer',
                   boxShadow: '0 20px 40px rgba(37, 99, 235, 0.25)', transition: 'all 0.4s',
                   display: 'inline-flex', alignItems: 'center', gap: '10px'

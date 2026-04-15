@@ -8,7 +8,7 @@ const SubmenuPage = () => {
   if (!page) {
     return (
       <div className="container mx-auto px-4 py-24 text-center">
-        <h2 className="text-3xl font-bold NET_Hero_H1">Page not found</h2>
+        <h2 className="text-3xl font-bold NET_Hero_H1 capitalize">page not found</h2>
         <p className="mt-4 text-slate-600">The requested section does not exist. Please choose a valid service.</p>
         <Link to="/" className="mt-8 inline-block text-blue-600 hover:text-blue-800">Return to homepage</Link>
       </div>
@@ -17,7 +17,7 @@ const SubmenuPage = () => {
 
   return (
     <div className="container mx-auto px-4 py-24">
-      <h2 className="text-4xl font-bold mb-4 NET_Hero_H1">{page.title}</h2>
+      <h2 className="text-4xl font-bold mb-4 NET_Hero_H1 capitalize">{page.title}</h2>
       <p className="text-slate-700 mb-6">{page.description}</p>
       <p className="text-sm text-slate-500">This is a simplified page view; previous advanced template logic has been removed.</p>
       <div className="mt-8">

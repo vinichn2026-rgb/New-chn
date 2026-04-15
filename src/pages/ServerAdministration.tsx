@@ -56,7 +56,7 @@ const ServerAdministrationPage = () => {
 
         .SA_Hero_Content { flex: 1.2; max-width: 700px; }
         .SA_Badge { 
-          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; 
+          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: capitalize; 
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
@@ -99,7 +99,7 @@ const ServerAdministrationPage = () => {
 
         /* --- SECTION 2: CAPABILITIES --- */
         .SA_Cap_Section { 
-          padding: 100px 5%; 
+          padding: 50px 5%; 
           background: #f8fafc; 
           text-align: left;
           display: flex;
@@ -239,7 +239,7 @@ const ServerAdministrationPage = () => {
             className="SA_Hero_Content"
           >
             <span className="SA_Badge">Infrastructure Lifecycle</span>
-            <h2 className="SA_Hero_H1 NET_Hero_H1">ELITE SERVER  MANAGEMENT</h2>
+            <h2 className="SA_Hero_H1 NET_Hero_H1 capitalize">elite server  management</h2>
             <p className="SA_Tagline">Stabilizing mission-critical environments with precision administration.</p>
             <p className="SA_Hero_P">
               CHN Technologies engineers resilient server frameworks designed for 99.9% availability,
@@ -276,7 +276,7 @@ const ServerAdministrationPage = () => {
         <div className="SA_Cap_Inner">
           <div style={{ marginBottom: '100px' }}>
             <span className="SA_Badge">Technical Authority</span>
-            <h2 className="NET_Hero_H1">Engineered for Reliability</h2>
+            <h2 className="NET_Hero_H1 capitalize">engineered for reliability</h2>
             <p className="SA_Hero_P" style={{ fontSize: '1.25rem' }}>
               A single minute of downtime costs an enterprise an average of $5,600. CHN Technologies
               eliminates fragility by implementing standardized, automated, and audited server
@@ -332,7 +332,7 @@ const ServerAdministrationPage = () => {
           </motion.div>
           <div className="SA_Outcome_Content">
             <span className="SA_Badge">Value Delivery</span>
-            <h2 className="NET_Hero_H1">Strategic Outcomes of Elite Management</h2>
+            <h2 className="NET_Hero_H1 capitalize">strategic outcomes of elite management</h2>
 
             <div className="Outcome_List">
               {[
@@ -362,7 +362,7 @@ const ServerAdministrationPage = () => {
       <section className="SA_Flow">
         <div className="SA_Flow_Inner">
           <span className="SA_Badge">Operational Lifecycle</span>
-          <h2 className="NET_Hero_H1">The CHN Execution Framework</h2>
+          <h2 className="NET_Hero_H1 capitalize">the chn execution framework</h2>
 
           <div className="SA_Flow_Grid">
             {[
@@ -391,7 +391,7 @@ const ServerAdministrationPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">READY FOR A MORE RELIABLE<br /> SERVER INFRASTRUCTURE?</h2>
+            <h2 className="NET_Hero_H1 text-white capitalize">ready for a more reliable server infrastructure?</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Stop managing servers. Start scaling your business with infrastructure that thinks ahead.
             </p>

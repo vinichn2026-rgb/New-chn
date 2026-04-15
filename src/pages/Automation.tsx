@@ -44,7 +44,7 @@ const AutomationPage = () => {
 
         .AU_Hero_Content { flex: 1.2; max-width: 650px; }
         .AU_Badge { 
-          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
+          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: capitalize; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
         .AU_Hero_H1 {  margin-bottom: 25px; }
@@ -83,7 +83,7 @@ const AutomationPage = () => {
           width: 100%;
           max-width: 1000px;
         }
-        .AU_Context_H1 { color: #fff; text-transform: uppercase; }
+        .AU_Context_H1 { color: #fff; text-transform: capitalize; }
         .AU_Context_P { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.8; }
 
         /* --- SECTION 3: CAPABILITIES --- */
@@ -141,7 +141,7 @@ const AutomationPage = () => {
 
         /* --- SECTION 4: OUTCOMES --- */
         .AU_Outcome { 
-          padding: 100px 5%; 
+          padding: 50px 5%; 
           display: flex; 
           justify-content: center;
           background: white;
@@ -170,7 +170,7 @@ const AutomationPage = () => {
 
         /* --- SECTION 5: APPROACH --- */
         .AU_Flow { 
-          padding: 140px 5%; 
+          padding: 50px 5%; 
           background: #fdfdfd; 
           text-align: center;
           display: flex;
@@ -223,7 +223,7 @@ const AutomationPage = () => {
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
                 Digital Transformation             </span>
             </div>
-            <h2 className="AU_Hero_H1 NET_Hero_H1">PROCESS AUTOMATION SERVICES</h2>
+            <h2 className="AU_Hero_H1 NET_Hero_H1 capitalize">process automation services</h2>
             <p className="AU_Tagline">Eliminating operational friction through intelligent, high-fidelity automation.</p>
             {/* <p className="AU_Hero_P">
               CHN Technologies provides structured automation services that ensure speed,
@@ -250,7 +250,7 @@ const AutomationPage = () => {
       <section className="AU_Context">
         <div className="AU_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 AU_Context_H1">REPETITIVE MANUAL WORK IS A SILENT TAX ON ENTERPRISE GROWTH</h2>
+            <h2 className="NET_Hero_H1 AU_Context_H1 capitalize">repetitive manual work is a silent tax on enterprise growth</h2>
             <p className="AU_Context_P">
               Business productivity depends on how much of your resource capacity is focused on high-value strategy versus low-value manual processing.
               Poorly automated or manual workflows lead to operational debt, human error, and reduced organizational speed.
@@ -264,7 +264,7 @@ const AutomationPage = () => {
       <section className="AU_Cap_Section">
         <div className="AU_Cap_Inner">
           <span className="AU_Badge">Core Capabilities</span>
-          <h2 className="NET_Hero_H1">Full-Spectrum Digital <br /> Automation</h2>
+          <h2 className="NET_Hero_H1 capitalize">full-spectrum digital <br /> automation</h2>
 
           <div className="AU_Cap_Grid">
             {[
@@ -311,7 +311,7 @@ const AutomationPage = () => {
           </div>
           <div className="AU_Outcome_Content">
             <span className="AU_Badge">Strategic Outcomes</span>
-            <h2 className="NET_Hero_H1">Benefits of High-Fidelity <br /> Automation</h2>
+            <h2 className="NET_Hero_H1 capitalize">benefits of high-fidelity <br /> automation</h2>
 
             <div className="Outcome_List">
               {[
@@ -337,7 +337,7 @@ const AutomationPage = () => {
       <section className="AU_Flow">
         <div className="AU_Flow_Inner">
           <span className="AU_Badge">Productivity Framework</span>
-          <h2 className="NET_Hero_H1">Strategic Approach</h2>
+          <h2 className="NET_Hero_H1 capitalize">strategic approach</h2>
 
           <div className="AU_Flow_Grid">
             {[
@@ -366,7 +366,7 @@ const AutomationPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">ELIMINATE OPERATIONAL FRICTION TODAY</h2>
+            <h2 className="NET_Hero_H1 text-white capitalize">eliminate operational friction today</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how intelligent automation solutions
               can optimize your enterprise resource allocation and operational speed.

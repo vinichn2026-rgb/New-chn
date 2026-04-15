@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
         }
 
         .PP_Badge { 
-          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; 
+          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: capitalize; 
           font-size: 0.8rem; margin-bottom: 20px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
@@ -74,16 +74,16 @@ const PrivacyPolicy = () => {
       <section className="PP_Hero">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <span className="PP_Badge">Trust & Transparency</span>
-          <h2 className="PP_Title NET_Hero_H1">PRIVACY POLICY</h2>
+          <h2 className="PP_Title NET_Hero_H1 capitalize">privacy policy</h2>
           <p className="PP_Subtitle">Last Updated: July 5, 2025</p>
         </motion.div>
       </section>
 
       <section className="PP_Content">
         <div className="PP_Section">
-          <h2 className="NET_Hero_H1 PP_Section_H">
+          <h2 className="NET_Hero_H1 PP_Section_H capitalize">
             <span className="PP_Section_Icon"><Shield size={24} /></span>
-            1. Information Collection
+            1. information collection
           </h2>
           <p className="PP_P">
             We collect information to provide better services to all our users. The types of information we collect include:
@@ -96,9 +96,9 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="NET_Hero_H1 PP_Section_H">
+          <h2 className="NET_Hero_H1 PP_Section_H capitalize">
             <span className="PP_Section_Icon"><Eye size={24} /></span>
-            2. How We Use Information
+            2. how we use information
           </h2>
           <p className="PP_P">
             The data we collect is used strictly for operational and improvement purposes:
@@ -112,9 +112,9 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="NET_Hero_H1 PP_Section_H">
+          <h2 className="NET_Hero_H1 PP_Section_H capitalize">
             <span className="PP_Section_Icon"><Lock size={24} /></span>
-            3. Data Security & Protection
+            3. data security & protection
           </h2>
           <p className="PP_P">
             The security of your data is important to us. We implement a variety of security measures to maintain the safety of your personal information:
@@ -125,9 +125,9 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="NET_Hero_H1 PP_Section_H">
+          <h2 className="NET_Hero_H1 PP_Section_H capitalize">
             <span className="PP_Section_Icon"><FileText size={24} /></span>
-            4. Your Rights
+            4. your rights
           </h2>
           <p className="PP_P">
             You have certain rights regarding your personal data, including the right to access, correct, or request the deletion of the information we hold about you. You may also opt-out of receiving marketing communications at any time.
@@ -135,9 +135,9 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="NET_Hero_H1 PP_Section_H">
+          <h2 className="NET_Hero_H1 PP_Section_H capitalize">
             <span className="PP_Section_Icon"><Mail size={24} /></span>
-            7. Contact Information
+            7. contact information
           </h2>
           <p className="PP_P">
             If you have any questions about this Privacy Policy, please contact us at:

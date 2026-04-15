@@ -159,7 +159,7 @@ const TermsAndConditions = () => {
                     font-size: 0.75rem;
                     font-weight: 700;
                     letter-spacing: 0.15em;
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     margin-bottom: 30px;
                 }
                 .TC_Title {
@@ -168,7 +168,7 @@ const TermsAndConditions = () => {
                     color: #ffffff;
                     line-height: 1.05;
                     letter-spacing: -0.03em;
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     margin-bottom: 20px;
                 }
                 .TC_Meta {
@@ -220,7 +220,7 @@ const TermsAndConditions = () => {
                     font-size: 0.72rem;
                     font-weight: 800;
                     color: #0060ff;
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     letter-spacing: 0.15em;
                     margin-bottom: 20px;
                 }
@@ -347,7 +347,7 @@ const TermsAndConditions = () => {
                     font-size: clamp(1.5rem, 4vw, 2rem);
                     font-weight: 900;
                     margin-bottom: 12px;
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     letter-spacing: -0.01em;
                 }
                 .TC_Contact_Subtitle {
@@ -381,7 +381,7 @@ const TermsAndConditions = () => {
                     font-size: 0.72rem;
                     color: rgba(255,255,255,0.5);
                     font-weight: 700;
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     letter-spacing: 0.1em;
                     margin-bottom: 6px;
                 }
@@ -411,7 +411,7 @@ const TermsAndConditions = () => {
                         <Shield size={12} />
                         Legal Document
                     </div>
-                    <h2 className="TC_Title NET_Hero_H1">Terms &amp; <span style={{ color: '#60a5fa' }}>Conditions</span></h2>
+                    <h2 className="TC_Title NET_Hero_H1 capitalize">terms &amp; <span style={{ color: '#60a5fa' }}>conditions</span></h2>
                     <p className="TC_Meta">Last updated: July 5, 2025</p>
                     <p className="TC_Intro_Text">
                         Welcome to CHN Technologies. By using our website (www.chntechs.com) and services, you agree
@@ -457,7 +457,7 @@ const TermsAndConditions = () => {
                                     <div className="TC_Section_Icon">
                                         <Icon size={20} />
                                     </div>
-                                    <h2 className="NET_Hero_H1 TC_Section_Title">{section.title}</h2>
+                                    <h2 className="NET_Hero_H1 TC_Section_Title capitalize">{section.title}</h2>
                                 </div>
 
                                 {section.type === 'text' && (
@@ -503,7 +503,7 @@ const TermsAndConditions = () => {
                             <div className="TC_Section_Icon">
                                 <Mail size={20} />
                             </div>
-                            <h2 className="NET_Hero_H1 TC_Section_Title">Contact Us</h2>
+                            <h2 className="NET_Hero_H1 TC_Section_Title capitalize">contact us</h2>
                         </div>
 
                         <div className="TC_Contact_Card">

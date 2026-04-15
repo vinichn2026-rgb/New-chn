@@ -51,19 +51,19 @@ const Index = () => {
     {
       bg: heroBg1,
       subtitle: "Integrated Technology & Consulting",
-      title: <>RUN TECHNOLOGY LIKE <br />A BUSINESS SYSTEM.</>,
+      title: <>Run Technology Like <br />A Business System</>,
       desc: "Integrated technology and consulting services built for stability, security, and scalable growth. We help you reduce risk and maintain control.",
     },
     {
       bg: heroBg2,
       subtitle: "WE ARE DEDICATED",
-      title: <>INSPIRED AND PASSIONATE<br />ABOUT INNOVATION.</>,
+      title: <>Inspired And Passionate<br />About Innovation</>,
       desc: "End-to-end management of IT infrastructure, software solutions, digital analytics, and workforce consulting — all under one roof.",
     },
     {
       bg: "/images/hero-excellence.jpg",
       subtitle: "OPERATIONAL EXCELLENCE",
-      title: <>RELIABILITY BUILT ON<br />STRUCTURED EXCELLENCE.</>,
+      title: <>Reliability Built On<br />Structured Excellence</>,
       desc: "We align systems, people, and processes to ensure your business remains resilient in a changing digital landscape. Experience long-term stability.",
     },
   ];
@@ -153,27 +153,27 @@ const Index = () => {
 
   const services = [
     {
-      title: "GROWTH & SCALE",
+      title: "Growth & Scale",
       desc: "Businesses expanding operations while handling disconnected IT, software, and operational tools that require structure and consolidation.",
       icon: <TrendingUp strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
     },
     {
-      title: "SECURITY & COMPLIANCE",
+      title: "Security & Compliance",
       desc: "Organisations operating in regulated or risk-sensitive environments that need stronger controls, visibility, and policy alignment.",
       icon: <ShieldCheck strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
     },
     {
-      title: "MULTI-LOCATION OPERATIONS",
+      title: "Multi-Location Operations",
       desc: "Companies managing infrastructure, people, and processes across multiple offices or sites with a need for standardisation.",
       icon: <Network strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
     },
     {
-      title: "LEADERSHIP VISIBILITY",
+      title: "Leadership Visibility",
       desc: "Decision-makers seek clear insights into system performance, operational efficiency, and workforce effectiveness.",
       icon: <BarChart3 strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
     },
     {
-      title: "TECHNOLOGY INTEGRATION",
+      title: "Technology Integration",
       desc: "Seamless integration of legacy systems with modern technologies to create unified, future-ready IT ecosystems.",
       icon: <Settings strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
     },
@@ -252,10 +252,10 @@ const Index = () => {
           </div>
         </div>
 
-        <button onClick={() => goToSlide(-1)} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#0060ff] text-white hidden md:flex items-center justify-center hover:bg-opacity-80 transition-all">
+        <button onClick={() => goToSlide(-1)} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-transparent border border-white/30 text-white flex items-center justify-center hover:bg-white/10 hover:border-white/60 transition-all">
           <ChevronLeft className="w-5 h-5" />
         </button>
-        <button onClick={() => goToSlide(1)} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#0060ff] text-white hidden md:flex items-center justify-center hover:bg-opacity-80 transition-all">
+        <button onClick={() => goToSlide(1)} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-transparent border border-white/30 text-white flex items-center justify-center hover:bg-white/10 hover:border-white/60 transition-all">
           <ChevronRight className="w-5 h-5" />
         </button>
       </section>
@@ -265,7 +265,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block ">OPERATIONAL CAPACITY</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b] uppercase">DESIGNED TO SUPPORT SYSTEMS</h2>
+            <h2 className="NET_Hero_H1 text-[#002e5b] capitalize">designed to support systems</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
             {services.map((service, i) => (
@@ -305,7 +305,7 @@ const Index = () => {
           </div>
           <div>
             <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">MEASURABLE OUTCOMES</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b] mb-6 uppercase">OUTCOMES THAT MATTER</h2>
+            <h2 className="NET_Hero_H1 text-[#002e5b] mb-6 capitalize">outcomes that matter</h2>
             <p className="text-lg text-blue-600 italic mb-6">Delivering measurable outcomes that improve stability and reliability.</p>
             <p className="text-gray-500 leading-relaxed mb-8">We engineer resilient environments that evolve alongside your business, ensuring sustainable impact.</p>
             <div className="bg-gray-100 h-12 rounded-lg overflow-hidden">
@@ -337,8 +337,8 @@ const Index = () => {
         `}</style>
         <div className="text-center mb-16 px-4">
           <span className="text-[#ffffff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">INNOVATION STREAM</span>
-          <h2 className="NET_Hero_H1 text-white uppercase">
-            CAPABILITIES <span className="text-[#0060ff]">OVERVIEW</span>
+          <h2 className="NET_Hero_H1 text-white capitalize">
+            capabilities <span className="text-[#0060ff]">overview</span>
           </h2>
         </div>
         <div className="flex overflow-hidden">
@@ -379,7 +379,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">OPERATIONAL EXCELLENCE</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b] uppercase">A STRUCTURED DELIVERY MODEL</h2>
+            <h2 className="NET_Hero_H1 text-[#002e5b] capitalize">a structured delivery model</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {deliveryPhases.map((phase, i) => {
@@ -454,8 +454,8 @@ const Index = () => {
           <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">
             GLOBAL PARTNER NETWORK
           </span>
-          <h2 className="NET_Hero_H1 text-[#002e5b] uppercase">
-            OUR PARTNERS
+          <h2 className="NET_Hero_H1 text-[#002e5b] capitalize">
+            our partners
           </h2>
         </div>
 
