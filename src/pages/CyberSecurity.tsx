@@ -166,7 +166,7 @@ padding: 10px 30px;  border-radius: 9999px; /* Rounded pill shape */
 
         /* --- SECTION 3: OUTCOMES --- */
         .CS_Outcome { 
-          padding: 100px 5%; 
+          padding: 50px 5%; 
           display: flex; 
           justify-content: center;
           background: white; 

@@ -96,7 +96,7 @@ const EndUserComputingPage = () => {
 
         /* --- SECTION 2: CAPABILITIES --- */
         .EUC_Cap_Section { 
-          padding: 100px 5%; 
+          padding: 50px 5%; 
           background: #f8fafc; 
           text-align: left;
           display: flex;
@@ -149,7 +149,7 @@ const EndUserComputingPage = () => {
 
         /* --- SECTION 3: OUTCOMES --- */
         .EUC_Outcome { 
-          padding: 100px 5%; 
+          padding:50px 5%; 
           display: flex; 
           justify-content: center;
           background: white; 
