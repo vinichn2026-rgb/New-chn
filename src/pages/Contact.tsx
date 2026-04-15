@@ -241,7 +241,7 @@ const ContactPage = () => {
                 @media (max-width: 640px) { .CN_Info_Box { padding: 30px; border-radius: 30px; } }
                 .CN_Info_Item { display: flex; gap: 20px; margin-bottom: 40px; align-items: flex-start; }
                 .CN_Info_Icon { color: #0060ff; background: #eff6ff; padding: 15px; border-radius: 20px; flex-shrink: 0; }
-                .CN_Info_H { color: #002e5b; margin-bottom: 10px; letter-spacing: -0.01em; }
+                .CN_Info_H { color: #002e5b; margin-bottom: 10px; letter-spacing: -0.01em; font-size:1.1rem;}
                 .CN_Info_Text { color: #64748b; font-size: 1.05rem; line-height: 1.6; font-weight: 450; }
 
                 /* --- SECTION 4: RESPONSE EXPECTATION --- */

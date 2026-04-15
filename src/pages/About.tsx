@@ -135,9 +135,14 @@ const AboutPage = () => {
         
         .ABOUT_Card_H { font-weight: 900; color: #1a2b4b; margin-bottom: 20px; transition: 0.3s; font-size: 1.5rem; }
 
-        /* --- SECTION 4: APPROACH --- */
-        .ABOUT_Approach { padding: 100px 5%; background: #22314f; color: #fff; }
-        .ABOUT_Approach_Container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .ABOUT_Approach { padding: 100px 5%; background: #0f1e3c; color: #fff; position: relative; overflow: hidden; }
+        .ABOUT_Approach::before {
+          content: ''; position: absolute; inset: 0;
+          background-image: radial-gradient(circle at 20% 50%, rgba(59,130,246,0.08) 0%, transparent 60%),
+                            radial-gradient(circle at 80% 20%, rgba(0,96,255,0.06) 0%, transparent 50%);
+          pointer-events: none;
+        }
+        .ABOUT_Approach_Container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
 
         @media (max-width: 1024px) {
           .ABOUT_Approach_Container { grid-template-columns: 1fr; text-align: center; gap: 60px; }
@@ -255,16 +260,72 @@ const AboutPage = () => {
       {/* SECTION 4: APPROACH */}
       <section className="ABOUT_Approach">
         <div className="ABOUT_Approach_Container">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left ABOUT_Approach_Left">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="text-left ABOUT_Approach_Left"
+          >
             <span className="ABOUT_Badge">OUR APPROACH</span>
-            <h2 className="NET_Hero_H1 ABOUT_Approach_H">How CHN <br /> Approaches <br /> <span className="text-white">Business Problems</span></h2>
-            <p className="text-blue-100/50 text-lg font-medium leading-relaxed mb-10 max-w-lg">We focus on how systems, processes, and teams interact in real operational environments rather than isolated issues.</p>
-            <div className="relative w-fit">
-              <img src="/images/partner-delivery.jpg" alt="Consultant" className="w-48 h-48 rounded-[40px] grayscale hover:grayscale-0 transition-all duration-700 border-4 border-white/10" />
-              <div className="absolute -bottom-4 -right-4 bg-blue-500 p-4 rounded-2xl shadow-xl"><Activity className="text-white" /></div>
-            </div>
+            <h2 className="NET_Hero_H1 ABOUT_Approach_H">
+              How CHN Approaches <span className="text-white">Business Problems</span>
+            </h2>
+            <p className="text-blue-100/50 text-lg font-medium leading-relaxed mb-10 max-w-lg">
+              We focus on how systems, processes, and teams interact in real operational environments rather than isolated issues.
+            </p>
+
+            {/* REFINED SMALLER IMAGE CONTAINER */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              viewport={{ once: true }}
+              style={{
+                position: 'relative',
+                borderRadius: '24px',
+                overflow: 'hidden',
+                boxShadow: '0 20px 50px rgba(0,0,0,0.35)',
+                marginTop: '8px',
+                width: '100%',
+                aspectRatio: '16 / 9'
+              }}
+            >
+              <img
+                src="/images/about-main.jpg"
+                alt="CHN Approach"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  display: 'block',
+                  objectFit: 'cover',
+                  objectPosition: 'center center'
+                }}
+              />
+
+              {/* Overlays */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15,30,60,0.75) 0%, transparent 60%)' }} />
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '3px', background: 'linear-gradient(90deg, #3b82f6, #0060ff)' }} />
+
+              <div style={{ position: 'absolute', bottom: '18px', left: '20px' }}>
+                <span style={{
+                  fontSize: '0.68rem',
+                  fontWeight: 700,
+                  color: 'rgba(255,255,255,0.7)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  background: 'rgba(255,255,255,0.07)',
+                  backdropFilter: 'blur(10px)',
+                  padding: '8px 14px',
+                  borderRadius: '10px',
+                  border: '1px solid rgba(255,255,255,0.1)'
+                }}>
+                  People · Process · Technology
+                </span>
+              </div>
+            </motion.div>
           </motion.div>
 
+          {/* Right Side Grid */}
           <div className="ABOUT_Philosophy_Grid">
             {[
               { title: "Delivery Philosophy", icon: <Layers />, desc: "Understand the environment, define ownership, and execute with control." },
@@ -272,10 +333,19 @@ const AboutPage = () => {
               { title: "Practical Execution", icon: <Zap />, desc: "Prioritising practical results over theory and long-term stability." },
               { title: "Reliability", icon: <CheckCircle />, desc: "Stable solutions that perform over time and evolve with needs." }
             ].map((phil, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="ABOUT_Phil_Card">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="ABOUT_Phil_Card"
+              >
                 <div className="ABOUT_Phil_Icon">{React.cloneElement(phil.icon as React.ReactElement, { size: 24 })}</div>
                 <h4 className="text-xl font-bold text-blue-500 mb-3">{phil.title}</h4>
-                <p className="text-[11px] font-black uppercase tracking-widest text-blue-100/50 leading-relaxed">{phil.desc}</p>
+                <p className="text-[11px] font-black uppercase tracking-widest text-blue-100/50 leading-relaxed">
+                  {phil.desc}
+                </p>
               </motion.div>
             ))}
           </div>

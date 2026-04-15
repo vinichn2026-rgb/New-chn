@@ -194,7 +194,7 @@ const SiteNavbar = () => {
                   <Link
                     to={item.link}
                     onMouseEnter={(e) => handleMouseEnter(item.name, e)}
-                    className={`flex items-center text-[15px] font-bold tracking-tight transition-all duration-300 no-underline px-3 py-2 rounded-lg relative z-20 ${active ? "text-blue-600 active-nav-link" : "text-[#1a2b4b] hover:text-blue-600"}`}
+                    className={`flex items-center text-[15px] font-bold tracking-tight transition-all duration-300 no-underline outline-none focus:outline-none px-3 py-2 rounded-lg relative z-20 ${active ? "text-blue-600 active-nav-link" : "text-[#1a2b4b] hover:text-blue-600"}`}
                   >
                     {item.name}
                     {hasDropdown && <ChevronDown size={14} className={`ml-1 transition-transform duration-300 ${isHovered ? "rotate-180" : ""}`} />}
