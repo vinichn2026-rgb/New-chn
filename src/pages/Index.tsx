@@ -252,10 +252,10 @@ const Index = () => {
           </div>
         </div>
 
-        <button onClick={() => goToSlide(-1)} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#0060ff] text-white flex items-center justify-center hover:bg-opacity-80 transition-all">
+        <button onClick={() => goToSlide(-1)} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#0060ff] text-white hidden md:flex items-center justify-center hover:bg-opacity-80 transition-all">
           <ChevronLeft className="w-5 h-5" />
         </button>
-        <button onClick={() => goToSlide(1)} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#0060ff] text-white flex items-center justify-center hover:bg-opacity-80 transition-all">
+        <button onClick={() => goToSlide(1)} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-[#0060ff] text-white hidden md:flex items-center justify-center hover:bg-opacity-80 transition-all">
           <ChevronRight className="w-5 h-5" />
         </button>
       </section>

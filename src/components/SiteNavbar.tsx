@@ -9,7 +9,21 @@ import chnLogo from "@/assets/chn-logo.png";
 const SiteNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
+  const [expandedMenus, setExpandedMenus] = useState<Set<string>>(new Set());
+
+  const toggleMenu = (key: string) => {
+    setExpandedMenus(prev => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileOpen(false);
+    setExpandedMenus(new Set());
+  };
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [activeCluster, setActiveCluster] = useState<string | null>(null);
 
@@ -142,7 +156,7 @@ const SiteNavbar = () => {
 
   return (
     <>
-      <nav className={`w-full z-[100] transition-all duration-300 fixed top-0 ${isScrolled ? "bg-white shadow-md h-[70px]" : "bg-white/95 backdrop-blur-md border-b border-slate-100 h-[80px]"}`}>
+      <nav className={`w-full z-[100] transition-all duration-300 fixed top-0 ${isScrolled ? "bg-white shadow-md h-[70px]" : "bg-white shadow-sm border-b border-slate-100 h-[80px]"}`}>
         <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 flex items-center justify-between h-full">
           <div className="flex-1 flex items-center justify-start">
             <Link to="/" className="flex items-center no-underline group translate-y-[-2px]">
@@ -299,7 +313,11 @@ const SiteNavbar = () => {
                 </a>
               ))}
             </div>
-            <button className="lg:hidden text-[#002e5b] p-2 hover:bg-slate-100 rounded-lg transition-colors border-none bg-transparent cursor-pointer" onClick={() => setIsMobileOpen(!isMobileOpen)}>
+            <button
+              className="lg:hidden text-[#002e5b] p-2 hover:bg-slate-100 rounded-lg transition-colors border-none bg-transparent cursor-pointer relative z-[110]"
+              onClick={() => isMobileOpen ? closeMobileMenu() : setIsMobileOpen(true)}
+              aria-label={isMobileOpen ? "Close menu" : "Open menu"}
+            >
               {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -312,7 +330,7 @@ const SiteNavbar = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed inset-0 top-[70px] w-full bg-white lg:hidden z-[90] overflow-y-auto"
+              className="fixed inset-0 top-0 pt-[80px] w-full bg-white lg:hidden z-[95] overflow-y-auto"
             >
               <div className="p-8 pb-32">
                 <div className="mb-10">
@@ -321,21 +339,21 @@ const SiteNavbar = () => {
                     {navItems.map((item) => {
                       const active = isPathActive(item);
                       const hasDropdown = item.children;
-                      const isExpanded = expandedMenu === item.name;
+                      const isExpanded = expandedMenus.has(item.name);
                       return (
                         <li key={item.name} className="border-b border-slate-50 pb-4 last:border-0">
                           <div className="flex items-center justify-between group">
                             <Link
                               to={item.link}
                               className={`text-2xl font-black no-underline transition-colors flex items-center gap-3 ${active ? "text-blue-600" : "text-[#1a2b4b]"}`}
-                              onClick={() => { if (!hasDropdown) setIsMobileOpen(false); }}
+                              onClick={() => { if (!hasDropdown) closeMobileMenu(); }}
                             >
                               {item.name}
                               {active && <div className="w-2 h-2 rounded-full bg-blue-600" />}
                             </Link>
                             {hasDropdown && (
                               <button
-                                onClick={() => setExpandedMenu(isExpanded ? null : item.name)}
+                                onClick={() => toggleMenu(item.name)}
                                 className={`text-slate-400 hover:text-blue-600 transition-transform w-10 h-10 flex items-center justify-center rounded-full bg-slate-50 ${isExpanded ? "rotate-180 bg-blue-50 text-blue-600" : ""}`}
                               >
                                 <ChevronDown size={22} />
@@ -354,20 +372,20 @@ const SiteNavbar = () => {
                                 <ul className="flex flex-col gap-5 pl-4 mt-6 border-l-2 border-blue-100 list-none">
                                   {item.children.map((drop: any, idx: number) => {
                                     const dropActive = isPathActive(drop);
-                                    const dropExpanded = expandedMenu === `${item.name}-${drop.name}`;
+                                    const dropExpanded = expandedMenus.has(`${item.name}-${drop.name}`);
                                     return (
                                       <li key={drop.name}>
                                         <div className="flex items-center justify-between">
                                           <Link
                                             to={drop.link || "#"}
                                             className={`text-[17px] font-bold no-underline block flex-1 ${dropActive ? "text-blue-600" : "text-slate-600"}`}
-                                            onClick={() => { if (!drop.children) setIsMobileOpen(false); }}
+                                            onClick={() => { if (!drop.children) closeMobileMenu(); }}
                                           >
                                             {drop.name}
                                           </Link>
                                           {drop.children && (
                                             <button
-                                              onClick={() => setExpandedMenu(dropExpanded ? item.name : `${item.name}-${drop.name}`)}
+                                              onClick={() => toggleMenu(`${item.name}-${drop.name}`)}
                                               className={`text-slate-400 transition-transform p-2 ${dropExpanded ? "rotate-180 text-blue-600" : ""}`}
                                             >
                                               <ChevronDown size={18} />
@@ -384,7 +402,7 @@ const SiteNavbar = () => {
                                                   <Link
                                                     to={subitem.link || "#"}
                                                     className={`text-[15px] font-semibold no-underline block py-1 ${subActive ? "text-blue-600" : "text-slate-500"}`}
-                                                    onClick={() => setIsMobileOpen(false)}
+                                                    onClick={() => closeMobileMenu()}
                                                   >
                                                     {subitem.name}
                                                   </Link>
@@ -395,7 +413,7 @@ const SiteNavbar = () => {
                                                           <Link 
                                                             to={leaf.link} 
                                                             className={`text-[14px] font-medium no-underline block py-1 ${location.pathname === leaf.link ? "text-blue-600 font-bold" : "text-slate-400"}`} 
-                                                            onClick={() => setIsMobileOpen(false)}
+                                                            onClick={() => closeMobileMenu()}
                                                           >
                                                             {leaf.name}
                                                           </Link>
