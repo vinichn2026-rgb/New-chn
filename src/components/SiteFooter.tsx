@@ -9,19 +9,19 @@ const SiteFooter = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
 
           {/* Column 1: Brand & Follow Us */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center md:text-left">
             <h3 className="text-2xl font-bold tracking-tight text-white/85">CHN Technologies</h3>
-            <p className="text-[#00c2ff] text-sm font-semibold tracking-wide">
+            <p className="text-[#00c2ff] text-sm font-semibold tracking-wide mx-auto md:mx-0">
               Empowering Businesses Through<br />Technology & Expertise
             </p>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
+            <p className="text-gray-400 text-sm leading-relaxed max-w-sm mx-auto md:mx-0">
               CHN Technologies is a leading provider of technology and consulting solutions
               delivering IT, HR, and business services with innovation and trust.
             </p>
 
             <div className="pt-4">
               <h4 className="text-lg font-bold mb-4 text-white/85">Follow Us</h4>
-              <div className="flex gap-3">
+              <div className="flex gap-3 justify-center md:justify-start">
                 <a href="https://www.linkedin.com/company/chn-technologies/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-[#0077b5] flex items-center justify-center rounded-lg hover:opacity-80 transition-all">
                   <FaLinkedinIn size={20} />
                 </a>
@@ -39,7 +39,7 @@ const SiteFooter = () => {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center md:text-left">
             <h3 className="text-xl font-bold text-white/85">Quick Links</h3>
             <ul className="space-y-4">
               {[
@@ -50,7 +50,7 @@ const SiteFooter = () => {
                 { label: "Blogs", to: "/blogs" }
               ].map((link) => (
                 <li key={link.label}>
-                  <Link to={link.to} className="group flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
+                  <Link to={link.to} className="group flex items-center justify-center md:justify-start gap-3 text-gray-400 hover:text-white transition-colors">
                     <ExternalLink size={16} className="text-gray-500 group-hover:text-white" />
                     <span className="text-sm font-medium">{link.label}</span>
                   </Link>
@@ -60,10 +60,10 @@ const SiteFooter = () => {
           </div>
 
           {/* Column 3: Contact Information */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center md:text-left">
             <h3 className="text-xl font-bold text-white/85">Contact Information</h3>
             <div className="space-y-5">
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center md:justify-start">
                 <MapPin size={20} className="text-[#00c2ff] shrink-0 mt-1" />
                 <p className="text-gray-400 text-sm leading-relaxed">
                   Chennai (Head Office)<br />
@@ -71,14 +71,14 @@ const SiteFooter = () => {
                   Bangalore (Branch Office)
                 </p>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center md:justify-start">
                 <Phone size={20} className="text-[#00c2ff] shrink-0 mt-1" />
                 <p className="text-gray-400 text-sm leading-relaxed">
                   +91-7010203031<br />
                   +91-9384817323
                 </p>
               </div>
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center md:justify-start">
                 <Mail size={20} className="text-[#00c2ff] shrink-0 mt-1" />
                 <p className="text-gray-400 text-sm leading-relaxed">
                   sales@chnindia.com<br />
@@ -89,7 +89,7 @@ const SiteFooter = () => {
           </div>
 
           {/* Column 4: Legal & Compliance */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-center md:text-left">
             <h3 className="text-xl font-bold text-white/85">Legal & Compliance</h3>
             <ul className="space-y-4 text-gray-400">
               <li>
