@@ -56,7 +56,7 @@ const ServerAdministrationPage = () => {
 
         .SA_Hero_Content { flex: 1.2; max-width: 700px; }
         .SA_Badge { 
-          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: capitalize; 
+          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; 
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
@@ -135,7 +135,7 @@ const ServerAdministrationPage = () => {
           content: "";
           position: absolute;
           top: 0; left: 0; width: 100%; height: 0;
-          background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+          background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);
           z-index: -1;
           transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -239,7 +239,7 @@ const ServerAdministrationPage = () => {
             className="SA_Hero_Content"
           >
             <span className="SA_Badge">Infrastructure Lifecycle</span>
-            <h2 className="SA_Hero_H1 NET_Hero_H1 capitalize">elite server  management</h2>
+            <h2 className="SA_Hero_H1 NET_Hero_H1">Elite Server Management</h2>
             <p className="SA_Tagline">Stabilizing mission-critical environments with precision administration.</p>
             <p className="SA_Hero_P">
               CHN Technologies engineers resilient server frameworks designed for 99.9% availability,
@@ -258,13 +258,54 @@ const ServerAdministrationPage = () => {
           >
             <img src={serversImg} alt="Server Infrastructure" />
             <motion.div
-              initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }}
-              className="SA_Hero_Floating_Card"
+              initial={{ opacity: 0, x: -30, scale: 0.85, rotate: -2 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                rotate: 0,
+                y: [0, -8, 0] // Smooth floating loop
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.8,
+                ease: "easeOut",
+                y: { repeat: Infinity, duration: 5, ease: "easeInOut" } // Infinite float
+              }}
+              className="SA_Hero_Floating_Card flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-blue-100 relative overflow-hidden"
             >
-              <div className="bg-blue-100 p-3 rounded-xl"><ShieldCheck className="text-blue-600" /></div>
+              {/* The "Shimmer" Scan Line Effect */}
+              <motion.div
+                animate={{ x: ['-100%', '200%'] }}
+                transition={{ repeat: Infinity, duration: 3, ease: "linear", delay: 2 }}
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent -skew-x-12"
+              />
+
+              {/* Icon with Pulsing Halo */}
+              <div className="relative shrink-0">
+                <motion.div
+                  animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.1, 0.3] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                  className="absolute inset-0 bg-blue-500 rounded-full blur-lg"
+                />
+                <div className="relative bg-blue-600 p-3 rounded-xl shadow-lg shadow-blue-200">
+                  <ShieldCheck className="text-white" size={24} />
+                </div>
+              </div>
+
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Security Index</p>
-                <p className="text-xl font-black text-slate-800">ISO CERITIFIED</p>
+                <p className="text-[10px] font-bold tracking-[0.15em] text-slate-400 uppercase">
+                  Security Index
+                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-lg font-black text-slate-800 tracking-tight">
+                    ISO CERTIFIED
+                  </p>
+                  {/* Tiny Checkmark Badge */}
+                  <div className="h-4 w-4 bg-blue-500 rounded-full flex items-center justify-center">
+                    <div className="h-1.5 w-1.5 bg-white rounded-full animate-pulse" />
+                  </div>
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -276,11 +317,9 @@ const ServerAdministrationPage = () => {
         <div className="SA_Cap_Inner">
           <div style={{ marginBottom: '100px' }}>
             <span className="SA_Badge">Technical Authority</span>
-            <h2 className="NET_Hero_H1 capitalize">engineered for reliability</h2>
+            <h2 className="NET_Hero_H1">Engineered for Reliability</h2>
             <p className="SA_Hero_P" style={{ fontSize: '1.25rem' }}>
-              A single minute of downtime costs an enterprise an average of $5,600. CHN Technologies
-              eliminates fragility by implementing standardized, automated, and audited server
-              governance models across hybrid-cloud ecosystems.
+              Downtime isn't just a delay; it's a deficit. CHN Technologies replaces fragile legacy setups with audited server governance models designed for 99.999% uptime across hybrid ecosystems.
             </p>
           </div>
 
@@ -332,7 +371,7 @@ const ServerAdministrationPage = () => {
           </motion.div>
           <div className="SA_Outcome_Content">
             <span className="SA_Badge">Value Delivery</span>
-            <h2 className="NET_Hero_H1 capitalize">strategic outcomes of elite management</h2>
+            <h2 className="NET_Hero_H1">Strategic Outcomes of Elite Management</h2>
 
             <div className="Outcome_List">
               {[
@@ -362,7 +401,7 @@ const ServerAdministrationPage = () => {
       <section className="SA_Flow">
         <div className="SA_Flow_Inner">
           <span className="SA_Badge">Operational Lifecycle</span>
-          <h2 className="NET_Hero_H1 capitalize">the chn execution framework</h2>
+          <h2 className="NET_Hero_H1">The CHN Execution Framework</h2>
 
           <div className="SA_Flow_Grid">
             {[
@@ -391,7 +430,7 @@ const ServerAdministrationPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white capitalize">ready for a more reliable server infrastructure?</h2>
+            <h2 className="NET_Hero_H1 text-white">Ready for a More Reliable Server Infrastructure?</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Stop managing servers. Start scaling your business with infrastructure that thinks ahead.
             </p>

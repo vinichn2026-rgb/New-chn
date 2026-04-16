@@ -98,7 +98,7 @@ const WhatWeThink = () => {
           color: #3b82f6;
           font-weight: 800;
           letter-spacing: 3px;
-          text-transform: capitalize;
+          text-transform: uppercase;
           font-size: 0.85rem;
           margin-bottom: 25px;
         }
@@ -108,7 +108,6 @@ const WhatWeThink = () => {
           color: #ffffff;
           line-height: 1.1;
           margin-bottom: 30px;
-          text-transform: capitalize;
           font-size: clamp(2.5rem, 6vw, 5rem);
         }
 
@@ -130,7 +129,6 @@ const WhatWeThink = () => {
         .WT_Context_H1 {
           margin-bottom: 30px;
           color: #fff;
-          text-transform: capitalize;
         }
 
         .WT_Context_P {
@@ -230,7 +228,7 @@ const WhatWeThink = () => {
         }
 
         .WT_Block { margin-bottom: 60px; }
-        .WT_Block_Title { font-size: 2rem; font-weight: 900; color: #1a2b4b; margin-bottom: 20px; text-transform: capitalize; display: flex; align-items: center; gap: 15px; }
+        .WT_Block_Title { font-size: 2rem; font-weight: 900; color: #1a2b4b; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
         .WT_Block_Circle { width: 45px; height: 45px; background: #3b82f6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; min-width: 45px; }
         .WT_Block_P { color: #64748b; font-size: 1.1rem; line-height: 1.8; margin-left: 60px; }
 
@@ -253,13 +251,13 @@ const WhatWeThink = () => {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
             className="WT_Badge"
           >
-            OUR PHILOSOPHY
+            Our Philosophy
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
             className="WT_Hero_H1 NET_Hero_H1"
           >
-            empowering enterprises with <span className="text-blue-500">smart tech</span>
+            Empowering Enterprises With <span className="text-blue-500">Smart Tech</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}
@@ -274,7 +272,7 @@ const WhatWeThink = () => {
       {/* SECTION 2: CONTEXT */}
       <section className="WT_Context">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="NET_Hero_H1 WT_Context_H1 capitalize">simplifying operations, driving measurable growth</h2>
+          <h2 className="NET_Hero_H1 WT_Context_H1">Simplifying Operations, Driving Measurable Growth</h2>
           <p className="WT_Context_P">
             At CHN Technologies, we believe that clear thinking leads to better results.
             We combine innovation, strategy, and execution to bridge the gap between technical potential
@@ -286,7 +284,7 @@ const WhatWeThink = () => {
       {/* SECTION 3: CORE VALUES */}
       <section className="WT_Values">
         <span className="WT_Badge" style={{ marginBottom: '15px' }}>Foundational Pillars</span>
-        <h2 className="NET_Hero_H1 capitalize" style={{ color: '#1a2b4b', margin: 0 }}>values that drive us</h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b', margin: 0 }}>Values That Drive Us</h2>
 
         <div className="WT_Values_Grid">
           {coreValues.map((value, i) => (
@@ -311,7 +309,7 @@ const WhatWeThink = () => {
         </div>
         <div className="WT_Framework_Content">
           <span className="WT_Badge">OUR VISION & MISSION</span>
-          <h2 className="NET_Hero_H1 capitalize" style={{ color: '#1a2b4b' }}>strategic long-term <br /> objectives</h2>
+          <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Strategic Long-Term <br /> Objectives</h2>
 
           <div className="WT_Block">
             <h3 className="WT_Block_Title">

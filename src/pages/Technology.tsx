@@ -79,13 +79,13 @@ const TechnologyPage = () => {
                     background: rgba(0,96,255,0.18); border: 1px solid rgba(0,96,255,0.35);
                     color: #60a5fa; padding: 7px 18px; border-radius: 100px;
                     font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
-                    text-transform: capitalize; margin-bottom: 28px;
+                    text-transform: uppercase; margin-bottom: 28px;
                 }
                 .TECH_Hero_Title {
                     font-size: clamp(2.5rem, 6vw, 5.5rem);
                     font-weight: 900; color: #fff;
                     line-height: 1.05; letter-spacing: -0.03em;
-                    text-transform: capitalize; margin-bottom: 20px;
+                    margin-bottom: 20px;
                 }
                 .TECH_Hero_desc {
                     font-size: 1.1rem; color: rgba(255,255,255,0.7);
@@ -121,7 +121,7 @@ const TechnologyPage = () => {
                 .TECH_Category_Badge {
                     padding: 6px 16px; border-radius: 100px;
                     font-size: 0.72rem; font-weight: 800;
-                    text-transform: capitalize; letter-spacing: 0.1em;
+                    text-transform: uppercase; letter-spacing: 0.1em;
                     white-space: nowrap; flex-shrink: 0;
                 }
 
@@ -180,7 +180,7 @@ const TechnologyPage = () => {
                     display: flex; align-items: center; gap: 10px;
                     font-size: 0.8rem; color: rgba(255,255,255,0.45);
                     margin-bottom: 24px;
-                    text-transform: capitalize; letter-spacing: 0.1em; font-weight: 700;
+                    text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
                 }
                 .TECH_Breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; }
                 .TECH_Breadcrumb a:hover { color: #fff; }
@@ -214,9 +214,9 @@ const TechnologyPage = () => {
                         <span style={{ color: '#60a5fa' }}>Technology</span>
                     </div>
                     <div className="TECH_Badge">What We Do</div>
-                    <h2 className="TECH_Hero_Title NET_Hero_H1 capitalize">
-                        technology<br />
-                        <span style={{ color: '#60a5fa' }}>services</span>
+                    <h2 className="TECH_Hero_Title NET_Hero_H1">
+                        Technology<br />
+                        <span style={{ color: '#60a5fa' }}>Services</span>
                     </h2>
                     <p className="TECH_Hero_desc">
                         Integrated technology capabilities across infrastructure, software, and digital solutions —
@@ -247,7 +247,7 @@ const TechnologyPage = () => {
                                         {cat.label}
                                     </span>
                                 </div>
-                                <h2 className="NET_Hero_H1 TECH_Category_Label capitalize">{cat.label.toLowerCase()}</h2>
+                                <h2 className="NET_Hero_H1 TECH_Category_Label">{cat.label}</h2>
                                 <p className="TECH_Category_Desc">{cat.description}</p>
                             </div>
                             <Link

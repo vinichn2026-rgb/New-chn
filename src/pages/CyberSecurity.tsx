@@ -55,7 +55,8 @@ const CyberSecurityPage = () => {
 
         .CS_Hero_Content { flex: 1.2; max-width: 700px; }
         .CS_Badge { 
-          color: #0060ff; font-weight: 800; letter-spacing: 3px; text-transform: capitalize; 
+          font-weight: 800; letter-spacing: 3px; 
+          color: #2563eb;
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(0, 96, 255, 0.08); padding: 8px 16px; border-radius: 100px;
         }
@@ -78,12 +79,11 @@ const CyberSecurityPage = () => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-padding: 10px 30px;  border-radius: 9999px; /* Rounded pill shape */
+padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
   border: 2px solid #e2e8f0; /* Light border */
   background-color: #ffffff;
   color: #1a2840; /* Deep slate/blue */
-  font-weight: 800;
-  font-size: 0.875rem;
+          font-weight: 800; font-size: 1.05rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -250,8 +250,8 @@ padding: 10px 30px;  border-radius: 9999px; /* Rounded pill shape */
             transition={{ duration: 1, ease: "easeOut" }}
             className="CS_Hero_Content"
           >
-            <span className="CS_Badge">Digital Fortress</span>
-            <h2 className="CS_Hero_H1 NET_Hero_H1 capitalize">elite cyber  resilience</h2>
+            <span className="CS_Badge uppercase">Digital Fortress</span>
+            <h2 className="CS_Hero_H1 NET_Hero_H1">Elite Cyber Resilience</h2>
             <p className="CS_Tagline">Safeguarding enterprise intelligence with proactive defense ecosystems.</p>
             <p className="CS_Hero_P">
               CHN Technologies engineers structured security frameworks that neutralize threats before they materialize.
@@ -292,18 +292,45 @@ padding: 10px 30px;  border-radius: 9999px; /* Rounded pill shape */
             <img src={heroCyber} alt="Cyber Security Infrastructure" />
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
-              className="CS_Hero_Floating_Card"
+              initial={{ opacity: 0, x: 50, scale: 0.9 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                y: [0, -10, 0] // Creates a continuous floating bobbing effect
+              }}
+              transition={{
+                opacity: { delay: 0.8, duration: 0.5 },
+                x: { delay: 0.8, duration: 0.5 },
+                y: { repeat: Infinity, duration: 4, ease: "easeInOut" } // Floating loop
+              }}
+              className="CS_Hero_Floating_Card flex items-center gap-4 bg-white p-4 rounded-2xl shadow-xl border border-blue-50 relative"
             >
-              <div className="bg-blue-50 p-3 rounded-xl">
-                <Lock className="text-[#0060ff]" />
+              {/* Pulsing Icon Background */}
+              <div className="relative">
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.2, 0.5] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                  className="absolute inset-0 bg-blue-400 rounded-xl blur-md"
+                />
+                <div className="relative bg-blue-100 p-3 rounded-xl z-10">
+                  <Lock size={24} className="text-[#0060ff]" />
+                </div>
               </div>
+
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Threat Level</p>
-                <p className="text-xl font-black text-slate-800">MITIGATED</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Threat Level</p>
+                <motion.p
+                  animate={{ opacity: [1, 0.7, 1] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                  className="text-lg font-black text-slate-900 tracking-tight"
+                >
+                  NEUTRALIZED
+                </motion.p>
               </div>
+
+              {/* Tiny Success Dot */}
+              <div className="absolute top-3 right-3 h-2 w-2 bg-blue-500 rounded-full animate-ping" />
             </motion.div>
           </motion.div>
         </div>
@@ -313,8 +340,8 @@ padding: 10px 30px;  border-radius: 9999px; /* Rounded pill shape */
       <section className="CS_Cap_Section">
         <div className="CS_Cap_Inner">
           <div style={{ marginBottom: '100px' }}>
-            <span className="CS_Badge">Defensive Authority</span>
-            <h2 className="NET_Hero_H1 capitalize">built for absolute immunity</h2>
+            <span className="CS_Badge uppercase">Defensive Authority</span>
+            <h2 className="NET_Hero_H1">Built for Absolute Immunity</h2>
             <p className="CS_Hero_P" style={{ fontSize: '1.25rem' }}>
               In a digital-first economy, proximity to risk is constant. CHN Technologies
               eliminates vulnerability by implementing multi-layered security protocols,
@@ -369,8 +396,8 @@ padding: 10px 30px;  border-radius: 9999px; /* Rounded pill shape */
             <img src={dashboardCyber} alt="Security Dashboard" />
           </motion.div>
           <div className="CS_Outcome_Content">
-            <span className="CS_Badge">Digital Impact</span>
-            <h2 className="NET_Hero_H1 capitalize">strategic outcomes of secure governance</h2>
+            <span className="CS_Badge uppercase">Digital Impact</span>
+            <h2 className="NET_Hero_H1">Strategic Outcomes of Secure Governance</h2>
 
             <div className="Outcome_List">
               {[
@@ -399,8 +426,8 @@ padding: 10px 30px;  border-radius: 9999px; /* Rounded pill shape */
       {/* LAYOUT 5 – HOW WE DEFEND (INFOGRAPHIC STYLE) */}
       <section className="CS_Flow">
         <div className="CS_Flow_Inner">
-          <span className="CS_Badge">Security Lifecycle</span>
-          <h2 className="NET_Hero_H1 capitalize">the chn guardian framework</h2>
+          <span className="CS_Badge uppercase">Security Lifecycle</span>
+          <h2 className="NET_Hero_H1">The CHN Guardian Framework</h2>
 
           <div className="CS_Flow_Grid">
             {[
@@ -431,7 +458,7 @@ padding: 10px 30px;  border-radius: 9999px; /* Rounded pill shape */
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white capitalize">is your enterprise truly secure?</h2>
+            <h2 className="NET_Hero_H1 text-white">Is Your Enterprise Truly Secure?</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Don't wait for a breach to discover your weaknesses. Secure your future
               with a structured defense ecosystem built by experts.

@@ -55,14 +55,14 @@ const NetworkManagementPage = () => {
 
         .NET_Hero_Content { flex: 1.2; max-width: 700px; }
         .NET_Badge { 
-          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: capitalize; 
+          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: inline-block;
           background: rgba(59, 130, 246, 0.06); padding: 6px 16px; border-radius: 100px;
         }
         .NET_Hero_H1 { 
           margin-bottom: 25px; 
         }
-        .NET_Tagline { font-size: 1rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; text-transform: capitalize;}
+        .NET_Tagline { font-size: 1rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .NET_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
         .NET_Btn_Group { display: flex; gap: 20px; }
@@ -295,9 +295,8 @@ const NetworkManagementPage = () => {
             className="NET_Hero_Content"
           >
             <span className="NET_Badge">Technology Services</span>
-            {/* <h2 className="NET_Hero_H1 font-bold tracking-tight text-3xl md:text-4xl capitalize">network management services</h2> */}
-            <h2 className="NET_Hero_H1 capitalize">
-              network management services
+            <h2 className="NET_Hero_H1">
+              Network Management Services
             </h2>
 
             <p className="NET_Tagline">Reliable, secure, and high-performance networks.</p>
@@ -323,7 +322,7 @@ const NetworkManagementPage = () => {
       <section className="NET_Cap_Section">
         <div className="NET_Cap_Inner">
           <span className="NET_Badge">What Our Network Management Covers</span>
-          <h2 className="NET_Hero_H1 capitalize">structured connectivity  for business continuity</h2>
+          <h2 className="NET_Hero_H1">Structured Connectivity For Business Continuity</h2>
 
           <div className="NET_Cap_Grid">
             {[
@@ -370,7 +369,7 @@ const NetworkManagementPage = () => {
           </div>
           <div className="NET_Outcome_Content" style={{ textAlign: 'left' }}>
             <span className="NET_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1 capitalize">outcomes of structured management</h2>
+            <h2 className="NET_Hero_H1">Outcomes of Structured Management</h2>
 
             <div className="Outcome_List">
               {[
@@ -396,7 +395,7 @@ const NetworkManagementPage = () => {
       <section className="NET_Flow">
         <div className="NET_Flow_Inner">
           <span className="NET_Badge">Execution Model</span>
-          <h2 className="NET_Hero_H1 capitalize">our network management approach</h2>
+          <h2 className="NET_Hero_H1">Our Network Management Approach</h2>
 
           <motion.div
             initial="hidden"
@@ -443,7 +442,7 @@ const NetworkManagementPage = () => {
       {/* LAYOUT 6 – TRUST & ASSURANCE */}
       <section className="NET_Trust">
         <div className="NET_Trust_Inner">
-          <h2 className="NET_Hero_H1 capitalize">built for reliability and control</h2>
+          <h2 className="NET_Hero_H1">Built for Reliability and Control</h2>
           <p className="NET_Hero_P">
             CHN Technologies manages networks with a focus on predictability, accountability, and long-term stability.
             Our services align with operational requirements and compliance needs.

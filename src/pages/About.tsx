@@ -46,7 +46,6 @@ const AboutPage = () => {
           color: #3b82f6;
           font-weight: 800;
           letter-spacing: 3px;
-          text-transform: capitalize;
           font-size: 0.85rem;
           margin-bottom: 25px;
           display: block;
@@ -58,7 +57,6 @@ const AboutPage = () => {
           line-height: 1.1;
           margin-bottom: 25px;
           font-size: clamp(2.5rem, 5vw, 4.5rem);
-         text-transform: capitalize;
         }
 
         .ABOUT_Hero_P {
@@ -111,7 +109,7 @@ const AboutPage = () => {
         .ABOUT_Feature_Icon { width: 60px; height: 60px; background: #fff; color: #3b82f6; border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.05); min-width: 60px; }
 
         /* --- SECTION 3: FOCUS GRID --- */
-        .ABOUT_Focus { background: #fdfdfd; padding: 50px 5%; text-transform: capitalize; }
+        .ABOUT_Focus { background: #fdfdfd; padding: 50px 5%; }
         .ABOUT_Focus_Grid { 
           display: grid; 
           grid-template_columns: 1fr;
@@ -150,7 +148,7 @@ const AboutPage = () => {
           .ABOUT_Philosophy_Grid { justify-content: center; }
         }
 
-        .ABOUT_Approach_H { line-height: 1.1; margin-bottom: 40px; color: #fff; text-transform:capitalize;}
+        .ABOUT_Approach_H { line-height: 1.1; margin-bottom: 40px; color: #fff; }
         .ABOUT_Philosophy_Grid { display: grid; grid-template_columns: 1fr; gap: 20px; }
         @media (min-width: 640px) { .ABOUT_Philosophy_Grid { grid-template-columns: repeat(2, 1fr); } }
 
@@ -163,7 +161,7 @@ const AboutPage = () => {
 
         /* --- FINAL --- */
         .ABOUT_Final { padding: 100px 5%; text-align: center; background: #fff; }
-        .ABOUT_Final_H { line-height: 1.1; color: #1a2b4b; margin-bottom: 25px; text-transform:capitalize;}
+        .ABOUT_Final_H { line-height: 1.1; color: #1a2b4b; margin-bottom: 25px; }
         .ABOUT_Btn { 
           background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 100px; font-weight: 800; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 15px; transition: 0.3s; box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4); border: none; cursor: pointer;
         }
@@ -174,8 +172,8 @@ const AboutPage = () => {
       <section className="ABOUT_Hero">
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="ABOUT_Hero_Bg" />
         <div className="ABOUT_Hero_Content">
-          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="ABOUT_Hero_H1 NET_Hero_H1">about chn <br /> <span className="text-blue-500">technologies</span></motion.h2>
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="ABOUT_Hero_P">Technology, consulting, and digital execution work best when built on structure, clarity, and accountability.</motion.p>
+          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="ABOUT_Hero_H1 NET_Hero_H1">About CHN <br /> <span className="text-blue-500">Technologies</span></motion.h2>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="ABOUT_Hero_P">We build the resilient foundations that empower global enterprises to navigate the complexities of technology, people, and digital change.</motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -183,7 +181,7 @@ const AboutPage = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex items-center gap-5 mt-10"
           >
-            <Link to="/contact" style={{
+            <a href="#chn-overview" style={{
               display: 'inline-flex', alignItems: 'center', gap: 12,
               background: '#0060ff',
               color: '#fff',
@@ -198,30 +196,30 @@ const AboutPage = () => {
             }}>
               <ArrowRight size={18} />
               Read More
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
 
       {/* SECTION 2: IDENTITY */}
-      <section className="ABOUT_Identity">
+      <section id="chn-overview" className="ABOUT_Identity">
         <div className="ABOUT_Identity_Grid">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="ABOUT_Identity_Img">
             <img src="/images/corporate-flagship.jpg" alt="Corporate Flagship" />
             <div className="ABOUT_Identity_Badge">
               <h4 className="text-3xl font-black">10+</h4>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-blue-100">Years of Discipline</p>
+              <p className="text-[10px] font-bold tracking-widest text-blue-100">Years of Discipline</p>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="ABOUT_Identity_Content text-left">
             <span className="ABOUT_Badge">OVERVIEW</span>
-            <h2 className="NET_Hero_H1 ABOUT_Identity_H2 capitalize">strengthening operations through structured solutions</h2>
+            <h2 className="NET_Hero_H1 ABOUT_Identity_H2">Strengthening Operations Through Structured Solutions</h2>
             <p className="ABOUT_Identity_P">CHN Technologies helps businesses strengthen operations through structured technology services, digital solutions, and workforce-focused consulting. Our work is centred on creating stable systems and long-term operational confidence.</p>
 
             <div className="ABOUT_Feature_Box">
               <div className="ABOUT_Feature_Icon"><Shield size={30} /></div>
               <div className="text-left">
-                <h4 className="text-xl font-black text-[#1a2b4b]">Long-term Operational Confidence</h4>
+                <h4 className="text-xl font-black text-[#1a2b4b]">Long-Term Operational Confidence</h4>
                 <p className="text-slate-500 font-medium">Supporting organisations as they scale, transform, and adapt.</p>
               </div>
             </div>
@@ -233,7 +231,7 @@ const AboutPage = () => {
       <section className="ABOUT_Focus">
         <div className="max-w-7xl mx-auto text-center lg:text-left">
           <span className="ABOUT_Badge">CORE ECOSYSTEM</span>
-          <h2 className="NET_Hero_H1 ABOUT_Identity_H2 capitalize" style={{ marginBottom: 0 }}>what we work on</h2>
+          <h2 className="NET_Hero_H1 ABOUT_Identity_H2" style={{ marginBottom: 0 }}>What We Work On</h2>
         </div>
         <div className="ABOUT_Focus_Grid">
           {[
@@ -244,7 +242,7 @@ const AboutPage = () => {
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="ABOUT_Card group">
               <div className="ABOUT_Card_Img">
                 <img src={item.img} alt={item.title} />
-                <div className="absolute bottom-4 left-4 z-10 bg-white/95 px-4 py-2 rounded-xl flex items-center gap-2 text-[#3b82f6] shadow-lg font-black text-[10px] uppercase tracking-widest">
+                <div className="absolute bottom-4 left-4 z-10 bg-white/95 px-4 py-2 rounded-xl flex items-center gap-2 text-[#3b82f6] shadow-lg font-black text-[10px] tracking-widest">
                   {React.cloneElement(item.icon as React.ReactElement, { size: 14 })} {item.tag}
                 </div>
               </div>
@@ -267,8 +265,8 @@ const AboutPage = () => {
             className="text-left ABOUT_Approach_Left"
           >
             <span className="ABOUT_Badge">OUR APPROACH</span>
-            <h2 className="NET_Hero_H1 ABOUT_Approach_H capitalize">
-              how chn approaches <span className="text-white">business problems</span>
+            <h2 className="NET_Hero_H1 ABOUT_Approach_H">
+              How CHN Approaches <span className="text-white">Business Problems</span>
             </h2>
             <p className="text-blue-100/50 text-lg font-medium leading-relaxed mb-10 max-w-lg">
               We focus on how systems, processes, and teams interact in real operational environments rather than isolated issues.
@@ -311,7 +309,6 @@ const AboutPage = () => {
                   fontSize: '0.68rem',
                   fontWeight: 700,
                   color: 'rgba(255,255,255,0.7)',
-                  textTransform: 'uppercase',
                   letterSpacing: '0.12em',
                   background: 'rgba(255,255,255,0.07)',
                   backdropFilter: 'blur(10px)',
@@ -343,7 +340,7 @@ const AboutPage = () => {
               >
                 <div className="ABOUT_Phil_Icon">{React.cloneElement(phil.icon as React.ReactElement, { size: 24 })}</div>
                 <h4 className="text-xl font-bold text-blue-500 mb-3">{phil.title}</h4>
-                <p className="text-[11px] font-black uppercase tracking-widest text-blue-100/50 leading-relaxed">
+                <p className="text-md font-black tracking-widest text-blue-100/50 leading-relaxed">
                   {phil.desc}
                 </p>
               </motion.div>
@@ -356,7 +353,7 @@ const AboutPage = () => {
       <section className="ABOUT_Final">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 ABOUT_Final_H capitalize">work with a partner that values <br /> structure and stability</h2>
+            <h2 className="NET_Hero_H1 ABOUT_Final_H">Work With a Partner That Values <br /> Structure and Stability</h2>
             <p className="ABOUT_Identity_P text-center mb-12">Connect with CHN Technologies to learn how our capabilities <br /> can support your organisation's long-term objectives.</p>
             <Link to="/contact">
               <button className="ABOUT_Btn">Contact Our Team <ArrowRight size={24} /></button>

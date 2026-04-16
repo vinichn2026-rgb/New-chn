@@ -135,7 +135,6 @@ const CHNInsights = () => {
           color: #3b82f6;
           font-weight: 800;
           letter-spacing: 3px;
-          text-transform: capitalize;
           font-size: 0.85rem;
           margin-bottom: 25px;
         }
@@ -145,7 +144,6 @@ const CHNInsights = () => {
           color: #ffffff;
           line-height: 1.1;
           margin-bottom: 35px;
-          text-transform: capitalize;
           font-size: clamp(2.5rem, 5vw, 4.5rem);
         }
 
@@ -216,7 +214,6 @@ const CHNInsights = () => {
           border: 1px solid #f1f5f9;
           background: #fff;
           color: #1a2b4b;
-          text-transform: capitalize;
           letter-spacing: 1px;
           cursor: pointer;
         }
@@ -266,7 +263,7 @@ const CHNInsights = () => {
         /* GRID */
         .BLOG_Grid {
           display: grid;
-          grid-template_columns: 1fr;
+          grid-template-columns: 1fr;
           gap: 30px;
         }
         @media (min-width: 768px) { .BLOG_Grid { grid-template-columns: repeat(2, 1fr); } }
@@ -294,7 +291,7 @@ const CHNInsights = () => {
         .BLOG_Card_Content { padding: 0 20px 25px; }
         .BLOG_Card_Tag { 
           color: #3b82f6; font-weight: 800; font-size: 0.75rem; 
-          text-transform: capitalize; margin-bottom: 12px; display: block; letter-spacing: 1px; 
+          margin-bottom: 12px; display: block; letter-spacing: 1px; 
         }
         .BLOG_Card_H { font-size: 1.5rem; font-weight: 900; color: #1a2b4b; margin-bottom: 15px; line-height: 1.3; }
         .BLOG_Card_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; font-weight: 500; margin-bottom: 25px; }
@@ -312,8 +309,8 @@ const CHNInsights = () => {
       <section className="BLOG_Hero">
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="BLOG_Hero_Bg" />
         <div className="BLOG_Hero_Content">
-          <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="BLOG_Badge">Corporate Insights</motion.span>
-          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1 NET_Hero_H1">knowledge led <br /> <span className="text-blue-500">perspectives</span></motion.h2>
+          <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="BLOG_Badge uppercase">Corporate Insights</motion.span>
+          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1 NET_Hero_H1">Knowledge-Led <br /> <span className="text-blue-500">Perspectives</span></motion.h2>
 
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.4 }} className="BLOG_Search_Box">
             <Search size={22} className="text-blue-500 ml-4" />
@@ -333,7 +330,7 @@ const CHNInsights = () => {
         <div className="BLOG_Filter_Flex">
           <div className="flex items-center gap-4 mr-10">
             <Filter size={18} className="text-slate-400" />
-            <span className="text-slate-400 font-bold uppercase text-xs tracking-widest hidden md:block">Refine Area:</span>
+            <span className="text-slate-400 font-bold text-md tracking-widest hidden md:block">Refine Area:</span>
           </div>
           {categories.map((cat) => (
             <button
@@ -361,8 +358,8 @@ const CHNInsights = () => {
                 <img src="/images/blog-featured.jpg" alt="Featured Article" />
               </div>
               <div className="BLOG_Featured_Content">
-                <span className="BLOG_Badge">EDITORIAL FOCUS</span>
-                <h2 className="NET_Hero_H1 BLOG_Featured_H capitalize">insights from our strategic advisors</h2>
+                <span className="BLOG_Badge uppercase">Editorial Focus</span>
+                <h2 className="NET_Hero_H1 BLOG_Featured_H">Insights From Our Strategic Advisors</h2>
                 <p className="text-slate-500 font-medium text-lg leading-relaxed mb-10">
                   Comprehensive perspectives on technology, people, and unified corporate processes
                   drawn from real-world digital flagship engagements.
@@ -373,7 +370,7 @@ const CHNInsights = () => {
                   </div>
                   <div>
                     <h4 className="font-black text-[#1a2b4b]">CHN Strategic Board</h4>
-                    <p className="text-xs uppercase font-bold text-slate-400 tracking-widest">Industry Knowledge Directors</p>
+                    <p className="text-xs font-bold text-slate-400 tracking-widest">Industry Knowledge Directors</p>
                   </div>
                 </div>
               </div>
@@ -384,7 +381,7 @@ const CHNInsights = () => {
             <h3 className="text-2xl font-black text-[#1a2b4b] tracking-tight">
               {activeCategory} Insights
             </h3>
-            <p className="text-slate-400 font-bold uppercase text-xs tracking-widest">Showing {filteredInsights.length} results</p>
+            <p className="text-slate-400 font-bold text-xs tracking-widest">Showing {filteredInsights.length} results</p>
           </div>
 
           <motion.div layout className="BLOG_Grid">
@@ -410,7 +407,7 @@ const CHNInsights = () => {
                       <div className="BLOG_Card_Footer">
                         <div className="BLOG_Author">
                           <div className="BLOG_Author_Dot" />
-                          <span className="text-[11px] font-black uppercase text-slate-400 tracking-widest">{insight.author}</span>
+                          <span className="text-[11px] font-black text-slate-400 tracking-widest">{insight.author}</span>
                         </div>
                       </div>
                     </div>
@@ -423,10 +420,10 @@ const CHNInsights = () => {
           {filteredInsights.length === 0 && (
             <div className="BLOG_Empty">
               <div className="BLOG_Empty_Icon"><Search size={40} /></div>
-              <h4 className="text-2xl font-black text-[#1a2b4b] mb-4 uppercase">No Results Found</h4>
+              <h4 className="text-2xl font-black text-[#1a2b4b] mb-4">No Results Found</h4>
               <p className="text-slate-400 font-medium mb-8">Refine your search term or select a different category.</p>
               <button
-                className="text-blue-500 font-black uppercase text-sm tracking-widest"
+                className="text-blue-500 font-black text-sm tracking-widest"
                 onClick={() => { setActiveCategory('All'); setSearchQuery(''); }}
               >
                 Reset All Filters
@@ -438,13 +435,13 @@ const CHNInsights = () => {
 
       {/* SECTION 4: CTA */}
       <section style={{ padding: '50px 5%', textAlign: 'center', background: '#f8fafc' }}>
-        <h2 className="NET_Hero_H1 capitalize" style={{ color: '#1a2b4b' }}>stay informed with <span className="text-blue-500">expert clarity</span></h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Stay Informed with <span className="text-blue-500">Expert Clarity</span></h2>
         <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto mb-12">
           Gain access to refined perspectives that matter to business owners,
           IT decision-makers, and industry professionals.
         </p>
         <Link to="/contact">
-          <button className="bg-[#1a2b4b] text-white px-10 py-5 rounded-full font-black text-sm uppercase tracking-widest shadow-2xl hover:bg-blue-600 hover:scale-105 transition-all">
+          <button className="bg-[#0060ff] text-white px-10 py-5 rounded-full font-black text-md tracking-widest shadow-2xl hover:bg-[#1a2b4b] hover:scale-105 transition-all">
             Inquire For Insights
           </button>
         </Link>

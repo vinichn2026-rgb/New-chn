@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Network, Monitor, Zap, Users, Shield, Cpu, Layout, Activity, MessageSquare } from "lucide-react";
+import { Menu, X, ChevronDown, Network, Monitor, Zap, Users, Shield, Cpu, Layout, Activity, MessageSquare, ArrowRight, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -61,6 +61,11 @@ const SiteNavbar = () => {
     return false;
   };
 
+  const isClusterActive = (cluster: any): boolean => {
+    const children = cluster.children || [];
+    return children.some((link: any) => location.pathname === link.link);
+  };
+
   const updateIndicator = (element: HTMLElement | null) => {
     if (element) {
       const parentRect = navRef.current?.getBoundingClientRect();
@@ -93,7 +98,7 @@ const SiteNavbar = () => {
       } else {
         setIndicatorProps(prev => ({ ...prev, opacity: 0 }));
       }
-    }, 200);
+    }, 150);
   };
 
   useEffect(() => {
@@ -177,7 +182,7 @@ const SiteNavbar = () => {
                 width: indicatorProps.width,
                 opacity: indicatorProps.opacity
               }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              transition={{ type: "spring", stiffness: 450, damping: 35 }}
             />
 
             {navItems.map((item) => {
@@ -194,102 +199,113 @@ const SiteNavbar = () => {
                   <Link
                     to={item.link}
                     onMouseEnter={(e) => handleMouseEnter(item.name, e)}
-                    className={`flex items-center text-[15px] font-bold tracking-tight transition-all duration-300 no-underline outline-none focus:outline-none px-3 py-2 rounded-lg relative z-20 ${active ? "text-blue-600 active-nav-link" : "text-[#1a2b4b] hover:text-blue-600"}`}
+                    className={`flex items-center text-[15px] font-bold tracking-tight transition-all duration-300 no-underline outline-none focus:outline-none px-4 py-2 rounded-xl relative z-20 ${active ? "text-blue-600 active-nav-link" : "text-[#1a2b4b] hover:text-blue-600 hover:bg-blue-50/50"}`}
                   >
                     {item.name}
-                    {hasDropdown && <ChevronDown size={14} className={`ml-1 transition-transform duration-300 ${isHovered ? "rotate-180" : ""}`} />}
+                    {hasDropdown && <ChevronDown size={14} className={`ml-1 transition-transform duration-500 ${isHovered ? "rotate-180" : ""}`} />}
                   </Link>
 
                   <AnimatePresence>
                     {hasDropdown && isHovered && (
                       <motion.div
-                        initial={{ opacity: 0, y: 15, scale: 0.98 }}
+                        initial={{ opacity: 0, y: 10, scale: 0.98 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 15, scale: 0.98 }}
-                        transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
-                        className={`absolute top-[100%] ${item.name === "What We Do" ? "left-1/2 -translate-x-1/2" : "left-[-20px]"} pt-2 z-[110]`}
+                        exit={{ opacity: 0, y: 8, scale: 0.99 }}
+                        transition={{ duration: 0.15, ease: "easeOut" }}
+                        className={`absolute top-[100%] ${item.name === "What We Do" ? "left-1/2 -translate-x-1/2" : "left-[-10px]"} pt-4 z-[110]`}
                       >
+                        {/* SAFE ZONE BRIDGE - Prevents accidental closure on diagonal movement */}
+                        <div className="absolute top-0 left-[-100px] right-[-100px] h-4 bg-transparent" />
                         {item.name === "What We Do" ? (
-                          /* VERTICAL DOWNWARD ACCORDION DROPDOWN */
-                          <div
-                            className="bg-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.35)] border-t-[4px] border-blue-600 rounded-2xl border border-slate-200 flex flex-col transition-all duration-300 overflow-hidden"
-                            style={{ width: "320px" }}
+                          /* SMOOTH VERTICAL ACCORDION DROPDOWN */
+                          <div 
+                            className="bg-white/95 backdrop-blur-3xl shadow-[0_50px_100px_-20px_rgba(0,46,91,0.25)] rounded-[32px] border border-slate-100 flex flex-col transition-all duration-300 overflow-hidden py-3"
+                            style={{ width: "360px" }}
                             onMouseLeave={() => setActiveCluster(null)}
                           >
-                            <div className="p-3 flex flex-col gap-1">
-                              {[...item.children[0].children, item.children[1]].map((cluster: any) => {
-                                const isExpanded = activeCluster === cluster.name;
-                                const clusterChildren = cluster.name === "Consulting" ? cluster.children : (cluster.children || []);
-
-                                return (
-                                  <div
-                                    key={cluster.name}
-                                    onMouseEnter={() => setActiveCluster(cluster.name)}
-                                    className="flex flex-col"
-                                  >
-                                    <div className={`flex items-center gap-3 px-4 py-3.5 rounded-xl cursor-pointer transition-all duration-300 ${isExpanded ? "bg-blue-600 text-white shadow-md shadow-blue-100" : "hover:bg-slate-50 text-slate-700"}`}>
-                                      <div className={`${isExpanded ? "text-white" : "text-blue-600"}`}>
-                                        {getIcon(cluster.name)}
-                                      </div>
-                                      <span className="text-[14px] font-black">{cluster.name}</span>
-                                      <ChevronDown size={14} className={`ml-auto transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`} />
-                                    </div>
-
-                                    <AnimatePresence>
-                                      {isExpanded && (
-                                        <motion.div
-                                          initial={{ opacity: 0, height: 0 }}
-                                          animate={{ opacity: 1, height: "auto" }}
-                                          exit={{ opacity: 0, height: 0 }}
-                                          transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-                                          className="overflow-hidden bg-slate-50/50 rounded-b-xl"
-                                        >
-                                          <ul className="list-none p-2 m-0 flex flex-col gap-1 border-t border-slate-100">
-                                            {clusterChildren.map((link: any) => {
-                                              const isActive = location.pathname === link.link;
-                                              return (
-                                                <li key={link.name}>
-                                                  <Link
-                                                    to={link.link}
-                                                    onClick={() => setIsMobileOpen(false)}
-                                                    className={`group/link flex items-center justify-between px-4 py-2.5 rounded-lg transition-all duration-200 no-underline ${isActive ? "bg-white shadow-sm text-blue-600" : "text-slate-500 hover:text-blue-600 hover:bg-white hover:shadow-sm"}`}
-                                                  >
-                                                    <span className="text-[13px] font-bold">{link.name}</span>
-                                                    <ChevronDown size={12} className={`-rotate-90 transition-transform ${isActive ? "opacity-100" : "opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1"}`} />
-                                                  </Link>
-                                                </li>
-                                              );
-                                            })}
-                                          </ul>
-                                        </motion.div>
-                                      )}
-                                    </AnimatePresence>
-                                  </div>
-                                );
-                              })}
+                            <div className="px-5 py-2 mb-2">
+                              <span className="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">Our Capabilities</span>
                             </div>
-
-                            {/* <div className="bg-blue-50/50 p-4 border-t border-slate-100">
-                              <p className="text-[11px] text-slate-400 font-medium text-center m-0 italic">"Premium tech solutions for your business"</p>
-                            </div> */}
-                          </div>
-                        ) : (
-                          /* STANDARD DROPDOWN */
-                          <ul className="bg-white/95 backdrop-blur-2xl min-w-[240px] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.2)] border-t-[3px] border-blue-600 py-3 list-none m-0 p-0 rounded-b-2xl border border-white/20">
-                            {item.children.map((drop: any) => {
-                              const dropActive = isPathActive(drop);
+                            {[...item.children[0].children, item.children[1]].map((cluster: any, idx) => {
+                              const isExpanded = activeCluster === cluster.name;
+                              const clusterActive = isClusterActive(cluster);
+                              const clusterChildren = cluster.children || [];
+                              
                               return (
-                                <li key={drop.name} className="px-2">
-                                  <Link
-                                    to={drop.link || "#"}
-                                    className={`block px-4 py-2.5 rounded-lg text-[14px] font-bold no-underline transition-all duration-200 flex items-center justify-between ${dropActive ? "text-blue-600 bg-blue-50/50" : "text-slate-600 hover:text-blue-600 hover:bg-slate-50"}`}
+                                <div key={cluster.name} className="px-2">
+                                  <div
+                                    onMouseEnter={() => setActiveCluster(cluster.name)}
+                                    className={`flex items-center gap-4 px-5 py-4 rounded-2xl cursor-pointer transition-all duration-300 ${isExpanded ? "bg-blue-600 text-white shadow-lg shadow-blue-100 scale-[1.01]" : clusterActive ? "bg-blue-50 text-blue-700" : "hover:bg-slate-50 text-slate-700"}`}
                                   >
-                                    {drop.name}
-                                  </Link>
-                                </li>
+                                    <div className={`${isExpanded ? "text-white" : "text-blue-600"} transition-colors duration-300`}>
+                                      {getIcon(cluster.name)}
+                                    </div>
+                                    <span className="text-[16px] font-black tracking-tight leading-none">{cluster.name}</span>
+                                    <ChevronDown size={14} className={`ml-auto transition-transform duration-500 ${isExpanded ? "rotate-180" : ""}`} />
+                                  </div>
+
+                                  <AnimatePresence>
+                                    {isExpanded && (
+                                      <motion.div
+                                        initial={{ opacity: 0, height: 0 }}
+                                        animate={{ opacity: 1, height: "auto" }}
+                                        exit={{ opacity: 0, height: 0 }}
+                                        transition={{ duration: 0.3, ease: "circOut" }}
+                                        className="overflow-hidden"
+                                      >
+                                        <div className="flex flex-col gap-1.5 py-3 pl-4 mt-1 border-l-2 border-slate-100 ml-8 mr-2">
+                                          {clusterChildren.map((link: any, linkIdx) => {
+                                            const isActive = location.pathname === link.link;
+                                            return (
+                                              <motion.div
+                                                key={link.name}
+                                                initial={{ opacity: 0, x: -10 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{ delay: linkIdx * 0.05 }}
+                                              >
+                                                <Link
+                                                  to={link.link}
+                                                  onClick={closeMobileMenu}
+                                                  className={`group flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-300 no-underline ${isActive ? "bg-blue-600 text-white shadow-sm" : "text-slate-600 hover:bg-blue-600 hover:text-white"}`}
+                                                >
+                                                  <span className="text-[14.5px] font-extrabold tracking-tight leading-none">{link.name}</span>
+                                                  <ChevronRight size={14} className={`transition-all duration-300 ${isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"}`} />
+                                                </Link>
+                                              </motion.div>
+                                            );
+                                          })}
+                                        </div>
+                                      </motion.div>
+                                    )}
+                                  </AnimatePresence>
+                                </div>
                               );
                             })}
-                          </ul>
+                          </div>
+                        ) : (
+                          /* REFINED STANDARD DROPDOWN (NO BULLETS) */
+                          <div className="bg-white/95 backdrop-blur-3xl min-w-[260px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)] rounded-[24px] border border-slate-100 py-3 flex flex-col overflow-hidden">
+                            {item.children.map((drop: any, idx: number) => {
+                              const dropActive = isPathActive(drop);
+                              return (
+                                <motion.div 
+                                  key={drop.name}
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: idx * 0.05 + 0.1 }}
+                                  className="px-2"
+                                >
+                                  <Link
+                                    to={drop.link || "#"}
+                                    className={`group flex items-center justify-between px-5 py-3.5 rounded-xl text-[16px] font-black tracking-tight no-underline transition-all duration-200 ${dropActive ? "text-white bg-blue-600 shadow-md scale-[1.01]" : "text-slate-600 hover:bg-blue-600 hover:text-white"}`}
+                                  >
+                                    {drop.name}
+                                    <ChevronRight size={14} className={`transition-all duration-300 ${dropActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"}`} />
+                                  </Link>
+                                </motion.div>
+                              );
+                            })}
+                          </div>
                         )}
                       </motion.div>
                     )}
@@ -334,7 +350,7 @@ const SiteNavbar = () => {
             >
               <div className="p-8 pb-32">
                 <div className="mb-10">
-                  <span className="text-[12px] font-extrabold text-blue-600 uppercase tracking-widest block mb-4">Navigation</span>
+                  <span className="text-[12px] font-extrabold text-blue-600 tracking-widest block mb-4">Navigation</span>
                   <ul className="flex flex-col gap-6 m-0 list-none p-0">
                     {navItems.map((item) => {
                       const active = isPathActive(item);
@@ -349,7 +365,6 @@ const SiteNavbar = () => {
                               onClick={() => { if (!hasDropdown) closeMobileMenu(); }}
                             >
                               {item.name}
-                              {active && <div className="w-2 h-2 rounded-full bg-blue-600" />}
                             </Link>
                             {hasDropdown && (
                               <button
@@ -440,7 +455,7 @@ const SiteNavbar = () => {
                 </div>
 
                 <div className="pt-8 mt-10 border-t border-slate-100">
-                  <span className="text-[12px] font-extrabold text-blue-600 uppercase tracking-widest block mb-6">Connect With Us</span>
+                  <span className="text-[12px] font-extrabold text-blue-600 tracking-widest block mb-6">Connect With Us</span>
                   <div className="flex gap-4">
                     {[
                       { icon: <FaFacebookF size={20} />, link: "https://www.facebook.com/people/CHN-Technologies/100068692698660/" },

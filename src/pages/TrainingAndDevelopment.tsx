@@ -44,7 +44,7 @@ const TrainingAndDevelopmentPage = () => {
 
         .TD_Hero_Content { flex: 1.2; max-width: 650px; }
         .TD_Badge { 
-          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: capitalize; 
+          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
         .TD_Hero_H1 { 
@@ -70,6 +70,16 @@ const TrainingAndDevelopmentPage = () => {
             box-shadow: 0 40px 100px rgba(0,0,0,0.1); 
             object-fit: cover;
         }
+        .TD_Hero_Floating_Card {
+          position: absolute; bottom: 30px; left: -30px;
+          background: white; padding: 20px; border-radius: 20px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+          display: flex; gap: 12px; align-items: center; z-index: 20;
+          border: 1px solid rgba(0,0,0,0.05);
+        }
+        @media (max-width: 1024px) {
+          .TD_Hero_Floating_Card { display: none; }
+        }
 
         /* --- SECTION 2: CONTEXT --- */
         .TD_Context { 
@@ -84,7 +94,7 @@ const TrainingAndDevelopmentPage = () => {
           width: 100%;
           max-width: 1000px;
         }
-        .TD_Context_H1 { color: #fff; text-transform: capitalize; }
+        .TD_Context_H1 { color: #fff; }
         .TD_Context_P { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.8; }
 
         /* --- SECTION 3: CAPABILITIES --- */
@@ -125,8 +135,7 @@ const TrainingAndDevelopmentPage = () => {
           content: "";
           position: absolute;
           top: 0; left: 0; width: 100%; height: 0;
-          background: linear-gradient(180deg, #1e3a8a 0%, #0f172a 100%);
-          z-index: -1;
+    background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index: -1;
           transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -142,7 +151,7 @@ const TrainingAndDevelopmentPage = () => {
 
         /* --- SECTION 4: OUTCOMES --- */
         .TD_Outcome { 
-          padding: 100px 5%; 
+          padding: 50px 5%; 
           display: flex; 
           justify-content: center;
           background: white;
@@ -213,7 +222,7 @@ const TrainingAndDevelopmentPage = () => {
           justify-content: center;
         }
         .TD_Final_Inner { max-width: 900px; width: 100%; }
-        .TD_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: capitalize; color:#ffffff; }
+        .TD_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 30px; color:#ffffff; }
       `}</style>
 
       {/* LAYOUT 1 – PAGE HERO */}
@@ -227,10 +236,19 @@ const TrainingAndDevelopmentPage = () => {
 
             <div className="flex items-center gap-3 mb-6">
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
-                Consulting Excellence</span>
+                Training & Development
+              </span>
             </div>
-            <h2 className="TD_Hero_H1 NET_Hero_H1 capitalize">training & development</h2>
-            <p className="TD_Tagline">Building a high-performance workforce through structured enterprise learning systems.</p>
+            <h2 className="TD_Hero_H1 NET_Hero_H1">Training & Development</h2>
+            <p className="font-bold mb-6 flex items-center gap-2 subtitle" style={{ fontSize: '1.2rem', color: '#3b82f6' }}>
+              <Zap size={24} className="text-blue-600" />
+              Building a high-performance workforce through structured enterprise learning systems.
+            </p>
+            <p className="TD_Hero_P">
+              CHN Technologies delivers professional training and development services focused on workforce performance,
+              technical proficiency, and long-term organizational stability. Our solutions support
+              institutional knowledge growth and operational reliability through structured learning paths.
+            </p>
             <div className="TD_Btn_Group">
               <Link to="/contact">
                 <button className="TD_Primary_Btn">Customize Your Learning Plan</button>
@@ -243,6 +261,38 @@ const TrainingAndDevelopmentPage = () => {
             className="TD_Hero_Img"
           >
             <img src="/images/training-session.jpg" alt="Corporate Training Session" />
+            <motion.div
+              initial={{ opacity: 0, x: -20, scale: 0.9 }}
+              animate={{ 
+                opacity: 1, 
+                x: 0, 
+                scale: 1,
+                y: [0, -10, 0]
+              }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 0.5,
+                y: { repeat: Infinity, duration: 4, ease: "easeInOut" }
+              }}
+              className="TD_Hero_Floating_Card bg-white/90 backdrop-blur-md"
+            >
+              <div className="bg-blue-600 p-3 rounded-xl shadow-lg shadow-blue-200 shrink-0">
+                <GraduationCap className="text-white" size={24} />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.15em] text-slate-400 uppercase">
+                  Technical Proficiency
+                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-lg font-black text-slate-800 tracking-tight">
+                    GLOBAL STANDARDS
+                  </p>
+                  <div className="h-4 w-4 bg-blue-500 rounded-full flex items-center justify-center">
+                    <div className="h-1.5 w-1.5 bg-white rounded-full animate-pulse" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -251,7 +301,7 @@ const TrainingAndDevelopmentPage = () => {
       <section className="TD_Context">
         <div className="TD_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 TD_Context_H1 capitalize">reduced institutional knowledge is a silent tax on enterprise growth</h2>
+            <h2 className="NET_Hero_H1 TD_Context_H1">Reduced Institutional Knowledge is a Silent Tax on Enterprise Growth</h2>
             <p className="TD_Context_P">
               Business performance and innovation depend on how predictably you can manage and expand your institutional workforce knowledge.
               Poorly trained teams lead to technical debt, high turnover, and reduced organizational speed.
@@ -265,7 +315,7 @@ const TrainingAndDevelopmentPage = () => {
       <section className="TD_Cap_Section">
         <div className="TD_Cap_Inner">
           <span className="TD_Badge">Core Domains</span>
-          <h2 className="NET_Hero_H1 capitalize">strategic enterprise  learning capabilities</h2>
+          <h2 className="NET_Hero_H1">Strategic Enterprise Learning Capabilities</h2>
 
           <div className="TD_Cap_Grid">
             {[
@@ -312,7 +362,7 @@ const TrainingAndDevelopmentPage = () => {
           </div>
           <div className="TD_Outcome_Content">
             <span className="TD_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1 capitalize">business benefits of <br /> structured enterprise learning</h2>
+            <h2 className="NET_Hero_H1">Business Benefits of Structured Enterprise Learning</h2>
 
             <div className="Outcome_List">
               {[
@@ -338,7 +388,7 @@ const TrainingAndDevelopmentPage = () => {
       <section className="TD_Flow">
         <div className="TD_Flow_Inner">
           <span className="TD_Badge">Strategic Framework</span>
-          <h2 className="NET_Hero_H1 capitalize">our strategic approach</h2>
+          <h2 className="NET_Hero_H1">Our Strategic Approach</h2>
 
           <div className="TD_Flow_Grid">
             {[
@@ -367,7 +417,7 @@ const TrainingAndDevelopmentPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white capitalize">build a high-performance workforce</h2>
+            <h2 className="NET_Hero_H1 text-white">Build a High-Performance Workforce</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured training and development consulting <br />
               can support workforce growth and operational reliability.

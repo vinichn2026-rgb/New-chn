@@ -20,7 +20,7 @@ const ServicePage = ({ title, subtitle, description, features }: ServicePageProp
       <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "30px 30px" }} />
       <div className="container mx-auto px-4 relative z-10 text-center">
         <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}
-          className="inline-block px-4 py-1.5 bg-white/10 rounded-full text-xs font-semibold uppercase tracking-widest text-white/80 mb-4 border border-white/20">{subtitle}</motion.div>
+          className="inline-block px-4 py-1.5 bg-white/10 rounded-full text-xs font-semibold tracking-widest text-white/80 mb-4 border border-white/20">{subtitle}</motion.div>
         <motion.h2 initial="hidden" animate="visible" variants={fadeUp} custom={1}
           className="text-4xl md:text-5xl lg:text-6xl font-bold text-white NET_Hero_H1">{title}</motion.h2>
         <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={2}

@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
         }
 
         .PP_Badge { 
-          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: capitalize; 
+          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; 
           font-size: 0.8rem; margin-bottom: 20px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
@@ -74,14 +74,14 @@ const PrivacyPolicy = () => {
       <section className="PP_Hero">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
           <span className="PP_Badge">Trust & Transparency</span>
-          <h2 className="PP_Title NET_Hero_H1 capitalize">privacy policy</h2>
+          <h2 className="PP_Title NET_Hero_H1">Privacy Policy</h2>
           <p className="PP_Subtitle">Last Updated: July 5, 2025</p>
         </motion.div>
       </section>
 
       <section className="PP_Content">
         <div className="PP_Section">
-          <h2 className="NET_Hero_H1 PP_Section_H capitalize">
+          <h2 className="NET_Hero_H1 PP_Section_H">
             <span className="PP_Section_Icon"><Shield size={24} /></span>
             1. information collection
           </h2>
@@ -96,7 +96,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="NET_Hero_H1 PP_Section_H capitalize">
+          <h2 className="NET_Hero_H1 PP_Section_H">
             <span className="PP_Section_Icon"><Eye size={24} /></span>
             2. how we use information
           </h2>
@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="NET_Hero_H1 PP_Section_H capitalize">
+          <h2 className="NET_Hero_H1 PP_Section_H">
             <span className="PP_Section_Icon"><Lock size={24} /></span>
             3. data security & protection
           </h2>
@@ -125,7 +125,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="NET_Hero_H1 PP_Section_H capitalize">
+          <h2 className="NET_Hero_H1 PP_Section_H">
             <span className="PP_Section_Icon"><FileText size={24} /></span>
             4. your rights
           </h2>
@@ -135,7 +135,7 @@ const PrivacyPolicy = () => {
         </div>
 
         <div className="PP_Section">
-          <h2 className="NET_Hero_H1 PP_Section_H capitalize">
+          <h2 className="NET_Hero_H1 PP_Section_H">
             <span className="PP_Section_Icon"><Mail size={24} /></span>
             7. contact information
           </h2>

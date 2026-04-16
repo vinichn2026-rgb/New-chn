@@ -6,6 +6,7 @@ import {
   Database, Layout, Globe, Box, Shield, Target, Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import payrollHero from '../assets/payroll_compliance_hero.png';
 
 const PayrollAndCompliancePage = () => {
   return (
@@ -62,7 +63,7 @@ const PayrollAndCompliancePage = () => {
         }
 
         .PC_Badge { 
-          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: capitalize; 
+          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 25px; display: block;
         }
 
@@ -81,6 +82,16 @@ const PayrollAndCompliancePage = () => {
           position: relative; width: 450px; height: 580px; margin-left: auto;
         }
         .PC_Hero_Img_Box img { width: 100%; height: 100%; object-fit: cover; border-radius: 40px; box-shadow: 0 50px 100px rgba(0,0,0,0.2); border: 4px solid #fff; }
+        .PC_Hero_Floating_Card {
+          position: absolute; bottom: 40px; left: -40px;
+          background: white; padding: 25px; border-radius: 20px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+          display: flex; gap: 15px; align-items: center; z-index: 20;
+          border: 1px solid rgba(0,0,0,0.05);
+        }
+        @media (max-width: 1024px) {
+          .PC_Hero_Floating_Card { display: none; }
+        }
 
         /* --- SECTION 2: CONTEXT --- */
         .PC_Context { padding: 100px 5%; background: #22314f; color: #fff; }
@@ -93,7 +104,7 @@ const PayrollAndCompliancePage = () => {
           .PC_Context_Img { order: -1; width: 100%; max-width: 600px; margin: 0 auto; }
         }
 
-        .PC_Context_H { font-weight: 900; line-height: 1.2; margin-bottom: 40px; text-transform: capitalize; color:#ffffff;}
+        .PC_Context_H { font-weight: 900; line-height: 1.2; margin-bottom: 40px; color:#ffffff;}
         .PC_Context_P { font-size: 1.15rem; color: #b9d1ff; line-height: 1.8; margin-bottom: 0; }
         .PC_Context_Img img { width: 100%; border-radius: 40px; box-shadow: 0 40px 100px rgba(0,0,0,0.3); border: 12px solid #2a3a5a; }
 
@@ -117,15 +128,15 @@ const PayrollAndCompliancePage = () => {
 
         .PC_Card::before {
           content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 0;
-          background: linear-gradient(180deg, #1e3a8a 0%, #22314f 100%); z-index: -1;
+ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);           z-index: -1;
           transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .PC_Card:hover::before { height: 100%; }
         .PC_Card:hover h3, .PC_Card:hover p, .PC_Card_Icon { color: #3b82f6; transition: 0.3s; }
         .PC_Card:hover h3, .PC_Card:hover p { color: #fff !important; }
-        .PC_Card:hover .PC_Card_Icon_Box { background: rgba(255,255,255,0.1); }
-
+        .PC_Card:hover .PC_Card_Icon_Box { background: rgba(255,255,255,0.1); color: #fff; }
+ 
         .PC_Card_Icon_Box { 
           width: 70px; height: 70px; background: #fff; color: #3b82f6; border-radius: 22px; 
           display: flex; align-items: center; justify-content: center; margin-bottom: 35px; 
@@ -174,7 +185,7 @@ const PayrollAndCompliancePage = () => {
           padding: 100px 5%; 
           background: #002e5b; color: #ffffff; text-align: center; 
         }
-        .PC_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 50px; text-transform: capitalize; color:#ffffff; }
+        .PC_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 50px; color:#ffffff; }
       `}</style>
 
       {/* SECTION 1: HERO */}
@@ -185,19 +196,62 @@ const PayrollAndCompliancePage = () => {
 
             <div className="flex items-center gap-3 mb-6">
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
-                Compliance Excellence              </span>
+                Payroll & Compliance
+              </span>
             </div>
 
-            <h2 className="PC_Hero_H1 NET_Hero_H1 capitalize">payroll & compliance services</h2>
-            <p className="PC_Hero_P">Financial integrity and corporate control  built on secure, zero-error processing ecosystems.</p>
+            <h2 className="PC_Hero_H1 NET_Hero_H1">Payroll & Compliance</h2>
+            <p className="font-bold mb-6 flex items-center gap-2 subtitle" style={{ fontSize: '1.2rem', color: '#3b82f6' }}>
+              <Zap size={24} className="text-blue-600" />
+              Built for efficiency, scale, and results
+            </p>
+            <p className="PC_Hero_P">
+              CHN Technologies delivers professional payroll and compliance services focused on financial integrity,
+              regulatory accuracy, and long-term corporate stability. Our solutions support zero-error
+              processing and organizational security through structured financial engineering.
+            </p>
             <Link to="/contact">
-              <button className="PC_Btn">Request A Consultation <ArrowRight size={24} /></button>
+              <button className="PC_Btn">Consult on Payroll Strategy <ArrowRight size={24} /></button>
             </Link>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }} className="PC_Hero_Right">
             <div className="PC_Hero_Img_Box">
-              <img src="/images/payroll-compliance.jpg" alt="Financial Compliance" />
+              <img src={payrollHero} alt="Premium Financial Compliance Architecture" />
+              <motion.div
+                initial={{ opacity: 0, x: -30, scale: 0.85, rotate: -2 }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  scale: 1,
+                  rotate: 0,
+                  y: [0, -8, 0] // Smooth floating loop
+                }}
+                transition={{
+                  duration: 0.6,
+                  delay: 0.8,
+                  ease: "easeOut",
+                  y: { repeat: Infinity, duration: 5, ease: "easeInOut" } // Infinite float
+                }}
+                className="PC_Hero_Floating_Card flex items-center gap-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-blue-100 relative overflow-hidden"
+              >
+                <div className="bg-blue-600 p-3 rounded-xl shadow-lg shadow-blue-200">
+                  <ShieldCheck className="text-white" size={24} />
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold tracking-[0.15em] text-slate-400 uppercase">
+                    Compliance Index
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-lg font-black text-slate-800 tracking-tight">
+                      ZERO DEFECT
+                    </p>
+                    <div className="h-4 w-4 bg-blue-500 rounded-full flex items-center justify-center">
+                      <div className="h-1.5 w-1.5 bg-white rounded-full animate-pulse" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -208,7 +262,7 @@ const PayrollAndCompliancePage = () => {
         <div className="PC_Context_Grid">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <span className="PC_Badge">Strategic Foundation</span>
-            <h2 className="NET_Hero_H1 PC_Context_H capitalize">financial accuracy protects <br /> corporate assets</h2>
+            <h2 className="NET_Hero_H1 PC_Context_H">Financial Accuracy Protects Corporate Assets</h2>
             <p className="PC_Context_P">
               Business security and credibility depend on predictable management of regional labor laws and financial processing.
               Poorly managed systems lead to legal debt, financial penalty, and loss of trust. CHN helps maintain structured, secure, and highly accurate business environments.
@@ -224,7 +278,7 @@ const PayrollAndCompliancePage = () => {
       {/* SECTION 3: DOMAINS */}
       <section className="PC_Domains">
         <span className="PC_Badge">Core Domains</span>
-        <h2 className="NET_Hero_H1 capitalize" style={{ color: '#1a2b4b' }}>consolidated  management</h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Consolidated Management</h2>
 
         <div className="PC_Domains_Grid">
           {[
@@ -253,7 +307,7 @@ const PayrollAndCompliancePage = () => {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
             <span className="PC_Badge">Business Impact</span>
-            <h2 className="NET_Hero_H1 capitalize" style={{ color: '#1a2b4b' }}>benefits of structured control</h2>
+            <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Benefits of Structured Control</h2>
             <div className="mt-12">
               {[
                 { title: "Predictable Tax Management", desc: "Error-free tax processing and institutional institutional health." },
@@ -277,7 +331,7 @@ const PayrollAndCompliancePage = () => {
       {/* SECTION 5: FRAMEWORK */}
       <section className="PC_Framework">
         <span className="PC_Badge">Compliance Framework</span>
-        <h2 className="NET_Hero_H1 capitalize" style={{ color: '#1a2b4b' }}>strategic stages</h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Strategic Stages</h2>
         <div className="PC_Framework_Grid">
           {[
             { num: "01", h: "Audit & Scoping", icon: <Search size={30} />, p: "Review existing payroll logs, compliance status, and obligations." },
@@ -303,7 +357,7 @@ const PayrollAndCompliancePage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white capitalize">ensure financial integrity <br /> and corporate control</h2>
+            <h2 className="NET_Hero_H1 text-white">Ensure Financial Integrity and Corporate Control</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with us to understand how structured systems <br /> support long-term financial scalability.            </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">

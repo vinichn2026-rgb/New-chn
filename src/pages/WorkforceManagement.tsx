@@ -44,7 +44,7 @@ const WorkforceManagementPage = () => {
 
         .WM_Hero_Content { flex: 1.2; max-width: 650px; }
         .WM_Badge { 
-          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: capitalize; 
+          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
         .WM_Hero_H1 { margin-bottom: 25px; }
@@ -75,6 +75,16 @@ const WorkforceManagementPage = () => {
             box-shadow: 0 40px 100px rgba(0,0,0,0.1); 
             object-fit: cover;
         }
+        .WM_Hero_Floating_Card {
+          position: absolute; bottom: 30px; left: -30px;
+          background: white; padding: 20px; border-radius: 20px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+          display: flex; gap: 12px; align-items: center; z-index: 20;
+          border: 1px solid rgba(0,0,0,0.05);
+        }
+        @media (max-width: 1024px) {
+          .WM_Hero_Floating_Card { display: none; }
+        }
 
         /* --- SECTION 2: CONTEXT --- */
         .WM_Context { 
@@ -89,7 +99,7 @@ const WorkforceManagementPage = () => {
           width: 100%;
           max-width: 1000px;
         }
-        .WM_Context_H1 { color: #fff; text-transform: capitalize; }
+        .WM_Context_H1 { color: #fff; }
         .WM_Context_P { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.8; }
 
         /* --- SECTION 3: CAPABILITIES --- */
@@ -130,8 +140,7 @@ const WorkforceManagementPage = () => {
           content: "";
           position: absolute;
           top: 0; left: 0; width: 100%; height: 0;
-          background: linear-gradient(180deg, #1e3a8a 0%, #0f172a 100%);
-          z-index: -1;
+    background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index: -1;
           transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -147,7 +156,7 @@ const WorkforceManagementPage = () => {
 
         /* --- SECTION 4: OUTCOMES --- */
         .WM_Outcome { 
-          padding: 100px 5%; 
+          padding: 50px 5%; 
           display: flex; 
           justify-content: center;
           background: white;
@@ -218,7 +227,7 @@ const WorkforceManagementPage = () => {
           justify-content: center;
         }
         .WM_Final_Inner { max-width: 900px; width: 100%; }
-        .WM_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: capitalize; color:#ffffff; }
+        .WM_Final_H { font-weight: 900; line-height: 1.1; margin-bottom: 30px; color:#ffffff; }
       `}</style>
 
       {/* LAYOUT 1 – PAGE HERO */}
@@ -231,13 +240,19 @@ const WorkforceManagementPage = () => {
 
             <div className="flex items-center gap-3 mb-6">
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
-                Consulting Excellence</span>
+                Workforce Management
+              </span>
             </div>
-            <h2 className="WM_Hero_H1 NET_Hero_H1 capitalize">workforce management services</h2>
-            <p className="WM_Tagline">Building high-fidelity workforces through strategic acquisition and structural oversight.</p>
-
-
-
+            <h2 className="WM_Hero_H1 NET_Hero_H1">Workforce Management</h2>
+            <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle" style={{ fontSize: '1.2rem', color: '#3b82f6' }}>
+              <Zap size={24} className="text-blue-600" />
+              Built for efficiency, scale, and results
+            </p>
+            <p className="WM_Hero_P">
+              CHN Technologies delivers professional workforce management services focused on strategic acquisition,
+              performance optimization, and long-term organizational stability. Our solutions support
+              mission-critical workflows and business growth through structured human capital engineering.
+            </p>
             <div className="WM_Btn_Group">
               <Link to="/contact">
                 <button className="WM_Primary_Btn">Consult on Workforce Strategy</button>
@@ -250,6 +265,38 @@ const WorkforceManagementPage = () => {
             className="WM_Hero_Img"
           >
             <img src="/images/blog-featured.jpg" alt="Workforce Team Strategy" />
+            <motion.div
+              initial={{ opacity: 0, x: -20, scale: 0.9 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                y: [0, -10, 0]
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                y: { repeat: Infinity, duration: 4, ease: "easeInOut" }
+              }}
+              className="WM_Hero_Floating_Card bg-white/90 backdrop-blur-md"
+            >
+              <div className="bg-blue-600 p-3 rounded-xl shadow-lg shadow-blue-200 shrink-0">
+                <Users className="text-white" size={24} />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.15em] text-slate-400 uppercase">
+                  Talent Integrity
+                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-lg font-black text-slate-800 tracking-tight">
+                    ISO CERTIFIED
+                  </p>
+                  <div className="h-4 w-4 bg-blue-500 rounded-full flex items-center justify-center">
+                    <div className="h-1.5 w-1.5 bg-white rounded-full animate-pulse" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -258,7 +305,7 @@ const WorkforceManagementPage = () => {
       <section className="WM_Context">
         <div className="WM_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 WM_Context_H1 capitalize">your workforce is the primary architecture of operational success</h2>
+            <h2 className="NET_Hero_H1 WM_Context_H1">Your Workforce is the Primary Architecture of Operational Success</h2>
             <p className="WM_Context_P">
               Business performance depends on how consistently and predictably you can manage and expand your human capital.
               Poorly managed workforce environments lead to internal debt, high hiring overhead, and reduced organizational speed.
@@ -272,7 +319,7 @@ const WorkforceManagementPage = () => {
       <section className="WM_Cap_Section">
         <div className="WM_Cap_Inner">
           <span className="WM_Badge">Core Domains</span>
-          <h2 className="NET_Hero_H1 capitalize">workforce consulting  capabilities</h2>
+          <h2 className="NET_Hero_H1">Workforce Consulting Capabilities</h2>
 
           <div className="WM_Cap_Grid">
             {[
@@ -319,7 +366,7 @@ const WorkforceManagementPage = () => {
           </div>
           <div className="WM_Outcome_Content">
             <span className="WM_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1 capitalize">benefits of structured  workforce management</h2>
+            <h2 className="NET_Hero_H1">Benefits of Structured Workforce Management</h2>
 
             <div className="Outcome_List">
               {[
@@ -345,7 +392,7 @@ const WorkforceManagementPage = () => {
       <section className="WM_Flow">
         <div className="WM_Flow_Inner">
           <span className="WM_Badge">Consulting Framework</span>
-          <h2 className="NET_Hero_H1 capitalize">workforce lifecycle approach</h2>
+          <h2 className="NET_Hero_H1">Workforce Lifecycle Approach</h2>
 
           <div className="WM_Flow_Grid">
             {[
@@ -375,7 +422,7 @@ const WorkforceManagementPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white capitalize">optimise your revenue through  workforce stability</h2>
+            <h2 className="NET_Hero_H1 text-white">Optimise Your Revenue Through Workforce Stability</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured workforce management solutions <br />
               can support operational efficiency and organizational scalability.

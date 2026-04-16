@@ -9,7 +9,7 @@ import {
 import { Link } from 'react-router-dom';
 
 // Import local assets
-import serversImg from '../assets/servers.jpg';
+import serversImg from '../assets/camera_images.jpg';
 import networkDashboardImg from '../assets/network_dashboard.png';
 
 const LanCablingSurveillancePage = () => {
@@ -49,7 +49,7 @@ const LanCablingSurveillancePage = () => {
 
         .LCS_Hero_Content { flex: 1.2; max-width: 650px; }
         .LCS_Badge { 
-          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: capitalize; 
+          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
         .LCS_Hero_H1 { 
@@ -77,6 +77,16 @@ const LanCablingSurveillancePage = () => {
             border: 15px solid #fff; 
             box-shadow: 0 40px 100px rgba(0,0,0,0.1); 
             object-fit: cover;
+        }
+        .LCS_Hero_Floating_Card {
+          position: absolute; bottom: 30px; left: -30px;
+          background: white; padding: 20px; border-radius: 20px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+          display: flex; gap: 12px; align-items: center; z-index: 20;
+          border: 1px solid rgba(0,0,0,0.05);
+        }
+        @media (max-width: 1024px) {
+          .LCS_Hero_Floating_Card { display: none; }
         }
 
         /* --- SECTION 2: CAPABILITIES --- */
@@ -118,7 +128,7 @@ const LanCablingSurveillancePage = () => {
           content: "";
           position: absolute;
           top: 0; left: 0; width: 100%; height: 0;
-          background: linear-gradient(180deg, #1e3a8a 0%, #0f172a 100%);
+          background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);
           z-index: -1;
           transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -212,7 +222,6 @@ const LanCablingSurveillancePage = () => {
         .LCS_Step_H {
          font-size: 1.25rem; font-weight: 800; 
          color: #22314f;
-        //  text-transform: capitalize;
          text-align:center;
           margin-bottom: 12px; }
         .LCS_Step_P { color: #64748b; text-align:center; font-size: 0.95rem; line-height: 1.6; }
@@ -231,7 +240,7 @@ const LanCablingSurveillancePage = () => {
         }
 
         .LAN_Badge{
-         color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: capitalize; 
+         color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: inline-block;
           background: rgba(59, 130, 246, 0.06); padding: 6px 16px; border-radius: 100px;
         }
@@ -248,7 +257,7 @@ const LanCablingSurveillancePage = () => {
             <div className="LAN_Badge">
               Physical Infrastructure
             </div>
-            <h2 className="LCS_Hero_H1  capitalize">lan cabling & surveillance</h2>
+            <h2 className="LCS_Hero_H1">LAN Cabling & Surveillance</h2>
             <p className="LCS_Tagline">Structured cabling and intelligent surveillance systems built for secure and reliable operations.</p>
             <p className="LCS_Hero_P">
               CHN Technologies delivers professional LAN cabling and surveillance solutions that support stable
@@ -267,6 +276,38 @@ const LanCablingSurveillancePage = () => {
             className="LCS_Hero_Img"
           >
             <img src={serversImg} alt="Structured LAN Cabling" />
+            <motion.div
+              initial={{ opacity: 0, x: -20, scale: 0.9 }}
+              animate={{ 
+                opacity: 1, 
+                x: 0, 
+                scale: 1,
+                y: [0, -10, 0]
+              }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 0.5,
+                y: { repeat: Infinity, duration: 4, ease: "easeInOut" }
+              }}
+              className="LCS_Hero_Floating_Card bg-white/90 backdrop-blur-md"
+            >
+              <div className="bg-blue-600 p-3 rounded-xl shadow-lg shadow-blue-200 shrink-0">
+                <Shield className="text-white" size={24} />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.15em] text-slate-400 uppercase">
+                  Quality Standards
+                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-lg font-black text-slate-800 tracking-tight">
+                    CERTIFIED L1
+                  </p>
+                  <div className="h-4 w-4 bg-blue-500 rounded-full flex items-center justify-center">
+                    <div className="h-1.5 w-1.5 bg-white rounded-full animate-pulse" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -275,7 +316,7 @@ const LanCablingSurveillancePage = () => {
       <section className="LCS_Cap_Section">
         <div className="LCS_Cap_Inner">
           <div style={{ maxWidth: '800px', margin: '0 auto 60px' }}>
-            <h2 className="NET_Hero_H1 capitalize">physical infrastructure plays a critical role</h2>
+            <h2 className="NET_Hero_H1">Physical Infrastructure Plays a Critical Role</h2>
             <p className="LCS_Hero_P">
               Network performance and security depend heavily on physical infrastructure quality.
               Poor cabling and unstructured surveillance lead to connectivity issues and security blind spots.
@@ -284,7 +325,7 @@ const LanCablingSurveillancePage = () => {
           </div>
 
           <span className="LCS_Badge">Core Capabilities</span>
-          <h2 className="NET_Hero_H1 capitalize">what our services cover</h2>
+          <h2 className="NET_Hero_H1">What Our Services Cover</h2>
 
           <div className="LCS_Cap_Grid">
             {[
@@ -331,7 +372,7 @@ const LanCablingSurveillancePage = () => {
           </div>
           <div className="LCS_Outcome_Content">
             <span className="LCS_Badge">Operational Outcomes</span>
-            <h2 className="NET_Hero_H1 capitalize">benefits of structured physical infrastructure</h2>
+            <h2 className="NET_Hero_H1">Benefits of Structured Physical Infrastructure</h2>
 
             <div className="Outcome_List">
               {[
@@ -357,7 +398,7 @@ const LanCablingSurveillancePage = () => {
       <section className="LCS_Flow">
         <div className="LCS_Flow_Inner">
           <span className="LCS_Badge">Delivery Model</span>
-          <h2 className="NET_Hero_H1 capitalize">our delivery approach</h2>
+          <h2 className="NET_Hero_H1">Our Delivery Approach</h2>
 
           <div className="LCS_Flow_Grid">
             {[
@@ -394,7 +435,7 @@ const LanCablingSurveillancePage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white capitalize">build a strong physical foundation</h2>
+            <h2 className="NET_Hero_H1 text-white">Build a Strong Physical Foundation</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured cabling and surveillance solutions
               can support secure, reliable, and scalable business environments. Built for order, visibility, and control.

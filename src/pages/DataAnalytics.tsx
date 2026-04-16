@@ -6,6 +6,7 @@ import {
   Layers, Cpu, Layout, Globe, Box, Shield, LineChart
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import tradingHero from '../assets/trading_analytics_hero.png';
 
 const DataAnalyticsPage = () => {
   return (
@@ -44,7 +45,7 @@ const DataAnalyticsPage = () => {
 
         .DA_Hero_Content { flex: 1.2; max-width: 650px; }
         .DA_Badge { 
-          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: capitalize; 
+          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
         .DA_Hero_H1 { 
@@ -55,7 +56,7 @@ const DataAnalyticsPage = () => {
         .DA_Btn_Group { display: flex; gap: 20px; }
         @media (max-width: 1024px) { .DA_Btn_Group { justify-content: center; } }
         .DA_Primary_Btn { 
-          background: #3b82f6; color: white; padding: 18px 35px; border-radius: 100px; 
+          background: #3b82f6; color: white; padding: 10px 20px; border-radius: 100px; 
           font-weight: 700; box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3); transition: 0.3s;
           border: none; cursor: pointer;
         }
@@ -69,6 +70,16 @@ const DataAnalyticsPage = () => {
             border: 15px solid #fff; 
             box-shadow: 0 40px 100px rgba(0,0,0,0.1); 
             object-fit: cover;
+        }
+        .DA_Hero_Floating_Card {
+          position: absolute; bottom: 30px; left: -30px;
+          background: white; padding: 20px; border-radius: 20px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+          display: flex; gap: 12px; align-items: center; z-index: 20;
+          border: 1px solid rgba(0,0,0,0.05);
+        }
+        @media (max-width: 1024px) {
+          .DA_Hero_Floating_Card { display: none; }
         }
 
         /* --- SECTION 2: CONTEXT --- */
@@ -84,7 +95,7 @@ const DataAnalyticsPage = () => {
           width: 100%;
           max-width: 1000px;
         }
-        .DA_Context_H1 { color: #fff; text-transform: capitalize; }
+        .DA_Context_H1 { color: #fff; }
         .DA_Context_P { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.8; }
 
         /* --- SECTION 3: CAPABILITIES --- */
@@ -125,8 +136,7 @@ const DataAnalyticsPage = () => {
           content: "";
           position: absolute;
           top: 0; left: 0; width: 100%; height: 0;
-          background: linear-gradient(180deg, #1e3a8a 0%, #0f172a 100%);
-          z-index: -1;
+   background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index: -1;
           transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -142,7 +152,7 @@ const DataAnalyticsPage = () => {
 
         /* --- SECTION 4: OUTCOMES --- */
         .DA_Outcome { 
-          padding: 100px 5%; 
+          padding: 50px 5%; 
           display: flex; 
           justify-content: center;
           background: white;
@@ -227,10 +237,10 @@ const DataAnalyticsPage = () => {
 
 
             <div className="flex items-center gap-3 mb-6">
-              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
+              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold tracking-widest border border-blue-100 uppercase">
                 Digital Intelligence              </span>
             </div>
-            <h2 className="DA_Hero_H1 NET_Hero_H1 capitalize">data analytics services</h2>
+            <h2 className="DA_Hero_H1 NET_Hero_H1">Data Analytics Services</h2>
             <p className="DA_Tagline">Mission-critical insights driven by high-fidelity data and predictable modeling.</p>
             <p className="DA_Hero_P">
               CHN Technologies provides structured data analytics services that ensure visibility,
@@ -248,7 +258,39 @@ const DataAnalyticsPage = () => {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
             className="DA_Hero_Img"
           >
-            <img src="/images/analytics-viz.jpg" alt="Data Visualization Dashboard" />
+            <img src={tradingHero} alt="Premium Trading Analytics Dashboard" />
+            <motion.div
+              initial={{ opacity: 0, x: -20, scale: 0.9 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                y: [0, -10, 0]
+              }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                y: { repeat: Infinity, duration: 4, ease: "easeInOut" }
+              }}
+              className="DA_Hero_Floating_Card bg-white/90 backdrop-blur-md"
+            >
+              <div className="bg-blue-600 p-3 rounded-xl shadow-lg shadow-blue-200 shrink-0">
+                <TrendingUp className="text-white" size={24} />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.15em] text-slate-400 uppercase">
+                  Predictive Index
+                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-lg font-black text-slate-800 tracking-tight">
+                    99.9% PRECISION
+                  </p>
+                  <div className="h-4 w-4 bg-blue-500 rounded-full flex items-center justify-center">
+                    <div className="h-1.5 w-1.5 bg-white rounded-full animate-pulse" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -257,7 +299,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Context">
         <div className="DA_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 DA_Context_H1 capitalize">data is the primary driver of strategic competitive advantage</h2>
+            <h2 className="NET_Hero_H1 DA_Context_H1">Data is the Primary Driver of Strategic Competitive Advantage</h2>
             <p className="DA_Context_P">
               Business productivity depends on how much of your resource capacity is focused on high-value strategy versus low-value manual processing.
               Poorly automated or manual workflows lead to operational debt, human error, and reduced organizational speed.
@@ -271,7 +313,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Cap_Section">
         <div className="DA_Cap_Inner">
           <span className="DA_Badge">Analytical Domains</span>
-          <h2 className="NET_Hero_H1 capitalize">full-cycle analytical <br /> capabilities</h2>
+          <h2 className="NET_Hero_H1">Full Cycle Analytical Capabilities</h2>
 
           <div className="DA_Cap_Grid">
             {[
@@ -318,7 +360,7 @@ const DataAnalyticsPage = () => {
           </div>
           <div className="DA_Outcome_Content">
             <span className="DA_Badge">Strategic Benefits</span>
-            <h2 className="NET_Hero_H1 capitalize">improved decision <br /> precision and velocity</h2>
+            <h2 className="NET_Hero_H1">Improved Decision Precision and Velocity</h2>
 
             <div className="Outcome_List">
               {[
@@ -344,7 +386,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Flow">
         <div className="DA_Flow_Inner">
           <span className="DA_Badge">Insight Framework</span>
-          <h2 className="NET_Hero_H1 capitalize">data-to-insight journey</h2>
+          <h2 className="NET_Hero_H1">Data-to-Insight Journey</h2>
 
           <div className="DA_Flow_Grid">
             {[
@@ -373,7 +415,7 @@ const DataAnalyticsPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white capitalize">convert your data into strategic revenue</h2>
+            <h2 className="NET_Hero_H1 text-white">Convert Your Data into Strategic Revenue</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how high-fidelity analytical models
               can optimize your enterprise decision-making and operational growth.

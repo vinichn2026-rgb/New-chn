@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Search, MapPin, Code, BarChart,
   ArrowRight, Server, CheckCircle2, Award, Zap, Users,
@@ -11,17 +11,23 @@ const Careers = () => {
   const navigate = useNavigate();
   const [jobTitle, setJobTitle] = useState("");
   const [location, setLocation] = useState("All Locations");
+  const [isSearching, setIsSearching] = useState(false);
 
   const categoriesRef = useRef<HTMLElement>(null);
   const applyRef = useRef<HTMLElement>(null);
 
   const handleSearch = () => {
-    if (!jobTitle && location === "All Locations") {
-      alert("Please enter a job title or select a location to search.");
+    if (!jobTitle) {
+      alert("Please enter a job title to search.");
       return;
     }
-    // Redirect to contact page with job details
-    navigate(`/contact?interest=Careers&job=${encodeURIComponent(jobTitle)}`);
+
+    setIsSearching(true);
+
+    // Smooth transition delay to enjoy the "sending" animation
+    setTimeout(() => {
+      navigate(`/contact?interest=Careers&job=${encodeURIComponent(jobTitle)}#contact-form`);
+    }, 2500);
   };
 
   const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
@@ -30,6 +36,65 @@ const Careers = () => {
 
   return (
     <div className="CR_WRAPPER">
+      <AnimatePresence>
+        {isSearching && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#002e5b]/90 backdrop-blur-2xl"
+          >
+            <motion.div
+              initial={{ scale: 0.5, y: 100, opacity: 0 }}
+              animate={{
+                scale: [0.5, 1.2, 1],
+                y: [100, -50, -500],
+                opacity: [0, 1, 0]
+              }}
+              transition={{
+                duration: 2.5,
+                times: [0, 0.4, 1],
+                ease: "easeInOut"
+              }}
+              className="relative"
+            >
+              <div className="absolute inset-0 bg-blue-500 blur-[80px] opacity-50" />
+              <Send size={120} className="text-white relative z-10 filter drop-shadow-[0_0_30px_rgba(59,130,246,0.8)]" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: [0, 1, 1, 0] }}
+              transition={{ duration: 2.5, times: [0, 0.2, 0.8, 1] }}
+              className="mt-12 text-center"
+            >
+              <h3 className="text-3xl font-black text-white tracking-tight mb-3">Connecting to CHN Technologies</h3>
+              <p className="text-blue-200 font-medium text-lg">Routing your career interest to our strategic team...</p>
+            </motion.div>
+
+            {/* Animated particles */}
+            {[...Array(6)].map((_, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{
+                  opacity: [0, 1, 0],
+                  scale: [0, 1.5, 0],
+                  x: (i - 2.5) * 150,
+                  y: -400
+                }}
+                transition={{
+                  duration: 2,
+                  delay: 0.5 + (i * 0.1),
+                  repeat: Infinity
+                }}
+                className="absolute w-2 h-2 bg-blue-400 rounded-full blur-[2px]"
+              />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <style>{`
         .CR_WRAPPER {
           font-family: 'Figtree', 'Inter', sans-serif;
@@ -53,10 +118,62 @@ const Careers = () => {
           top: 0;
           right: 0;
           height: 100%;
-          width: 40%;
-          background: #002e5b;
+          width: 45%;
+          background: linear-gradient(135deg, #1e3a8a 0%, #002e5b 100%);
           z-index: 0;
-          clip-path: polygon(16% 0%, 100% 0%, 100% 100%, -6% 100%);
+          clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .CR_Hero_Navy_Shape::before {
+          content: "";
+          position: absolute;
+          top: 0; left: 0;
+          width: 2px; height: 100%;
+          background: linear-gradient(180deg, transparent, #3b82f6, transparent);
+          opacity: 0.5;
+        }
+
+        .CR_Graphic_Orb {
+          position: absolute;
+          width: 600px;
+          height: 600px;
+          background: radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%);
+          filter: blur(80px);
+          border-radius: 50%;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        .CR_Dot_Pattern {
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          background-image: radial-gradient(rgba(59,130,246,0.2) 1px, transparent 1px);
+          background-size: 20px 20px;
+          z-index: 0;
+          opacity: 0.6;
+        }
+
+        .CR_Vertical_Label {
+          position: absolute;
+          font-size: 0.7rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+          color: rgba(59,130,246,0.4);
+          writing-mode: vertical-rl;
+          z-index: 10;
+          pointer-events: none;
+        }
+
+        .CR_Floating_Box {
+          position: absolute;
+          border: 1px solid rgba(255,255,255,0.1);
+          background: rgba(255,255,255,0.03);
+          backdrop-filter: blur(5px);
+          border-radius: 20px;
+          z-index: 15;
+          pointer-events: none;
         }
 
         .CR_Hero_Content {
@@ -162,14 +279,14 @@ const Careers = () => {
 
         .CR_Stream_Card::before {
           content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 0;
-          background: linear-gradient(180deg, #1e3a8a 0%, #22314f 100%); z-index: -1;
+   background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index: -1;
           transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .CR_Stream_Card:hover::before { height: 100%; }
         .CR_Stream_Card:hover h3, .CR_Stream_Card:hover p, .CR_Stream_Icon { color: #3b82f6; transition: 0.3s; }
         .CR_Stream_Card:hover h3, .CR_Stream_Card:hover p { color: #fff !important; }
-        .CR_Stream_Card:hover .CR_Icon_Box { background: rgba(255,255,255,0.1); }
+        .CR_Stream_Card:hover .CR_Icon_Box { background: rgba(255,255,255,0.1); color: #fff }
 
         .CR_Icon_Box { 
           width: 70px; height: 70px; background: #fff; color: #3b82f6; border-radius: 20px; 
@@ -180,7 +297,7 @@ const Careers = () => {
         .CR_Stream_H { font-size: 1.6rem; font-weight: 800; color: #1a2b4b; margin-bottom: 15px; }
 
         /* --- SECTION 3: ENVIRONMENT --- */
-        .CR_Env { padding: 100px 5%; background: #22314f; color: #fff; }
+        .CR_Env { padding: 50px 5%; background: #22314f; color: #fff; }
         .CR_Env_Container { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
 
         @media (max-width: 1024px) {
@@ -216,13 +333,30 @@ const Careers = () => {
       {/* SECTION 1: HERO */}
       <section className="CR_Hero">
         <div className="CR_Hero_Navy_Shape" />
+
+        {/* Background Graphics */}
+        <motion.div
+          animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="CR_Graphic_Orb top-[-10%] right-[-10%]"
+        />
+        <motion.div
+          animate={{ x: [0, -30, 0], y: [0, -50, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+          className="CR_Graphic_Orb bottom-[-20%] left-[10%]"
+        />
+        <div className="CR_Dot_Pattern top-40 right-[25%]" />
+        <div className="CR_Dot_Pattern bottom-20 left-[5%]" />
+        {/* <div className="CR_Vertical_Label top-20 left-10">CAREER.ECOSYSTEM.v2.0</div>
+        <div className="CR_Vertical_Label bottom-40 right-10">CHN.GLOBAL.TALENT</div> */}
+
         <div className="CR_Hero_Content">
           <motion.div
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}
             className="CR_Hero_Left"
           >
             <span className="CR_Badge uppercase">Join Our Professional Team</span>
-            <h2 className="CR_Hero_H1 NET_Hero_H1 capitalize">find the perfect <br /> <span className="text-blue-500">job for you</span></h2>
+            <h2 className="CR_Hero_H1 NET_Hero_H1">find the perfect <br /> <span className="text-blue-500">job for you</span></h2>
             <p className="CR_Hero_P">Explore core career opportunities across technology and consulting domains with CHN Technologies.</p>
 
             <div className="CR_Search_Bar">
@@ -246,9 +380,25 @@ const Careers = () => {
             className="CR_Hero_Right flex justify-center lg:justify-end"
           >
             <div className="relative w-[340px] h-[460px]">
-              <div className="absolute top-[8%] -right-7 w-full h-full bg-blue-100 rounded-[3rem] rotate-6 opacity-60" />
-              <div className="absolute top-[5%] -right-3 w-full h-full bg-[#3b82f6] rounded-[3rem] rotate-3 opacity-90 shadow-lg" />
-              <img src="/images/careers-excellence.jpg" alt="Career Excellence" className="relative z-10 w-full h-full object-cover rounded-[3rem] shadow-2xl border-4 border-white/20" />
+              {/* Floating tech boxes */}
+              <motion.div
+                animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+                transition={{ duration: 7, repeat: Infinity }}
+                className="CR_Floating_Box w-24 h-24 -top-8 -right-8 flex items-center justify-center"
+              >
+                <Rocket className="text-blue-500" size={32} />
+              </motion.div>
+              <motion.div
+                animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
+                transition={{ duration: 8, repeat: Infinity, delay: 1 }}
+                className="CR_Floating_Box w-20 h-20 -bottom-6 -left-10 flex items-center justify-center border-blue-500/30"
+              >
+                <Target className="text-blue-400" size={28} />
+              </motion.div>
+
+              <div className="absolute top-[8%] -right-7 w-full h-full bg-blue-100/10 rounded-[3rem] rotate-6 border border-white/20" />
+              <div className="absolute top-[5%] -right-3 w-full h-full bg-blue-500/10 rounded-[3rem] rotate-3 border border-blue-500/20 shadow-xl" />
+              <img src="/images/careers-hero.png" alt="Career Excellence" className="relative z-10 w-full h-full object-cover rounded-[3rem] shadow-2xl border-4 border-white/20" />
             </div>
           </motion.div>
         </div>
@@ -304,7 +454,7 @@ const Careers = () => {
             initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="CR_Env_Img"
           >
-            <img src="/images/service-consulting.jpg" alt="Professional Environment" />
+            <img src="/images/careers-env.png" alt="Professional Environment" />
           </motion.div>
         </div>
       </section>
@@ -313,7 +463,7 @@ const Careers = () => {
       <section className="CR_Final">
         <div className="CR_Final_Max">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 CR_Final_H capitalize">start your career <span className="text-blue-500">with purpose</span></h2>
+            <h2 className="NET_Hero_H1 CR_Final_H">start your career <span className="text-blue-500">with purpose</span></h2>
             <p className="CR_Final_P">Apply now to explore current and upcoming structured career opportunities at CHN Technologies.</p>
             <button className="CR_Btn" onClick={() => navigate('/contact?interest=Careers')}>
               Apply Now <Send size={24} />

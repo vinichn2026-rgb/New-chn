@@ -50,7 +50,7 @@ const Index = () => {
   const slides = [
     {
       bg: heroBg1,
-      subtitle: "Integrated Technology & Consulting",
+      subtitle: "INTEGRATED TECHNOLOGY & CONSULTING",
       title: <>Run Technology Like <br />A Business System</>,
       desc: "Integrated technology and consulting services built for stability, security, and scalable growth. We help you reduce risk and maintain control.",
     },
@@ -79,6 +79,14 @@ const Index = () => {
     }, 4000);
     return () => clearInterval(timer);
   }, [slides.length]);
+
+  // Auto-slide for Testimonials
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextTestimonial();
+    }, 8000);
+    return () => clearInterval(timer);
+  }, []);
 
   const goToSlide = (dir: number) => {
     setSlideDirection(dir);
@@ -133,19 +141,19 @@ const Index = () => {
     },
     {
       phaseNumber: "02",
-      heading: "Design The Roadmap",
+      heading: "Design the Roadmap",
       description: "Develop a strategic roadmap aligned with business goals, compliance, and long-term scalability",
       icon: Workflow,
     },
     {
       phaseNumber: "03",
-      heading: "Implement With Control",
+      heading: "Implement with Control",
       description: "Deploy secure, high-performing solutions using a phased approach to minimize business disruption.",
       icon: Cpu,
     },
     {
       phaseNumber: "04",
-      heading: "Run, Monitor And Improve",
+      heading: "Run, Monitor and Improve",
       description: "Deliver continuous monitoring, support, and optimisation to keep systems aligned with evolving business needs.",
       icon: Activity,
     },
@@ -231,7 +239,7 @@ const Index = () => {
         <div className="relative z-10 h-full flex items-center">
           <div className="hero mx-auto px-4">
             <motion.p key={`sub-${currentSlide}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-sm md:text-base uppercase font-bold text-white/80 mb-4">
+              className="text-sm md:text-base font-bold text-white/80 mb-4">
               {slides[currentSlide].subtitle}
             </motion.p>
             <motion.h1 key={`title-${currentSlide}`} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }}
@@ -264,8 +272,8 @@ const Index = () => {
       <section className="flex flex-col justify-center bg-[#fafafa] scroll-mt-[90px] py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
-            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block ">OPERATIONAL CAPACITY</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b] capitalize">designed to support systems</h2>
+            <span className="text-[#0060ff] uppercase text-md font-bold tracking-[0.10em] mb-4 block ">Operational Capacity</span>
+            <h2 className="NET_Hero_H1 text-[#002e5b]">Designed to Support Systems</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
             {services.map((service, i) => (
@@ -304,13 +312,13 @@ const Index = () => {
             </div> */}
           </div>
           <div>
-            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">MEASURABLE OUTCOMES</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b] mb-6 capitalize">outcomes that matter</h2>
-            <p className="text-lg text-blue-600 italic mb-6">Delivering measurable outcomes that improve stability and reliability.</p>
+            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Measurable Outcomes</span>
+            <h2 className="NET_Hero_H1 text-[#002e5b] mb-6">Outcomes that Matter</h2>
+            <p className="text-lg text-blue-600  mb-6">Delivering measurable outcomes that improve stability and reliability.</p>
             <p className="text-gray-500 leading-relaxed mb-8">We engineer resilient environments that evolve alongside your business, ensuring sustainable impact.</p>
             <div className="bg-gray-100 h-12 rounded-lg overflow-hidden">
               <motion.div initial={{ width: 0 }} whileInView={{ width: "95%" }} transition={{ duration: 1.5 }} className="bg-[#0060ff] h-full flex items-center px-4 text-white font-bold text-sm">
-                95.00% Work Success
+                99.00% Work Success
               </motion.div>
             </div>
           </div>
@@ -336,9 +344,9 @@ const Index = () => {
           }
         `}</style>
         <div className="text-center mb-16 px-4">
-          <span className="text-[#ffffff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">INNOVATION STREAM</span>
-          <h2 className="NET_Hero_H1 text-white capitalize">
-            capabilities <span className="text-[#0060ff]">overview</span>
+          <span className="text-[#ffffff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Innovation Stream</span>
+          <h2 className="NET_Hero_H1 text-white">
+            Capabilities <span className="text-[#0060ff]">Overview</span>
           </h2>
         </div>
         <div className="flex overflow-hidden">
@@ -378,8 +386,8 @@ const Index = () => {
       <section className="flex flex-col justify-center bg-white py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">OPERATIONAL EXCELLENCE</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b] capitalize">a structured delivery model</h2>
+            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Operational Excellence</span>
+            <h2 className="NET_Hero_H1 text-[#002e5b]"> Structured Delivery Model</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {deliveryPhases.map((phase, i) => {
@@ -388,7 +396,7 @@ const Index = () => {
                 <div key={i} className="group relative bg-white rounded-xl border border-gray-200 overflow-hidden transition-all duration-500 cursor-default">
                   {/* THE "ZOOM INSIDE" LAYER */}
                   <div className="absolute inset-1.5 rounded-[calc(0.75rem-6px)] overflow-hidden z-0">
-                    <div className="absolute inset-0 bg-[#002e5b] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+                    <div className="absolute inset-0  translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" style={{ background: 'linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%)' }}></div>
                   </div>
 
                   {/* CONTENT WRAPPER */}
@@ -405,7 +413,7 @@ const Index = () => {
                     <h3 className="text-2xl font-bold text-gray-900 group-hover:text-white transition-colors duration-300 mb-4">
                       {phase.heading}
                     </h3>
-                    <p className="text-base text-gray-600 leading-relaxed group-hover:text-blue-50/80 transition-colors duration-300  text-xs font-medium tracking-widest">
+                    <p className="text-base text-gray-600 leading-relaxed group-hover:text-blue-50/80 transition-colors duration-300  text-md font-medium tracking-widest">
                       {phase.description}
                     </p>
                   </div>
@@ -451,11 +459,11 @@ const Index = () => {
 
         {/* Header Section */}
         <div className="w-full px-6 mb-16 text-center">
-          <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] uppercase mb-4 block">
-            GLOBAL PARTNER NETWORK
+          <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">
+            Global Partner Network
           </span>
-          <h2 className="NET_Hero_H1 text-[#002e5b] capitalize">
-            our partners
+          <h2 className="NET_Hero_H1 text-[#002e5b]">
+            Our Partners
           </h2>
         </div>
 

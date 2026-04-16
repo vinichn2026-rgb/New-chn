@@ -11,10 +11,10 @@ import {
   ShieldCheck,
   Activity,
   ArrowRight,
-  Globe,
   Zap,
   MousePointer2,
-  Layers
+  Layers,
+  CheckCircle
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -123,23 +123,23 @@ const WebDesignDevelopment = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-3 mb-6">
-              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
-                Software Solutions
+              <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold tracking-widest border border-blue-100 uppercase">
+                Design & Development
               </span>
             </div>
-            <h2 className="font-black mb-8 leading-[1.1] text-slate-900 tracking-tight NET_Hero_H1 capitalize">
-              web design & development
+            <h2 className="font-black mb-8 leading-[1.1] text-slate-900 tracking-tight NET_Hero_H1">
+              Web Design & Development
             </h2>
             <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle">
               <Zap size={24} className="text-blue-600" />
-              Built for performance, scale, and results.
+              Built for performance, scale, and results
             </p>
             <p className="text-slate-600 mb-10 leading-relaxed max-w-xl">
               CHN Technologies delivers professional web design and development services focused on usability, performance, and long-term maintainability. Our solutions support business objectives and digital growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-5">
               <Link to="/contact">
-                <button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-full font-bold shadow-2xl shadow-blue-200 transition-all transform hover:-translate-y-1 active:scale-95">
+                <button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-bold shadow-2xl shadow-blue-200 transition-all transform hover:-translate-y-1 active:scale-95">
                   Start Your Project
                 </button>
               </Link>
@@ -172,7 +172,10 @@ const WebDesignDevelopment = () => {
                     <Rocket size={24} />
                   </div>
                   <div>
-                    <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Performance</p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-2 h-2 rounded-full bg-green-500" />
+                      <p className="text-xs text-slate-500 font-bold tracking-wider">Performance</p>
+                    </div>
                     <p className="text-xl font-black text-slate-900">99+ Score</p>
                   </div>
                 </div>
@@ -187,11 +190,10 @@ const WebDesignDevelopment = () => {
         <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 skew-x-12 translate-x-1/2"></div>
         <div className="container mx-auto px-6 relative z-10">
           <motion.div className="max-w-4xl mx-auto text-center" {...fadeIn}>
-            <span className="text-blue-400 font-black uppercase tracking-[0.3em] text-sm mb-6 block">Strategic Impact</span>
-            <h2 className="NET_Hero_H1 mb-10 text-slate-200 capitalize">
-              your website is a business asset, <br />
-              <span className="text-slate-200">not just a digital presence</span>
-            </h2>
+            <div className="text-left">
+              <span className="text-blue-400 font-black tracking-[0.3em] text-sm mb-6 block uppercase text-center">Strategic Impact</span>
+              <h2 className="NET_Hero_H1 text-white text-center">Scale Beyond Aesthetics</h2>
+            </div>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-10"></div>
             <p className="text-slate-400 leading-relaxed mb-8 subtitle">
               A website often forms the first point of interaction between a business and its customers. Poorly designed or unstructured websites can affect credibility, user experience, and conversion potential.
@@ -207,7 +209,7 @@ const WebDesignDevelopment = () => {
       <section className="py-20 bg-slate-50 overflow-hidden">
         <div className="container mx-auto px-6 mb-16">
           <div className="text-center">
-            <h2 className="NET_Hero_H1 text-slate-900 capitalize">what our web services cover</h2>
+            <h2 className="NET_Hero_H1 text-slate-900">What Our Web Services Cover</h2>
             <div className="h-2 w-24 bg-blue-600 mx-auto mt-6 rounded-full" />
           </div>
         </div>
@@ -240,17 +242,19 @@ const WebDesignDevelopment = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center max-w-7xl mx-auto">
             <motion.div className="lg:w-1/2" {...fadeIn}>
-              <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4 block">Measurable Results</span>
-              <h2 className="NET_Hero_H1 mb-10 text-slate-900 capitalize">business benefits of <br />structured web solutions</h2>
+              <div className="text-center mb-16">
+                <span className="text-blue-600 font-bold tracking-widest text-sm mb-4 block uppercase">Measurable Results</span>
+                <h2 className="NET_Hero_H1">Business Outcomes</h2>
+              </div>
               <div className="grid gap-8">
                 {[
-                  { label: "Stronger Brand Credibility", text: "Well-designed websites reinforce professionalism and trust.", icon: <Globe size={20} /> },
-                  { label: "Improved User Engagement", text: "Clear navigation and intuitive interfaces support better user interaction.", icon: <MousePointer2 size={20} /> },
-                  { label: "Higher Conversion Potential", text: "Structured layouts and content flows support lead generation and enquiries.", icon: <Rocket size={20} /> },
-                  { label: "Scalable Digital Foundation", text: "Web platforms designed to evolve with business growth and digital initiatives.", icon: <Layers size={20} /> }
+                  { label: "Stronger Brand Credibility", text: "Well-designed websites reinforce professionalism and trust.", icon: <CheckCircle size={16} /> },
+                  { label: "Improved User Engagement", text: "Clear navigation and intuitive interfaces support better user interaction.", icon: <CheckCircle size={16} /> },
+                  { label: "Higher Conversion Potential", text: "Structured layouts and content flows support lead generation and enquiries.", icon: <CheckCircle size={16} /> },
+                  { label: "Scalable Digital Foundation", text: "Web platforms designed to evolve with business growth and digital initiatives.", icon: <CheckCircle size={16} /> }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 items-start p-6 rounded-2xl hover:bg-slate-50 transition-colors">
-                    <div className="bg-blue-600 rounded-xl p-3 shadow-lg shadow-blue-100 shrink-0 text-white">
+                    <div className="bg-blue-600 text-white rounded-full p-1 flex items-center justify-center shrink-0 w-7 h-7 mt-1">
                       {item.icon}
                     </div>
                     <div>
@@ -281,9 +285,9 @@ const WebDesignDevelopment = () => {
       {/* LAYOUT 5 – OUR APPROACH */}
       <section className="py-24 bg-[#fafafc] overflow-hidden relative">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-24 relative z-10">
-            <span className="text-blue-600 font-bold tracking-[0.2em] uppercase mb-4 block text-sm">HOW WE DESIGN & DEVELOP WEB PLATFORMS</span>
-            <h2 className="NET_Hero_H1 text-slate-900 capitalize">our web design & development approach</h2>
+          <div className="container mx-auto px-6 relative z-10">
+            <span className="text-blue-600 font-bold tracking-[0.1em] mb-4 block text-sm uppercase">How We Design & Develop Web Platforms</span>
+            <h2 className="NET_Hero_H1 mb-16">The Web Design Lifecycle</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative max-w-7xl mx-auto text-left">
             {[
@@ -298,8 +302,8 @@ const WebDesignDevelopment = () => {
                 {...fadeIn}
                 transition={{ delay: i * 0.1 }}
               >
-                <div className="absolute -top-3 left-8 bg-[#1e293b] text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
-                  Stage {item.step}
+                <div className="absolute -top-3 left-8 bg-[#1e293b] text-white text-[10px] font-black px-4 py-1.5 rounded-full tracking-wider shadow-lg">
+                  Phase {i + 1}
                 </div>
                 <div className="text-blue-600 mb-8 transition-transform duration-500 group-hover:scale-110">
                   {item.icon}
@@ -319,7 +323,7 @@ const WebDesignDevelopment = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white capitalize">build a website that works for your business</h2>
+            <h2 className="NET_Hero_H1 text-white">Build a Website That Works for Your Business</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured web design and development solutions can support brand growth, user engagement, and business objectives.
             </p>

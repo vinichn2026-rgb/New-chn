@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     MapPin,
@@ -31,6 +31,27 @@ const XIcon = ({ size = 20 }) => (
 
 const ContactPage = () => {
     const [searchParams] = useSearchParams();
+    const { hash } = useLocation();
+    const wrapperRef = React.useRef<HTMLDivElement>(null);
+
+    // Handle hash navigation manually for scroll-snap reliability
+    useEffect(() => {
+        if (hash) {
+            const targetId = hash.replace('#', '');
+            const element = document.getElementById(targetId);
+            if (element) {
+                // If snap-scrolling is on, we might need to scroll the wrapper specifically
+                if (window.innerWidth >= 1025 && wrapperRef.current) {
+                    wrapperRef.current.scrollTo({
+                        top: element.offsetTop,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+    }, [hash]);
     const [formData, setFormData] = useState({
         name: '',
         org: '',
@@ -102,12 +123,26 @@ const ContactPage = () => {
     };
 
     return (
-        <div className="CN_WRAPPER">
+        <div className="CN_WRAPPER" ref={wrapperRef}>
             <style>{`
                 .CN_WRAPPER {
                   font-family: 'Outfit', 'Inter', sans-serif;
                   color: #1a2b4b;
                   background: #ffffff;
+                }
+
+                /* Layout Snap Configuration (Desktop only for better usability) */
+                @media (min-width: 1025px) {
+                  .CN_WRAPPER {
+                    height: 100vh;
+                    overflow-y: auto;
+                    scroll-snap-type: y mandatory;
+                    scroll-behavior: smooth;
+                  }
+                  .CN_Hero, .CN_Main_Grid, .CN_Expectation, .CN_Map_Section, .CN_Final {
+                    scroll-snap-align: start;
+                    scroll-snap-stop: always;
+                  }
                 }
 
                 /* --- SECTION 1: HERO (EXACT SAMPLE DESIGN) --- */
@@ -118,6 +153,8 @@ const ContactPage = () => {
                   overflow: hidden;
                   display: flex;
                   justify-content: center;
+                  min-height: 100vh;
+                  align-items: center;
                 }
                 @media (max-width: 1024px) {
                   .CN_Hero { padding-top: 140px; }
@@ -144,11 +181,11 @@ const ContactPage = () => {
                   content: "";
                   position: absolute;
                   top: 0; right: 0; 
-                  width: 45%; 
+                  width: 50%; 
                   height: 100%; 
                   background: #0060ff; 
-                  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
-                  opacity: 0.05;
+                  clip-path: polygon(35% 0%, 100% 0%, 100% 100%, 0% 100%);
+                  opacity: 0.1;
                 }
 
                 .CN_Hero_Content { flex: 1.2; max-width: 650px; z-index: 10; }
@@ -181,17 +218,69 @@ const ContactPage = () => {
 
                 .CN_Triangle_Bg {
                   position: absolute;
-                  bottom: -100px; right: -50px;
-                  width: 500px; height: 500px;
-                  background: linear-gradient(135deg, #0060ff 0%, #002e5b 100%);
-                  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+                  top: 0; right: 0;
+                  width: 45%; height: 100%;
+                  background: linear-gradient(135deg, #1e3a8a 0%, #002e5b 100%);
+                  clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
                   z-index: -1;
-                  opacity: 0.9;
+                  opacity: 1;
+                }
+
+                .CN_Triangle_Bg::before {
+                  content: "";
+                  position: absolute;
+                  top: 0; left: 0;
+                  width: 2px; height: 100%;
+                  background: linear-gradient(180deg, transparent, #3b82f6, transparent);
+                  opacity: 0.5;
+                }
+
+                .CN_Graphic_Orb {
+                  position: absolute;
+                  width: 600px;
+                  height: 600px;
+                  background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+                  filter: blur(80px);
+                  border-radius: 50%;
+                  z-index: -1;
+                  pointer-events: none;
+                }
+
+                .CN_Floating_Box {
+                  position: absolute;
+                  border: 1px solid rgba(255,255,255,0.1);
+                  background: rgba(255,255,255,0.03);
+                  backdrop-filter: blur(5px);
+                  border-radius: 20px;
+                  z-index: 15;
+                  pointer-events: none;
+                }
+
+                .CN_Dot_Pattern {
+                  position: absolute;
+                  width: 200px;
+                  height: 200px;
+                  background-image: radial-gradient(rgba(59,130,246,0.2) 1px, transparent 1px);
+                  background-size: 20px 20px;
+                  z-index: 0;
+                  opacity: 0.6;
+                }
+
+                .CN_Vertical_Label {
+                  position: absolute;
+                  font-size: 0.7rem;
+                  font-weight: 800;
+                  text-transform: uppercase;
+                  letter-spacing: 5px;
+                  color: rgba(59,130,246,0.4);
+                  writing-mode: vertical-rl;
+                  z-index: 10;
+                  pointer-events: none;
                 }
 
                 /* --- SECTION 2: WHY CONTACT --- */
                 .CN_WhyReach { padding: 100px 5%; background: #ffffff; text-align: center; }
-                .CN_Section_Title { color: #002e5b; margin-bottom: 25px; letter-spacing: -0.02em; text-transform:capitalize; }
+                .CN_Section_Title { color: #002e5b; margin-bottom: 25px; letter-spacing: -0.02em; text-transform: capitalize; }
                 .CN_Section_Desc { max-width: 800px; margin: 0 auto 60px; color: #64748b; line-height: 1.7; font-weight: 450; }
                 
                 .CN_Bullet_Grid { 
@@ -209,7 +298,16 @@ const ContactPage = () => {
                 .CN_Bullet_Text { color: #1a2b4b; font-weight: 600; line-height: 1.4; }
 
                 /* --- SECTION 3: SPLIT MAIN (FORM vs INFO) --- */
-                .CN_Main_Grid { padding: 80px 5% 120px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; max-width: 1400px; margin: 0 auto; }
+                .CN_Main_Grid { 
+                  padding: 80px 5% 120px; 
+                  display: grid; 
+                  grid-template-columns: 1.2fr 1fr; 
+                  gap: 40px; 
+                  max-width: 1400px; 
+                  margin: 0 auto; 
+                  min-height: 100vh;
+                  align-items: center;
+                }
                 @media (max-width: 1024px) { .CN_Main_Grid { grid-template-columns: 1fr; } }
 
                 /* FORM (DARK COLOR FROM SAMPLE) */
@@ -230,7 +328,7 @@ const ContactPage = () => {
 
                 .CN_Primary_Btn {
                   width: 100%; background: #0060ff; color: white; padding: 22px; border-radius: 100px; 
-                  font-weight: 800; font-size: 1.1rem; border: none; text-transform: capitalize; letter-spacing: 2px;
+                  font-weight: 800; font-size: 1.1rem; border: none; text-transform:capitalize; letter-spacing: 2px;
                   cursor: pointer; transition: all 0.4s; box-shadow: 0 20px 40px rgba(0,96,255,0.25);
                   display: flex; align-items: center; justify-content: center; gap: 15px;
                 }
@@ -261,7 +359,7 @@ const ContactPage = () => {
                   display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;
                   box-shadow: 0 15px 30px rgba(0,96,255,0.1); border: 1px solid #eff6ff; 
                 }
-                .CN_Step_H { color: #002e5b; margin-bottom: 15px; }
+                .CN_Step_H { color: #002e5b; margin-bottom: 15px; font-weight: 800;}
                 .CN_Step_P { color: #64748b; line-height: 1.6; font-weight: 450; }
                 
                 /* --- SECTION 5: MAPS (WIDE) --- */
@@ -289,7 +387,7 @@ const ContactPage = () => {
                 /* --- FINAL CTA --- */
                 .CN_Final { padding:50px 20px; text-align: center; background: #fff; }
                 .CN_Final_Max { max-width: 800px; margin: 0 auto; }
-                .CN_Final_H { color: #1a2b4b; line-height: 1.1; margin-bottom: 30px; text-transform:capitalize; }
+                .CN_Final_H { color: #1a2b4b; line-height: 1.1; margin-bottom: 30px;  }
                 .CN_Final_P { color: #64748b; margin-bottom: 50px; font-weight: 500; }
                 .CN_Btn { 
                   background: #3b82f6; color: white; padding: 15px 30px; border-radius: 100px; 
@@ -301,45 +399,72 @@ const ContactPage = () => {
 
             {/* LAYOUT 1 – CONTACT INTENT (HERO) */}
             <section className="CN_Hero">
+                {/* Background Graphics */}
+                <div className="CN_Triangle_Bg" />
+                <motion.div
+                    animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                    className="CN_Graphic_Orb top-[-10%] right-[-10%]"
+                />
+                <motion.div
+                    animate={{ x: [0, -30, 0], y: [0, -50, 0] }}
+                    transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                    className="CN_Graphic_Orb bottom-[-20%] left-[10%]"
+                />
+                <div className="CN_Dot_Pattern top-20 right-[20%]" />
+                <div className="CN_Dot_Pattern bottom-40 left-[5%]" />
+                {/* <div className="CN_Vertical_Label top-20 left-10">STRATEGIC.INTERFACE.v2.0</div>
+                <div className="CN_Vertical_Label bottom-40 right-10">CHN.GLOBAL.CONNECT</div> */}
+
                 <div className="CN_Hero_Inner">
                     <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="CN_Hero_Content">
                         <span className="text-[#0060ff] font-bold tracking-[0.1em] uppercase mb-6 block">Strategic Engagement</span>
-                        <h2 className="NET_Hero_H1 CN_Hero_Title capitalize">contact us</h2>
-                        <p className="CN_Hero_Subtitle subtitle">Conversations lead to clarity. Let’s start with yours.</p>
+                        <h2 className="NET_Hero_H1 CN_Hero_Title">contact us</h2>
+                        <p className="CN_Hero_Subtitle subtitle">Conversations lead to clarity. Let’s start with yours</p>
                         <p className="CN_Hero_P">               Whether you need digital solutions, expert consulting, or a new career path, CHN Technologies is ready to help. Reach out today to solve your challenges and start a structured engagement.
                         </p>
                     </motion.div>
 
-                    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }} className="CN_Hero_Img">
-                        <div className="CN_Circle_Img">
-                            <img src="/images/contact-main.jpg" alt="Contact CHN Technologies" />
-                        </div>
-                    </motion.div>
+                    <div className="CN_Hero_Img">
+                        <motion.div
+                            whileHover={{ scale: 1.02 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            className="relative"
+                        >
+                            {/* Floating graphic boxes */}
+                            <motion.div
+                                animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+                                transition={{ duration: 6, repeat: Infinity }}
+                                className="CN_Floating_Box w-32 h-32 -top-10 -right-10 flex items-center justify-center"
+                            >
+                                <Activity className="text-blue-500" size={40} />
+                            </motion.div>
+                            <motion.div
+                                animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+                                transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
+                                className="CN_Floating_Box w-24 h-24 -bottom-6 -left-12 flex items-center justify-center border-blue-500/30"
+                            >
+                                <Target className="text-blue-400" size={30} />
+                            </motion.div>
+
+                            <div className="relative z-10">
+                                {/* Image Stack Decoration */}
+                                <div className="absolute top-[8%] -right-7 w-full h-full bg-blue-100/10 rounded-full rotate-6 border border-white/20" />
+                                <div className="absolute top-[5%] -right-3 w-full h-full bg-blue-500/10 rounded-full rotate-3 border border-blue-500/20 shadow-2xl" />
+
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }}
+                                    className="CN_Circle_Img relative z-20"
+                                >
+                                    <img src="/images/contact-main.jpg" alt="Contact CHN Technologies" />
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
-                <div className="CN_Triangle_Bg"></div>
             </section>
 
-            {/* LAYOUT 2 – WHY REACH OUT */}
-            {/* <section className="CN_WhyReach">
-                <span className="text-[#0060ff] font-bold tracking-[0.3em] uppercase mb-6 block">Integration Matrix</span>
-                <h2 className="CN_Section_Title capitalize">when should you contact <span className="text-blue-500">chn</span></h2>
-                <p className="CN_Section_Desc">We provide a structured communication layer for organizations seeking stability, growth, and specialized expertise.</p>
 
-                <div className="CN_Bullet_Grid">
-                    {[
-                        "Strengthen technology or digital operations",
-                        "Improve workforce, payroll, or compliance processes",
-                        "Explore consulting or advisory support",
-                        "Discuss project requirements or partnerships",
-                        "Enquire about career or collaboration opportunities"
-                    ].map((bullet, i) => (
-                        <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="CN_Bullet_Item">
-                            <div className="CN_Bullet_Icon"><CheckCircle2 size={24} /></div>
-                            <span className="CN_Bullet_Text">{bullet}</span>
-                        </motion.div>
-                    ))}
-                </div>
-            </section> */}
 
             {/* LAYOUT 3, 4 – CONNECTION METHODS & FORM (SPLIT) */}
             <section className="CN_Main_Grid" id="contact-form">
@@ -347,7 +472,7 @@ const ContactPage = () => {
                     <AnimatePresence mode="wait">
                         {!isSubmitted ? (
                             <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                                <h2 className="NET_Hero_H1 CN_Form_H capitalize">share your <span className="text-blue-500">requirement</span></h2>
+                                <h2 className="NET_Hero_H1 CN_Form_H">share your <span className="text-blue-500">requirement</span></h2>
                                 <p className="CN_Form_P subtitle">
                                     Provide a brief overview of your requirement, and our team will connect with you to understand next steps.
                                     Clear information helps us respond faster and more effectively.
@@ -365,7 +490,7 @@ const ContactPage = () => {
                                         <option>Careers</option>
                                     </select>
                                     <textarea name="message" placeholder="Requirement Details" rows={5} required className="CN_Input md:col-span-2" value={formData.message} onChange={handleChange}></textarea>
-                                    <button type="submit" disabled={isSubmitting} className="CN_Primary_Btn md:col-span-2 " style={{ textTransform: 'capitalize' }}>
+                                    <button type="submit" disabled={isSubmitting} className="CN_Primary_Btn md:col-span-2">
                                         {isSubmitting ? 'Processing Intake...' : 'Send Message'} <Send size={20} />
                                     </button>
                                 </form>
@@ -408,8 +533,8 @@ const ContactPage = () => {
 
             {/* LAYOUT 5 – RESPONSE & ENGAGEMENT EXPECTATION */}
             <section className="CN_Expectation">
-                <span className="text-[#0060ff] font-bold tracking-[0.1em] uppercase mb-6 block">Structured Response</span>
-                <h2 className="NET_Hero_H1 CN_Section_Title capitalize">what happens after you contact us</h2>
+                <span className="text-[#0060ff] font-bold tracking-[0.3em] uppercase mb-6 block">Structured Response</span>
+                <h2 className="NET_Hero_H1 CN_Section_Title">what happens after you contact us</h2>
 
                 <div className="CN_Flow">
                     {[
@@ -431,7 +556,7 @@ const ContactPage = () => {
             {/* LAYOUT 6 – CLOSING & MAPS */}
             <section className="CN_Map_Section">
                 <div style={{ padding: '80px 0', textAlign: 'center' }}>
-                    <h2 className="NET_Hero_H1 CN_Section_Title capitalize">our <span className="text-blue-500">presence</span></h2>
+                    <h2 className="NET_Hero_H1 CN_Section_Title">our <span className="text-blue-500">presence</span></h2>
                     <p className="CN_Section_Desc" style={{ marginBottom: 0 }}>Discover stability and expertise at our key operational hubs.</p>
                 </div>
 
@@ -504,7 +629,7 @@ const ContactPage = () => {
             <section className="CN_Final">
                 <div className="CN_Final_Max">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                        <h2 className="NET_Hero_H1 CN_Final_H capitalize">start the <span className="text-blue-500">conversation</span></h2>
+                        <h2 className="NET_Hero_H1 CN_Final_H">Start the <span className="text-blue-500">Conversation</span></h2>
                         <p className="CN_Final_P">Contact CHN Technologies to discuss how we can support your organisation or career goals.</p>
                         <a href="#contact-form" style={{ textDecoration: 'none' }}>
                             <button className="CN_Btn">Get In Touch <ArrowRight size={24} /></button>

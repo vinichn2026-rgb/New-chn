@@ -112,6 +112,7 @@ font-family: Figtree, Helvetica, sans-serif;
   h2, .NET_Hero_H1 {
     @apply font-extrabold tracking-tight text-3xl md:text-4xl;
     line-height: 1.2;
+    text-transform: none; /* Prevent CSS from overriding manually set Title Case */
   }
 
   h2 {
@@ -120,6 +121,10 @@ font-family: Figtree, Helvetica, sans-serif;
 
   .NET_Hero_H1 {
     @apply mb-[25px];
+  }
+
+  h1, h3, h4, h5, h6 {
+    text-transform: none; /* Ensure no inherited or global text-transform affects headings */
   }
 
   h3 {

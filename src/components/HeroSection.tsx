@@ -17,7 +17,7 @@ const HeroSection = ({ title, subtitle, ctaText = "Learn More", ctaLink = "/" }:
   <section className="relative py-28 md:py-36 overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
     <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "30px 30px" }} />
     <div className="container mx-auto px-4 relative z-10 text-center">
-      <motion.div initial="hidden" animate="visible" variants={heroFadeUp} className="inline-block px-4 py-1.5 bg-white/15 rounded-full text-xs font-semibold uppercase tracking-widest text-white/80 mb-4 border border-white/20">
+      <motion.div initial="hidden" animate="visible" variants={heroFadeUp} className="inline-block px-4 py-1.5 bg-white/15 rounded-full text-xs font-semibold tracking-widest text-white/80 mb-4 border border-white/20">
         {subtitle}
       </motion.div>
       <motion.h1 initial="hidden" animate="visible" variants={heroFadeUp} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">

@@ -53,7 +53,7 @@ const EndUserComputingPage = () => {
 
         .EUC_Hero_Content { flex: 1.2; max-width: 700px; }
         .EUC_Badge { 
-          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: capitalize; 
+          color: #2563eb; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; 
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(37, 99, 235, 0.08); padding: 8px 16px; border-radius: 100px;
         }
@@ -87,11 +87,17 @@ const EndUserComputingPage = () => {
             aspect-ratio: 4/5;
         }
         .EUC_Hero_Floating_Card {
-          position: absolute; bottom: 40px; left: -40px;
-          background: white; padding: 25px; border-radius: 20px;
-          box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-          display: flex; gap: 15px; align-items: center; z-index: 20;
+          position: absolute;
+          background: white; padding: 20px 25px; border-radius: 24px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+          display: flex; gap: 16px; align-items: center; z-index: 20;
           border: 1px solid rgba(0,0,0,0.05);
+          width: 260px;
+        }
+
+        .EUC_Status_Dot {
+          width: 10px; height: 10px; border-radius: 50%; display: inline-block;
+          margin-right: 8px;
         }
 
         /* --- SECTION 2: CAPABILITIES --- */
@@ -132,7 +138,7 @@ const EndUserComputingPage = () => {
           content: "";
           position: absolute;
           top: 0; left: 0; width: 100%; height: 0;
-          background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+          background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);
           z-index: -1;
           transition: height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -215,7 +221,6 @@ const EndUserComputingPage = () => {
         }
         .EUC_Step_Icon { color: #2563eb; margin-bottom: 30px; }
         .EUC_Step_H { font-size: 1.25rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.01em; 
-        // text-transform: capitalize;
         }
         .EUC_Step_P { color: #64748b; font-size: 0.95rem; line-height: 1.7; font-weight: 450; }
 
@@ -238,7 +243,7 @@ const EndUserComputingPage = () => {
                         className="EUC_Hero_Content"
                     >
                         <span className="EUC_Badge">Cognitive Workspace</span>
-                        <h2 className="EUC_Hero_H1 NET_Hero_H1 capitalize">seamless user computing</h2>
+                        <h2 className="EUC_Hero_H1 NET_Hero_H1">Seamless User Computing</h2>
                         <p className="EUC_Tagline">Frictionless productivity through elite endpoint orchestration.</p>
                         <p className="EUC_Hero_P">
                             CHN Technologies delivers structured end-user computing services that ensure your workforce
@@ -256,14 +261,33 @@ const EndUserComputingPage = () => {
                         className="EUC_Hero_Img"
                     >
                         <img src="/images/enduser-hero.png" alt="Modern End-User Workspace" />
+
+
                         <motion.div
-                            initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }}
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 260,
+                                damping: 20,
+                                delay: 1.5
+                            }}
                             className="EUC_Hero_Floating_Card"
+                            style={{ bottom: "40px", left: "-60px" }}
                         >
-                            <div className="bg-blue-100 p-3 rounded-xl"><UserCheck className="text-blue-600" /></div>
+                            {/* Changed bg-emerald-50 to bg-blue-50 (or use bg-[#2563eb10] for a very light blue) */}
+                            <div className="bg-blue-50 w-14 h-14 rounded-full flex items-center justify-center shrink-0">
+                                {/* Changed text-emerald-600 to text-[#2563eb] */}
+                                <Zap className="text-[#2563eb]" size={24} fill="#2563eb" fillOpacity={0.1} />
+                            </div>
+
                             <div>
-                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400">User Efficiency</p>
-                                <p className="text-xl font-black text-slate-800">+40% GROWTH</p>
+                                <p className="text-[11px] font-bold tracking-wider text-slate-400 uppercase flex items-center">
+                                    {/* Changed bg-emerald-500 to bg-[#2563eb] */}
+                                    <span className="EUC_Status_Dot bg-[#2563eb] animate-pulse"></span>
+                                    Performance
+                                </p>
+                                <p className="text-xl font-black text-slate-800">99+ Score</p>
                             </div>
                         </motion.div>
                     </motion.div>
@@ -275,7 +299,7 @@ const EndUserComputingPage = () => {
                 <div className="EUC_Cap_Inner">
                     <div style={{ marginBottom: '100px' }}>
                         <span className="EUC_Badge">Operational Freedom</span>
-                        <h2 className="NET_Hero_H1 capitalize">modernizing the human-system interface</h2>
+                        <h2 className="NET_Hero_H1">Modernizing the Human-System Interface</h2>
                         <p className="EUC_Hero_P" style={{ fontSize: '1.25rem' }}>
                             The bottleneck of enterprise growth is often the endpoint. CHN Technologies
                             standardizes the user experience, eliminating technical debt and support
@@ -308,18 +332,33 @@ const EndUserComputingPage = () => {
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1, duration: 0.8 }} viewport={{ once: true }}
-                                className="EUC_Cap_Card"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1, duration: 0.8 }}
+                                viewport={{ once: true }}
+                                /* Added 'group' and 'relative' for the hover effect to work */
+                                className="EUC_Cap_Card group relative overflow-hidden p-8 rounded-3xl transition-colors duration-500"
                             >
-                                <div className="EUC_Cap_Icon">{item.icon}</div>
-                                <h3>{item.title}</h3>
-                                <p>{item.desc}</p>
+                                {/* THE GRADIENT OVERLAY: This slides up on hover */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-[#3b82f6] to-[#1e3a8a] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out -z-10"></div>
+
+                                {/* CONTENT AREA: Added 'z-10' and group-hover text colors */}
+                                <div className="relative z-10">
+                                    <div className="EUC_Cap_Icon mb-6 text-[#002e5b] group-hover:text-white transition-colors duration-500">
+                                        {item.icon}
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-4 text-[#002e5b] group-hover:text-white transition-colors duration-500">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-gray-600 group-hover:text-white/90 transition-colors duration-500 leading-relaxed">
+                                        {item.desc}
+                                    </p>
+                                </div>
                             </motion.div>
                         ))}
                     </div>
                 </div>
             </section>
-
             {/* LAYOUT 4 – BUSINESS OUTCOMES */}
             <section className="EUC_Outcome">
                 <div className="EUC_Outcome_Inner">
@@ -331,7 +370,7 @@ const EndUserComputingPage = () => {
                     </motion.div>
                     <div className="EUC_Outcome_Content">
                         <span className="EUC_Badge">Workforce Impact</span>
-                        <h2 className="NET_Hero_H1 capitalize">strategic outcomes of elite endpoint management</h2>
+                        <h2 className="NET_Hero_H1">Strategic Outcomes of Elite Endpoint Management</h2>
 
                         <div className="Outcome_List">
                             {[
@@ -361,7 +400,7 @@ const EndUserComputingPage = () => {
             <section className="EUC_Flow">
                 <div className="EUC_Flow_Inner">
                     <span className="EUC_Badge">Transformation Lifecycle</span>
-                    <h2 className="NET_Hero_H1 capitalize">the chn productivity framework</h2>
+                    <h2 className="NET_Hero_H1">The CHN Productivity Framework</h2>
 
                     <div className="EUC_Flow_Grid">
                         {[
@@ -390,7 +429,7 @@ const EndUserComputingPage = () => {
                 <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
                 <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-                        <h2 className="NET_Hero_H1 text-white capitalize">ready to liberate  your workforce?</h2>
+                        <h2 className="NET_Hero_H1 text-white">Ready to Liberate Your Workforce?</h2>
                         <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
                             Stop managing devices. Start empowering people. Join the enterprises
                             shifting to elite end-user computing with CHN Technologies.

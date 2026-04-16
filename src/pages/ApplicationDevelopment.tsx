@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 import {
   Code2, Braces, Layers, Smartphone, ShieldCheck, GitBranch,
   RefreshCw, Search, PenTool, Settings, Activity, CheckCircle,
-  ArrowRight, Database, Layout, Smartphone as MobileIcon, Box
+  ArrowRight, Database, Layout, Smartphone as MobileIcon, Box, Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import appDevHero from '../assets/application_development_hero.png';
 
 const ApplicationDevelopmentPage = () => {
   return (
@@ -44,7 +45,7 @@ const ApplicationDevelopmentPage = () => {
 
         .AD_Hero_Content { flex: 1.2; max-width: 650px; }
         .AD_Badge { 
-          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: capitalize; 
+          color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
         .AD_Hero_H1 {
@@ -70,6 +71,16 @@ const ApplicationDevelopmentPage = () => {
             box-shadow: 0 40px 100px rgba(0,0,0,0.1); 
             object-fit: cover;
         }
+        .AD_Hero_Floating_Card {
+          position: absolute; bottom: 30px; left: -30px;
+          background: white; padding: 20px; border-radius: 20px;
+          box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+          display: flex; gap: 12px; align-items: center; z-index: 20;
+          border: 1px solid rgba(0,0,0,0.05);
+        }
+        @media (max-width: 1024px) {
+          .AD_Hero_Floating_Card { display: none; }
+        }
 
         /* --- SECTION 2: CONTEXT --- */
         .AD_Context { 
@@ -84,7 +95,7 @@ const ApplicationDevelopmentPage = () => {
           width: 100%;
           max-width: 1000px;
         }
-        .AD_Context_H1 { font-weight: 900; margin-bottom: 30px; color: #fff; text-transform: capitalize; }
+        .AD_Context_H1 { font-weight: 900; margin-bottom: 30px; color: #fff; }
         .AD_Context_P { color: rgba(255,255,255,0.7); font-size: 1.1rem; line-height: 1.8; }
 
         /* --- SECTION 3: CAPABILITIES --- */
@@ -123,8 +134,7 @@ const ApplicationDevelopmentPage = () => {
           content: "";
           position: absolute;
           top: 0; left: 0; width: 100%; height: 0;
-          background: linear-gradient(180deg, #1e3a8a 0%, #0f172a 100%);
-          z-index: -1;
+background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index: -1;
           transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -181,7 +191,7 @@ const ApplicationDevelopmentPage = () => {
 
         /* --- SECTION 5: APPROACH --- */
         .AD_Flow { 
-          padding: 140px 5%; 
+          padding: 50px 5%; 
           background: #fdfdfd; 
           text-align: center;
           display: flex;
@@ -244,14 +254,22 @@ const ApplicationDevelopmentPage = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest border border-blue-100">
-                Software Solutions
+                Application Development
               </span>
             </div>
-            <h2 className="AD_Hero_H1 NET_Hero_H1 capitalize">application development services</h2>
-            <p className="AD_Tagline">Custom-built applications designed to support business workflows, performance, and scalability.</p>
+            <h2 className="AD_Hero_H1 NET_Hero_H1">Application Development</h2>
+            <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle" style={{ fontSize: '1.4rem', color: '#3b82f6' }}>
+              <Zap size={24} className="text-blue-600" />
+              Custom software built for scale and efficiency
+            </p>
+            <p className="AD_Hero_P">
+              CHN Technologies delivers professional application development services focused on performance,
+              security, and scalability. Our software solutions support mission-critical workflows and
+              organisational growth through structured engineering.
+            </p>
             <div className="AD_Btn_Group">
               <Link to="/contact">
-                <button className="AD_Primary_Btn">Talk to an Application Specialist</button>
+                <button className="AD_Primary_Btn">Start Your Application Project</button>
               </Link>
             </div>
           </motion.div>
@@ -260,7 +278,39 @@ const ApplicationDevelopmentPage = () => {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
             className="AD_Hero_Img"
           >
-            <img src="/images/appdev-code.jpg" alt="Code Development Architecture" />
+            <img src={appDevHero} alt="Premium Application Development Architecture" />
+            <motion.div
+              initial={{ opacity: 0, x: -20, scale: 0.9 }}
+              animate={{ 
+                opacity: 1, 
+                x: 0, 
+                scale: 1,
+                y: [0, -10, 0]
+              }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 0.5,
+                y: { repeat: Infinity, duration: 4, ease: "easeInOut" }
+              }}
+              className="AD_Hero_Floating_Card bg-white/90 backdrop-blur-md"
+            >
+              <div className="bg-blue-600 p-3 rounded-xl shadow-lg shadow-blue-200 shrink-0">
+                <Code2 className="text-white" size={24} />
+              </div>
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.15em] text-slate-400 uppercase">
+                  Architecture Score
+                </p>
+                <div className="flex items-center gap-2">
+                  <p className="text-lg font-black text-slate-800 tracking-tight">
+                    HIGH PERFORMANCE
+                  </p>
+                  <div className="h-4 w-4 bg-green-500 rounded-full flex items-center justify-center">
+                    <div className="h-1.5 w-1.5 bg-white rounded-full animate-pulse" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -269,7 +319,7 @@ const ApplicationDevelopmentPage = () => {
       <section className="AD_Context">
         <div className="AD_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 AD_Context_H1 capitalize">applications are core to business operations</h2>
+            <h2 className="NET_Hero_H1 AD_Context_H1">Applications are Core to Business Operations</h2>
             <p className="AD_Context_P">
               Modern organisations rely on applications to manage processes, data, and customer interactions. Off-the-shelf tools often fail to align fully with unique workflows, leading to inefficiencies and limitations.
               CHN Technologies helps organisations design and develop custom applications that fit operational needs, improve productivity, and support digital transformation initiatives with clarity and control.
@@ -282,7 +332,7 @@ const ApplicationDevelopmentPage = () => {
       <section className="AD_Cap_Section">
         <div className="AD_Cap_Inner">
           <span className="AD_Badge">Core Capabilities</span>
-          <h2 className="NET_Hero_H1 capitalize">what our application <br /> development services cover</h2>
+          <h2 className="NET_Hero_H1"> Our Application Development Services Cover</h2>
 
           <div className="AD_Cap_Grid">
             {[
@@ -334,7 +384,7 @@ const ApplicationDevelopmentPage = () => {
           </div>
           <div className="AD_Outcome_Content">
             <span className="AD_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1 capitalize">benefits of structured <br /> application development</h2>
+            <h2 className="NET_Hero_H1">Benefits of Structured Application Development</h2>
 
             <div className="Outcome_List">
               {[
@@ -360,7 +410,7 @@ const ApplicationDevelopmentPage = () => {
       <section className="AD_Flow">
         <div className="AD_Flow_Inner">
           <span className="AD_Badge">Strategic Approach</span>
-          <h2 className="NET_Hero_H1 capitalize">how we build applications</h2>
+          <h2 className="NET_Hero_H1">How We Build Applications</h2>
 
           <div className="AD_Flow_Grid">
             {[
@@ -387,7 +437,7 @@ const ApplicationDevelopmentPage = () => {
       {/* LAYOUT 6 – TRUST & FINAL CTA */}
       <section className="AD_Trust">
         <div className="AD_Trust_Inner">
-          <h2 className="NET_Hero_H1 text-white capitalize">build applications that support your business</h2>
+          <h2 className="NET_Hero_H1 text-white">Build Applications That Support Your Business</h2>
           <p className="AD_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
             Connect with CHN Technologies to understand how structured application development solutions
             can support operational efficiency and digital growth.
