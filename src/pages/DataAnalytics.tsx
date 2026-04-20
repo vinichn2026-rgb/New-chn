@@ -318,22 +318,22 @@ const DataAnalyticsPage = () => {
           <div className="DA_Cap_Grid">
             {[
               {
-                title: "Predictive Analytics",
+                title: "Predictive analytics",
                 icon: <TrendingUp size={28} />,
                 desc: "Using historical data and AI models to forecast business trends and operational shifts."
               },
               {
-                title: "Business Intelligence",
+                title: "Business intelligence",
                 icon: <BarChart3 size={28} />,
                 desc: "Customized dashboarding and reporting systems for real-time visibility into mission-critical KPIs."
               },
               {
-                title: "Data Warehousing",
+                title: "Data warehousing",
                 icon: <Database size={28} />,
                 desc: "Structured data storage and management that ensures large-scale information remains accessible."
               },
               {
-                title: "Integration Services",
+                title: "Integration services",
                 icon: <Layers size={28} />,
                 desc: "Consolidating data from disparate business systems to provide a single, unified source of truth."
               }
@@ -364,10 +364,10 @@ const DataAnalyticsPage = () => {
 
             <div className="Outcome_List">
               {[
-                { title: "Improved Decision Precision", desc: "Empirical insights that reduce reliance on intuition and drive predictable outcomes." },
-                { title: "Optimal Strategic Scaling", desc: "Data-driven models that group operational growth with measurable market opportunities." },
-                { title: "Enhanced Real-Time Visibility", desc: "Dashboarding systems that provide continuous oversight across mission-critical systems." },
-                { title: "Predictable Future Modeling", desc: "Forecasting methods that ensure organisations are ready for evolving business cycles." }
+                { title: "Improved decision precision", desc: "Empirical insights that reduce reliance on intuition and drive predictable outcomes." },
+                { title: "Optimal strategic scaling", desc: "Data-driven models that group operational growth with measurable market opportunities." },
+                { title: "Enhanced real-time visibility", desc: "Dashboarding systems that provide continuous oversight across mission-critical systems." },
+                { title: "Predictable future modeling", desc: "Forecasting methods that ensure organisations are ready for evolving business cycles." }
               ].map((item, i) => (
                 <div key={i} className="Outcome_Item">
                   <div className="Outcome_Check"><CheckCircle size={16} /></div>
@@ -390,10 +390,10 @@ const DataAnalyticsPage = () => {
 
           <div className="DA_Flow_Grid">
             {[
-              { num: "01", h: "Data Ingestion", icon: <Database size={30} />, p: "Consolidating raw data from disparate business sources into a unified hub." },
-              { num: "02", h: "Strategic Modeling", icon: <LineChart size={30} />, p: "Creating mathematical models that represent your operational business logic." },
+              { num: "01", h: "Data ingestion", icon: <Database size={30} />, p: "Consolidating raw data from disparate business sources into a unified hub." },
+              { num: "02", h: "Strategic modeling", icon: <LineChart size={30} />, p: "Creating mathematical models that represent your operational business logic." },
               { num: "03", h: "Visualization", icon: <PieChart size={30} />, p: "Building high-fidelity dashboards that translate data into human-readable insight." },
-              { num: "04", h: "Decision Support", icon: <TrendingUp size={30} />, p: "Continuous analytical refinement to support mission-critical decision making." }
+              { num: "04", h: "Decision support", icon: <TrendingUp size={30} />, p: "Continuous analytical refinement to support mission-critical decision making." }
             ].map((step, i) => (
               <motion.div
                 key={i}

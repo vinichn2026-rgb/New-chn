@@ -352,22 +352,22 @@ padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
           <div className="CS_Cap_Grid">
             {[
               {
-                title: "Unified Threat Mgmt",
+                title: "Unified threat mgmt",
                 icon: <Activity size={32} />,
                 desc: "Predictive threat hunting and real-time monitoring to neutralize advanced persistent threats before they enter your perimeter."
               },
               {
-                title: "Zero-Trust Architecture",
+                title: "Zero-trust architecture",
                 icon: <Fingerprint size={32} />,
                 desc: "Never trust, always verify. We implement granular access controls and identity protection for every single user and device."
               },
               {
-                title: "Endpoint Orchestration",
+                title: "Endpoint orchestration",
                 icon: <Network size={32} />,
                 desc: "Hardening every point of entry—from mobile devices to global servers—ensuring your entire surface is under active protection."
               },
               {
-                title: "Rapid Countermeasures",
+                title: "Rapid countermeasures",
                 icon: <Zap size={32} />,
                 desc: "Automated incident response protocols that contain and isolate threats in milliseconds, preserving core operational integrity."
               }
@@ -401,10 +401,10 @@ padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
 
             <div className="Outcome_List">
               {[
-                { title: "Immutable Data Privacy", desc: "Enterprise-grade encryption and privacy controls ensure your proprietary intelligence remains yours alone." },
-                { title: "Operational Continuity", desc: "Eliminate downtime caused by security breaches, ransomware, or unauthorized access attempts." },
-                { title: "Regulatory Superiority", desc: "Seamlessly meet and exceed ISO, SOC2, and GDPR requirements with pre-configured compliance frameworks." },
-                { title: "Brand Authority", desc: "Build unshakeable trust with clients and partners by demonstrating the highest level of security discipline." }
+                { title: "Immutable data privacy", desc: "Enterprise-grade encryption and privacy controls ensure your proprietary intelligence remains yours alone." },
+                { title: "Operational continuity", desc: "Eliminate downtime caused by security breaches, ransomware, or unauthorized access attempts." },
+                { title: "Regulatory superiority", desc: "Seamlessly meet and exceed ISO, SOC2, and GDPR requirements with pre-configured compliance frameworks." },
+                { title: "Brand authority", desc: "Build unshakeable trust with clients and partners by demonstrating the highest level of security discipline." }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -431,10 +431,10 @@ padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
 
           <div className="CS_Flow_Grid">
             {[
-              { num: "PHASE 01", h: "Vulnerability Audit", icon: <Search size={35} />, p: "Exposing invisible weaknesses through ethical hacking, stress tests, and environmental audits." },
-              { num: "PHASE 02", h: "Hardened Design", icon: <PenTool size={35} />, p: "Drafting a bespoke security architecture that integrates with your existing business flows." },
-              { num: "PHASE 03", h: "Active Deployment", icon: <Settings size={35} />, p: "Implementing the firewall, encryption, and access controls with precision calibration." },
-              { num: "PHASE 04", h: "Infinite Watch", icon: <Eye size={35} />, p: "24/7 global SOC monitoring, threat intel sharing, and continuous defense evolution." }
+              { num: "PHASE 01", h: "Vulnerability audit", icon: <Search size={35} />, p: "Exposing invisible weaknesses through ethical hacking, stress tests, and environmental audits." },
+              { num: "PHASE 02", h: "Hardened design", icon: <PenTool size={35} />, p: "Drafting a bespoke security architecture that integrates with your existing business flows." },
+              { num: "PHASE 03", h: "Active deployment", icon: <Settings size={35} />, p: "Implementing the firewall, encryption, and access controls with precision calibration." },
+              { num: "PHASE 04", h: "Infinite watch", icon: <Eye size={35} />, p: "24/7 global SOC monitoring, threat intel sharing, and continuous defense evolution." }
             ].map((step, i) => (
               <motion.div
                 key={i}

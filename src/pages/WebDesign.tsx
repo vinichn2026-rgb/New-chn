@@ -248,10 +248,10 @@ const WebDesignDevelopment = () => {
               </div>
               <div className="grid gap-8">
                 {[
-                  { label: "Stronger Brand Credibility", text: "Well-designed websites reinforce professionalism and trust.", icon: <CheckCircle size={16} /> },
-                  { label: "Improved User Engagement", text: "Clear navigation and intuitive interfaces support better user interaction.", icon: <CheckCircle size={16} /> },
-                  { label: "Higher Conversion Potential", text: "Structured layouts and content flows support lead generation and enquiries.", icon: <CheckCircle size={16} /> },
-                  { label: "Scalable Digital Foundation", text: "Web platforms designed to evolve with business growth and digital initiatives.", icon: <CheckCircle size={16} /> }
+                  { label: "Stronger brand credibility", text: "Well-designed websites reinforce professionalism and trust.", icon: <CheckCircle size={16} /> },
+                  { label: "Improved user engagement", text: "Clear navigation and intuitive interfaces support better user interaction.", icon: <CheckCircle size={16} /> },
+                  { label: "Higher conversion potential", text: "Structured layouts and content flows support lead generation and enquiries.", icon: <CheckCircle size={16} /> },
+                  { label: "Scalable digital foundation", text: "Web platforms designed to evolve with business growth and digital initiatives.", icon: <CheckCircle size={16} /> }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 items-start p-6 rounded-2xl hover:bg-slate-50 transition-colors">
                     <div className="bg-blue-600 text-white rounded-full p-1 flex items-center justify-center shrink-0 w-7 h-7 mt-1">

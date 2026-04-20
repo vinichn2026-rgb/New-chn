@@ -310,22 +310,22 @@ const EndUserComputingPage = () => {
                     <div className="EUC_Cap_Grid">
                         {[
                             {
-                                title: "Unified Device Lifecycle",
+                                title: "Unified device lifecycle",
                                 icon: <Laptop size={32} />,
                                 desc: "Zero-touch provisioning and automated decommissioning, ensuring your hardware fleet is always current, patched, and performing."
                             },
                             {
-                                title: "Virtualized Desktops",
+                                title: "Virtualized desktops",
                                 icon: <Monitor size={32} />,
                                 desc: "High-performance VDI solutions that deliver secure corporate environments to any machine, reducing hardware dependency."
                             },
                             {
-                                title: "Cognitive Application Hub",
+                                title: "Cognitive application hub",
                                 icon: <Layout size={32} />,
                                 desc: "Centralized application management with automated updates and role-based delivery, keeping teams in a flow-state."
                             },
                             {
-                                title: "Identity Protection",
+                                title: "Identity protection",
                                 icon: <ShieldCheck size={32} />,
                                 desc: "Biometric authentication and multi-factor identity governance that moves with the user, not just the machine."
                             }
@@ -374,10 +374,10 @@ const EndUserComputingPage = () => {
 
                         <div className="Outcome_List">
                             {[
-                                { title: "Universal Consistency", desc: "A unified user experience across mobile, tablet, and desktop, reducing learning curves and support tickets." },
-                                { title: "Peak Workforce Mobility", desc: "Empower remote and hybrid teams with secure, high-speed access to every corporate asset from any location." },
-                                { title: "Aggressive Cost Reduction", desc: "Consolidate hardware spend and automate L1 support tasks, redirecting IT budget toward innovation." },
-                                { title: "Absolute Compliance", desc: "Automated auditing and remote-wipe capabilities ensure corporate data never leaves your control plane." }
+                                { title: "Universal consistency", desc: "A unified user experience across mobile, tablet, and desktop, reducing learning curves and support tickets." },
+                                { title: "Peak workforce mobility", desc: "Empower remote and hybrid teams with secure, high-speed access to every corporate asset from any location." },
+                                { title: "Aggressive cost reduction", desc: "Consolidate hardware spend and automate L1 support tasks, redirecting IT budget toward innovation." },
+                                { title: "Absolute compliance", desc: "Automated auditing and remote-wipe capabilities ensure corporate data never leaves your control plane." }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -404,10 +404,10 @@ const EndUserComputingPage = () => {
 
                     <div className="EUC_Flow_Grid">
                         {[
-                            { num: "PHASE 01", h: "User Analytics", icon: <Search size={35} />, p: "Mapping user personas and application dependencies to identify friction points in your current workflow." },
-                            { num: "PHASE 02", h: "Experience Design", icon: <PenTool size={35} />, p: "Drafting a unified computing architecture that balances absolute security with maximum usability." },
-                            { num: "PHASE 03", h: "Global Rollout", icon: <Settings size={35} />, p: "Rapid integration of new endpoint standards with zero-touch configuration and migration." },
-                            { num: "PHASE 04", h: "Adaptive Tuning", icon: <RefreshCw size={35} />, p: "Continuous performance monitoring and proactive UX refinements to keep your workforce ahead." }
+                            { num: "PHASE 01", h: "User analytics", icon: <Search size={35} />, p: "Mapping user personas and application dependencies to identify friction points in your current workflow." },
+                            { num: "PHASE 02", h: "Experience design", icon: <PenTool size={35} />, p: "Drafting a unified computing architecture that balances absolute security with maximum usability." },
+                            { num: "PHASE 03", h: "Global rollout", icon: <Settings size={35} />, p: "Rapid integration of new endpoint standards with zero-touch configuration and migration." },
+                            { num: "PHASE 04", h: "Adaptive tuning", icon: <RefreshCw size={35} />, p: "Continuous performance monitoring and proactive UX refinements to keep your workforce ahead." }
                         ].map((step, i) => (
                             <motion.div
                                 key={i}

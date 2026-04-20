@@ -299,7 +299,7 @@ const NetworkManagementPage = () => {
               Network management services
             </h2>
 
-            <p className="NET_Tagline">Reliable, secure, and high-performance networks.</p>
+            <p className="NET_Tagline">Reliable, Secure, and High-Performance Networks</p>
             <p className="NET_Hero_P">
               CHN Technologies provides structured network management services that ensure stable connectivity,
               controlled access, and continuous performance across business environments.
@@ -327,22 +327,22 @@ const NetworkManagementPage = () => {
           <div className="NET_Cap_Grid">
             {[
               {
-                title: "Monitoring & Performance",
+                title: "Monitoring & performance",
                 icon: <Activity size={28} />,
                 desc: "Continuous monitoring to detect issues early and maintain optimal network performance."
               },
               {
-                title: "Security & Access Control",
+                title: "Security & access control",
                 icon: <Shield size={28} />,
                 desc: "Implementation of secure access policies, firewalls, and segmentation to reduce risk."
               },
               {
-                title: "Infrastructure Maintenance",
+                title: "Infrastructure maintenance",
                 icon: <Server size={28} />,
                 desc: "Structured configuration and maintenance of routers, switches, and components."
               },
               {
-                title: "Incident Management",
+                title: "Incident management",
                 icon: <Zap size={28} />,
                 desc: "Rapid identification and resolution of network disruptions to minimise downtime."
               }
@@ -373,10 +373,10 @@ const NetworkManagementPage = () => {
 
             <div className="Outcome_List">
               {[
-                { title: "Improved Network Stability", desc: "Reduced disruptions and consistent connectivity across systems." },
-                { title: "Enhanced Security Posture", desc: "Controlled access and monitored traffic reduce exposure to threats." },
-                { title: "Operational Efficiency", desc: "Reliable networks support productivity and reduce IT firefighting." },
-                { title: "Scalable Architecture", desc: "Network designs that grow alongside business requirements." }
+                { title: "Improved network stability", desc: "Reduced disruptions and consistent connectivity across systems." },
+                { title: "Enhanced security posture", desc: "Controlled access and monitored traffic reduce exposure to threats." },
+                { title: "Operational efficiency", desc: "Reliable networks support productivity and reduce IT firefighting." },
+                { title: "Scalable architecture", desc: "Network designs that grow alongside business requirements." }
               ].map((item, i) => (
                 <div key={i} className="Outcome_Item">
                   <div className="Outcome_Check"><CheckCircle size={16} /></div>

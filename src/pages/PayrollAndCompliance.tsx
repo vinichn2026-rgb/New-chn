@@ -282,10 +282,10 @@ const PayrollAndCompliancePage = () => {
 
         <div className="PC_Domains_Grid">
           {[
-            { title: "End-to-End Payroll", icon: <Calculator size={30} />, desc: "Structured management of payroll processes that ensure financial integrity and timely execution." },
-            { title: "Statutory Compliance", icon: <Scale size={30} />, desc: "Comprehensive oversight of labor regulations and regional standards to minimize organisational risk." },
-            { title: "Secure Data Governance", icon: <ShieldCheck size={30} />, desc: "High-integrity management of sensitive financial data with state-of-the-art encryption protocols." },
-            { title: "Audit Readiness", icon: <FileText size={30} />, desc: "Continuous internal monitoring to ensure your ecosystem is always audit-ready and legally secure." }
+            { title: "End-to-end payroll", icon: <Calculator size={30} />, desc: "Structured management of payroll processes that ensure financial integrity and timely execution." },
+            { title: "Statutory compliance", icon: <Scale size={30} />, desc: "Comprehensive oversight of labor regulations and regional standards to minimize organisational risk." },
+            { title: "Secure data governance", icon: <ShieldCheck size={30} />, desc: "High-integrity management of sensitive financial data with state-of-the-art encryption protocols." },
+            { title: "Audit readiness", icon: <FileText size={30} />, desc: "Continuous internal monitoring to ensure your ecosystem is always audit-ready and legally secure." }
           ].map((item, i) => (
             <motion.div
               key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }}
@@ -310,10 +310,10 @@ const PayrollAndCompliancePage = () => {
             <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Benefits of structured control</h2>
             <div className="mt-12">
               {[
-                { title: "Predictable Tax Management", desc: "Error-free tax processing and institutional institutional health." },
-                { title: "Optimal Resource Efficiency", desc: "Automated systems allowing workforce to focus on primary work." },
-                { title: "Reduced Internal Risk", desc: "Frameworks that minimize exposure to regional legal penalty." },
-                { title: "Scalable Architecture", desc: "Systems designed to grow with workforce and organizational complexity." }
+                { title: "Predictable tax management", desc: "Error-free tax processing and institutional institutional health." },
+                { title: "Optimal resource efficiency", desc: "Automated systems allowing workforce to focus on primary work." },
+                { title: "Reduced internal risk", desc: "Frameworks that minimize exposure to regional legal penalty." },
+                { title: "Scalable architecture", desc: "Systems designed to grow with workforce and organizational complexity." }
               ].map((item, i) => (
                 <div key={i} className="PC_Check_Item">
                   <div className="PC_Check_Icon"><CheckCircle size={18} /></div>
@@ -334,8 +334,8 @@ const PayrollAndCompliancePage = () => {
         <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Strategic stages</h2>
         <div className="PC_Framework_Grid">
           {[
-            { num: "01", h: "Audit & Scoping", icon: <Search size={30} />, p: "Review existing payroll logs, compliance status, and obligations." },
-            { num: "02", h: "Process Design", icon: <PenTool size={30} />, p: "Structuring zero-error processing models and reporting hierarchies." },
+            { num: "01", h: "Audit & scoping", icon: <Search size={30} />, p: "Review existing payroll logs, compliance status, and obligations." },
+            { num: "02", h: "Process design", icon: <PenTool size={30} />, p: "Structuring zero-error processing models and reporting hierarchies." },
             { num: "03", h: "Execution", icon: <Calculator size={30} />, p: "Implementation of recurring payroll processing and filing protocols." },
             { num: "04", h: "Governance", icon: <Shield size={30} />, p: "Continuous monitoring, internal audits, and regulatory updates." }
           ].map((step, i) => (

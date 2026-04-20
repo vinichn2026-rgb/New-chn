@@ -148,7 +148,7 @@ const SubmenuPage = () => {
   if (!page) {
     return (
       <div className="container mx-auto px-4 py-24 text-center">
-        <h2 className="NET_Hero_H1">Page Not Found</h2>
+        <h2 className="NET_Hero_H1">Page not found</h2>
         <p className="mt-4 text-slate-600">The requested section does not exist. Please choose a valid service.</p>
         <Link to="/" className="mt-8 inline-block text-blue-600 hover:text-blue-800">Return to homepage</Link>
       </div>
@@ -159,11 +159,11 @@ const SubmenuPage = () => {
 
   // Related services - this could be enhanced to be dynamic based on category
   const relatedServices = [
-    "IT Infrastructure",
-    "Software Solutions",
-    "Digital Solutions",
-    "Workforce Management",
-    "Payroll & Compliance"
+    "IT infrastructure",
+    "Software solutions",
+    "Digital solutions",
+    "Workforce management",
+    "Payroll & compliance"
   ];
 
   return (
@@ -179,7 +179,7 @@ const SubmenuPage = () => {
             <div className="lg:col-span-2">
               {isThoughtLeadership && (
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} animate="visible" variants={animateFade} custom={0} className="mb-12">
-                  <h2 className="NET_Hero_H1 text-center">CHN's Point of View</h2>
+                  <h2 className="NET_Hero_H1 text-center">CHN's point of view</h2>
                   <p className="text-center text-slate-600 max-w-3xl mx-auto mb-10">A unified outlook across Technology, Consulting and Resources to build resilient, secure, and growth-ready enterprises.</p>
                 </motion.div>
               )}
@@ -207,7 +207,7 @@ const SubmenuPage = () => {
                 custom={1}
                 className="mb-12"
               >
-                <h3 className="text-2xl font-bold text-foreground mb-6">Key Features</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-6">Key features</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   {page.features.map((feature, index) => (
                     <div key={feature} className="flex gap-3 p-4 bg-white rounded-lg border border-slate-200 shadow-sm">
@@ -281,7 +281,7 @@ const SubmenuPage = () => {
                 custom={0}
                 className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm mb-6"
               >
-                <h3 className="text-lg font-semibold text-foreground mb-4">Related Services</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-4">Related services</h3>
                 <ul className="space-y-2">
                   {relatedServices.map((service) => (
                     <li key={service}>
@@ -303,11 +303,11 @@ const SubmenuPage = () => {
                 custom={1}
                 className="bg-[#002e5b] p-6 rounded-lg text-white mb-6"
               >
-                <h3 className="text-lg font-semibold mb-4">Download Brochure</h3>
+                <h3 className="text-lg font-semibold mb-4">Download brochure</h3>
                 <p className="text-white/80 text-sm mb-4">Get detailed information about our services in PDF format.</p>
                 <button className="inline-flex items-center justify-center w-full px-4 py-2 bg-white text-[#002e5b] font-semibold rounded-lg hover:bg-white/90 transition-all">
                   <Download className="w-4 h-4 mr-2" />
-                  Download pdf
+                  Download PDF
                 </button>
               </motion.div>
 
@@ -321,7 +321,7 @@ const SubmenuPage = () => {
                 custom={2}
                 className="bg-slate-50 p-6 rounded-lg border border-slate-200"
               >
-                <h3 className="text-lg font-semibold text-foreground mb-4">Need Help?</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-4">Need help?</h3>
                 <p className="text-slate-600 text-sm mb-4">Contact our experts for personalized consultation.</p>
                 <div className="flex items-center text-[#002e5b] font-semibold">
                   <Phone className="w-4 h-4 mr-2" />

@@ -398,7 +398,7 @@ const WorkforceManagementPage = () => {
             {[
               { num: "01", h: "Talent acquisition", icon: <UserPlus size={30} />, p: "Sourcing and evaluating human capital based on technical and cultural parameters." },
               { num: "02", h: "Strategic planning", icon: <PenTool size={30} />, p: "Forecasting operational needs and structural staffing requirements." },
-              { num: "03", h: "Performance audit", icon: <Activity size={30} />, p: "Aalysing workforce output and aligning goals with digital outcomes." },
+              { num: "03", h: "Performance audit", icon: <Activity size={30} />, p: "Analysing workforce output and aligning goals with digital outcomes." },
               { num: "04", h: "Policy compliance", icon: <ShieldCheck size={30} />, p: "Stabilising legal and ethical integrity through structured workforce policy." }
             ].map((step, i) => (
               <motion.div

@@ -6,37 +6,37 @@ import { ArrowUpRight, Server, Shield, Monitor, HardDrive, Wifi, Globe, Code, Ba
 const categories = [
     {
         id: 'it-infrastructure',
-        label: 'IT Infrastructure',
+        label: 'IT infrastructure',
         color: '#0060ff',
         bg: '#eff6ff',
         description: 'End-to-end infrastructure services that keep your operations stable, secure, and connected.',
         services: [
-            { name: 'Network Management', link: '/network', icon: Wifi, desc: 'Network design, monitoring, and performance optimisation.' },
-            { name: 'Cyber Security', link: '/cybersecurity', icon: Shield, desc: 'Threat detection, compliance, and access management.' },
-            { name: 'End User Computing', link: '/enduser', icon: Monitor, desc: 'Provisioning, VDI, device lifecycle, and helpdesk.' },
-            { name: 'Server Administration', link: '/server', icon: Server, desc: 'Server setup, OS patching, and disaster recovery.' },
-            { name: 'LAN Cabling & Surveillance', link: '/lancabling', icon: HardDrive, desc: 'Structured cabling, CCTV, and access control systems.' },
+            { name: 'Network management', link: '/network', icon: Wifi, desc: 'Network design, monitoring, and performance optimisation.' },
+            { name: 'Cyber security', link: '/cybersecurity', icon: Shield, desc: 'Threat detection, compliance, and access management.' },
+            { name: 'End user computing', link: '/enduser', icon: Monitor, desc: 'Provisioning, VDI, device lifecycle, and helpdesk.' },
+            { name: 'Server administration', link: '/server', icon: Server, desc: 'Server setup, OS patching, and disaster recovery.' },
+            { name: 'LAN cabling & surveillance', link: '/lancabling', icon: HardDrive, desc: 'Structured cabling, CCTV, and access control systems.' },
         ],
     },
     {
         id: 'software-solutions',
-        label: 'Software Solutions',
+        label: 'Software solutions',
         color: '#7c3aed',
         bg: '#f5f3ff',
         description: 'Custom-built digital products and web platforms tailored to your business workflows.',
         services: [
-            { name: 'Web Design & Development', link: '/webdesign', icon: Globe, desc: 'Responsive websites, CMS implementation, and UI/UX design.' },
-            { name: 'Application Development', link: '/application', icon: Code, desc: 'Scalable apps, mobile solutions, and API integrations.' },
+            { name: 'Web design & development', link: '/webdesign', icon: Globe, desc: 'Responsive websites, CMS implementation, and UI/UX design.' },
+            { name: 'Application development', link: '/application', icon: Code, desc: 'Scalable apps, mobile solutions, and API integrations.' },
         ],
     },
     {
         id: 'digital-solutions',
-        label: 'Digital Solutions',
+        label: 'Digital solutions',
         color: '#059669',
         bg: '#ecfdf5',
         description: 'Data-driven processes and intelligent automation to improve efficiency and visibility.',
         services: [
-            { name: 'Data Analytics', link: '/dataanalytics', icon: BarChart2, desc: 'BI dashboards, predictive analytics, and data warehousing.' },
+            { name: 'Data analytics', link: '/dataanalytics', icon: BarChart2, desc: 'BI dashboards, predictive analytics, and data warehousing.' },
             { name: 'Automation', link: '/automation', icon: Zap, desc: 'RPA, workflow automation, and process integration.' },
         ],
     },
@@ -216,7 +216,7 @@ const TechnologyPage = () => {
                     <div className="TECH_Badge">What we do</div>
                     <h2 className="TECH_Hero_Title NET_Hero_H1">
                         Technology<br />
-                        <span style={{ color: '#60a5fa' }}>Services</span>
+                        <span style={{ color: '#60a5fa' }}>services</span>
                     </h2>
                     <p className="TECH_Hero_desc">
                         Integrated technology capabilities across infrastructure, software, and digital solutions —

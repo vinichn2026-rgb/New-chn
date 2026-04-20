@@ -326,22 +326,22 @@ const ServerAdministrationPage = () => {
           <div className="SA_Cap_Grid">
             {[
               {
-                title: "Performance Optimization",
+                title: "Performance optimization",
                 icon: <Activity size={32} />,
                 desc: "Fine-tuning kernel parameters, I/O scheduling, and resource allocation to squeeze maximum performance from your hardware."
               },
               {
-                title: "Hybrid-Cloud Governance",
+                title: "Hybrid-cloud governance",
                 icon: <Cloud size={32} />,
                 desc: "Seamless administration of on-premise iron and distributed cloud instances under a single, unified control plane."
               },
               {
-                title: "Automated Continuity",
+                title: "Automated continuity",
                 icon: <RefreshCw size={32} />,
                 desc: "Self-healing infrastructures with automated backup orchestration and zero-latency failover protocols."
               },
               {
-                title: "Hardened Security",
+                title: "Hardened security",
                 icon: <Shield size={32} />,
                 desc: "Military-grade hardening of server OS, real-time threat detection, and continuous compliance auditing."
               }
@@ -375,10 +375,10 @@ const ServerAdministrationPage = () => {
 
             <div className="Outcome_List">
               {[
-                { title: "Zero-Lag Operations", desc: "Optimised server stacks ensure application response times remain consistent even under peak transactional loads." },
-                { title: "Immutable Data Integrity", desc: "Enterprise-grade redundancy and encryption ensure your most valuable data assets are never compromised or lost." },
-                { title: "Predictable Cost Scaling", desc: "Optimized resource utilization reduces cloud sprawl and hardware waste, aligning IT spend with literal business value." },
-                { title: "Future-Proof Stability", desc: "Infrastructures designed with modularity, allowing for rapid adoption of new technologies without technical debt." }
+                { title: "Zero-lag operations", desc: "Optimised server stacks ensure application response times remain consistent even under peak transactional loads." },
+                { title: "Immutable data integrity", desc: "Enterprise-grade redundancy and encryption ensure your most valuable data assets are never compromised or lost." },
+                { title: "Predictable cost scaling", desc: "Optimized resource utilization reduces cloud sprawl and hardware waste, aligning IT spend with literal business value." },
+                { title: "Future-proof stability", desc: "Infrastructures designed with modularity, allowing for rapid adoption of new technologies without technical debt." }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -405,10 +405,10 @@ const ServerAdministrationPage = () => {
 
           <div className="SA_Flow_Grid">
             {[
-              { num: "PHASE 01", h: "Audit & Assess", icon: <Search size={35} />, p: "A deep-dive analysis of your current iron and cloud footprint to identify bottlenecks and risk vectors." },
-              { num: "PHASE 02", h: "Strategic Blueprint", icon: <PenTool size={35} />, p: "Drafting an architecture that aligns specialized server roles with high-availability business requirements." },
-              { num: "PHASE 03", h: "Active Hardening", icon: <Settings size={35} />, p: "Deploying the stack with full automation, security hardening, and performance fine-tuning." },
-              { num: "PHASE 04", h: "Infinite Loop", icon: <Cpu size={35} />, p: "24/7 proactive orchestration, predictive maintenance, and continuous resource optimization." }
+              { num: "PHASE 01", h: "Audit & assess", icon: <Search size={35} />, p: "A deep-dive analysis of your current iron and cloud footprint to identify bottlenecks and risk vectors." },
+              { num: "PHASE 02", h: "Strategic blueprint", icon: <PenTool size={35} />, p: "Drafting an architecture that aligns specialized server roles with high-availability business requirements." },
+              { num: "PHASE 03", h: "Active hardening", icon: <Settings size={35} />, p: "Deploying the stack with full automation, security hardening, and performance fine-tuning." },
+              { num: "PHASE 04", h: "Infinite loop", icon: <Cpu size={35} />, p: "24/7 proactive orchestration, predictive maintenance, and continuous resource optimization." }
             ].map((step, i) => (
               <motion.div
                 key={i}

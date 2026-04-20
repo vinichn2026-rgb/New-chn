@@ -257,7 +257,7 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
                 Application Development
               </span>
             </div>
-            <h2 className="AD_Hero_H1 NET_Hero_H1">Application Development</h2>
+            <h2 className="AD_Hero_H1 NET_Hero_H1">Application development</h2>
             <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle" style={{ fontSize: '1.4rem', color: '#3b82f6' }}>
               <Zap size={24} className="text-blue-600" />
               Custom software built for scale and efficiency
@@ -319,7 +319,7 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
       <section className="AD_Context">
         <div className="AD_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 AD_Context_H1">Applications are Core to Business Operations</h2>
+            <h2 className="NET_Hero_H1 AD_Context_H1">Applications are core to business operations</h2>
             <p className="AD_Context_P">
               Modern organisations rely on applications to manage processes, data, and customer interactions. Off-the-shelf tools often fail to align fully with unique workflows, leading to inefficiencies and limitations.
               CHN Technologies helps organisations design and develop custom applications that fit operational needs, improve productivity, and support digital transformation initiatives with clarity and control.
@@ -332,32 +332,32 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
       <section className="AD_Cap_Section">
         <div className="AD_Cap_Inner">
           <span className="AD_Badge">Core Capabilities</span>
-          <h2 className="NET_Hero_H1"> Our Application Development Services Cover</h2>
+          <h2 className="NET_Hero_H1"> Our application development services cover</h2>
 
           <div className="AD_Cap_Grid">
             {[
               {
-                title: "Custom Business Apps",
+                title: "Custom business apps",
                 icon: <Braces size={28} />,
                 desc: "Design and development of applications tailored to specific operational and business requirements."
               },
               {
-                title: "Enterprise Solutions",
+                title: "Enterprise solutions",
                 icon: <Box size={28} />,
                 desc: "Development of scalable applications that support complex workflows and multi-user environments."
               },
               {
-                title: "System Integration & APIs",
+                title: "System integration & APIs",
                 icon: <GitBranch size={28} />,
                 desc: "Integration of applications with existing systems, databases, and third-party platforms."
               },
               {
-                title: "Application Modernisation",
+                title: "Application modernisation",
                 icon: <RefreshCw size={28} />,
                 desc: "Enhancement or re-engineering of legacy applications to improve performance and usability."
               },
               {
-                title: "Testing & Quality Assurance",
+                title: "Testing & quality assurance",
                 icon: <ShieldCheck size={28} />,
                 desc: "Structured testing to ensure reliability, security, and functional accuracy across all units."
               }
@@ -384,7 +384,7 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
           </div>
           <div className="AD_Outcome_Content">
             <span className="AD_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1">Benefits of Structured Application Development</h2>
+            <h2 className="NET_Hero_H1">Benefits of structured application development</h2>
 
             <div className="Outcome_List">
               {[
@@ -410,14 +410,14 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
       <section className="AD_Flow">
         <div className="AD_Flow_Inner">
           <span className="AD_Badge">Strategic Approach</span>
-          <h2 className="NET_Hero_H1">How We Build Applications</h2>
+          <h2 className="NET_Hero_H1">How we build applications</h2>
 
           <div className="AD_Flow_Grid">
             {[
-              { num: "01", h: "Discover & Assess", icon: <Search size={30} />, p: "Understand business processes, technical requirements, and integration needs." },
-              { num: "02", h: "Design & Architect", icon: <PenTool size={30} />, p: "Define application architecture, data models, and user flows." },
-              { num: "03", h: "Develop & Integrate", icon: <Settings size={30} />, p: "Build secure applications and integrate with required systems and services." },
-              { num: "04", h: "Test & Deploy", icon: <Activity size={30} />, p: "Comprehensive testing, deployment, and ongoing optimisation support." }
+              { num: "01", h: "Discover & assess", icon: <Search size={30} />, p: "Understand business processes, technical requirements, and integration needs." },
+              { num: "02", h: "Design & architect", icon: <PenTool size={30} />, p: "Define application architecture, data models, and user flows." },
+              { num: "03", h: "Develop & integrate", icon: <Settings size={30} />, p: "Build secure applications and integrate with required systems and services." },
+              { num: "04", h: "Test & deploy", icon: <Activity size={30} />, p: "Comprehensive testing, deployment, and ongoing optimisation support." }
             ].map((step, i) => (
               <motion.div
                 key={i}
@@ -437,7 +437,7 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
       {/* LAYOUT 6 – TRUST & FINAL CTA */}
       <section className="AD_Trust">
         <div className="AD_Trust_Inner">
-          <h2 className="NET_Hero_H1 text-white">Build Applications That Support Your Business</h2>
+          <h2 className="NET_Hero_H1 text-white">Build applications that support your business</h2>
           <p className="AD_Hero_P" style={{ margin: '20px auto 40px', color: 'rgba(255,255,255,0.7)' }}>
             Connect with CHN Technologies to understand how structured application development solutions
             can support operational efficiency and digital growth.

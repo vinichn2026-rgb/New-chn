@@ -320,22 +320,22 @@ const TrainingAndDevelopmentPage = () => {
           <div className="TD_Cap_Grid">
             {[
               {
-                title: "Skills Assessment",
+                title: "Skills assessment",
                 icon: <Target size={28} />,
                 desc: "Identifying technical and soft skill gaps within your workforce to ensure targeted and high-impact training."
               },
               {
-                title: "Custom Learning Paths",
+                title: "Custom learning paths",
                 icon: <BookOpen size={28} />,
                 desc: "Designing tailored curriculum modules aligned with your business technologies and organizational goals."
               },
               {
-                title: "Leadership Development",
+                title: "Leadership development",
                 icon: <GraduationCap size={28} />,
                 desc: "Structured programs designed to elevate high-potential employees into mission-critical management roles."
               },
               {
-                title: "Technical Certifications",
+                title: "Technical certifications",
                 icon: <Award size={28} />,
                 desc: "Preparing your engineering and IT teams for globally recognized certifications to ensure technical excellence."
               }
@@ -366,10 +366,10 @@ const TrainingAndDevelopmentPage = () => {
 
             <div className="Outcome_List">
               {[
-                { title: "Optimal Strategic Scaling", desc: "Training systems that ensure institutional knowledge grows with organisational goals." },
-                { title: "Reduced Hiring Overhead", desc: "Elevating internal workforce capacity reduces the need for external hiring." },
-                { title: "Predictable Performance Growth", desc: "Structured learning outcomes ensure measurable improvement in workforce productivity." },
-                { title: "High-Stability Workforce", desc: "Investing in employees increases retention and reduces institutional knowledge debt." }
+                { title: "Optimal strategic scaling", desc: "Training systems that ensure institutional knowledge grows with organisational goals." },
+                { title: "Reduced hiring overhead", desc: "Elevating internal workforce capacity reduces the need for external hiring." },
+                { title: "Predictable performance growth", desc: "Structured learning outcomes ensure measurable improvement in workforce productivity." },
+                { title: "High-stability workforce", desc: "Investing in employees increases retention and reduces institutional knowledge debt." }
               ].map((item, i) => (
                 <div key={i} className="Outcome_Item">
                   <div className="Outcome_Check"><CheckCircle size={16} /></div>

@@ -534,7 +534,7 @@ const ContactPage = () => {
             {/* LAYOUT 5 – RESPONSE & ENGAGEMENT EXPECTATION */}
             <section className="CN_Expectation">
                 <span className="text-[#0060ff] font-bold tracking-[0.3em] uppercase mb-6 block">Structured Response</span>
-                <h2 className="NET_Hero_H1 CN_Section_Title">What happens after you contact us</h2>
+                <h2 className="NET_Hero_H1 CN_Section_Title">Here’s what happens next after you contact us</h2>
 
                 <div className="CN_Flow">
                     {[

@@ -107,7 +107,7 @@ const SiteFooter = () => {
         <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4  text-sm">
           <p className="text-white/65">© 2026 CHN Technologies. All rights reserved.</p>
           <p className="flex items-center gap-1 text-white/65">
-            Designed & Developed by CHN Technologies
+            Building Smart Solutions for Modern Businesses — CHN Technologies
           </p>
         </div>
       </div>

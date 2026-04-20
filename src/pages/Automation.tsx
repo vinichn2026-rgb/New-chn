@@ -342,7 +342,7 @@ const AutomationPage = () => {
           <div className="AU_Flow_Grid">
             {[
               { num: "01", h: "Discovery", icon: <Search size={30} />, p: "Mapping manual processes and identifying high-impact automation candidates." },
-              { num: "02", h: "System Design", icon: <PenTool size={30} />, p: "Creating the logic and sequencing models for autonomous execution." },
+              { num: "02", h: "System design", icon: <PenTool size={30} />, p: "Creating the logic and sequencing models for autonomous execution." },
               { num: "03", h: "Build", icon: <Bot size={30} />, p: "Implementation of robotics and workflow scripts in a secure environment." },
               { num: "04", h: "Optimize", icon: <Activity size={30} />, p: "Continuous monitoring and refinement of automation threads for maximum ROI." }
             ].map((step, i) => (

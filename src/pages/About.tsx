@@ -172,7 +172,7 @@ const AboutPage = () => {
       <section className="ABOUT_Hero">
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="ABOUT_Hero_Bg" />
         <div className="ABOUT_Hero_Content">
-          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="ABOUT_Hero_H1 NET_Hero_H1">About CHN <br /> <span className="text-blue-500">Technologies</span></motion.h2>
+          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="ABOUT_Hero_H1 NET_Hero_H1">About CHN <br /> <span className="text-blue-500">technologies</span></motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="ABOUT_Hero_P">We build the resilient foundations that empower global enterprises to navigate the complexities of technology, people, and digital change.</motion.p>
 
           <motion.div
@@ -208,7 +208,7 @@ const AboutPage = () => {
             <img src="/images/corporate-flagship.jpg" alt="Corporate Flagship" />
             <div className="ABOUT_Identity_Badge">
               <h4 className="text-3xl font-black">10+</h4>
-              <p className="text-[10px] font-bold tracking-widest text-blue-100">Years of Discipline</p>
+              <p className="text-[10px] font-bold tracking-widest text-blue-100">Years of discipline</p>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="ABOUT_Identity_Content text-left">
@@ -219,7 +219,7 @@ const AboutPage = () => {
             <div className="ABOUT_Feature_Box">
               <div className="ABOUT_Feature_Icon"><Shield size={30} /></div>
               <div className="text-left">
-                <h4 className="text-xl font-black text-[#1a2b4b]">Long-Term Operational Confidence</h4>
+                <h4 className="text-xl font-black text-[#1a2b4b]">Long-term operational confidence</h4>
                 <p className="text-slate-500 font-medium">Supporting organisations as they scale, transform, and adapt.</p>
               </div>
             </div>
@@ -235,9 +235,9 @@ const AboutPage = () => {
         </div>
         <div className="ABOUT_Focus_Grid">
           {[
-            { title: "Technology Services", icon: <Cpu />, img: "/images/service-consulting.jpg", tag: "Enterprise IT", desc: "Network management, cyber security, and physical infrastructure for stable IT environments." },
-            { title: "Software & Digital", icon: <Code />, img: "/images/service-software.jpg", tag: "Digital Dev", desc: "Developing scalable web platforms, applications, and automated business process solutions." },
-            { title: "Consulting & Advisory", icon: <Users />, img: "/images/service-consulting.jpg", tag: "Advisory", desc: "Workforce management, payroll compliance, and structured operational governance." }
+            { title: "Technology services", icon: <Cpu />, img: "/images/about_tech_services.png", tag: "Enterprise IT", desc: "Network management, cyber security, and physical infrastructure for stable IT environments." },
+            { title: "Software & digital", icon: <Code />, img: "/images/about_software_digital.png", tag: "Digital Dev", desc: "Developing scalable web platforms, applications, and automated business process solutions." },
+            { title: "Consulting & advisory", icon: <Users />, img: "/images/about_consulting_advisory.png", tag: "Advisory", desc: "Workforce management, payroll compliance, and structured operational governance." }
           ].map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="ABOUT_Card group">
               <div className="ABOUT_Card_Img">
@@ -266,7 +266,7 @@ const AboutPage = () => {
           >
             <span className="ABOUT_Badge">OUR APPROACH</span>
             <h2 className="NET_Hero_H1 ABOUT_Approach_H">
-              How CHN Approaches <span className="text-white">Business Problems</span>
+              How CHN approaches <span className="text-white">business problems</span>
             </h2>
             <p className="text-blue-100/50 text-lg font-medium leading-relaxed mb-10 max-w-lg">
               We focus on how systems, processes, and teams interact in real operational environments rather than isolated issues.
@@ -325,9 +325,9 @@ const AboutPage = () => {
           {/* Right Side Grid */}
           <div className="ABOUT_Philosophy_Grid">
             {[
-              { title: "Delivery Philosophy", icon: <Layers />, desc: "Understand the environment, define ownership, and execute with control." },
+              { title: "Delivery philosophy", icon: <Layers />, desc: "Understand the environment, define ownership, and execute with control." },
               { title: "Accountability", icon: <Shield />, desc: "Clear ownership and responsibility in every single engagement." },
-              { title: "Practical Execution", icon: <Zap />, desc: "Prioritising practical results over theory and long-term stability." },
+              { title: "Practical execution", icon: <Zap />, desc: "Prioritising practical results over theory and long-term stability." },
               { title: "Reliability", icon: <CheckCircle />, desc: "Stable solutions that perform over time and evolve with needs." }
             ].map((phil, i) => (
               <motion.div
@@ -353,7 +353,7 @@ const AboutPage = () => {
       <section className="ABOUT_Final">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 ABOUT_Final_H">Work With a Partner That Values <br /> Structure and Stability</h2>
+            <h2 className="NET_Hero_H1 ABOUT_Final_H">Work with a partner that values <br /> structure and stability</h2>
             <p className="ABOUT_Identity_P text-center mb-12">Connect with CHN Technologies to learn how our capabilities <br /> can support your organisation's long-term objectives.</p>
             <Link to="/contact">
               <button className="ABOUT_Btn">Contact our team <ArrowRight size={24} /></button>

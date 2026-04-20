@@ -330,22 +330,22 @@ const LanCablingSurveillancePage = () => {
           <div className="LCS_Cap_Grid">
             {[
               {
-                title: "Structured LAN Cabling",
+                title: "Structured LAN cabling",
                 icon: <Network size={28} />,
                 desc: "Design and implementation of organised cabling frameworks for high-speed data and network connectivity."
               },
               {
-                title: "Rack & Patch Management",
+                title: "Rack & patch management",
                 icon: <Layers size={28} />,
                 desc: "Clean and standardised rack layouts that simplify ongoing maintenance and future hardware expansion."
               },
               {
-                title: "CCTV & Surveillance",
+                title: "CCTV & surveillance",
                 icon: <Video size={28} />,
                 desc: "Deployment of intelligent surveillance systems to monitor facilities and enhance physical premises security."
               },
               {
-                title: "Monitoring & Support",
+                title: "Monitoring & support",
                 icon: <Activity size={28} />,
                 desc: "Ongoing support to ensure cabling integrity and the continuous reliability of surveillance hardware."
               }
@@ -376,10 +376,10 @@ const LanCablingSurveillancePage = () => {
 
             <div className="Outcome_List">
               {[
-                { title: "Improved Connectivity Stability", desc: "Reliable physical infrastructure significantly reduces network interruptions and drops." },
-                { title: "Enhanced Facility Security", desc: "Clear visibility across your premises improves safety and enables rapid incident response." },
-                { title: "Simplified Maintenance", desc: "Structured layouts reduce troubleshooting time and prevent operational disruptions." },
-                { title: "Infrastructure Scalability", desc: "Cabling and surveillance systems designed to grow seamlessly with your business needs." }
+                { title: "Improved connectivity stability", desc: "Reliable physical infrastructure significantly reduces network interruptions and drops." },
+                { title: "Enhanced facility security", desc: "Clear visibility across your premises improves safety and enables rapid incident response." },
+                { title: "Simplified maintenance", desc: "Structured layouts reduce troubleshooting time and prevent operational disruptions." },
+                { title: "Infrastructure scalability", desc: "Cabling and surveillance systems designed to grow seamlessly with your business needs." }
               ].map((item, i) => (
                 <div key={i} className="Outcome_Item">
                   <div className="Outcome_Check"><CheckCircle size={16} /></div>
@@ -405,7 +405,7 @@ const LanCablingSurveillancePage = () => {
               { num: "01", h: "Assess", icon: <Search size={30} />, p: "Review site layout, physical infrastructure requirements, and security objectives." },
               { num: "02", h: "Design", icon: <PenTool size={30} />, p: "Create structured cabling plans and surveillance layouts aligned with needs." },
               { num: "03", h: "Implement", icon: <Settings size={30} />, p: "Install cabling and surveillance systems with minimal business disruption." },
-              { num: "04", h: "Test & Support", icon: <Wrench size={30} />, p: "Validate performance and provide ongoing professional maintenance support." }
+              { num: "04", h: "Test & support", icon: <Wrench size={30} />, p: "Validate performance and provide ongoing professional maintenance support." }
             ].map((step, i) => (
               <motion.div
                 key={i}

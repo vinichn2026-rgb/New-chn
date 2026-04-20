@@ -68,7 +68,7 @@ const Careers = () => {
               transition={{ duration: 2.5, times: [0, 0.2, 0.8, 1] }}
               className="mt-12 text-center"
             >
-              <h3 className="text-3xl font-black text-white tracking-tight mb-3">Connecting to CHN Technologies</h3>
+              <h3 className="text-3xl font-black text-white tracking-tight mb-3">Connecting to CHN technologies</h3>
               <p className="text-blue-200 font-medium text-lg">Routing your career interest to our strategic team...</p>
             </motion.div>
 
@@ -409,9 +409,9 @@ const Careers = () => {
         <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Areas you can work in</h2>
         <div className="CR_Streams_Grid">
           {[
-            { title: "Technology Services", icon: <Server size={30} />, desc: "Structured management of networks, cloud infrastructure, and enterprise security ecosystems." },
-            { title: "Software & Digital", icon: <Code size={30} />, desc: "Advanced web application development, data analytics, and operational automation solutions." },
-            { title: "Consulting & Advisory", icon: <Users size={30} />, desc: "Expert workforce management, statutory compliance, and corporate developmental training." }
+            { title: "Technology services", icon: <Server size={30} />, desc: "Structured management of networks, cloud infrastructure, and enterprise security ecosystems." },
+            { title: "Software & digital", icon: <Code size={30} />, desc: "Advanced web application development, data analytics, and operational automation solutions." },
+            { title: "Consulting & advisory", icon: <Users size={30} />, desc: "Expert workforce management, statutory compliance, and corporate developmental training." }
           ].map((stream, i) => (
             <motion.div
               key={i}
@@ -437,10 +437,10 @@ const Careers = () => {
             <h2 className="NET_Hero_H1 CR_Env_H">A professional environment built <br></br><span className="text-blue-500">for growth</span></h2>
             <div className="CR_Pros_Grid">
               {[
-                { title: "Clear Expectations", icon: <CheckCircle2 size={24} /> },
-                { title: "Supportive Mentorship", icon: <Users size={24} /> },
-                { title: "Real World Impact", icon: <Zap size={24} /> },
-                { title: "Career Stability", icon: <Award size={24} /> }
+                { title: "Clear expectations", icon: <CheckCircle2 size={24} /> },
+                { title: "Supportive mentorship", icon: <Users size={24} /> },
+                { title: "Real world impact", icon: <Zap size={24} /> },
+                { title: "Career stability", icon: <Award size={24} /> }
               ].map((pro, i) => (
                 <div key={i} className="CR_Pro_Item">
                   <div className="CR_Pro_Check">{pro.icon}</div>

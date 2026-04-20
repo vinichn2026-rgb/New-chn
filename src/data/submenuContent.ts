@@ -8,7 +8,7 @@ export interface SubmenuContent {
 
 export const submenuContent: Record<string, SubmenuContent> = {
   "software-development": {
-    title: "Software Development",
+    title: "Software development",
     subtitle: "Technology | CHN India",
     description: "Custom software development solutions tailored to enterprise needs, with full lifecycle support including requirement analysis, design, development, QA and deployment.",
     features: [
@@ -21,7 +21,7 @@ export const submenuContent: Record<string, SubmenuContent> = {
     content: "We build robust, scalable applications from backend to frontend, with deep focus on performance, usability, and maintainability."
   },
   "application-development": {
-    title: "Application Development",
+    title: "Application development",
     subtitle: "Technology | CHN India",
     description: "Modern application development that accelerates business operations with extensible solutions, API-first design, and seamless user experiences.",
     features: [
@@ -34,7 +34,7 @@ export const submenuContent: Record<string, SubmenuContent> = {
     content: "Our team delivers project-based and support-based application services, ensuring a strong product-market fit and high-impact outcomes."
   },
   "data-analytics": {
-    title: "Data Analytics",
+    title: "Data analytics",
     subtitle: "Digital Solutions | CHN India",
     description: "Data analytics and business intelligence services that provide actionable insight from enterprise data through dashboards, ML models, and reporting.",
     features: [
@@ -60,7 +60,7 @@ export const submenuContent: Record<string, SubmenuContent> = {
     content: "CHN India delivers full-stack technology transformation programs that help companies increase agility while reducing cost and risk."
   },
   "what-we-think": {
-    title: "What We Think",
+    title: "What we think",
     subtitle: "Strategic insights for future-ready enterprise transformation",
     description: "CHN India’s thought leadership for Technology, Consulting, and Resource Services—framing the next wave of innovation with practical, scalable, and security-first thinking.",
     features: [
@@ -73,7 +73,7 @@ export const submenuContent: Record<string, SubmenuContent> = {
     content: "Explore CHN’s perspective on delivering value through strategic IT, consulting, and resources. Our approach centers on innovation, trusted governance, and measurable business outcomes."
   },
   "it-support": {
-    title: "IT Support",
+    title: "IT support",
     subtitle: "What We Do",
     description: "End-to-end IT support service delivery with hardware support, network management, and system maintenance ensuring high availability and productivity.",
     features: [
@@ -86,7 +86,7 @@ export const submenuContent: Record<string, SubmenuContent> = {
     content: "Our IT Support practice serves enterprises with a combination of on-site engineers and remote operations centers for rapid issue resolution."
   },
   "biometric": {
-    title: "Biometric Solutions",
+    title: "Biometric solutions",
     subtitle: "What We Do",
     description: "Advanced biometric security systems and access control solutions for safe and user-friendly authentication across enterprises.",
     features: [
@@ -99,7 +99,7 @@ export const submenuContent: Record<string, SubmenuContent> = {
     content: "From physical security to identity assurance, CHN India's biometric solutions deliver modern security with minimal friction."
   },
   "network-management": {
-    title: "NETWORK MANAGEMENT SERVICES",
+    title: "Network management services",
     subtitle: "IT Infrastructure | CHN India",
     description: "CHN Technologies provides structured network management services that ensure stable connectivity, controlled access, and continuous performance across business environments. Our approach focuses on visibility, security, and proactive management rather than reactive fixes.",
     features: [
