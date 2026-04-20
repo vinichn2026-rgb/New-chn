@@ -8,7 +8,7 @@ const AboutPage = () => {
     <div className="ABOUT_WRAPPER">
       <style>{`
         .ABOUT_WRAPPER {
-          font-family: 'Figtree', 'Inter', sans-serif;
+          font-family: 'Outfit', 'Inter', sans-serif;
           color: #1a2b4b;
           background: #ffffff;
         }
@@ -131,7 +131,7 @@ const AboutPage = () => {
         .ABOUT_Card_Img img { width: 100%; height: 100%; object-fit: cover; transition: 0.7s; }
         .ABOUT_Card:hover .ABOUT_Card_Img img { transform: scale(1.1); }
         
-        .ABOUT_Card_H { font-weight: 900; color: #1a2b4b; margin-bottom: 20px; transition: 0.3s; font-size: 1.5rem; }
+        .ABOUT_Card_H { font-weight: 700; color: #1a2b4b; margin-bottom: 20px; transition: 0.3s; font-size: 1.5rem; }
 
         .ABOUT_Approach { padding: 100px 5%; background: #0f1e3c; color: #fff; position: relative; overflow: hidden; }
         .ABOUT_Approach::before {
@@ -163,7 +163,7 @@ const AboutPage = () => {
         .ABOUT_Final { padding: 100px 5%; text-align: center; background: #fff; }
         .ABOUT_Final_H { line-height: 1.1; color: #1a2b4b; margin-bottom: 25px; }
         .ABOUT_Btn { 
-          background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 100px; font-weight: 800; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 15px; transition: 0.3s; box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4); border: none; cursor: pointer;
+          background: #3b82f6; color: #fff; padding: 16px 36px; border-radius: 100px; font-weight: 800; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 15px; transition: 0.3s; box-shadow: 0 20px 50px rgba(59, 130, 246, 0.4); border: none; cursor: pointer;
         }
         .ABOUT_Btn:hover { transform: translateY(-5px); background: #1e3a8a; }
       `}</style>
@@ -187,7 +187,7 @@ const AboutPage = () => {
               color: '#fff',
               padding: '16px 36px',
               borderRadius: 100,
-              fontWeight: 800,
+              fontWeight: 600,
               fontSize: '1rem',
               textDecoration: 'none',
               letterSpacing: '0.02em',

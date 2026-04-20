@@ -224,7 +224,7 @@ const SiteNavbar = () => {
                             onMouseLeave={() => setActiveCluster(null)}
                           >
                             <div className="px-5 py-2 mb-2">
-                              <span className="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">Our Capabilities</span>
+                              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">Our Capabilities</span>
                             </div>
                             {[...item.children[0].children, item.children[1]].map((cluster: any, idx) => {
                               const isExpanded = activeCluster === cluster.name;
@@ -240,7 +240,7 @@ const SiteNavbar = () => {
                                     <div className={`${isExpanded ? "text-white" : "text-blue-600"} transition-colors duration-300`}>
                                       {getIcon(cluster.name)}
                                     </div>
-                                    <span className="text-[16px] font-black tracking-tight leading-none">{cluster.name}</span>
+                                    <span className="text-[16px] font-semibold tracking-tight leading-none">{cluster.name}</span>
                                     <ChevronDown size={14} className={`ml-auto transition-transform duration-500 ${isExpanded ? "rotate-180" : ""}`} />
                                   </div>
 
@@ -268,7 +268,7 @@ const SiteNavbar = () => {
                                                   onClick={closeMobileMenu}
                                                   className={`group flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-300 no-underline ${isActive ? "bg-blue-600 text-white shadow-sm" : "text-slate-600 hover:bg-blue-600 hover:text-white"}`}
                                                 >
-                                                  <span className="text-[14.5px] font-extrabold tracking-tight leading-none">{link.name}</span>
+                                                  <span className="text-[14.5px] font-medium tracking-tight leading-none">{link.name}</span>
                                                   <ChevronRight size={14} className={`transition-all duration-300 ${isActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"}`} />
                                                 </Link>
                                               </motion.div>
@@ -297,7 +297,7 @@ const SiteNavbar = () => {
                                 >
                                   <Link
                                     to={drop.link || "#"}
-                                    className={`group flex items-center justify-between px-5 py-3.5 rounded-xl text-[16px] font-black tracking-tight no-underline transition-all duration-200 ${dropActive ? "text-white bg-blue-600 shadow-md scale-[1.01]" : "text-slate-600 hover:bg-blue-600 hover:text-white"}`}
+                                    className={`group flex items-center justify-between px-5 py-3.5 rounded-xl text-[16px] font-semibold tracking-tight no-underline transition-all duration-200 ${dropActive ? "text-white bg-blue-600 shadow-md scale-[1.01]" : "text-slate-600 hover:bg-blue-600 hover:text-white"}`}
                                   >
                                     {drop.name}
                                     <ChevronRight size={14} className={`transition-all duration-300 ${dropActive ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"}`} />
@@ -361,7 +361,7 @@ const SiteNavbar = () => {
                           <div className="flex items-center justify-between group">
                             <Link
                               to={item.link}
-                              className={`text-2xl font-black no-underline transition-colors flex items-center gap-3 ${active ? "text-blue-600" : "text-[#1a2b4b]"}`}
+                              className={`text-2xl font-bold no-underline transition-colors flex items-center gap-3 ${active ? "text-blue-600" : "text-[#1a2b4b]"}`}
                               onClick={() => { if (!hasDropdown) closeMobileMenu(); }}
                             >
                               {item.name}
@@ -393,7 +393,7 @@ const SiteNavbar = () => {
                                         <div className="flex items-center justify-between">
                                           <Link
                                             to={drop.link || "#"}
-                                            className={`text-[17px] font-bold no-underline block flex-1 ${dropActive ? "text-blue-600" : "text-slate-600"}`}
+                                            className={`text-[17px] font-semibold no-underline block flex-1 ${dropActive ? "text-blue-600" : "text-slate-600"}`}
                                             onClick={() => { if (!drop.children) closeMobileMenu(); }}
                                           >
                                             {drop.name}
@@ -416,7 +416,7 @@ const SiteNavbar = () => {
                                                 <li key={subitem.name}>
                                                   <Link
                                                     to={subitem.link || "#"}
-                                                    className={`text-[15px] font-semibold no-underline block py-1 ${subActive ? "text-blue-600" : "text-slate-500"}`}
+                                                    className={`text-[15px] font-medium no-underline block py-1 ${subActive ? "text-blue-600" : "text-slate-500"}`}
                                                     onClick={() => closeMobileMenu()}
                                                   >
                                                     {subitem.name}

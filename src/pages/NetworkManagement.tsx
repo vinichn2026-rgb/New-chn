@@ -68,7 +68,7 @@ const NetworkManagementPage = () => {
         .NET_Btn_Group { display: flex; gap: 20px; }
         .NET_Primary_Btn { 
           background: #3b82f6; color: white; padding: 10px 20px; border-radius: 100px; 
-          font-weight: 700; box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3); transition: 0.3s;
+          font-weight: 600; box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3); transition: 0.3s;
         }
         .NET_Primary_Btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4); }
 

@@ -72,7 +72,7 @@ const PayrollAndCompliancePage = () => {
 
         .PC_Btn { 
           background: #3b82f6; color: white; padding: 10px 20px; border-radius: 100px; 
-          font-weight: 800; font-size: 1.1rem; border: none; cursor: pointer; transition: 0.3s;
+          font-weight: 600; font-size: 1.1rem; border: none; cursor: pointer; transition: 0.3s;
           box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); display: flex; align-items: center; gap: 15px;
           width: fit-content;
         }

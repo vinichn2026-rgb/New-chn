@@ -97,7 +97,7 @@ const Careers = () => {
 
       <style>{`
         .CR_WRAPPER {
-          font-family: 'Figtree', 'Inter', sans-serif;
+          font-family: 'Outfit', 'Inter', sans-serif;
           color: #1a2b4b;
           background: #ffffff;
         }
@@ -198,7 +198,7 @@ const Careers = () => {
         }
 
         .CR_Hero_H1 {
-          font-weight: 900;
+          font-weight: 800;
           color: #1a1a1a;
           line-height: 1.1;
           margin-bottom: 20px;
@@ -326,7 +326,7 @@ const Careers = () => {
           font-weight: 800; font-size: 1.1rem; border: none; cursor: pointer; transition: 0.3s;
           box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); display: inline-flex; align-items: center; justify-content: center; gap: 15px; margin: 0 auto;
         }
-        .CR_Btn:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5); }
+        .CR_Btn:hover { transform: translateY(-5px); background: #0050d5; box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5); }
       `}</style>
 
       {/* SECTION 1: HERO */}

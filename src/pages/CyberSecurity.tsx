@@ -70,7 +70,7 @@ const CyberSecurityPage = () => {
         .CS_Primary_Btn { 
           background: linear-gradient(135deg, #0060ff 0%, #0044cc 100%); 
           color: white; padding: 10px 20px; border-radius: 100px; 
-          font-weight: 800; font-size: 1.05rem;
+          font-weight: 600; font-size: 1.05rem;
           box-shadow: 0 20px 40px rgba(0, 96, 255, 0.25); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           border: none; cursor: pointer; display: flex; align-items: center; gap: 10px;
         }

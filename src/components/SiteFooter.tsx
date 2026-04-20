@@ -66,16 +66,15 @@ const SiteFooter = () => {
               <div className="flex gap-4 justify-center md:justify-start">
                 <MapPin size={20} className="text-[#00c2ff] shrink-0 mt-1" />
                 <p className="text-gray-400 text-sm leading-relaxed">
+                  Bangalore (Branch Office)<br />
                   Chennai (Head Office)<br />
                   Coimbatore<br />
-                  Bangalore (Branch Office)
                 </p>
               </div>
               <div className="flex gap-4 justify-center md:justify-start">
                 <Phone size={20} className="text-[#00c2ff] shrink-0 mt-1" />
                 <p className="text-gray-400 text-sm leading-relaxed">
                   +91-7010203031<br />
-                  +91-9384817323
                 </p>
               </div>
               <div className="flex gap-4 justify-center md:justify-start">

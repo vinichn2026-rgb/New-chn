@@ -94,7 +94,7 @@ const CHNInsights = () => {
     <div className="BLOG_WRAPPER">
       <style>{`
         .BLOG_WRAPPER {
-          font-family: 'Figtree', 'Inter', sans-serif;
+          font-family: 'Outfit', 'Inter', sans-serif;
           color: #1a2b4b;
           background: #ffffff;
         }
@@ -133,14 +133,14 @@ const CHNInsights = () => {
         .BLOG_Badge {
           display: inline-block;
           color: #3b82f6;
-          font-weight: 800;
+          font-weight: 700;
           letter-spacing: 3px;
           font-size: 0.85rem;
           margin-bottom: 25px;
         }
 
         .BLOG_Hero_H1 {
-          font-weight: 900;
+          font-weight: 800;
           color: #ffffff;
           line-height: 1.1;
           margin-bottom: 35px;
@@ -208,7 +208,7 @@ const CHNInsights = () => {
           white-space: nowrap;
           padding: 12px 30px;
           border-radius: 100px;
-          font-weight: 800;
+          font-weight: 700;
           font-size: 0.9rem;
           transition: 0.4s;
           border: 1px solid #f1f5f9;
@@ -245,7 +245,12 @@ const CHNInsights = () => {
           box-shadow: 0 30px 60px rgba(0,0,0,0.03);
           overflow: hidden;
         }
+.BLOG_Btn{
+                  background: #3b82f6; color: white; padding: 15px 30px; border-radius: 100px; 
+                  font-weight: 800; font-size: 1.1rem; border: none; cursor: pointer; transition: 0.3s;
+                  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); display: inline-flex; align-items: center; justify-content: center; gap: 15px; margin: 0 auto;
 
+}
         @media (max-width: 1024px) {
           .BLOG_Featured_Card { grid-template-columns: 1fr; gap: 40px; padding: 40px; }
           .BLOG_Featured_Img { height: 350px; }
@@ -293,7 +298,7 @@ const CHNInsights = () => {
           color: #3b82f6; font-weight: 800; font-size: 0.75rem; 
           margin-bottom: 12px; display: block; letter-spacing: 1px; 
         }
-        .BLOG_Card_H { font-size: 1.5rem; font-weight: 900; color: #1a2b4b; margin-bottom: 15px; line-height: 1.3; }
+        .BLOG_Card_H { font-size: 1.5rem; font-weight: 800; color: #1a2b4b; margin-bottom: 15px; line-height: 1.3; }
         .BLOG_Card_P { color: #64748b; font-size: 0.95rem; line-height: 1.6; font-weight: 500; margin-bottom: 25px; }
 
         .BLOG_Card_Footer { border-top: 1px solid #f8fafc; padding-top: 20px; display: flex; align-items: center; justify-content: space-between; }
@@ -369,7 +374,7 @@ const CHNInsights = () => {
                     <User size={30} />
                   </div>
                   <div>
-                    <h4 className="font-black text-[#1a2b4b]">CHN Strategic Board</h4>
+                    <h4 className="font-bold text-[#1a2b4b]">CHN Strategic Board</h4>
                     <p className="text-xs font-bold text-slate-400 tracking-widest">Industry Knowledge Directors</p>
                   </div>
                 </div>
@@ -378,7 +383,7 @@ const CHNInsights = () => {
           )}
 
           <div className="flex items-center justify-between mb-12">
-            <h3 className="text-2xl font-black text-[#1a2b4b] tracking-tight">
+            <h3 className="text-2xl font-bold text-[#1a2b4b] tracking-tight">
               {activeCategory} insights
             </h3>
             <p className="text-slate-400 font-bold text-xs tracking-widest">Showing {filteredInsights.length} results</p>
@@ -407,7 +412,7 @@ const CHNInsights = () => {
                       <div className="BLOG_Card_Footer">
                         <div className="BLOG_Author">
                           <div className="BLOG_Author_Dot" />
-                          <span className="text-[11px] font-black text-slate-400 tracking-widest">{insight.author}</span>
+                          <span className="text-[11px] font-bold text-slate-400 tracking-widest">{insight.author}</span>
                         </div>
                       </div>
                     </div>
@@ -420,10 +425,10 @@ const CHNInsights = () => {
           {filteredInsights.length === 0 && (
             <div className="BLOG_Empty">
               <div className="BLOG_Empty_Icon"><Search size={40} /></div>
-              <h4 className="text-2xl font-black text-[#1a2b4b] mb-4">No results found</h4>
+              <h4 className="text-2xl font-bold text-[#1a2b4b] mb-4">No results found</h4>
               <p className="text-slate-400 font-medium mb-8">Refine your search term or select a different category.</p>
               <button
-                className="text-blue-500 font-black text-sm tracking-widest"
+                className="text-blue-500 font-bold text-sm tracking-widest"
                 onClick={() => { setActiveCategory('All'); setSearchQuery(''); }}
               >
                 Reset all filters
@@ -441,7 +446,7 @@ const CHNInsights = () => {
           IT decision-makers, and industry professionals.
         </p>
         <Link to="/contact">
-          <button className="bg-[#0060ff] text-white px-10 py-5 rounded-full font-black text-md tracking-widest shadow-2xl hover:bg-[#1a2b4b] hover:scale-105 transition-all">
+          <button className="BLOG_Btn">
             Inquire for insights
           </button>
         </Link>

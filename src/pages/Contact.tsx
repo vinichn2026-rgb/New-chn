@@ -328,7 +328,7 @@ const ContactPage = () => {
 
                 .CN_Primary_Btn {
                   width: 100%; background: #0060ff; color: white; padding: 22px; border-radius: 100px; 
-                  font-weight: 800; font-size: 1.1rem; border: none; letter-spacing: 2px;
+                  font-weight: 600; font-size: 1.1rem; border: none; letter-spacing: 2px;
                   cursor: pointer; transition: all 0.4s; box-shadow: 0 20px 40px rgba(0,96,255,0.25);
                   display: flex; align-items: center; justify-content: center; gap: 15px;
                 }
