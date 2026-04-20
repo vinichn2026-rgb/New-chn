@@ -27,7 +27,7 @@ const CHNInsights = () => {
       id: 1,
       image: "/images/casestudy-cloud.jpg",
       tag: "Operations",
-      title: "Technology operations & management",
+      title: "Technology Operations & Management",
       desc: "Deep-dives into managing enterprise networks, systems, security, and infrastructure effectively for long-term scalability and operational stability.",
       author: "IT Strategy Lead",
       date: "Oct 24, 2026"
@@ -36,7 +36,7 @@ const CHNInsights = () => {
       id: 2,
       image: "/images/blog-office.jpg",
       tag: "Software",
-      title: "Digital & software practices in enterprise",
+      title: "Digital & Software Practices in Enterprise",
       desc: "Perspectives on modern web platforms, applications, analytics, and automation systems tailored for real-world business environments and high performance.",
       author: "Digital Architect",
       date: "Oct 15, 2026"
@@ -45,7 +45,7 @@ const CHNInsights = () => {
       id: 3,
       image: "/images/casestudy-security.jpg",
       tag: "Governance",
-      title: "Execution & governance for modern firm",
+      title: "Execution & Governance for Modern Firm",
       desc: "Detailed articles focused on operational control, process maturity, and establishing reliable system structures to ensure corporate governance and asset protection.",
       author: "Compliance Director",
       date: "Sep 28, 2026"
@@ -54,7 +54,7 @@ const CHNInsights = () => {
       id: 4,
       image: "/images/blog-collaboration.jpg",
       tag: "Workforce",
-      title: "Workforce & global compliance standards",
+      title: "Workforce & Global Compliance Standards",
       desc: "Understanding workforce structures, payroll practices, and statutory compliance for HR leaders managing complex multinational operations and regulatory shifts.",
       author: "HR Advisory Lead",
       date: "Sep 12, 2026"
@@ -63,7 +63,7 @@ const CHNInsights = () => {
       id: 5,
       image: "/images/service-consulting.jpg",
       tag: "Strategy",
-      title: "Sustainable strategy and future-fit growth",
+      title: "Sustainable Strategy and Future-Fit Growth",
       desc: "Analysing how business owners, IT decision-makers, and professionals can leverage practical technology strategies to drive sustainable organisational expansion.",
       author: "Operations Lead",
       date: "Aug 30, 2026"
@@ -72,7 +72,7 @@ const CHNInsights = () => {
       id: 6,
       image: "/images/blog-featured.jpg",
       tag: "Quality",
-      title: "Knowledge over frequency: an editorial",
+      title: "Knowledge Over Frequency: An Editorial",
       desc: "Why we prioritise relevance and clarity over volume, ensuring every piece of content remains useful and actionable over long-term strategic horizons.",
       author: "Editorial Board",
       date: "Aug 22, 2026"
@@ -315,7 +315,7 @@ const CHNInsights = () => {
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="BLOG_Hero_Bg" />
         <div className="BLOG_Hero_Content">
           <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="BLOG_Badge uppercase">Corporate Insights</motion.span>
-          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1 NET_Hero_H1">Knowledge-led <br /> <span className="text-blue-500">perspectives</span></motion.h2>
+          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1 NET_Hero_H1">Knowledge-Led <br /> <span className="text-blue-500">Perspectives</span></motion.h2>
 
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.4 }} className="BLOG_Search_Box">
             <Search size={22} className="text-blue-500 ml-4" />
@@ -364,7 +364,7 @@ const CHNInsights = () => {
               </div>
               <div className="BLOG_Featured_Content">
                 <span className="BLOG_Badge uppercase">Editorial Focus</span>
-                <h2 className="NET_Hero_H1 BLOG_Featured_H">Insights from our strategic advisors</h2>
+                <h2 className="NET_Hero_H1 BLOG_Featured_H">Insights From Our Strategic Advisors</h2>
                 <p className="text-slate-500 font-medium text-lg leading-relaxed mb-10">
                   Comprehensive perspectives on technology, people, and unified corporate processes
                   drawn from real-world digital flagship engagements.
@@ -384,7 +384,7 @@ const CHNInsights = () => {
 
           <div className="flex items-center justify-between mb-12">
             <h3 className="text-2xl font-bold text-[#1a2b4b] tracking-tight">
-              {activeCategory} insights
+              {activeCategory} Insights
             </h3>
             <p className="text-slate-400 font-bold text-xs tracking-widest">Showing {filteredInsights.length} results</p>
           </div>
@@ -440,14 +440,14 @@ const CHNInsights = () => {
 
       {/* SECTION 4: CTA */}
       <section style={{ padding: '50px 5%', textAlign: 'center', background: '#f8fafc' }}>
-        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Stay informed with <span className="text-blue-500">expert clarity</span></h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Stay Informed With <span className="text-blue-500">Expert Clarity</span></h2>
         <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto mb-12">
           Gain access to refined perspectives that matter to business owners,
           IT decision-makers, and industry professionals.
         </p>
         <Link to="/contact">
           <button className="BLOG_Btn">
-            Inquire for insights
+            Inquire for Insights
           </button>
         </Link>
       </section>

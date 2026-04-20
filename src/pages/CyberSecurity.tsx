@@ -251,22 +251,21 @@ padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
             className="CS_Hero_Content"
           >
             <span className="CS_Badge uppercase">Digital Fortress</span>
-            <h2 className="CS_Hero_H1 NET_Hero_H1">Elite cyber resilience</h2>
-            <p className="CS_Tagline">Safeguarding enterprise intelligence with proactive defense ecosystems.</p>
+            <h2 className="CS_Hero_H1 NET_Hero_H1">Elite Cyber Resilience</h2>
+            <p className="CS_Tagline">Safeguarding Enterprise Intelligence With Proactive Defense Ecosystems.</p>
             <p className="CS_Hero_P">
               CHN Technologies engineers structured security frameworks that neutralize threats before they materialize.
               Our Zero-Trust architecture ensures your operations remain immutable, compliant, and consistently secure.
             </p>
 
             <div className="CS_Btn_Group">
-              {/* Fixed: Both buttons now share the same motion logic for consistency */}
               <Link to="/contact">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="CS_Primary_Btn flex items-center gap-2"
                 >
-                  Consult a defender <ShieldCheck size={20} />
+                  Consult a Defender <ShieldCheck size={20} />
                 </motion.button>
               </Link>
 
@@ -276,7 +275,7 @@ padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
                   whileTap={{ scale: 0.98 }}
                   className="CS_Secondary_Btn flex items-center gap-2"
                 >
-                  Network hardening <Activity size={18} className="text-[#0060ff]" />
+                  Network Hardening <Activity size={18} className="text-[#0060ff]" />
                 </motion.button>
               </Link>
             </div>
@@ -341,7 +340,7 @@ padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
         <div className="CS_Cap_Inner">
           <div style={{ marginBottom: '100px' }}>
             <span className="CS_Badge uppercase">Defensive Authority</span>
-            <h2 className="NET_Hero_H1">Built for absolute immunity</h2>
+            <h2 className="NET_Hero_H1">Built for Absolute Immunity</h2>
             <p className="CS_Hero_P" style={{ fontSize: '1.25rem' }}>
               In a digital-first economy, proximity to risk is constant. CHN Technologies
               eliminates vulnerability by implementing multi-layered security protocols,
@@ -352,22 +351,22 @@ padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
           <div className="CS_Cap_Grid">
             {[
               {
-                title: "Unified threat mgmt",
+                title: "Unified Threat Mgmt",
                 icon: <Activity size={32} />,
                 desc: "Predictive threat hunting and real-time monitoring to neutralize advanced persistent threats before they enter your perimeter."
               },
               {
-                title: "Zero-trust architecture",
+                title: "Zero-Trust Architecture",
                 icon: <Fingerprint size={32} />,
                 desc: "Never trust, always verify. We implement granular access controls and identity protection for every single user and device."
               },
               {
-                title: "Endpoint orchestration",
+                title: "Endpoint Orchestration",
                 icon: <Network size={32} />,
                 desc: "Hardening every point of entry—from mobile devices to global servers—ensuring your entire surface is under active protection."
               },
               {
-                title: "Rapid countermeasures",
+                title: "Rapid Countermeasures",
                 icon: <Zap size={32} />,
                 desc: "Automated incident response protocols that contain and isolate threats in milliseconds, preserving core operational integrity."
               }
@@ -397,14 +396,14 @@ padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
           </motion.div>
           <div className="CS_Outcome_Content">
             <span className="CS_Badge uppercase">Digital Impact</span>
-            <h2 className="NET_Hero_H1">Strategic outcomes of secure governance</h2>
+            <h2 className="NET_Hero_H1">Strategic Outcomes of Secure Governance</h2>
 
             <div className="Outcome_List">
               {[
-                { title: "Immutable data privacy", desc: "Enterprise-grade encryption and privacy controls ensure your proprietary intelligence remains yours alone." },
-                { title: "Operational continuity", desc: "Eliminate downtime caused by security breaches, ransomware, or unauthorized access attempts." },
-                { title: "Regulatory superiority", desc: "Seamlessly meet and exceed ISO, SOC2, and GDPR requirements with pre-configured compliance frameworks." },
-                { title: "Brand authority", desc: "Build unshakeable trust with clients and partners by demonstrating the highest level of security discipline." }
+                { title: "Immutable Data Privacy", desc: "Enterprise-grade encryption and privacy controls ensure your proprietary intelligence remains yours alone." },
+                { title: "Operational Continuity", desc: "Eliminate downtime caused by security breaches, ransomware, or unauthorized access attempts." },
+                { title: "Regulatory Superiority", desc: "Seamlessly meet and exceed ISO, SOC2, and GDPR requirements with pre-configured compliance frameworks." },
+                { title: "Brand Authority", desc: "Build unshakeable trust with clients and partners by demonstrating the highest level of security discipline." }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -427,14 +426,14 @@ padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
       <section className="CS_Flow">
         <div className="CS_Flow_Inner">
           <span className="CS_Badge uppercase">Security Lifecycle</span>
-          <h2 className="NET_Hero_H1">The CHN guardian framework</h2>
+          <h2 className="NET_Hero_H1">The CHN Guardian Framework</h2>
 
           <div className="CS_Flow_Grid">
             {[
-              { num: "PHASE 01", h: "Vulnerability audit", icon: <Search size={35} />, p: "Exposing invisible weaknesses through ethical hacking, stress tests, and environmental audits." },
-              { num: "PHASE 02", h: "Hardened design", icon: <PenTool size={35} />, p: "Drafting a bespoke security architecture that integrates with your existing business flows." },
-              { num: "PHASE 03", h: "Active deployment", icon: <Settings size={35} />, p: "Implementing the firewall, encryption, and access controls with precision calibration." },
-              { num: "PHASE 04", h: "Infinite watch", icon: <Eye size={35} />, p: "24/7 global SOC monitoring, threat intel sharing, and continuous defense evolution." }
+              { num: "PHASE 01", h: "Vulnerability Audit", icon: <Search size={35} />, p: "Exposing invisible weaknesses through ethical hacking, stress tests, and environmental audits." },
+              { num: "PHASE 02", h: "Hardened Design", icon: <PenTool size={35} />, p: "Drafting a bespoke security architecture that integrates with your existing business flows." },
+              { num: "PHASE 03", h: "Active Deployment", icon: <Settings size={35} />, p: "Implementing the firewall, encryption, and access controls with precision calibration." },
+              { num: "PHASE 04", h: "Infinite Watch", icon: <Eye size={35} />, p: "24/7 global SOC monitoring, threat intel sharing, and continuous defense evolution." }
             ].map((step, i) => (
               <motion.div
                 key={i}
@@ -458,14 +457,14 @@ padding: 10px 20px;  border-radius: 9999px; /* Rounded pill shape */
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Is your enterprise truly secure?</h2>
+            <h2 className="NET_Hero_H1 text-white">Is Your Enterprise Truly Secure?</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Don't wait for a breach to discover your weaknesses. Secure your future
               with a structured defense ecosystem built by experts.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="CS_Primary_Btn">Launch security audit</button>
+                <button className="CS_Primary_Btn">Launch Security Audit</button>
               </Link>
             </div>
           </motion.div>

@@ -32,27 +32,27 @@ const WebDesignDevelopment = () => {
 
   const capabilities = [
     {
-      title: "Business website design",
+      title: "Business Website Design",
       desc: "Design of professional, brand-aligned websites that clearly communicate offerings and value propositions.",
       icon: <Layout size={24} />
     },
     {
-      title: "Custom web development",
+      title: "Custom Web Development",
       desc: "Development of scalable, secure, and maintainable web applications tailored to business needs.",
       icon: <Code2 size={24} />
     },
     {
-      title: "Responsive & mobile-first",
+      title: "Responsive & Mobile-First",
       desc: "Web experiences optimised for performance and usability across all devices and screen sizes.",
       icon: <Smartphone size={24} />
     },
     {
-      title: "CMS implementation",
+      title: "CMS Implementation",
       desc: "Structured Content Management Systems for easy updates, allowing you full control over your digital narrative.",
       icon: <Settings size={24} />
     },
     {
-      title: "Performance & security",
+      title: "Performance & Security",
       desc: "Rigorous optimisation of site speed, security controls, and technical stability to ensure long-term value.",
       icon: <ShieldCheck size={24} />
     }
@@ -128,11 +128,11 @@ const WebDesignDevelopment = () => {
               </span>
             </div>
             <h2 className="font-black mb-8 leading-[1.1] text-slate-900 tracking-tight NET_Hero_H1">
-              Web design & development
+              Web Design & Development
             </h2>
             <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle">
               <Zap size={24} className="text-blue-600" />
-              Built for performance, scale, and results
+              Built for Performance, Scale, and Results
             </p>
             <p className="text-slate-600 mb-10 leading-relaxed max-w-xl">
               CHN Technologies delivers professional web design and development services focused on usability, performance, and long-term maintainability. Our solutions support business objectives and digital growth.
@@ -140,7 +140,7 @@ const WebDesignDevelopment = () => {
             <div className="flex flex-col sm:flex-row gap-5">
               <Link to="/contact">
                 <button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-bold shadow-2xl shadow-blue-200 transition-all transform hover:-translate-y-1 active:scale-95">
-                  Start your project
+                  Start Your Project
                 </button>
               </Link>
 
@@ -192,7 +192,7 @@ const WebDesignDevelopment = () => {
           <motion.div className="max-w-4xl mx-auto text-center" {...fadeIn}>
             <div className="text-left">
               <span className="text-blue-400 font-black tracking-[0.3em] text-sm mb-6 block uppercase text-center">Strategic Impact</span>
-              <h2 className="NET_Hero_H1 text-white text-center">Scale beyond aesthetics</h2>
+              <h2 className="NET_Hero_H1 text-white text-center">Scale Beyond Aesthetics</h2>
             </div>
             <div className="w-20 h-1 bg-blue-600 mx-auto mb-10"></div>
             <p className="text-slate-400 leading-relaxed mb-8 subtitle">
@@ -209,7 +209,7 @@ const WebDesignDevelopment = () => {
       <section className="py-20 bg-slate-50 overflow-hidden">
         <div className="container mx-auto px-6 mb-16">
           <div className="text-center">
-            <h2 className="NET_Hero_H1 text-slate-900">What our web services cover</h2>
+            <h2 className="NET_Hero_H1 text-slate-900">What Our Web Services Cover</h2>
             <div className="h-2 w-24 bg-blue-600 mx-auto mt-6 rounded-full" />
           </div>
         </div>
@@ -244,14 +244,14 @@ const WebDesignDevelopment = () => {
             <motion.div className="lg:w-1/2" {...fadeIn}>
               <div className="text-center mb-16">
                 <span className="text-blue-600 font-bold tracking-widest text-sm mb-4 block uppercase">Measurable Results</span>
-                <h2 className="NET_Hero_H1">Business outcomes</h2>
+                <h2 className="NET_Hero_H1">Business Outcomes</h2>
               </div>
               <div className="grid gap-8">
                 {[
-                  { label: "Stronger brand credibility", text: "Well-designed websites reinforce professionalism and trust.", icon: <CheckCircle size={16} /> },
-                  { label: "Improved user engagement", text: "Clear navigation and intuitive interfaces support better user interaction.", icon: <CheckCircle size={16} /> },
-                  { label: "Higher conversion potential", text: "Structured layouts and content flows support lead generation and enquiries.", icon: <CheckCircle size={16} /> },
-                  { label: "Scalable digital foundation", text: "Web platforms designed to evolve with business growth and digital initiatives.", icon: <CheckCircle size={16} /> }
+                  { label: "Stronger Brand Credibility", text: "Well-designed websites reinforce professionalism and trust.", icon: <CheckCircle size={16} /> },
+                  { label: "Improved User Engagement", text: "Clear navigation and intuitive interfaces support better user interaction.", icon: <CheckCircle size={16} /> },
+                  { label: "Higher Conversion Potential", text: "Structured layouts and content flows support lead generation and enquiries.", icon: <CheckCircle size={16} /> },
+                  { label: "Scalable Digital Foundation", text: "Web platforms designed to evolve with business growth and digital initiatives.", icon: <CheckCircle size={16} /> }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 items-start p-6 rounded-2xl hover:bg-slate-50 transition-colors">
                     <div className="bg-blue-600 text-white rounded-full p-1 flex items-center justify-center shrink-0 w-7 h-7 mt-1">
@@ -287,14 +287,14 @@ const WebDesignDevelopment = () => {
         <div className="container mx-auto px-6">
           <div className="container mx-auto px-6 relative z-10">
             <span className="text-blue-600 font-bold tracking-[0.1em] mb-4 block text-sm uppercase">How We Design & Develop Web Platforms</span>
-            <h2 className="NET_Hero_H1 mb-16">The web design lifecycle</h2>
+            <h2 className="NET_Hero_H1 mb-16">The Web Design Lifecycle</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative max-w-7xl mx-auto text-left">
             {[
-              { step: "01", label: "Discover & assess", icon: <Search size={36} strokeWidth={1.5} />, desc: "Understand business objectives, audience expectations, and existing digital assets." },
-              { step: "02", label: "Design & structure", icon: <PenTool size={36} strokeWidth={1.5} />, desc: "Create user-focused designs, information architecture, and visual systems." },
-              { step: "03", label: "Develop & integrate", icon: <Settings size={36} strokeWidth={1.5} />, desc: "Build secure, scalable web platforms and integrate required functionalities." },
-              { step: "04", label: "Test, launch & support", icon: <Activity size={36} strokeWidth={1.5} />, desc: "Thorough testing, deployment, and ongoing optimisation support." }
+              { step: "01", label: "Discover & Assess", icon: <Search size={36} strokeWidth={1.5} />, desc: "Understand business objectives, audience expectations, and existing digital assets." },
+              { step: "02", label: "Design & Structure", icon: <PenTool size={36} strokeWidth={1.5} />, desc: "Create user-focused designs, information architecture, and visual systems." },
+              { step: "03", label: "Develop & Integrate", icon: <Settings size={36} strokeWidth={1.5} />, desc: "Build secure, scalable web platforms and integrate required functionalities." },
+              { step: "04", label: "Test, Launch & Support", icon: <Activity size={36} strokeWidth={1.5} />, desc: "Thorough testing, deployment, and ongoing optimisation support." }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -323,7 +323,7 @@ const WebDesignDevelopment = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Build a website that works for your business</h2>
+            <h2 className="NET_Hero_H1 text-white">Build a Website That Works for Your Business</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured web design and development solutions can support brand growth, user engagement, and business objectives.
             </p>
@@ -334,7 +334,7 @@ const WebDesignDevelopment = () => {
                   fontWeight: 800, fontSize: '1.05rem', border: 'none', cursor: 'pointer',
                   boxShadow: '0 20px 40px rgba(37, 99, 235, 0.25)', transition: 'all 0.4s',
                   display: 'inline-flex', alignItems: 'center', gap: '10px'
-                }}>Get your free consultation</button>
+                }}>Get Your Free Consultation</button>
               </Link>
             </div>
           </motion.div>

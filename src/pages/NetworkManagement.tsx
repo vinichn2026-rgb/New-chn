@@ -296,7 +296,7 @@ const NetworkManagementPage = () => {
           >
             <span className="NET_Badge">Technology Services</span>
             <h2 className="NET_Hero_H1">
-              Network management services
+              Network Management Services
             </h2>
 
             <p className="NET_Tagline">Reliable, Secure, and High-Performance Networks</p>
@@ -305,7 +305,7 @@ const NetworkManagementPage = () => {
               controlled access, and continuous performance across business environments.
             </p>
             <Link to="/contact">
-              <button className="NET_Primary_Btn">Talk to a specialist</button>
+              <button className="NET_Primary_Btn">Talk to a Specialist</button>
             </Link>
           </motion.div>
 
@@ -322,27 +322,27 @@ const NetworkManagementPage = () => {
       <section className="NET_Cap_Section">
         <div className="NET_Cap_Inner">
           <span className="NET_Badge">What Our Network Management Covers</span>
-          <h2 className="NET_Hero_H1">Structured connectivity for business continuity</h2>
+          <h2 className="NET_Hero_H1">Structured Connectivity for Business Continuity</h2>
 
           <div className="NET_Cap_Grid">
             {[
               {
-                title: "Monitoring & performance",
+                title: "Monitoring & Performance",
                 icon: <Activity size={28} />,
                 desc: "Continuous monitoring to detect issues early and maintain optimal network performance."
               },
               {
-                title: "Security & access control",
+                title: "Security & Access Control",
                 icon: <Shield size={28} />,
                 desc: "Implementation of secure access policies, firewalls, and segmentation to reduce risk."
               },
               {
-                title: "Infrastructure maintenance",
+                title: "Infrastructure Maintenance",
                 icon: <Server size={28} />,
                 desc: "Structured configuration and maintenance of routers, switches, and components."
               },
               {
-                title: "Incident management",
+                title: "Incident Management",
                 icon: <Zap size={28} />,
                 desc: "Rapid identification and resolution of network disruptions to minimise downtime."
               }
@@ -369,14 +369,14 @@ const NetworkManagementPage = () => {
           </div>
           <div className="NET_Outcome_Content" style={{ textAlign: 'left' }}>
             <span className="NET_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1">Outcomes of structured management</h2>
+            <h2 className="NET_Hero_H1">Outcomes of Structured Management</h2>
 
             <div className="Outcome_List">
               {[
-                { title: "Improved network stability", desc: "Reduced disruptions and consistent connectivity across systems." },
-                { title: "Enhanced security posture", desc: "Controlled access and monitored traffic reduce exposure to threats." },
-                { title: "Operational efficiency", desc: "Reliable networks support productivity and reduce IT firefighting." },
-                { title: "Scalable architecture", desc: "Network designs that grow alongside business requirements." }
+                { title: "Improved Network Stability", desc: "Reduced disruptions and consistent connectivity across systems." },
+                { title: "Enhanced Security Posture", desc: "Controlled access and monitored traffic reduce exposure to threats." },
+                { title: "Operational Efficiency", desc: "Reliable networks support productivity and reduce IT firefighting." },
+                { title: "Scalable Architecture", desc: "Network designs that grow alongside business requirements." }
               ].map((item, i) => (
                 <div key={i} className="Outcome_Item">
                   <div className="Outcome_Check"><CheckCircle size={16} /></div>
@@ -395,7 +395,7 @@ const NetworkManagementPage = () => {
       <section className="NET_Flow">
         <div className="NET_Flow_Inner">
           <span className="NET_Badge">Execution Model</span>
-          <h2 className="NET_Hero_H1">Our network management approach</h2>
+          <h2 className="NET_Hero_H1">Our Network Management Approach</h2>
 
           <motion.div
             initial="hidden"
@@ -442,13 +442,13 @@ const NetworkManagementPage = () => {
       {/* LAYOUT 6 – TRUST & ASSURANCE */}
       <section className="NET_Trust">
         <div className="NET_Trust_Inner">
-          <h2 className="NET_Hero_H1">Built for reliability and control</h2>
+          <h2 className="NET_Hero_H1">Built for Reliability and Control</h2>
           <p className="NET_Hero_P">
             CHN Technologies manages networks with a focus on predictability, accountability, and long-term stability.
             Our services align with operational requirements and compliance needs.
           </p>
           <Link to="/contact">
-            <button className="NET_Primary_Btn" style={{ marginTop: '20px' }}>Contact a network specialist</button>
+            <button className="NET_Primary_Btn" style={{ marginTop: '20px' }}>Contact a Network Specialist</button>
           </Link>
         </div>
       </section>

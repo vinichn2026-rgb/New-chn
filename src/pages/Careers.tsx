@@ -355,7 +355,7 @@ const Careers = () => {
             className="CR_Hero_Left"
           >
             <span className="CR_Badge uppercase">Join Our Professional Team</span>
-            <h2 className="CR_Hero_H1 NET_Hero_H1">Find the perfect <br /> <span className="text-blue-500">job for you</span></h2>
+            <h2 className="CR_Hero_H1 NET_Hero_H1">Find the Perfect <br /> <span className="text-blue-500">Job for You</span></h2>
             <p className="CR_Hero_P">Explore core career opportunities across technology and consulting domains with CHN Technologies.</p>
 
             <div className="CR_Search_Bar">
@@ -406,12 +406,12 @@ const Careers = () => {
       {/* SECTION 2: CAREER STREAMS */}
       <section className="CR_Streams">
         <span className="CR_Badge">Career Domains</span>
-        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Areas you can work in</h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Areas You Can Work In</h2>
         <div className="CR_Streams_Grid">
           {[
-            { title: "Technology services", icon: <Server size={30} />, desc: "Structured management of networks, cloud infrastructure, and enterprise security ecosystems." },
-            { title: "Software & digital", icon: <Code size={30} />, desc: "Advanced web application development, data analytics, and operational automation solutions." },
-            { title: "Consulting & advisory", icon: <Users size={30} />, desc: "Expert workforce management, statutory compliance, and corporate developmental training." }
+            { title: "Technology Services", icon: <Server size={30} />, desc: "Structured management of networks, cloud infrastructure, and enterprise security ecosystems." },
+            { title: "Software & Digital", icon: <Code size={30} />, desc: "Advanced web application development, data analytics, and operational automation solutions." },
+            { title: "Consulting & Advisory", icon: <Users size={30} />, desc: "Expert workforce management, statutory compliance, and corporate developmental training." }
           ].map((stream, i) => (
             <motion.div
               key={i}
@@ -433,8 +433,8 @@ const Careers = () => {
             initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="CR_Env_Content"
           >
-            <span className="CR_Badge ">Professional ecosystem</span>
-            <h2 className="NET_Hero_H1 CR_Env_H">A professional environment built <br></br><span className="text-blue-500">for growth</span></h2>
+            <span className="CR_Badge ">Professional Ecosystem</span>
+            <h2 className="NET_Hero_H1 CR_Env_H">A Professional Environment Built <br></br><span className="text-blue-500">for Growth</span></h2>
             <div className="CR_Pros_Grid">
               {[
                 { title: "Clear expectations", icon: <CheckCircle2 size={24} /> },
@@ -462,10 +462,10 @@ const Careers = () => {
       <section className="CR_Final">
         <div className="CR_Final_Max">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 CR_Final_H">Start your career <span className="text-blue-500">with purpose</span></h2>
+            <h2 className="NET_Hero_H1 CR_Final_H">Start Your Career <span className="text-blue-500">with Purpose</span></h2>
             <p className="CR_Final_P">Apply now to explore current and upcoming structured career opportunities at CHN Technologies.</p>
             <button className="CR_Btn" onClick={() => navigate('/contact?interest=Careers')}>
-              Apply now <Send size={24} />
+              Apply Now <Send size={24} />
             </button>
           </motion.div>
         </div>

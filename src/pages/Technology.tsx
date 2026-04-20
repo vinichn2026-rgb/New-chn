@@ -6,37 +6,37 @@ import { ArrowUpRight, Server, Shield, Monitor, HardDrive, Wifi, Globe, Code, Ba
 const categories = [
     {
         id: 'it-infrastructure',
-        label: 'IT infrastructure',
+        label: 'IT Infrastructure',
         color: '#0060ff',
         bg: '#eff6ff',
         description: 'End-to-end infrastructure services that keep your operations stable, secure, and connected.',
         services: [
-            { name: 'Network management', link: '/network', icon: Wifi, desc: 'Network design, monitoring, and performance optimisation.' },
-            { name: 'Cyber security', link: '/cybersecurity', icon: Shield, desc: 'Threat detection, compliance, and access management.' },
-            { name: 'End user computing', link: '/enduser', icon: Monitor, desc: 'Provisioning, VDI, device lifecycle, and helpdesk.' },
-            { name: 'Server administration', link: '/server', icon: Server, desc: 'Server setup, OS patching, and disaster recovery.' },
-            { name: 'LAN cabling & surveillance', link: '/lancabling', icon: HardDrive, desc: 'Structured cabling, CCTV, and access control systems.' },
+            { name: 'Network Management', link: '/network', icon: Wifi, desc: 'Network design, monitoring, and performance optimisation.' },
+            { name: 'Cyber Security', link: '/cybersecurity', icon: Shield, desc: 'Threat detection, compliance, and access management.' },
+            { name: 'End User Computing', link: '/enduser', icon: Monitor, desc: 'Provisioning, VDI, device lifecycle, and helpdesk.' },
+            { name: 'Server Administration', link: '/server', icon: Server, desc: 'Server setup, OS patching, and disaster recovery.' },
+            { name: 'LAN Cabling & Surveillance', link: '/lancabling', icon: HardDrive, desc: 'Structured cabling, CCTV, and access control systems.' },
         ],
     },
     {
         id: 'software-solutions',
-        label: 'Software solutions',
+        label: 'Software Solutions',
         color: '#7c3aed',
         bg: '#f5f3ff',
         description: 'Custom-built digital products and web platforms tailored to your business workflows.',
         services: [
-            { name: 'Web design & development', link: '/webdesign', icon: Globe, desc: 'Responsive websites, CMS implementation, and UI/UX design.' },
-            { name: 'Application development', link: '/application', icon: Code, desc: 'Scalable apps, mobile solutions, and API integrations.' },
+            { name: 'Web Design & Development', link: '/webdesign', icon: Globe, desc: 'Responsive websites, CMS implementation, and UI/UX design.' },
+            { name: 'Application Development', link: '/application', icon: Code, desc: 'Scalable apps, mobile solutions, and API integrations.' },
         ],
     },
     {
         id: 'digital-solutions',
-        label: 'Digital solutions',
+        label: 'Digital Solutions',
         color: '#059669',
         bg: '#ecfdf5',
         description: 'Data-driven processes and intelligent automation to improve efficiency and visibility.',
         services: [
-            { name: 'Data analytics', link: '/dataanalytics', icon: BarChart2, desc: 'BI dashboards, predictive analytics, and data warehousing.' },
+            { name: 'Data Analytics', link: '/dataanalytics', icon: BarChart2, desc: 'BI dashboards, predictive analytics, and data warehousing.' },
             { name: 'Automation', link: '/automation', icon: Zap, desc: 'RPA, workflow automation, and process integration.' },
         ],
     },
@@ -216,7 +216,7 @@ const TechnologyPage = () => {
                     <div className="TECH_Badge">What we do</div>
                     <h2 className="TECH_Hero_Title NET_Hero_H1">
                         Technology<br />
-                        <span style={{ color: '#60a5fa' }}>services</span>
+                        <span style={{ color: '#60a5fa' }}>Services</span>
                     </h2>
                     <p className="TECH_Hero_desc">
                         Integrated technology capabilities across infrastructure, software, and digital solutions —
@@ -264,7 +264,7 @@ const TechnologyPage = () => {
                                     transition: 'all 0.3s',
                                 }}
                             >
-                                View all <ArrowUpRight size={14} />
+                                View All <ArrowUpRight size={14} />
                             </Link>
                         </div>
 
@@ -315,7 +315,7 @@ const TechnologyPage = () => {
                             Not sure where to start?
                         </p>
                         <h3 style={{ color: '#fff', fontSize: '1.8rem', fontWeight: 900, margin: 0, lineHeight: 1.2 }}>
-                            Let's find the right solution for your business
+                            Let's Find the Right Solution for Your Business
                         </h3>
                     </div>
                     <Link to="/contact" className="TECH_CTA_Btn" style={{
@@ -326,7 +326,7 @@ const TechnologyPage = () => {
                         textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0,
                         transition: 'all 0.3s',
                     }}>
-                        Talk to us <ArrowUpRight size={16} />
+                        Talk to Us <ArrowUpRight size={16} />
                     </Link>
                 </motion.div>
             </div>

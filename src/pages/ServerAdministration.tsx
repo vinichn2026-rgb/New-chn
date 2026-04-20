@@ -239,15 +239,15 @@ const ServerAdministrationPage = () => {
             className="SA_Hero_Content"
           >
             <span className="SA_Badge">Infrastructure Lifecycle</span>
-            <h2 className="SA_Hero_H1 NET_Hero_H1">Elite server management</h2>
-            <p className="SA_Tagline">Stabilizing mission-critical environments with precision administration.</p>
+            <h2 className="SA_Hero_H1 NET_Hero_H1">Elite Server Management</h2>
+            <p className="SA_Tagline">Stabilizing Mission-Critical Environments With Precision Administration.</p>
             <p className="SA_Hero_P">
               CHN Technologies engineers resilient server frameworks designed for 99.9% availability,
               absolute security, and elastic global scalability. We manage the backbone so you can lead the business.
             </p>
             <div className="SA_Btn_Group">
               <Link to="/contact">
-                <button className="SA_Primary_Btn">Consult an architect <ArrowRight size={20} /></button>
+                <button className="SA_Primary_Btn">Consult an Architect <ArrowRight size={20} /></button>
               </Link>
             </div>
           </motion.div>
@@ -317,7 +317,7 @@ const ServerAdministrationPage = () => {
         <div className="SA_Cap_Inner">
           <div style={{ marginBottom: '100px' }}>
             <span className="SA_Badge">Technical Authority</span>
-            <h2 className="NET_Hero_H1">Engineered for reliability</h2>
+            <h2 className="NET_Hero_H1">Engineered for Reliability</h2>
             <p className="SA_Hero_P" style={{ fontSize: '1.25rem' }}>
               Downtime isn't just a delay; it's a deficit. CHN Technologies replaces fragile legacy setups with audited server governance models designed for 99.999% uptime across hybrid ecosystems.
             </p>
@@ -326,22 +326,22 @@ const ServerAdministrationPage = () => {
           <div className="SA_Cap_Grid">
             {[
               {
-                title: "Performance optimization",
+                title: "Performance Optimization",
                 icon: <Activity size={32} />,
                 desc: "Fine-tuning kernel parameters, I/O scheduling, and resource allocation to squeeze maximum performance from your hardware."
               },
               {
-                title: "Hybrid-cloud governance",
+                title: "Hybrid-Cloud Governance",
                 icon: <Cloud size={32} />,
                 desc: "Seamless administration of on-premise iron and distributed cloud instances under a single, unified control plane."
               },
               {
-                title: "Automated continuity",
+                title: "Automated Continuity",
                 icon: <RefreshCw size={32} />,
                 desc: "Self-healing infrastructures with automated backup orchestration and zero-latency failover protocols."
               },
               {
-                title: "Hardened security",
+                title: "Hardened Security",
                 icon: <Shield size={32} />,
                 desc: "Military-grade hardening of server OS, real-time threat detection, and continuous compliance auditing."
               }
@@ -371,14 +371,14 @@ const ServerAdministrationPage = () => {
           </motion.div>
           <div className="SA_Outcome_Content">
             <span className="SA_Badge">Value Delivery</span>
-            <h2 className="NET_Hero_H1">Strategic outcomes of elite management</h2>
+            <h2 className="NET_Hero_H1">Strategic Outcomes of Elite Management</h2>
 
             <div className="Outcome_List">
               {[
-                { title: "Zero-lag operations", desc: "Optimised server stacks ensure application response times remain consistent even under peak transactional loads." },
-                { title: "Immutable data integrity", desc: "Enterprise-grade redundancy and encryption ensure your most valuable data assets are never compromised or lost." },
-                { title: "Predictable cost scaling", desc: "Optimized resource utilization reduces cloud sprawl and hardware waste, aligning IT spend with literal business value." },
-                { title: "Future-proof stability", desc: "Infrastructures designed with modularity, allowing for rapid adoption of new technologies without technical debt." }
+                { title: "Zero-Lag Operations", desc: "Optimised server stacks ensure application response times remain consistent even under peak transactional loads." },
+                { title: "Immutable Data Integrity", desc: "Enterprise-grade redundancy and encryption ensure your most valuable data assets are never compromised or lost." },
+                { title: "Predictable Cost Scaling", desc: "Optimized resource utilization reduces cloud sprawl and hardware waste, aligning IT spend with literal business value." },
+                { title: "Future-Proof Stability", desc: "Infrastructures designed with modularity, allowing for rapid adoption of new technologies without technical debt." }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -405,10 +405,10 @@ const ServerAdministrationPage = () => {
 
           <div className="SA_Flow_Grid">
             {[
-              { num: "PHASE 01", h: "Audit & assess", icon: <Search size={35} />, p: "A deep-dive analysis of your current iron and cloud footprint to identify bottlenecks and risk vectors." },
-              { num: "PHASE 02", h: "Strategic blueprint", icon: <PenTool size={35} />, p: "Drafting an architecture that aligns specialized server roles with high-availability business requirements." },
-              { num: "PHASE 03", h: "Active hardening", icon: <Settings size={35} />, p: "Deploying the stack with full automation, security hardening, and performance fine-tuning." },
-              { num: "PHASE 04", h: "Infinite loop", icon: <Cpu size={35} />, p: "24/7 proactive orchestration, predictive maintenance, and continuous resource optimization." }
+              { num: "PHASE 01", h: "Audit & Assess", icon: <Search size={35} />, p: "A deep-dive analysis of your current iron and cloud footprint to identify bottlenecks and risk vectors." },
+              { num: "PHASE 02", h: "Strategic Blueprint", icon: <PenTool size={35} />, p: "Drafting an architecture that aligns specialized server roles with high-availability business requirements." },
+              { num: "PHASE 03", h: "Active Hardening", icon: <Settings size={35} />, p: "Deploying the stack with full automation, security hardening, and performance fine-tuning." },
+              { num: "PHASE 04", h: "Infinite Loop", icon: <Cpu size={35} />, p: "24/7 proactive orchestration, predictive maintenance, and continuous resource optimization." }
             ].map((step, i) => (
               <motion.div
                 key={i}
@@ -430,13 +430,13 @@ const ServerAdministrationPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Ready for a more reliable server infrastructure?</h2>
+            <h2 className="NET_Hero_H1 text-white">Ready for a More Reliable Server Infrastructure?</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Stop managing servers. Start scaling your business with infrastructure that thinks ahead.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="SA_Primary_Btn">Launch security audit</button>
+                <button className="SA_Primary_Btn">Launch Security Audit</button>
               </Link>
             </div>
           </motion.div>

@@ -243,10 +243,10 @@ const WorkforceManagementPage = () => {
                 Workforce Management
               </span>
             </div>
-            <h2 className="WM_Hero_H1 NET_Hero_H1">Workforce management</h2>
+            <h2 className="WM_Hero_H1 NET_Hero_H1">Workforce Management</h2>
             <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle" style={{ fontSize: '1.2rem', color: '#3b82f6' }}>
               <Zap size={24} className="text-blue-600" />
-              Built for efficiency, scale, and results
+              Built for Efficiency, Scale, and Results
             </p>
             <p className="WM_Hero_P">
               CHN Technologies delivers professional workforce management services focused on strategic acquisition,
@@ -255,7 +255,7 @@ const WorkforceManagementPage = () => {
             </p>
             <div className="WM_Btn_Group">
               <Link to="/contact">
-                <button className="WM_Primary_Btn">Consult on workforce strategy</button>
+                <button className="WM_Primary_Btn">Consult on Workforce Strategy</button>
               </Link>
             </div>
           </motion.div>
@@ -305,7 +305,7 @@ const WorkforceManagementPage = () => {
       <section className="WM_Context">
         <div className="WM_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 WM_Context_H1">Your workforce is the primary architecture of operational success</h2>
+            <h2 className="NET_Hero_H1 WM_Context_H1">Your Workforce Is the Primary Architecture of Operational Success</h2>
             <p className="WM_Context_P">
               Business performance depends on how consistently and predictably you can manage and expand your human capital.
               Poorly managed workforce environments lead to internal debt, high hiring overhead, and reduced organizational speed.
@@ -319,27 +319,27 @@ const WorkforceManagementPage = () => {
       <section className="WM_Cap_Section">
         <div className="WM_Cap_Inner">
           <span className="WM_Badge">Core Domains</span>
-          <h2 className="NET_Hero_H1">Workforce consulting capabilities</h2>
+          <h2 className="NET_Hero_H1">Workforce Consulting Capabilities</h2>
 
           <div className="WM_Cap_Grid">
             {[
               {
-                title: "Talent acquisition",
+                title: "Talent Acquisition",
                 icon: <UserPlus size={28} />,
                 desc: "Structured recruitment processes that focus on both technical proficiency and organizational fit."
               },
               {
-                title: "Workforce planning",
+                title: "Workforce Planning",
                 icon: <Briefcase size={28} />,
                 desc: "Strategic resource modeling for anticipating operational shifts and staffing requirements."
               },
               {
-                title: "Performance strategy",
+                title: "Performance Strategy",
                 icon: <TrendingUp size={28} />,
                 desc: "Developing frameworks that align individual workforce goals with enterprise business outcomes."
               },
               {
-                title: "Compliance & integrity",
+                title: "Compliance & Integrity",
                 icon: <ShieldCheck size={28} />,
                 desc: "Ensuring all workforce practices are aligned with regional labor laws and internal ethics standards."
               }
@@ -366,14 +366,14 @@ const WorkforceManagementPage = () => {
           </div>
           <div className="WM_Outcome_Content">
             <span className="WM_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1">Benefits of structured workforce management</h2>
+            <h2 className="NET_Hero_H1">Benefits of Structured Workforce Management</h2>
 
             <div className="Outcome_List">
               {[
-                { title: "Predictable retention rates", desc: "Workforce strategies that ensure long-term stability and reduce institutional knowledge debt." },
-                { title: "Optimal resource utilization", desc: "Balanced workforce loads that ensure maximum productivity from every team member." },
-                { title: "Reduced internal overhead", desc: "Structured management environments that minimize friction and improve internal speed." },
-                { title: "Scalable talent architecture", desc: "External and internal talent pipelines that grow smoothly with organisational cycle." }
+                { title: "Predictable Retention Rates", desc: "Workforce strategies that ensure long-term stability and reduce institutional knowledge debt." },
+                { title: "Optimal Resource Utilization", desc: "Balanced workforce loads that ensure maximum productivity from every team member." },
+                { title: "Reduced Internal Overhead", desc: "Structured management environments that minimize friction and improve internal speed." },
+                { title: "Scalable Talent Architecture", desc: "External and internal talent pipelines that grow smoothly with organisational cycle." }
               ].map((item, i) => (
                 <div key={i} className="Outcome_Item">
                   <div className="Outcome_Check"><CheckCircle size={16} /></div>
@@ -392,14 +392,14 @@ const WorkforceManagementPage = () => {
       <section className="WM_Flow">
         <div className="WM_Flow_Inner">
           <span className="WM_Badge">Consulting Framework</span>
-          <h2 className="NET_Hero_H1">Workforce lifecycle approach</h2>
+          <h2 className="NET_Hero_H1">Workforce Lifecycle Approach</h2>
 
           <div className="WM_Flow_Grid">
             {[
-              { num: "01", h: "Talent acquisition", icon: <UserPlus size={30} />, p: "Sourcing and evaluating human capital based on technical and cultural parameters." },
-              { num: "02", h: "Strategic planning", icon: <PenTool size={30} />, p: "Forecasting operational needs and structural staffing requirements." },
-              { num: "03", h: "Performance audit", icon: <Activity size={30} />, p: "Analysing workforce output and aligning goals with digital outcomes." },
-              { num: "04", h: "Policy compliance", icon: <ShieldCheck size={30} />, p: "Stabilising legal and ethical integrity through structured workforce policy." }
+              { num: "01", h: "Talent Acquisition", icon: <UserPlus size={30} />, p: "Sourcing and evaluating human capital based on technical and cultural parameters." },
+              { num: "02", h: "Strategic Planning", icon: <PenTool size={30} />, p: "Forecasting operational needs and structural staffing requirements." },
+              { num: "03", h: "Performance Audit", icon: <Activity size={30} />, p: "Analysing workforce output and aligning goals with digital outcomes." },
+              { num: "04", h: "Policy Compliance", icon: <ShieldCheck size={30} />, p: "Stabilising legal and ethical integrity through structured workforce policy." }
             ].map((step, i) => (
               <motion.div
                 key={i}
@@ -422,7 +422,7 @@ const WorkforceManagementPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Optimise your revenue through workforce stability</h2>
+            <h2 className="NET_Hero_H1 text-white">Optimise Your Revenue Through Workforce Stability</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured workforce management solutions <br />
               can support operational efficiency and organizational scalability.
@@ -430,7 +430,7 @@ const WorkforceManagementPage = () => {
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
                 <button className="WM_Primary_Btn" style={{ margin: '0 auto', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                  Contact a workforce specialist <ArrowRight size={24} />
+                  Contact a Workforce Specialist <ArrowRight size={24} />
                 </button>
               </Link>
             </div>

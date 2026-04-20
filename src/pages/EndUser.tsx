@@ -243,15 +243,15 @@ const EndUserComputingPage = () => {
                         className="EUC_Hero_Content"
                     >
                         <span className="EUC_Badge">Cognitive Workspace</span>
-                        <h2 className="EUC_Hero_H1 NET_Hero_H1">Seamless user computing</h2>
-                        <p className="EUC_Tagline">Frictionless productivity through elite endpoint orchestration.</p>
+                        <h2 className="EUC_Hero_H1 NET_Hero_H1">Seamless User Computing</h2>
+                        <p className="EUC_Tagline">Frictionless Productivity Through Elite Endpoint Orchestration.</p>
                         <p className="EUC_Hero_P">
                             CHN Technologies delivers structured end-user computing services that ensure your workforce
                             stays agile, secure, and consistently productive across any device, anywhere in the world.
                         </p>
                         <div className="EUC_Btn_Group">
                             <Link to="/contact">
-                                <button className="EUC_Primary_Btn">Talk to an EUC expert <ArrowRight size={20} /></button>
+                                <button className="EUC_Primary_Btn">Talk to an EUC Expert <ArrowRight size={20} /></button>
                             </Link>
                         </div>
                     </motion.div>
@@ -299,7 +299,7 @@ const EndUserComputingPage = () => {
                 <div className="EUC_Cap_Inner">
                     <div style={{ marginBottom: '100px' }}>
                         <span className="EUC_Badge">Operational Freedom</span>
-                        <h2 className="NET_Hero_H1">Modernizing the human-system interface</h2>
+                        <h2 className="NET_Hero_H1">Modernizing the Human-System Interface</h2>
                         <p className="EUC_Hero_P" style={{ fontSize: '1.25rem' }}>
                             The bottleneck of enterprise growth is often the endpoint. CHN Technologies
                             standardizes the user experience, eliminating technical debt and support
@@ -310,22 +310,22 @@ const EndUserComputingPage = () => {
                     <div className="EUC_Cap_Grid">
                         {[
                             {
-                                title: "Unified device lifecycle",
+                                title: "Unified Device Lifecycle",
                                 icon: <Laptop size={32} />,
                                 desc: "Zero-touch provisioning and automated decommissioning, ensuring your hardware fleet is always current, patched, and performing."
                             },
                             {
-                                title: "Virtualized desktops",
+                                title: "Virtualized Desktops",
                                 icon: <Monitor size={32} />,
                                 desc: "High-performance VDI solutions that deliver secure corporate environments to any machine, reducing hardware dependency."
                             },
                             {
-                                title: "Cognitive application hub",
+                                title: "Cognitive Application Hub",
                                 icon: <Layout size={32} />,
                                 desc: "Centralized application management with automated updates and role-based delivery, keeping teams in a flow-state."
                             },
                             {
-                                title: "Identity protection",
+                                title: "Identity Protection",
                                 icon: <ShieldCheck size={32} />,
                                 desc: "Biometric authentication and multi-factor identity governance that moves with the user, not just the machine."
                             }
@@ -370,14 +370,14 @@ const EndUserComputingPage = () => {
                     </motion.div>
                     <div className="EUC_Outcome_Content">
                         <span className="EUC_Badge">Workforce Impact</span>
-                        <h2 className="NET_Hero_H1">Strategic outcomes of elite endpoint management</h2>
+                        <h2 className="NET_Hero_H1">Strategic Outcomes of Elite Endpoint Management</h2>
 
                         <div className="Outcome_List">
                             {[
-                                { title: "Universal consistency", desc: "A unified user experience across mobile, tablet, and desktop, reducing learning curves and support tickets." },
-                                { title: "Peak workforce mobility", desc: "Empower remote and hybrid teams with secure, high-speed access to every corporate asset from any location." },
-                                { title: "Aggressive cost reduction", desc: "Consolidate hardware spend and automate L1 support tasks, redirecting IT budget toward innovation." },
-                                { title: "Absolute compliance", desc: "Automated auditing and remote-wipe capabilities ensure corporate data never leaves your control plane." }
+                                { title: "Universal Consistency", desc: "A unified user experience across mobile, tablet, and desktop, reducing learning curves and support tickets." },
+                                { title: "Peak Workforce Mobility", desc: "Empower remote and hybrid teams with secure, high-speed access to every corporate asset from any location." },
+                                { title: "Aggressive Cost Reduction", desc: "Consolidate hardware spend and automate L1 support tasks, redirecting IT budget toward innovation." },
+                                { title: "Absolute Compliance", desc: "Automated auditing and remote-wipe capabilities ensure corporate data never leaves your control plane." }
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -400,14 +400,14 @@ const EndUserComputingPage = () => {
             <section className="EUC_Flow">
                 <div className="EUC_Flow_Inner">
                     <span className="EUC_Badge">Transformation Lifecycle</span>
-                    <h2 className="NET_Hero_H1">The CHN productivity framework</h2>
+                    <h2 className="NET_Hero_H1">The CHN Productivity Framework</h2>
 
                     <div className="EUC_Flow_Grid">
                         {[
-                            { num: "PHASE 01", h: "User analytics", icon: <Search size={35} />, p: "Mapping user personas and application dependencies to identify friction points in your current workflow." },
-                            { num: "PHASE 02", h: "Experience design", icon: <PenTool size={35} />, p: "Drafting a unified computing architecture that balances absolute security with maximum usability." },
-                            { num: "PHASE 03", h: "Global rollout", icon: <Settings size={35} />, p: "Rapid integration of new endpoint standards with zero-touch configuration and migration." },
-                            { num: "PHASE 04", h: "Adaptive tuning", icon: <RefreshCw size={35} />, p: "Continuous performance monitoring and proactive UX refinements to keep your workforce ahead." }
+                            { num: "PHASE 01", h: "User Analytics", icon: <Search size={35} />, p: "Mapping user personas and application dependencies to identify friction points in your current workflow." },
+                            { num: "PHASE 02", h: "Experience Design", icon: <PenTool size={35} />, p: "Drafting a unified computing architecture that balances absolute security with maximum usability." },
+                            { num: "PHASE 03", h: "Global Rollout", icon: <Settings size={35} />, p: "Rapid integration of new endpoint standards with zero-touch configuration and migration." },
+                            { num: "PHASE 04", h: "Adaptive Tuning", icon: <RefreshCw size={35} />, p: "Continuous performance monitoring and proactive UX refinements to keep your workforce ahead." }
                         ].map((step, i) => (
                             <motion.div
                                 key={i}
@@ -429,14 +429,14 @@ const EndUserComputingPage = () => {
                 <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
                 <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-                        <h2 className="NET_Hero_H1 text-white">Ready to liberate your workforce?</h2>
+                        <h2 className="NET_Hero_H1 text-white">Ready to Liberate Your Workforce?</h2>
                         <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
                             Stop managing devices. Start empowering people. Join the enterprises
                             shifting to elite end-user computing with CHN Technologies.
                         </p>
                         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
                             <Link to="/contact">
-                                <button className="EUC_Primary_Btn">Launch workforce audit</button>
+                                <button className="EUC_Primary_Btn">Launch Workforce Audit</button>
                             </Link>
                         </div>
                     </motion.div>

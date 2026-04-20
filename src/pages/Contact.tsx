@@ -419,8 +419,8 @@ const ContactPage = () => {
                 <div className="CN_Hero_Inner">
                     <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="CN_Hero_Content">
                         <span className="text-[#0060ff] font-bold tracking-[0.1em] uppercase mb-6 block">Strategic Engagement</span>
-                        <h2 className="NET_Hero_H1 CN_Hero_Title">Contact us</h2>
-                        <p className="CN_Hero_Subtitle subtitle">Conversations lead to clarity. Let’s start with yours</p>
+                        <h1 className=" CN_Hero_Title">Contact Us</h1>
+                        <p className="CN_Hero_Subtitle subtitle">Conversations Lead to Clarity. Let’s Start With Yours</p>
                         <p className="CN_Hero_P">               Whether you need digital solutions, expert consulting, or a new career path, CHN Technologies is ready to help. Reach out today to solve your challenges and start a structured engagement.
                         </p>
                     </motion.div>
@@ -472,7 +472,7 @@ const ContactPage = () => {
                     <AnimatePresence mode="wait">
                         {!isSubmitted ? (
                             <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                                <h2 className="NET_Hero_H1 CN_Form_H">Share your <span className="text-blue-500">requirement</span></h2>
+                                <h2 className="NET_Hero_H1 CN_Form_H">Share Your Requirement</h2>
                                 <p className="CN_Form_P subtitle">
                                     Provide a brief overview of your requirement, and our team will connect with you to understand next steps.
                                     Clear information helps us respond faster and more effectively.
@@ -491,7 +491,7 @@ const ContactPage = () => {
                                     </select>
                                     <textarea name="message" placeholder="Requirement Details" rows={5} required className="CN_Input md:col-span-2" value={formData.message} onChange={handleChange}></textarea>
                                     <button type="submit" disabled={isSubmitting} className="CN_Primary_Btn md:col-span-2">
-                                        {isSubmitting ? 'Processing intake...' : 'Send message'} <Send size={20} />
+                                        {isSubmitting ? 'Processing intake...' : 'Send Message'} <Send size={20} />
                                     </button>
                                 </form>
                             </motion.div>
@@ -513,11 +513,11 @@ const ContactPage = () => {
 
                     <div className="space-y-4">
                         {[
-                            { icon: <Globe size={28} />, title: "Business enquiries", text: "For technology, digital, and consulting discussions." },
-                            { icon: <Users size={28} />, title: "Consulting & advisory", text: "For workforce management, payroll & compliance, and training-related discussions." },
+                            { icon: <Globe size={28} />, title: "Business Enquiries", text: "For technology, digital, and consulting discussions." },
+                            { icon: <Users size={28} />, title: "Consulting & Advisory", text: "For workforce management, payroll & compliance, and training-related discussions." },
                             { icon: <Activity size={28} />, title: "Careers", text: "For job applications, internships, and collaboration enquiries." },
-                            { icon: <MapPin size={28} />, title: "Head office", text: "CHN Technologies Pvt Ltd, No. 28, 4th Main Rd, CIT Nagar East, Chennai - 600035" },
-                            { icon: <MapPin size={28} />, title: "Branch office", text: "AAA Towers, Avinashi Rd, Near Hope College, Coimbatore - 641 004" }
+                            { icon: <MapPin size={28} />, title: "Head Office", text: "CHN Technologies Pvt Ltd, No. 28, 4th Main Rd, CIT Nagar East, Chennai - 600035" },
+                            { icon: <MapPin size={28} />, title: "Branch Office", text: "AAA Towers, Avinashi Rd, Near Hope College, Coimbatore - 641 004" }
                         ].map((info, i) => (
                             <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="CN_Info_Item">
                                 <div className="CN_Info_Icon">{info.icon}</div>
@@ -534,13 +534,13 @@ const ContactPage = () => {
             {/* LAYOUT 5 – RESPONSE & ENGAGEMENT EXPECTATION */}
             <section className="CN_Expectation">
                 <span className="text-[#0060ff] font-bold tracking-[0.3em] uppercase mb-6 block">Structured Response</span>
-                <h2 className="NET_Hero_H1 CN_Section_Title">Here’s what happens next after you contact us</h2>
+                <h2 className="NET_Hero_H1 CN_Section_Title">Here’s What Happens Next After You Contact Us</h2>
 
                 <div className="CN_Flow">
                     {[
-                        { icon: <Search size={30} />, head: "Strategic review", p: "Your requirement is analyzed by the relevant sector leads for technical and business alignment." },
-                        { icon: <Linkedin size={30} />, head: "Contextual audit", p: "We may reach out to gather deeper context to ensure our response is Purposeful and precise." },
-                        { icon: <CheckCircle2 size={30} />, head: "Structured response", p: "A formal proposal, consultation, or discussion is scheduled to define the roadmap forward." }
+                        { icon: <Search size={30} />, head: "Strategic Review", p: "Your requirement is analyzed by the relevant sector leads for technical and business alignment." },
+                        { icon: <Linkedin size={30} />, head: "Contextual Audit", p: "We may reach out to gather deeper context to ensure our response is Purposeful and precise." },
+                        { icon: <CheckCircle2 size={30} />, head: "Structured Response", p: "A formal proposal, consultation, or discussion is scheduled to define the roadmap forward." }
                     ].map((step, i) => (
                         <div key={i} className="CN_Step">
                             <div className="CN_Step_Icon">
@@ -629,10 +629,10 @@ const ContactPage = () => {
             <section className="CN_Final">
                 <div className="CN_Final_Max">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                        <h2 className="NET_Hero_H1 CN_Final_H">Start the <span className="text-blue-500">conversation</span></h2>
+                        <h2 className="NET_Hero_H1 CN_Final_H">Start the <span className="text-blue-500">Conversation</span></h2>
                         <p className="CN_Final_P">Contact CHN Technologies to discuss how we can support your organisation or career goals.</p>
                         <a href="#contact-form" style={{ textDecoration: 'none' }}>
-                            <button className="CN_Btn">Get in touch <ArrowRight size={24} /></button>
+                            <button className="CN_Btn">Get in Touch <ArrowRight size={24} /></button>
                         </a>
                     </motion.div>
                 </div>

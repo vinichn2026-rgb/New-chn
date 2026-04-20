@@ -240,8 +240,8 @@ const DataAnalyticsPage = () => {
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold tracking-widest border border-blue-100 uppercase">
                 Digital Intelligence              </span>
             </div>
-            <h2 className="DA_Hero_H1 NET_Hero_H1">Data analytics services</h2>
-            <p className="DA_Tagline">Mission-critical insights driven by high-fidelity data and predictable modeling.</p>
+            <h2 className="DA_Hero_H1 NET_Hero_H1">Data Analytics Services</h2>
+            <p className="DA_Tagline">Mission-Critical Insights Driven by High-Fidelity Data and Predictable Modeling.</p>
             <p className="DA_Hero_P">
               CHN Technologies provides structured data analytics services that ensure visibility,
               accountability, and strategic oversight across business environments. Our approach
@@ -249,7 +249,7 @@ const DataAnalyticsPage = () => {
             </p>
             <div className="DA_Btn_Group">
               <Link to="/contact">
-                <button className="DA_Primary_Btn">Consult a data strategist</button>
+                <button className="DA_Primary_Btn">Consult a Data Strategist</button>
               </Link>
             </div>
           </motion.div>
@@ -299,7 +299,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Context">
         <div className="DA_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 DA_Context_H1">Data is the primary driver of strategic competitive advantage</h2>
+            <h2 className="NET_Hero_H1 DA_Context_H1">Data Is the Primary Driver of Strategic Competitive Advantage</h2>
             <p className="DA_Context_P">
               Business productivity depends on how much of your resource capacity is focused on high-value strategy versus low-value manual processing.
               Poorly automated or manual workflows lead to operational debt, human error, and reduced organizational speed.
@@ -313,27 +313,27 @@ const DataAnalyticsPage = () => {
       <section className="DA_Cap_Section">
         <div className="DA_Cap_Inner">
           <span className="DA_Badge">Analytical Domains</span>
-          <h2 className="NET_Hero_H1">Full cycle analytical capabilities</h2>
+          <h2 className="NET_Hero_H1">Full Cycle Analytical Capabilities</h2>
 
           <div className="DA_Cap_Grid">
             {[
               {
-                title: "Predictive analytics",
+                title: "Predictive Analytics",
                 icon: <TrendingUp size={28} />,
                 desc: "Using historical data and AI models to forecast business trends and operational shifts."
               },
               {
-                title: "Business intelligence",
+                title: "Business Intelligence",
                 icon: <BarChart3 size={28} />,
                 desc: "Customized dashboarding and reporting systems for real-time visibility into mission-critical KPIs."
               },
               {
-                title: "Data warehousing",
+                title: "Data Warehousing",
                 icon: <Database size={28} />,
                 desc: "Structured data storage and management that ensures large-scale information remains accessible."
               },
               {
-                title: "Integration services",
+                title: "Integration Services",
                 icon: <Layers size={28} />,
                 desc: "Consolidating data from disparate business systems to provide a single, unified source of truth."
               }
@@ -360,14 +360,14 @@ const DataAnalyticsPage = () => {
           </div>
           <div className="DA_Outcome_Content">
             <span className="DA_Badge">Strategic Benefits</span>
-            <h2 className="NET_Hero_H1">Improved decision precision and velocity</h2>
+            <h2 className="NET_Hero_H1">Improved Decision Precision and Velocity</h2>
 
             <div className="Outcome_List">
               {[
-                { title: "Improved decision precision", desc: "Empirical insights that reduce reliance on intuition and drive predictable outcomes." },
-                { title: "Optimal strategic scaling", desc: "Data-driven models that group operational growth with measurable market opportunities." },
-                { title: "Enhanced real-time visibility", desc: "Dashboarding systems that provide continuous oversight across mission-critical systems." },
-                { title: "Predictable future modeling", desc: "Forecasting methods that ensure organisations are ready for evolving business cycles." }
+                { title: "Improved Decision Precision", desc: "Empirical insights that reduce reliance on intuition and drive predictable outcomes." },
+                { title: "Optimal Strategic Scaling", desc: "Data-driven models that group operational growth with measurable market opportunities." },
+                { title: "Enhanced Real-Time Visibility", desc: "Dashboarding systems that provide continuous oversight across mission-critical systems." },
+                { title: "Predictable Future Modeling", desc: "Forecasting methods that ensure organisations are ready for evolving business cycles." }
               ].map((item, i) => (
                 <div key={i} className="Outcome_Item">
                   <div className="Outcome_Check"><CheckCircle size={16} /></div>
@@ -386,14 +386,14 @@ const DataAnalyticsPage = () => {
       <section className="DA_Flow">
         <div className="DA_Flow_Inner">
           <span className="DA_Badge">Insight Framework</span>
-          <h2 className="NET_Hero_H1">Data-to-insight journey</h2>
+          <h2 className="NET_Hero_H1">Data-to-Insight Journey</h2>
 
           <div className="DA_Flow_Grid">
             {[
-              { num: "01", h: "Data ingestion", icon: <Database size={30} />, p: "Consolidating raw data from disparate business sources into a unified hub." },
-              { num: "02", h: "Strategic modeling", icon: <LineChart size={30} />, p: "Creating mathematical models that represent your operational business logic." },
+              { num: "01", h: "Data Ingestion", icon: <Database size={30} />, p: "Consolidating raw data from disparate business sources into a unified hub." },
+              { num: "02", h: "Strategic Modeling", icon: <LineChart size={30} />, p: "Creating mathematical models that represent your operational business logic." },
               { num: "03", h: "Visualization", icon: <PieChart size={30} />, p: "Building high-fidelity dashboards that translate data into human-readable insight." },
-              { num: "04", h: "Decision support", icon: <TrendingUp size={30} />, p: "Continuous analytical refinement to support mission-critical decision making." }
+              { num: "04", h: "Decision Support", icon: <TrendingUp size={30} />, p: "Continuous analytical refinement to support mission-critical decision making." }
             ].map((step, i) => (
               <motion.div
                 key={i}
@@ -415,14 +415,14 @@ const DataAnalyticsPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Convert your data into strategic revenue</h2>
+            <h2 className="NET_Hero_H1 text-white">Convert Your Data Into Strategic Revenue</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how high-fidelity analytical models
               can optimize your enterprise decision-making and operational growth.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="DA_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Contact a data strategist</button>
+                <button className="DA_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Contact a Data Strategist</button>
               </Link>
             </div>
           </motion.div>

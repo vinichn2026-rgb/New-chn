@@ -239,10 +239,10 @@ const TrainingAndDevelopmentPage = () => {
                 Training & Development
               </span>
             </div>
-            <h2 className="TD_Hero_H1 NET_Hero_H1">Training & development</h2>
+            <h2 className="TD_Hero_H1 NET_Hero_H1">Training & Development</h2>
             <p className="font-bold mb-6 flex items-center gap-2 subtitle" style={{ fontSize: '1.2rem', color: '#3b82f6' }}>
               <Zap size={24} className="text-blue-600" />
-              Building a high-performance workforce through structured enterprise learning systems.
+              Building a High-Performance Workforce Through Structured Enterprise Learning Systems.
             </p>
             <p className="TD_Hero_P">
               CHN Technologies delivers professional training and development services focused on workforce performance,
@@ -251,7 +251,7 @@ const TrainingAndDevelopmentPage = () => {
             </p>
             <div className="TD_Btn_Group">
               <Link to="/contact">
-                <button className="TD_Primary_Btn">Customize your learning plan</button>
+                <button className="TD_Primary_Btn">Customize Your Learning Plan</button>
               </Link>
             </div>
           </motion.div>
@@ -301,7 +301,7 @@ const TrainingAndDevelopmentPage = () => {
       <section className="TD_Context">
         <div className="TD_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 TD_Context_H1">Reduced institutional knowledge is a silent tax on enterprise growth</h2>
+            <h2 className="NET_Hero_H1 TD_Context_H1">Reduced Institutional Knowledge Is a Silent Tax on Enterprise Growth</h2>
             <p className="TD_Context_P">
               Business performance and innovation depend on how predictably you can manage and expand your institutional workforce knowledge.
               Poorly trained teams lead to technical debt, high turnover, and reduced organizational speed.
@@ -315,27 +315,27 @@ const TrainingAndDevelopmentPage = () => {
       <section className="TD_Cap_Section">
         <div className="TD_Cap_Inner">
           <span className="TD_Badge">Core Domains</span>
-          <h2 className="NET_Hero_H1">Strategic enterprise learning capabilities</h2>
+          <h2 className="NET_Hero_H1">Strategic Enterprise Learning Capabilities</h2>
 
           <div className="TD_Cap_Grid">
             {[
               {
-                title: "Skills assessment",
+                title: "Skills Assessment",
                 icon: <Target size={28} />,
                 desc: "Identifying technical and soft skill gaps within your workforce to ensure targeted and high-impact training."
               },
               {
-                title: "Custom learning paths",
+                title: "Custom Learning Paths",
                 icon: <BookOpen size={28} />,
                 desc: "Designing tailored curriculum modules aligned with your business technologies and organizational goals."
               },
               {
-                title: "Leadership development",
+                title: "Leadership Development",
                 icon: <GraduationCap size={28} />,
                 desc: "Structured programs designed to elevate high-potential employees into mission-critical management roles."
               },
               {
-                title: "Technical certifications",
+                title: "Technical Certifications",
                 icon: <Award size={28} />,
                 desc: "Preparing your engineering and IT teams for globally recognized certifications to ensure technical excellence."
               }
@@ -362,14 +362,14 @@ const TrainingAndDevelopmentPage = () => {
           </div>
           <div className="TD_Outcome_Content">
             <span className="TD_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1">Business benefits of structured enterprise learning</h2>
+            <h2 className="NET_Hero_H1">Business Benefits of Structured Enterprise Learning</h2>
 
             <div className="Outcome_List">
               {[
-                { title: "Optimal strategic scaling", desc: "Training systems that ensure institutional knowledge grows with organisational goals." },
-                { title: "Reduced hiring overhead", desc: "Elevating internal workforce capacity reduces the need for external hiring." },
-                { title: "Predictable performance growth", desc: "Structured learning outcomes ensure measurable improvement in workforce productivity." },
-                { title: "High-stability workforce", desc: "Investing in employees increases retention and reduces institutional knowledge debt." }
+                { title: "Optimal Strategic Scaling", desc: "Training systems that ensure institutional knowledge grows with organisational goals." },
+                { title: "Reduced Hiring Overhead", desc: "Elevating internal workforce capacity reduces the need for external hiring." },
+                { title: "Predictable Performance Growth", desc: "Structured learning outcomes ensure measurable improvement in workforce productivity." },
+                { title: "High-Stability Workforce", desc: "Investing in employees increases retention and reduces institutional knowledge debt." }
               ].map((item, i) => (
                 <div key={i} className="Outcome_Item">
                   <div className="Outcome_Check"><CheckCircle size={16} /></div>
@@ -388,7 +388,7 @@ const TrainingAndDevelopmentPage = () => {
       <section className="TD_Flow">
         <div className="TD_Flow_Inner">
           <span className="TD_Badge">Strategic Framework</span>
-          <h2 className="NET_Hero_H1">Our strategic approach</h2>
+          <h2 className="NET_Hero_H1">Our Strategic Approach</h2>
 
           <div className="TD_Flow_Grid">
             {[
@@ -417,7 +417,7 @@ const TrainingAndDevelopmentPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Build a high-performance workforce</h2>
+            <h2 className="NET_Hero_H1 text-white">Build a High-Performance Workforce</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured training and development consulting <br />
               can support workforce growth and operational reliability.
@@ -425,7 +425,7 @@ const TrainingAndDevelopmentPage = () => {
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
                 <button className="TD_Primary_Btn" style={{ margin: '0 auto', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                  Contact a training specialist <ArrowRight size={24} />
+                  Contact a Training Specialist <ArrowRight size={24} />
                 </button>
               </Link>
             </div>

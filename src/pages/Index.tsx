@@ -50,20 +50,20 @@ const Index = () => {
   const slides = [
     {
       bg: heroBg1,
-      subtitle: "INTEGRATED TECHNOLOGY & CONSULTING",
-      title: <>Run technology like <br />a business system</>,
+      subtitle: "Integrated Technology & Consulting",
+      title: <>Run Technology Like <br />a Business System</>,
       desc: "Integrated technology and consulting services built for stability, security, and scalable growth. We help you reduce risk and maintain control.",
     },
     {
       bg: heroBg2,
-      subtitle: "WE ARE DEDICATED",
-      title: <>Inspired and passionate<br />about innovation</>,
+      subtitle: "We Are Dedicated",
+      title: <>Inspired and Passionate<br />about Innovation</>,
       desc: "End-to-end management of IT infrastructure, software solutions, digital analytics, and workforce consulting — all under one roof.",
     },
     {
       bg: "/images/hero-excellence.jpg",
-      subtitle: "OPERATIONAL EXCELLENCE",
-      title: <>Reliability built on<br />structured excellence</>,
+      subtitle: "Operational Excellence",
+      title: <>Reliability Built on<br />Structured Excellence</>,
       desc: "We align systems, people, and processes to ensure your business remains resilient in a changing digital landscape. Experience long-term stability.",
     },
   ];
@@ -135,25 +135,25 @@ const Index = () => {
   const deliveryPhases = [
     {
       phaseNumber: "01",
-      heading: "Assess current state",
+      heading: "Assess Current State",
       description: "Evaluate existing systems and risks to establish a baseline and identify key priorities.",
       icon: ScanSearch,
     },
     {
       phaseNumber: "02",
-      heading: "Design the roadmap",
+      heading: "Design the Roadmap",
       description: "Develop a strategic roadmap aligned with business goals, compliance, and long-term scalability",
       icon: Workflow,
     },
     {
       phaseNumber: "03",
-      heading: "Implement with control",
+      heading: "Implement with Control",
       description: "Deploy secure, high-performing solutions using a phased approach to minimize business disruption.",
       icon: Cpu,
     },
     {
       phaseNumber: "04",
-      heading: "Run, monitor and improve",
+      heading: "Run, Monitor and Improve",
       description: "Deliver continuous monitoring, support, and optimisation to keep systems aligned with evolving business needs.",
       icon: Activity,
     },
@@ -161,27 +161,27 @@ const Index = () => {
 
   const services = [
     {
-      title: "Growth & scale",
+      title: "Growth & Scale",
       desc: "Businesses expanding operations while handling disconnected IT, software, and operational tools that require structure and consolidation.",
       icon: <TrendingUp strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
     },
     {
-      title: "Security & compliance",
+      title: "Security & Compliance",
       desc: "Organisations operating in regulated or risk-sensitive environments that need stronger controls, visibility, and policy alignment.",
       icon: <ShieldCheck strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
     },
     {
-      title: "Multi-location operations",
+      title: "Multi-Location Operations",
       desc: "Companies managing infrastructure, people, and processes across multiple offices or sites with a need for standardisation.",
       icon: <Network strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
     },
     {
-      title: "Leadership visibility",
+      title: "Leadership Visibility",
       desc: "Decision-makers seek clear insights into system performance, operational efficiency, and workforce effectiveness.",
       icon: <BarChart3 strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
     },
     {
-      title: "Technology integration",
+      title: "Technology Integration",
       desc: "Seamless integration of legacy systems with modern technologies to create unified, future-ready IT ecosystems.",
       icon: <Settings strokeWidth={1} className="w-14 h-14 text-[#0060ff]" />,
     },
@@ -208,13 +208,13 @@ const Index = () => {
     {
       id: 1,
       quote: "CHN Technologies re-engineered our entire network for maximum resilience. Our uptime is at an all-time high, providing the stability we needed to scale confidently.",
-      name: "Reliability foundation",
+      name: "Reliability Foundation",
       designation: "Infrastructure & Stability",
     },
     {
       id: 2,
       quote: "Partnering with them transformed our multi-site infrastructure from a source of friction into a resilient environment. We now focus on expansion, not repairs.",
-      name: "Operational excellence",
+      name: "Operational Excellence",
       designation: "Network Engineering",
     }
   ];
@@ -254,7 +254,7 @@ const Index = () => {
               className="mt-8 flex items-center gap-6">
               <Link to="/contact" className="inline-flex items-center gap-2 px-10 py-4 bg-[#0060ff] text-white font-semibold rounded-full hover:bg-[#0050d5] transition-all duration-300 group shadow-lg">
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                Read more
+                Read More
               </Link>
             </motion.div>
           </div>
@@ -272,8 +272,8 @@ const Index = () => {
       <section className="flex flex-col justify-center bg-[#fafafa] scroll-mt-[90px] py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
-            <span className="text-[#0060ff] uppercase text-md font-bold tracking-[0.10em] mb-4 block ">Operational capacity</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b]">Designed to support systems</h2>
+            <span className="text-[#0060ff] uppercase text-md font-bold tracking-[0.10em] mb-4 block ">Operational Capacity</span>
+            <h2 className="NET_Hero_H1 text-[#002e5b]">Designed to Support Systems</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
             {services.map((service, i) => (
@@ -304,7 +304,7 @@ const Index = () => {
       <section className="flex flex-col justify-center bg-white scroll-mt-[90px] py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-4 grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
           <div className="relative">
-            <img src="/images/about-main.jpg" alt="About CHN" className="rounded-2xl shadow-2xl" />
+            <img src="/images/about-team-meeting.png" alt="About CHN" className="rounded-2xl shadow-2xl" />
             {/* <div className="absolute top-10 left-10">
               <button onClick={() => setIsVideoOpen(true)} className="w-20 h-20 bg-[#1a1a1a] rounded-full flex items-center justify-center text-white shadow-2xl animate-pulse">
                 <Play className="w-8 h-8 ml-1" />
@@ -312,8 +312,8 @@ const Index = () => {
             </div> */}
           </div>
           <div>
-            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Measurable outcomes</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b] mb-6">Outcomes that matter</h2>
+            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Measurable Outcomes</span>
+            <h2 className="NET_Hero_H1 text-[#002e5b] mb-6">Outcomes That Matter</h2>
             <p className="text-lg text-blue-600  mb-6">Delivering measurable outcomes that improve stability and reliability.</p>
             <p className="text-gray-500 leading-relaxed mb-8">We engineer resilient environments that evolve alongside your business, ensuring sustainable impact.</p>
             <div className="bg-gray-100 h-12 rounded-lg overflow-hidden">
@@ -344,9 +344,9 @@ const Index = () => {
           }
         `}</style>
         <div className="text-center mb-16 px-4">
-          <span className="text-[#ffffff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Innovation stream</span>
+          <span className="text-[#ffffff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Innovation Stream</span>
           <h2 className="NET_Hero_H1 text-white">
-            Capabilities <span className="">overview</span>
+            Capabilities <span className="">Overview</span>
           </h2>
         </div>
         <div className="flex overflow-hidden">
@@ -386,8 +386,8 @@ const Index = () => {
       <section className="flex flex-col justify-center bg-white py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Operational excellence</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b]"> Structured delivery model</h2>
+            <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Operational Excellence</span>
+            <h2 className="NET_Hero_H1 text-[#002e5b]"> Structured Delivery Model</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {deliveryPhases.map((phase, i) => {
@@ -460,10 +460,10 @@ const Index = () => {
         {/* Header Section */}
         <div className="w-full px-6 mb-16 text-center">
           <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">
-            Global partner network
+            Global Partner Network
           </span>
           <h2 className="NET_Hero_H1 text-[#002e5b]">
-            Our partners
+            Our Partners
           </h2>
         </div>
 
