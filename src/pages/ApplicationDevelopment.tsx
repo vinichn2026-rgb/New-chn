@@ -335,7 +335,8 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
           <h2 className="NET_Hero_H1">Our Application Development Services Cover</h2>
 
           <div className="AD_Cap_Grid">
-                       {
+            {[
+              {
                 title: "Custom Business Apps",
                 icon: <Braces size={28} />,
                 desc: "Design and development of applications tailored to specific operational and business requirements."
@@ -359,7 +360,7 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
                 title: "Testing & Quality Assurance",
                 icon: <ShieldCheck size={28} />,
                 desc: "Structured testing to ensure reliability, security, and functional accuracy across all units."
-              }     }
+              }
             ].map((item, i) => (
               <motion.div
                 key={i}
