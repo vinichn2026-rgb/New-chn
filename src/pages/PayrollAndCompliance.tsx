@@ -200,7 +200,7 @@ const PayrollAndCompliancePage = () => {
               </span>
             </div>
 
-            <h2 className="PC_Hero_H1 NET_Hero_H1">Payroll & Compliance</h2>
+            <h2 className="PC_Hero_H1 NET_Hero_H1">Payroll & compliance</h2>
             <p className="font-bold mb-6 flex items-center gap-2 subtitle" style={{ fontSize: '1.2rem', color: '#3b82f6' }}>
               <Zap size={24} className="text-blue-600" />
               Built for efficiency, scale, and results
@@ -211,7 +211,7 @@ const PayrollAndCompliancePage = () => {
               processing and organizational security through structured financial engineering.
             </p>
             <Link to="/contact">
-              <button className="PC_Btn">Consult on Payroll Strategy <ArrowRight size={24} /></button>
+              <button className="PC_Btn">Consult on payroll strategy <ArrowRight size={24} /></button>
             </Link>
           </motion.div>
 
@@ -262,7 +262,7 @@ const PayrollAndCompliancePage = () => {
         <div className="PC_Context_Grid">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <span className="PC_Badge">Strategic Foundation</span>
-            <h2 className="NET_Hero_H1 PC_Context_H">Financial Accuracy Protects Corporate Assets</h2>
+            <h2 className="NET_Hero_H1 PC_Context_H">Financial accuracy protects corporate assets</h2>
             <p className="PC_Context_P">
               Business security and credibility depend on predictable management of regional labor laws and financial processing.
               Poorly managed systems lead to legal debt, financial penalty, and loss of trust. CHN helps maintain structured, secure, and highly accurate business environments.
@@ -278,7 +278,7 @@ const PayrollAndCompliancePage = () => {
       {/* SECTION 3: DOMAINS */}
       <section className="PC_Domains">
         <span className="PC_Badge">Core Domains</span>
-        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Consolidated Management</h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Consolidated management</h2>
 
         <div className="PC_Domains_Grid">
           {[
@@ -307,7 +307,7 @@ const PayrollAndCompliancePage = () => {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
             <span className="PC_Badge">Business Impact</span>
-            <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Benefits of Structured Control</h2>
+            <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Benefits of structured control</h2>
             <div className="mt-12">
               {[
                 { title: "Predictable Tax Management", desc: "Error-free tax processing and institutional institutional health." },
@@ -331,7 +331,7 @@ const PayrollAndCompliancePage = () => {
       {/* SECTION 5: FRAMEWORK */}
       <section className="PC_Framework">
         <span className="PC_Badge">Compliance Framework</span>
-        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Strategic Stages</h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Strategic stages</h2>
         <div className="PC_Framework_Grid">
           {[
             { num: "01", h: "Audit & Scoping", icon: <Search size={30} />, p: "Review existing payroll logs, compliance status, and obligations." },
@@ -357,12 +357,12 @@ const PayrollAndCompliancePage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Ensure Financial Integrity and Corporate Control</h2>
+            <h2 className="NET_Hero_H1 text-white">Ensure financial integrity and corporate control</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with us to understand how structured systems <br /> support long-term financial scalability.            </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="PC_Btn" style={{ margin: '0 auto' }}>Contact For Strategy <ArrowRight size={24} /></button>
+                <button className="PC_Btn" style={{ margin: '0 auto' }}>Contact for strategy <ArrowRight size={24} /></button>
               </Link>
             </div>
           </motion.div>

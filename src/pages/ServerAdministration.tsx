@@ -239,7 +239,7 @@ const ServerAdministrationPage = () => {
             className="SA_Hero_Content"
           >
             <span className="SA_Badge">Infrastructure Lifecycle</span>
-            <h2 className="SA_Hero_H1 NET_Hero_H1">Elite Server Management</h2>
+            <h2 className="SA_Hero_H1 NET_Hero_H1">Elite server management</h2>
             <p className="SA_Tagline">Stabilizing mission-critical environments with precision administration.</p>
             <p className="SA_Hero_P">
               CHN Technologies engineers resilient server frameworks designed for 99.9% availability,
@@ -247,7 +247,7 @@ const ServerAdministrationPage = () => {
             </p>
             <div className="SA_Btn_Group">
               <Link to="/contact">
-                <button className="SA_Primary_Btn">Consult an Architect <ArrowRight size={20} /></button>
+                <button className="SA_Primary_Btn">Consult an architect <ArrowRight size={20} /></button>
               </Link>
             </div>
           </motion.div>
@@ -317,7 +317,7 @@ const ServerAdministrationPage = () => {
         <div className="SA_Cap_Inner">
           <div style={{ marginBottom: '100px' }}>
             <span className="SA_Badge">Technical Authority</span>
-            <h2 className="NET_Hero_H1">Engineered for Reliability</h2>
+            <h2 className="NET_Hero_H1">Engineered for reliability</h2>
             <p className="SA_Hero_P" style={{ fontSize: '1.25rem' }}>
               Downtime isn't just a delay; it's a deficit. CHN Technologies replaces fragile legacy setups with audited server governance models designed for 99.999% uptime across hybrid ecosystems.
             </p>
@@ -371,7 +371,7 @@ const ServerAdministrationPage = () => {
           </motion.div>
           <div className="SA_Outcome_Content">
             <span className="SA_Badge">Value Delivery</span>
-            <h2 className="NET_Hero_H1">Strategic Outcomes of Elite Management</h2>
+            <h2 className="NET_Hero_H1">Strategic outcomes of elite management</h2>
 
             <div className="Outcome_List">
               {[
@@ -401,7 +401,7 @@ const ServerAdministrationPage = () => {
       <section className="SA_Flow">
         <div className="SA_Flow_Inner">
           <span className="SA_Badge">Operational Lifecycle</span>
-          <h2 className="NET_Hero_H1">The CHN Execution Framework</h2>
+          <h2 className="NET_Hero_H1">The CHN execution framework</h2>
 
           <div className="SA_Flow_Grid">
             {[
@@ -430,13 +430,13 @@ const ServerAdministrationPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Ready for a More Reliable Server Infrastructure?</h2>
+            <h2 className="NET_Hero_H1 text-white">Ready for a more reliable server infrastructure?</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Stop managing servers. Start scaling your business with infrastructure that thinks ahead.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="SA_Primary_Btn">Launch Security Audit</button>
+                <button className="SA_Primary_Btn">Launch security audit</button>
               </Link>
             </div>
           </motion.div>

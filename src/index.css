@@ -112,7 +112,6 @@ font-family: Figtree, Helvetica, sans-serif;
   h2, .NET_Hero_H1 {
     @apply font-extrabold tracking-tight text-3xl md:text-4xl;
     line-height: 1.2;
-    text-transform: none; /* Prevent CSS from overriding manually set Title Case */
   }
 
   h2 {
@@ -123,7 +122,7 @@ font-family: Figtree, Helvetica, sans-serif;
     @apply mb-[25px];
   }
 
-  h1, h3, h4, h5, h6 {
+  h4, h5, h6 {
     text-transform: none; /* Ensure no inherited or global text-transform affects headings */
   }
 
@@ -171,6 +170,24 @@ font-family: Figtree, Helvetica, sans-serif;
   a,
   button {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  button, 
+  .CN_Primary_Btn, 
+  .WM_Primary_Btn, 
+  .TD_Primary_Btn, 
+  .SA_Primary_Btn, 
+  .PC_Btn, 
+  .NET_Primary_Btn, 
+  .LCS_Primary_Btn, 
+  .EUC_Primary_Btn, 
+  .DA_Primary_Btn, 
+  .CS_Primary_Btn,
+  .AD_Primary_Btn,
+  .AU_Primary_Btn,
+  .CR_Search_Btn {
+    display: inline-flex;
+    align-items: center;
   }
 }
 

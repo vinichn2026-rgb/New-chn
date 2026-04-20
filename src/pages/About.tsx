@@ -195,7 +195,7 @@ const AboutPage = () => {
               transition: 'all 0.3s',
             }}>
               <ArrowRight size={18} />
-              Read More
+              Read more
             </a>
           </motion.div>
         </div>
@@ -213,7 +213,7 @@ const AboutPage = () => {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="ABOUT_Identity_Content text-left">
             <span className="ABOUT_Badge">OVERVIEW</span>
-            <h2 className="NET_Hero_H1 ABOUT_Identity_H2">Strengthening Operations Through Structured Solutions</h2>
+            <h2 className="NET_Hero_H1 ABOUT_Identity_H2">Strengthening operations through structured solutions</h2>
             <p className="ABOUT_Identity_P">CHN Technologies helps businesses strengthen operations through structured technology services, digital solutions, and workforce-focused consulting. Our work is centred on creating stable systems and long-term operational confidence.</p>
 
             <div className="ABOUT_Feature_Box">
@@ -231,7 +231,7 @@ const AboutPage = () => {
       <section className="ABOUT_Focus">
         <div className="max-w-7xl mx-auto text-center lg:text-left">
           <span className="ABOUT_Badge">CORE ECOSYSTEM</span>
-          <h2 className="NET_Hero_H1 ABOUT_Identity_H2" style={{ marginBottom: 0 }}>What We Work On</h2>
+          <h2 className="NET_Hero_H1 ABOUT_Identity_H2" style={{ marginBottom: 0 }}>What we work on</h2>
         </div>
         <div className="ABOUT_Focus_Grid">
           {[
@@ -356,7 +356,7 @@ const AboutPage = () => {
             <h2 className="NET_Hero_H1 ABOUT_Final_H">Work With a Partner That Values <br /> Structure and Stability</h2>
             <p className="ABOUT_Identity_P text-center mb-12">Connect with CHN Technologies to learn how our capabilities <br /> can support your organisation's long-term objectives.</p>
             <Link to="/contact">
-              <button className="ABOUT_Btn">Contact Our Team <ArrowRight size={24} /></button>
+              <button className="ABOUT_Btn">Contact our team <ArrowRight size={24} /></button>
             </Link>
           </motion.div>
         </div>

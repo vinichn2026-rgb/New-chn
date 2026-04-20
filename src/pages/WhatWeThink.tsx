@@ -257,7 +257,7 @@ const WhatWeThink = () => {
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
             className="WT_Hero_H1 NET_Hero_H1"
           >
-            Empowering Enterprises With <span className="text-blue-500">Smart Tech</span>
+            Empowering enterprises with <span className="text-blue-500">smart tech</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}
@@ -272,7 +272,7 @@ const WhatWeThink = () => {
       {/* SECTION 2: CONTEXT */}
       <section className="WT_Context">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="NET_Hero_H1 WT_Context_H1">Simplifying Operations, Driving Measurable Growth</h2>
+          <h2 className="NET_Hero_H1 WT_Context_H1">Simplifying operations, driving measurable growth</h2>
           <p className="WT_Context_P">
             At CHN Technologies, we believe that clear thinking leads to better results.
             We combine innovation, strategy, and execution to bridge the gap between technical potential
@@ -284,7 +284,7 @@ const WhatWeThink = () => {
       {/* SECTION 3: CORE VALUES */}
       <section className="WT_Values">
         <span className="WT_Badge" style={{ marginBottom: '15px' }}>Foundational Pillars</span>
-        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b', margin: 0 }}>Values That Drive Us</h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b', margin: 0 }}>Values that drive us</h2>
 
         <div className="WT_Values_Grid">
           {coreValues.map((value, i) => (
@@ -309,12 +309,12 @@ const WhatWeThink = () => {
         </div>
         <div className="WT_Framework_Content">
           <span className="WT_Badge">OUR VISION & MISSION</span>
-          <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Strategic Long-Term <br /> Objectives</h2>
+          <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Strategic long-term <br /> objectives</h2>
 
           <div className="WT_Block">
             <h3 className="WT_Block_Title">
               <div className="WT_Block_Circle"><Target size={22} /></div>
-              Our Mission
+              Our mission
             </h3>
             <p className="WT_Block_P">
               To simplify operations, enrich workforce capabilities, and drive organisational growth
@@ -326,7 +326,7 @@ const WhatWeThink = () => {
           <div className="WT_Block">
             <h3 className="WT_Block_Title">
               <div className="WT_Block_Circle"><Lightbulb size={22} /></div>
-              Our Vision
+              Our vision
             </h3>
             <p className="WT_Block_P">
               To become a leading force in empowering businesses through people-first consulting
@@ -337,7 +337,7 @@ const WhatWeThink = () => {
 
           <Link to="/contact">
             <button className="bg-[#3b82f6] text-white px-10 py-5 rounded-full font-bold shadow-xl hover:bg-[#1a2b4b] transition-all flex items-center gap-3">
-              Explore Our Services <ArrowRight size={20} />
+              Explore our services <ArrowRight size={20} />
             </button>
           </Link>
         </div>

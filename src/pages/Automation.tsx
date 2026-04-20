@@ -223,7 +223,7 @@ const AutomationPage = () => {
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold tracking-widest border border-blue-100 uppercase">
                 Digital Transformation             </span>
             </div>
-            <h2 className="AU_Hero_H1 NET_Hero_H1">Process Automation Services</h2>
+            <h2 className="AU_Hero_H1 NET_Hero_H1">Process automation services</h2>
             <p className="AU_Tagline">Eliminating operational friction through intelligent, high-fidelity automation.</p>
             {/* <p className="AU_Hero_P">
               CHN Technologies provides structured automation services that ensure speed,
@@ -232,7 +232,7 @@ const AutomationPage = () => {
             </p> */}
             <div className="AU_Btn_Group">
               <Link to="/contact">
-                <button className="AU_Primary_Btn">Consult an Automation Specialist</button>
+                <button className="AU_Primary_Btn">Consult an automation specialist</button>
               </Link>
             </div>
           </motion.div>
@@ -250,7 +250,7 @@ const AutomationPage = () => {
       <section className="AU_Context">
         <div className="AU_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 AU_Context_H1">Repetitive Manual Work Is a Silent Tax on Enterprise Growth</h2>
+            <h2 className="NET_Hero_H1 AU_Context_H1">Repetitive manual work is a silent tax on enterprise growth</h2>
             <p className="AU_Context_P">
               Business productivity depends on how much of your resource capacity is focused on high-value strategy versus low-value manual processing.
               Poorly automated or manual workflows lead to operational debt, human error, and reduced organizational speed.
@@ -264,27 +264,27 @@ const AutomationPage = () => {
       <section className="AU_Cap_Section">
         <div className="AU_Cap_Inner">
           <span className="AU_Badge">Core Capabilities</span>
-          <h2 className="NET_Hero_H1">Full-Spectrum Digital Automation</h2>
+          <h2 className="NET_Hero_H1">Full-spectrum digital automation</h2>
 
           <div className="AU_Cap_Grid">
             {[
               {
-                title: "RPA Solutions",
+                title: "RPA solutions",
                 icon: <Bot size={28} />,
                 desc: "Robotic Process Automation to handle repetitive, manual tasks with high speed and zero error."
               },
               {
-                title: "Workflow Automation",
+                title: "Workflow automation",
                 icon: <Workflow size={28} />,
                 desc: "Streamlining end-to-end business processes through intelligent digital sequencing."
               },
               {
-                title: "IT Automation",
+                title: "IT automation",
                 icon: <RefreshCw size={28} />,
                 desc: "Automating infrastructure management, scaling, and recovery for high-performance uptime."
               },
               {
-                title: "AI-Driven Logic",
+                title: "AI-driven logic",
                 icon: <Cpu size={28} />,
                 desc: "Integrating machine learning models to provide semi-autonomous decision-making at scale."
               }
@@ -311,14 +311,14 @@ const AutomationPage = () => {
           </div>
           <div className="AU_Outcome_Content">
             <span className="AU_Badge">Strategic Outcomes</span>
-            <h2 className="NET_Hero_H1">Benefits of High-Fidelity Automation</h2>
+            <h2 className="NET_Hero_H1">Benefits of high-fidelity automation</h2>
 
             <div className="Outcome_List">
               {[
-                { title: "Improved Process Velocity", desc: "Drastic reduction in process completion times through parallel multi-thread automation." },
-                { title: "Optimal Resource Reallocation", desc: "Free up workforce capacity for high-value strategic work rather than data entry." },
-                { title: "Predictable Operational Accuracy", desc: "Systematic elimination of manual and human errors in mission-critical workflows." },
-                { title: "Scalable Task Architecture", desc: "Automation environments that grow with your organizational complexity and volume." }
+                { title: "Improved process velocity", desc: "Drastic reduction in process completion times through parallel multi-thread automation." },
+                { title: "Optimal resource reallocation", desc: "Free up workforce capacity for high-value strategic work rather than data entry." },
+                { title: "Predictable operational accuracy", desc: "Systematic elimination of manual and human errors in mission-critical workflows." },
+                { title: "Scalable task architecture", desc: "Automation environments that grow with your organizational complexity and volume." }
               ].map((item, i) => (
                 <div key={i} className="Outcome_Item">
                   <div className="Outcome_Check"><CheckCircle size={16} /></div>
@@ -337,7 +337,7 @@ const AutomationPage = () => {
       <section className="AU_Flow">
         <div className="AU_Flow_Inner">
           <span className="AU_Badge">Productivity Framework</span>
-          <h2 className="NET_Hero_H1">Strategic Approach</h2>
+          <h2 className="NET_Hero_H1">Strategic approach</h2>
 
           <div className="AU_Flow_Grid">
             {[
@@ -366,14 +366,14 @@ const AutomationPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Eliminate Operational Friction Today</h2>
+            <h2 className="NET_Hero_H1 text-white">Eliminate operational friction today</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how intelligent automation solutions
               can optimize your enterprise resource allocation and operational speed.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="AU_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Contact an Automation Specialist</button>
+                <button className="AU_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Contact an automation specialist</button>
               </Link>
             </div>
           </motion.div>

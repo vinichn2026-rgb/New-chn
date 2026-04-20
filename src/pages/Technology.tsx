@@ -213,7 +213,7 @@ const TechnologyPage = () => {
                         <span>/</span>
                         <span style={{ color: '#60a5fa' }}>Technology</span>
                     </div>
-                    <div className="TECH_Badge">What We Do</div>
+                    <div className="TECH_Badge">What we do</div>
                     <h2 className="TECH_Hero_Title NET_Hero_H1">
                         Technology<br />
                         <span style={{ color: '#60a5fa' }}>Services</span>
@@ -264,7 +264,7 @@ const TechnologyPage = () => {
                                     transition: 'all 0.3s',
                                 }}
                             >
-                                View All <ArrowUpRight size={14} />
+                                View all <ArrowUpRight size={14} />
                             </Link>
                         </div>
 
@@ -326,7 +326,7 @@ const TechnologyPage = () => {
                         textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0,
                         transition: 'all 0.3s',
                     }}>
-                        Talk to Us <ArrowUpRight size={16} />
+                        Talk to us <ArrowUpRight size={16} />
                     </Link>
                 </motion.div>
             </div>

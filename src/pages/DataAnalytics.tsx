@@ -240,7 +240,7 @@ const DataAnalyticsPage = () => {
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold tracking-widest border border-blue-100 uppercase">
                 Digital Intelligence              </span>
             </div>
-            <h2 className="DA_Hero_H1 NET_Hero_H1">Data Analytics Services</h2>
+            <h2 className="DA_Hero_H1 NET_Hero_H1">Data analytics services</h2>
             <p className="DA_Tagline">Mission-critical insights driven by high-fidelity data and predictable modeling.</p>
             <p className="DA_Hero_P">
               CHN Technologies provides structured data analytics services that ensure visibility,
@@ -249,7 +249,7 @@ const DataAnalyticsPage = () => {
             </p>
             <div className="DA_Btn_Group">
               <Link to="/contact">
-                <button className="DA_Primary_Btn">Consult a Data Strategist</button>
+                <button className="DA_Primary_Btn">Consult a data strategist</button>
               </Link>
             </div>
           </motion.div>
@@ -299,7 +299,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Context">
         <div className="DA_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 DA_Context_H1">Data is the Primary Driver of Strategic Competitive Advantage</h2>
+            <h2 className="NET_Hero_H1 DA_Context_H1">Data is the primary driver of strategic competitive advantage</h2>
             <p className="DA_Context_P">
               Business productivity depends on how much of your resource capacity is focused on high-value strategy versus low-value manual processing.
               Poorly automated or manual workflows lead to operational debt, human error, and reduced organizational speed.
@@ -313,7 +313,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Cap_Section">
         <div className="DA_Cap_Inner">
           <span className="DA_Badge">Analytical Domains</span>
-          <h2 className="NET_Hero_H1">Full Cycle Analytical Capabilities</h2>
+          <h2 className="NET_Hero_H1">Full cycle analytical capabilities</h2>
 
           <div className="DA_Cap_Grid">
             {[
@@ -360,7 +360,7 @@ const DataAnalyticsPage = () => {
           </div>
           <div className="DA_Outcome_Content">
             <span className="DA_Badge">Strategic Benefits</span>
-            <h2 className="NET_Hero_H1">Improved Decision Precision and Velocity</h2>
+            <h2 className="NET_Hero_H1">Improved decision precision and velocity</h2>
 
             <div className="Outcome_List">
               {[
@@ -386,7 +386,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Flow">
         <div className="DA_Flow_Inner">
           <span className="DA_Badge">Insight Framework</span>
-          <h2 className="NET_Hero_H1">Data-to-Insight Journey</h2>
+          <h2 className="NET_Hero_H1">Data-to-insight journey</h2>
 
           <div className="DA_Flow_Grid">
             {[
@@ -415,14 +415,14 @@ const DataAnalyticsPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Convert Your Data into Strategic Revenue</h2>
+            <h2 className="NET_Hero_H1 text-white">Convert your data into strategic revenue</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how high-fidelity analytical models
               can optimize your enterprise decision-making and operational growth.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="DA_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Contact a Data Strategist</button>
+                <button className="DA_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Contact a data strategist</button>
               </Link>
             </div>
           </motion.div>

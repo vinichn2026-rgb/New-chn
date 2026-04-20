@@ -269,7 +269,7 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
             </p>
             <div className="AD_Btn_Group">
               <Link to="/contact">
-                <button className="AD_Primary_Btn">Start Your Application Project</button>
+                <button className="AD_Primary_Btn">Start your application project</button>
               </Link>
             </div>
           </motion.div>
@@ -443,7 +443,7 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
             can support operational efficiency and digital growth.
           </p>
           <Link to="/contact">
-            <button className="AD_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Request a Consultation</button>
+            <button className="AD_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Request a consultation</button>
           </Link>
         </div>
       </section>

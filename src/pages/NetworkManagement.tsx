@@ -296,7 +296,7 @@ const NetworkManagementPage = () => {
           >
             <span className="NET_Badge">Technology Services</span>
             <h2 className="NET_Hero_H1">
-              Network Management Services
+              Network management services
             </h2>
 
             <p className="NET_Tagline">Reliable, secure, and high-performance networks.</p>
@@ -305,7 +305,7 @@ const NetworkManagementPage = () => {
               controlled access, and continuous performance across business environments.
             </p>
             <Link to="/contact">
-              <button className="NET_Primary_Btn">Talk to a Specialist</button>
+              <button className="NET_Primary_Btn">Talk to a specialist</button>
             </Link>
           </motion.div>
 
@@ -322,7 +322,7 @@ const NetworkManagementPage = () => {
       <section className="NET_Cap_Section">
         <div className="NET_Cap_Inner">
           <span className="NET_Badge">What Our Network Management Covers</span>
-          <h2 className="NET_Hero_H1">Structured Connectivity For Business Continuity</h2>
+          <h2 className="NET_Hero_H1">Structured connectivity for business continuity</h2>
 
           <div className="NET_Cap_Grid">
             {[
@@ -369,7 +369,7 @@ const NetworkManagementPage = () => {
           </div>
           <div className="NET_Outcome_Content" style={{ textAlign: 'left' }}>
             <span className="NET_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1">Outcomes of Structured Management</h2>
+            <h2 className="NET_Hero_H1">Outcomes of structured management</h2>
 
             <div className="Outcome_List">
               {[
@@ -395,7 +395,7 @@ const NetworkManagementPage = () => {
       <section className="NET_Flow">
         <div className="NET_Flow_Inner">
           <span className="NET_Badge">Execution Model</span>
-          <h2 className="NET_Hero_H1">Our Network Management Approach</h2>
+          <h2 className="NET_Hero_H1">Our network management approach</h2>
 
           <motion.div
             initial="hidden"
@@ -442,13 +442,13 @@ const NetworkManagementPage = () => {
       {/* LAYOUT 6 – TRUST & ASSURANCE */}
       <section className="NET_Trust">
         <div className="NET_Trust_Inner">
-          <h2 className="NET_Hero_H1">Built for Reliability and Control</h2>
+          <h2 className="NET_Hero_H1">Built for reliability and control</h2>
           <p className="NET_Hero_P">
             CHN Technologies manages networks with a focus on predictability, accountability, and long-term stability.
             Our services align with operational requirements and compliance needs.
           </p>
           <Link to="/contact">
-            <button className="NET_Primary_Btn" style={{ marginTop: '20px' }}>Contact a Network Specialist</button>
+            <button className="NET_Primary_Btn" style={{ marginTop: '20px' }}>Contact a network specialist</button>
           </Link>
         </div>
       </section>

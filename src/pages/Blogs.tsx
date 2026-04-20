@@ -27,7 +27,7 @@ const CHNInsights = () => {
       id: 1,
       image: "/images/casestudy-cloud.jpg",
       tag: "Operations",
-      title: "Technology Operations & Management",
+      title: "Technology operations & management",
       desc: "Deep-dives into managing enterprise networks, systems, security, and infrastructure effectively for long-term scalability and operational stability.",
       author: "IT Strategy Lead",
       date: "Oct 24, 2026"
@@ -54,7 +54,7 @@ const CHNInsights = () => {
       id: 4,
       image: "/images/blog-collaboration.jpg",
       tag: "Workforce",
-      title: "Workforce & Global Compliance Standards",
+      title: "Workforce & global compliance standards",
       desc: "Understanding workforce structures, payroll practices, and statutory compliance for HR leaders managing complex multinational operations and regulatory shifts.",
       author: "HR Advisory Lead",
       date: "Sep 12, 2026"
@@ -63,7 +63,7 @@ const CHNInsights = () => {
       id: 5,
       image: "/images/service-consulting.jpg",
       tag: "Strategy",
-      title: "Sustainable Strategy and Future-Fit Growth",
+      title: "Sustainable strategy and future-fit growth",
       desc: "Analysing how business owners, IT decision-makers, and professionals can leverage practical technology strategies to drive sustainable organisational expansion.",
       author: "Operations Lead",
       date: "Aug 30, 2026"
@@ -72,7 +72,7 @@ const CHNInsights = () => {
       id: 6,
       image: "/images/blog-featured.jpg",
       tag: "Quality",
-      title: "Knowledge Over Frequency: An Editorial",
+      title: "Knowledge over frequency: an editorial",
       desc: "Why we prioritise relevance and clarity over volume, ensuring every piece of content remains useful and actionable over long-term strategic horizons.",
       author: "Editorial Board",
       date: "Aug 22, 2026"
@@ -310,7 +310,7 @@ const CHNInsights = () => {
         <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="BLOG_Hero_Bg" />
         <div className="BLOG_Hero_Content">
           <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="BLOG_Badge uppercase">Corporate Insights</motion.span>
-          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1 NET_Hero_H1">Knowledge-Led <br /> <span className="text-blue-500">Perspectives</span></motion.h2>
+          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1 NET_Hero_H1">Knowledge-led <br /> <span className="text-blue-500">perspectives</span></motion.h2>
 
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.4 }} className="BLOG_Search_Box">
             <Search size={22} className="text-blue-500 ml-4" />
@@ -359,7 +359,7 @@ const CHNInsights = () => {
               </div>
               <div className="BLOG_Featured_Content">
                 <span className="BLOG_Badge uppercase">Editorial Focus</span>
-                <h2 className="NET_Hero_H1 BLOG_Featured_H">Insights From Our Strategic Advisors</h2>
+                <h2 className="NET_Hero_H1 BLOG_Featured_H">Insights from our strategic advisors</h2>
                 <p className="text-slate-500 font-medium text-lg leading-relaxed mb-10">
                   Comprehensive perspectives on technology, people, and unified corporate processes
                   drawn from real-world digital flagship engagements.
@@ -379,7 +379,7 @@ const CHNInsights = () => {
 
           <div className="flex items-center justify-between mb-12">
             <h3 className="text-2xl font-black text-[#1a2b4b] tracking-tight">
-              {activeCategory} Insights
+              {activeCategory} insights
             </h3>
             <p className="text-slate-400 font-bold text-xs tracking-widest">Showing {filteredInsights.length} results</p>
           </div>
@@ -420,13 +420,13 @@ const CHNInsights = () => {
           {filteredInsights.length === 0 && (
             <div className="BLOG_Empty">
               <div className="BLOG_Empty_Icon"><Search size={40} /></div>
-              <h4 className="text-2xl font-black text-[#1a2b4b] mb-4">No Results Found</h4>
+              <h4 className="text-2xl font-black text-[#1a2b4b] mb-4">No results found</h4>
               <p className="text-slate-400 font-medium mb-8">Refine your search term or select a different category.</p>
               <button
                 className="text-blue-500 font-black text-sm tracking-widest"
                 onClick={() => { setActiveCategory('All'); setSearchQuery(''); }}
               >
-                Reset All Filters
+                Reset all filters
               </button>
             </div>
           )}
@@ -435,14 +435,14 @@ const CHNInsights = () => {
 
       {/* SECTION 4: CTA */}
       <section style={{ padding: '50px 5%', textAlign: 'center', background: '#f8fafc' }}>
-        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Stay Informed with <span className="text-blue-500">Expert Clarity</span></h2>
+        <h2 className="NET_Hero_H1" style={{ color: '#1a2b4b' }}>Stay informed with <span className="text-blue-500">expert clarity</span></h2>
         <p className="text-slate-500 font-medium text-lg max-w-2xl mx-auto mb-12">
           Gain access to refined perspectives that matter to business owners,
           IT decision-makers, and industry professionals.
         </p>
         <Link to="/contact">
           <button className="bg-[#0060ff] text-white px-10 py-5 rounded-full font-black text-md tracking-widest shadow-2xl hover:bg-[#1a2b4b] hover:scale-105 transition-all">
-            Inquire For Insights
+            Inquire for insights
           </button>
         </Link>
       </section>

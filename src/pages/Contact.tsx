@@ -190,7 +190,7 @@ const ContactPage = () => {
 
                 .CN_Hero_Content { flex: 1.2; max-width: 650px; z-index: 10; }
                 .CN_Hero_Title
-                 { color: #002e5b; line-height: 1.1; margin-bottom: 25px; letter-spacing: -0.03em; text-transform:capitalize;}
+                 { color: #002e5b; line-height: 1.1; margin-bottom: 25px; letter-spacing: -0.03em;}
                 .CN_Hero_Subtitle { color: #0060ff; font-weight: 700; margin-bottom: 30px; line-height: 1.3; }
                 .CN_Hero_Desc { color: #475569; line-height: 1.8; margin-bottom: 40px; font-weight: 450; }
 .CN_Hero_P{ont-size: 2.1rem;
@@ -280,7 +280,7 @@ const ContactPage = () => {
 
                 /* --- SECTION 2: WHY CONTACT --- */
                 .CN_WhyReach { padding: 100px 5%; background: #ffffff; text-align: center; }
-                .CN_Section_Title { color: #002e5b; margin-bottom: 25px; letter-spacing: -0.02em; text-transform: capitalize; }
+                .CN_Section_Title { color: #002e5b; margin-bottom: 25px; letter-spacing: -0.02em; }
                 .CN_Section_Desc { max-width: 800px; margin: 0 auto 60px; color: #64748b; line-height: 1.7; font-weight: 450; }
                 
                 .CN_Bullet_Grid { 
@@ -313,7 +313,7 @@ const ContactPage = () => {
                 /* FORM (DARK COLOR FROM SAMPLE) */
                 .CN_Form_Box { background: #0d1117; color: white; padding: 60px; border-radius: 50px; box-shadow: 0 40px 100px rgba(0,0,0,0.15); }
                 @media (max-width: 640px) { .CN_Form_Box { padding: 30px; border-radius: 30px; } }
-                .CN_Form_H {  margin-bottom: 15px; text-transform: capitalize; letter-spacing: -0.02em; color:white; }
+                .CN_Form_H {  margin-bottom: 15px; letter-spacing: -0.02em; color:white; }
                 .CN_Form_P { color: #94a3b8; margin-bottom: 45px; line-height: 1.6; font-size: 1rem; }
 
                 .CN_Input { 
@@ -328,7 +328,7 @@ const ContactPage = () => {
 
                 .CN_Primary_Btn {
                   width: 100%; background: #0060ff; color: white; padding: 22px; border-radius: 100px; 
-                  font-weight: 800; font-size: 1.1rem; border: none; text-transform:capitalize; letter-spacing: 2px;
+                  font-weight: 800; font-size: 1.1rem; border: none; letter-spacing: 2px;
                   cursor: pointer; transition: all 0.4s; box-shadow: 0 20px 40px rgba(0,96,255,0.25);
                   display: flex; align-items: center; justify-content: center; gap: 15px;
                 }
@@ -419,7 +419,7 @@ const ContactPage = () => {
                 <div className="CN_Hero_Inner">
                     <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="CN_Hero_Content">
                         <span className="text-[#0060ff] font-bold tracking-[0.1em] uppercase mb-6 block">Strategic Engagement</span>
-                        <h2 className="NET_Hero_H1 CN_Hero_Title">contact us</h2>
+                        <h2 className="NET_Hero_H1 CN_Hero_Title">Contact us</h2>
                         <p className="CN_Hero_Subtitle subtitle">Conversations lead to clarity. Let’s start with yours</p>
                         <p className="CN_Hero_P">               Whether you need digital solutions, expert consulting, or a new career path, CHN Technologies is ready to help. Reach out today to solve your challenges and start a structured engagement.
                         </p>
@@ -472,7 +472,7 @@ const ContactPage = () => {
                     <AnimatePresence mode="wait">
                         {!isSubmitted ? (
                             <motion.div key="form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                                <h2 className="NET_Hero_H1 CN_Form_H">share your <span className="text-blue-500">requirement</span></h2>
+                                <h2 className="NET_Hero_H1 CN_Form_H">Share your <span className="text-blue-500">requirement</span></h2>
                                 <p className="CN_Form_P subtitle">
                                     Provide a brief overview of your requirement, and our team will connect with you to understand next steps.
                                     Clear information helps us respond faster and more effectively.
@@ -491,7 +491,7 @@ const ContactPage = () => {
                                     </select>
                                     <textarea name="message" placeholder="Requirement Details" rows={5} required className="CN_Input md:col-span-2" value={formData.message} onChange={handleChange}></textarea>
                                     <button type="submit" disabled={isSubmitting} className="CN_Primary_Btn md:col-span-2">
-                                        {isSubmitting ? 'Processing Intake...' : 'Send Message'} <Send size={20} />
+                                        {isSubmitting ? 'Processing intake...' : 'Send message'} <Send size={20} />
                                     </button>
                                 </form>
                             </motion.div>
@@ -500,24 +500,24 @@ const ContactPage = () => {
                                 <div className="w-24 h-24 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400">
                                     <CheckCircle2 size={60} />
                                 </div>
-                                <h3 className="text-3xl font-black">Intake Confirmed</h3>
+                                <h3 className="text-3xl font-black">Intake confirmed</h3>
                                 <p className="text-slate-400 font-medium">Requirement logged. Our strategic response team will review and contact you shortly.</p>
-                                <button onClick={() => setIsSubmitted(false)} className="text-blue-500 font-bold uppercase text-sm underline underline-offset-8">Send New Intake</button>
+                                <button onClick={() => setIsSubmitted(false)} className="text-blue-500 font-bold text-sm underline underline-offset-8">Send new intake</button>
                             </motion.div>
                         )}
                     </AnimatePresence>
                 </motion.div>
 
                 <div className="CN_Info_Box">
-                    <h2 className="NET_Hero_H1 CN_Hero_Subtitle subtitle capitalize" style={{ marginBottom: '50px' }}>how to connect with us</h2>
+                    <h2 className="NET_Hero_H1 CN_Hero_Subtitle subtitle" style={{ marginBottom: '50px' }}>How to connect with us</h2>
 
                     <div className="space-y-4">
                         {[
-                            { icon: <Globe size={28} />, title: "Business Enquiries", text: "For technology, digital, and consulting discussions." },
-                            { icon: <Users size={28} />, title: "Consulting & Advisory", text: "For workforce management, payroll & compliance, and training-related discussions." },
+                            { icon: <Globe size={28} />, title: "Business enquiries", text: "For technology, digital, and consulting discussions." },
+                            { icon: <Users size={28} />, title: "Consulting & advisory", text: "For workforce management, payroll & compliance, and training-related discussions." },
                             { icon: <Activity size={28} />, title: "Careers", text: "For job applications, internships, and collaboration enquiries." },
-                            { icon: <MapPin size={28} />, title: "Head Office", text: "CHN Technologies Pvt Ltd, No. 28, 4th Main Rd, CIT Nagar East, Chennai - 600035" },
-                            { icon: <MapPin size={28} />, title: "Branch Office", text: "AAA Towers, Avinashi Rd, Near Hope College, Coimbatore - 641 004" }
+                            { icon: <MapPin size={28} />, title: "Head office", text: "CHN Technologies Pvt Ltd, No. 28, 4th Main Rd, CIT Nagar East, Chennai - 600035" },
+                            { icon: <MapPin size={28} />, title: "Branch office", text: "AAA Towers, Avinashi Rd, Near Hope College, Coimbatore - 641 004" }
                         ].map((info, i) => (
                             <motion.div key={i} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="CN_Info_Item">
                                 <div className="CN_Info_Icon">{info.icon}</div>
@@ -534,13 +534,13 @@ const ContactPage = () => {
             {/* LAYOUT 5 – RESPONSE & ENGAGEMENT EXPECTATION */}
             <section className="CN_Expectation">
                 <span className="text-[#0060ff] font-bold tracking-[0.3em] uppercase mb-6 block">Structured Response</span>
-                <h2 className="NET_Hero_H1 CN_Section_Title">what happens after you contact us</h2>
+                <h2 className="NET_Hero_H1 CN_Section_Title">What happens after you contact us</h2>
 
                 <div className="CN_Flow">
                     {[
-                        { icon: <Search size={30} />, head: "Strategic Review", p: "Your requirement is analyzed by the relevant sector leads for technical and business alignment." },
-                        { icon: <Linkedin size={30} />, head: "Contextual Audit", p: "We may reach out to gather deeper context to ensure our response is Purposeful and precise." },
-                        { icon: <CheckCircle2 size={30} />, head: "Structured Response", p: "A formal proposal, consultation, or discussion is scheduled to define the roadmap forward." }
+                        { icon: <Search size={30} />, head: "Strategic review", p: "Your requirement is analyzed by the relevant sector leads for technical and business alignment." },
+                        { icon: <Linkedin size={30} />, head: "Contextual audit", p: "We may reach out to gather deeper context to ensure our response is Purposeful and precise." },
+                        { icon: <CheckCircle2 size={30} />, head: "Structured response", p: "A formal proposal, consultation, or discussion is scheduled to define the roadmap forward." }
                     ].map((step, i) => (
                         <div key={i} className="CN_Step">
                             <div className="CN_Step_Icon">
@@ -556,7 +556,7 @@ const ContactPage = () => {
             {/* LAYOUT 6 – CLOSING & MAPS */}
             <section className="CN_Map_Section">
                 <div style={{ padding: '80px 0', textAlign: 'center' }}>
-                    <h2 className="NET_Hero_H1 CN_Section_Title">our <span className="text-blue-500">presence</span></h2>
+                    <h2 className="NET_Hero_H1 CN_Section_Title">Our <span className="text-blue-500">presence</span></h2>
                     <p className="CN_Section_Desc" style={{ marginBottom: 0 }}>Discover stability and expertise at our key operational hubs.</p>
                 </div>
 
@@ -629,10 +629,10 @@ const ContactPage = () => {
             <section className="CN_Final">
                 <div className="CN_Final_Max">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                        <h2 className="NET_Hero_H1 CN_Final_H">Start the <span className="text-blue-500">Conversation</span></h2>
+                        <h2 className="NET_Hero_H1 CN_Final_H">Start the <span className="text-blue-500">conversation</span></h2>
                         <p className="CN_Final_P">Contact CHN Technologies to discuss how we can support your organisation or career goals.</p>
                         <a href="#contact-form" style={{ textDecoration: 'none' }}>
-                            <button className="CN_Btn">Get In Touch <ArrowRight size={24} /></button>
+                            <button className="CN_Btn">Get in touch <ArrowRight size={24} /></button>
                         </a>
                     </motion.div>
                 </div>

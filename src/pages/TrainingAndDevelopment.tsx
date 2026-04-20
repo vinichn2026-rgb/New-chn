@@ -239,7 +239,7 @@ const TrainingAndDevelopmentPage = () => {
                 Training & Development
               </span>
             </div>
-            <h2 className="TD_Hero_H1 NET_Hero_H1">Training & Development</h2>
+            <h2 className="TD_Hero_H1 NET_Hero_H1">Training & development</h2>
             <p className="font-bold mb-6 flex items-center gap-2 subtitle" style={{ fontSize: '1.2rem', color: '#3b82f6' }}>
               <Zap size={24} className="text-blue-600" />
               Building a high-performance workforce through structured enterprise learning systems.
@@ -251,7 +251,7 @@ const TrainingAndDevelopmentPage = () => {
             </p>
             <div className="TD_Btn_Group">
               <Link to="/contact">
-                <button className="TD_Primary_Btn">Customize Your Learning Plan</button>
+                <button className="TD_Primary_Btn">Customize your learning plan</button>
               </Link>
             </div>
           </motion.div>
@@ -301,7 +301,7 @@ const TrainingAndDevelopmentPage = () => {
       <section className="TD_Context">
         <div className="TD_Context_Inner">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 TD_Context_H1">Reduced Institutional Knowledge is a Silent Tax on Enterprise Growth</h2>
+            <h2 className="NET_Hero_H1 TD_Context_H1">Reduced institutional knowledge is a silent tax on enterprise growth</h2>
             <p className="TD_Context_P">
               Business performance and innovation depend on how predictably you can manage and expand your institutional workforce knowledge.
               Poorly trained teams lead to technical debt, high turnover, and reduced organizational speed.
@@ -315,7 +315,7 @@ const TrainingAndDevelopmentPage = () => {
       <section className="TD_Cap_Section">
         <div className="TD_Cap_Inner">
           <span className="TD_Badge">Core Domains</span>
-          <h2 className="NET_Hero_H1">Strategic Enterprise Learning Capabilities</h2>
+          <h2 className="NET_Hero_H1">Strategic enterprise learning capabilities</h2>
 
           <div className="TD_Cap_Grid">
             {[
@@ -362,7 +362,7 @@ const TrainingAndDevelopmentPage = () => {
           </div>
           <div className="TD_Outcome_Content">
             <span className="TD_Badge">Business Benefits</span>
-            <h2 className="NET_Hero_H1">Business Benefits of Structured Enterprise Learning</h2>
+            <h2 className="NET_Hero_H1">Business benefits of structured enterprise learning</h2>
 
             <div className="Outcome_List">
               {[
@@ -388,7 +388,7 @@ const TrainingAndDevelopmentPage = () => {
       <section className="TD_Flow">
         <div className="TD_Flow_Inner">
           <span className="TD_Badge">Strategic Framework</span>
-          <h2 className="NET_Hero_H1">Our Strategic Approach</h2>
+          <h2 className="NET_Hero_H1">Our strategic approach</h2>
 
           <div className="TD_Flow_Grid">
             {[
@@ -417,7 +417,7 @@ const TrainingAndDevelopmentPage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Build a High-Performance Workforce</h2>
+            <h2 className="NET_Hero_H1 text-white">Build a high-performance workforce</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured training and development consulting <br />
               can support workforce growth and operational reliability.
@@ -425,7 +425,7 @@ const TrainingAndDevelopmentPage = () => {
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
                 <button className="TD_Primary_Btn" style={{ margin: '0 auto', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                  Contact a Training Specialist <ArrowRight size={24} />
+                  Contact a training specialist <ArrowRight size={24} />
                 </button>
               </Link>
             </div>

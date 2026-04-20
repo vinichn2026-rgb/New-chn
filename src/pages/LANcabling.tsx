@@ -257,7 +257,7 @@ const LanCablingSurveillancePage = () => {
             <div className="LAN_Badge">
               Physical Infrastructure
             </div>
-            <h2 className="LCS_Hero_H1">LAN Cabling & Surveillance</h2>
+            <h2 className="LCS_Hero_H1">LAN cabling & surveillance</h2>
             <p className="LCS_Tagline">Structured cabling and intelligent surveillance systems built for secure and reliable operations.</p>
             <p className="LCS_Hero_P">
               CHN Technologies delivers professional LAN cabling and surveillance solutions that support stable
@@ -266,7 +266,7 @@ const LanCablingSurveillancePage = () => {
             </p>
             <div className="LCS_Btn_Group">
               <Link to="/contact">
-                <button className="LCS_Primary_Btn">Talk to an Infrastructure Specialist</button>
+                <button className="LCS_Primary_Btn">Talk to an infrastructure specialist</button>
               </Link>
             </div>
           </motion.div>
@@ -316,7 +316,7 @@ const LanCablingSurveillancePage = () => {
       <section className="LCS_Cap_Section">
         <div className="LCS_Cap_Inner">
           <div style={{ maxWidth: '800px', margin: '0 auto 60px' }}>
-            <h2 className="NET_Hero_H1">Physical Infrastructure Plays a Critical Role</h2>
+            <h2 className="NET_Hero_H1">Physical infrastructure plays a critical role</h2>
             <p className="LCS_Hero_P">
               Network performance and security depend heavily on physical infrastructure quality.
               Poor cabling and unstructured surveillance lead to connectivity issues and security blind spots.
@@ -325,7 +325,7 @@ const LanCablingSurveillancePage = () => {
           </div>
 
           <span className="LCS_Badge">Core Capabilities</span>
-          <h2 className="NET_Hero_H1">What Our Services Cover</h2>
+          <h2 className="NET_Hero_H1">What our services cover</h2>
 
           <div className="LCS_Cap_Grid">
             {[
@@ -372,7 +372,7 @@ const LanCablingSurveillancePage = () => {
           </div>
           <div className="LCS_Outcome_Content">
             <span className="LCS_Badge">Operational Outcomes</span>
-            <h2 className="NET_Hero_H1">Benefits of Structured Physical Infrastructure</h2>
+            <h2 className="NET_Hero_H1">Benefits of structured physical infrastructure</h2>
 
             <div className="Outcome_List">
               {[
@@ -398,7 +398,7 @@ const LanCablingSurveillancePage = () => {
       <section className="LCS_Flow">
         <div className="LCS_Flow_Inner">
           <span className="LCS_Badge">Delivery Model</span>
-          <h2 className="NET_Hero_H1">Our Delivery Approach</h2>
+          <h2 className="NET_Hero_H1">Our delivery approach</h2>
 
           <div className="LCS_Flow_Grid">
             {[
@@ -435,14 +435,14 @@ const LanCablingSurveillancePage = () => {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-            <h2 className="NET_Hero_H1 text-white">Build a Strong Physical Foundation</h2>
+            <h2 className="NET_Hero_H1 text-white">Build a strong physical foundation</h2>
             <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
               Connect with CHN Technologies to understand how structured cabling and surveillance solutions
               can support secure, reliable, and scalable business environments. Built for order, visibility, and control.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="LCS_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Request a Consultation</button>
+                <button className="LCS_Primary_Btn" style={{ background: '#3b82f6', color: '#fff' }}>Request a consultation</button>
               </Link>
             </div>
           </motion.div>

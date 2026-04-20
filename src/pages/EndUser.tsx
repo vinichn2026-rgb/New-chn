@@ -243,7 +243,7 @@ const EndUserComputingPage = () => {
                         className="EUC_Hero_Content"
                     >
                         <span className="EUC_Badge">Cognitive Workspace</span>
-                        <h2 className="EUC_Hero_H1 NET_Hero_H1">Seamless User Computing</h2>
+                        <h2 className="EUC_Hero_H1 NET_Hero_H1">Seamless user computing</h2>
                         <p className="EUC_Tagline">Frictionless productivity through elite endpoint orchestration.</p>
                         <p className="EUC_Hero_P">
                             CHN Technologies delivers structured end-user computing services that ensure your workforce
@@ -251,7 +251,7 @@ const EndUserComputingPage = () => {
                         </p>
                         <div className="EUC_Btn_Group">
                             <Link to="/contact">
-                                <button className="EUC_Primary_Btn">Talk to an EUC Expert <ArrowRight size={20} /></button>
+                                <button className="EUC_Primary_Btn">Talk to an EUC expert <ArrowRight size={20} /></button>
                             </Link>
                         </div>
                     </motion.div>
@@ -299,7 +299,7 @@ const EndUserComputingPage = () => {
                 <div className="EUC_Cap_Inner">
                     <div style={{ marginBottom: '100px' }}>
                         <span className="EUC_Badge">Operational Freedom</span>
-                        <h2 className="NET_Hero_H1">Modernizing the Human-System Interface</h2>
+                        <h2 className="NET_Hero_H1">Modernizing the human-system interface</h2>
                         <p className="EUC_Hero_P" style={{ fontSize: '1.25rem' }}>
                             The bottleneck of enterprise growth is often the endpoint. CHN Technologies
                             standardizes the user experience, eliminating technical debt and support
@@ -370,7 +370,7 @@ const EndUserComputingPage = () => {
                     </motion.div>
                     <div className="EUC_Outcome_Content">
                         <span className="EUC_Badge">Workforce Impact</span>
-                        <h2 className="NET_Hero_H1">Strategic Outcomes of Elite Endpoint Management</h2>
+                        <h2 className="NET_Hero_H1">Strategic outcomes of elite endpoint management</h2>
 
                         <div className="Outcome_List">
                             {[
@@ -400,7 +400,7 @@ const EndUserComputingPage = () => {
             <section className="EUC_Flow">
                 <div className="EUC_Flow_Inner">
                     <span className="EUC_Badge">Transformation Lifecycle</span>
-                    <h2 className="NET_Hero_H1">The CHN Productivity Framework</h2>
+                    <h2 className="NET_Hero_H1">The CHN productivity framework</h2>
 
                     <div className="EUC_Flow_Grid">
                         {[
@@ -429,14 +429,14 @@ const EndUserComputingPage = () => {
                 <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
                 <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}>
-                        <h2 className="NET_Hero_H1 text-white">Ready to Liberate Your Workforce?</h2>
+                        <h2 className="NET_Hero_H1 text-white">Ready to liberate your workforce?</h2>
                         <p className="EUC_Hero_P" style={{ margin: '30px auto 50px', color: 'rgba(255,255,255,0.7)', fontSize: '1.3rem' }}>
                             Stop managing devices. Start empowering people. Join the enterprises
                             shifting to elite end-user computing with CHN Technologies.
                         </p>
                         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
                             <Link to="/contact">
-                                <button className="EUC_Primary_Btn">Launch Workforce Audit</button>
+                                <button className="EUC_Primary_Btn">Launch workforce audit</button>
                             </Link>
                         </div>
                     </motion.div>

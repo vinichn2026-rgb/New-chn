@@ -18,7 +18,7 @@ const sections = [
     {
         number: '02',
         icon: Globe,
-        title: 'Use of Website',
+        title: 'Use of website',
         bullets: [
             'Use only for lawful purposes',
             'Do not disrupt or interfere with site operation',
@@ -30,14 +30,14 @@ const sections = [
     {
         number: '03',
         icon: Shield,
-        title: 'Intellectual Property',
+        title: 'Intellectual property',
         content: `All content including graphics, code, and media is the property of CHN Technologies and protected by law. You may not reproduce or republish content without permission.`,
         type: 'text'
     },
     {
         number: '04',
         icon: Briefcase,
-        title: 'Service Engagement',
+        title: 'Service engagement',
         bullets: [
             'Deliverables and fees will be mutually agreed upon',
             'Clients must provide accurate information and feedback',
@@ -55,7 +55,7 @@ const sections = [
     {
         number: '06',
         icon: Ban,
-        title: 'No Refund Policy',
+        title: 'No refund policy',
         content: `Payments are non-refundable unless otherwise stated in a signed agreement. Access to services or products indicates acceptance of the no-refund policy.`,
         type: 'text',
         highlight: true
@@ -70,7 +70,7 @@ const sections = [
     {
         number: '08',
         icon: Zap,
-        title: 'Limitation of Liability',
+        title: 'Limitation of liability',
         bullets: [
             'We are not liable for inability to use the site',
             'No responsibility for data loss or unauthorized access',
@@ -81,7 +81,7 @@ const sections = [
     {
         number: '09',
         icon: ExternalLink,
-        title: 'Third-Party Links',
+        title: 'Third-party links',
         content: `Our website may link to external sites. We are not responsible for their content or privacy practices.`,
         type: 'text'
     },
@@ -102,14 +102,14 @@ const sections = [
     {
         number: '12',
         icon: Scale,
-        title: 'Governing Law',
+        title: 'Governing law',
         content: `All matters are governed by the laws of India. Any dispute will be resolved in courts of Chennai, India.`,
         type: 'text'
     },
     {
         number: '13',
         icon: RefreshCw,
-        title: 'Changes to Terms',
+        title: 'Changes to terms',
         content: `We may update these terms at any time. Continued use of our website means you accept the revised terms.`,
         type: 'text'
     },

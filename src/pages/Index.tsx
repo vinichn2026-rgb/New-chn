@@ -50,20 +50,20 @@ const Index = () => {
   const slides = [
     {
       bg: heroBg1,
-      subtitle: "INTEGRATED TECHNOLOGY & CONSULTING",
-      title: <>Run Technology Like <br />A Business System</>,
+      subtitle: "Integrated technology & consulting",
+      title: <>Run technology like <br />a business system</>,
       desc: "Integrated technology and consulting services built for stability, security, and scalable growth. We help you reduce risk and maintain control.",
     },
     {
       bg: heroBg2,
-      subtitle: "WE ARE DEDICATED",
-      title: <>Inspired And Passionate<br />About Innovation</>,
+      subtitle: "We are dedicated",
+      title: <>Inspired and passionate<br />about innovation</>,
       desc: "End-to-end management of IT infrastructure, software solutions, digital analytics, and workforce consulting — all under one roof.",
     },
     {
       bg: "/images/hero-excellence.jpg",
-      subtitle: "OPERATIONAL EXCELLENCE",
-      title: <>Reliability Built On<br />Structured Excellence</>,
+      subtitle: "Operational excellence",
+      title: <>Reliability built on<br />structured excellence</>,
       desc: "We align systems, people, and processes to ensure your business remains resilient in a changing digital landscape. Experience long-term stability.",
     },
   ];
@@ -254,7 +254,7 @@ const Index = () => {
               className="mt-8 flex items-center gap-6">
               <Link to="/contact" className="inline-flex items-center gap-2 px-10 py-4 bg-[#0060ff] text-white font-semibold rounded-full hover:bg-[#0050d5] transition-all duration-300 group shadow-lg">
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                Read More
+                Read more
               </Link>
             </motion.div>
           </div>
@@ -273,7 +273,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 w-full">
           <div className="text-center mb-12">
             <span className="text-[#0060ff] uppercase text-md font-bold tracking-[0.10em] mb-4 block ">Operational Capacity</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b]">Designed to Support Systems</h2>
+            <h2 className="NET_Hero_H1 text-[#002e5b]">Designed to support systems</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
             {services.map((service, i) => (
@@ -313,7 +313,7 @@ const Index = () => {
           </div>
           <div>
             <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Measurable Outcomes</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b] mb-6">Outcomes that Matter</h2>
+            <h2 className="NET_Hero_H1 text-[#002e5b] mb-6">Outcomes that matter</h2>
             <p className="text-lg text-blue-600  mb-6">Delivering measurable outcomes that improve stability and reliability.</p>
             <p className="text-gray-500 leading-relaxed mb-8">We engineer resilient environments that evolve alongside your business, ensuring sustainable impact.</p>
             <div className="bg-gray-100 h-12 rounded-lg overflow-hidden">
@@ -346,7 +346,7 @@ const Index = () => {
         <div className="text-center mb-16 px-4">
           <span className="text-[#ffffff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Innovation Stream</span>
           <h2 className="NET_Hero_H1 text-white">
-            Capabilities <span className="text-[#0060ff]">Overview</span>
+            Capabilities <span className="">Overview</span>
           </h2>
         </div>
         <div className="flex overflow-hidden">
@@ -387,7 +387,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">Operational Excellence</span>
-            <h2 className="NET_Hero_H1 text-[#002e5b]"> Structured Delivery Model</h2>
+            <h2 className="NET_Hero_H1 text-[#002e5b]"> Structured delivery model</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {deliveryPhases.map((phase, i) => {
@@ -460,10 +460,10 @@ const Index = () => {
         {/* Header Section */}
         <div className="w-full px-6 mb-16 text-center">
           <span className="text-[#0060ff] text-md font-bold tracking-[0.10em] mb-4 block uppercase">
-            Global Partner Network
+            Global partner network
           </span>
           <h2 className="NET_Hero_H1 text-[#002e5b]">
-            Our Partners
+            Our partners
           </h2>
         </div>
 

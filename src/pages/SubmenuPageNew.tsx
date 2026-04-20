@@ -307,7 +307,7 @@ const SubmenuPage = () => {
                 <p className="text-white/80 text-sm mb-4">Get detailed information about our services in PDF format.</p>
                 <button className="inline-flex items-center justify-center w-full px-4 py-2 bg-white text-[#002e5b] font-semibold rounded-lg hover:bg-white/90 transition-all">
                   <Download className="w-4 h-4 mr-2" />
-                  Download PDF
+                  Download pdf
                 </button>
               </motion.div>
 
