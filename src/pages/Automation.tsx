@@ -47,8 +47,8 @@ const AutomationPage = () => {
           color: #3b82f6; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; 
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
-        .AU_Hero_H1 {  margin-bottom: 25px; }
-        .AU_Tagline { font-size: clamp(1.1rem, 2vw, 1.4rem); color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
+        .AU_Hero_H1 {  margin-bottom: 15px; }
+        .AU_Tagline { font-size:1.2rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .AU_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
         .AU_Btn_Group { display: flex; gap: 20px; }
@@ -223,13 +223,13 @@ const AutomationPage = () => {
               <span className="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-xs font-bold tracking-widest border border-blue-100 uppercase">
                 Digital Transformation             </span>
             </div>
-            <h2 className="AU_Hero_H1 NET_Hero_H1">Process Automation Services</h2>
+            <h2 className="AU_Hero_H1">Process Automation Services</h2>
             <p className="AU_Tagline">Eliminating Operational Friction Through Intelligent, High-Fidelity Automation.</p>
-            {/* <p className="AU_Hero_P">
+            <p className="AU_Hero_P">
               CHN Technologies provides structured automation services that ensure speed,
               reliability, and resource optimization across business environments. Our approach
               focuses on process integrity, scalable logic, and measurable impact.
-            </p> */}
+            </p>
             <div className="AU_Btn_Group">
               <Link to="/contact">
                 <button className="AU_Primary_Btn">Consult an Automation Specialist</button>

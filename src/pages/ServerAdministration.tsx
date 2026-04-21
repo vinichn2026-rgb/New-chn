@@ -62,7 +62,7 @@ const ServerAdministrationPage = () => {
         }
         .SA_Hero_H1 
         { 
-         margin-bottom: 30px; 
+         margin-bottom: 15px; 
           }
         .SA_Tagline { font-size: 1.2rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
         .SA_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 45px; font-weight: 450; }

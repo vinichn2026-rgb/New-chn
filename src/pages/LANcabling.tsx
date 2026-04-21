@@ -54,7 +54,7 @@ const LanCablingSurveillancePage = () => {
         }
         .LCS_Hero_H1 { 
       
-        margin-bottom: 25px;
+        margin-bottom: 15px;
          }
         .LCS_Tagline { font-size: 1.2rem; color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .LCS_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
@@ -278,14 +278,14 @@ const LanCablingSurveillancePage = () => {
             <img src={serversImg} alt="Structured LAN Cabling" />
             <motion.div
               initial={{ opacity: 0, x: -20, scale: 0.9 }}
-              animate={{ 
-                opacity: 1, 
-                x: 0, 
+              animate={{
+                opacity: 1,
+                x: 0,
                 scale: 1,
                 y: [0, -10, 0]
               }}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: 0.5,
                 y: { repeat: Infinity, duration: 4, ease: "easeInOut" }
               }}

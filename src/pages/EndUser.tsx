@@ -59,7 +59,7 @@ const EndUserComputingPage = () => {
         }
         .EUC_Hero_H1 
         { 
-         margin-bottom: 30px;
+         margin-bottom: 15px;
         }
         .EUC_Tagline { font-size: 1.2rem; color: #2563eb; font-weight: 700; margin-bottom: 25px; line-height: 1.0; }
         .EUC_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.7; margin-bottom: 45px; font-weight: 450; }

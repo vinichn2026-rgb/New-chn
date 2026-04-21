@@ -127,7 +127,7 @@ const WebDesignDevelopment = () => {
                 Design & Development
               </span>
             </div>
-            <h2 className="font-black mb-8 leading-[1.1] text-slate-900 tracking-tight NET_Hero_H1">
+            <h2 className="font-black mb-4 leading-[1.1] text-slate-900 tracking-tight">
               Web Design & Development
             </h2>
             <p className="font-bold text-slate-800 mb-6 flex items-center gap-2 subtitle">

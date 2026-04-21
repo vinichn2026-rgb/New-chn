@@ -60,7 +60,7 @@ const CyberSecurityPage = () => {
           font-size: 0.8rem; margin-bottom: 25px; display: inline-block;
           background: rgba(0, 96, 255, 0.08); padding: 8px 16px; border-radius: 100px;
         }
-        .CS_Hero_H1 { line-height: 1.05; color: #0f172a; margin-bottom: 30px; letter-spacing: -0.02em; }
+        .CS_Hero_H1 { line-height: 1.05; color: #0f172a; margin-bottom: 15px; letter-spacing: -0.02em; }
         .CS_Tagline { font-size: 1.2rem; color: #0060ff; font-weight: 700; margin-bottom: 25px; line-height: 1.3; }
         .CS_Hero_P { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 45px; font-weight: 450; }
 

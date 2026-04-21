@@ -190,10 +190,10 @@ const ContactPage = () => {
 
                 .CN_Hero_Content { flex: 1.2; max-width: 650px; z-index: 10; }
                 .CN_Hero_Title
-                 { color: #002e5b; line-height: 1.1; margin-bottom: 25px; letter-spacing: -0.03em;}
+                 { color: #002e5b; line-height: 1.1; margin-bottom: 15px; letter-spacing: -0.03em;}
                 .CN_Hero_Subtitle { color: #0060ff; font-weight: 700; margin-bottom: 30px; line-height: 1.3; }
                 .CN_Hero_Desc { color: #475569; line-height: 1.8; margin-bottom: 40px; font-weight: 450; }
-.CN_Hero_P{ont-size: 2.1rem;
+.CN_Hero_P{font-size: 1.2rem;
     color: #64748b;
     font-weight: 500;
 }
@@ -423,6 +423,30 @@ const ContactPage = () => {
                         <p className="CN_Hero_Subtitle subtitle">Conversations Lead to Clarity. Let’s Start With Yours</p>
                         <p className="CN_Hero_P">               Whether you need digital solutions, expert consulting, or a new career path, CHN Technologies is ready to help. Reach out today to solve your challenges and start a structured engagement.
                         </p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                            className="flex items-center gap-5 mt-10"
+                        >
+                            <a href="#our-presence" style={{
+                                display: 'inline-flex', alignItems: 'center', gap: 12,
+                                background: '#0060ff',
+                                color: '#fff',
+                                padding: '16px 36px',
+                                borderRadius: 100,
+                                fontWeight: 600,
+                                fontSize: '1rem',
+                                textDecoration: 'none',
+                                letterSpacing: '0.02em',
+                                boxShadow: '0 12px 40px rgba(0,96,255,0.35)',
+                                transition: 'all 0.3s',
+                            }}>
+                                <ArrowRight size={18} />
+                                Our Presence
+                            </a>
+                        </motion.div>
                     </motion.div>
 
                     <div className="CN_Hero_Img">
@@ -554,7 +578,7 @@ const ContactPage = () => {
             </section>
 
             {/* LAYOUT 6 – CLOSING & MAPS */}
-            <section className="CN_Map_Section">
+            <section className="CN_Map_Section" id="our-presence">
                 <div style={{ padding: '80px 0', textAlign: 'center' }}>
                     <h2 className="NET_Hero_H1 CN_Section_Title">Our <span className="text-blue-500">presence</span></h2>
                     <p className="CN_Section_Desc" style={{ marginBottom: 0 }}>Discover stability and expertise at our key operational hubs.</p>

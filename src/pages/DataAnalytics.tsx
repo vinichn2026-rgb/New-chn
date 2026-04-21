@@ -49,7 +49,7 @@ const DataAnalyticsPage = () => {
           font-size: 0.85rem; margin-bottom: 20px; display: block;
         }
         .DA_Hero_H1 { 
-         margin-bottom: 25px; }
+         margin-bottom: 15px; }
         .DA_Tagline { font-size: clamp(1.1rem, 2vw, 1.4rem); color: #3b82f6; font-weight: 600; margin-bottom: 20px; }
         .DA_Hero_P { font-size: 1.1rem; color: #64748b; line-height: 1.8; margin-bottom: 40px; }
 
