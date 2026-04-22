@@ -6,7 +6,9 @@ import {
   Database, Layout, Globe, Box, Shield, Target, Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import payrollHero from '../assets/payroll_compliance_hero.png';
+import payrollHero from '@/assets/images/payroll_compliance_hero.png';
+import payrollGovernance from '@/assets/images/payroll-governance.jpg';
+import analyticsViz from '@/assets/images/analytics-viz.jpg';
 
 const PayrollAndCompliancePage = () => {
   return (
@@ -270,7 +272,7 @@ const PayrollAndCompliancePage = () => {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="PC_Context_Img">
-            <img src="/images/payroll-governance.jpg" alt="Governance" />
+            <img src={payrollGovernance} alt="Governance" />
           </motion.div>
         </div>
       </section>
@@ -303,7 +305,7 @@ const PayrollAndCompliancePage = () => {
       <section className="PC_Outcome">
         <div className="PC_Outcome_Grid">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="PC_Outcome_Img_Container">
-            <img src="/images/analytics-viz.jpg" alt="Outcomes" style={{ borderRadius: '40px', boxShadow: '0 40px 80px rgba(0,0,0,0.1)', width: '100%' }} />
+            <img src={analyticsViz} alt="Outcomes" style={{ borderRadius: '40px', boxShadow: '0 40px 80px rgba(0,0,0,0.1)', width: '100%' }} />
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="text-left">
             <span className="PC_Badge">Business Impact</span>

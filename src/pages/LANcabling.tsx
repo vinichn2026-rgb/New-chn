@@ -9,8 +9,8 @@ import {
 import { Link } from 'react-router-dom';
 
 // Import local assets
-import serversImg from '../assets/camera_images.jpg';
-import networkDashboardImg from '../assets/network_dashboard.png';
+import serversImg from '@/assets/images/camera_images.jpg';
+import networkDashboardImg from '@/assets/images/network_dashboard.png';
 
 const LanCablingSurveillancePage = () => {
   return (

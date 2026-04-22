@@ -66,7 +66,6 @@ const SiteFooter = () => {
               <div className="flex gap-4 justify-center md:justify-start">
                 <MapPin size={20} className="text-[#00c2ff] shrink-0 mt-1" />
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Bangalore (Branch Office)<br />
                   Chennai (Head Office)<br />
                   Coimbatore<br />
                 </p>

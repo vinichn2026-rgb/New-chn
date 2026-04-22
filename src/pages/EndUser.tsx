@@ -8,7 +8,8 @@ import {
 import { Link } from 'react-router-dom';
 
 // Import specialized computing assets
-
+import enduserHero from "@/assets/images/enduser-hero.png";
+import endpointOutcomes from "@/assets/images/elite_endpoint_outcomes.png";
 const EndUserComputingPage = () => {
     return (
         <div className="EUC_WRAPPER">
@@ -260,7 +261,7 @@ const EndUserComputingPage = () => {
                         initial={{ opacity: 0, scale: 0.95, y: 30 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 1.2, ease: "easeOut" }}
                         className="EUC_Hero_Img"
                     >
-                        <img src="/images/enduser-hero.png" alt="Modern End-User Workspace" />
+                        <img src={enduserHero} alt="Modern End-User Workspace" />
 
 
                         <motion.div
@@ -366,7 +367,7 @@ const EndUserComputingPage = () => {
                         initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} viewport={{ once: true }}
                         className="EUC_Outcome_Img"
                     >
-                        <img src="/images/elite_endpoint_outcomes.png" alt="Productivity Operations" />
+                        <img src={endpointOutcomes} alt="Productivity Operations" />
                     </motion.div>
                     <div className="EUC_Outcome_Content">
                         <span className="EUC_Badge">Workforce Impact</span>

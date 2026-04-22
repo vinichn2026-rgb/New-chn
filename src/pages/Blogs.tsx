@@ -3,6 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, Monitor, Code, Users, ShieldCheck, ArrowRight, User, Search, Filter, Calendar, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Asset Imports
+import cloudCaseStudy from "@/assets/images/casestudy-cloud.jpg";
+import officeBlog from "@/assets/images/blog-office.jpg";
+import securityCaseStudy from "@/assets/images/casestudy-security.jpg";
+import collaborationBlog from "@/assets/images/blog-collaboration.jpg";
+import consultingService from "@/assets/images/service-consulting.jpg";
+import featuredBlog from "@/assets/images/blog-featured.jpg";
+import corporateFlagship from "@/assets/images/corporate-flagship.jpg";
+
 interface Insight {
   id: number;
   image?: string;
@@ -25,7 +34,7 @@ const CHNInsights = () => {
   const allInsights: Insight[] = [
     {
       id: 1,
-      image: "/images/casestudy-cloud.jpg",
+      image: cloudCaseStudy,
       tag: "Operations",
       title: "Technology Operations & Management",
       desc: "Deep-dives into managing enterprise networks, systems, security, and infrastructure effectively for long-term scalability and operational stability.",
@@ -34,7 +43,7 @@ const CHNInsights = () => {
     },
     {
       id: 2,
-      image: "/images/blog-office.jpg",
+      image: officeBlog,
       tag: "Software",
       title: "Digital & Software Practices in Enterprise",
       desc: "Perspectives on modern web platforms, applications, analytics, and automation systems tailored for real-world business environments and high performance.",
@@ -43,7 +52,7 @@ const CHNInsights = () => {
     },
     {
       id: 3,
-      image: "/images/casestudy-security.jpg",
+      image: securityCaseStudy,
       tag: "Governance",
       title: "Execution & Governance for Modern Firm",
       desc: "Detailed articles focused on operational control, process maturity, and establishing reliable system structures to ensure corporate governance and asset protection.",
@@ -52,7 +61,7 @@ const CHNInsights = () => {
     },
     {
       id: 4,
-      image: "/images/blog-collaboration.jpg",
+      image: collaborationBlog,
       tag: "Workforce",
       title: "Workforce & Global Compliance Standards",
       desc: "Understanding workforce structures, payroll practices, and statutory compliance for HR leaders managing complex multinational operations and regulatory shifts.",
@@ -61,7 +70,7 @@ const CHNInsights = () => {
     },
     {
       id: 5,
-      image: "/images/service-consulting.jpg",
+      image: consultingService,
       tag: "Strategy",
       title: "Sustainable Strategy and Future-Fit Growth",
       desc: "Analysing how business owners, IT decision-makers, and professionals can leverage practical technology strategies to drive sustainable organisational expansion.",
@@ -70,7 +79,7 @@ const CHNInsights = () => {
     },
     {
       id: 6,
-      image: "/images/blog-featured.jpg",
+      image: featuredBlog,
       tag: "Quality",
       title: "Knowledge Over Frequency: An Editorial",
       desc: "Why we prioritise relevance and clarity over volume, ensuring every piece of content remains useful and actionable over long-term strategic horizons.",
@@ -115,7 +124,6 @@ const CHNInsights = () => {
         .BLOG_Hero_Bg {
           position: absolute;
           inset: 0;
-          background-image: url('/images/corporate-flagship.jpg');
           background-size: cover;
           background-position: center;
           opacity: 0.15;
@@ -161,10 +169,25 @@ const CHNInsights = () => {
         }
 
         @media (max-width: 640px) {
-          .BLOG_Search_Box { border-radius: 30px; flex-direction: column; padding: 15px; }
-          .BLOG_Search_Box input { width: 100%; text-align: center; margin-bottom: 10px; }
-          .BLOG_Search_Btn { width: 100%; border-radius: 15px; }
+          .BLOG_Search_Box { 
+            border-radius: 100px; 
+            padding: 6px 8px; 
+            gap: 10px;
+          }
+          .BLOG_Search_Box input { 
+            font-size: 1rem;
+            padding: 10px 5px;
+            text-align: left;
+          }
+          .BLOG_Search_Btn { 
+            width: 44px; 
+            height: 44px;
+            border-radius: 50%;
+          }
+          .BLOG_Search_Icon { width: 20px !important; height: 20px !important; margin-left: 10px !important; }
         }
+
+        .BLOG_Search_Icon { margin-left: 15px; flex-shrink: 0; opacity: 0.5; }
 
         .BLOG_Search_Box input {
           flex: 1;
@@ -193,16 +216,29 @@ const CHNInsights = () => {
           padding: 25px 5%;
         }
 
+        @media (max-width: 768px) {
+          .BLOG_Filter_Bar { position: relative; top: 0; padding: 15px 5%; }
+        }
+
         .BLOG_Filter_Flex {
           max-width: 1300px;
           margin: 0 auto;
           display: flex;
           align-items: center;
-          gap: 15px;
+          gap: 12px;
           overflow-x: auto;
           scrollbar-width: none;
         }
         .BLOG_Filter_Flex::-webkit-scrollbar { display: none; }
+
+        @media (max-width: 768px) {
+          .BLOG_Filter_Flex { flex-wrap: wrap; justify-content: center; }
+          .BLOG_Filter_Btn { flex: 1 1 auto; min-width: 120px; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+          .BLOG_Filter_Btn { width: 100%; flex: 1 0 100%; }
+        }
 
         .BLOG_Filter_Btn {
           white-space: nowrap;
@@ -312,19 +348,32 @@ const CHNInsights = () => {
 
       {/* SECTION 1: HERO */}
       <section className="BLOG_Hero">
-        <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="BLOG_Hero_Bg" />
+        <motion.div
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.15 }}
+          transition={{ duration: 1.5 }}
+          className="BLOG_Hero_Bg"
+          style={{ backgroundImage: `url(${corporateFlagship})` }}
+        />
         <div className="BLOG_Hero_Content">
           <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="BLOG_Badge uppercase">Corporate Insights</motion.span>
           <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="BLOG_Hero_H1 NET_Hero_H1">Knowledge-Led <br /> <span className="text-blue-500">Perspectives</span></motion.h2>
 
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.4 }} className="BLOG_Search_Box">
-            <Search size={22} className="text-blue-500 ml-4" />
-            <input
-              type="text" placeholder="Search insights..."
-              value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="BLOG_Search_Box"
+          >
+            <Search className="BLOG_Search_Icon" size={24} color="white" />
+            <input 
+              type="text" 
+              placeholder="Search Insights..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
             <button className="BLOG_Search_Btn" onClick={() => scrollToSection(insightsRef)}>
-              <ArrowRight size={22} />
+              <ArrowRight size={24} />
             </button>
           </motion.div>
         </div>
@@ -360,7 +409,7 @@ const CHNInsights = () => {
               className="BLOG_Featured_Card"
             >
               <div className="BLOG_Featured_Img">
-                <img src="/images/blog-featured.jpg" alt="Featured Article" />
+                <img src={featuredBlog} alt="Featured Article" />
               </div>
               <div className="BLOG_Featured_Content">
                 <span className="BLOG_Badge uppercase">Editorial Focus</span>

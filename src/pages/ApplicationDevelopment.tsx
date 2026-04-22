@@ -6,7 +6,8 @@ import {
   ArrowRight, Database, Layout, Smartphone as MobileIcon, Box, Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import appDevHero from '../assets/application_development_hero.png';
+import appDevHero from '@/assets/images/application_development_hero.png';
+import appdevTeam from '@/assets/images/appdev-team.jpg';
 
 const ApplicationDevelopmentPage = () => {
   return (
@@ -380,7 +381,7 @@ background: linear-gradient(180deg, #3b82f6 0%, #1e3a8a 100%);          z-index:
       <section className="AD_Outcome">
         <div className="AD_Outcome_Inner">
           <div className="AD_Outcome_Img">
-            <img src="/images/appdev-team.jpg" alt="Software Development Team" />
+            <img src={appdevTeam} alt="Software Development Team" />
           </div>
           <div className="AD_Outcome_Content">
             <span className="AD_Badge">Business Benefits</span>

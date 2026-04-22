@@ -6,7 +6,8 @@ import {
   Layers, Cpu, Layout, Globe, Box, Shield, LineChart
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import tradingHero from '../assets/trading_analytics_hero.png';
+import tradingHero from '@/assets/images/trading_analytics_hero.png';
+import casestudyCloud from '@/assets/images/casestudy-cloud.jpg';
 
 const DataAnalyticsPage = () => {
   return (
@@ -356,7 +357,7 @@ const DataAnalyticsPage = () => {
       <section className="DA_Outcome">
         <div className="DA_Outcome_Inner">
           <div className="DA_Outcome_Img">
-            <img src="/images/casestudy-cloud.jpg" alt="Strategic Insight" />
+            <img src={casestudyCloud} alt="Strategic Insight" />
           </div>
           <div className="DA_Outcome_Content">
             <span className="DA_Badge">Strategic Benefits</span>

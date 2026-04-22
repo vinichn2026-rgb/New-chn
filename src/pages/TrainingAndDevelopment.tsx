@@ -7,6 +7,9 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Import specialized training assets
+import trainingSession from '@/assets/images/training-session.jpg';
+import blogCollaboration from '@/assets/images/blog-collaboration.jpg';
 const TrainingAndDevelopmentPage = () => {
   return (
     <div className="TD_WRAPPER">
@@ -260,7 +263,7 @@ const TrainingAndDevelopmentPage = () => {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
             className="TD_Hero_Img"
           >
-            <img src="/images/training-session.jpg" alt="Corporate Training Session" />
+            <img src={trainingSession} alt="Corporate Training Session" />
             <motion.div
               initial={{ opacity: 0, x: -20, scale: 0.9 }}
               animate={{ 
@@ -358,7 +361,7 @@ const TrainingAndDevelopmentPage = () => {
       <section className="TD_Outcome">
         <div className="TD_Outcome_Inner">
           <div className="TD_Outcome_Img">
-            <img src="/images/blog-collaboration.jpg" alt="Workforce Collaboration" />
+            <img src={blogCollaboration} alt="Workforce Collaboration" />
           </div>
           <div className="TD_Outcome_Content">
             <span className="TD_Badge">Business Benefits</span>

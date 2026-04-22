@@ -7,6 +7,9 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Import specialized automation assets
+import automationProcess from '@/assets/images/automation-process.jpg';
+import automationRobotic from '@/assets/images/automation-robotic.jpg';
 const AutomationPage = () => {
   return (
     <div className="AU_WRAPPER">
@@ -241,7 +244,7 @@ const AutomationPage = () => {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
             className="AU_Hero_Img"
           >
-            <img src="/images/automation-process.jpg" alt="Process Automation Cog" />
+            <img src={automationProcess} alt="Process Automation Cog" />
           </motion.div>
         </div>
       </section>
@@ -307,7 +310,7 @@ const AutomationPage = () => {
       <section className="AU_Outcome">
         <div className="AU_Outcome_Inner">
           <div className="AU_Outcome_Img">
-            <img src="/images/automation-robotic.jpg" alt="Robotic Precision" />
+            <img src={automationRobotic} alt="Robotic Precision" />
           </div>
           <div className="AU_Outcome_Content">
             <span className="AU_Badge">Strategic Outcomes</span>

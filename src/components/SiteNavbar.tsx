@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown, Network, Monitor, Zap, Users, Shield, Cpu, Layout
 import { motion, AnimatePresence } from "framer-motion";
 import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import chnLogo from "@/assets/chn-logo.png";
+import chnLogo from "@/assets/images/chn-logo.png";
 
 const SiteNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,6 +23,8 @@ const SiteNavbar = () => {
   const closeMobileMenu = () => {
     setIsMobileOpen(false);
     setExpandedMenus(new Set());
+    setHoveredItem(null);
+    setActiveCluster(null);
   };
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [activeCluster, setActiveCluster] = useState<string | null>(null);
@@ -297,6 +299,7 @@ const SiteNavbar = () => {
                                 >
                                   <Link
                                     to={drop.link || "#"}
+                                    onClick={closeMobileMenu}
                                     className={`group flex items-center justify-between px-5 py-3.5 rounded-xl text-[16px] font-semibold tracking-tight no-underline transition-all duration-200 ${dropActive ? "text-white bg-blue-600 shadow-md scale-[1.01]" : "text-slate-600 hover:bg-blue-600 hover:text-white"}`}
                                   >
                                     {drop.name}

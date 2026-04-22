@@ -9,8 +9,8 @@ import {
 import { Link } from 'react-router-dom';
 
 // Import local assets
-import serversImg from '../assets/servers.jpg';
-import workspaceImg from '../assets/workspace.jpg';
+import serversImg from '@/assets/images/servers.jpg';
+import workspaceImg from '@/assets/images/workspace.jpg';
 
 const ServerAdministrationPage = () => {
   return (

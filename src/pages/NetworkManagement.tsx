@@ -7,8 +7,8 @@ import {
 import { Link } from 'react-router-dom';
 
 // Replace with your local assets if needed
-import heroTeam from '../assets/network_management_hero.png';
-import networkDashboard from '../assets/network_dashboard.png';
+import heroTeam from '@/assets/images/network_management_hero.png';
+import networkDashboard from '@/assets/images/network_dashboard.png';
 
 const NetworkManagementPage = () => {
   return (

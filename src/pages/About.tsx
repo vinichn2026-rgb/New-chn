@@ -3,6 +3,13 @@ import { motion } from 'framer-motion';
 import { Shield, Cpu, Code, Users, CheckCircle, ArrowRight, Activity, Zap, Layers, Target, BarChart, HardDrive } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Asset Imports
+import corporateFlagship from "@/assets/images/corporate-flagship.jpg";
+import techServicesImg from "@/assets/images/about_tech_services.png";
+import softwareDigitalImg from "@/assets/images/about_software_digital.png";
+import consultingAdvisoryImg from "@/assets/images/about_consulting_advisory.png";
+import aboutMainImg from "@/assets/images/about-main.jpg";
+
 const AboutPage = () => {
   return (
     <div className="ABOUT_WRAPPER">
@@ -27,7 +34,6 @@ const AboutPage = () => {
         .ABOUT_Hero_Bg {
           position: absolute;
           inset: 0;
-          background-image: url('/images/corporate-flagship.jpg');
           background-size: cover;
           background-position: center;
           opacity: 0.15;
@@ -112,7 +118,7 @@ const AboutPage = () => {
         .ABOUT_Focus { background: #fdfdfd; padding: 50px 5%; }
         .ABOUT_Focus_Grid { 
           display: grid; 
-          grid-template_columns: 1fr;
+          grid-template-columns: 1fr;
           gap: 30px; 
           max-width: 1300px; 
           margin: 80px auto 0;
@@ -149,7 +155,7 @@ const AboutPage = () => {
         }
 
         .ABOUT_Approach_H { line-height: 1.1; margin-bottom: 40px; color: #fff; }
-        .ABOUT_Philosophy_Grid { display: grid; grid-template_columns: 1fr; gap: 20px; }
+        .ABOUT_Philosophy_Grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media (min-width: 640px) { .ABOUT_Philosophy_Grid { grid-template-columns: repeat(2, 1fr); } }
 
         .ABOUT_Phil_Card {
@@ -170,7 +176,13 @@ const AboutPage = () => {
 
       {/* SECTION 1: HERO */}
       <section className="ABOUT_Hero">
-        <motion.div initial={{ scale: 1.1, opacity: 0 }} animate={{ scale: 1, opacity: 0.15 }} transition={{ duration: 1.5 }} className="ABOUT_Hero_Bg" />
+        <motion.div 
+          initial={{ scale: 1.1, opacity: 0 }} 
+          animate={{ scale: 1, opacity: 0.15 }} 
+          transition={{ duration: 1.5 }} 
+          className="ABOUT_Hero_Bg" 
+          style={{ backgroundImage: `url(${corporateFlagship})` }}
+        />
         <div className="ABOUT_Hero_Content">
           <motion.h2 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="ABOUT_Hero_H1 NET_Hero_H1">About CHN <br /> <span className="text-blue-500">Technologies</span></motion.h2>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="ABOUT_Hero_P">We build the resilient foundations that empower global enterprises to navigate the complexities of technology, people, and digital change.</motion.p>
@@ -205,7 +217,7 @@ const AboutPage = () => {
       <section id="chn-overview" className="ABOUT_Identity">
         <div className="ABOUT_Identity_Grid">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="ABOUT_Identity_Img">
-            <img src="/images/corporate-flagship.jpg" alt="Corporate Flagship" />
+            <img src={corporateFlagship} alt="Corporate Flagship" />
             <div className="ABOUT_Identity_Badge">
               <h4 className="text-3xl font-black">10+</h4>
               <p className="text-[10px] font-bold tracking-widest text-blue-100">Years of discipline</p>
@@ -235,9 +247,9 @@ const AboutPage = () => {
         </div>
         <div className="ABOUT_Focus_Grid">
           {[
-            { title: "Technology Services", icon: <Cpu />, img: "/images/about_tech_services.png", tag: "Enterprise IT", desc: "Network management, cyber security, and physical infrastructure for stable IT environments." },
-            { title: "Software & Digital", icon: <Code />, img: "/images/about_software_digital.png", tag: "Digital Dev", desc: "Developing scalable web platforms, applications, and automated business process solutions." },
-            { title: "Consulting & Advisory", icon: <Users />, img: "/images/about_consulting_advisory.png", tag: "Advisory", desc: "Workforce management, payroll compliance, and structured operational governance." }
+            { title: "Technology Services", icon: <Cpu />, img: techServicesImg, tag: "Enterprise IT", desc: "Network management, cyber security, and physical infrastructure for stable IT environments." },
+            { title: "Software & Digital", icon: <Code />, img: softwareDigitalImg, tag: "Digital Dev", desc: "Developing scalable web platforms, applications, and automated business process solutions." },
+            { title: "Consulting & Advisory", icon: <Users />, img: consultingAdvisoryImg, tag: "Advisory", desc: "Workforce management, payroll compliance, and structured operational governance." }
           ].map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} viewport={{ once: true }} className="ABOUT_Card group">
               <div className="ABOUT_Card_Img">
@@ -289,7 +301,7 @@ const AboutPage = () => {
               }}
             >
               <img
-                src="/images/about-main.jpg"
+                src={aboutMainImg}
                 alt="CHN Approach"
                 style={{
                   width: '100%',

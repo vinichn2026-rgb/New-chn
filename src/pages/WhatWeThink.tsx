@@ -14,6 +14,9 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Import specialized vision and mission assets
+import corporateFlagship from '@/assets/images/corporate-flagship.jpg';
+import blogCollaboration from '@/assets/images/blog-collaboration.jpg';
 const WhatWeThink = () => {
   const coreValues = [
     {
@@ -73,7 +76,7 @@ const WhatWeThink = () => {
         .WT_Hero_Bg {
           position: absolute;
           inset: 0;
-          background-image: url('/images/corporate-flagship.jpg');
+          background-image: url('${corporateFlagship}');
           background-size: cover;
           background-position: center;
           opacity: 0.3;
@@ -305,7 +308,7 @@ const WhatWeThink = () => {
       {/* SECTION 4: STRATEGIC FRAMEWORK */}
       <section className="WT_Framework">
         <div className="WT_Framework_Img">
-          <img src="/images/blog-collaboration.jpg" alt="Strategic Collaboration" />
+          <img src={blogCollaboration} alt="Strategic Collaboration" />
         </div>
         <div className="WT_Framework_Content">
           <span className="WT_Badge">OUR VISION & MISSION</span>

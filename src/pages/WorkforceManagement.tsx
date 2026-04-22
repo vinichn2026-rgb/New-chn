@@ -7,6 +7,9 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Import specialized workforce assets
+import blogFeatured from '@/assets/images/blog-featured.jpg';
+import aboutMain from '@/assets/images/about-main.jpg';
 const WorkforceManagementPage = () => {
   return (
     <div className="WM_WRAPPER">
@@ -264,7 +267,7 @@ const WorkforceManagementPage = () => {
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}
             className="WM_Hero_Img"
           >
-            <img src="/images/blog-featured.jpg" alt="Workforce Team Strategy" />
+            <img src={blogFeatured} alt="Workforce Team Strategy" />
             <motion.div
               initial={{ opacity: 0, x: -20, scale: 0.9 }}
               animate={{
@@ -362,7 +365,7 @@ const WorkforceManagementPage = () => {
       <section className="WM_Outcome">
         <div className="WM_Outcome_Inner">
           <div className="WM_Outcome_Img">
-            <img src="/images/about-main.jpg" alt="Business Growth" />
+            <img src={aboutMain} alt="Business Growth" />
           </div>
           <div className="WM_Outcome_Content">
             <span className="WM_Badge">Business Benefits</span>

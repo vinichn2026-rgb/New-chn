@@ -8,8 +8,8 @@ import {
 import { Link } from 'react-router-dom';
 
 // Import specialized security assets
-import heroCyber from '../assets/hero_team_cyber.png';
-import dashboardCyber from '../assets/dashboard_cyber.png';
+import heroCyber from '@/assets/images/hero_team_cyber.png';
+import dashboardCyber from '@/assets/images/dashboard_cyber.png';
 
 const CyberSecurityPage = () => {
   return (

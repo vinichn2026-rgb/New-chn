@@ -23,6 +23,9 @@ import {
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
 
+// Asset Imports
+import contactMain from "@/assets/images/contact-main.jpg";
+
 const XIcon = ({ size = 20 }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
         <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24h-2.195Z" />
@@ -63,8 +66,12 @@ const ContactPage = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
-    // Web3Forms Configuration
-    const WEB3FORMS_ACCESS_KEY = "c4dd4198-389c-4a2c-9664-941876c93e0d";
+    // Brevo SMTP Configuration
+    const BREVO_API_KEY = "REMOVED_SECRET  ";
+    const BREVO_SENDER = { name: "CHN Website Contact", email: "vinichn2026@gmail.com" };
+    const BREVO_RECIPIENT = "info@chnindia.com";
+    const LOGO_URL = "https://chnindia.com/chn-logo.png";
+    const [showEmailPreview, setShowEmailPreview] = React.useState(false);
 
     // Handle pre-filling from URL parameters (e.g., from Careers search)
     useEffect(() => {
@@ -85,33 +92,103 @@ const ContactPage = () => {
         setIsSubmitting(true);
 
         try {
-            const formDataToSend = new FormData();
-            formDataToSend.append("access_key", WEB3FORMS_ACCESS_KEY);
-            formDataToSend.append("name", formData.name);
-            formDataToSend.append("email", formData.email);
-            formDataToSend.append("organisation", formData.org);
-            formDataToSend.append("phone", formData.phone);
-            formDataToSend.append("interest", formData.interest);
-            formDataToSend.append("message", formData.message);
-            formDataToSend.append("from_name", "CHN Website Contact Form");
-            formDataToSend.append("subject", `New Requirement: ${formData.interest}`);
+            const subject = `New Requirement: ${formData.interest}`;
+            const htmlContent = `
+                <div style="background-color: #f8fafc; padding: 40px 20px; font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 32px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,46,91,0.06); border: 1px solid #e2e8f0;">
+                        <tr>
+                            <td style="height: 6px; background: linear-gradient(to right, #2563eb, #4f46e5);"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 60px 40px 40px; text-align: center;">
+                                <img src="${LOGO_URL}" alt="CHN Technologies" style="width: 140px; height: auto; margin-bottom: 24px;">
+                                <h1 style="color: #002e5b; margin: 0; font-size: 28px; font-weight: 900; letter-spacing: -1.5px; text-transform: uppercase;">New Inquiry</h1>
+                                <p style="color: #64748b; margin-top: 12px; font-size: 14px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Digital Flagship Center</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0 40px 40px;">
+                                <div style="background: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 32px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);">
+                                    <table width="100%" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td width="50%" style="padding-bottom: 24px;">
+                                                <span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">Client Name</span>
+                                                <strong style="color: #1e293b; font-size: 15px;">${formData.name}</strong>
+                                            </td>
+                                            <td width="50%" style="padding-bottom: 24px;">
+                                                <span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">Organisation</span>
+                                                <strong style="color: #1e293b; font-size: 15px;">${formData.org || 'Not Specified'}</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="50%" style="padding-bottom: 24px;">
+                                                <span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">Email Identity</span>
+                                                <strong style="color: #1e293b; font-size: 15px;">${formData.email}</strong>
+                                            </td>
+                                            <td width="50%" style="padding-bottom: 24px;">
+                                                <span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">Contact Phone</span>
+                                                <strong style="color: #1e293b; font-size: 15px;">${formData.phone || 'Not Provided'}</strong>
+                                            </td>
+                                        </tr>
+                                    </table>
 
-            const response = await fetch("https://api.web3forms.com/submit", {
+                                    <div style="margin-top: 8px; border-top: 1px solid #f1f5f9; padding-top: 24px;">
+                                        <span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 12px;">Area of Interest</span>
+                                        <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); color: #2563eb; padding: 12px 24px; border-radius: 100px; display: inline-block; font-weight: 900; font-size: 13px; border: 1px solid rgba(37,99,235,0.1); letter-spacing: 0.5px;">
+                                            ${formData.interest}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="margin-top: 32px; padding: 32px; background: #fafafa; border-radius: 24px; border: 1px solid #f1f5f9; position: relative;">
+                                   <div style="position: absolute; left: 0; top: 32px; bottom: 32px; width: 4px; background: #2563eb; border-radius: 0 4px 4px 0;"></div>
+                                   <span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 16px; padding-left: 12px;">Requirement Brief</span>
+                                   <p style="color: #334155; font-size: 16px; line-height: 1.8; margin: 0; font-weight: 500; padding-left: 12px;">${formData.message}</p>
+                                </div>
+
+                                <div style="margin-top: 48px; text-align: center;">
+                                    <a href="mailto:${formData.email}" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); color: #ffffff; padding: 20px 48px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 14px; display: inline-block; box-shadow: 0 20px 40px rgba(37,99,235,0.25); letter-spacing: 1px;">REPLY TO CLIENT</a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 40px; text-align: center; background-color: #fafafa; border-top: 1px solid #f1f5f9;">
+                                <p style="color: #94a3b8; font-size: 12px; margin: 0; font-weight: 700; letter-spacing: 0.5px;">&copy; ${new Date().getFullYear()} CHN TECHNOLOGIES • DIGITAL FLAGSHIP HUB</p>
+                                <div style="margin-top: 12px;">
+                                    <span style="color: #cbd5e1; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Encrypted Submission • Fast Response Protocol</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            `;
+
+            const response = await fetch("https://api.brevo.com/v3/smtp/email", {
                 method: "POST",
-                body: formDataToSend
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json",
+                    "api-key": BREVO_API_KEY.trim()
+                },
+                body: JSON.stringify({
+                    sender: BREVO_SENDER,
+                    to: [{ email: BREVO_RECIPIENT, name: "CHN Sales Team" }],
+                    subject: subject,
+                    htmlContent: htmlContent
+                })
             });
 
-            const data = await response.json();
-
-            if (data.success) {
+            if (response.ok) {
                 setIsSubmitting(false);
                 setIsSubmitted(true);
                 toast.success("Message sent successfully!");
+                setFormData({ name: '', org: '', email: '', phone: '', interest: 'Area of Interest', message: '' });
             } else {
-                throw new Error(data.message || "Failed to submit form");
+                const errorData = await response.json();
+                throw new Error(errorData.message || "Uplink Failed");
             }
         } catch (error) {
-            console.error("Web3Forms submission error:", error);
+            console.error("Brevo SMTP submission error:", error);
             setIsSubmitting(false);
             toast.error("Failed to send message. Please try again or contact us directly at info@chnindia.com");
         }
@@ -121,6 +198,56 @@ const ContactPage = () => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
+
+    // Build the email HTML preview (mirrors the actual email template)
+    const buildPreviewHtml = () => `
+        <div style="background-color: #f8fafc; padding: 40px 20px; font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 32px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,46,91,0.06); border: 1px solid #e2e8f0;">
+                <tr><td style="height: 6px; background: linear-gradient(to right, #2563eb, #4f46e5);"></td></tr>
+                <tr>
+                    <td style="padding: 60px 40px 40px; text-align: center;">
+                        <img src="${LOGO_URL}" alt="CHN Technologies" style="width: 140px; height: auto; margin-bottom: 24px;">
+                        <h1 style="color: #002e5b; margin: 0; font-size: 28px; font-weight: 900; letter-spacing: -1.5px;">New Inquiry</h1>
+                        <p style="color: #64748b; margin-top: 12px; font-size: 14px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;">Digital Flagship Center</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0 40px 40px;">
+                        <div style="background: #ffffff; border: 1px solid #f1f5f9; border-radius: 24px; padding: 32px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="50%" style="padding-bottom: 24px;"><span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">Client Name</span><strong style="color: #1e293b; font-size: 15px;">${formData.name || 'John Doe'}</strong></td>
+                                    <td width="50%" style="padding-bottom: 24px;"><span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">Organisation</span><strong style="color: #1e293b; font-size: 15px;">${formData.org || 'Acme Corp'}</strong></td>
+                                </tr>
+                                <tr>
+                                    <td width="50%" style="padding-bottom: 24px;"><span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">Email Identity</span><strong style="color: #1e293b; font-size: 15px;">${formData.email || 'john@example.com'}</strong></td>
+                                    <td width="50%" style="padding-bottom: 24px;"><span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 6px;">Contact Phone</span><strong style="color: #1e293b; font-size: 15px;">${formData.phone || '+91 9876543210'}</strong></td>
+                                </tr>
+                            </table>
+                            <div style="margin-top: 8px; border-top: 1px solid #f1f5f9; padding-top: 24px;">
+                                <span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 12px;">Area of Interest</span>
+                                <div style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); color: #2563eb; padding: 12px 24px; border-radius: 100px; display: inline-block; font-weight: 900; font-size: 13px; border: 1px solid rgba(37,99,235,0.1); letter-spacing: 0.5px;">${formData.interest}</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 32px; padding: 32px; background: #fafafa; border-radius: 24px; border: 1px solid #f1f5f9; position: relative;">
+                           <div style="position: absolute; left: 0; top: 32px; bottom: 32px; width: 4px; background: #2563eb; border-radius: 0 4px 4px 0;"></div>
+                           <span style="color: #94a3b8; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 16px; padding-left: 12px;">Requirement Brief</span>
+                           <p style="color: #334155; font-size: 16px; line-height: 1.8; margin: 0; font-weight: 500; padding-left: 12px;">${formData.message || 'Sample message preview text here...'}</p>
+                        </div>
+                        <div style="margin-top: 48px; text-align: center;">
+                            <a href="#" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); color: #ffffff; padding: 20px 48px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 14px; display: inline-block; box-shadow: 0 20px 40px rgba(37,99,235,0.25); letter-spacing: 1px;">REPLY TO CLIENT</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 40px; text-align: center; background-color: #fafafa; border-top: 1px solid #f1f5f9;">
+                        <p style="color: #94a3b8; font-size: 12px; margin: 0; font-weight: 700; letter-spacing: 0.5px;">&copy; ${new Date().getFullYear()} CHN TECHNOLOGIES • DIGITAL FLAGSHIP HUB</p>
+                        <div style="margin-top: 12px;"><span style="color: #cbd5e1; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Encrypted Submission • Fast Response Protocol</span></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    `;
 
     return (
         <div className="CN_WRAPPER" ref={wrapperRef}>
@@ -397,6 +524,40 @@ const ContactPage = () => {
                 .CN_Btn:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(59, 130, 246, 0.5); background: #1e3a8a; }
             `}</style>
 
+            {/* EMAIL PREVIEW MODAL */}
+            <AnimatePresence>
+                {showEmailPreview && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[500] flex items-center justify-center p-4"
+                        onClick={() => setShowEmailPreview(false)}
+                    >
+                        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+                        <motion.div
+                            initial={{ scale: 0.9, y: 30 }}
+                            animate={{ scale: 1, y: 0 }}
+                            exit={{ scale: 0.9, y: 30 }}
+                            className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[30px] bg-white shadow-2xl"
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-white/90 backdrop-blur-sm border-b border-slate-100 rounded-t-[30px]">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse" />
+                                    <span className="text-sm font-black text-slate-700 uppercase tracking-[2px]">Email Preview — Contact Form</span>
+                                </div>
+                                <button
+                                    onClick={() => setShowEmailPreview(false)}
+                                    className="w-9 h-9 flex items-center justify-center rounded-full bg-slate-100 hover:bg-red-100 hover:text-red-500 transition-all text-slate-400 font-black text-lg"
+                                >&times;</button>
+                            </div>
+                            <div dangerouslySetInnerHTML={{ __html: buildPreviewHtml() }} />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             {/* LAYOUT 1 – CONTACT INTENT (HERO) */}
             <section className="CN_Hero">
                 {/* Background Graphics */}
@@ -480,7 +641,7 @@ const ContactPage = () => {
                                     initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }}
                                     className="CN_Circle_Img relative z-20"
                                 >
-                                    <img src="/images/contact-main.jpg" alt="Contact CHN Technologies" />
+                                    <img src={contactMain} alt="Contact CHN Technologies" />
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -517,6 +678,13 @@ const ContactPage = () => {
                                     <button type="submit" disabled={isSubmitting} className="CN_Primary_Btn md:col-span-2">
                                         {isSubmitting ? 'Processing intake...' : 'Send Message'} <Send size={20} />
                                     </button>
+                                    {/* <button
+                                        type="button"
+                                        onClick={() => setShowEmailPreview(true)}
+                                        className="md:col-span-2 w-full flex items-center justify-center gap-2 mt-2 py-3 rounded-full border border-blue-500/30 text-blue-400 hover:text-blue-300 hover:border-blue-400 transition-all text-sm font-bold tracking-wider"
+                                    >
+                                        <Mail size={16} /> Preview Email Template
+                                    </button> */}
                                 </form>
                             </motion.div>
                         ) : (

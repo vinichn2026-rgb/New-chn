@@ -19,8 +19,8 @@ import {
 import { Link } from 'react-router-dom';
 
 // Import local assets
-import workspaceLaptop from '../assets/workspace_laptop.png';
-import workspaceImg from '../assets/workspace.jpg';
+import workspaceLaptop from '@/assets/images/workspace_laptop.png';
+import workspaceImg from '@/assets/images/workspace.jpg';
 
 const WebDesignDevelopment = () => {
   const fadeIn = {

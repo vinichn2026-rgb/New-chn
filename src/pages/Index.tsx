@@ -8,8 +8,52 @@ import {
   ArrowUpRight, Quote, TrendingUp,
   ShieldCheck, Calendar, MessageSquare
 } from "lucide-react";
-import heroBg1 from "@/assets/hero-bg-1.jpg";
-import heroBg2 from "@/assets/hero-bg-2.jpg";
+import heroBg1 from "@/assets/images/hero-bg-1.jpg";
+import heroBg2 from "@/assets/images/hero-bg-2.jpg";
+import heroExcellence from "@/assets/images/hero-excellence.jpg";
+import aboutTeamMeeting from "@/assets/images/about-team-meeting.png";
+import caseStudyCloud from "@/assets/images/casestudy-cloud.jpg";
+import caseStudySecurity from "@/assets/images/casestudy-security.jpg";
+
+// Partner Logos
+import logo1 from "@/assets/logos/logo1.png";
+import logo2 from "@/assets/logos/logo2.png";
+import logo3 from "@/assets/logos/logo3.png";
+import logo4 from "@/assets/logos/logo4.png";
+import logo5 from "@/assets/logos/logo5.png";
+import logo6 from "@/assets/logos/logo6.png";
+import logo7 from "@/assets/logos/logo7.png";
+import logo8 from "@/assets/logos/logo8.png";
+import logo9 from "@/assets/logos/logo9.png";
+import logo10 from "@/assets/logos/logo10.png";
+import logo11 from "@/assets/logos/logo11.png";
+import logo12 from "@/assets/logos/logo12.png";
+import logo13 from "@/assets/logos/logo13.png";
+import logo14 from "@/assets/logos/logo14.png";
+import logo15 from "@/assets/logos/logo15.png";
+import logo15_2 from "@/assets/logos/logo15_2.png";
+import logo16 from "@/assets/logos/logo16.png";
+import logo18 from "@/assets/logos/logo18.png";
+import logo19 from "@/assets/logos/logo19.png";
+import logo20 from "@/assets/logos/logo20.png";
+import logo21 from "@/assets/logos/logo21.png";
+import logo22 from "@/assets/logos/logo22.png";
+import logo23 from "@/assets/logos/logo23.png";
+import logo24 from "@/assets/logos/logo24.png";
+import logo25 from "@/assets/logos/logo25.png";
+import logo26 from "@/assets/logos/logo26.png";
+import logo27 from "@/assets/logos/logo27.png";
+import logo28 from "@/assets/logos/logo28.png";
+import logo29 from "@/assets/logos/logo29.png";
+import logo30 from "@/assets/logos/logo30.png";
+import logo31 from "@/assets/logos/logo31.png";
+import logo32 from "@/assets/logos/logo32.png";
+import logo33 from "@/assets/logos/logo33.png";
+import logo34 from "@/assets/logos/logo34.png";
+import logo35 from "@/assets/logos/logo35.png";
+import logo36 from "@/assets/logos/logo36.png";
+import logo37 from "@/assets/logos/logo37.png";
+
 import { INFINITE_LOOP_DATA, CAPABILITIES_DATA } from "./Data";
 import { ScanSearch, Workflow, Cpu, Activity } from "lucide-react";
 
@@ -17,20 +61,19 @@ import SiteFooter from "@/components/SiteFooter";
 
 const Index = () => {
   const PARTNER_LOGOS = [
-
-    { image: "/images/logo/logo1.png" }, { image: "/images/logo/logo2.png" }, { image: "/images/logo/logo3.png" },
-    { image: "/images/logo/logo4.png" }, { image: "/images/logo/logo5.png" }, { image: "/images/logo/logo6.png" },
-    { image: "/images/logo/logo7.png" }, { image: "/images/logo/logo8.png" }, { image: "/images/logo/logo9.png" },
-    { image: "/images/logo/logo10.png" }, { image: "/images/logo/logo11.png" }, { image: "/images/logo/logo12.png" },
-    { image: "/images/logo/logo13.png" }, { image: "/images/logo/logo14.png" }, { image: "/images/logo/logo15.png" },
-    { image: "/images/logo/logo15_2.png" }, { image: "/images/logo/logo16.png" }, { image: "/images/logo/logo18.png" },
-    { image: "/images/logo/logo19.png" }, { image: "/images/logo/logo20.png" }, { image: "/images/logo/logo21.png" },
-    { image: "/images/logo/logo22.png" }, { image: "/images/logo/logo23.png" }, { image: "/images/logo/logo24.png" },
-    { image: "/images/logo/logo25.png" }, { image: "/images/logo/logo26.png" }, { image: "/images/logo/logo27.png" },
-    { image: "/images/logo/logo28.png" }, { image: "/images/logo/logo29.png" }, { image: "/images/logo/logo30.png" },
-    { image: "/images/logo/logo31.png" }, { image: "/images/logo/logo32.png" }, { image: "/images/logo/logo33.png" },
-    { image: "/images/logo/logo34.png" }, { image: "/images/logo/logo35.png" }, { image: "/images/logo/logo36.png" },
-    { image: "/images/logo/logo37.png" }
+    { image: logo1 }, { image: logo2 }, { image: logo3 },
+    { image: logo4 }, { image: logo5 }, { image: logo6 },
+    { image: logo7 }, { image: logo8 }, { image: logo9 },
+    { image: logo10 }, { image: logo11 }, { image: logo12 },
+    { image: logo13 }, { image: logo14 }, { image: logo15 },
+    { image: logo15_2 }, { image: logo16 }, { image: logo18 },
+    { image: logo19 }, { image: logo20 }, { image: logo21 },
+    { image: logo22 }, { image: logo23 }, { image: logo24 },
+    { image: logo25 }, { image: logo26 }, { image: logo27 },
+    { image: logo28 }, { image: logo29 }, { image: logo30 },
+    { image: logo31 }, { image: logo32 }, { image: logo33 },
+    { image: logo34 }, { image: logo35 }, { image: logo36 },
+    { image: logo37 }
   ];
 
   /* ── State & Refs ── */
@@ -61,7 +104,7 @@ const Index = () => {
       desc: "End-to-end management of IT infrastructure, software solutions, digital analytics, and workforce consulting — all under one roof.",
     },
     {
-      bg: "/images/hero-excellence.jpg",
+      bg: heroExcellence,
       subtitle: "Operational Excellence",
       title: <>Reliability Built on<br />Structured Excellence</>,
       desc: "We align systems, people, and processes to ensure your business remains resilient in a changing digital landscape. Experience long-term stability.",
@@ -192,14 +235,14 @@ const Index = () => {
       id: 1,
       category: "ENTERPRISE SOLUTION",
       title: "CHN Technologies Cloud Migration",
-      image: "/images/casestudy-cloud.jpg",
+      image: caseStudyCloud,
       link: "#",
     },
     {
       id: 2,
       category: "CYBER SECURITY",
       title: "Secure Data Infrastructure Build",
-      image: "/images/casestudy-security.jpg",
+      image: caseStudySecurity,
       link: "#",
     },
   ];
@@ -304,7 +347,7 @@ const Index = () => {
       <section className="flex flex-col justify-center bg-white scroll-mt-[90px] py-12 md:py-16">
         <div className="max-w-6xl mx-auto px-4 grid xl:grid-cols-2 gap-12 xl:gap-16 items-center">
           <div className="relative">
-            <img src="/images/about-team-meeting.png" alt="About CHN" className="rounded-2xl shadow-2xl" />
+            <img src={aboutTeamMeeting} alt="About CHN" className="rounded-2xl shadow-2xl" />
             {/* <div className="absolute top-10 left-10">
               <button onClick={() => setIsVideoOpen(true)} className="w-20 h-20 bg-[#1a1a1a] rounded-full flex items-center justify-center text-white shadow-2xl animate-pulse">
                 <Play className="w-8 h-8 ml-1" />
@@ -534,3 +577,4 @@ const Index = () => {
 };
 
 export default Index;
+
