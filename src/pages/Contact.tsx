@@ -67,7 +67,7 @@ const ContactPage = () => {
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     // Brevo SMTP Configuration
-    const BREVO_API_KEY = "REMOVED_SECRET  ";
+    const BREVO_API_KEY = import.meta.env.VITE_BREVO_API_KEY as string;
     const BREVO_SENDER = { name: "CHN Website Contact", email: "vinichn2026@gmail.com" };
     const BREVO_RECIPIENT = "info@chnindia.com";
     const LOGO_URL = "https://chnindia.com/chn-logo.png";

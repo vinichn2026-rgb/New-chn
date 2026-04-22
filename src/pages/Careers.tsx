@@ -41,7 +41,7 @@ const Careers = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const BREVO_API_KEY = "REMOVED_SECRET  "; // REPLACE WITH YOUR BREVO API V3 KEY
+  const BREVO_API_KEY = import.meta.env.VITE_BREVO_API_KEY as string;
   const BREVO_SENDER = { name: "CHN Careers Portal", email: "vinichn2026@gmail.com" }; // REPLACE WITH VERIFIED SENDER
   const BREVO_RECIPIENT = "hrd@chnindia.com"; // WHERE TO SEND APPLICATIONS
   const LOGO_URL = "https://chnindia.com/chn-logo.png";
